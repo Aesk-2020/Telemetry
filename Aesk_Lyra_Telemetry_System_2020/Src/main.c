@@ -29,6 +29,7 @@
 #include "AESK_CAN_Library.h"
 #include "AESK_Gps_lib.h"
 #include "TelemetryGlobalvar.h"
+#include "Can_Lyra_Header.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -65,6 +66,7 @@ Xbee_Datas xbee_data;
 Gsm_Datas gsm_data;
 MQTTPacket_connectData connectData = MQTTPacket_connectData_initializer;
 MQTTString topicString = MQTTString_initializer;
+LyraDatas lyradata;
 
 /* USER CODE END PV */
 
@@ -859,6 +861,8 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 		}
 	}
 }
+
+
 /* USER CODE END 4 */
 
 /**
