@@ -24,7 +24,10 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "SIM800MQTT.h"
+#include "AESK_CAN_Library.h"
+#include "AESK_Gps_lib.h"
+#include "TelemetryGlobalvar.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
