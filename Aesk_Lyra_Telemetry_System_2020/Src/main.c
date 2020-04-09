@@ -24,6 +24,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "stdio.h"
 #include "SIM800MQTT.h"
 #include "AESK_CAN_Library.h"
 #include "AESK_Gps_lib.h"
@@ -60,6 +61,7 @@ UART_HandleTypeDef huart3;
 
 /* USER CODE BEGIN PV */
 Time_Task_union time_task;
+Xbee_Datas xbee_data;
 Gsm_Datas gsm_data;
 MQTTPacket_connectData connectData = MQTTPacket_connectData_initializer;
 MQTTString topicString = MQTTString_initializer;
@@ -138,6 +140,7 @@ int main(void)
     HAL_Delay(10000);
 
     HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
+    HAL_UART_Receive_IT(&huart3, &xbee_data.receiveData, 1);
     HAL_TIM_Base_Start_IT(&htim6);
 
   /* USER CODE END 2 */
@@ -604,56 +607,121 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-	static uint8_t cifsr_control = 0;
-	static uint8_t cifsr_finish = 0;
-	gsm_data.gsmreceivebuffer[gsm_data.gsmreceivebuffer_index++] = gsm_data.receivegsmdata;
-	if(gsm_data.gsm_state_next_index < CreateMQTTPublishPack && (strstr((const char *)gsm_data.gsmreceivebuffer, gsm_data.at_response) != NULL))
+	switch((uint32_t)huart->Instance)
 	{
-		gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index;
-		memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer_index));
-		gsm_data.gsmreceivebuffer_index = 0;
-	}
 
-	if(gsm_data.gsm_state_next_index == CreateMQTTPublishPack && (strstr((const char *)gsm_data.gsmreceivebuffer, "\r\n") != NULL))
-	{
-		gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index;
-		memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer_index));
-		HAL_TIM_Base_Start_IT(&htim6);
-		gsm_data.gsmreceivebuffer_index = 0;
-	}
+		case (uint32_t)USART1 :
+		{
+			static uint8_t cifsr_control = 0;
+			static uint8_t cifsr_finish = 0;
+			gsm_data.gsmreceivebuffer[gsm_data.gsmreceivebuffer_index++] = gsm_data.receivegsmdata;
+			if(gsm_data.gsm_state_next_index < CreateMQTTPublishPack && (strstr((const char *)gsm_data.gsmreceivebuffer, gsm_data.at_response) != NULL))
+			{
+				gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index;
+				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer_index));
+				gsm_data.gsmreceivebuffer_index = 0;
+			}
 
-	else if(strstr((const char *)gsm_data.gsmreceivebuffer, (const char *)"ERROR") != NULL)
-	{
-		gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index - 1;
-		memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer_index));
-		gsm_data.gsmreceivebuffer_index = 0;
-	}
+			if(gsm_data.gsm_state_next_index == CreateMQTTPublishPack && (strstr((const char *)gsm_data.gsmreceivebuffer, "\r\n") != NULL))
+			{
+				gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index;
+				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer_index));
+				HAL_TIM_Base_Start_IT(&htim6);
+				gsm_data.gsmreceivebuffer_index = 0;
+			}
 
-	if(gsm_data.receivegsmdata =='.')
-	{
-		cifsr_control++;
-	}
+			else if(strstr((const char *)gsm_data.gsmreceivebuffer, (const char *)"ERROR") != NULL)
+			{
+				gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index - 1;
+				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer_index));
+				gsm_data.gsmreceivebuffer_index = 0;
+			}
 
-	if(cifsr_control == 3 && gsm_data.receivegsmdata == '\n' && cifsr_finish == 0)
-	{
-		gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index;
-		memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer_index));
-		gsm_data.gsmreceivebuffer_index = 0;
-		cifsr_finish = 1;
-		cifsr_control = 0;
-	}
+			if(gsm_data.receivegsmdata =='.')
+			{
+				cifsr_control++;
+			}
 
-	if(gsm_data.gsm_state_next_index == SendMQTTPublishPack && gsm_data.receivegsmdata == '>')
-	{
-		gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index;
-		memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer_index));
-		HAL_TIM_Base_Start_IT(&htim6);
-		gsm_data.gsmreceivebuffer_index = 0;
-	}
+			if(cifsr_control == 3 && gsm_data.receivegsmdata == '\n' && cifsr_finish == 0)
+			{
+				gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index;
+				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer_index));
+				gsm_data.gsmreceivebuffer_index = 0;
+				cifsr_finish = 1;
+				cifsr_control = 0;
+			}
 
-	HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
+			if(gsm_data.gsm_state_next_index == SendMQTTPublishPack && gsm_data.receivegsmdata == '>')
+			{
+				gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index;
+				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer_index));
+				HAL_TIM_Base_Start_IT(&htim6);
+				gsm_data.gsmreceivebuffer_index = 0;
+			}
+			HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
+			break;
+		}
+
+		case (uint32_t)USART2 :
+		{
+			break;
+		}
+
+		case (uint32_t)USART3 :
+		{
+			switch(xbee_data.states)
+			{
+				case ID_Control :
+				{
+					if(xbee_data.receiveData == FIRST_CONTROL_BYTE)
+					{
+						xbee_data.states = Reset_Data_Control;
+					}
+				break;
+				}
+				case Reset_Data_Control:
+				{
+					if(xbee_data.receiveData == SECOND_CONTROL_BYTE)
+					{
+						xbee_data.states = End_Communication_Control_1;
+					}
+					else
+					{
+						xbee_data.states = Reset_Data_Control;
+					}
+					break;
+				}
+				case End_Communication_Control_1:
+				{
+					if(xbee_data.receiveData == FIRST_COMMAND)
+					{
+						xbee_data.states = End_Communication_Control_2;
+					}
+					else
+					{
+						xbee_data.states = Reset_Data_Control;
+					}
+					break;
+				}
+
+				case End_Communication_Control_2:
+				{
+					if(xbee_data.receiveData == SECOND_COMMAND)
+					{
+						gsm_data.gsm_state_current_index = EmptyState;
+					}
+					else
+					{
+						xbee_data.states = Reset_Data_Control;
+					}
+					break;
+				}
+			}
+			HAL_UART_Receive_IT(&huart3, &xbee_data.receiveData, 1);
+			break;
+		}
+	}
 }
-
 void Gsm_Calibration(Gsm_Datas* gsm_data)
 {
 	switch(gsm_data->gsm_state_current_index)
@@ -773,7 +841,7 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 		    char atcommand[255];
 		    static uint32_t counter = 0;
 		    counter++;
-		    gsm_data->mqtt_len = MQTTSerialize_publish(gsm_data->gsmpublishpackage, sizeof(gsm_data->gsmpublishpackage), 0, 0, 0, 0, topicString, "hello", strlen("hello"));
+		    gsm_data->mqtt_len = MQTTSerialize_publish(gsm_data->gsmpublishpackage, (int)sizeof(gsm_data->gsmpublishpackage), 0, 0, 0, 0, topicString, "hello", strlen("hello"));
 			sprintf(atcommand,(const char*)"AT+CIPSEND=%d\r\n", gsm_data->mqtt_len);
 			SendATCommand(gsm_data, atcommand, "\r\n>");
 			gsm_data->gsm_state_next_index = SendMQTTPublishPack;

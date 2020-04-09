@@ -10,10 +10,10 @@
 #define TRUE 				1
 #define FALSE               0
 
-
-#define 	GSM_Serial			huart2
-#define   	XBEE_Serial		    huart4
-#define		GPS_Serial			huart3
+#define FIRST_CONTROL_BYTE		0x34
+#define	SECOND_CONTROL_BYTE		0xFF
+#define FIRST_COMMAND			0xAF
+#define SECOND_COMMAND			0xBF
 typedef union
 {
 	struct
