@@ -78,7 +78,8 @@ static void MX_USART1_UART_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_USART3_UART_Init(void);
 /* USER CODE BEGIN PFP */
-
+void Gsm_Calibration(Gsm_Datas* gsm_data);
+static void MX_USART1_UART_Init_New(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -123,17 +124,17 @@ int main(void)
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
   MX_FATFS_Init();
-
   /* USER CODE BEGIN 2 */
    gsm_data.gsm_uart = &huart1;
 
-    HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_SET);
+
+   	GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin;
     HAL_Delay(2000);
-    HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_RESET);
+    GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin << 16U;
     HAL_Delay(1000);
-    HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_SET);
+	GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin;
     HAL_Delay(1000);
-    HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_RESET);
+    GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin << 16U;
     HAL_Delay(10000);
 
     HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
@@ -148,6 +149,12 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
+	  if(time_task.Time_Task.Task_60_ms == TRUE)
+	  {
+		  Gsm_Calibration(&gsm_data);
+		  time_task.Time_Task.Task_60_ms = FALSE;
+	  }
   }
   /* USER CODE END 3 */
 }
@@ -544,6 +551,57 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+static void MX_USART1_UART_Init_New(void)
+{
+
+  /* USER CODE BEGIN USART1_Init 0 */
+
+  /* USER CODE END USART1_Init 0 */
+
+  /* USER CODE BEGIN USART1_Init 1 */
+
+  /* USER CODE END USART1_Init 1 */
+  huart1.Instance = USART1;
+  huart1.Init.BaudRate = 460800;
+  huart1.Init.WordLength = UART_WORDLENGTH_8B;
+  huart1.Init.StopBits = UART_STOPBITS_1;
+  huart1.Init.Parity = UART_PARITY_NONE;
+  huart1.Init.Mode = UART_MODE_TX_RX;
+  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART1_Init 2 */
+
+  /* USER CODE END USART1_Init 2 */
+
+}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	static uint32_t  task_counter_10_ms = 0;
+	static uint32_t task_counter_60_ms = 0;
+	static uint32_t task_counter_1000_ms = 0;
+
+	task_counter_10_ms++;
+	task_counter_60_ms++;
+	task_counter_1000_ms++;
+
+	if(task_counter_10_ms == 10)
+	{
+		time_task.Time_Task.Task_10_ms = TRUE;
+		task_counter_10_ms = 0;
+	}
+
+	if(task_counter_60_ms == 60)
+	{
+		time_task.Time_Task.Task_60_ms = TRUE;
+		task_counter_60_ms = 0;
+	}
+}
+
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	static uint8_t cifsr_control = 0;
@@ -715,7 +773,7 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 		    char atcommand[255];
 		    static uint32_t counter = 0;
 		    counter++;
-		    gsm_data->mqtt_len = MQTTSerialize_publish(gsm_data->gsmpublishpackage, sizeof(gsm_data->gsmpublishpackage), 0, 0, 0, 0, topicString, deneme, (int)10);
+		    gsm_data->mqtt_len = MQTTSerialize_publish(gsm_data->gsmpublishpackage, sizeof(gsm_data->gsmpublishpackage), 0, 0, 0, 0, topicString, "hello", strlen("hello"));
 			sprintf(atcommand,(const char*)"AT+CIPSEND=%d\r\n", gsm_data->mqtt_len);
 			SendATCommand(gsm_data, atcommand, "\r\n>");
 			gsm_data->gsm_state_next_index = SendMQTTPublishPack;

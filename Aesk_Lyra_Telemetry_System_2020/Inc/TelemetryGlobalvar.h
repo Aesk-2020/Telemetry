@@ -18,14 +18,24 @@ typedef union
 {
 	struct
 	{
-		uint8_t Task_10_Hz  : 1;
-		uint8_t	Task_5_Hz	: 1;
-		uint8_t Task_2_Hz	: 1;
-		uint8_t Task_1_Hz   : 1;
-		uint8_t reserved    : 4;
+		uint16_t Task_10_ms  	: 1;
+		uint16_t Task_50_ms  	: 1;
+		uint16_t Task_60_ms		: 1;
+		uint16_t Task_100_ms	: 1;
+		uint16_t Task_170_ms	: 1;
+		uint16_t Task_150_ms 	: 1;
+		uint16_t Task_200_ms   	: 1;
+		uint16_t Task_250_ms	: 1;
+		uint16_t Task_300_ms	: 1;
+		uint16_t Task_500_ms	: 1;
+		uint16_t Task_1000_ms	: 1;
+		uint16_t Task_2000_ms	: 1;
+		uint16_t reserved    	: 4;
 
-	}Time_Task_u8;
+	}Time_Task;
+	uint16_t time_task_u16;
 }Time_Task_union;
+
 
 typedef enum
 {
