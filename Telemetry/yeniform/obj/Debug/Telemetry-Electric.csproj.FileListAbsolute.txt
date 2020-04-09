@@ -62,3 +62,36 @@ C:\Users\Khada\Desktop\Shell & Electric Car - Telemetry - 2020\yeniform\obj\Debu
 C:\Users\Khada\Desktop\Shell & Electric Car - Telemetry - 2020\yeniform\obj\Debug\Telemetry-Electric.csproj.CopyComplete
 C:\Users\Khada\Desktop\Shell & Electric Car - Telemetry - 2020\yeniform\obj\Debug\yeniform.exe
 C:\Users\Khada\Desktop\Shell & Electric Car - Telemetry - 2020\yeniform\obj\Debug\yeniform.pdb
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\yeniform.exe.config
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\yeniform.exe
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\yeniform.pdb
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\AjaxMin.dll
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\EntityFramework.dll
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\EntityFramework.SqlServer.dll
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\GMap.NET.Core.dll
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\Gmap.net.dll
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\GMap.NET.WindowsForms.dll
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\GMap.NET.WindowsPresentation.dll
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\M2Mqtt.Net.dll
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\Newtonsoft.Json.dll
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\SlimDX.dll
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\System.Data.SQLite.dll
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\System.Data.SQLite.EF6.dll
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\System.Data.SQLite.Linq.dll
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\EntityFramework.xml
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\EntityFramework.SqlServer.xml
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\Gmap.net.pdb
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\Guna.UI.pdb
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\M2Mqtt.Net.pdb
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\Newtonsoft.Json.xml
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\System.Data.SQLite.xml
+D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\System.Data.SQLite.dll.config
+D:\MyGits\Telemetry\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csprojAssemblyReference.cache
+D:\MyGits\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.BMS.resources
+D:\MyGits\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.telemetry.resources
+D:\MyGits\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.Properties.Resources.resources
+D:\MyGits\Telemetry\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csproj.GenerateResource.cache
+D:\MyGits\Telemetry\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csproj.CoreCompileInputs.cache
+D:\MyGits\Telemetry\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csproj.CopyComplete
+D:\MyGits\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.exe
+D:\MyGits\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.pdb
