@@ -30,6 +30,7 @@
 #include "AESK_Gps_lib.h"
 #include "TelemetryGlobalvar.h"
 #include "Can_Lyra_Header.h"
+#include "AESK_Data_Pack_lib.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -84,6 +85,7 @@ static void MX_USART3_UART_Init(void);
 /* USER CODE BEGIN PFP */
 void Gsm_Calibration(Gsm_Datas* gsm_data);
 static void MX_USART1_UART_Init_New(void);
+void createMQTTPackage(LyraDatas *lyradata, uint8_t* packBuf, uint16_t index);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -862,6 +864,30 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 	}
 }
 
+void createMQTTPackage(LyraDatas *lyradata, uint8_t* packBuf, uint16_t index)
+{
+	AESK_UINT8toUINT8CODE(&(lyradata->vcu_data.wake_up_union.wake_up_u8), packBuf, &index);
+	AESK_UINT8toUINT8CODE(&(lyradata->vcu_data.drive_command_union.drive_command_u8), packBuf, &index);
+	AESK_UINT8toUINT8CODE(&(lyradata->vcu_data.set_velocity_u8), packBuf, &index);
+	int16_t phase_a_current_s16 = (int16_t)(lyradata->driver_data.Phase_A_Current_f32 * FLOAT_CONVERTER_2);
+	int16_t phase_b_current_s16 = (int16_t)(lyradata->driver_data.Phase_B_Current_f32 * FLOAT_CONVERTER_2);
+	uint16_t dc_bus_voltage_u16 = (uint16_t)(lyradata->driver_data.Dc_Bus_voltage_f32 * FLOAT_CONVERTER_1);
+	int16_t dc_bus_current_s16 = (int16_t)(lyradata->driver_data.Dc_Bus_Current_f32 * FLOAT_CONVERTER_2);
+	int16_t id_f32 = (int16_t)(lyradata->driver_data.Id_f32 * FLOAT_CONVERTER_2);
+	int16_t iq_f32 = (int16_t)(lyradata->driver_data.Iq_f32 * FLOAT_CONVERTER_2);
+	int16_t Vd_f32 = (int16_t)(lyradata->driver_data.Vd_f32 * FLOAT_CONVERTER_2);
+	AESK_INT16toUINT8_LE(&phase_a_current_s16, packBuf, &index);
+	AESK_INT16toUINT8_LE(&phase_b_current_s16, packBuf, &index);
+	AESK_INT16toUINT8_LE(&dc_bus_current_s16, packBuf, &index);
+	AESK_UINT16toUINT8_LE(&dc_bus_voltage_u16, packBuf, &index);
+
+
+
+
+
+
+
+}
 
 /* USER CODE END 4 */
 
