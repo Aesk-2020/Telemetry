@@ -59,6 +59,10 @@ UART_HandleTypeDef huart2;
 UART_HandleTypeDef huart3;
 
 /* USER CODE BEGIN PV */
+Time_Task_union time_task;
+Gsm_Datas gsm_data;
+MQTTPacket_connectData connectData = MQTTPacket_connectData_initializer;
+MQTTString topicString = MQTTString_initializer;
 
 /* USER CODE END PV */
 
@@ -119,7 +123,21 @@ int main(void)
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
   MX_FATFS_Init();
+
   /* USER CODE BEGIN 2 */
+   gsm_data.gsm_uart = &huart1;
+
+    HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_SET);
+    HAL_Delay(2000);
+    HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_RESET);
+    HAL_Delay(1000);
+    HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_SET);
+    HAL_Delay(1000);
+    HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_RESET);
+    HAL_Delay(10000);
+
+    HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
+    HAL_TIM_Base_Start_IT(&htim6);
 
   /* USER CODE END 2 */
 
@@ -526,7 +544,195 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+	static uint8_t cifsr_control = 0;
+	static uint8_t cifsr_finish = 0;
+	gsm_data.gsmreceivebuffer[gsm_data.gsmreceivebuffer_index++] = gsm_data.receivegsmdata;
+	if(gsm_data.gsm_state_next_index < CreateMQTTPublishPack && (strstr((const char *)gsm_data.gsmreceivebuffer, gsm_data.at_response) != NULL))
+	{
+		gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index;
+		memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer_index));
+		gsm_data.gsmreceivebuffer_index = 0;
+	}
 
+	if(gsm_data.gsm_state_next_index == CreateMQTTPublishPack && (strstr((const char *)gsm_data.gsmreceivebuffer, "\r\n") != NULL))
+	{
+		gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index;
+		memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer_index));
+		HAL_TIM_Base_Start_IT(&htim6);
+		gsm_data.gsmreceivebuffer_index = 0;
+	}
+
+	else if(strstr((const char *)gsm_data.gsmreceivebuffer, (const char *)"ERROR") != NULL)
+	{
+		gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index - 1;
+		memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer_index));
+		gsm_data.gsmreceivebuffer_index = 0;
+	}
+
+	if(gsm_data.receivegsmdata =='.')
+	{
+		cifsr_control++;
+	}
+
+	if(cifsr_control == 3 && gsm_data.receivegsmdata == '\n' && cifsr_finish == 0)
+	{
+		gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index;
+		memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer_index));
+		gsm_data.gsmreceivebuffer_index = 0;
+		cifsr_finish = 1;
+		cifsr_control = 0;
+	}
+
+	if(gsm_data.gsm_state_next_index == SendMQTTPublishPack && gsm_data.receivegsmdata == '>')
+	{
+		gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index;
+		memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer_index));
+		HAL_TIM_Base_Start_IT(&htim6);
+		gsm_data.gsmreceivebuffer_index = 0;
+	}
+
+	HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
+}
+
+void Gsm_Calibration(Gsm_Datas* gsm_data)
+{
+	switch(gsm_data->gsm_state_current_index)
+	{
+		case SerialCommunicationControl :
+		{
+			SendATCommand(gsm_data, "AT\r\n", "OK\r\n");
+			gsm_data->gsm_state_next_index = SerialEchoOff;
+			gsm_data->gsm_state_current_index = EmptyState;
+			break;
+		}
+
+		case SerialEchoOff :
+		{
+			SendATCommand(gsm_data, "ATE0\r\n", "OK\r\n");
+			gsm_data->gsm_state_next_index = ChangeSIM800SerialBaudRate;
+			gsm_data->gsm_state_current_index = EmptyState;
+			break;
+		}
+
+		case ChangeSIM800SerialBaudRate :
+		{
+			SendATCommand(gsm_data, "AT+IPR=460800\r\n", "OK\r\n");
+			gsm_data->gsm_state_next_index = ChangeSTBaudRate;
+			gsm_data->gsm_state_current_index = EmptyState;
+			break;
+		}
+
+		case ChangeSTBaudRate:
+		{
+			MX_USART1_UART_Init_New();
+			gsm_data->gsm_uart = &huart1;
+			HAL_UART_Receive_IT(gsm_data->gsm_uart, &gsm_data->receivegsmdata, 1);
+			gsm_data->gsm_state_next_index = DeactiveGPRS;
+			gsm_data->gsm_state_current_index = DeactiveGPRS;
+			break;
+		}
+
+		case DeactiveGPRS :
+		{
+			SendATCommand(gsm_data, "AT+CIPSHUT\r\n", "SHUT OK\r\n");
+			gsm_data->gsm_state_next_index = ConnectGPRS;
+			gsm_data->gsm_state_current_index = EmptyState;
+			break;
+		}
+
+
+		case ConnectGPRS :
+		{
+			SendATCommand(gsm_data, "AT+CGATT=1\r\n", "OK\r\n");
+			gsm_data->gsm_state_next_index = SetGPRSProfile;
+			gsm_data->gsm_state_current_index = EmptyState;
+			break;
+		}
+
+		case SetGPRSProfile :
+		{
+			SendATCommand(gsm_data, "AT+CSTT=\"internet\",\"\",\"\"\r\n", "OK\r\n");
+			gsm_data->gsm_state_next_index = BringUPGPRS;
+			gsm_data->gsm_state_current_index = EmptyState;
+			break;
+		}
+
+		case BringUPGPRS :
+		{
+			SendATCommand(gsm_data, "AT+CIICR\r\n", "OK\r\n");
+			gsm_data->gsm_state_next_index = LearnSIM800IP;
+			gsm_data->gsm_state_current_index = EmptyState;
+			break;
+		}
+
+		case LearnSIM800IP :
+		{
+			SendATCommand(gsm_data, "AT+CIFSR\r\n", "OK\r\n");
+			gsm_data->gsm_state_next_index = StartTCPConnect;
+			gsm_data->gsm_state_current_index = EmptyState;
+			break;
+		}
+
+		case StartTCPConnect :
+		{
+			SendATCommand(gsm_data, "AT+CIPSTART=\"TCP\",\"157.230.29.63\",\"1883\"\r\n", "CONNECT OK\r\n");
+			gsm_data->gsm_state_next_index = CreateMQTTConnectPack;
+			gsm_data->gsm_state_current_index = EmptyState;
+			break;
+		}
+
+		case CreateMQTTConnectPack :
+		{
+			char atcommand[255];
+			connectData.username.cstring = "digital";
+			connectData.password.cstring = "aesk";
+			connectData.clientID.cstring = "LYRA";
+			connectData.keepAliveInterval = 60;
+			connectData.cleansession = SendMQTTConnectPack;
+			gsm_data->len =  MQTTSerialize_connect((unsigned char *)gsm_data->gsmconnectpackage, (int)sizeof(gsm_data->gsmconnectpackage),&connectData);
+			sprintf(atcommand,(const char*)"AT+CIPSEND=%d\r\n", gsm_data->len);
+			SendATCommand(gsm_data, atcommand, "\r\n>");
+			gsm_data->gsm_state_next_index = 11;
+			gsm_data->gsm_state_current_index = EmptyState;
+			break;
+		}
+
+		case SendMQTTConnectPack :
+		{
+			gsm_data->at_response = "SEND OK\r\n";
+			HAL_UART_Transmit_IT(gsm_data->gsm_uart, (uint8_t *)gsm_data->gsmconnectpackage, gsm_data->len);
+			gsm_data->gsm_state_next_index = CreateMQTTPublishPack;
+			gsm_data->gsm_state_current_index = EmptyState;
+			break;
+		}
+
+		case CreateMQTTPublishPack :
+		{
+
+		    topicString.cstring = "home/sensor";
+		    char atcommand[255];
+		    static uint32_t counter = 0;
+		    counter++;
+		    gsm_data->mqtt_len = MQTTSerialize_publish(gsm_data->gsmpublishpackage, sizeof(gsm_data->gsmpublishpackage), 0, 0, 0, 0, topicString, deneme, (int)10);
+			sprintf(atcommand,(const char*)"AT+CIPSEND=%d\r\n", gsm_data->mqtt_len);
+			SendATCommand(gsm_data, atcommand, "\r\n>");
+			gsm_data->gsm_state_next_index = SendMQTTPublishPack;
+			gsm_data->gsm_state_current_index = EmptyState;
+			HAL_TIM_Base_Stop_IT(&htim6);
+			break;
+		}
+
+		case SendMQTTPublishPack :
+		{
+			HAL_UART_Transmit_IT(gsm_data->gsm_uart, (uint8_t *)gsm_data->gsmpublishpackage, gsm_data->mqtt_len);
+			gsm_data->gsm_state_current_index = CreateMQTTPublishPack;
+			gsm_data->gsm_state_next_index = CreateMQTTPublishPack;
+			break;
+		}
+	}
+}
 /* USER CODE END 4 */
 
 /**
