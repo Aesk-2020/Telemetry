@@ -135,11 +135,11 @@ int main(void)
 
 
    	GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin;
-    HAL_Delay(2000);
+    HAL_Delay(1500);
     GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin << 16U;
-    HAL_Delay(1000);
+    HAL_Delay(800);
 	GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin;
-    HAL_Delay(1000);
+    HAL_Delay(800);
     GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin << 16U;
     HAL_Delay(10000);
 
@@ -157,10 +157,10 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-	  if(time_task.Time_Task.Task_60_ms == TRUE)
+	  if(time_task.Time_Task.Task_30_ms == TRUE)
 	  {
 		  Gsm_Calibration(&gsm_data);
-		  time_task.Time_Task.Task_60_ms = FALSE;
+		  time_task.Time_Task.Task_30_ms = FALSE;
 	  }
   }
   /* USER CODE END 3 */
@@ -589,11 +589,11 @@ static void MX_USART1_UART_Init_New(void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	static uint32_t  task_counter_10_ms = 0;
-	static uint32_t task_counter_60_ms = 0;
+	static uint32_t task_counter_30_ms = 0;
 	static uint32_t task_counter_1000_ms = 0;
 
 	task_counter_10_ms++;
-	task_counter_60_ms++;
+	task_counter_30_ms++;
 	task_counter_1000_ms++;
 
 	if(task_counter_10_ms == 10)
@@ -602,10 +602,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		task_counter_10_ms = 0;
 	}
 
-	if(task_counter_60_ms == 30)
+	if(task_counter_30_ms == 30)
 	{
-		time_task.Time_Task.Task_60_ms = TRUE;
-		task_counter_60_ms = 0;
+		time_task.Time_Task.Task_30_ms = TRUE;
+		task_counter_30_ms = 0;
 	}
 }
 
@@ -618,6 +618,13 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		{
 			static uint8_t cifsr_control = 0;
 			static uint8_t cifsr_finish = 0;
+
+
+			if(gsm_data.gsmreceivebuffer_index == 31)
+			{
+				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer_index));
+				gsm_data.gsmreceivebuffer_index = 0;
+			}
 			gsm_data.gsmreceivebuffer[gsm_data.gsmreceivebuffer_index++] = gsm_data.receivegsmdata;
 			if(gsm_data.gsm_state_next_index < CreateMQTTPublishPack && (strstr((const char *)gsm_data.gsmreceivebuffer, gsm_data.at_response) != NULL))
 			{
@@ -662,7 +669,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 				HAL_TIM_Base_Start_IT(&htim6);
 				gsm_data.gsmreceivebuffer_index = 0;
 			}
-			HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
+
 			break;
 		}
 
@@ -712,7 +719,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 				{
 					if(xbee_data.receiveData == SECOND_COMMAND)
 					{
-						gsm_data.gsm_state_current_index = EmptyState;
+						gsm_data.gsm_state_current_index = GsmOnOffSet;
 					}
 					else
 					{
@@ -721,10 +728,12 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 					break;
 				}
 			}
-			HAL_UART_Receive_IT(&huart3, &xbee_data.receiveData, 1);
+
 			break;
 		}
 	}
+	HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
+	HAL_UART_Receive_IT(&huart3, &xbee_data.receiveData, 1);
 }
 void Gsm_Calibration(Gsm_Datas* gsm_data)
 {
@@ -734,7 +743,7 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 		{
 			SendATCommand(gsm_data, "AT\r\n", "OK\r\n");
 			gsm_data->gsm_state_next_index = SerialEchoOff;
-			gsm_data->gsm_state_current_index = EmptyState;
+			gsm_data->gsm_state_current_index = SerialCommunicationControl;
 			break;
 		}
 
@@ -860,6 +869,94 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 			HAL_UART_Transmit_IT(gsm_data->gsm_uart, (uint8_t *)gsm_data->gsmpublishpackage, gsm_data->mqtt_len);
 			gsm_data->gsm_state_current_index = CreateMQTTPublishPack;
 			gsm_data->gsm_state_next_index = CreateMQTTPublishPack;
+			break;
+		}
+
+		case GsmOnOffSet :
+		{
+			GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin;
+			gsm_data->gsm_state_current_index = Gsm1500msWait;
+			gsm_data->gsm_state_next_index = Gsm1500msWait;
+			break;
+		}
+
+		case Gsm1500msWait :
+		{
+			static uint8_t gsm1500msWaitCounter = 0;
+			gsm1500msWaitCounter++;
+			if(gsm1500msWaitCounter == 100)
+			{
+				gsm_data->gsm_state_current_index = GsmOnOffReset;
+				gsm_data->gsm_state_next_index = GsmOnOffReset;
+				gsm1500msWaitCounter = 0;
+			}
+			break;
+		}
+
+		case GsmOnOffReset :
+		{
+			GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin << 16U;
+			gsm_data->gsm_state_current_index = Gsm800msWait;
+			gsm_data->gsm_state_next_index = Gsm800msWait;
+			break;
+		}
+
+		case Gsm800msWait :
+		{
+			static uint8_t gsm800mscounter = 0;
+			gsm800mscounter++;
+			if(gsm800mscounter == 50)
+			{
+				gsm_data->gsm_state_current_index = GsmOnOffSet1;
+				gsm_data->gsm_state_next_index = GsmOnOffSet1;
+				gsm800mscounter = 0;
+			}
+			break;
+		}
+
+		case GsmOnOffSet1 :
+		{
+			//HAL_UART_DeInit(gsm_data->gsm_uart);
+			GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin;
+			gsm_data->gsm_state_current_index = Gsm800msWait1;
+			gsm_data->gsm_state_next_index = Gsm800msWait1;
+			break;
+		}
+
+		case Gsm800msWait1 :
+		{
+			static uint8_t gsm800mscounter1 = 0;
+			gsm800mscounter1++;
+			if(gsm800mscounter1 == 50)
+			{
+				gsm_data->gsm_state_current_index = GsmOnOffReset1;
+				gsm_data->gsm_state_next_index = GsmOnOffReset1;
+				gsm800mscounter1 = 0;
+			}
+			break;
+		}
+
+		case GsmOnOffReset1 :
+		{
+			GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin << 16U;
+			gsm_data->gsm_state_current_index = GsmWakeUpEightSecond;
+			gsm_data->gsm_state_next_index = GsmWakeUpEightSecond;
+			break;
+		}
+
+		case GsmWakeUpEightSecond :
+		{
+			static uint16_t gsmEigthSecondCounter = 0;
+			gsmEigthSecondCounter++;
+			if(gsmEigthSecondCounter == 400)
+			{
+				gsm_data->gsm_state_current_index = SerialCommunicationControl;
+				gsm_data->gsm_state_next_index = SerialCommunicationControl;
+				MX_USART1_UART_Init();
+				gsm_data->gsm_uart = &huart1;
+				HAL_UART_Receive_IT(gsm_data->gsm_uart, &gsm_data->receivegsmdata, 1);
+				gsmEigthSecondCounter = 0;
+			}
 			break;
 		}
 	}

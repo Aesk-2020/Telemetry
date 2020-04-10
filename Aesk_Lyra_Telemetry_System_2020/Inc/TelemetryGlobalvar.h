@@ -19,7 +19,7 @@ typedef union
 	struct
 	{
 		uint16_t Task_10_ms  	: 1;
-		uint16_t Task_50_ms  	: 1;
+		uint16_t Task_30_ms  	: 1;
 		uint16_t Task_60_ms		: 1;
 		uint16_t Task_100_ms	: 1;
 		uint16_t Task_170_ms	: 1;

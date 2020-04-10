@@ -44,7 +44,15 @@ typedef enum
 	SendMQTTConnectPack = 11,
 	CreateMQTTPublishPack = 12,
 	SendMQTTPublishPack = 13,
-	EmptyState
+	EmptyState = 14,
+	GsmOnOffSet = 15,
+	Gsm1500msWait = 16,
+	GsmOnOffReset = 17,
+	Gsm800msWait = 18,
+	Gsm800msWait1 = 19,
+	GsmOnOffSet1 = 20,
+	GsmOnOffReset1 = 21,
+	GsmWakeUpEightSecond = 22
 }MQTTCalibrationStates;
 
 
