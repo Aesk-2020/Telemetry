@@ -32,13 +32,12 @@ namespace yeniform
 
         static int crc_hesaplanan = 0;
         
-        //BURADAKI "data" degiskeninin turu degisecek "[]byte"
         #region veri
         float my_old_gsm_time = 0;
         float refresh_time;
         //string data = "10.03.2020 23:00:00.00000 -> Veri -> &0,0$0,0$0,0$0,00$0$0$3,14$14$25$1250$15$0,00$0,00$0,00$0,00$0,00$25,55$0$53$0$0$0$15$1$0$0";
        
-
+        //BMS
         float bms_bat_volt_f32;
         float bms_bat_current_f32;
         float bms_bat_cons_f32;
@@ -48,33 +47,35 @@ namespace yeniform
         float bms_worst_cell_voltage_f32;
         byte bms_worst_cell_address_u8;
         byte bms_temp_u8;
+
+        //Driver
         UInt32 driver_odometer_u32;
-        byte driver_act_velocity_kmh_u8;
         float driver_phase_a_current_f32;
         float driver_phase_b_current_f32;
-        float driver_phase_c_current_f32;
         float driver_dc_bus_current_f32;
-        //float driver_phase_a_voltage_f32;
-        float driver_phase_b_voltage_f32;
-        float driver_phase_c_voltage_f32;
         float driver_dc_bus_voltage_f32;
-        float driver_motor_temperature_f32;
         float driver_id_f32;
         float driver_iq_f32;
         float driver_vd_f32;
         float driver_vq_f32;
+        byte driver_actual_velocity_u8;
+        byte driver_motor_temperature_u8;
         byte driver_drive_status_u8;
-        byte driver_set_velocity_u8;
-        byte driver_set_torque_u8;
-        byte driver_drive_command_u8;
         byte driver_error_u8;
+
+        //VCU
+        byte vcu_wake_up_u8;
+        byte vcu_set_velocity_u8;
+        byte vcu_drive_commands_u8;
+
+        //Arayüz verileri
         byte my_maks_hiz = 0;
-        byte vcu_wake_up_command_u8;
         double latitude_f64 = 40.744392;
         double longtitude_f64 = 29.786054;
         byte anlik_hiz_u8;
         double ortalama_hiz_f32;
         double ortalama_hiz_vcu_f32;
+        //byte driver_set_torque_u8;
         UInt32 GL_kalan_yol_u32 = 56000;
         UInt32 GL_kalan_yol_driver_u32;
         #endregion
@@ -82,6 +83,7 @@ namespace yeniform
         //MQTT
         MqttClient Client = new MqttClient("157.230.29.63");
         DateTime gsm_old_time;
+        UInt32 MQTT_counter_u32;
 
         ListBox gelenler = new ListBox();
         bool error_flagg = false;
@@ -229,45 +231,57 @@ namespace yeniform
             bms_error_u8 = gelenVeri[14];
 
             driver_dc_bus_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 15) / 100;
-            driver_phase_c_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 17) / 100;
             driver_phase_b_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 19) / 100;
             driver_phase_a_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 21) / 100;
 
             driver_dc_bus_voltage_f32 = (float)BitConverter.ToUInt16(gelenVeri, 23) / 100;
-            driver_motor_temperature_f32 = (float)BitConverter.ToUInt16(gelenVeri, 25) / 100;
+            //driver_motor_temperature_u8 = (float)BitConverter.ToUInt16(gelenVeri, 25) / 100;
 
             driver_odometer_u32 = BitConverter.ToUInt32(gelenVeri, 27);
-            driver_act_velocity_kmh_u8 = gelenVeri[31];
+            driver_actual_velocity_u8 = gelenVeri[31];
             driver_drive_status_u8 = gelenVeri[32];
 
-            driver_drive_command_u8 = gelenVeri[33];
-            driver_set_velocity_u8 = gelenVeri[34];
+            vcu_drive_commands_u8 = gelenVeri[33];
+            vcu_set_velocity_u8 = gelenVeri[34];
+     
+        }
 
-            try
-            {
-                bms_soc.Text = bms_soc_f32.ToString();
-                bms_bat_cons.Text = bms_bat_cons_f32.ToString();
-                bms_bat_current.Text = bms_bat_current_f32.ToString();
-                bms_worst_cell_address.Text = bms_worst_cell_address_u8.ToString();
-                bms_worst_cell_volt.Text = bms_worst_cell_voltage_f32.ToString();
-                bms_temp.Text = bms_temp_u8.ToString();
-                bms_bat_volt.Text = bms_bat_volt_f32.ToString();
+        void dataConvert_2(byte[] gelenVeri)
+        {
+            vcu_wake_up_u8 = gelenVeri[0];
+            vcu_drive_commands_u8 = gelenVeri[1];
+            vcu_set_velocity_u8 = gelenVeri[2];
 
-                phase_a_cur.Text = driver_phase_a_current_f32.ToString();
-                phase_b_cur.Text = driver_phase_b_current_f32.ToString();
-                phase_c_cur.Text = driver_phase_c_current_f32.ToString();
-            }
-            catch
-            {
+            driver_phase_a_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 3) / 100;
+            driver_phase_b_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 5) / 100;
+            driver_dc_bus_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 7) / 100;
+            driver_dc_bus_voltage_f32 = (float)BitConverter.ToUInt16(gelenVeri, 9) / 10;
+            driver_id_f32 = (float)BitConverter.ToInt16(gelenVeri, 11) / 100;
+            driver_iq_f32 = (float)BitConverter.ToInt16(gelenVeri, 13) / 100;
+            driver_vd_f32 = (float)BitConverter.ToInt16(gelenVeri, 15) / 100;
+            driver_vq_f32 = (float)BitConverter.ToInt16(gelenVeri, 17) / 100;
+            driver_drive_status_u8 = gelenVeri[19];
+            driver_error_u8 = gelenVeri[20];
+            driver_odometer_u32 = BitConverter.ToUInt32(gelenVeri, 21);
+            driver_motor_temperature_u8 = gelenVeri[25];
+            driver_actual_velocity_u8 = gelenVeri[26];
 
-            }
-
-
-
+            bms_bat_volt_f32 = (float)BitConverter.ToUInt16(gelenVeri, 27) / 10;
+            bms_bat_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 29) / 100;
+            bms_bat_cons_f32 = (float)BitConverter.ToInt16(gelenVeri, 31) / 10;
+            bms_soc_f32 = (float)BitConverter.ToUInt16(gelenVeri, 33) / 100;
+            bms_error_u8 = gelenVeri[35];
+            bms_dc_bus_state_u8 = gelenVeri[36];
+            bms_worst_cell_voltage_f32 = (float)BitConverter.ToUInt16(gelenVeri, 37) / 10;
+            bms_worst_cell_address_u8 = gelenVeri[39];
+            bms_temp_u8 = gelenVeri[40];
+            MQTT_counter_u32 = BitConverter.ToUInt32(gelenVeri, 41);
         }
 
         void gsmDataConvert()
-        {/*
+        {
+            #region kullanılabilir
+            /*
            
             #region Yenilenecek_1
             float myhour = float.Parse(data.Substring(11, 2));
@@ -314,16 +328,16 @@ namespace yeniform
 
             #region yenilenecek_3
             GL_kalan_yol_driver_u32 = 56000 - driver_odometer_u32;
-            driver_act_velocity_kmh_u8 = Convert.ToByte(dataarray[10]);
+            driver_actual_velocity_u8 = Convert.ToByte(dataarray[10]);
             driver_phase_a_current_f32 = float.Parse(dataarray[11]);
             driver_phase_b_current_f32 = float.Parse(dataarray[12]);
             driver_phase_c_current_f32 = float.Parse(dataarray[13]);
             driver_dc_bus_current_f32 = float.Parse(dataarray[14]);
             driver_dc_bus_voltage_f32 = float.Parse(dataarray[15]);
-            driver_motor_temperature_f32 = float.Parse(dataarray[16]);
+            driver_motor_temperature_u8 = float.Parse(dataarray[16]);
             driver_drive_status_u8 = Convert.ToByte(dataarray[17]);
-            driver_set_velocity_u8 = Convert.ToByte(dataarray[18]);
-            driver_drive_command_u8 = Convert.ToByte(dataarray[19]);
+            vcu_set_velocity_u8 = Convert.ToByte(dataarray[18]);
+            vcu_drive_commands_u8 = Convert.ToByte(dataarray[19]);
 
             try
             {
@@ -337,44 +351,14 @@ namespace yeniform
             
 
             anlik_hiz_u8 = Convert.ToByte(dataarray[22]);
-            vcu_wake_up_command_u8 = Convert.ToByte(dataarray[23]);
+            vcu_wake_up_u8 = Convert.ToByte(dataarray[23]);
             driver_error_u8 = Convert.ToByte(dataarray[25]);
             #endregion
 
            
             displayAllData();
             */
-        }
-
-        void gsmDataConvert_2(byte[] gelenVeri)
-        {
-            
-            bms_soc_f32 = (float)BitConverter.ToUInt16(gelenVeri, 1) / 10;
-            bms_bat_cons_f32 = (float)BitConverter.ToUInt16(gelenVeri, 3) / 10;
-            bms_bat_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 5) / 10;
-            bms_bat_volt_f32 = (float)BitConverter.ToUInt16(gelenVeri, 7) / 10;
-            bms_temp_u8 = gelenVeri[9];
-            bms_worst_cell_address_u8 = gelenVeri[10];
-            bms_worst_cell_voltage_f32 = (float)BitConverter.ToUInt16(gelenVeri, 11) / 1000;
-            bms_dc_bus_state_u8 = gelenVeri[13];
-            bms_error_u8 = gelenVeri[14];
-
-            driver_dc_bus_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 15) / 100;
-            driver_phase_c_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 17) / 100;
-            driver_phase_b_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 19) / 100;
-            driver_phase_a_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 21) / 100;
-
-            driver_dc_bus_voltage_f32 = (float)BitConverter.ToUInt16(gelenVeri, 23) / 100;
-            driver_motor_temperature_f32 = (float)BitConverter.ToUInt16(gelenVeri, 25) / 100;
-
-            driver_odometer_u32 = BitConverter.ToUInt32(gelenVeri, 27);
-            driver_act_velocity_kmh_u8 = gelenVeri[31];
-            driver_drive_status_u8 = gelenVeri[32];
-
-            driver_drive_command_u8 = gelenVeri[33];
-            driver_set_velocity_u8 = gelenVeri[34];
-            
-
+            #endregion
         }
 
         void displayAllData()
@@ -392,33 +376,29 @@ namespace yeniform
                               bms_worst_cell_address_u8.ToString() + '$' +
                               bms_temp_u8.ToString() + '$' +                             
                               driver_odometer_u32.ToString() + '$' +
-                              driver_act_velocity_kmh_u8.ToString() + '$' +
+                              driver_actual_velocity_u8.ToString() + '$' +
                               driver_phase_a_current_f32.ToString() + '$' +
                               driver_phase_b_current_f32.ToString() + '$' +
-                              driver_phase_c_current_f32.ToString() + '$' +
                               driver_dc_bus_current_f32.ToString() + '$' +
-                              //driver_phase_a_voltage_f32.ToString() + '$' +
-                              driver_phase_b_voltage_f32.ToString() + '$' +
-                              driver_phase_c_voltage_f32.ToString() + '$' +
                               driver_dc_bus_voltage_f32.ToString() + '$' +
-                              driver_motor_temperature_f32.ToString() + '$' +
+                              driver_motor_temperature_u8.ToString() + '$' +
                               driver_id_f32.ToString() + '$' +
                               driver_iq_f32.ToString() + '$' +
                               driver_vd_f32.ToString() + '$' +
                               driver_vq_f32.ToString() + '$' +
                               driver_drive_status_u8.ToString() + '$' +
-                              driver_set_velocity_u8.ToString() + '$' +
+                              vcu_set_velocity_u8.ToString() + '$' +
                               gsm_yenileme.Text + '$' +
-                              driver_drive_command_u8.ToString() + '$' +
+                              vcu_drive_commands_u8.ToString() + '$' +
                               my_maks_hiz.ToString() + '$' +
                               GL_kalan_yol_driver_u32.ToString() + '$' +
-                              vcu_wake_up_command_u8.ToString() + '$' +
+                              vcu_wake_up_u8.ToString() + '$' +
                               driver_error_u8.ToString() + '$' +
                               "\n";
             // File.AppendAllText(pathfile + filename, other_datas + gps_datas + log_data); //OTHER DATAS KULLANILACAK CALC TIME OP DA
             #endregion
             #region wake_up_control
-            if ((vcu_wake_up_command_u8 & 0b00000001) != 0)
+            if ((vcu_wake_up_u8 & 0b00000001) != 0)
             {
                 bms_durum.BackColor = Color.FromArgb(47, 136, 202);
             }
@@ -427,7 +407,7 @@ namespace yeniform
                 bms_durum.BackColor = Color.Transparent;
             }
 
-            if ((vcu_wake_up_command_u8 & 0b00000010) != 0)
+            if ((vcu_wake_up_u8 & 0b00000010) != 0)
             {
                 driver_durum.BackColor = Color.FromArgb(47, 136, 202);
             }
@@ -522,25 +502,21 @@ namespace yeniform
             #endregion
             #region driver_text_write
             gidilen_yol_gps.Text = driver_odometer_u32.ToString();
-            anlik_hiz.Text = driver_act_velocity_kmh_u8.ToString();
+            anlik_hiz.Text = driver_actual_velocity_u8.ToString();
             anlik_hiz_gps.Text = anlik_hiz_u8.ToString();
-            my_maks_hiz = driver_act_velocity_kmh_u8 > my_maks_hiz ? driver_act_velocity_kmh_u8 : my_maks_hiz;
+            my_maks_hiz = driver_actual_velocity_u8 > my_maks_hiz ? driver_actual_velocity_u8 : my_maks_hiz;
             maks_hiz.Text = my_maks_hiz.ToString();
             phase_a_cur.Text = driver_phase_a_current_f32.ToString();
             phase_b_cur.Text = driver_phase_b_current_f32.ToString();
-            phase_c_cur.Text = driver_phase_c_current_f32.ToString();
             dc_bus_cur.Text = driver_dc_bus_current_f32.ToString();
-            phase_a_volt.Text = Math.Round(driver_dc_bus_voltage_f32 * driver_dc_bus_current_f32, 2).ToString();
-            phase_b_volt.Text = driver_phase_b_voltage_f32.ToString();
-            phase_c_volt.Text = driver_phase_c_voltage_f32.ToString();
             dc_bus_volt.Text = driver_dc_bus_voltage_f32.ToString();
-            motor_temp.Text = driver_motor_temperature_f32.ToString();
+            motor_temp.Text = driver_motor_temperature_u8.ToString();
             id.Text = driver_id_f32.ToString();
             act_torque.Text = Math.Round(((float)driver_id_f32 * 0.45), 2).ToString();
             iq.Text = driver_iq_f32.ToString();
             vd.Text = driver_vd_f32.ToString();
             vq.Text = driver_vq_f32.ToString();
-            hedef_hiz.Text = driver_set_velocity_u8.ToString();
+            hedef_hiz.Text = vcu_set_velocity_u8.ToString();
             kalan_yol_gps.Text = GL_kalan_yol_driver_u32.ToString();
             #endregion
             #region statuscommandcontrol
@@ -571,7 +547,7 @@ namespace yeniform
                 driver_ign_status.Text = "IGN OFF";
             }
 
-            if ((driver_drive_command_u8 & 0b00000001) != 0)
+            if ((vcu_drive_commands_u8 & 0b00000001) != 0)
             {
                 driver_fwrv_command.Text = "REVERSE";
             }
@@ -580,7 +556,7 @@ namespace yeniform
                 driver_fwrv_command.Text = "FORWARD";
             }
 
-            if ((driver_drive_command_u8 & 0b00000010) != 0)
+            if ((vcu_drive_commands_u8 & 0b00000010) != 0)
             {
                 driver_brake_command.Text = "BRAKE ON";
             }
@@ -589,7 +565,7 @@ namespace yeniform
                 driver_brake_command.Text = "BRAKE OFF";
             }
 
-            if ((driver_drive_command_u8 & 0b00000100) != 0)
+            if ((vcu_drive_commands_u8 & 0b00000100) != 0)
             {
                 driver_ign_command.Text = "IGN ON";
             }
@@ -657,9 +633,9 @@ namespace yeniform
 
         private void displayGauges()
         {
-            anlikhiz_gauge.Value = (driver_act_velocity_kmh_u8 / 60) * 100;
+            anlikhiz_gauge.Value = (driver_actual_velocity_u8 / 60) * 100;
             gpshiz_gauge.Value = (anlik_hiz_u8 / 60) * 100;
-            hedefhiz_gauge.Value = (driver_set_velocity_u8 / 60) * 100;
+            hedefhiz_gauge.Value = (vcu_set_velocity_u8 / 60) * 100;
         }
 
         private void portToolStripMenuItem_MouseHover(object sender, EventArgs e)
@@ -715,8 +691,6 @@ namespace yeniform
 
         private void bağlanToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //gsm_trigger.Start();
-
             byte code = Client.Connect(Guid.NewGuid().ToString(), "digital", "aesk");
             Client.MqttMsgPublishReceived += Client_MqttMsgPublishReceived;
 
@@ -729,11 +703,11 @@ namespace yeniform
             else
             {
                 //Connection Refused
-                gsm_durum.BackColor = Color.FromArgb(199, 10, 32);
+                gsm_durum.BackColor = Color.Transparent;
             }
 
 
-            //SERVER KABUL ETTI MI BIZI
+            //SERVER BIZI KABUL ETTI MI
             try
             {
                 Client.Subscribe(new string[] { "home/sensor" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE });
@@ -751,11 +725,9 @@ namespace yeniform
         private void bağlantıyıKesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Client.Disconnect();
-            gsm_durum.BackColor = Color.FromArgb(199, 10, 32);
+            gsm_durum.BackColor = Color.Transparent;
             //event kapama
             Client.MqttMsgPublishReceived -= Client_MqttMsgPublishReceived;
-
-
         }
 
         private void bağlanToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -808,30 +780,6 @@ namespace yeniform
 
         }
 
-
-        /*
-        private void gsm_trigger_Tick(object sender, EventArgs e)
-        {
-            WebRequest istek = HttpWebRequest.Create(adres);
-            WebResponse cevap;
-            StreamReader donenbilgiler;
-            try
-            {
-            cevap = istek.GetResponse();
-            donenbilgiler = new StreamReader(cevap.GetResponseStream());
-            data = donenbilgiler.ReadToEnd();
-            gsmDataConvert();
-            }
-
-            catch
-            {
-
-                gsm_durum.BackColor = Color.Transparent;
-                gsm_trigger.Enabled = false;                              
-
-            }
-        }*/
-
         void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
             DateTime gsm_new_time = DateTime.Now;
@@ -839,7 +787,7 @@ namespace yeniform
 
             byte[] mqtt_data = e.Message;
 
-            gsmDataConvert_2(mqtt_data);
+            dataConvert_2(mqtt_data);
             //gsmDataConvert_2(e.Message);
 
             //RECEIVE 
@@ -901,27 +849,23 @@ namespace yeniform
             bms_worst_cell_address_u8 = Convert.ToByte(old_datass[25]);
             bms_temp_u8 = Convert.ToByte(old_datass[26]);
             driver_odometer_u32 = Convert.ToUInt32(old_datass[42]);
-            driver_act_velocity_kmh_u8 = Convert.ToByte(old_datass[43]);
+            driver_actual_velocity_u8 = Convert.ToByte(old_datass[43]);
             driver_phase_a_current_f32 = float.Parse(old_datass[44]);
             driver_phase_b_current_f32 = float.Parse(old_datass[45]);
-            driver_phase_c_current_f32 = float.Parse(old_datass[46]);
             driver_dc_bus_current_f32 = float.Parse(old_datass[47]);
-            //driver_phase_a_voltage_f32 = float.Parse(old_datass[48]);
-            driver_phase_b_voltage_f32 = float.Parse(old_datass[49]);
-            driver_phase_c_voltage_f32 = float.Parse(old_datass[50]);
             driver_dc_bus_voltage_f32 = float.Parse(old_datass[51]);
-            driver_motor_temperature_f32 = float.Parse(old_datass[52]);
+            //driver_motor_temperature_u8 = float.Parse(old_datass[52]);
             driver_id_f32 = float.Parse(old_datass[53]);
             driver_iq_f32 = float.Parse(old_datass[54]);
             driver_vd_f32 = float.Parse(old_datass[55]);
             driver_vq_f32 = float.Parse(old_datass[56]);
             driver_drive_status_u8 = Convert.ToByte(old_datass[57]);
-            driver_set_velocity_u8 = Convert.ToByte(old_datass[58]);
+            vcu_set_velocity_u8 = Convert.ToByte(old_datass[58]);
             gsm_yenileme.Text = old_datass[59];
-            driver_drive_command_u8 = Convert.ToByte(old_datass[60]);
+            vcu_drive_commands_u8 = Convert.ToByte(old_datass[60]);
             my_maks_hiz = Convert.ToByte(old_datass[61]);
             GL_kalan_yol_driver_u32 = Convert.ToUInt32(old_datass[62]);
-            vcu_wake_up_command_u8 = Convert.ToByte(old_datass[63]);
+            vcu_wake_up_u8 = Convert.ToByte(old_datass[63]);
             driver_error_u8 = Convert.ToByte(old_datass[64]);
             history_gps_write(old_latitudes, old_longtitudes);
             displayAllData();
@@ -931,16 +875,9 @@ namespace yeniform
         static UInt32 GL_tour_distance_gps_old_u32;
         static string anlik_tur_suresi_old;
         static UInt32 GL_gidilen_yol_tour_u32;
-        static UInt32 GL_gidilen_yol_toplayici_u32;
-        static UInt32 i = 0;
         static float GL_ems_bat_cons_tour_f32;
-        static float GL_ems_bat_cons_tour_toplayici_f32;
         static float GL_ems_fc_cons_tour_f32;
-        static float GL_ems_fc_cons_tour_toplayici_f32;
         static float GL_ems_fc_lt_cons_tour_f32;
-        static float GL_ems_fc_lt_cons_tour_toplayici_f32;
-        static float GL_ems_out_cons_tour_f32;
-        static float GL_ems_out_cons_tour_toplayici_f32;
 
         void history_gps_write(double latitude, double longtitude)
         {
@@ -968,6 +905,5 @@ namespace yeniform
             gmap.Zoom += 0.00000001;
             gmap.Zoom -= 0.00000001;
         }
-
     }
 }
