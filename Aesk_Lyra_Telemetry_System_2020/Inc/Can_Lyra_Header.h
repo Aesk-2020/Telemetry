@@ -113,7 +113,7 @@ typedef union
 		uint8_t Fatal_Error			 :1;
 		uint8_t Reserved             :1;
 	}State_Data_Error;
-	uint8_t bms_state_data_error_u8;
+	uint8_t bms_error_u8;
 }Bms_State_Union;
 
 typedef union
@@ -125,8 +125,8 @@ typedef union
 		uint8_t Dc_Bus_Ready   : 1;
 		uint8_t Reserved             :5;
 	}Bms_State_Data_Dc_Bus_State;
-	uint8_t bms_state_data_dc_bus_state_u8;
-}Bms_Dc_Bus_State_union;
+	uint8_t dc_bus_state_u8;
+}Dc_Bus_State_union;
 
 typedef struct
 {
@@ -138,7 +138,7 @@ typedef struct
 	uint8_t  Worst_Cell_Address_u8;
 	uint8_t  Temperature_u8;
 	Bms_State_Union bms_error;
-	Bms_Dc_Bus_State_union bms_dc_bus_state;
+	Dc_Bus_State_union dc_bus_state;
 }Bms_Datas;
 
 

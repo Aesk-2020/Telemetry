@@ -85,7 +85,7 @@ static void MX_USART3_UART_Init(void);
 /* USER CODE BEGIN PFP */
 void Gsm_Calibration(Gsm_Datas* gsm_data);
 static void MX_USART1_UART_Init_New(void);
-void createMQTTPackage(LyraDatas *lyradata, uint8_t* packBuf, uint16_t index);
+void createMQTTPackage(LyraDatas *lyradata, uint8_t* packBuf, uint16_t *index);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -602,7 +602,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		task_counter_10_ms = 0;
 	}
 
-	if(task_counter_60_ms == 60)
+	if(task_counter_60_ms == 30)
 	{
 		time_task.Time_Task.Task_60_ms = TRUE;
 		task_counter_60_ms = 0;
@@ -843,9 +843,10 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 
 		    topicString.cstring = "home/sensor";
 		    char atcommand[255];
-		    static uint32_t counter = 0;
-		    counter++;
-		    gsm_data->mqtt_len = MQTTSerialize_publish(gsm_data->gsmpublishpackage, (int)sizeof(gsm_data->gsmpublishpackage), 0, 0, 0, 0, topicString, "hello", strlen("hello"));
+
+		    uint16_t index = 0;
+		    createMQTTPackage(&lyradata, gsm_data->MQTTPackage, &index);
+		    gsm_data->mqtt_len = MQTTSerialize_publish(gsm_data->gsmpublishpackage, (int)sizeof(gsm_data->gsmpublishpackage), 0, 0, 0, 0, topicString, gsm_data->MQTTPackage, index);
 			sprintf(atcommand,(const char*)"AT+CIPSEND=%d\r\n", gsm_data->mqtt_len);
 			SendATCommand(gsm_data, atcommand, "\r\n>");
 			gsm_data->gsm_state_next_index = SendMQTTPublishPack;
@@ -864,22 +865,58 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 	}
 }
 
-void createMQTTPackage(LyraDatas *lyradata, uint8_t* packBuf, uint16_t index)
+void createMQTTPackage(LyraDatas *lyradata, uint8_t* packBuf, uint16_t *index)
 {
-	AESK_UINT8toUINT8CODE(&(lyradata->vcu_data.wake_up_union.wake_up_u8), packBuf, &index);
-	AESK_UINT8toUINT8CODE(&(lyradata->vcu_data.drive_command_union.drive_command_u8), packBuf, &index);
-	AESK_UINT8toUINT8CODE(&(lyradata->vcu_data.set_velocity_u8), packBuf, &index);
+	AESK_UINT8toUINT8CODE(&lyradata->vcu_data.wake_up_union.wake_up_u8, packBuf, index);
+	AESK_UINT8toUINT8CODE(&lyradata->vcu_data.drive_command_union.drive_command_u8, packBuf, index);
+	AESK_UINT8toUINT8CODE(&lyradata->vcu_data.set_velocity_u8, packBuf, index);
 	int16_t phase_a_current_s16 = (int16_t)(lyradata->driver_data.Phase_A_Current_f32 * FLOAT_CONVERTER_2);
 	int16_t phase_b_current_s16 = (int16_t)(lyradata->driver_data.Phase_B_Current_f32 * FLOAT_CONVERTER_2);
 	uint16_t dc_bus_voltage_u16 = (uint16_t)(lyradata->driver_data.Dc_Bus_voltage_f32 * FLOAT_CONVERTER_1);
 	int16_t dc_bus_current_s16 = (int16_t)(lyradata->driver_data.Dc_Bus_Current_f32 * FLOAT_CONVERTER_2);
 	int16_t id_f32 = (int16_t)(lyradata->driver_data.Id_f32 * FLOAT_CONVERTER_2);
 	int16_t iq_f32 = (int16_t)(lyradata->driver_data.Iq_f32 * FLOAT_CONVERTER_2);
-	int16_t Vd_f32 = (int16_t)(lyradata->driver_data.Vd_f32 * FLOAT_CONVERTER_2);
-	AESK_INT16toUINT8_LE(&phase_a_current_s16, packBuf, &index);
-	AESK_INT16toUINT8_LE(&phase_b_current_s16, packBuf, &index);
-	AESK_INT16toUINT8_LE(&dc_bus_current_s16, packBuf, &index);
-	AESK_UINT16toUINT8_LE(&dc_bus_voltage_u16, packBuf, &index);
+	int16_t vd_f32 = (int16_t)(lyradata->driver_data.Vd_f32 * FLOAT_CONVERTER_2);
+	int16_t vq_f32 = (int16_t)(lyradata->driver_data.Vq_f32 * FLOAT_CONVERTER_2);
+	AESK_INT16toUINT8_LE(&phase_a_current_s16, packBuf, index);
+	AESK_INT16toUINT8_LE(&phase_b_current_s16, packBuf, index);
+	AESK_INT16toUINT8_LE(&dc_bus_current_s16, packBuf, index);
+	AESK_UINT16toUINT8_LE(&dc_bus_voltage_u16, packBuf, index);
+	AESK_INT16toUINT8_LE(&id_f32, packBuf, index);
+	AESK_INT16toUINT8_LE(&iq_f32, packBuf, index);
+	AESK_INT16toUINT8_LE(&vd_f32, packBuf, index);
+	AESK_INT16toUINT8_LE(&vq_f32, packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->driver_data.drive_status_union.drive_status_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->driver_data.driver_error_union.driver_error_u8), packBuf, index);
+	AESK_UINT32toUINT8_LE(&(lyradata->driver_data.Odometer_u32), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->driver_data.Motor_Temperature_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->driver_data.actual_velocity_u8), packBuf, index);
+	uint16_t bat_volt_u16 = (uint16_t)(lyradata->bms_data.Bat_Voltage_f32 * FLOAT_CONVERTER_1);
+	int16_t  bat_cur_s16 = (int16_t)(lyradata->bms_data.Bat_Current_f32 * FLOAT_CONVERTER_2);
+	uint16_t bat_cons_u16 = (uint16_t)(lyradata->bms_data.Bat_Cons_f32 * FLOAT_CONVERTER_1);
+	uint16_t soc_u16 = (uint16_t)(lyradata->bms_data.Soc_f32 * FLOAT_CONVERTER_2);
+	uint16_t worst_cell_voltage_u16 = (uint16_t)(lyradata->bms_data.Worst_Cell_Voltage_f32 * FLOAT_CONVERTER_1);
+	AESK_UINT16toUINT8_LE(&bat_volt_u16, packBuf, index);
+	AESK_INT16toUINT8_LE(&bat_cur_s16, packBuf, index);
+	AESK_UINT16toUINT8_LE(&bat_cons_u16, packBuf, index);
+	AESK_UINT16toUINT8_LE(&soc_u16, packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_error.bms_error_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.dc_bus_state.dc_bus_state_u8), packBuf, index);
+	AESK_UINT16toUINT8_LE(&worst_cell_voltage_u16, packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.Worst_Cell_Address_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.Temperature_u8), packBuf, index);
+	static uint32_t MQTT_Counter = 0;
+	MQTT_Counter++;
+	AESK_UINT32toUINT8_LE(&MQTT_Counter, packBuf, index);
+
+
+
+
+
+
+
+
+
 
 
 
