@@ -86,7 +86,11 @@ namespace yeniform
         UInt32 MQTT_counter_u32;
 
         ListBox gelenler = new ListBox();
+
+        bool mqtt_flag = false;
         bool error_flagg = false;
+        bool timer_flag = false;
+
         string[] ports = SerialPort.GetPortNames();
         static readonly int max_incoming = 32;
         byte[] captured_data = new byte[max_incoming + 1];
@@ -123,16 +127,43 @@ namespace yeniform
             gmap.MinZoom = 5;
             gmap.Zoom = 17;
 
-            timer1.Start();
-
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            maks_hiz.Text = captured_data[5].ToString();
+            if (timer_flag == false)
+            {
+                double delay_second = (DateTime.Now - mqtt_reference_time).TotalSeconds;
+                if (delay_second > 3)
+                {
+                    
+                    gsm_durum.BackColor = Color.Transparent;
+                    try
+                    {
+                        if (serialPort1.IsOpen == false)
+                        {
+                            serialPort1.PortName = port_selected;
+                            serialPort1.BaudRate = 9600;
+                            serialPort1.Open();
+                            serialPort1.DataReceived += new SerialDataReceivedEventHandler(serialPort1_DataReceived);
+                            timer_flag = true;
+                            if (serialPort1.IsOpen == true)
+                            {
+                                xbee_active.BackColor = Color.FromArgb(47, 136, 202);
+                            }
+                        }
+                    }
+                    catch
+                    {
+                        if (error_flagg == false)
+                        {
+                            error_flagg = true;
+                            MessageBox.Show("Bağlanılamadı", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }         
         }
-
 
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
@@ -689,16 +720,19 @@ namespace yeniform
             gmap.Zoom -= 0.00000001;
         }
 
+        DateTime mqtt_reference_time;
+
         private void bağlanToolStripMenuItem_Click(object sender, EventArgs e)
         {
             byte code = Client.Connect(Guid.NewGuid().ToString(), "digital", "aesk");
             Client.MqttMsgPublishReceived += Client_MqttMsgPublishReceived;
-
+            
             //SERVERDEN YANIT BAGLANDI BAGLANILAMADI
             if (code == 0x00)
             {
                 //Connected
                 gsm_durum.BackColor = Color.FromArgb(47, 136, 202);
+                timer1.Start();
             }
             else
             {
@@ -719,7 +753,7 @@ namespace yeniform
 
             }
 
-            DateTime a = DateTime.Now;
+            mqtt_reference_time = DateTime.Now;
         }
 
         private void bağlantıyıKesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -783,7 +817,7 @@ namespace yeniform
         void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
             DateTime gsm_new_time = DateTime.Now;
-            double total_sec = (gsm_new_time - gsm_old_time).TotalSeconds;
+            double total_sec = (gsm_new_time - mqtt_reference_time).TotalSeconds;
 
             byte[] mqtt_data = e.Message;
 
@@ -794,7 +828,7 @@ namespace yeniform
             displayAllData();
 
             //RECEIVE
-            gsm_old_time = gsm_new_time;
+            mqtt_reference_time = gsm_new_time;
         }
 
 
@@ -905,5 +939,6 @@ namespace yeniform
             gmap.Zoom += 0.00000001;
             gmap.Zoom -= 0.00000001;
         }
+
     }
 }
