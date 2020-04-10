@@ -779,22 +779,29 @@ namespace yeniform
         {
 
         }
-
+        public static DateTime old_time;
+        public static double totalTime = 0;
+        public static UInt32 counter = 0;
         void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
-            DateTime gsm_new_time = DateTime.Now;
-            double total_sec = (gsm_new_time - gsm_old_time).TotalSeconds;
+            if (counter == 0)
+            {
+                old_time = DateTime.Now;
+            }
+            DateTime current_time = DateTime.Now;
+            totalTime += (current_time - old_time).TotalMilliseconds;
 
             byte[] mqtt_data = e.Message;
 
             dataConvert_2(mqtt_data);
-            //gsmDataConvert_2(e.Message);
+            counter++;
+            gsm_yenileme.Text = (totalTime / (double)counter).ToString();
 
             //RECEIVE 
             displayAllData();
 
             //RECEIVE
-            gsm_old_time = gsm_new_time;
+            old_time = current_time;
         }
 
 
