@@ -131,7 +131,6 @@ namespace yeniform
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (timer_flag == false)
             {
                 double delay_second = (DateTime.Now - mqtt_reference_time).TotalSeconds;
                 if (delay_second > 3)
