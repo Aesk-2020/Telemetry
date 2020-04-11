@@ -309,7 +309,7 @@ namespace yeniform
             gps_longtitude_f64 = (float)BitConverter.ToInt64(gelenVeri, 45);
             gps_velocity_u8 = gelenVeri[46];
 
-            MQTT_counter_u32 = BitConverter.ToUInt32(gelenVeri, 41);
+            MQTT_counter_u32 = BitConverter.ToUInt32(gelenVeri, 47);
         }
 
         void gsmDataConvert()
