@@ -15,7 +15,7 @@ using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
-
+using System.Diagnostics;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
 
@@ -31,7 +31,7 @@ namespace yeniform
         }
 
         static int crc_hesaplanan = 0;
-        
+        string other_datas;
         #region veri
         float my_old_gsm_time = 0;
         float refresh_time;
@@ -68,6 +68,12 @@ namespace yeniform
         byte vcu_set_velocity_u8;
         byte vcu_drive_commands_u8;
 
+        //RF Kontrol
+        UInt16 GL_baslik_hatali_u16;
+        UInt16 GL_crc_hatali_u16;
+        UInt32 GL_gelen_bayt_u32;
+        UInt16 GL_cozulen_paket_u16;
+
         //Arayüz verileri
         byte my_maks_hiz = 0;
         double gps_latitude_f64 = 40.744392;
@@ -101,7 +107,7 @@ namespace yeniform
         readonly Int32 start1lat = 40744392;
         readonly Int32 start1long = 29786054;
         string port_selected;
-      //  Stopwatch anlik_tur_süresi_time = new Stopwatch();
+        Stopwatch anlik_tur_süresi_time = new Stopwatch();
         TimeSpan gecen_sure_calc;
         TimeSpan ortalama_tur_suresi_time;
         DateTime race_start_time;
@@ -132,37 +138,36 @@ namespace yeniform
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            calculateTimeOperation();           
+            double delay_second = (DateTime.Now - mqtt_reference_time).TotalSeconds;
+            if (delay_second > 3)
             {
-                double delay_second = (DateTime.Now - mqtt_reference_time).TotalSeconds;
-                if (delay_second > 3)
+                
+                gsm_durum.BackColor = Color.Transparent;
+                try
                 {
-                    
-                    gsm_durum.BackColor = Color.Transparent;
-                    try
+                    if (serialPort1.IsOpen == false)
                     {
-                        if (serialPort1.IsOpen == false)
+                        serialPort1.PortName = port_selected;
+                        serialPort1.BaudRate = 9600;
+                        serialPort1.Open();
+                        serialPort1.DataReceived += new SerialDataReceivedEventHandler(serialPort1_DataReceived);
+                        if (serialPort1.IsOpen == true)
                         {
-                            serialPort1.PortName = port_selected;
-                            serialPort1.BaudRate = 9600;
-                            serialPort1.Open();
-                            serialPort1.DataReceived += new SerialDataReceivedEventHandler(serialPort1_DataReceived);
-                            timer_flag = true;
-                            if (serialPort1.IsOpen == true)
-                            {
-                                xbee_active.BackColor = Color.FromArgb(47, 136, 202);
-                            }
-                        }
-                    }
-                    catch
-                    {
-                        if (error_flagg == false)
-                        {
-                            error_flagg = true;
-                            MessageBox.Show("Bağlanılamadı", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            xbee_active.BackColor = Color.FromArgb(47, 136, 202);
                         }
                     }
                 }
-            }         
+                catch
+                {
+                    if (error_flagg == false)
+                    {
+                        error_flagg = true;
+                        MessageBox.Show("Bağlanılamadı", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+                 
         }
 
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
@@ -171,10 +176,9 @@ namespace yeniform
             {
                 int bytes = serialPort1.BytesToRead;
                 byte[] buffer = new byte[bytes];
-
+                GL_gelen_bayt_u32 += (UInt32)bytes;
                 int step = 0;
                 int data_counter = 0;
-                int counter = 0;
 
                 serialPort1.Read(buffer, 0, bytes);
 
@@ -189,12 +193,12 @@ namespace yeniform
                                     
                                     step = 1;
                                     captured_data[data_counter] = buffer[i];
-                                    counter = 1;
                                     data_counter = 1;
                                 }
                                 else
-                                {                                    
-                                                                        
+                                {
+                                    GL_baslik_hatali_u16++;
+                                    step = 0;
                                 }
                                 break;
                             }
@@ -202,34 +206,28 @@ namespace yeniform
                             {
                                 captured_data[data_counter] = buffer[i];
                                 data_counter++;
-                                counter++;
-                                if(buffer[i] == 100)
+                                if(data_counter >= 45) //değişecek
 
                                 {
-                                    step = 0;
-                                    dataConvert(captured_data);
+                                    data_counter = 0;
+                                    //dataConvert(captured_data);
                                     crc_hesaplanan = (captured_data[16] << 8) | captured_data[15]; // crc gelecek yerler tayin ettikten sonra burayı değiştir
                                     ushort gelen_crc = aeskCRCCalculate(captured_data, 15);
-                                    counter = 0;
-                                    data_counter = 0;
-                                }
-                                /*if (counter > 27)
-                                {
-                                    step = 2;
-                                    counter = 0;
-                                    data_counter = 0;
-                                } */
-                                break;
-                            }                       
-                        /*case 2:
-                            {
-                                if (buffer[i] == 100)
-                                {
+                                    if(crc_hesaplanan == gelen_crc)
+                                    {
+                                        GL_cozulen_paket_u16++;
+                                        dataConvert(captured_data);
+                                        displayAllData();
+                                        displayGauges();
+                                    }
+                                    else
+                                    {
+                                        GL_crc_hatali_u16++;
+                                    }
                                     step = 0;
-                                    dataConvert(captured_data); 0101 1100
-                                }
+                                }                              
                                 break;
-                            }*/
+                            }                                    
                         default: break;
                     }
                 }
@@ -431,7 +429,7 @@ namespace yeniform
                               vcu_wake_up_u8.ToString() + '$' +
                               driver_error_u8.ToString() + '$' +
                               "\n";
-            // File.AppendAllText(pathfile + filename, other_datas + gps_datas + log_data); //OTHER DATAS KULLANILACAK CALC TIME OP DA
+           // File.AppendAllText(pathfile + filename, other_datas + gps_datas + log_data); //OTHER DATAS KULLANILACAK CALC TIME OP DA
             #endregion
             #region wake_up_control
             if ((vcu_wake_up_u8 & 0b00000001) != 0)
@@ -540,6 +538,7 @@ namespace yeniform
             gidilen_yol_gps.Text = driver_odometer_u32.ToString();
             anlik_hiz.Text = driver_actual_velocity_u8.ToString();
             anlik_hiz_gps.Text = anlik_hiz_u8.ToString();
+            set_hiz.Text = vcu_set_velocity_u8.ToString();
             my_maks_hiz = driver_actual_velocity_u8 > my_maks_hiz ? driver_actual_velocity_u8 : my_maks_hiz;
             maks_hiz.Text = my_maks_hiz.ToString();
             phase_a_cur.Text = driver_phase_a_current_f32.ToString();
@@ -663,6 +662,11 @@ namespace yeniform
             {
                 id_error.BackColor = Color.Transparent;
             }
+            #endregion
+            #region rf_kontrol
+            baslik_hatali.Text = GL_baslik_hatali_u16.ToString();
+            cozulen_paket.Text = GL_cozulen_paket_u16.ToString();
+            crc_hatali.Text = GL_crc_hatali_u16.ToString();
             #endregion
 
         }
@@ -959,6 +963,25 @@ namespace yeniform
 
             gmap.Zoom += 0.00000001;
             gmap.Zoom -= 0.00000001;
+        }
+
+        void calculateTimeOperation()
+        {
+            gecen_sure_calc = (DateTime.Now - race_start_time);
+            ortalama_tur_suresi.Text = ortalama_tur_suresi_time.ToString(@"hh\:mm\:ss");
+            TimeSpan kalan_sure_calc = gecen_sure_calc.Subtract(TimeSpan.FromSeconds(3901));
+            hedef_hiz.Text = Math.Round((-(GL_kalan_yol_driver_u32 / kalan_sure_calc.TotalSeconds) * 3.6), 2).ToString();
+            ort_hiz.Text = Math.Round(((driver_odometer_u32 / gecen_sure_calc.TotalSeconds) * 3.6), 2).ToString();
+            anlik_tur_suresi.Text = anlik_tur_süresi_time.Elapsed.Duration().ToString(@"hh\:mm\:ss");
+            kalan_sure.Text = kalan_sure_calc.ToString(@"hh\:mm\:ss");
+            gecen_sure.Text = gecen_sure_calc.ToString(@"hh\:mm\:ss");
+            other_datas = ortalama_tur_suresi.Text + '$' + anlik_tur_suresi.Text + '$' + kalan_sure.Text + '$' + gecen_sure.Text + '$' + turr.Text + '$' + ort_hiz.Text + '$' + hedef_hiz.Text + '$';
+            gelen_bayt.Text = GL_gelen_bayt_u32.ToString();
+            baslik_hatali.Text = GL_baslik_hatali_u16.ToString();
+            crc_hatali.Text = GL_crc_hatali_u16.ToString();
+            cozulen_paket.Text = GL_cozulen_paket_u16.ToString();
+            if (GL_gelen_bayt_u32 > 0)
+                verim.Text = Math.Round(((float)GL_cozulen_paket_u16 * 49 / GL_gelen_bayt_u32), 2).ToString();
         }
 
     }
