@@ -31,6 +31,7 @@
 #include "TelemetryGlobalvar.h"
 #include "Can_Lyra_Header.h"
 #include "AESK_Data_Pack_lib.h"
+#include "stdarg.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -62,13 +63,22 @@ UART_HandleTypeDef huart2;
 UART_HandleTypeDef huart3;
 
 /* USER CODE BEGIN PV */
+int SetTime = 0;
 Time_Task_union time_task;
 Xbee_Datas xbee_data;
 Gsm_Datas gsm_data;
 MQTTPacket_connectData connectData = MQTTPacket_connectData_initializer;
 MQTTString topicString = MQTTString_initializer;
 LyraDatas lyradata;
+Sd_Card_Datas sd_card_data;
+GPS_Handle gps_data;
 
+RTC_TimeTypeDef rtctime;
+RTC_DateTypeDef rtcdate;
+
+FATFS myFATAFS;
+FIL myFile;
+UINT testByte;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -85,7 +95,9 @@ static void MX_USART3_UART_Init(void);
 /* USER CODE BEGIN PFP */
 void Gsm_Calibration(Gsm_Datas* gsm_data);
 static void MX_USART1_UART_Init_New(void);
-void createMQTTPackage(LyraDatas *lyradata, uint8_t* packBuf, uint16_t *index);
+void createMQTTPackage(LyraDatas *lyradata, GPS_Handle*gps_data, uint8_t* packBuf, uint16_t *index);
+void RTC_Set_Time_Date();
+void vars_to_str(char *buffer, const char *format, ...);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -133,6 +145,15 @@ int main(void)
   /* USER CODE BEGIN 2 */
    gsm_data.gsm_uart = &huart1;
 
+   RTC_Set_Time_Date();
+   if(f_mount(&myFATAFS, SDPath, 1) == FR_OK)
+   {
+ 	  HAL_RTC_GetTime(&hrtc, &rtctime, RTC_FORMAT_BIN);
+       HAL_RTC_GetDate(&hrtc, &rtcdate, RTC_FORMAT_BIN);
+       sd_card_data.state = SD_Card_Detect;
+       sprintf(sd_card_data.path, "%d_%d_%d.txt", rtcdate.Date, rtcdate.Month, rtcdate.Year/*, stime.Hours, stime.Minutes*/);//.txt'nin yanýna \0 konmuþtu neden ?
+
+   }
 
    	GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin;
     HAL_Delay(1500);
@@ -142,6 +163,7 @@ int main(void)
     HAL_Delay(800);
     GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin << 16U;
     HAL_Delay(10000);
+
 
     HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
     HAL_UART_Receive_IT(&huart3, &xbee_data.receiveData, 1);
@@ -162,6 +184,35 @@ int main(void)
 		  Gsm_Calibration(&gsm_data);
 		  time_task.Time_Task.Task_30_ms = FALSE;
 	  }
+
+	  if(time_task.Time_Task.Task_10_ms == TRUE)
+	 	  {
+
+	 		  if(sd_card_data.state == SD_Card_Detect)
+	 		  {
+
+	 			  HAL_RTC_GetTime(&hrtc, &rtctime, RTC_FORMAT_BIN);
+	 			  HAL_RTC_GetDate(&hrtc, &rtcdate, RTC_FORMAT_BIN);
+
+	 			 vars_to_str((char *)sd_card_data.transmitBuf, "%d$%d$%d$%.2f$%.2f$%.2f$%.1f$%.2f$%.2f$%.2f$%.2f$%d$%d$%d$%d$%d$%.1f$%.2f$%.1f$%.2f$%d$%d$%.1f$%d$%d$%.6f$%.6f$%d\n",
+	 					 	 	 	 	 	 	 	 	 	 	 lyradata.vcu_data.wake_up_union.wake_up_u8, lyradata.vcu_data.drive_command_union.drive_command_u8, lyradata.vcu_data.set_velocity_u8,
+																 lyradata.driver_data.Phase_A_Current_f32, lyradata.driver_data.Phase_B_Current_f32, lyradata.driver_data.Dc_Bus_Current_f32,
+																 lyradata.driver_data.Id_f32, lyradata.driver_data.Iq_f32, lyradata.driver_data.Vd_f32, lyradata.driver_data.Vq_f32,
+																 lyradata.driver_data.drive_status_union.drive_status_u8, lyradata.driver_data.driver_error_union.driver_error_u8, lyradata.driver_data.Odometer_u32,
+																 lyradata.driver_data.Motor_Temperature_u8, lyradata.driver_data.actual_velocity_u8, lyradata.bms_data.Bat_Voltage_f32,
+																 lyradata.bms_data.Bat_Current_f32, lyradata.bms_data.Bat_Cons_f32, lyradata.bms_data.Soc_f32, lyradata.bms_data.bms_error.bms_error_u8,
+																 lyradata.bms_data.dc_bus_state.dc_bus_state_u8, lyradata.bms_data.Worst_Cell_Voltage_f32, lyradata.bms_data.Worst_Cell_Address_u8,
+																 lyradata.bms_data.Temperature_u8, gps_data.latitude_f32, gps_data.longtitude_f32, gps_data.speed_u8);
+	 			  vars_to_str((char *)sd_card_data.total_log, "%d:%d:%d$", rtctime.Hours, rtctime.Minutes, rtctime.Seconds);
+	 			  strcat(sd_card_data.total_log, (const char*)sd_card_data.transmitBuf);
+	 			  f_open(&myFile, sd_card_data.path, FA_WRITE | FA_OPEN_APPEND);
+	 			  f_write(&myFile, sd_card_data.total_log, strlen(sd_card_data.total_log), &testByte);
+	 			  f_close(&myFile);
+	 		  }
+	 		  time_task.Time_Task.Task_10_ms = FALSE;
+
+	 	  }
+
   }
   /* USER CODE END 3 */
 }
@@ -306,6 +357,9 @@ static void MX_RTC_Init(void)
 
   /* USER CODE END RTC_Init 0 */
 
+  RTC_TimeTypeDef sTime = {0};
+  RTC_DateTypeDef sDate = {0};
+
   /* USER CODE BEGIN RTC_Init 1 */
 
   /* USER CODE END RTC_Init 1 */
@@ -319,6 +373,31 @@ static void MX_RTC_Init(void)
   hrtc.Init.OutPutPolarity = RTC_OUTPUT_POLARITY_HIGH;
   hrtc.Init.OutPutType = RTC_OUTPUT_TYPE_OPENDRAIN;
   if (HAL_RTC_Init(&hrtc) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /* USER CODE BEGIN Check_RTC_BKUP */
+    
+  /* USER CODE END Check_RTC_BKUP */
+
+  /** Initialize RTC and set the Time and Date 
+  */
+  sTime.Hours = 0x0;
+  sTime.Minutes = 0x0;
+  sTime.Seconds = 0x0;
+  sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
+  sTime.StoreOperation = RTC_STOREOPERATION_SET;
+  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BCD) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sDate.WeekDay = RTC_WEEKDAY_MONDAY;
+  sDate.Month = RTC_MONTH_JANUARY;
+  sDate.Date = 0x1;
+  sDate.Year = 0x0;
+
+  if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BCD) != HAL_OK)
   {
     Error_Handler();
   }
@@ -532,11 +611,11 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(CAN1_STDBY_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : SDIO_CD_Pin */
-  GPIO_InitStruct.Pin = SDIO_CD_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
+  /*Configure GPIO pin : PA8 */
+  GPIO_InitStruct.Pin = GPIO_PIN_8;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(SDIO_CD_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pin : GSM_ON_OFF_Pin */
   GPIO_InitStruct.Pin = GSM_ON_OFF_Pin;
@@ -550,10 +629,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(GSM_STATUS_GPIO_Port, &GPIO_InitStruct);
-
-  /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
 
 }
 
@@ -854,7 +929,7 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 		    char atcommand[255];
 
 		    uint16_t index = 0;
-		    createMQTTPackage(&lyradata, gsm_data->MQTTPackage, &index);
+		    createMQTTPackage(&lyradata, &gps_data, gsm_data->MQTTPackage, &index);
 		    gsm_data->mqtt_len = MQTTSerialize_publish(gsm_data->gsmpublishpackage, (int)sizeof(gsm_data->gsmpublishpackage), 0, 0, 0, 0, topicString, gsm_data->MQTTPackage, index);
 			sprintf(atcommand,(const char*)"AT+CIPSEND=%d\r\n", gsm_data->mqtt_len);
 			SendATCommand(gsm_data, atcommand, "\r\n>");
@@ -962,7 +1037,7 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 	}
 }
 
-void createMQTTPackage(LyraDatas *lyradata, uint8_t* packBuf, uint16_t *index)
+void createMQTTPackage(LyraDatas *lyradata, GPS_Handle*gps_data, uint8_t* packBuf, uint16_t *index)
 {
 	AESK_UINT8toUINT8CODE(&lyradata->vcu_data.wake_up_union.wake_up_u8, packBuf, index);
 	AESK_UINT8toUINT8CODE(&lyradata->vcu_data.drive_command_union.drive_command_u8, packBuf, index);
@@ -1002,27 +1077,37 @@ void createMQTTPackage(LyraDatas *lyradata, uint8_t* packBuf, uint16_t *index)
 	AESK_UINT16toUINT8_LE(&worst_cell_voltage_u16, packBuf, index);
 	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.Worst_Cell_Address_u8), packBuf, index);
 	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.Temperature_u8), packBuf, index);
+	AESK_FLOAT32toUINT8_LE(&(gps_data->latitude_f32), packBuf, index);
+	AESK_FLOAT32toUINT8_LE(&(gps_data->longtitude_f32), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(gps_data->speed_u8), packBuf, index);
 	static uint32_t MQTT_Counter = 0;
 	MQTT_Counter++;
 	AESK_UINT32toUINT8_LE(&MQTT_Counter, packBuf, index);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+	SetTime = 53;
+}
+
+
+void RTC_Set_Time_Date()
+{
+	if(SetTime == 1)
+	{
+	HAL_RTC_SetTime(&hrtc, &rtctime, RTC_FORMAT_BIN);
+	HAL_RTC_SetDate(&hrtc, &rtcdate, RTC_FORMAT_BIN);
+	SetTime = 0;
+	}
+}
+
+void vars_to_str(char *buffer, const char *format, ...)
+{
+	va_list args;
+	va_start (args, format);
+	vsprintf (buffer, format, args);
+	va_end (args);
+}
 /* USER CODE END 4 */
 
 /**

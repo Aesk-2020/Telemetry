@@ -54,10 +54,10 @@ typedef enum
 
 typedef struct
 {
-	uint8_t transmitBuf[200];
+	uint8_t transmitBuf[400];
 	char path[200];
 	uint8_t state;
-
+	char total_log[400];
 }Sd_Card_Datas;
 
 typedef struct

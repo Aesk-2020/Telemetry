@@ -42,8 +42,8 @@ typedef struct
 	char gpsLatitudeArray[20];
 	char gpsLongtitudeArray[20];
 	char gpsSpeedKnotArray[20];
-	double latitude_f64;
-	double longtitude_f64;
+	float latitude_f32;
+	float longtitude_f32;
 	uint8_t speed_u8;
 	uint8_t gpsEfficiency_u8;
 	GPS_ErrorHandle gps_errorhandler;

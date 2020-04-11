@@ -138,8 +138,8 @@ void GPRMC_Parser(GPS_Handle *gpsDatas)
 				memcpy(gpsDatas->gpsLongtitudeArray, Find_Comma_Address((const char *)gpsDatas->gpsDatasArray, LONGTITUDE_START_COMMA), Find_Comma_Address((const char *)gpsDatas->gpsDatasArray, LONGTITUDE_STOP_COMMA) - Find_Comma_Address((const char *)gpsDatas->gpsDatasArray, LONGTITUDE_START_COMMA) - 1);
 				memcpy(gpsDatas->gpsSpeedKnotArray, Find_Comma_Address((const char *)gpsDatas->gpsDatasArray, KNOT_START_COMMA), Find_Comma_Address((const char *)gpsDatas->gpsDatasArray, KNOT_STOP_COMMA) - Find_Comma_Address((const char *)gpsDatas->gpsDatasArray, KNOT_START_COMMA) - 1);
 				gpsDatas->speed_u8 = atoi((const char *)gpsDatas->gpsSpeedKnotArray) * KNOT_TO_KMH_CONVERTER;
-			    gpsDatas->latitude_f64 = convertDegMinToDecDeg(atof(gpsDatas->gpsLatitudeArray));
-			    gpsDatas->longtitude_f64 = convertDegMinToDecDeg(atof(gpsDatas->gpsLongtitudeArray));
+			    gpsDatas->latitude_f32 = (float)convertDegMinToDecDeg(atof(gpsDatas->gpsLatitudeArray));
+			    gpsDatas->longtitude_f32 = (float)convertDegMinToDecDeg(atof(gpsDatas->gpsLongtitudeArray));
 			    gpsDatas->gps_errorhandler.trueData_u32++;
 
 

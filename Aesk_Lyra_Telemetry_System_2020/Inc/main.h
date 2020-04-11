@@ -70,9 +70,6 @@ void Error_Handler(void);
 #define CAN2_STDBY_GPIO_Port GPIOB
 #define CAN1_STDBY_Pin GPIO_PIN_9
 #define CAN1_STDBY_GPIO_Port GPIOC
-#define SDIO_CD_Pin GPIO_PIN_8
-#define SDIO_CD_GPIO_Port GPIOA
-#define SDIO_CD_EXTI_IRQn EXTI9_5_IRQn
 #define GSM_RXD_Pin GPIO_PIN_9
 #define GSM_RXD_GPIO_Port GPIOA
 #define GSM_TXD_Pin GPIO_PIN_10
