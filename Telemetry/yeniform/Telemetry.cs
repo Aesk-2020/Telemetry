@@ -70,8 +70,9 @@ namespace yeniform
 
         //Arayüz verileri
         byte my_maks_hiz = 0;
-        double latitude_f64 = 40.744392;
-        double longtitude_f64 = 29.786054;
+        double gps_latitude_f64 = 40.744392;
+        double gps_longtitude_f64 = 29.786054;
+        byte gps_velocity_u8;
         byte anlik_hiz_u8;
         double ortalama_hiz_f32;
         double ortalama_hiz_vcu_f32;
@@ -305,6 +306,11 @@ namespace yeniform
             bms_worst_cell_voltage_f32 = (float)BitConverter.ToUInt16(gelenVeri, 37) / 10;
             bms_worst_cell_address_u8 = gelenVeri[39];
             bms_temp_u8 = gelenVeri[40];
+
+            gps_latitude_f64 = (float)BitConverter.ToInt64(gelenVeri, 41);
+            gps_longtitude_f64 = (float)BitConverter.ToInt64(gelenVeri, 45);
+            gps_velocity_u8 = gelenVeri[46];
+
             MQTT_counter_u32 = BitConverter.ToUInt32(gelenVeri, 41);
         }
 
@@ -371,8 +377,8 @@ namespace yeniform
 
             try
             {
-                latitude_f64 = (double)Convert.ToDouble(dataarray[20]);
-                longtitude_f64 = (double)Convert.ToDouble(dataarray[21]);
+                gps_latitude_f64 = (double)Convert.ToDouble(dataarray[20]);
+                gps_longtitude_f64 = (double)Convert.ToDouble(dataarray[21]);
             }
             catch
             {
@@ -664,7 +670,7 @@ namespace yeniform
         private void displayGauges()
         {
             anlikhiz_gauge.Value = (driver_actual_velocity_u8 / 60) * 100;
-            gpshiz_gauge.Value = (anlik_hiz_u8 / 60) * 100;
+            gpshiz_gauge.Value = (gps_velocity_u8 / 60) * 100;
             hedefhiz_gauge.Value = (vcu_set_velocity_u8 / 60) * 100;
         }
 
@@ -837,7 +843,7 @@ namespace yeniform
 
             //RECEIVE 
             displayAllData();
-
+            displayGauges();
             //RECEIVE
 
             old_time = current_time;
