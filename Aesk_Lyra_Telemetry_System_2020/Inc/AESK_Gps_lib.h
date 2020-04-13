@@ -26,7 +26,6 @@
 #define PERCENTAGE_CONVERTER				100
 typedef struct
 {
-	uint32_t headerError_u32;
 	uint32_t checksumError_u32;
 	uint32_t validDataError_u32;
 	uint32_t trueData_u32;
@@ -42,10 +41,12 @@ typedef struct
 	char gpsLatitudeArray[20];
 	char gpsLongtitudeArray[20];
 	char gpsSpeedKnotArray[20];
+	char gpsSatelliteNumberArray[20];
 	float latitude_f32;
 	float longtitude_f32;
 	uint8_t speed_u8;
 	uint8_t gpsEfficiency_u8;
+	uint8_t satellite_number_u8;
 	GPS_ErrorHandle gps_errorhandler;
 
 }GPS_Handle;
@@ -55,7 +56,7 @@ void AESK_Receive_Interrupt_Control(UART_HandleTypeDef *huart, GPS_Handle *gpsDa
 void GPRMC_Parser(GPS_Handle *gpsDatas);
 void GPS_Control(GPS_Handle *gpsDatas);
 uint16_t CHECKSUM_Find(const char *data);
-uint16_t NMEA_CheckSum(const char * data);
+uint16_t NMEA_CheckSum(const char * data, char* startSearch);
 uint8_t Hex2Int(char c);
 char* Find_Comma_Address(const char * data, uint8_t commaNumber);
 double convertDegMinToDecDeg(float degMin);

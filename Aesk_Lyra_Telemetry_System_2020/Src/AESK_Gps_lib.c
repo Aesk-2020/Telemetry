@@ -19,10 +19,9 @@ uint16_t CHECKSUM_Find(const char *data)
 }
 
 
-uint16_t NMEA_CheckSum(const char * data)
+uint16_t NMEA_CheckSum(const char * data, char* startSearch)
 {
 	uint16_t CHK = 0;
-	char *startSearch = strchr(data, '$') + 2;
 	char *finishSearch = strchr(data, '*');
 
 	while(startSearch != finishSearch)
@@ -127,10 +126,11 @@ void GPS_Control(GPS_Handle *gpsDatas)
 
 void GPRMC_Parser(GPS_Handle *gpsDatas)
 {
-	char* startAddress = strstr((const char*)gpsDatas->gpsDatasArray, "$GPRMC");
-	if (startAddress && gpsDatas->gpsDatasArray[0] == '$')
+	char* startAddressGPRMC = strstr((const char*)gpsDatas->gpsDatasArray, "$GPRMC");
+	char* startAddressGPGGA = strstr((const char*)gpsDatas->gpsDatasArray, "$GPGGA");
+	if(startAddressGPRMC != NULL)
 	{
-		if (NMEA_CheckSum((const char *)gpsDatas->gpsDatasArray) == CHECKSUM_Find((const char *)gpsDatas->gpsDatasArray))
+		if (NMEA_CheckSum((const char *)gpsDatas->gpsDatasArray, startAddressGPRMC + 1) == CHECKSUM_Find((const char *)gpsDatas->gpsDatasArray))
 		{
 			if (*Find_Comma_Address((const char *)gpsDatas->gpsDatasArray, VALID_CONTROL_COMMA) == 'A')
 			{
@@ -141,8 +141,6 @@ void GPRMC_Parser(GPS_Handle *gpsDatas)
 			    gpsDatas->latitude_f32 = (float)convertDegMinToDecDeg(atof(gpsDatas->gpsLatitudeArray));
 			    gpsDatas->longtitude_f32 = (float)convertDegMinToDecDeg(atof(gpsDatas->gpsLongtitudeArray));
 			    gpsDatas->gps_errorhandler.trueData_u32++;
-
-
 			 }
 
 			else
@@ -150,18 +148,38 @@ void GPRMC_Parser(GPS_Handle *gpsDatas)
 				gpsDatas->gps_errorhandler.validDataError_u32++;
 			}
 		}
-
 		else
 		{
-			gpsDatas->gps_errorhandler.checksumError_u32++;
+		gpsDatas->gps_errorhandler.checksumError_u32++;
 		}
 
 	}
 
-	else
+	else if(startAddressGPGGA != NULL)
 	{
-		gpsDatas->gps_errorhandler.headerError_u32++;
+		if (NMEA_CheckSum((const char *)gpsDatas->gpsDatasArray, startAddressGPGGA + 1) == CHECKSUM_Find((const char *)gpsDatas->gpsDatasArray))
+		{
+			if (*Find_Comma_Address((const char *)gpsDatas->gpsDatasArray, 6) == '1')
+			{
+				memcpy(gpsDatas->gpsLatitudeArray, Find_Comma_Address((const char *)gpsDatas->gpsDatasArray, 2), Find_Comma_Address((const char *)gpsDatas->gpsDatasArray, 3) - Find_Comma_Address((const char *)gpsDatas->gpsDatasArray, 2) - 1);
+				memcpy(gpsDatas->gpsLongtitudeArray, Find_Comma_Address((const char *)gpsDatas->gpsDatasArray, 4), Find_Comma_Address((const char *)gpsDatas->gpsDatasArray, 5) - Find_Comma_Address((const char *)gpsDatas->gpsDatasArray, 4) - 1);
+				memcpy(gpsDatas->gpsSatelliteNumberArray, Find_Comma_Address((const char *)gpsDatas->gpsDatasArray, KNOT_START_COMMA), Find_Comma_Address((const char *)gpsDatas->gpsDatasArray, KNOT_STOP_COMMA) - Find_Comma_Address((const char *)gpsDatas->gpsDatasArray, KNOT_START_COMMA) - 1);
+			    gpsDatas->latitude_f32 = (float)convertDegMinToDecDeg(atof(gpsDatas->gpsLatitudeArray));
+			    gpsDatas->longtitude_f32 = (float)convertDegMinToDecDeg(atof(gpsDatas->gpsLongtitudeArray));
+			    gpsDatas->satellite_number_u8 = atoi((const char *)gpsDatas->gpsSatelliteNumberArray);
+			    gpsDatas->gps_errorhandler.trueData_u32++;
+			 }
+
+			else
+			{
+				gpsDatas->gps_errorhandler.validDataError_u32++;
+			}
+		}
+		else
+		{
+		gpsDatas->gps_errorhandler.checksumError_u32++;
+		}
 	}
 
-	gpsDatas->gpsEfficiency_u8 = ((float)gpsDatas->gps_errorhandler.trueData_u32 /(gpsDatas->gps_errorhandler.checksumError_u32 + gpsDatas->gps_errorhandler.headerError_u32 + gpsDatas->gps_errorhandler.validDataError_u32 + gpsDatas->gps_errorhandler.trueData_u32) * PERCENTAGE_CONVERTER);
+	gpsDatas->gpsEfficiency_u8 = ((float)gpsDatas->gps_errorhandler.trueData_u32 /(gpsDatas->gps_errorhandler.checksumError_u32 + gpsDatas->gps_errorhandler.validDataError_u32 + gpsDatas->gps_errorhandler.trueData_u32) * PERCENTAGE_CONVERTER);
 }
