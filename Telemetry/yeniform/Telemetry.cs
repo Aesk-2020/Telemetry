@@ -90,7 +90,8 @@ namespace yeniform
         //MQTT
         MqttClient Client = new MqttClient("157.230.29.63");
         DateTime gsm_old_time;
-        UInt32 MQTT_counter_u32;
+
+        int MQTT_counter_int32 =0;
 
         ListBox gelenler = new ListBox();
 
@@ -309,7 +310,7 @@ namespace yeniform
             gps_longtitude_f64 = (float)BitConverter.ToInt64(gelenVeri, 45);
             gps_velocity_u8 = gelenVeri[46];
 
-            MQTT_counter_u32 = BitConverter.ToUInt32(gelenVeri, 47);
+            MQTT_counter_int32 = BitConverter.ToInt32(gelenVeri, 47);
         }
 
         void gsmDataConvert()
@@ -822,16 +823,30 @@ namespace yeniform
         {
 
         }
+
         public static DateTime old_time;
         public static double totalTime = 0;
-        public static UInt32 counter = 0;
+        public static int mqtt_total_counter = 0;
+        int error_counter = 0;
+
+        int mqtt_counter_old = 0;
+
+
         void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
+            //sayacin eskisini olda atiyoruz
+            mqtt_counter_old = MQTT_counter_int32;
+            
 
-            if (counter == 0)
+            //bu ne mk
+            //counter ++;'i direkt bunun altina aldim
+            // payda 0 olmamali oran hesaplarinda
+            if (mqtt_total_counter == 0)
             {
                 old_time = DateTime.Now;
             }
+            mqtt_total_counter++;
+
             DateTime current_time = DateTime.Now;
             totalTime += (current_time - old_time).TotalMilliseconds;
 
@@ -841,9 +856,22 @@ namespace yeniform
 
             byte[] mqtt_data = e.Message;
 
+            //burada MQTT_counter_int32 guncelleniyor
             dataConvert_2(mqtt_data);
-            counter++;
-            gsm_yenileme.Text = (totalTime / (double)counter).ToString();
+
+            // (old, new)
+            //uyari: yukarida old ve MQTT_counteri =0 ile baslangicta tanimladik
+            // ilk veri geldiginde old = 0 new = gelen olacak
+            //find error fonksiyonu old 0 sa default 0 donduruyor
+            //yani ilk veride hata varsa bilemeyecez
+
+            error_counter += find_error(mqtt_counter_old,MQTT_counter_int32);
+            
+
+            double c = Convert.ToDouble(error_counter) / Convert.ToDouble(mqtt_total_counter);
+
+            
+            gsm_yenileme.Text = (totalTime / (double)mqtt_total_counter).ToString();
 
             //RECEIVE 
             displayAllData();
@@ -851,10 +879,33 @@ namespace yeniform
             //RECEIVE
 
             old_time = current_time;
-
+            
+            // gerekli yerlere yazdik
             mqtt_reference_time = gsm_new_time;
+            mqtt_toplam_paket.Text = mqtt_total_counter.ToString();
+            mqtt_solved_paket.Text = (mqtt_total_counter - error_counter).ToString();
+            mqtt_verim.Text = string.Format("{0:N2}%", c);
 
         }
+
+        int find_error(int old_d, int new_d)
+        {
+
+            int x = new_d - old_d;
+            //hata olup olmadigini anlamak icin en az 2 veri gelmeli
+            //biz old_d yi basta 0 set ettik
+            //yani ilk veri 24 gelince 24 hatamiz olmamali
+            if (old_d == 0)
+            {
+                return 0;
+            }
+
+            return Math.Abs(x - 1);
+
+        }
+
+
+
 
 
         private void kayıtAçToolStripMenuItem_Click(object sender, EventArgs e)
