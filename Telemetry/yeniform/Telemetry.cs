@@ -904,7 +904,6 @@ namespace yeniform
 
             //burada MQTT_counter_int32 guncelleniyor
             dataConvert_2(mqtt_data);
-            File.AppendAllText(pathfile + filename, other_datas + gps_datas + log_data);
             // (old, new)
             //uyari: yukarida old ve MQTT_counteri =0 ile baslangicta tanimladik
             // ilk veri geldiginde old = 0 new = gelen olacak
@@ -1081,6 +1080,9 @@ namespace yeniform
 
         }
 
-   
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
