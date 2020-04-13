@@ -87,11 +87,18 @@ namespace yeniform
         UInt32 GL_kalan_yol_driver_u32;
         #endregion
 
+        string gps_datas;
         //MQTT
         MqttClient Client = new MqttClient("157.230.29.63");
         DateTime gsm_old_time;
 
         int MQTT_counter_int32 =0;
+
+        static readonly int total_byte = 49;
+
+        string pathfile = @"Logs\";
+        string filename = DateTime.Now.ToString("yyyy_MM_dd_HH_mm") + ".txt";
+
 
         ListBox gelenler = new ListBox();
 
@@ -233,6 +240,9 @@ namespace yeniform
                     }
                 }
             }
+
+
+
         }
 
         static ushort aeskCRCCalculate(byte[] frame, uint framesize)
@@ -276,6 +286,7 @@ namespace yeniform
      
         }
 
+        
         void dataConvert_2(byte[] gelenVeri)
         {
             vcu_wake_up_u8 = gelenVeri[0];
@@ -311,6 +322,7 @@ namespace yeniform
             gps_velocity_u8 = gelenVeri[46];
 
             MQTT_counter_int32 = BitConverter.ToInt32(gelenVeri, 47);
+
         }
 
         void gsmDataConvert()
@@ -401,7 +413,27 @@ namespace yeniform
             //if (calculate_about_race)
 
             #region logdata
-            string log_data = bms_bat_volt_f32.ToString() + '$' +
+            string log_data = 
+                
+                              vcu_wake_up_u8.ToString() + '$' +  
+                              vcu_drive_commands_u8.ToString() + '$' +
+                              vcu_set_velocity_u8.ToString() + '$' +
+
+                              driver_phase_a_current_f32.ToString() + '$' +
+                              driver_phase_b_current_f32.ToString() + '$' +
+                              driver_dc_bus_current_f32.ToString() + '$' +
+                              driver_dc_bus_voltage_f32.ToString() + '$' +
+                              driver_id_f32.ToString() + '$' +
+                              driver_iq_f32.ToString() + '$' +
+                              driver_vd_f32.ToString() + '$' +
+                              driver_vq_f32.ToString() + '$' +
+                              driver_drive_status_u8.ToString() + '$' +
+                              driver_error_u8.ToString() + '$' +
+                              driver_odometer_u32.ToString() + '$' +
+                              driver_motor_temperature_u8.ToString() + '$' +
+                              driver_actual_velocity_u8.ToString() + '$' +
+
+                             bms_bat_volt_f32.ToString() + '$' +
                               bms_bat_current_f32.ToString() + '$' +
                               bms_bat_cons_f32.ToString() + '$' +
                               bms_soc_f32.ToString() + '$' +
@@ -409,28 +441,21 @@ namespace yeniform
                               bms_dc_bus_state_u8.ToString() + '$' +
                               bms_worst_cell_voltage_f32.ToString() + '$' +
                               bms_worst_cell_address_u8.ToString() + '$' +
-                              bms_temp_u8.ToString() + '$' +                             
-                              driver_odometer_u32.ToString() + '$' +
-                              driver_actual_velocity_u8.ToString() + '$' +
-                              driver_phase_a_current_f32.ToString() + '$' +
-                              driver_phase_b_current_f32.ToString() + '$' +
-                              driver_dc_bus_current_f32.ToString() + '$' +
-                              driver_dc_bus_voltage_f32.ToString() + '$' +
-                              driver_motor_temperature_u8.ToString() + '$' +
-                              driver_id_f32.ToString() + '$' +
-                              driver_iq_f32.ToString() + '$' +
-                              driver_vd_f32.ToString() + '$' +
-                              driver_vq_f32.ToString() + '$' +
-                              driver_drive_status_u8.ToString() + '$' +
-                              vcu_set_velocity_u8.ToString() + '$' +
+                              bms_temp_u8.ToString() + '$' +             
+                              
+                              gps_latitude_f64.ToString() + '$'+
+                              gps_longtitude_f64.ToString() + '$' +
+                              gps_velocity_u8.ToString() + '$' +
+
+
+                              //MQTT counter
                               gsm_yenileme.Text + '$' +
-                              vcu_drive_commands_u8.ToString() + '$' +
                               my_maks_hiz.ToString() + '$' +
                               GL_kalan_yol_driver_u32.ToString() + '$' +
-                              vcu_wake_up_u8.ToString() + '$' +
-                              driver_error_u8.ToString() + '$' +
+                               
+                             
                               "\n";
-           // File.AppendAllText(pathfile + filename, other_datas + gps_datas + log_data); //OTHER DATAS KULLANILACAK CALC TIME OP DA
+            File.AppendAllText(pathfile + filename, other_datas + gps_datas + log_data); //OTHER DATAS KULLANILACAK CALC TIME OP DA
             #endregion
             #region wake_up_control
             if ((vcu_wake_up_u8 & 0b00000001) != 0)
@@ -670,6 +695,13 @@ namespace yeniform
             crc_hatali.Text = GL_crc_hatali_u16.ToString();
             #endregion
 
+            gelen_bayt.Text = GL_gelen_bayt_u32.ToString();
+            baslik_hatali.Text = GL_baslik_hatali_u16.ToString();
+            
+           
+            if (GL_gelen_bayt_u32 > 0)
+                verim.Text = Math.Round(((float)GL_cozulen_paket_u16 * total_byte / GL_gelen_bayt_u32), 2).ToString();
+
         }
 
         private void displayGauges()
@@ -706,10 +738,24 @@ namespace yeniform
             sonuc2 = Math.Abs(sonuc2);
             gmap.Zoom += 0.00000001;
             gmap.Zoom -= 0.00000001;
+
+            gps_datas = latitude.ToString() + '$' +
+                    longtitude.ToString() + '$' +
+                    GL_gidilen_yol_tour_u32.ToString() + '$' +
+                    GL_tour_distance_gps_u32.ToString() + '$' +
+                    GL_general_distance_gps_u32.ToString() + '$' +
+                    tour.ToString() + '$' +
+                    kalan_yol_gps.Text + '$' +
+                    gidilen_yol_gps.Text + '$' +
+                    GL_ems_bat_cons_tour_f32.ToString() + '$' +
+                    GL_ems_fc_cons_tour_f32.ToString() + '$' +
+                    GL_ems_fc_lt_cons_tour_f32.ToString() + '$'
+                    ;
         }
 
         private void gMapControl1_MouseClick(object sender, MouseEventArgs e)
         {
+          
             if (gps_mouse_mod && e.Button == MouseButtons.Left)
             {
                 PointLatLng mouse_position = gmap.FromLocalToLatLng(e.X, e.Y);
@@ -858,7 +904,7 @@ namespace yeniform
 
             //burada MQTT_counter_int32 guncelleniyor
             dataConvert_2(mqtt_data);
-
+            File.AppendAllText(pathfile + filename, other_datas + gps_datas + log_data);
             // (old, new)
             //uyari: yukarida old ve MQTT_counteri =0 ile baslangicta tanimladik
             // ilk veri geldiginde old = 0 new = gelen olacak
@@ -879,6 +925,8 @@ namespace yeniform
             //RECEIVE
 
             old_time = current_time;
+
+
             
             // gerekli yerlere yazdik
             mqtt_reference_time = gsm_new_time;
@@ -1026,14 +1074,13 @@ namespace yeniform
             anlik_tur_suresi.Text = anlik_tur_süresi_time.Elapsed.Duration().ToString(@"hh\:mm\:ss");
             kalan_sure.Text = kalan_sure_calc.ToString(@"hh\:mm\:ss");
             gecen_sure.Text = gecen_sure_calc.ToString(@"hh\:mm\:ss");
+            
             other_datas = ortalama_tur_suresi.Text + '$' + anlik_tur_suresi.Text + '$' + kalan_sure.Text + '$' + gecen_sure.Text + '$' + turr.Text + '$' + ort_hiz.Text + '$' + hedef_hiz.Text + '$';
-            gelen_bayt.Text = GL_gelen_bayt_u32.ToString();
-            baslik_hatali.Text = GL_baslik_hatali_u16.ToString();
-            crc_hatali.Text = GL_crc_hatali_u16.ToString();
-            cozulen_paket.Text = GL_cozulen_paket_u16.ToString();
-            if (GL_gelen_bayt_u32 > 0)
-                verim.Text = Math.Round(((float)GL_cozulen_paket_u16 * 49 / GL_gelen_bayt_u32), 2).ToString();
+            
+
+
         }
 
+   
     }
 }
