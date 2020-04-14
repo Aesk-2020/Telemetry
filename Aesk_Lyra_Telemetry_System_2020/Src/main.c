@@ -64,6 +64,7 @@ UART_HandleTypeDef huart3;
 
 /* USER CODE BEGIN PV */
 int SetTime = 0;
+int SetDate = 0;
 Time_Task_union time_task;
 Xbee_Datas xbee_data;
 Gsm_Datas gsm_data;
@@ -151,8 +152,8 @@ int main(void)
    RTC_Set_Time_Date();
    if(f_mount(&myFATAFS, SDPath, 1) == FR_OK)
    {
- 	  HAL_RTC_GetTime(&hrtc, &rtctime, RTC_FORMAT_BIN);
-      // HAL_RTC_GetDate(&hrtc, &rtcdate, RTC_FORMAT_BIN);
+ 	  HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+       HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
        sd_card_data.state = SD_Card_Detect;
        sprintf(sd_card_data.path, "%d_%d_%d.txt", sDate.Date, sDate.Month, sDate.Year);
    }
@@ -194,6 +195,7 @@ int main(void)
 	 		  {
 
 	 			  HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+	 			  HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
 	 			  vars_to_str((char *)sd_card_data.transmitBuf, "%d$%d$%d$%.2f$%.2f$%.2f$%.1f$%.2f$%.2f$%.2f$%.2f$%d$%d$%d$%d$%d$%.1f$%.2f$%.1f$%.2f$%d$%d$%.1f$%d$%d$%.6f$%.6f$%d$d$d$%d$%d$%d\n",
 	 					 	 	 	 	 	 	 	 	 	 	 lyradata.vcu_data.wake_up_union.wake_up_u8, lyradata.vcu_data.drive_command_union.drive_command_u8, lyradata.vcu_data.set_velocity_u8,
 																 lyradata.driver_data.Phase_A_Current_f32, lyradata.driver_data.Phase_B_Current_f32, lyradata.driver_data.Dc_Bus_Current_f32,
@@ -358,9 +360,6 @@ static void MX_RTC_Init(void)
 
   /* USER CODE END RTC_Init 0 */
 
-  RTC_TimeTypeDef sTime = {0};
-  RTC_DateTypeDef sDate = {0};
-
   /* USER CODE BEGIN RTC_Init 1 */
 
   /* USER CODE END RTC_Init 1 */
@@ -384,24 +383,6 @@ static void MX_RTC_Init(void)
 
   /** Initialize RTC and set the Time and Date 
   */
-  sTime.Hours = 0x0;
-  sTime.Minutes = 0x0;
-  sTime.Seconds = 0x0;
-  sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
-  sTime.StoreOperation = RTC_STOREOPERATION_SET;
-  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BCD) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sDate.WeekDay = RTC_WEEKDAY_MONDAY;
-  sDate.Month = RTC_MONTH_JANUARY;
-  sDate.Date = 0x1;
-  sDate.Year = 0x0;
-
-  if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BCD) != HAL_OK)
-  {
-    Error_Handler();
-  }
   /* USER CODE BEGIN RTC_Init 2 */
 
   /* USER CODE END RTC_Init 2 */
@@ -1091,19 +1072,18 @@ void createMQTTPackage(LyraDatas *lyradata, GPS_Handle*gps_data, uint8_t* packBu
 	AESK_UINT32toUINT8_LE(&MQTT_Counter, packBuf, index);
 }
 
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
-	SetTime = 53;
-}
-
 
 void RTC_Set_Time_Date()
 {
 	if(SetTime == 1)
 	{
 	HAL_RTC_SetTime(&hrtc, &rtctime, RTC_FORMAT_BIN);
-	HAL_RTC_SetDate(&hrtc, &rtcdate, RTC_FORMAT_BIN);
 	SetTime = 0;
+	}
+	if(SetDate == 1)
+	{
+	HAL_RTC_SetDate(&hrtc, &rtcdate, RTC_FORMAT_BIN);
+	SetDate = 0;
 	}
 }
 
