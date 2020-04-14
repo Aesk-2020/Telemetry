@@ -110,9 +110,9 @@ namespace yeniform
 
         static readonly int max_incoming = 32;
         static readonly int GPS_DIVIDE = 1000000;
-        static readonly UInt32 TOTAL_BYTES = 49;
+        static readonly UInt32 TOTAL_BYTES = 43;
 
-        byte[] captured_data = new byte[max_incoming + 1];
+        byte[] captured_data = new byte[TOTAL_BYTES + 1];
         PointLatLng start1 = new PointLatLng(40.744392, 29.786054);
         PointLatLng lastposition = new PointLatLng(40.744392, 29.786054);
         bool gps_mouse_mod = true;
@@ -205,8 +205,8 @@ namespace yeniform
                                 {
                                     
                                     step = 1;
-                                    captured_data[data_counter] = buffer[i];
-                                    data_counter = 1;
+                                    //captured_data[data_counter] = buffer[i];
+                                    //data_counter = 1;
                                 }
                                 else
                                 {
@@ -224,7 +224,7 @@ namespace yeniform
                                 {
                                     data_counter = 0;
                                     crc_hesaplanan = (captured_data[TOTAL_BYTES - 1] << 8) | captured_data[TOTAL_BYTES - 2]; // CRC son iki byte
-                                    ushort gelen_crc = aeskCRCCalculate(captured_data, TOTAL_BYTES);
+                                    ushort gelen_crc = aeskCRCCalculate(captured_data, TOTAL_BYTES - 2);
                                     if(crc_hesaplanan == gelen_crc)
                                     {
                                         GL_cozulen_paket_u16++;
@@ -292,12 +292,11 @@ namespace yeniform
             bms_worst_cell_address_u8 = gelenVeri[39];
             bms_temp_u8 = gelenVeri[40];
 
-            gps_latitude_f64 = (float)BitConverter.ToInt64(gelenVeri, 41) / GPS_DIVIDE;
-            gps_longtitude_f64 = (float)BitConverter.ToInt64(gelenVeri, 45) / GPS_DIVIDE;
-            gps_velocity_u8 = gelenVeri[46];
+            //gps_latitude_f64 = (float)BitConverter.ToInt64(gelenVeri, 41) / GPS_DIVIDE;
+            //gps_longtitude_f64 = (float)BitConverter.ToInt64(gelenVeri, 45) / GPS_DIVIDE;
+            //gps_velocity_u8 = gelenVeri[46];
 
-            MQTT_counter_int32 = BitConverter.ToInt32(gelenVeri, 47);
-
+            //MQTT_counter_int32 = BitConverter.ToInt32(gelenVeri, 47);            
         }
 
         void gsmDataConvert()
