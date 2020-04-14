@@ -30,6 +30,8 @@ namespace yeniform
             Control.CheckForIllegalCrossThreadCalls = false;
         }
 
+        Color AeskBlue = new Color();
+
         static int crc_hesaplanan = 0;
         string other_datas;
         #region veri
@@ -94,8 +96,6 @@ namespace yeniform
 
         int MQTT_counter_int32 =0;
 
-        static readonly int total_byte = 49;
-
         string pathfile = @"Logs\";
         string filename = DateTime.Now.ToString("yyyy_MM_dd_HH_mm") + ".txt";
 
@@ -107,7 +107,11 @@ namespace yeniform
         bool timer_flag = false;
 
         string[] ports = SerialPort.GetPortNames();
+
         static readonly int max_incoming = 32;
+        static readonly int GPS_DIVIDE = 1000000;
+        static readonly UInt32 TOTAL_BYTES = 49;
+
         byte[] captured_data = new byte[max_incoming + 1];
         PointLatLng start1 = new PointLatLng(40.744392, 29.786054);
         PointLatLng lastposition = new PointLatLng(40.744392, 29.786054);
@@ -129,6 +133,7 @@ namespace yeniform
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            AeskBlue = Color.FromArgb(47, 136, 202);
             history_displayer.ValueChanged -= new EventHandler(this.history_displayer_ValueChanged);
             gmap.ShowCenter = false;
             GMapMarker marker = new GMarkerGoogle(start1, GMarkerGoogleType.red_dot);
@@ -141,7 +146,7 @@ namespace yeniform
             gmap.MaxZoom = 150;
             gmap.MinZoom = 5;
             gmap.Zoom = 17;
-
+            anlikhiz_gauge.Value = 75;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -162,7 +167,7 @@ namespace yeniform
                         serialPort1.DataReceived += new SerialDataReceivedEventHandler(serialPort1_DataReceived);
                         if (serialPort1.IsOpen == true)
                         {
-                            xbee_active.BackColor = Color.FromArgb(47, 136, 202);
+                            xbee_active.BackColor = AeskBlue;
                         }
                     }
                 }
@@ -214,17 +219,16 @@ namespace yeniform
                             {
                                 captured_data[data_counter] = buffer[i];
                                 data_counter++;
-                                if(data_counter >= 45) //değişecek
+                                if(data_counter >= TOTAL_BYTES)
 
                                 {
                                     data_counter = 0;
-                                    //dataConvert(captured_data);
-                                    crc_hesaplanan = (captured_data[16] << 8) | captured_data[15]; // crc gelecek yerler tayin ettikten sonra burayı değiştir
-                                    ushort gelen_crc = aeskCRCCalculate(captured_data, 15);
+                                    crc_hesaplanan = (captured_data[TOTAL_BYTES - 1] << 8) | captured_data[TOTAL_BYTES - 2]; // CRC son iki byte
+                                    ushort gelen_crc = aeskCRCCalculate(captured_data, TOTAL_BYTES);
                                     if(crc_hesaplanan == gelen_crc)
                                     {
                                         GL_cozulen_paket_u16++;
-                                        dataConvert(captured_data);
+                                        dataConvert_2(captured_data);
                                         displayAllData();
                                         displayGauges();
                                     }
@@ -257,35 +261,6 @@ namespace yeniform
             }
             return (crc16_data);
         }
-
-        void dataConvert(byte[] gelenVeri)
-        {
-            bms_soc_f32 = (float)BitConverter.ToUInt16(gelenVeri, 1) / 10;
-            bms_bat_cons_f32 = (float)BitConverter.ToUInt16(gelenVeri, 3) / 10;
-            bms_bat_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 5) / 10;
-            bms_bat_volt_f32 = (float)BitConverter.ToUInt16(gelenVeri, 7) / 10;
-            bms_temp_u8 = gelenVeri[9];
-            bms_worst_cell_address_u8 = gelenVeri[10];
-            bms_worst_cell_voltage_f32 = (float)BitConverter.ToUInt16(gelenVeri, 11) / 1000;
-            bms_dc_bus_state_u8 = gelenVeri[13];
-            bms_error_u8 = gelenVeri[14];
-
-            driver_dc_bus_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 15) / 100;
-            driver_phase_b_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 19) / 100;
-            driver_phase_a_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 21) / 100;
-
-            driver_dc_bus_voltage_f32 = (float)BitConverter.ToUInt16(gelenVeri, 23) / 100;
-            //driver_motor_temperature_u8 = (float)BitConverter.ToUInt16(gelenVeri, 25) / 100;
-
-            driver_odometer_u32 = BitConverter.ToUInt32(gelenVeri, 27);
-            driver_actual_velocity_u8 = gelenVeri[31];
-            driver_drive_status_u8 = gelenVeri[32];
-
-            vcu_drive_commands_u8 = gelenVeri[33];
-            vcu_set_velocity_u8 = gelenVeri[34];
-     
-        }
-
         
         void dataConvert_2(byte[] gelenVeri)
         {
@@ -317,8 +292,8 @@ namespace yeniform
             bms_worst_cell_address_u8 = gelenVeri[39];
             bms_temp_u8 = gelenVeri[40];
 
-            gps_latitude_f64 = (float)BitConverter.ToInt64(gelenVeri, 41);
-            gps_longtitude_f64 = (float)BitConverter.ToInt64(gelenVeri, 45);
+            gps_latitude_f64 = (float)BitConverter.ToInt64(gelenVeri, 41) / GPS_DIVIDE;
+            gps_longtitude_f64 = (float)BitConverter.ToInt64(gelenVeri, 45) / GPS_DIVIDE;
             gps_velocity_u8 = gelenVeri[46];
 
             MQTT_counter_int32 = BitConverter.ToInt32(gelenVeri, 47);
@@ -455,12 +430,12 @@ namespace yeniform
                                
                              
                               "\n";
-            File.AppendAllText(pathfile + filename, other_datas + gps_datas + log_data); //OTHER DATAS KULLANILACAK CALC TIME OP DA
+         //   File.AppendAllText(pathfile + filename, other_datas + gps_datas + log_data); //OTHER DATAS KULLANILACAK CALC TIME OP DA
             #endregion
             #region wake_up_control
             if ((vcu_wake_up_u8 & 0b00000001) != 0)
             {
-                bms_durum.BackColor = Color.FromArgb(47, 136, 202);
+                bms_durum.BackColor = AeskBlue;
             }
             else
             {
@@ -469,7 +444,7 @@ namespace yeniform
 
             if ((vcu_wake_up_u8 & 0b00000010) != 0)
             {
-                driver_durum.BackColor = Color.FromArgb(47, 136, 202);
+                driver_durum.BackColor = AeskBlue;
             }
             else
             {
@@ -493,7 +468,7 @@ namespace yeniform
             }
             else
             {
-                bms_high_volt_error.BackColor = Color.FromArgb(47, 136, 202);
+                bms_high_volt_error.BackColor = AeskBlue;
             }
 
             if ((bms_error_u8 & 0b00000010) != 0)
@@ -502,7 +477,7 @@ namespace yeniform
             }
             else
             {
-                bms_low_volt_error.BackColor = Color.FromArgb(47, 136, 202);
+                bms_low_volt_error.BackColor = AeskBlue;
             }
 
             if ((bms_error_u8 & 0b00000100) != 0)
@@ -511,7 +486,7 @@ namespace yeniform
             }
             else
             {
-                bms_temp_error.BackColor = Color.FromArgb(47, 136, 202);
+                bms_temp_error.BackColor = AeskBlue;
             }
 
             if ((bms_error_u8 & 0b00001000) != 0)
@@ -520,7 +495,7 @@ namespace yeniform
             }
             else
             {
-                bms_comm_error.BackColor = Color.FromArgb(47, 136, 202);
+                bms_comm_error.BackColor = AeskBlue;
             }
 
             if ((bms_error_u8 & 0b00010000) != 0)
@@ -529,13 +504,13 @@ namespace yeniform
             }
             else
             {
-                bms_over_cur_error.BackColor = Color.FromArgb(47, 136, 202);
+                bms_over_cur_error.BackColor = AeskBlue;
             }
             #endregion
             #region dc_bus_state
             if ((bms_dc_bus_state_u8 & 0b00000001) != 0)
             {
-                bms_precharge_flag.BackColor = Color.FromArgb(47, 136, 202);
+                bms_precharge_flag.BackColor = AeskBlue;
             }
             else
             {
@@ -544,7 +519,7 @@ namespace yeniform
 
             if ((bms_dc_bus_state_u8 & 0b00000010) != 0)
             {
-                bms_discharge_flag.BackColor = Color.FromArgb(47, 136, 202);
+                bms_discharge_flag.BackColor = AeskBlue;
             }
             else
             {
@@ -553,7 +528,7 @@ namespace yeniform
 
             if ((bms_dc_bus_state_u8 & 0b00000100) != 0)
             {
-                bms_dc_bus_ready_flag.BackColor = Color.FromArgb(47, 136, 202);
+                bms_dc_bus_ready_flag.BackColor = AeskBlue;
             }
             else
             {
@@ -638,7 +613,7 @@ namespace yeniform
             #region driver_error_control
             if ((driver_error_u8 & 0b00000001) != 0)
             {
-                zpc.BackColor = Color.FromArgb(47, 136, 202);
+                zpc.BackColor = AeskBlue;
             }
             else
             {
@@ -646,7 +621,7 @@ namespace yeniform
             }
             if ((driver_error_u8 & 0b00000010) != 0)
             {
-                pwm_enabled.BackColor = Color.FromArgb(47, 136, 202);
+                pwm_enabled.BackColor = AeskBlue;
             }
             else
             {
@@ -655,7 +630,7 @@ namespace yeniform
 
             if ((driver_error_u8 & 0b00000100) != 0)
             {
-                dc_bus_voltage_error.BackColor = Color.FromArgb(47, 136, 202);
+                dc_bus_voltage_error.BackColor = AeskBlue;
             }
             else
             {
@@ -664,7 +639,7 @@ namespace yeniform
 
             if ((driver_error_u8 & 0b00001000) != 0)
             {
-                motor_temp_error.BackColor = Color.FromArgb(47, 136, 202);
+                motor_temp_error.BackColor = AeskBlue;
             }
             else
             {
@@ -673,7 +648,7 @@ namespace yeniform
 
             if ((driver_error_u8 & 0b00010000) != 0)
             {
-                dc_bus_amper_error.BackColor = Color.FromArgb(47, 136, 202);
+                dc_bus_amper_error.BackColor = AeskBlue;
             }
             else
 
@@ -682,7 +657,7 @@ namespace yeniform
             }
             if ((driver_error_u8 & 0b00100000) != 0)
             {
-                id_error.BackColor = Color.FromArgb(47, 136, 202);
+                id_error.BackColor = AeskBlue;
             }
             else
             {
@@ -700,15 +675,16 @@ namespace yeniform
             
            
             if (GL_gelen_bayt_u32 > 0)
-                verim.Text = Math.Round(((float)GL_cozulen_paket_u16 * total_byte / GL_gelen_bayt_u32), 2).ToString();
+                verim.Text = Math.Round(((float)GL_cozulen_paket_u16 * TOTAL_BYTES / GL_gelen_bayt_u32), 2).ToString();
 
         }
 
         private void displayGauges()
         {
-            anlikhiz_gauge.Value = (driver_actual_velocity_u8 / 60) * 100;
-            gpshiz_gauge.Value = (gps_velocity_u8 / 60) * 100;
-            hedefhiz_gauge.Value = (vcu_set_velocity_u8 / 60) * 100;
+            anlikhiz_gauge.Value = ((driver_actual_velocity_u8 * 100) / 60);
+            gpshiz_gauge.Value = ((gps_velocity_u8 * 100) / 60);
+            hedefhiz_gauge.Value = ((vcu_set_velocity_u8 * 100) / 60);
+            kalanyol_bar.Value = Convert.ToInt32(((driver_odometer_u32 * 100) / (driver_odometer_u32 + GL_kalan_yol_u32)));
         }
 
         private void portToolStripMenuItem_MouseHover(object sender, EventArgs e)
@@ -787,7 +763,7 @@ namespace yeniform
             if (code == 0x00)
             {
                 //Connected
-                gsm_durum.BackColor = Color.FromArgb(47, 136, 202);
+                gsm_durum.BackColor = AeskBlue;
                 timer1.Start();
             }
             else
@@ -1025,6 +1001,7 @@ namespace yeniform
             vcu_wake_up_u8 = Convert.ToByte(old_datass[63]);
             driver_error_u8 = Convert.ToByte(old_datass[64]);
             history_gps_write(old_latitudes, old_longtitudes);
+            displayGauges();
             displayAllData();
         }
 
