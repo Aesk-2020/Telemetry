@@ -76,6 +76,9 @@ GPS_Handle gps_data;
 RTC_TimeTypeDef rtctime;
 RTC_DateTypeDef rtcdate;
 
+RTC_TimeTypeDef sTime;
+RTC_DateTypeDef sDate;
+
 FATFS myFATAFS;
 FIL myFile;
 UINT testByte;
@@ -149,9 +152,9 @@ int main(void)
    if(f_mount(&myFATAFS, SDPath, 1) == FR_OK)
    {
  	  HAL_RTC_GetTime(&hrtc, &rtctime, RTC_FORMAT_BIN);
-       HAL_RTC_GetDate(&hrtc, &rtcdate, RTC_FORMAT_BIN);
+      // HAL_RTC_GetDate(&hrtc, &rtcdate, RTC_FORMAT_BIN);
        sd_card_data.state = SD_Card_Detect;
-       sprintf(sd_card_data.path, "%d_%d_%d.txt", rtcdate.Date, rtcdate.Month, rtcdate.Year);
+       sprintf(sd_card_data.path, "%d_%d_%d.txt", sDate.Date, sDate.Month, sDate.Year);
    }
 
    	GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin;
@@ -190,10 +193,8 @@ int main(void)
 	 		  if(sd_card_data.state == SD_Card_Detect)
 	 		  {
 
-	 			  HAL_RTC_GetTime(&hrtc, &rtctime, RTC_FORMAT_BIN);
-	 			  HAL_RTC_GetDate(&hrtc, &rtcdate, RTC_FORMAT_BIN);
-
- 	 			 vars_to_str((char *)sd_card_data.transmitBuf, "%d$%d$%d$%.2f$%.2f$%.2f$%.1f$%.2f$%.2f$%.2f$%.2f$%d$%d$%d$%d$%d$%.1f$%.2f$%.1f$%.2f$%d$%d$%.1f$%d$%d$%.6f$%.6f$%d$d$d$%d$%d$%d\n",
+	 			  HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+	 			  vars_to_str((char *)sd_card_data.transmitBuf, "%d$%d$%d$%.2f$%.2f$%.2f$%.1f$%.2f$%.2f$%.2f$%.2f$%d$%d$%d$%d$%d$%.1f$%.2f$%.1f$%.2f$%d$%d$%.1f$%d$%d$%.6f$%.6f$%d$d$d$%d$%d$%d\n",
 	 					 	 	 	 	 	 	 	 	 	 	 lyradata.vcu_data.wake_up_union.wake_up_u8, lyradata.vcu_data.drive_command_union.drive_command_u8, lyradata.vcu_data.set_velocity_u8,
 																 lyradata.driver_data.Phase_A_Current_f32, lyradata.driver_data.Phase_B_Current_f32, lyradata.driver_data.Dc_Bus_Current_f32,
 																 lyradata.driver_data.Dc_Bus_voltage_f32, lyradata.driver_data.Id_f32, lyradata.driver_data.Iq_f32, lyradata.driver_data.Vd_f32, lyradata.driver_data.Vq_f32,
@@ -203,7 +204,7 @@ int main(void)
 																 lyradata.bms_data.dc_bus_state.dc_bus_state_u8, lyradata.bms_data.Worst_Cell_Voltage_f32, lyradata.bms_data.Worst_Cell_Address_u8,
 																 lyradata.bms_data.Temperature_u8, gps_data.latitude_f32, gps_data.longtitude_f32, gps_data.speed_u8, gps_data.satellite_number_u8, gps_data.gpsEfficiency_u8,
 																 gps_data.gps_errorhandler.trueData_u32, gps_data.gps_errorhandler.checksumError_u32, gps_data.gps_errorhandler.validDataError_u32);
-	 			  vars_to_str((char *)sd_card_data.total_log, "%d:%d:%d$", rtctime.Hours, rtctime.Minutes, rtctime.Seconds);
+	 			  vars_to_str((char *)sd_card_data.total_log, "%d:%d:%d$", sTime.Hours, sTime.Minutes, sTime.Seconds);
 	 			  strcat(sd_card_data.total_log, (const char*)sd_card_data.transmitBuf);
 	 			  f_open(&myFile, sd_card_data.path, FA_WRITE | FA_OPEN_APPEND);
 	 			  f_write(&myFile, sd_card_data.total_log, strlen(sd_card_data.total_log), &testByte);
