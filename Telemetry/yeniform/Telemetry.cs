@@ -183,6 +183,9 @@ namespace yeniform
                  
         }
 
+        static int step = 0;
+        static int data_counter = 0;
+
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             if (serialPort1.IsOpen == true)
@@ -190,8 +193,6 @@ namespace yeniform
                 int bytes = serialPort1.BytesToRead;
                 byte[] buffer = new byte[bytes];
                 GL_gelen_bayt_u32 += (UInt32)bytes;
-                int step = 0;
-                int data_counter = 0;
 
                 serialPort1.Read(buffer, 0, bytes);
 
