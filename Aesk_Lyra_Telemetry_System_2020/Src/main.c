@@ -159,7 +159,7 @@ int main(void)
  	  HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
        HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
        sd_card_data.state = SD_Card_Detect;
-       sprintf(sd_card_data.path, "%d_%d_%d.txt", sDate.Date, sDate.Month, sDate.Year);
+       sprintf(sd_card_data.path, "%d_%d_%d.txt\0", sDate.Date, sDate.Month, sDate.Year);
    }
 
    	GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin;
@@ -172,9 +172,9 @@ int main(void)
     HAL_Delay(10000);
 
 
-    HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
+   /* HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
     HAL_UART_Receive_IT(&huart3, &xbee_data.receiveData, 1);
-    HAL_UART_Receive_IT(&huart2, &gps_data.uartReceiveData_u8, 1);
+    HAL_UART_Receive_IT(&huart2, &gps_data.uartReceiveData_u8, 1);*/
     HAL_TIM_Base_Start_IT(&htim6);
     HAL_TIM_Base_Start_IT(&htim7);
   /* USER CODE END 2 */
@@ -199,7 +199,7 @@ int main(void)
 
 				HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 				HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
-				sprintf((char *)sd_card_data.transmitBuf, "%d$%d$%d$%.2f$%.2f$%.2f$%.1f$%.2f$%.2f$%.2f$%.2f$%d$%d$%d$%d$%d$%.1f$%.2f$%.1f$%.2f$%d$%d$%.1f$%d$%d$%.6f$%.6f\n",
+				sprintf((char *)sd_card_data.transmitBuf, "%d$%d$%d$%.2f$%.2f$%.2f$%.1f$%.2f$%.2f$%.2f$%.2f$%d$%d$%d$%d$%d$%.1f$%.2f$%.1f$%.2f$%d$%d$%.1f$%d$%d$%.6f$%.6f\n\0",
 				 					 	 	 	 	 	 	 	 	 	 	 lyradata.vcu_data.wake_up_union.wake_up_u8, lyradata.vcu_data.drive_command_union.drive_command_u8, lyradata.vcu_data.set_velocity_u8,
 																			 lyradata.driver_data.Phase_A_Current_f32, lyradata.driver_data.Phase_B_Current_f32, lyradata.driver_data.Dc_Bus_Current_f32,
 																			 lyradata.driver_data.Dc_Bus_voltage_f32, lyradata.driver_data.Id_f32, lyradata.driver_data.Iq_f32, lyradata.driver_data.Vd_f32, lyradata.driver_data.Vq_f32,
