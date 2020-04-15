@@ -57,6 +57,7 @@ RTC_HandleTypeDef hrtc;
 SD_HandleTypeDef hsd;
 
 TIM_HandleTypeDef htim6;
+TIM_HandleTypeDef htim7;
 
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
@@ -65,6 +66,7 @@ UART_HandleTypeDef huart3;
 /* USER CODE BEGIN PV */
 int SetTime = 0;
 int SetDate = 0;
+uint32_t MQTT_Counter = 0;
 Time_Task_union time_task;
 Xbee_Datas xbee_data;
 Gsm_Datas gsm_data;
@@ -96,6 +98,7 @@ static void MX_TIM6_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_USART3_UART_Init(void);
+static void MX_TIM7_Init(void);
 /* USER CODE BEGIN PFP */
 void Gsm_Calibration(Gsm_Datas* gsm_data);
 static void MX_USART1_UART_Init_New(void);
@@ -146,6 +149,7 @@ int main(void)
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
   MX_FATFS_Init();
+  MX_TIM7_Init();
   /* USER CODE BEGIN 2 */
    gsm_data.gsm_uart = &huart1;
 
@@ -170,8 +174,9 @@ int main(void)
 
     HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
     HAL_UART_Receive_IT(&huart3, &xbee_data.receiveData, 1);
+    HAL_UART_Receive_IT(&huart2, &gps_data.uartReceiveData_u8, 1);
     HAL_TIM_Base_Start_IT(&htim6);
-
+    HAL_TIM_Base_Start_IT(&htim7);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -181,41 +186,39 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-
 	  if(time_task.Time_Task.Task_30_ms == TRUE)
 	  {
-		  Gsm_Calibration(&gsm_data);
+		 // Gsm_Calibration(&gsm_data);
 		  time_task.Time_Task.Task_30_ms = FALSE;
 	  }
 
 	  if(time_task.Time_Task.Task_10_ms == TRUE)
 	 	  {
+			if(sd_card_data.state == SD_Card_Detect)
+			{
 
-	 		  if(sd_card_data.state == SD_Card_Detect)
-	 		  {
-
-	 			  HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
-	 			  HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
-	 			  vars_to_str((char *)sd_card_data.transmitBuf, "%d$%d$%d$%.2f$%.2f$%.2f$%.1f$%.2f$%.2f$%.2f$%.2f$%d$%d$%d$%d$%d$%.1f$%.2f$%.1f$%.2f$%d$%d$%.1f$%d$%d$%.6f$%.6f$%d$d$d$%d$%d$%d\n",
-	 					 	 	 	 	 	 	 	 	 	 	 lyradata.vcu_data.wake_up_union.wake_up_u8, lyradata.vcu_data.drive_command_union.drive_command_u8, lyradata.vcu_data.set_velocity_u8,
-																 lyradata.driver_data.Phase_A_Current_f32, lyradata.driver_data.Phase_B_Current_f32, lyradata.driver_data.Dc_Bus_Current_f32,
-																 lyradata.driver_data.Dc_Bus_voltage_f32, lyradata.driver_data.Id_f32, lyradata.driver_data.Iq_f32, lyradata.driver_data.Vd_f32, lyradata.driver_data.Vq_f32,
-																 lyradata.driver_data.drive_status_union.drive_status_u8, lyradata.driver_data.driver_error_union.driver_error_u8, lyradata.driver_data.Odometer_u32,
-																 lyradata.driver_data.Motor_Temperature_u8, lyradata.driver_data.actual_velocity_u8, lyradata.bms_data.Bat_Voltage_f32,
-																 lyradata.bms_data.Bat_Current_f32, lyradata.bms_data.Bat_Cons_f32, lyradata.bms_data.Soc_f32, lyradata.bms_data.bms_error.bms_error_u8,
-																 lyradata.bms_data.dc_bus_state.dc_bus_state_u8, lyradata.bms_data.Worst_Cell_Voltage_f32, lyradata.bms_data.Worst_Cell_Address_u8,
-																 lyradata.bms_data.Temperature_u8, gps_data.latitude_f32, gps_data.longtitude_f32, gps_data.speed_u8, gps_data.satellite_number_u8, gps_data.gpsEfficiency_u8,
-																 gps_data.gps_errorhandler.trueData_u32, gps_data.gps_errorhandler.checksumError_u32, gps_data.gps_errorhandler.validDataError_u32);
-	 			  vars_to_str((char *)sd_card_data.total_log, "%d:%d:%d$", sTime.Hours, sTime.Minutes, sTime.Seconds);
-	 			  strcat(sd_card_data.total_log, (const char*)sd_card_data.transmitBuf);
-	 			  f_open(&myFile, sd_card_data.path, FA_WRITE | FA_OPEN_APPEND);
-	 			  f_write(&myFile, sd_card_data.total_log, strlen(sd_card_data.total_log), &testByte);
-	 			  f_close(&myFile);
-	 		  }
+				HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+				HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
+				sprintf((char *)sd_card_data.transmitBuf, "%d$%d$%d$%.2f$%.2f$%.2f$%.1f$%.2f$%.2f$%.2f$%.2f$%d$%d$%d$%d$%d$%.1f$%.2f$%.1f$%.2f$%d$%d$%.1f$%d$%d$%.6f$%.6f\n",
+				 					 	 	 	 	 	 	 	 	 	 	 lyradata.vcu_data.wake_up_union.wake_up_u8, lyradata.vcu_data.drive_command_union.drive_command_u8, lyradata.vcu_data.set_velocity_u8,
+																			 lyradata.driver_data.Phase_A_Current_f32, lyradata.driver_data.Phase_B_Current_f32, lyradata.driver_data.Dc_Bus_Current_f32,
+																			 lyradata.driver_data.Dc_Bus_voltage_f32, lyradata.driver_data.Id_f32, lyradata.driver_data.Iq_f32, lyradata.driver_data.Vd_f32, lyradata.driver_data.Vq_f32,
+																			 lyradata.driver_data.drive_status_union.drive_status_u8, lyradata.driver_data.driver_error_union.driver_error_u8, lyradata.driver_data.Odometer_u32,
+																			 lyradata.driver_data.Motor_Temperature_u8, lyradata.driver_data.actual_velocity_u8, lyradata.bms_data.Bat_Voltage_f32,
+																			 lyradata.bms_data.Bat_Current_f32, lyradata.bms_data.Bat_Cons_f32, lyradata.bms_data.Soc_f32, lyradata.bms_data.bms_error.bms_error_u8,
+																			 lyradata.bms_data.dc_bus_state.dc_bus_state_u8, lyradata.bms_data.Worst_Cell_Voltage_f32, lyradata.bms_data.Worst_Cell_Address_u8,
+																			 lyradata.bms_data.Temperature_u8, gps_data.latitude_f32, gps_data.longtitude_f32/*, gps_data.speed_u8, gps_data.satellite_number_u8, gps_data.gpsEfficiency_u8,
+																			 gps_data.gps_errorhandler.trueData_u32, gps_data.gps_errorhandler.checksumError_u32, gps_data.gps_errorhandler.validDataError_u32*/
+																			 );
+				sprintf((char *)sd_card_data.total_log, "%d:%d:%d$", sTime.Hours, sTime.Minutes, sTime.Seconds);
+				strcat(sd_card_data.total_log, (const char*)sd_card_data.transmitBuf);
+				f_open(&myFile, sd_card_data.path, FA_WRITE | FA_OPEN_APPEND);
+				f_write(&myFile, sd_card_data.total_log, strlen(sd_card_data.total_log), &testByte);
+				f_close(&myFile);
+				SetTime++;
+			}
 	 		  time_task.Time_Task.Task_10_ms = FALSE;
-
 	 	  }
-
   }
   /* USER CODE END 3 */
 }
@@ -360,6 +363,9 @@ static void MX_RTC_Init(void)
 
   /* USER CODE END RTC_Init 0 */
 
+  RTC_TimeTypeDef sTime = {0};
+  RTC_DateTypeDef sDate = {0};
+
   /* USER CODE BEGIN RTC_Init 1 */
 
   /* USER CODE END RTC_Init 1 */
@@ -383,6 +389,24 @@ static void MX_RTC_Init(void)
 
   /** Initialize RTC and set the Time and Date 
   */
+  sTime.Hours = 0x0;
+  sTime.Minutes = 0x0;
+  sTime.Seconds = 0x0;
+  sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
+  sTime.StoreOperation = RTC_STOREOPERATION_SET;
+  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BCD) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sDate.WeekDay = RTC_WEEKDAY_MONDAY;
+  sDate.Month = RTC_MONTH_JANUARY;
+  sDate.Date = 0x1;
+  sDate.Year = 0x0;
+
+  if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BCD) != HAL_OK)
+  {
+    Error_Handler();
+  }
   /* USER CODE BEGIN RTC_Init 2 */
 
   /* USER CODE END RTC_Init 2 */
@@ -452,6 +476,36 @@ static void MX_TIM6_Init(void)
   /* USER CODE BEGIN TIM6_Init 2 */
 
   /* USER CODE END TIM6_Init 2 */
+
+}
+
+/**
+  * @brief TIM7 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM7_Init(void)
+{
+
+  /* USER CODE BEGIN TIM7_Init 0 */
+
+  /* USER CODE END TIM7_Init 0 */
+
+  /* USER CODE BEGIN TIM7_Init 1 */
+
+  /* USER CODE END TIM7_Init 1 */
+  htim7.Instance = TIM7;
+  htim7.Init.Prescaler = 999;
+  htim7.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim7.Init.Period = 999;
+  htim7.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim7) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM7_Init 2 */
+
+  /* USER CODE END TIM7_Init 2 */
 
 }
 
@@ -645,12 +699,14 @@ static void MX_USART1_UART_Init_New(void)
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-	static uint32_t  task_counter_10_ms = 0;
-	static uint32_t task_counter_30_ms = 0;
-	static uint32_t task_counter_1000_ms = 0;
 
-	task_counter_10_ms++;
+	if(htim->Instance == TIM6)
+	{
+	static uint32_t  task_counter_10_ms = 0;
+	static uint32_t task_counter_1000_ms = 0;
+	static uint32_t task_counter_30_ms = 0;
 	task_counter_30_ms++;
+	task_counter_10_ms++;
 	task_counter_1000_ms++;
 
 	if(task_counter_10_ms == 10)
@@ -659,10 +715,16 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		task_counter_10_ms = 0;
 	}
 
-	if(task_counter_30_ms == 30)
+
+	if(task_counter_30_ms == 70)
 	{
 		time_task.Time_Task.Task_30_ms = TRUE;
 		task_counter_30_ms = 0;
+	}
+	}
+	else
+	{
+
 	}
 }
 
@@ -674,34 +736,26 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		case (uint32_t)USART1 :
 		{
 			static uint8_t cifsr_control = 0;
-			static uint8_t cifsr_finish = 0;
 
-
-			if(gsm_data.gsmreceivebuffer_index == 31)
-			{
-				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer_index));
-				gsm_data.gsmreceivebuffer_index = 0;
-			}
 			gsm_data.gsmreceivebuffer[gsm_data.gsmreceivebuffer_index++] = gsm_data.receivegsmdata;
 			if(gsm_data.gsm_state_next_index < CreateMQTTPublishPack && (strstr((const char *)gsm_data.gsmreceivebuffer, gsm_data.at_response) != NULL))
 			{
 				gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index;
-				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer_index));
+				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer));
 				gsm_data.gsmreceivebuffer_index = 0;
 			}
 
 			if(gsm_data.gsm_state_next_index == CreateMQTTPublishPack && (strstr((const char *)gsm_data.gsmreceivebuffer, "\r\n") != NULL))
 			{
 				gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index;
-				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer_index));
-				HAL_TIM_Base_Start_IT(&htim6);
+				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer));
 				gsm_data.gsmreceivebuffer_index = 0;
 			}
 
 			else if(strstr((const char *)gsm_data.gsmreceivebuffer, (const char *)"ERROR") != NULL)
 			{
 				gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index - 1;
-				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer_index));
+				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer));
 				gsm_data.gsmreceivebuffer_index = 0;
 			}
 
@@ -710,30 +764,38 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 				cifsr_control++;
 			}
 
-			if(cifsr_control == 3 && gsm_data.receivegsmdata == '\n' && cifsr_finish == 0)
+			if(cifsr_control == 3 && gsm_data.receivegsmdata == '\n' /*&& cifsr_finish == 0*/)
 			{
 				gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index;
-				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer_index));
+				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer));
 				gsm_data.gsmreceivebuffer_index = 0;
-				cifsr_finish = 1;
+				//cifsr_finish = 1;
 				cifsr_control = 0;
 			}
 
 			if(gsm_data.gsm_state_next_index == SendMQTTPublishPack && gsm_data.receivegsmdata == '>')
 			{
+
 				gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index;
-				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer_index));
-				HAL_TIM_Base_Start_IT(&htim6);
+				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer));
 				gsm_data.gsmreceivebuffer_index = 0;
+				HAL_TIM_Base_Start_IT(&htim6);
+				//sd_card_data.state = SD_Card_Detect;
 			}
 
+			if(gsm_data.gsmreceivebuffer_index == 31)
+			{
+				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer));
+				gsm_data.gsmreceivebuffer_index = 0;
+			}
+			HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
 			break;
 		}
 
 		case (uint32_t)USART2 :
 		{
 			GPS_Control(&gps_data);
-
+			HAL_UART_Receive_IT(&huart2, &gps_data.uartReceiveData_u8, 1);
 			break;
 		}
 
@@ -787,13 +849,13 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 					break;
 				}
 			}
-
+			HAL_UART_Receive_IT(&huart3, &xbee_data.receiveData, 1);
 			break;
 		}
 	}
-	HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
-	HAL_UART_Receive_IT(&huart3, &xbee_data.receiveData, 1);
-    HAL_UART_Receive_IT(&huart2, &gps_data.uartReceiveData_u8, 1);
+
+
+
 }
 void Gsm_Calibration(Gsm_Datas* gsm_data)
 {
@@ -817,9 +879,9 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 
 		case ChangeSIM800SerialBaudRate :
 		{
-			SendATCommand(gsm_data, "AT+IPR=460800\r\n", "OK\r\n");
-			gsm_data->gsm_state_next_index = ChangeSTBaudRate;
-			gsm_data->gsm_state_current_index = EmptyState;
+			//SendATCommand(gsm_data, "AT+IPR=460800\r\n", "OK\r\n");
+			gsm_data->gsm_state_next_index = DeactiveGPRS;
+			gsm_data->gsm_state_current_index = DeactiveGPRS;
 			break;
 		}
 
@@ -912,7 +974,6 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 
 		    topicString.cstring = "home/sensor";
 		    char atcommand[255];
-
 		    uint16_t index = 0;
 		    createMQTTPackage(&lyradata, &gps_data, gsm_data->MQTTPackage, &index);
 		    gsm_data->mqtt_len = MQTTSerialize_publish(gsm_data->gsmpublishpackage, (int)sizeof(gsm_data->gsmpublishpackage), 0, 0, 0, 0, topicString, gsm_data->MQTTPackage, index);
@@ -921,6 +982,7 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 			gsm_data->gsm_state_next_index = SendMQTTPublishPack;
 			gsm_data->gsm_state_current_index = EmptyState;
 			HAL_TIM_Base_Stop_IT(&htim6);
+			//sd_card_data.state = NO_SD_Card_Detect;
 			break;
 		}
 
@@ -976,7 +1038,6 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 
 		case GsmOnOffSet1 :
 		{
-			//HAL_UART_DeInit(gsm_data->gsm_uart);
 			GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin;
 			gsm_data->gsm_state_current_index = Gsm800msWait1;
 			gsm_data->gsm_state_next_index = Gsm800msWait1;
@@ -1067,7 +1128,6 @@ void createMQTTPackage(LyraDatas *lyradata, GPS_Handle*gps_data, uint8_t* packBu
 	AESK_UINT8toUINT8CODE(&(gps_data->speed_u8), packBuf, index);
 	AESK_UINT8toUINT8CODE(&(gps_data->satellite_number_u8), packBuf, index);
 	AESK_UINT8toUINT8CODE(&(gps_data->gpsEfficiency_u8), packBuf, index);
-	static uint32_t MQTT_Counter = 0;
 	MQTT_Counter++;
 	AESK_UINT32toUINT8_LE(&MQTT_Counter, packBuf, index);
 }
