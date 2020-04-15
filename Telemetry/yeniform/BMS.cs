@@ -16,5 +16,10 @@ namespace yeniform
         {
             InitializeComponent();
         }
+
+        private void BMS_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

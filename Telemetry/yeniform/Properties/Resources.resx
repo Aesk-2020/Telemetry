@@ -127,8 +127,14 @@
   <data name="dadaa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dadaa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DASDASD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DASDASD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="speed vector" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\speed vector.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="checkered_flag_clip_art_9511 kopya" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checkered_flag_clip_art_9511 kopya.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="asd" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\asd.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,20 +154,20 @@
   <data name="54-541323_crosshair-aim-shoot-target-png-target-clipart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\54-541323_crosshair-aim-shoot-target-png-target-clipart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="aweqwewqe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\aweqwewqe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="road" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\road.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="asdasd" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\asdasd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="yeni" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\yeni.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="YEDEK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\YEDEK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="czxcxz" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\czxcxz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="54-541323_crosshair-aim-shoot-target-png-target-clipart1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\54-541323_crosshair-aim-shoot-target-png-target-clipart1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cczzc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cczzc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="czxcxz1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\czxcxz1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,31 +175,28 @@
   <data name="dadadadda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dadadadda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="python-logo-master-v3-TM" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\python-logo-master-v3-TM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="dadada" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dadada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="YEDEK" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\YEDEK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="python-logo-master-v3-TM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\python-logo-master-v3-TM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="checkered_flag_clip_art_9511 kopya" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\checkered_flag_clip_art_9511 kopya.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="yeni" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yeni.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="asdasd1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\asdasd1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cczzc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cczzc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="216-2161070_obs-satellite-vector-graphics" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\216-2161070_obs-satellite-vector-graphics.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DASDASD" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DASDASD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="aweqwewqe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\aweqwewqe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="road" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\road.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="54-541323_crosshair-aim-shoot-target-png-target-clipart1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\54-541323_crosshair-aim-shoot-target-png-target-clipart1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="YEDEK1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\YEDEK1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

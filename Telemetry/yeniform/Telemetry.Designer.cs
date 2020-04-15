@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telemetry));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -155,6 +155,10 @@
             this.Tuketim_FC_Lt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cons_Out = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gmap = new GMap.NET.WindowsForms.GMapControl();
+            this.gmap_sag = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.GpsMouseModAktif = new System.Windows.Forms.ToolStripMenuItem();
+            this.GpsMouseModDeaktif = new System.Windows.Forms.ToolStripMenuItem();
+            this.MarkerTemizlee = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel86 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel87 = new System.Windows.Forms.TableLayoutPanel();
@@ -256,10 +260,6 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.gmap_sag = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.GpsMouseModDeaktif = new System.Windows.Forms.ToolStripMenuItem();
-            this.GpsMouseModAktif = new System.Windows.Forms.ToolStripMenuItem();
-            this.MarkerTemizlee = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox6.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel19.SuspendLayout();
@@ -292,6 +292,7 @@
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.gmap_sag.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel86.SuspendLayout();
             this.tableLayoutPanel87.SuspendLayout();
@@ -315,7 +316,6 @@
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.gmap_sag.SuspendLayout();
             this.SuspendLayout();
             // 
             // label23
@@ -326,7 +326,7 @@
             this.label23.ForeColor = System.Drawing.Color.White;
             this.label23.Location = new System.Drawing.Point(42, 85);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(58, 41);
+            this.label23.Size = new System.Drawing.Size(56, 41);
             this.label23.TabIndex = 9;
             this.label23.Text = "Önceki Tur\r\n";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -337,9 +337,9 @@
             this.label24.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(107, 85);
+            this.label24.Location = new System.Drawing.Point(105, 85);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(97, 41);
+            this.label24.Size = new System.Drawing.Size(99, 41);
             this.label24.TabIndex = 8;
             this.label24.Text = "3.39.657";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -352,7 +352,7 @@
             this.label21.ForeColor = System.Drawing.Color.White;
             this.label21.Location = new System.Drawing.Point(42, 127);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(58, 41);
+            this.label21.Size = new System.Drawing.Size(56, 41);
             this.label21.TabIndex = 7;
             this.label21.Text = "En Hızlı Tur";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -363,9 +363,9 @@
             this.label22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(107, 127);
+            this.label22.Location = new System.Drawing.Point(105, 127);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(97, 41);
+            this.label22.Size = new System.Drawing.Size(99, 41);
             this.label22.TabIndex = 6;
             this.label22.Text = "3.39.657";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -378,7 +378,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(42, 169);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 41);
+            this.label4.Size = new System.Drawing.Size(56, 41);
             this.label4.TabIndex = 2;
             this.label4.Text = "Şimdiki Tur";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -389,9 +389,9 @@
             this.anlik_tur_suresi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.anlik_tur_suresi.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.anlik_tur_suresi.ForeColor = System.Drawing.Color.White;
-            this.anlik_tur_suresi.Location = new System.Drawing.Point(107, 169);
+            this.anlik_tur_suresi.Location = new System.Drawing.Point(105, 169);
             this.anlik_tur_suresi.Name = "anlik_tur_suresi";
-            this.anlik_tur_suresi.Size = new System.Drawing.Size(97, 41);
+            this.anlik_tur_suresi.Size = new System.Drawing.Size(99, 41);
             this.anlik_tur_suresi.TabIndex = 0;
             this.anlik_tur_suresi.Text = "3.41.027";
             this.anlik_tur_suresi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -404,7 +404,7 @@
             this.label17.ForeColor = System.Drawing.Color.White;
             this.label17.Location = new System.Drawing.Point(42, 43);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(58, 41);
+            this.label17.Size = new System.Drawing.Size(56, 41);
             this.label17.TabIndex = 16;
             this.label17.Text = "Ort. Hız";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -415,9 +415,9 @@
             this.maks_hiz.Dock = System.Windows.Forms.DockStyle.Fill;
             this.maks_hiz.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.maks_hiz.ForeColor = System.Drawing.Color.White;
-            this.maks_hiz.Location = new System.Drawing.Point(107, 1);
+            this.maks_hiz.Location = new System.Drawing.Point(105, 1);
             this.maks_hiz.Name = "maks_hiz";
-            this.maks_hiz.Size = new System.Drawing.Size(97, 41);
+            this.maks_hiz.Size = new System.Drawing.Size(99, 41);
             this.maks_hiz.TabIndex = 13;
             this.maks_hiz.Text = "70km/h";
             this.maks_hiz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -430,7 +430,7 @@
             this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(42, 1);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(58, 41);
+            this.label15.Size = new System.Drawing.Size(56, 41);
             this.label15.TabIndex = 12;
             this.label15.Text = "Maks Hız";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -441,9 +441,9 @@
             this.ort_hiz.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ort_hiz.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ort_hiz.ForeColor = System.Drawing.Color.White;
-            this.ort_hiz.Location = new System.Drawing.Point(107, 43);
+            this.ort_hiz.Location = new System.Drawing.Point(105, 43);
             this.ort_hiz.Name = "ort_hiz";
-            this.ort_hiz.Size = new System.Drawing.Size(97, 41);
+            this.ort_hiz.Size = new System.Drawing.Size(99, 41);
             this.ort_hiz.TabIndex = 11;
             this.ort_hiz.Text = "70km/h";
             this.ort_hiz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -688,7 +688,7 @@
             this.tableLayoutPanel6.ColumnCount = 3;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.88889F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.11111F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61F));
             this.tableLayoutPanel6.Controls.Add(this.pictureBox24, 2, 0);
             this.tableLayoutPanel6.Controls.Add(this.pictureBox23, 2, 1);
             this.tableLayoutPanel6.Controls.Add(this.label53, 0, 1);
@@ -721,9 +721,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox24.Image = global::yeniform.Properties.Resources.cczzc;
-            this.pictureBox24.Location = new System.Drawing.Point(146, 6);
+            this.pictureBox24.Location = new System.Drawing.Point(142, 6);
             this.pictureBox24.Name = "pictureBox24";
-            this.pictureBox24.Size = new System.Drawing.Size(52, 28);
+            this.pictureBox24.Size = new System.Drawing.Size(56, 28);
             this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox24.TabIndex = 48;
             this.pictureBox24.TabStop = false;
@@ -734,9 +734,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox23.Image = global::yeniform.Properties.Resources.YEDEK;
-            this.pictureBox23.Location = new System.Drawing.Point(146, 43);
+            this.pictureBox23.Location = new System.Drawing.Point(142, 43);
             this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(52, 28);
+            this.pictureBox23.Size = new System.Drawing.Size(56, 28);
             this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox23.TabIndex = 48;
             this.pictureBox23.TabStop = false;
@@ -750,7 +750,7 @@
             this.label53.ForeColor = System.Drawing.Color.White;
             this.label53.Location = new System.Drawing.Point(6, 40);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(80, 34);
+            this.label53.Size = new System.Drawing.Size(77, 34);
             this.label53.TabIndex = 2;
             this.label53.Text = "BMS";
             this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -764,7 +764,7 @@
             this.label58.ForeColor = System.Drawing.Color.White;
             this.label58.Location = new System.Drawing.Point(6, 3);
             this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(80, 34);
+            this.label58.Size = new System.Drawing.Size(77, 34);
             this.label58.TabIndex = 0;
             this.label58.Text = "DRIVER";
             this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -774,9 +774,9 @@
             this.driver_durum.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.driver_durum.Location = new System.Drawing.Point(95, 6);
+            this.driver_durum.Location = new System.Drawing.Point(92, 6);
             this.driver_durum.Name = "driver_durum";
-            this.driver_durum.Size = new System.Drawing.Size(42, 28);
+            this.driver_durum.Size = new System.Drawing.Size(41, 28);
             this.driver_durum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.driver_durum.TabIndex = 9;
             this.driver_durum.TabStop = false;
@@ -786,9 +786,9 @@
             this.bms_durum.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bms_durum.Location = new System.Drawing.Point(95, 43);
+            this.bms_durum.Location = new System.Drawing.Point(92, 43);
             this.bms_durum.Name = "bms_durum";
-            this.bms_durum.Size = new System.Drawing.Size(42, 28);
+            this.bms_durum.Size = new System.Drawing.Size(41, 28);
             this.bms_durum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bms_durum.TabIndex = 10;
             this.bms_durum.TabStop = false;
@@ -802,7 +802,7 @@
             this.label49.ForeColor = System.Drawing.Color.White;
             this.label49.Location = new System.Drawing.Point(6, 77);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(80, 34);
+            this.label49.Size = new System.Drawing.Size(77, 34);
             this.label49.TabIndex = 6;
             this.label49.Text = "XBEE";
             this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -816,7 +816,7 @@
             this.label47.ForeColor = System.Drawing.Color.White;
             this.label47.Location = new System.Drawing.Point(6, 114);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(80, 37);
+            this.label47.Size = new System.Drawing.Size(77, 37);
             this.label47.TabIndex = 8;
             this.label47.Text = "GSM";
             this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -825,9 +825,9 @@
             // 
             this.xbee_active.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.xbee_active.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xbee_active.Location = new System.Drawing.Point(95, 80);
+            this.xbee_active.Location = new System.Drawing.Point(92, 80);
             this.xbee_active.Name = "xbee_active";
-            this.xbee_active.Size = new System.Drawing.Size(42, 28);
+            this.xbee_active.Size = new System.Drawing.Size(41, 28);
             this.xbee_active.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.xbee_active.TabIndex = 12;
             this.xbee_active.TabStop = false;
@@ -835,9 +835,9 @@
             // gsm_durum
             // 
             this.gsm_durum.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gsm_durum.Location = new System.Drawing.Point(95, 117);
+            this.gsm_durum.Location = new System.Drawing.Point(92, 117);
             this.gsm_durum.Name = "gsm_durum";
-            this.gsm_durum.Size = new System.Drawing.Size(42, 31);
+            this.gsm_durum.Size = new System.Drawing.Size(41, 31);
             this.gsm_durum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gsm_durum.TabIndex = 13;
             this.gsm_durum.TabStop = false;
@@ -848,9 +848,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox20.Image = global::yeniform.Properties.Resources.xbee_pro_63mw_kablo_anten_wire_antenna_seri_2b_zigbee_mesh_xbp24_bz7w_12942_87_B_kopya;
-            this.pictureBox20.Location = new System.Drawing.Point(146, 80);
+            this.pictureBox20.Location = new System.Drawing.Point(142, 80);
             this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(52, 28);
+            this.pictureBox20.Size = new System.Drawing.Size(56, 28);
             this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox20.TabIndex = 48;
             this.pictureBox20.TabStop = false;
@@ -861,9 +861,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox21.Image = global::yeniform.Properties.Resources.aweqwewqe;
-            this.pictureBox21.Location = new System.Drawing.Point(146, 117);
+            this.pictureBox21.Location = new System.Drawing.Point(142, 117);
             this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(52, 31);
+            this.pictureBox21.Size = new System.Drawing.Size(56, 31);
             this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox21.TabIndex = 49;
             this.pictureBox21.TabStop = false;
@@ -1835,20 +1835,20 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle46.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle47.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle47.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle47.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tur,
@@ -1861,27 +1861,27 @@
             this.Tuketim_FC,
             this.Tuketim_FC_Lt,
             this.Cons_Out});
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle48.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle48.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle48.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Location = new System.Drawing.Point(49, 676);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle49.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle49.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle49;
-            dataGridViewCellStyle50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle50.ForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -1963,11 +1963,43 @@
             this.gmap.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gmap.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gmap.ShowTileGridLines = false;
-            this.gmap.Size = new System.Drawing.Size(671, 695);
+            this.gmap.Size = new System.Drawing.Size(834, 695);
             this.gmap.TabIndex = 54;
             this.gmap.Zoom = 0D;
             this.gmap.Load += new System.EventHandler(this.gMapControl1_Load);
             this.gmap.MouseClick += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseClick);
+            // 
+            // gmap_sag
+            // 
+            this.gmap_sag.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.GpsMouseModAktif,
+            this.GpsMouseModDeaktif,
+            this.MarkerTemizlee});
+            this.gmap_sag.Name = "gmap_sag";
+            this.gmap_sag.Size = new System.Drawing.Size(202, 70);
+            this.gmap_sag.Opening += new System.ComponentModel.CancelEventHandler(this.gmap_sag_Opening);
+            // 
+            // GpsMouseModAktif
+            // 
+            this.GpsMouseModAktif.Name = "GpsMouseModAktif";
+            this.GpsMouseModAktif.Size = new System.Drawing.Size(201, 22);
+            this.GpsMouseModAktif.Text = "Gps Mouse Mod Aktif";
+            this.GpsMouseModAktif.Click += new System.EventHandler(this.GpsMouseModAktif_Click);
+            // 
+            // GpsMouseModDeaktif
+            // 
+            this.GpsMouseModDeaktif.Name = "GpsMouseModDeaktif";
+            this.GpsMouseModDeaktif.Size = new System.Drawing.Size(201, 22);
+            this.GpsMouseModDeaktif.Text = "Gps Mouse Mod Deaktif";
+            this.GpsMouseModDeaktif.Click += new System.EventHandler(this.GpsMouseModDeaktif_Click);
+            // 
+            // MarkerTemizlee
+            // 
+            this.MarkerTemizlee.Name = "MarkerTemizlee";
+            this.MarkerTemizlee.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
+            this.MarkerTemizlee.Size = new System.Drawing.Size(201, 22);
+            this.MarkerTemizlee.Text = "Marker Temizle";
+            this.MarkerTemizlee.Click += new System.EventHandler(this.MarkerTemizlee_Click);
             // 
             // groupBox2
             // 
@@ -2002,7 +2034,7 @@
             this.tableLayoutPanel87.ColumnCount = 3;
             this.tableLayoutPanel87.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.03704F));
             this.tableLayoutPanel87.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.96296F));
-            this.tableLayoutPanel87.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102F));
+            this.tableLayoutPanel87.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
             this.tableLayoutPanel87.Controls.Add(this.pictureBox5, 0, 5);
             this.tableLayoutPanel87.Controls.Add(this.maks_hiz, 2, 0);
             this.tableLayoutPanel87.Controls.Add(this.ort_hiz, 2, 1);
@@ -2088,7 +2120,7 @@
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label33.ForeColor = System.Drawing.Color.White;
-            this.label33.Location = new System.Drawing.Point(48, 259);
+            this.label33.Location = new System.Drawing.Point(47, 259);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(45, 34);
             this.label33.TabIndex = 63;
@@ -2101,7 +2133,7 @@
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label32.ForeColor = System.Drawing.Color.White;
-            this.label32.Location = new System.Drawing.Point(44, 214);
+            this.label32.Location = new System.Drawing.Point(43, 214);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(53, 34);
             this.label32.TabIndex = 62;
@@ -2146,9 +2178,9 @@
             this.kalan_yol_gps.AutoSize = true;
             this.kalan_yol_gps.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kalan_yol_gps.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.kalan_yol_gps.Location = new System.Drawing.Point(107, 253);
+            this.kalan_yol_gps.Location = new System.Drawing.Point(105, 253);
             this.kalan_yol_gps.Name = "kalan_yol_gps";
-            this.kalan_yol_gps.Size = new System.Drawing.Size(97, 46);
+            this.kalan_yol_gps.Size = new System.Drawing.Size(99, 46);
             this.kalan_yol_gps.TabIndex = 66;
             this.kalan_yol_gps.Text = "NaN";
             this.kalan_yol_gps.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2158,9 +2190,9 @@
             this.gidilen_yol_gps.AutoSize = true;
             this.gidilen_yol_gps.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gidilen_yol_gps.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.gidilen_yol_gps.Location = new System.Drawing.Point(107, 211);
+            this.gidilen_yol_gps.Location = new System.Drawing.Point(105, 211);
             this.gidilen_yol_gps.Name = "gidilen_yol_gps";
-            this.gidilen_yol_gps.Size = new System.Drawing.Size(97, 41);
+            this.gidilen_yol_gps.Size = new System.Drawing.Size(99, 41);
             this.gidilen_yol_gps.TabIndex = 67;
             this.gidilen_yol_gps.Text = "NaN";
             this.gidilen_yol_gps.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3331,7 +3363,7 @@
             // 
             this.kayıtAçToolStripMenuItem.Name = "kayıtAçToolStripMenuItem";
             this.kayıtAçToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.kayıtAçToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.kayıtAçToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.kayıtAçToolStripMenuItem.Text = "Kayıt Aç";
             this.kayıtAçToolStripMenuItem.Click += new System.EventHandler(this.kayıtAçToolStripMenuItem_Click);
             // 
@@ -3372,38 +3404,6 @@
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // gmap_sag
-            // 
-            this.gmap_sag.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.GpsMouseModAktif,
-            this.GpsMouseModDeaktif,
-            this.MarkerTemizlee});
-            this.gmap_sag.Name = "gmap_sag";
-            this.gmap_sag.Size = new System.Drawing.Size(202, 92);
-            this.gmap_sag.Opening += new System.ComponentModel.CancelEventHandler(this.gmap_sag_Opening);
-            // 
-            // GpsMouseModDeaktif
-            // 
-            this.GpsMouseModDeaktif.Name = "GpsMouseModDeaktif";
-            this.GpsMouseModDeaktif.Size = new System.Drawing.Size(201, 22);
-            this.GpsMouseModDeaktif.Text = "Gps Mouse Mod Deaktif";
-            this.GpsMouseModDeaktif.Click += new System.EventHandler(this.GpsMouseModDeaktif_Click);
-            // 
-            // GpsMouseModAktif
-            // 
-            this.GpsMouseModAktif.Name = "GpsMouseModAktif";
-            this.GpsMouseModAktif.Size = new System.Drawing.Size(201, 22);
-            this.GpsMouseModAktif.Text = "Gps Mouse Mod Aktif";
-            this.GpsMouseModAktif.Click += new System.EventHandler(this.GpsMouseModAktif_Click);
-            // 
-            // MarkerTemizlee
-            // 
-            this.MarkerTemizlee.Name = "MarkerTemizlee";
-            this.MarkerTemizlee.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
-            this.MarkerTemizlee.Size = new System.Drawing.Size(201, 22);
-            this.MarkerTemizlee.Text = "Marker Temizle";
-            this.MarkerTemizlee.Click += new System.EventHandler(this.MarkerTemizlee_Click);
             // 
             // telemetry
             // 
@@ -3457,6 +3457,7 @@
             this.tableLayoutPanel9.PerformLayout();
             this.tableLayoutPanel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.gmap_sag.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel86.ResumeLayout(false);
             this.tableLayoutPanel87.ResumeLayout(false);
@@ -3488,7 +3489,6 @@
             this.tableLayoutPanel5.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.gmap_sag.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

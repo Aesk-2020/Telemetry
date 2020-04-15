@@ -30,8 +30,6 @@ namespace yeniform
             Control.CheckForIllegalCrossThreadCalls = false;
         }
 
-        Color AeskBlue = new Color();
-
         static int crc_hesaplanan = 0;
         string other_datas;
         #region veri
@@ -44,31 +42,39 @@ namespace yeniform
         float bms_bat_current_f32;
         float bms_bat_cons_f32;
         float bms_soc_f32;
-        byte bms_error_u8;
-        byte bms_dc_bus_state_u8;
+        byte  bms_error_u8;
+        byte  bms_dc_bus_state_u8;
         float bms_worst_cell_voltage_f32;
-        byte bms_worst_cell_address_u8;
-        byte bms_temp_u8;
+        byte  bms_worst_cell_address_u8;
+        byte  bms_temp_u8;
 
         //Driver
         UInt32 driver_odometer_u32;
-        float driver_phase_a_current_f32;
-        float driver_phase_b_current_f32;
-        float driver_dc_bus_current_f32;
-        float driver_dc_bus_voltage_f32;
-        float driver_id_f32;
-        float driver_iq_f32;
-        float driver_vd_f32;
-        float driver_vq_f32;
-        byte driver_actual_velocity_u8;
-        byte driver_motor_temperature_u8;
-        byte driver_drive_status_u8;
-        byte driver_error_u8;
+        float  driver_phase_a_current_f32;
+        float  driver_phase_b_current_f32;
+        float  driver_dc_bus_current_f32;
+        float  driver_dc_bus_voltage_f32;
+        float  driver_id_f32;
+        float  driver_iq_f32;
+        float  driver_vd_f32;
+        float  driver_vq_f32;
+        byte   driver_actual_velocity_u8;
+        byte   driver_motor_temperature_u8;
+        byte   driver_drive_status_u8;
+        byte   driver_error_u8;
 
         //VCU
         byte vcu_wake_up_u8;
         byte vcu_set_velocity_u8;
         byte vcu_drive_commands_u8;
+
+        //GPS
+        double gps_latitude_f64 = 40.744392;
+        double gps_longtitude_f64 = 29.786054;
+        byte   gps_velocity_u8;
+        byte   gps_sattelite_number_u8;
+        byte   gps_efficiency_u8;
+        string gps_datas;
 
         //RF Kontrol
         UInt16 GL_baslik_hatali_u16;
@@ -76,42 +82,25 @@ namespace yeniform
         UInt32 GL_gelen_bayt_u32;
         UInt16 GL_cozulen_paket_u16;
 
+        //MQTT
+        MqttClient Client = new MqttClient("157.230.29.63");
+        int MQTT_counter_int32 = 0;
+
         //Arayüz verileri
         byte my_maks_hiz = 0;
-        double gps_latitude_f64 = 40.744392;
-        double gps_longtitude_f64 = 29.786054;
-        byte gps_velocity_u8;
-        byte anlik_hiz_u8;
         double ortalama_hiz_f32;
         double ortalama_hiz_vcu_f32;
         //byte driver_set_torque_u8;
         UInt32 GL_kalan_yol_u32 = 56000;
         UInt32 GL_kalan_yol_driver_u32;
-        #endregion
-
-        string gps_datas;
-        //MQTT
-        MqttClient Client = new MqttClient("157.230.29.63");
-        DateTime gsm_old_time;
-
-        int MQTT_counter_int32 =0;
-
         string pathfile = @"Logs\";
         string filename = DateTime.Now.ToString("yyyy_MM_dd_HH_mm") + ".txt";
-
-
         ListBox gelenler = new ListBox();
-
-        bool mqtt_flag = false;
         bool error_flagg = false;
-        bool timer_flag = false;
-
         string[] ports = SerialPort.GetPortNames();
-
-        static readonly int max_incoming = 32;
+        Color AeskBlue = new Color();
         static readonly int GPS_DIVIDE = 1000000;
         static readonly UInt32 TOTAL_BYTES = 43;
-
         byte[] captured_data = new byte[TOTAL_BYTES + 1];
         PointLatLng start1 = new PointLatLng(40.744392, 29.786054);
         PointLatLng lastposition = new PointLatLng(40.744392, 29.786054);
@@ -128,6 +117,8 @@ namespace yeniform
         UInt16 tour = 1;
         UInt32 GL_tour_distance_gps_u32 = 0;
         UInt32 GL_general_distance_gps_u32 = 0;
+
+        #endregion
 
         string[] dizi = new string[1000];
 
@@ -293,11 +284,13 @@ namespace yeniform
             bms_worst_cell_address_u8 = gelenVeri[39];
             bms_temp_u8 = gelenVeri[40];
 
-            //gps_latitude_f64 = (float)BitConverter.ToInt64(gelenVeri, 41) / GPS_DIVIDE;
-            //gps_longtitude_f64 = (float)BitConverter.ToInt64(gelenVeri, 45) / GPS_DIVIDE;
-            //gps_velocity_u8 = gelenVeri[46];
+            gps_latitude_f64 = (float)BitConverter.ToInt64(gelenVeri, 41) / GPS_DIVIDE;
+            gps_longtitude_f64 = (float)BitConverter.ToInt64(gelenVeri, 45) / GPS_DIVIDE;
+            gps_velocity_u8 = gelenVeri[49];
+            gps_sattelite_number_u8 = gelenVeri[50];
+            gps_efficiency_u8 = gelenVeri[51];
 
-            //MQTT_counter_int32 = BitConverter.ToInt32(gelenVeri, 47);            
+            MQTT_counter_int32 = BitConverter.ToInt32(gelenVeri, 52);            
         }
 
         void gsmDataConvert()
@@ -408,7 +401,7 @@ namespace yeniform
                               driver_motor_temperature_u8.ToString() + '$' +
                               driver_actual_velocity_u8.ToString() + '$' +
 
-                             bms_bat_volt_f32.ToString() + '$' +
+                              bms_bat_volt_f32.ToString() + '$' +
                               bms_bat_current_f32.ToString() + '$' +
                               bms_bat_cons_f32.ToString() + '$' +
                               bms_soc_f32.ToString() + '$' +
@@ -422,8 +415,6 @@ namespace yeniform
                               gps_longtitude_f64.ToString() + '$' +
                               gps_velocity_u8.ToString() + '$' +
 
-
-                              //MQTT counter
                               gsm_yenileme.Text + '$' +
                               my_maks_hiz.ToString() + '$' +
                               GL_kalan_yol_driver_u32.ToString() + '$' +
@@ -538,7 +529,7 @@ namespace yeniform
             #region driver_text_write
             gidilen_yol_gps.Text = driver_odometer_u32.ToString();
             anlik_hiz.Text = driver_actual_velocity_u8.ToString();
-            anlik_hiz_gps.Text = anlik_hiz_u8.ToString();
+            anlik_hiz_gps.Text = gps_velocity_u8.ToString();
             set_hiz.Text = vcu_set_velocity_u8.ToString();
             my_maks_hiz = driver_actual_velocity_u8 > my_maks_hiz ? driver_actual_velocity_u8 : my_maks_hiz;
             maks_hiz.Text = my_maks_hiz.ToString();

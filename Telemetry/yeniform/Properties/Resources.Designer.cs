@@ -314,6 +314,16 @@ namespace yeniform.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap YEDEK1 {
+            get {
+                object obj = ResourceManager.GetObject("YEDEK1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap yeni {
             get {
                 object obj = ResourceManager.GetObject("yeni", resourceCulture);
