@@ -1,0 +1,8 @@
+
+*.xml
+*.s
+*.ld
+*.ld
+Telemetry/.vs/Telemetry-Electric/v15/.suo
+Telemetry/.vs/Telemetry-Electric/v15/Server/sqlite3/storage.ide-shm
+Telemetry/.vs/Telemetry-Electric/v15/Server/sqlite3/storage.ide-wal
