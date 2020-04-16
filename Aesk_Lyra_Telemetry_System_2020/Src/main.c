@@ -55,6 +55,8 @@ CAN_HandleTypeDef hcan2;
 RTC_HandleTypeDef hrtc;
 
 SD_HandleTypeDef hsd;
+DMA_HandleTypeDef hdma_sdio_tx;
+DMA_HandleTypeDef hdma_sdio_rx;
 
 TIM_HandleTypeDef htim6;
 
@@ -93,6 +95,7 @@ UINT testByte;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+static void MX_DMA_Init(void);
 static void MX_CAN1_Init(void);
 static void MX_CAN2_Init(void);
 static void MX_SDIO_SD_Init(void);
@@ -143,6 +146,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_CAN1_Init();
   MX_CAN2_Init();
   MX_SDIO_SD_Init();
@@ -157,8 +161,8 @@ int main(void)
    MX_RTC_Init();
    RTC_Set_Time_Date();
 
-   if(FATFS_LinkDriver(&SD_Driver, (TCHAR const *)SDPath))
-   {
+   //if(FATFS_LinkDriver(&SD_Driver, (TCHAR const *)SDPath))
+  // {
 	   if(f_mount(&myFATAFS,(TCHAR const *)SDPath, 1) == FR_OK)
 	   {
 		   HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
@@ -166,7 +170,7 @@ int main(void)
 		   sprintf(sd_card_data.path, "%d_%d_%d.txt", sDate.Date, sDate.Month, sd_card_data.logger_u32);
 		   sd_card_data.state = SD_Card_Detect;
 	   }
-   }
+  // }
 
 
    	GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin;
@@ -214,15 +218,11 @@ int main(void)
 																			 lyradata.bms_data.Bat_Current_f32, lyradata.bms_data.Bat_Cons_f32, lyradata.bms_data.Soc_f32, lyradata.bms_data.bms_error.bms_error_u8,
 																			 lyradata.bms_data.dc_bus_state.dc_bus_state_u8, lyradata.bms_data.Worst_Cell_Voltage_f32, lyradata.bms_data.Worst_Cell_Address_u8,
 																			 lyradata.bms_data.Temperature_u8, gps_data.latitude_f32, gps_data.longtitude_f32/*, gps_data.speed_u8, gps_data.satellite_number_u8, gps_data.gpsEfficiency_u8,
-																			 gps_data.gps_errorhandler.trueData_u32, gps_data.gps_errorhandler.checksumError_u32, gps_data.gps_errorhandler.validDataError_u32*/
-																			 );
+																			 gps_data.gps_errorhandler.trueData_u32, gps_data.gps_errorhandler.checksumError_u32, gps_data.gps_errorhandler.validDataError_u32*/);
 			  vars_to_str((char *)sd_card_data.total_log, "%d:%d:%d$", sTime.Hours, sTime.Minutes, sTime.Seconds);
 			  strcat(sd_card_data.total_log, (const char*)sd_card_data.transmitBuf);
 			//  f_lseek(&myFile, f_size(&myFile));
-			  HAL_TIM_Base_Stop_IT(&htim6);
-			  HAL_UART_Abort_IT(&huart1);
-			  HAL_UART_Abort_IT(&huart2);
-			  HAL_UART_Abort_IT(&huart3);
+			//  HAL_TIM_Base_Stop_IT(&htim6);
 
 			  res = f_open(&myFile, sd_card_data.path, FA_WRITE | FA_OPEN_APPEND | FA_OPEN_EXISTING | FA_OPEN_ALWAYS);
 			 // f_sync(&myFile);
@@ -234,10 +234,10 @@ int main(void)
 				  SetTime++;
 			  }
 
-			  //HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
-			  //HAL_UART_Receive_IT(&huart3, &xbee_data.receiveData, 1);
-			  //HAL_UART_Receive_IT(&huart2, &gps_data.uartReceiveData_u8, 1);
-			  HAL_TIM_Base_Start_IT(&htim6);
+			 /* HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
+			  HAL_UART_Receive_IT(&huart3, &xbee_data.receiveData, 1);
+			  HAL_UART_Receive_IT(&huart2, &gps_data.uartReceiveData_u8, 1);
+			  HAL_TIM_Base_Start_IT(&htim6);*/
 
 			  /*else
 			  {
@@ -583,6 +583,25 @@ static void MX_USART3_UART_Init(void)
   /* USER CODE BEGIN USART3_Init 2 */
 
   /* USER CODE END USART3_Init 2 */
+
+}
+
+/** 
+  * Enable DMA controller clock
+  */
+static void MX_DMA_Init(void) 
+{
+
+  /* DMA controller clock enable */
+  __HAL_RCC_DMA2_CLK_ENABLE();
+
+  /* DMA interrupt init */
+  /* DMA2_Stream3_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA2_Stream3_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA2_Stream3_IRQn);
+  /* DMA2_Stream6_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA2_Stream6_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA2_Stream6_IRQn);
 
 }
 
@@ -1052,9 +1071,9 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 
 void HAL_UART_AbortCpltCallback(UART_HandleTypeDef *huart)
 {
-	  HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
+	  /*HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
 	  HAL_UART_Receive_IT(&huart3, &xbee_data.receiveData, 1);
-	  HAL_UART_Receive_IT(&huart2, &gps_data.uartReceiveData_u8, 1);
+	  HAL_UART_Receive_IT(&huart2, &gps_data.uartReceiveData_u8, 1);*/
 }
 
 void createMQTTPackage(LyraDatas *lyradata, GPS_Handle*gps_data, uint8_t* packBuf, uint16_t *index)
@@ -1105,6 +1124,7 @@ void createMQTTPackage(LyraDatas *lyradata, GPS_Handle*gps_data, uint8_t* packBu
 	MQTT_Counter++;
 	AESK_UINT32toUINT8_LE(&MQTT_Counter, packBuf, index);
 }
+
 
 
 void RTC_Set_Time_Date()
