@@ -58,6 +58,7 @@ typedef struct
 	char path[200];
 	uint8_t state;
 	char total_log[400];
+	uint32_t logger_u32;
 }Sd_Card_Datas;
 
 typedef struct

@@ -46,7 +46,7 @@
 /   2: f_opendir(), f_readdir() and f_closedir() are removed in addition to 1.
 /   3: f_lseek() function is removed in addition to 2. */
 
-#define _USE_STRFUNC         2      /* 0:Disable or 1-2:Enable */
+#define _USE_STRFUNC         1      /* 0:Disable or 1-2:Enable */
 /* This option switches string functions, f_gets(), f_putc(), f_puts() and
 /  f_printf().
 /
@@ -240,7 +240,7 @@
 /      lock control is independent of re-entrancy. */
 
 #define _FS_REENTRANT    0  /* 0:Disable or 1:Enable */
-#define _FS_TIMEOUT      10 /* Timeout period in unit of time ticks */
+#define _FS_TIMEOUT      1000 /* Timeout period in unit of time ticks */
 #define _SYNC_t          NULL
 /* The option _FS_REENTRANT switches the re-entrancy (thread safe) of the FatFs
 /  module itself. Note that regardless of this option, file access to different
