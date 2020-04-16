@@ -66,6 +66,7 @@ UART_HandleTypeDef huart3;
 int SetTime = 0;
 int SetDate = 0;
 uint32_t MQTT_Counter = 0;
+uint32_t hard_fault;
 Time_Task_union time_task;
 Xbee_Datas xbee_data;
 Gsm_Datas gsm_data;
@@ -82,6 +83,7 @@ RTC_TimeTypeDef sTime;
 RTC_DateTypeDef sDate;
 
 FRESULT res; /* FatFs function common result code */
+FRESULT res_fopen; /* FatFs function common result code */
 uint32_t byteswritten;
 FATFS myFATAFS;
 FIL myFile;
@@ -159,7 +161,7 @@ int main(void)
    {
 	   if(f_mount(&myFATAFS,(TCHAR const *)SDPath, 1) == FR_OK)
 	   {
-		  HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+		   HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 		   HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
 		   sprintf(sd_card_data.path, "%d_%d_%d.txt", sDate.Date, sDate.Month, sd_card_data.logger_u32);
 		   sd_card_data.state = SD_Card_Detect;
@@ -177,9 +179,9 @@ int main(void)
     HAL_Delay(10000);
 
 
-    /*HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
+    HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
     HAL_UART_Receive_IT(&huart3, &xbee_data.receiveData, 1);
-    HAL_UART_Receive_IT(&huart2, &gps_data.uartReceiveData_u8, 1);*/
+    HAL_UART_Receive_IT(&huart2, &gps_data.uartReceiveData_u8, 1);
     HAL_TIM_Base_Start_IT(&htim6);
   /* USER CODE END 2 */
 
@@ -217,29 +219,39 @@ int main(void)
 			  vars_to_str((char *)sd_card_data.total_log, "%d:%d:%d$", sTime.Hours, sTime.Minutes, sTime.Seconds);
 			  strcat(sd_card_data.total_log, (const char*)sd_card_data.transmitBuf);
 			//  f_lseek(&myFile, f_size(&myFile));
-			  f_open(&myFile, sd_card_data.path, FA_WRITE | FA_OPEN_APPEND);
+			  HAL_TIM_Base_Stop_IT(&htim6);
+			  HAL_UART_Abort_IT(&huart1);
+			  HAL_UART_Abort_IT(&huart2);
+			  HAL_UART_Abort_IT(&huart3);
+
+			  res = f_open(&myFile, sd_card_data.path, FA_WRITE | FA_OPEN_APPEND | FA_OPEN_EXISTING | FA_OPEN_ALWAYS);
 			 // f_sync(&myFile);
-			  res = f_write(&myFile, sd_card_data.total_log, strlen(sd_card_data.total_log), (void*)&byteswritten);
+			  f_write(&myFile, sd_card_data.total_log, strlen(sd_card_data.total_log), (void*)&byteswritten);
 			  if((byteswritten != 0) && (res == FR_OK))
 			  {
-				  f_sync(&myFile);
+				  //f_sync(&myFile);
 				  f_close(&myFile);
 				  SetTime++;
 			  }
 
-			  else
+			  //HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
+			  //HAL_UART_Receive_IT(&huart3, &xbee_data.receiveData, 1);
+			  //HAL_UART_Receive_IT(&huart2, &gps_data.uartReceiveData_u8, 1);
+			  HAL_TIM_Base_Start_IT(&htim6);
+
+			  /*else
 			  {
-				  f_sync(&myFile);
+				  //f_sync(&myFile);
 				  f_close(&myFile);
-				  //HAL_SD_InitCard(&hsd);
-				 // sd_card_data.state = NO_SD_Card_Detect;
-				  /*if(f_mount(&myFATAFS,(TCHAR const *)SDPath, 1) == FR_OK)
+				  HAL_SD_InitCard(&hsd);
+				  sd_card_data.state = NO_SD_Card_Detect;
+				  if(f_mount(&myFATAFS,(TCHAR const *)SDPath, 1) == FR_OK)
 				  {
 					  sd_card_data.logger_u32++;
 					  sd_card_data.state = SD_Card_Detect;
 				      sprintf(sd_card_data.path, "%d_%d_%d.txt", sDate.Date, sDate.Month, sd_card_data.logger_u32);
-				  }*/
-			  }
+				  }
+			  }*/
 			}
 	 		time_task.Time_Task.Task_10_ms = FALSE;
 	 }
@@ -672,7 +684,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	task_counter_10_ms++;
 	task_counter_1000_ms++;
 
-	if(task_counter_10_ms == 500)
+	if(task_counter_10_ms == 50)
 	{
 		time_task.Time_Task.Task_10_ms = TRUE;
 		task_counter_10_ms = 0;
@@ -1036,6 +1048,13 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 			break;
 		}
 	}
+}
+
+void HAL_UART_AbortCpltCallback(UART_HandleTypeDef *huart)
+{
+	  HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
+	  HAL_UART_Receive_IT(&huart3, &xbee_data.receiveData, 1);
+	  HAL_UART_Receive_IT(&huart2, &gps_data.uartReceiveData_u8, 1);
 }
 
 void createMQTTPackage(LyraDatas *lyradata, GPS_Handle*gps_data, uint8_t* packBuf, uint16_t *index)

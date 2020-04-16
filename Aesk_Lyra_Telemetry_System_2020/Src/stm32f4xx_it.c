@@ -63,7 +63,7 @@ extern UART_HandleTypeDef huart1;
 extern UART_HandleTypeDef huart2;
 extern UART_HandleTypeDef huart3;
 /* USER CODE BEGIN EV */
-
+extern uint32_t hard_fault;
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -88,7 +88,7 @@ void NMI_Handler(void)
 void HardFault_Handler(void)
 {
   /* USER CODE BEGIN HardFault_IRQn 0 */
-
+	hard_fault = 15;
   /* USER CODE END HardFault_IRQn 0 */
   while (1)
   {
