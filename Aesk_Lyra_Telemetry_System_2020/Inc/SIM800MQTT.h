@@ -15,7 +15,8 @@
 
 #define MQTTString_initializer {NULL, {0, NULL}}
 
-#define HAL_DELAY		5000
+#define HAL_DELAY			5000
+#define RESET_AT_COMMAND	"AT+CFUN=1,1\r\n"
 enum errors
 {
 	MQTTPACKET_BUFFER_TOO_SHORT = -2,

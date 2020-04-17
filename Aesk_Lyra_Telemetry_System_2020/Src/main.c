@@ -101,7 +101,6 @@ static void MX_USART3_UART_Init(void);
 static void MX_RTC_Init(void);
 /* USER CODE BEGIN PFP */
 void Gsm_Calibration(Gsm_Datas* gsm_data);
-static void MX_USART1_UART_Init_New(void);
 void createMQTTPackage(LyraDatas *lyradata, GPS_Handle*gps_data, uint8_t* packBuf, uint16_t *index);
 void RTC_Set_Time_Date();
 void vars_to_str(char *buffer, const char *format, ...);
@@ -164,16 +163,22 @@ int main(void)
 	   sd_card_data.state = SD_Card_Detect;
    }
 
+   if((GSM_STATUS_GPIO_Port->IDR & GSM_STATUS_Pin) == (uint32_t)GPIO_PIN_RESET)
+   {
+		GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin;
+	    HAL_Delay(1500);
+	    GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin << 16U;
+   }
 
+   else
+   {
+	   HAL_UART_Transmit(gsm_data.gsm_uart, (uint8_t*)RESET_AT_COMMAND, (uint16_t)strlen(RESET_AT_COMMAND), HAL_DELAY);
+   }
 
-   	GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin;
-    HAL_Delay(1500);
-    GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin << 16U;
-    HAL_Delay(800);
-	GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin;
-    HAL_Delay(800);
-    GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin << 16U;
-    HAL_Delay(10000);
+   while((GSM_STATUS_GPIO_Port->IDR & GSM_STATUS_Pin) == (uint32_t)GPIO_PIN_RESET)
+   {
+	   ;
+   }
 
 
     HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
@@ -647,33 +652,6 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-static void MX_USART1_UART_Init_New(void)
-{
-
-  /* USER CODE BEGIN USART1_Init 0 */
-
-  /* USER CODE END USART1_Init 0 */
-
-  /* USER CODE BEGIN USART1_Init 1 */
-
-  /* USER CODE END USART1_Init 1 */
-  huart1.Instance = USART1;
-  huart1.Init.BaudRate = 460800;
-  huart1.Init.WordLength = UART_WORDLENGTH_8B;
-  huart1.Init.StopBits = UART_STOPBITS_1;
-  huart1.Init.Parity = UART_PARITY_NONE;
-  huart1.Init.Mode = UART_MODE_TX_RX;
-  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
-  if (HAL_UART_Init(&huart1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN USART1_Init 2 */
-
-  /* USER CODE END USART1_Init 2 */
-
-}
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
@@ -835,26 +813,8 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 		case SerialEchoOff :
 		{
 			SendATCommand(gsm_data, "ATE0\r\n", "OK\r\n");
-			gsm_data->gsm_state_next_index = ChangeSIM800SerialBaudRate;
-			gsm_data->gsm_state_current_index = EmptyState;
-			break;
-		}
-
-		case ChangeSIM800SerialBaudRate :
-		{
-			SendATCommand(gsm_data, "AT+IPR=460800\r\n", "OK\r\n");
-			gsm_data->gsm_state_next_index = ChangeSTBaudRate;
-			gsm_data->gsm_state_current_index = ChangeSTBaudRate;
-			break;
-		}
-
-		case ChangeSTBaudRate:
-		{
-			MX_USART1_UART_Init_New();
-			gsm_data->gsm_uart = &huart1;
-			HAL_UART_Receive_IT(gsm_data->gsm_uart, &gsm_data->receivegsmdata, 1);
 			gsm_data->gsm_state_next_index = DeactiveGPRS;
-			gsm_data->gsm_state_current_index = DeactiveGPRS;
+			gsm_data->gsm_state_current_index = EmptyState;
 			break;
 		}
 
@@ -958,87 +918,21 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 
 		case GsmOnOffSet :
 		{
-			GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin;
+			HAL_UART_Transmit(gsm_data->gsm_uart, (uint8_t*)RESET_AT_COMMAND, (uint16_t)strlen(RESET_AT_COMMAND), HAL_DELAY);
 			gsm_data->gsm_state_current_index = Gsm1500msWait;
-			gsm_data->gsm_state_next_index = Gsm1500msWait;
 			break;
 		}
 
 		case Gsm1500msWait :
 		{
-			static uint8_t gsm1500msWaitCounter = 0;
-			gsm1500msWaitCounter++;
-			if(gsm1500msWaitCounter == 100)
+			if((GSM_STATUS_GPIO_Port->IDR & GSM_STATUS_Pin) == (uint32_t)GPIO_PIN_RESET)
 			{
-				gsm_data->gsm_state_current_index = GsmOnOffReset;
-				gsm_data->gsm_state_next_index = GsmOnOffReset;
-				gsm1500msWaitCounter = 0;
+				gsm_data->gsm_state_current_index = Gsm1500msWait;
 			}
-			break;
-		}
 
-		case GsmOnOffReset :
-		{
-			GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin << 16U;
-			gsm_data->gsm_state_current_index = Gsm800msWait;
-			gsm_data->gsm_state_next_index = Gsm800msWait;
-			break;
-		}
-
-		case Gsm800msWait :
-		{
-			static uint8_t gsm800mscounter = 0;
-			gsm800mscounter++;
-			if(gsm800mscounter == 50)
-			{
-				gsm_data->gsm_state_current_index = GsmOnOffSet1;
-				gsm_data->gsm_state_next_index = GsmOnOffSet1;
-				gsm800mscounter = 0;
-			}
-			break;
-		}
-
-		case GsmOnOffSet1 :
-		{
-			GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin;
-			gsm_data->gsm_state_current_index = Gsm800msWait1;
-			gsm_data->gsm_state_next_index = Gsm800msWait1;
-			break;
-		}
-
-		case Gsm800msWait1 :
-		{
-			static uint8_t gsm800mscounter1 = 0;
-			gsm800mscounter1++;
-			if(gsm800mscounter1 == 50)
-			{
-				gsm_data->gsm_state_current_index = GsmOnOffReset1;
-				gsm_data->gsm_state_next_index = GsmOnOffReset1;
-				gsm800mscounter1 = 0;
-			}
-			break;
-		}
-
-		case GsmOnOffReset1 :
-		{
-			GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin << 16U;
-			gsm_data->gsm_state_current_index = GsmWakeUpEightSecond;
-			gsm_data->gsm_state_next_index = GsmWakeUpEightSecond;
-			break;
-		}
-
-		case GsmWakeUpEightSecond :
-		{
-			static uint16_t gsmEigthSecondCounter = 0;
-			gsmEigthSecondCounter++;
-			if(gsmEigthSecondCounter == 400)
+			else
 			{
 				gsm_data->gsm_state_current_index = SerialCommunicationControl;
-				gsm_data->gsm_state_next_index = SerialCommunicationControl;
-				MX_USART1_UART_Init();
-				gsm_data->gsm_uart = &huart1;
-				HAL_UART_Receive_IT(gsm_data->gsm_uart, &gsm_data->receivegsmdata, 1);
-				gsmEigthSecondCounter = 0;
 			}
 			break;
 		}
