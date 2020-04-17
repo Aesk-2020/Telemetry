@@ -14,6 +14,8 @@
 #define MQTTPacket_willOptions_initializer { {'M', 'Q', 'T', 'W'}, 0, {NULL, {0, NULL}}, {NULL, {0, NULL}}, 0, 0 }
 
 #define MQTTString_initializer {NULL, {0, NULL}}
+
+#define HAL_DELAY		5000
 enum errors
 {
 	MQTTPACKET_BUFFER_TOO_SHORT = -2,
@@ -125,6 +127,7 @@ typedef struct
 	int len;
 	int mqtt_len;
 	UART_HandleTypeDef *gsm_uart;
+	uint32_t MQTT_Counter;
 }Gsm_Datas;
 
 typedef union
