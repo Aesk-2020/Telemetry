@@ -35,33 +35,41 @@ namespace yeniform
         #region veri
         float my_old_gsm_time = 0;
         float refresh_time;
-        //string data = "10.03.2020 23:00:00.00000 -> Veri -> &0,0$0,0$0,0$0,00$0$0$3,14$14$25$1250$15$0,00$0,00$0,00$0,00$0,00$25,55$0$53$0$0$0$15$1$0$0";
-       
+
+     
         //BMS
-        float bms_bat_volt_f32;
-        float bms_bat_current_f32;
-        float bms_bat_cons_f32;
+        float bms_bat_volt_f32; // bu graphda olacak
+        float bms_bat_current_f32; // bu da olacak
+        // bi de bunlarin carpimlari
+        float bms_bat_cons_f32; 
         float bms_soc_f32;
         byte  bms_error_u8;
-        byte  bms_dc_bus_state_u8;
+        byte  bms_dc_bus_state_u8; 
         float bms_worst_cell_voltage_f32;
         byte  bms_worst_cell_address_u8;
         byte  bms_temp_u8;
 
         //Driver
-        UInt32 driver_odometer_u32;
-        float  driver_phase_a_current_f32;
-        float  driver_phase_b_current_f32;
-        float  driver_dc_bus_current_f32;
-        float  driver_dc_bus_voltage_f32;
-        float  driver_id_f32;
-        float  driver_iq_f32;
-        float  driver_vd_f32;
-        float  driver_vq_f32;
-        byte   driver_actual_velocity_u8;
-        byte   driver_motor_temperature_u8;
-        byte   driver_drive_status_u8;
-        byte   driver_error_u8;
+        static public UInt32 driver_odometer_u32;
+
+        //bu 3
+        static public float  driver_phase_a_current_f32;
+        static public float  driver_phase_b_current_f32;
+        static public float  driver_dc_bus_current_f32;
+
+
+        static public float  driver_dc_bus_voltage_f32;// bu yok
+
+        //bu 4 olacak
+        static public float  driver_id_f32;
+        static public float  driver_iq_f32;
+        static public float  driver_vd_f32;
+        static public float  driver_vq_f32;
+        
+        static public byte   driver_actual_velocity_u8;
+        static public byte   driver_motor_temperature_u8;
+        static public byte   driver_drive_status_u8;
+        static public byte   driver_error_u8;
 
         //VCU
         byte vcu_wake_up_u8;
@@ -111,9 +119,11 @@ namespace yeniform
         Stopwatch anlik_tur_süresi_time = new Stopwatch();
         TimeSpan gecen_sure_calc;
         TimeSpan ortalama_tur_suresi_time;
-        DateTime race_start_time;
+        DateTime race_start_time; 
+
         bool first_start_area = false;
-        bool calculate_about_race = false;
+        static public bool calculate_about_race = false;
+        
         UInt16 tour = 1;
         UInt32 GL_tour_distance_gps_u32 = 0;
         UInt32 GL_general_distance_gps_u32 = 0;
@@ -138,8 +148,10 @@ namespace yeniform
             gmap.MinZoom = 5;
             gmap.Zoom = 17;
             anlikhiz_gauge.Value = 75;
+            go_graphs_button.Enabled = false;
         }
 
+        //mqtt koparsa otomatik rf'e geçme
         private void timer1_Tick(object sender, EventArgs e)
         {
             calculateTimeOperation();           
@@ -177,6 +189,7 @@ namespace yeniform
         static int step = 0;
         static int data_counter = 0;
 
+        //time operations eklenebilir, thread invoke gibi arka planda çalışsın
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             if (serialPort1.IsOpen == true)
@@ -751,6 +764,7 @@ namespace yeniform
                 //Connected
                 gsm_durum.BackColor = AeskBlue;
                 timer1.Start();
+                go_graphs_button.Enabled = true;
             }
             else
             {
@@ -772,6 +786,7 @@ namespace yeniform
             }
 
             mqtt_reference_time = DateTime.Now;
+           
         }
 
         private void bağlantıyıKesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -795,6 +810,7 @@ namespace yeniform
                     if (serialPort1.IsOpen == true)
                     {
                         xbee_active.BackColor = Color.Green;
+                        go_graphs_button.Enabled = true;
                     }
                 }
             }
@@ -935,6 +951,7 @@ namespace yeniform
             }
             history_displayer.ValueChanged += new EventHandler(this.history_displayer_ValueChanged);
             history_displayer.Maximum = gelenler.Items.Count - 1;
+            go_graphs_button.Enabled = true;
         }
 
         private void history_displayer_ValueChanged(object sender, EventArgs e)
