@@ -1,0 +1,13 @@
+C:\Users\Khada\Desktop\publish_ya_af\mqtt_publisher\mqtt_publisher\bin\Debug\mqtt_publisher.exe.config
+C:\Users\Khada\Desktop\publish_ya_af\mqtt_publisher\mqtt_publisher\bin\Debug\mqtt_publisher.exe
+C:\Users\Khada\Desktop\publish_ya_af\mqtt_publisher\mqtt_publisher\bin\Debug\mqtt_publisher.pdb
+C:\Users\Khada\Desktop\publish_ya_af\mqtt_publisher\mqtt_publisher\bin\Debug\M2Mqtt.Net.dll
+C:\Users\Khada\Desktop\publish_ya_af\mqtt_publisher\mqtt_publisher\bin\Debug\M2Mqtt.Net.pdb
+C:\Users\Khada\Desktop\publish_ya_af\mqtt_publisher\mqtt_publisher\obj\Debug\mqtt_publisher.csprojAssemblyReference.cache
+C:\Users\Khada\Desktop\publish_ya_af\mqtt_publisher\mqtt_publisher\obj\Debug\mqtt_publisher.Form_af.resources
+C:\Users\Khada\Desktop\publish_ya_af\mqtt_publisher\mqtt_publisher\obj\Debug\mqtt_publisher.Properties.Resources.resources
+C:\Users\Khada\Desktop\publish_ya_af\mqtt_publisher\mqtt_publisher\obj\Debug\mqtt_publisher.csproj.GenerateResource.cache
+C:\Users\Khada\Desktop\publish_ya_af\mqtt_publisher\mqtt_publisher\obj\Debug\mqtt_publisher.csproj.CoreCompileInputs.cache
+C:\Users\Khada\Desktop\publish_ya_af\mqtt_publisher\mqtt_publisher\obj\Debug\mqtt_publisher.csproj.CopyComplete
+C:\Users\Khada\Desktop\publish_ya_af\mqtt_publisher\mqtt_publisher\obj\Debug\mqtt_publisher.exe
+C:\Users\Khada\Desktop\publish_ya_af\mqtt_publisher\mqtt_publisher\obj\Debug\mqtt_publisher.pdb
