@@ -862,6 +862,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1159, 672);
             this.Controls.Add(this.BMSPowerEmitted_4);
             this.Controls.Add(this.BMSBatCurrent_4);
