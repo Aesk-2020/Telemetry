@@ -845,7 +845,8 @@ namespace yeniform
 
         private void go_graphs_button_Click(object sender, EventArgs e)
         {
-
+            graph_form grafiklerr = new graph_form();
+            grafiklerr.Show();
         }
 
         public static DateTime old_time;
