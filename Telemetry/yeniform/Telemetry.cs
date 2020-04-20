@@ -41,8 +41,8 @@ namespace yeniform
         //BMS
         float bms_bat_volt_f32; // bu graphda olacak
         float bms_bat_current_f32; // bu da olacak
-        // bi de bunlarin carpimlari
-        float bms_bat_cons_f32; 
+        
+        float bms_bat_cons_f32; // bi de bunlarin carpimlari
         float bms_soc_f32;
         byte  bms_error_u8;
         byte  bms_dc_bus_state_u8; 
@@ -53,16 +53,13 @@ namespace yeniform
         //Driver
         static public UInt32 driver_odometer_u32;
 
-        //bu 3
-        static public float  driver_phase_a_current_f32;
+        static public float driver_phase_a_current_f32; //bu 3 
         static public float  driver_phase_b_current_f32;
         static public float  driver_dc_bus_current_f32;
 
-
         static public float  driver_dc_bus_voltage_f32;// bu yok
-
-        //bu 4 olacak
-        static public float  driver_id_f32;
+        
+        static public float  driver_id_f32; //bu 4 olacak
         static public float  driver_iq_f32;
         static public float  driver_vd_f32;
         static public float  driver_vq_f32;
@@ -823,7 +820,7 @@ namespace yeniform
             catch (Exception ex)
             {
                 //Subscribe error
-
+                MessageBox.Show(ex.Message);
             }
 
             mqtt_reference_time = DateTime.Now;

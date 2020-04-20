@@ -64,6 +64,7 @@ namespace yeniform
 
                 catch (Exception ex)
                 {
+                    MessageBox.Show(ex.Message);
                 }
 
             }
