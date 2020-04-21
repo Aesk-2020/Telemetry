@@ -30,7 +30,8 @@ namespace yeniform
             Control.CheckForIllegalCrossThreadCalls = false;
         }
 
-        static int crc_hesaplanan = 0;
+        static int gelen_crc = 0;
+        static int gelen_crc_bms = 0;
         string other_datas;
         #region veri
         float my_old_gsm_time = 0;
@@ -40,8 +41,8 @@ namespace yeniform
         //BMS
         float bms_bat_volt_f32; // bu graphda olacak
         float bms_bat_current_f32; // bu da olacak
-        // bi de bunlarin carpimlari
-        float bms_bat_cons_f32; 
+        
+        float bms_bat_cons_f32; // bi de bunlarin carpimlari
         float bms_soc_f32;
         byte  bms_error_u8;
         byte  bms_dc_bus_state_u8; 
@@ -52,16 +53,13 @@ namespace yeniform
         //Driver
         static public UInt32 driver_odometer_u32;
 
-        //bu 3
-        static public float  driver_phase_a_current_f32;
+        static public float driver_phase_a_current_f32; //bu 3 
         static public float  driver_phase_b_current_f32;
         static public float  driver_dc_bus_current_f32;
 
-
         static public float  driver_dc_bus_voltage_f32;// bu yok
-
-        //bu 4 olacak
-        static public float  driver_id_f32;
+        
+        static public float  driver_id_f32; //bu 4 olacak
         static public float  driver_iq_f32;
         static public float  driver_vd_f32;
         static public float  driver_vq_f32;
@@ -94,6 +92,12 @@ namespace yeniform
         MqttClient Client = new MqttClient("157.230.29.63");
         int MQTT_counter_int32 = 0;
 
+        //Define
+        static readonly int GPS_DIVIDE = 1000000;
+        static readonly UInt32 TOTAL_BYTES = 43;
+        public const int BMS_PACK = 5;
+        public const int BMS_PACK_RECOGNIZE = 6;
+
         //Arayüz verileri
         byte my_maks_hiz = 0;
         double ortalama_hiz_f32;
@@ -107,8 +111,8 @@ namespace yeniform
         bool error_flagg = false;
         string[] ports = SerialPort.GetPortNames();
         Color AeskBlue = new Color();
-        static readonly int GPS_DIVIDE = 1000000;
-        static readonly UInt32 TOTAL_BYTES = 43;
+
+        
         byte[] captured_data = new byte[TOTAL_BYTES + 1];
         PointLatLng start1 = new PointLatLng(40.744392, 29.786054);
         PointLatLng lastposition = new PointLatLng(40.744392, 29.786054);
@@ -188,6 +192,8 @@ namespace yeniform
 
         static int step = 0;
         static int data_counter = 0;
+        static int BMS_data_type = 0;
+        static int BMS_message_length = 0;
 
         //time operations eklenebilir, thread invoke gibi arka planda çalışsın
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
@@ -203,15 +209,22 @@ namespace yeniform
                 for (int i = 0; i < bytes; i++)
                 {
                     switch (step)
-                    {                        
+                    {         
+                        //TELEMETRİ PAKETİ
+
                         case 0:
                             {
                                 if (buffer[i] == 97)
-                                {
-                                    
+                                {                                    
                                     step = 1;
-                                    //captured_data[data_counter] = buffer[i];
-                                    //data_counter = 1;
+                                    captured_data[data_counter] = buffer[i];
+                                    data_counter = 1;
+                                }
+                                else if(buffer[i] == 0xA0) //paket bms verilerini içeriyorsa o veriler basılacak
+                                {
+                                    step = BMS_PACK_RECOGNIZE;
+                                    captured_data[data_counter] = buffer[i];
+                                    data_counter = 1;
                                 }
                                 else
                                 {
@@ -225,11 +238,10 @@ namespace yeniform
                                 captured_data[data_counter] = buffer[i];
                                 data_counter++;
                                 if(data_counter >= TOTAL_BYTES)
-
                                 {
                                     data_counter = 0;
-                                    crc_hesaplanan = (captured_data[TOTAL_BYTES - 1] << 8) | captured_data[TOTAL_BYTES - 2]; // CRC son iki byte
-                                    ushort gelen_crc = aeskCRCCalculate(captured_data, TOTAL_BYTES - 2);
+                                    gelen_crc = (captured_data[TOTAL_BYTES] << 8) | captured_data[TOTAL_BYTES - 1]; // CRC son iki byte
+                                    ushort crc_hesaplanan = aeskCRCCalculate(captured_data, TOTAL_BYTES - 2);
                                     if(crc_hesaplanan == gelen_crc)
                                     {
                                         GL_cozulen_paket_u16++;
@@ -244,7 +256,33 @@ namespace yeniform
                                     step = 0;
                                 }                              
                                 break;
-                            }                                    
+                            }
+
+                            //BMS PAKETİ 
+
+                        case BMS_PACK_RECOGNIZE:
+                            {
+                                BMS_data_type = buffer[i] >> 6;
+                                BMS_message_length = buffer[i] & 0b00111111;
+                                step = BMS_PACK;
+                                break;
+                            }
+                        case BMS_PACK:
+                            {
+                                captured_data[data_counter] = buffer[i];
+                                data_counter++;
+
+                                if(data_counter > (BMS_message_length + 2))
+                                {
+                                    gelen_crc_bms = (captured_data[BMS_message_length + 1] << 8) | captured_data[BMS_message_length];
+                                    ushort crc_hesaplanan = aeskCRCCalculate(captured_data, Convert.ToUInt32(BMS_message_length));
+                                    if(gelen_crc_bms == crc_hesaplanan)
+                                    {
+                                        //do something for nature, making electric cars is not enough you know..
+                                    }
+                                }
+                                break;
+                            }
                         default: break;
                     }
                 }
@@ -782,7 +820,7 @@ namespace yeniform
             catch (Exception ex)
             {
                 //Subscribe error
-
+                MessageBox.Show(ex.Message);
             }
 
             mqtt_reference_time = DateTime.Now;
@@ -845,7 +883,8 @@ namespace yeniform
 
         private void go_graphs_button_Click(object sender, EventArgs e)
         {
-
+            graph_form grafiklerr = new graph_form();
+            grafiklerr.Show();
         }
 
         public static DateTime old_time;
@@ -1055,9 +1094,6 @@ namespace yeniform
             gecen_sure.Text = gecen_sure_calc.ToString(@"hh\:mm\:ss");
             
             other_datas = ortalama_tur_suresi.Text + '$' + anlik_tur_suresi.Text + '$' + kalan_sure.Text + '$' + gecen_sure.Text + '$' + turr.Text + '$' + ort_hiz.Text + '$' + hedef_hiz.Text + '$';
-            
-
-
         }
         
         private void tabPage1_Click(object sender, EventArgs e)
