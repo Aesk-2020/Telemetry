@@ -125,7 +125,6 @@ F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\obj\Debug\Telem
 F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.exe
 F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.pdb
 C:\Users\Khada\Desktop\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csprojAssemblyReference.cache
-C:\Users\Khada\Desktop\Telemetry\yeniform\obj\Debug\yeniform.BMS.resources
 C:\Users\Khada\Desktop\Telemetry\yeniform\obj\Debug\yeniform.telemetry.resources
 C:\Users\Khada\Desktop\Telemetry\yeniform\obj\Debug\yeniform.Properties.Resources.resources
 C:\Users\Khada\Desktop\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csproj.GenerateResource.cache
@@ -184,3 +183,5 @@ C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\obj\Debug\Telem
 C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csproj.CopyComplete
 C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.exe
 C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.pdb
+C:\Users\Khada\Desktop\Telemetry\yeniform\obj\Debug\yeniform.graph_form.resources
+C:\Users\Khada\Desktop\Telemetry\yeniform\obj\Debug\yeniform.BMS_form.resources

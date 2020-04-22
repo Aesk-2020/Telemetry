@@ -15,6 +15,8 @@ using System.IO;
 using System.Threading;
 using System.Net;
 
+using yeniform.Variables;
+
 
 
 namespace yeniform
@@ -32,17 +34,7 @@ namespace yeniform
         private Thread graph_thread;
 
 
-        float driver_phase_a_current_f32_g;
-         float driver_phase_b_current_f32_g;
-         float driver_dc_bus_current_f32_g;
 
-         float driver_id_f32_g;
-         float driver_iq_f32_g;
-         float driver_vd_f32_g;
-         float driver_vq_f32_g;
-        
-        float bms_bat_volt_f32_g; 
-        float bms_bat_current_f32_g; 
         //bunlarin carpimlari da eklenecek
 
         MqttClient Client = new MqttClient("157.230.29.63");
@@ -83,9 +75,7 @@ namespace yeniform
         DateTime graph_start = DateTime.Now;
         void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
-            byte[] incoming = e.Message;
-            dataConvert_2_g(incoming);
-            //gelen datalar islenip grapha basilacak
+            geleni_bas();
 
         }
 
@@ -104,77 +94,58 @@ namespace yeniform
             //Thread.Sleep(10);
 
         }
+        
         private void draw_funct()
         {
             double total_sec = (DateTime.Now - graph_start).TotalSeconds;
-            double power = bms_bat_volt_f32_g * bms_bat_current_f32_g;
 
 
-            chart0.Series[0].Points.AddXY(total_sec,driver_phase_a_current_f32_g);
-            chart0.Series[1].Points.AddXY(total_sec,driver_phase_b_current_f32_g);
-            chart0.Series[2].Points.AddXY(total_sec,driver_dc_bus_current_f32_g);
-            chart0.Series[3].Points.AddXY(total_sec,driver_id_f32_g);
-            chart0.Series[4].Points.AddXY(total_sec,driver_iq_f32_g);
-            chart0.Series[5].Points.AddXY(total_sec,driver_vd_f32_g);
-            chart0.Series[6].Points.AddXY(total_sec,driver_vq_f32_g);
-            chart0.Series[7].Points.AddXY(total_sec,bms_bat_volt_f32_g);
-            chart0.Series[8].Points.AddXY(total_sec,bms_bat_current_f32_g);
-            chart0.Series[9].Points.AddXY(total_sec,power);
+            chart0.Series[0].Points.AddXY(total_sec,Driver.phase_a_current_f32);
+            chart0.Series[1].Points.AddXY(total_sec,Driver.phase_b_current_f32);
+            chart0.Series[2].Points.AddXY(total_sec,Driver.dc_bus_current_f32);
+            chart0.Series[3].Points.AddXY(total_sec,Driver.id_f32);
+            chart0.Series[4].Points.AddXY(total_sec,Driver.iq_f32);
+            chart0.Series[5].Points.AddXY(total_sec,Driver.vd_f32);
+            chart0.Series[6].Points.AddXY(total_sec,Driver.vq_f32);
+            chart0.Series[7].Points.AddXY(total_sec, BMS.bat_volt_f32);
+            chart0.Series[8].Points.AddXY(total_sec, BMS.bat_current_f32);
+            chart0.Series[9].Points.AddXY(total_sec, BMS.power_emitted);
 
-            chart1.Series[0].Points.AddXY(total_sec, driver_phase_a_current_f32_g);
-            chart1.Series[1].Points.AddXY(total_sec, driver_phase_b_current_f32_g);
-            chart1.Series[2].Points.AddXY(total_sec, driver_dc_bus_current_f32_g);
-            chart1.Series[3].Points.AddXY(total_sec, driver_id_f32_g);
-            chart1.Series[4].Points.AddXY(total_sec, driver_iq_f32_g);
-            chart1.Series[5].Points.AddXY(total_sec, driver_vd_f32_g);
-            chart1.Series[6].Points.AddXY(total_sec, driver_vq_f32_g);
-            chart1.Series[7].Points.AddXY(total_sec, bms_bat_volt_f32_g);
-            chart1.Series[8].Points.AddXY(total_sec, bms_bat_current_f32_g);
-            chart1.Series[9].Points.AddXY(total_sec, power);
+            chart1.Series[0].Points.AddXY(total_sec, Driver.phase_a_current_f32);
+            chart1.Series[1].Points.AddXY(total_sec, Driver.phase_b_current_f32);
+            chart1.Series[2].Points.AddXY(total_sec, Driver.dc_bus_current_f32);
+            chart1.Series[3].Points.AddXY(total_sec, Driver.id_f32);
+            chart1.Series[4].Points.AddXY(total_sec, Driver.iq_f32);
+            chart1.Series[5].Points.AddXY(total_sec, Driver.vd_f32);
+            chart1.Series[6].Points.AddXY(total_sec, Driver.vq_f32);
+            chart1.Series[7].Points.AddXY(total_sec, BMS.bat_volt_f32);
+            chart1.Series[8].Points.AddXY(total_sec, BMS.bat_current_f32);
+            chart1.Series[9].Points.AddXY(total_sec, BMS.power_emitted);
 
-            chart2.Series[0].Points.AddXY(total_sec, driver_phase_a_current_f32_g);
-            chart2.Series[1].Points.AddXY(total_sec, driver_phase_b_current_f32_g);
-            chart2.Series[2].Points.AddXY(total_sec, driver_dc_bus_current_f32_g);
-            chart2.Series[3].Points.AddXY(total_sec, driver_id_f32_g);
-            chart2.Series[4].Points.AddXY(total_sec, driver_iq_f32_g);
-            chart2.Series[5].Points.AddXY(total_sec, driver_vd_f32_g);
-            chart2.Series[6].Points.AddXY(total_sec, driver_vq_f32_g);
-            chart2.Series[7].Points.AddXY(total_sec, bms_bat_volt_f32_g);
-            chart2.Series[8].Points.AddXY(total_sec, bms_bat_current_f32_g);
-            chart2.Series[9].Points.AddXY(total_sec, power);
+            chart2.Series[0].Points.AddXY(total_sec, Driver.phase_a_current_f32);
+            chart2.Series[1].Points.AddXY(total_sec, Driver.phase_b_current_f32);
+            chart2.Series[2].Points.AddXY(total_sec, Driver.dc_bus_current_f32);
+            chart2.Series[3].Points.AddXY(total_sec, Driver.id_f32);
+            chart2.Series[4].Points.AddXY(total_sec, Driver.iq_f32);
+            chart2.Series[5].Points.AddXY(total_sec, Driver.vd_f32);
+            chart2.Series[6].Points.AddXY(total_sec, Driver.vq_f32);
+            chart2.Series[7].Points.AddXY(total_sec, BMS.bat_volt_f32);
+            chart2.Series[8].Points.AddXY(total_sec, BMS.bat_current_f32);
+            chart2.Series[9].Points.AddXY(total_sec, BMS.power_emitted);
 
-            chart3.Series[0].Points.AddXY(total_sec, driver_phase_a_current_f32_g);
-            chart3.Series[1].Points.AddXY(total_sec, driver_phase_b_current_f32_g);
-            chart3.Series[2].Points.AddXY(total_sec, driver_dc_bus_current_f32_g);
-            chart3.Series[3].Points.AddXY(total_sec, driver_id_f32_g);
-            chart3.Series[4].Points.AddXY(total_sec, driver_iq_f32_g);
-            chart3.Series[5].Points.AddXY(total_sec, driver_vd_f32_g);
-            chart3.Series[6].Points.AddXY(total_sec, driver_vq_f32_g);
-            chart3.Series[7].Points.AddXY(total_sec, bms_bat_volt_f32_g);
-            chart3.Series[8].Points.AddXY(total_sec, bms_bat_current_f32_g);
-            chart3.Series[9].Points.AddXY(total_sec, power);
+            chart3.Series[0].Points.AddXY(total_sec, Driver.phase_a_current_f32);
+            chart3.Series[1].Points.AddXY(total_sec, Driver.phase_b_current_f32);
+            chart3.Series[2].Points.AddXY(total_sec, Driver.dc_bus_current_f32);
+            chart3.Series[3].Points.AddXY(total_sec, Driver.id_f32);
+            chart3.Series[4].Points.AddXY(total_sec, Driver.iq_f32);
+            chart3.Series[5].Points.AddXY(total_sec, Driver.vd_f32);
+            chart3.Series[6].Points.AddXY(total_sec, Driver.vq_f32);
+            chart3.Series[7].Points.AddXY(total_sec, BMS.bat_volt_f32);
+            chart3.Series[8].Points.AddXY(total_sec, BMS.bat_current_f32);
+            chart3.Series[9].Points.AddXY(total_sec, BMS.power_emitted);
             
         }
 
-
-
-        void dataConvert_2_g(byte[] gelenVeri)
-        {
-
-            driver_phase_a_current_f32_g = (float)BitConverter.ToInt16(gelenVeri, 3) / 100;
-            driver_phase_b_current_f32_g = (float)BitConverter.ToInt16(gelenVeri, 5) / 100;
-            driver_dc_bus_current_f32_g = (float)BitConverter.ToInt16(gelenVeri, 7) / 100;
-            
-
-            driver_id_f32_g = (float)BitConverter.ToInt16(gelenVeri, 11) / 100;
-            driver_iq_f32_g = (float)BitConverter.ToInt16(gelenVeri, 13) / 100;
-            driver_vd_f32_g = (float)BitConverter.ToInt16(gelenVeri, 15) / 100;
-            driver_vq_f32_g = (float)BitConverter.ToInt16(gelenVeri, 17) / 100;
-
-            bms_bat_volt_f32_g = (float)BitConverter.ToUInt16(gelenVeri, 27) / 10;
-            bms_bat_current_f32_g = (float)BitConverter.ToInt16(gelenVeri, 29) / 100;
-            //bu iki deger carpilacak
-        }
 
         #region chart0_checkboxes
         private void DriverPhaseACurrent_1_CheckedChanged(object sender, EventArgs e)
