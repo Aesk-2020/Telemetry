@@ -18,16 +18,11 @@ using GMap.NET.WindowsForms.Markers;
 using System.Diagnostics;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
-
-
 using yeniform.Variables;
-
 
 
 namespace yeniform
 {
-
-
     public partial class telemetry : Form
     {
 
@@ -43,8 +38,6 @@ namespace yeniform
         #region veri
         float my_old_gsm_time = 0;
         float refresh_time;
-
-
 
         //VCU
         byte vcu_wake_up_u8;
@@ -74,6 +67,8 @@ namespace yeniform
         static readonly UInt32 TOTAL_BYTES = 43;
         public const int BMS_PACK = 5;
         public const int BMS_PACK_RECOGNIZE = 6;
+        public const int READ_HEADER = 0;
+        public const int RF_PACK = 1;
 
         //Arayüz verileri
         byte my_maks_hiz = 0;
@@ -109,26 +104,19 @@ namespace yeniform
         Stopwatch anlik_tur_süresi_time = new Stopwatch();
         Stopwatch region_suresi_time = new Stopwatch();
 
-       public PointLatLng start1 = new PointLatLng(40.744392, 29.786054);
-       public PointLatLng lastposition = new PointLatLng(40.744392, 29.786054);
-       public PointLatLng Center = new PointLatLng(40.743778, 29.783807);
+        public PointLatLng start1 = new PointLatLng(40.744392, 29.786054);
+        public PointLatLng lastposition = new PointLatLng(40.744392, 29.786054);
+        public PointLatLng Center = new PointLatLng(40.743778, 29.783807);
 
         bool gps_mouse_mod = false;
         readonly Int32 start1lat = 40744392;
         readonly Int32 start1long = 29786054;
 
-
-
         UInt16 tour = 0;
         UInt32 GL_tour_distance_gps_u32 = 0;
         UInt32 GL_general_distance_gps_u32 = 0;
-
         UInt32 GL_region_distance_gps_u32 = 0;
-
-
         #endregion
-
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -192,7 +180,7 @@ namespace yeniform
         static int BMS_data_type = 0;
         static int BMS_message_length = 0;
 
-        //time operations eklenebilir, thread invoke gibi arka planda çalışsın
+        //time operations eklenebilir, thread invoke gibi arka planda çalışsın ekle o zaman mk ınu da mı ben söyliyim
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             if (serialPort1.IsOpen == true)
@@ -209,11 +197,11 @@ namespace yeniform
                     {         
                         //TELEMETRİ PAKETİ
 
-                        case 0:
+                        case READ_HEADER:
                             {
                                 if (buffer[i] == 97)
                                 {                                    
-                                    step = 1;
+                                    step = RF_PACK;
                                     captured_data[data_counter] = buffer[i];
                                     data_counter = 1;
                                 }
@@ -226,11 +214,11 @@ namespace yeniform
                                 else
                                 {
                                     GL_baslik_hatali_u16++;
-                                    step = 0;
+                                    step = READ_HEADER;
                                 }
                                 break;
                             }
-                        case 1:
+                        case RF_PACK:
                             {
                                 captured_data[data_counter] = buffer[i];
                                 data_counter++;
@@ -250,7 +238,7 @@ namespace yeniform
                                     {
                                         GL_crc_hatali_u16++;
                                     }
-                                    step = 0;
+                                    step = READ_HEADER;
                                 }                              
                                 break;
                             }
@@ -277,6 +265,7 @@ namespace yeniform
                                     {
                                         //do something for nature, making electric cars is not enough you know..
                                     }
+                                    step = READ_HEADER;
                                 }
                                 break;
                             }
@@ -509,7 +498,7 @@ namespace yeniform
             dc_bus_volt.Text = Driver.dc_bus_voltage_f32.ToString();
             motor_temp.Text = Driver.motor_temperature_u8.ToString();
             id.Text = Driver.id_f32.ToString();
-            act_torque.Text = Math.Round(((float)Driver.id_f32 * 0.45), 2).ToString();
+            //act_torque.Text = Math.Round(((float)Driver.id_f32 * 0.45), 2).ToString();
             iq.Text = Driver.iq_f32.ToString();
             vd.Text = Driver.vd_f32.ToString();
             vq.Text = Driver.vq_f32.ToString();
@@ -677,8 +666,6 @@ namespace yeniform
             scanned_angle += temp;
             scanned_angle = (scanned_angle + 360) % 360;
 
-
-
             //her bolge gecislerinde bolge degiskenleri 0 lanacak
             //itemboxa eklenme yapilacak
             //bolge degiskenleri ana loop icinde guncellenip bolge gecislerinde 0 lanacak
@@ -714,7 +701,6 @@ namespace yeniform
 
             }
             
-
             //calculate about flagi
             //tur bolgesine girmek
             //Gl_tour_distance_gps_u32 =0;
@@ -730,8 +716,6 @@ namespace yeniform
 
              */
             //tur bolgesinde marker temizle
-
-
 
             //dursun zarari yok
             gidilen_yol_gps.Text = GL_general_distance_gps_u32.ToString();
@@ -830,8 +814,6 @@ namespace yeniform
         {
 
         }
-
-
 
         DateTime mqtt_reference_time;
 
@@ -943,8 +925,6 @@ namespace yeniform
         {
             //sayacin eskisini olda atiyoruz
             mqtt_counter_old = MQTT_counter_int32;
-            
-
             //bu ne mk
             //counter ++;'i direkt bunun altina aldim
             // payda 0 olmamali oran hesaplarinda
@@ -972,22 +952,14 @@ namespace yeniform
             //yani ilk veride hata varsa bilemeyecez
 
             error_counter += find_error(mqtt_counter_old,MQTT_counter_int32);
-            
-
             double c = Convert.ToDouble(error_counter) / Convert.ToDouble(mqtt_total_counter);
-
-            
             gsm_yenileme.Text = (totalTime / (double)mqtt_total_counter).ToString();
 
             //RECEIVE 
             displayAllData();
             displayGauges();
             //RECEIVE
-
             old_time = current_time;
-
-
-            
             // gerekli yerlere yazdik
             mqtt_reference_time = gsm_new_time;
             mqtt_toplam_paket.Text = mqtt_total_counter.ToString();
@@ -1011,10 +983,6 @@ namespace yeniform
             return Math.Abs(x - 1);
 
         }
-
-
-
-
 
         private void kayıtAçToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -197,33 +197,14 @@
             this.label52 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
-            this.motor_temp = new System.Windows.Forms.TextBox();
-            this.label45 = new System.Windows.Forms.Label();
-            this.vd = new System.Windows.Forms.TextBox();
-            this.vq = new System.Windows.Forms.TextBox();
-            this.label73 = new System.Windows.Forms.Label();
-            this.label76 = new System.Windows.Forms.Label();
-            this.label85 = new System.Windows.Forms.Label();
-            this.label78 = new System.Windows.Forms.Label();
-            this.label81 = new System.Windows.Forms.Label();
-            this.label87 = new System.Windows.Forms.Label();
-            this.phase_a_volt = new System.Windows.Forms.TextBox();
-            this.phase_b_volt = new System.Windows.Forms.TextBox();
-            this.phase_c_volt = new System.Windows.Forms.TextBox();
-            this.dc_bus_volt = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.id = new System.Windows.Forms.TextBox();
             this.iq = new System.Windows.Forms.TextBox();
-            this.act_torque = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.label90 = new System.Windows.Forms.Label();
             this.label88 = new System.Windows.Forms.Label();
             this.dc_bus_cur = new System.Windows.Forms.TextBox();
-            this.phase_c_cur = new System.Windows.Forms.TextBox();
             this.phase_b_cur = new System.Windows.Forms.TextBox();
             this.label80 = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
             this.label68 = new System.Windows.Forms.Label();
             this.label71 = new System.Windows.Forms.Label();
             this.phase_a_cur = new System.Windows.Forms.TextBox();
@@ -260,6 +241,23 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.dc_bus_volt = new System.Windows.Forms.TextBox();
+            this.label87 = new System.Windows.Forms.Label();
+            this.label85 = new System.Windows.Forms.Label();
+            this.label73 = new System.Windows.Forms.Label();
+            this.vq = new System.Windows.Forms.TextBox();
+            this.vd = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.motor_temp = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.Latitude = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.angle_gauge = new Guna.UI.WinForms.GunaCircleProgressBar();
+            this.label64 = new System.Windows.Forms.Label();
             this.groupBox6.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel19.SuspendLayout();
@@ -309,13 +307,15 @@
             this.tableLayoutPanel22.SuspendLayout();
             this.tableLayoutPanel20.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
-            this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.tableLayoutPanel15.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
+            this.angle_gauge.SuspendLayout();
             this.SuspendLayout();
             // 
             // label23
@@ -324,9 +324,9 @@
             this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label23.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(38, 85);
+            this.label23.Location = new System.Drawing.Point(42, 85);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(50, 41);
+            this.label23.Size = new System.Drawing.Size(56, 41);
             this.label23.TabIndex = 9;
             this.label23.Text = "Önceki Tur\r\n";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -337,9 +337,9 @@
             this.label24.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(95, 85);
+            this.label24.Location = new System.Drawing.Point(105, 85);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(109, 41);
+            this.label24.Size = new System.Drawing.Size(99, 41);
             this.label24.TabIndex = 8;
             this.label24.Text = "3.39.657";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -350,9 +350,9 @@
             this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label21.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(38, 127);
+            this.label21.Location = new System.Drawing.Point(42, 127);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(50, 41);
+            this.label21.Size = new System.Drawing.Size(56, 41);
             this.label21.TabIndex = 7;
             this.label21.Text = "En Hızlı Tur";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -363,9 +363,9 @@
             this.label22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(95, 127);
+            this.label22.Location = new System.Drawing.Point(105, 127);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(109, 41);
+            this.label22.Size = new System.Drawing.Size(99, 41);
             this.label22.TabIndex = 6;
             this.label22.Text = "3.39.657";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -376,9 +376,9 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(38, 169);
+            this.label4.Location = new System.Drawing.Point(42, 169);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 41);
+            this.label4.Size = new System.Drawing.Size(56, 41);
             this.label4.TabIndex = 2;
             this.label4.Text = "Şimdiki Tur";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -389,9 +389,9 @@
             this.anlik_tur_suresi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.anlik_tur_suresi.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.anlik_tur_suresi.ForeColor = System.Drawing.Color.White;
-            this.anlik_tur_suresi.Location = new System.Drawing.Point(95, 169);
+            this.anlik_tur_suresi.Location = new System.Drawing.Point(105, 169);
             this.anlik_tur_suresi.Name = "anlik_tur_suresi";
-            this.anlik_tur_suresi.Size = new System.Drawing.Size(109, 41);
+            this.anlik_tur_suresi.Size = new System.Drawing.Size(99, 41);
             this.anlik_tur_suresi.TabIndex = 0;
             this.anlik_tur_suresi.Text = "3.41.027";
             this.anlik_tur_suresi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -402,9 +402,9 @@
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(38, 43);
+            this.label17.Location = new System.Drawing.Point(42, 43);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(50, 41);
+            this.label17.Size = new System.Drawing.Size(56, 41);
             this.label17.TabIndex = 16;
             this.label17.Text = "Ort. Hız";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -415,9 +415,9 @@
             this.maks_hiz.Dock = System.Windows.Forms.DockStyle.Fill;
             this.maks_hiz.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.maks_hiz.ForeColor = System.Drawing.Color.White;
-            this.maks_hiz.Location = new System.Drawing.Point(95, 1);
+            this.maks_hiz.Location = new System.Drawing.Point(105, 1);
             this.maks_hiz.Name = "maks_hiz";
-            this.maks_hiz.Size = new System.Drawing.Size(109, 41);
+            this.maks_hiz.Size = new System.Drawing.Size(99, 41);
             this.maks_hiz.TabIndex = 13;
             this.maks_hiz.Text = "70km/h";
             this.maks_hiz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -428,9 +428,9 @@
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(38, 1);
+            this.label15.Location = new System.Drawing.Point(42, 1);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(50, 41);
+            this.label15.Size = new System.Drawing.Size(56, 41);
             this.label15.TabIndex = 12;
             this.label15.Text = "Maks Hız";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -441,9 +441,9 @@
             this.ort_hiz.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ort_hiz.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ort_hiz.ForeColor = System.Drawing.Color.White;
-            this.ort_hiz.Location = new System.Drawing.Point(95, 43);
+            this.ort_hiz.Location = new System.Drawing.Point(105, 43);
             this.ort_hiz.Name = "ort_hiz";
-            this.ort_hiz.Size = new System.Drawing.Size(109, 41);
+            this.ort_hiz.Size = new System.Drawing.Size(99, 41);
             this.ort_hiz.TabIndex = 11;
             this.ort_hiz.Text = "70km/h";
             this.ort_hiz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -688,7 +688,7 @@
             this.tableLayoutPanel6.ColumnCount = 3;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.88889F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.11111F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
             this.tableLayoutPanel6.Controls.Add(this.pictureBox24, 2, 0);
             this.tableLayoutPanel6.Controls.Add(this.pictureBox23, 2, 1);
             this.tableLayoutPanel6.Controls.Add(this.label53, 0, 1);
@@ -721,9 +721,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox24.Image = global::yeniform.Properties.Resources.cczzc;
-            this.pictureBox24.Location = new System.Drawing.Point(122, 6);
+            this.pictureBox24.Location = new System.Drawing.Point(129, 6);
             this.pictureBox24.Name = "pictureBox24";
-            this.pictureBox24.Size = new System.Drawing.Size(76, 28);
+            this.pictureBox24.Size = new System.Drawing.Size(69, 28);
             this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox24.TabIndex = 48;
             this.pictureBox24.TabStop = false;
@@ -734,9 +734,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox23.Image = global::yeniform.Properties.Resources.YEDEK;
-            this.pictureBox23.Location = new System.Drawing.Point(122, 43);
+            this.pictureBox23.Location = new System.Drawing.Point(129, 43);
             this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(76, 28);
+            this.pictureBox23.Size = new System.Drawing.Size(69, 28);
             this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox23.TabIndex = 48;
             this.pictureBox23.TabStop = false;
@@ -750,7 +750,7 @@
             this.label53.ForeColor = System.Drawing.Color.White;
             this.label53.Location = new System.Drawing.Point(6, 40);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(64, 34);
+            this.label53.Size = new System.Drawing.Size(69, 34);
             this.label53.TabIndex = 2;
             this.label53.Text = "BMS";
             this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -764,7 +764,7 @@
             this.label58.ForeColor = System.Drawing.Color.White;
             this.label58.Location = new System.Drawing.Point(6, 3);
             this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(64, 34);
+            this.label58.Size = new System.Drawing.Size(69, 34);
             this.label58.TabIndex = 0;
             this.label58.Text = "DRIVER";
             this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -774,9 +774,9 @@
             this.driver_durum.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.driver_durum.Location = new System.Drawing.Point(79, 6);
+            this.driver_durum.Location = new System.Drawing.Point(84, 6);
             this.driver_durum.Name = "driver_durum";
-            this.driver_durum.Size = new System.Drawing.Size(34, 28);
+            this.driver_durum.Size = new System.Drawing.Size(36, 28);
             this.driver_durum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.driver_durum.TabIndex = 9;
             this.driver_durum.TabStop = false;
@@ -786,9 +786,9 @@
             this.bms_durum.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bms_durum.Location = new System.Drawing.Point(79, 43);
+            this.bms_durum.Location = new System.Drawing.Point(84, 43);
             this.bms_durum.Name = "bms_durum";
-            this.bms_durum.Size = new System.Drawing.Size(34, 28);
+            this.bms_durum.Size = new System.Drawing.Size(36, 28);
             this.bms_durum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bms_durum.TabIndex = 10;
             this.bms_durum.TabStop = false;
@@ -802,7 +802,7 @@
             this.label49.ForeColor = System.Drawing.Color.White;
             this.label49.Location = new System.Drawing.Point(6, 77);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(64, 34);
+            this.label49.Size = new System.Drawing.Size(69, 34);
             this.label49.TabIndex = 6;
             this.label49.Text = "XBEE";
             this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -816,7 +816,7 @@
             this.label47.ForeColor = System.Drawing.Color.White;
             this.label47.Location = new System.Drawing.Point(6, 114);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(64, 37);
+            this.label47.Size = new System.Drawing.Size(69, 37);
             this.label47.TabIndex = 8;
             this.label47.Text = "GSM";
             this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -825,9 +825,9 @@
             // 
             this.xbee_active.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.xbee_active.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xbee_active.Location = new System.Drawing.Point(79, 80);
+            this.xbee_active.Location = new System.Drawing.Point(84, 80);
             this.xbee_active.Name = "xbee_active";
-            this.xbee_active.Size = new System.Drawing.Size(34, 28);
+            this.xbee_active.Size = new System.Drawing.Size(36, 28);
             this.xbee_active.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.xbee_active.TabIndex = 12;
             this.xbee_active.TabStop = false;
@@ -835,9 +835,9 @@
             // gsm_durum
             // 
             this.gsm_durum.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gsm_durum.Location = new System.Drawing.Point(79, 117);
+            this.gsm_durum.Location = new System.Drawing.Point(84, 117);
             this.gsm_durum.Name = "gsm_durum";
-            this.gsm_durum.Size = new System.Drawing.Size(34, 31);
+            this.gsm_durum.Size = new System.Drawing.Size(36, 31);
             this.gsm_durum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gsm_durum.TabIndex = 13;
             this.gsm_durum.TabStop = false;
@@ -848,9 +848,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox20.Image = global::yeniform.Properties.Resources.xbee_pro_63mw_kablo_anten_wire_antenna_seri_2b_zigbee_mesh_xbp24_bz7w_12942_87_B_kopya;
-            this.pictureBox20.Location = new System.Drawing.Point(122, 80);
+            this.pictureBox20.Location = new System.Drawing.Point(129, 80);
             this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(76, 28);
+            this.pictureBox20.Size = new System.Drawing.Size(69, 28);
             this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox20.TabIndex = 48;
             this.pictureBox20.TabStop = false;
@@ -861,9 +861,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox21.Image = global::yeniform.Properties.Resources.aweqwewqe;
-            this.pictureBox21.Location = new System.Drawing.Point(122, 117);
+            this.pictureBox21.Location = new System.Drawing.Point(129, 117);
             this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(76, 31);
+            this.pictureBox21.Size = new System.Drawing.Size(69, 31);
             this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox21.TabIndex = 49;
             this.pictureBox21.TabStop = false;
@@ -1167,24 +1167,24 @@
             this.ana_sekme.Location = new System.Drawing.Point(0, 0);
             this.ana_sekme.Name = "ana_sekme";
             this.ana_sekme.SelectedIndex = 0;
-            this.ana_sekme.Size = new System.Drawing.Size(1908, 749);
+            this.ana_sekme.Size = new System.Drawing.Size(1904, 1041);
             this.ana_sekme.TabIndex = 48;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.tabPage1.Controls.Add(this.angle_gauge);
+            this.tabPage1.Controls.Add(this.label13);
+            this.tabPage1.Controls.Add(this.tableLayoutPanel11);
             this.tabPage1.Controls.Add(this.tableLayoutPanel10);
             this.tabPage1.Controls.Add(this.label37);
             this.tabPage1.Controls.Add(this.tableLayoutPanel9);
             this.tabPage1.Controls.Add(this.label34);
             this.tabPage1.Controls.Add(this.label44);
-            this.tabPage1.Controls.Add(this.turr);
-            this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.set_hiz);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.set_hiz_bar);
             this.tabPage1.Controls.Add(this.history_displayer);
-            this.tabPage1.Controls.Add(this.gsm_yenileme);
             this.tabPage1.Controls.Add(this.kalanyol_bar);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.label12);
@@ -1211,7 +1211,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1900, 723);
+            this.tabPage1.Size = new System.Drawing.Size(1896, 1015);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Genel";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
@@ -1235,7 +1235,7 @@
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(205, 100);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(218, 100);
             this.tableLayoutPanel10.TabIndex = 91;
             // 
             // mqtt_toplam_paket
@@ -1249,7 +1249,7 @@
             this.mqtt_toplam_paket.Multiline = true;
             this.mqtt_toplam_paket.Name = "mqtt_toplam_paket";
             this.mqtt_toplam_paket.ReadOnly = true;
-            this.mqtt_toplam_paket.Size = new System.Drawing.Size(60, 43);
+            this.mqtt_toplam_paket.Size = new System.Drawing.Size(64, 43);
             this.mqtt_toplam_paket.TabIndex = 21;
             this.mqtt_toplam_paket.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1260,11 +1260,11 @@
             this.mqtt_solved_paket.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mqtt_solved_paket.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mqtt_solved_paket.ForeColor = System.Drawing.Color.White;
-            this.mqtt_solved_paket.Location = new System.Drawing.Point(71, 53);
+            this.mqtt_solved_paket.Location = new System.Drawing.Point(75, 53);
             this.mqtt_solved_paket.Multiline = true;
             this.mqtt_solved_paket.Name = "mqtt_solved_paket";
             this.mqtt_solved_paket.ReadOnly = true;
-            this.mqtt_solved_paket.Size = new System.Drawing.Size(61, 43);
+            this.mqtt_solved_paket.Size = new System.Drawing.Size(66, 43);
             this.mqtt_solved_paket.TabIndex = 20;
             this.mqtt_solved_paket.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1275,11 +1275,11 @@
             this.mqtt_verim.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mqtt_verim.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mqtt_verim.ForeColor = System.Drawing.Color.White;
-            this.mqtt_verim.Location = new System.Drawing.Point(139, 53);
+            this.mqtt_verim.Location = new System.Drawing.Point(148, 53);
             this.mqtt_verim.Multiline = true;
             this.mqtt_verim.Name = "mqtt_verim";
             this.mqtt_verim.ReadOnly = true;
-            this.mqtt_verim.Size = new System.Drawing.Size(62, 43);
+            this.mqtt_verim.Size = new System.Drawing.Size(66, 43);
             this.mqtt_verim.TabIndex = 19;
             this.mqtt_verim.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1291,7 +1291,7 @@
             this.label41.ForeColor = System.Drawing.Color.White;
             this.label41.Location = new System.Drawing.Point(4, 1);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(60, 48);
+            this.label41.Size = new System.Drawing.Size(64, 48);
             this.label41.TabIndex = 5;
             this.label41.Text = "TOPLAM PAKET";
             this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1302,9 +1302,9 @@
             this.label42.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label42.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label42.ForeColor = System.Drawing.Color.White;
-            this.label42.Location = new System.Drawing.Point(71, 1);
+            this.label42.Location = new System.Drawing.Point(75, 1);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(61, 48);
+            this.label42.Size = new System.Drawing.Size(66, 48);
             this.label42.TabIndex = 6;
             this.label42.Text = "ÇÖZÜLEN PAKET";
             this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1315,9 +1315,9 @@
             this.label43.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label43.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label43.ForeColor = System.Drawing.Color.White;
-            this.label43.Location = new System.Drawing.Point(139, 1);
+            this.label43.Location = new System.Drawing.Point(148, 1);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(62, 48);
+            this.label43.Size = new System.Drawing.Size(66, 48);
             this.label43.TabIndex = 7;
             this.label43.Text = "VERİM";
             this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1565,7 +1565,7 @@
             this.turr.AutoSize = true;
             this.turr.Font = new System.Drawing.Font("Lucida Sans", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.turr.ForeColor = System.Drawing.Color.White;
-            this.turr.Location = new System.Drawing.Point(1761, 138);
+            this.turr.Location = new System.Drawing.Point(65, 237);
             this.turr.Name = "turr";
             this.turr.Size = new System.Drawing.Size(39, 39);
             this.turr.TabIndex = 4;
@@ -1576,7 +1576,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(1735, 120);
+            this.label7.Location = new System.Drawing.Point(39, 219);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 21);
             this.label7.TabIndex = 5;
@@ -1632,7 +1632,7 @@
             this.gsm_yenileme.AutoSize = true;
             this.gsm_yenileme.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.gsm_yenileme.ForeColor = System.Drawing.Color.White;
-            this.gsm_yenileme.Location = new System.Drawing.Point(1746, 62);
+            this.gsm_yenileme.Location = new System.Drawing.Point(154, 242);
             this.gsm_yenileme.Name = "gsm_yenileme";
             this.gsm_yenileme.Size = new System.Drawing.Size(54, 19);
             this.gsm_yenileme.TabIndex = 79;
@@ -2005,6 +2005,9 @@
             // 
             this.groupBox2.Controls.Add(this.tableLayoutPanel86);
             this.groupBox2.Controls.Add(this.tableLayoutPanel13);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.turr);
+            this.groupBox2.Controls.Add(this.gsm_yenileme);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(567, 48);
@@ -2034,7 +2037,7 @@
             this.tableLayoutPanel87.ColumnCount = 3;
             this.tableLayoutPanel87.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.03704F));
             this.tableLayoutPanel87.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.96296F));
-            this.tableLayoutPanel87.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
+            this.tableLayoutPanel87.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
             this.tableLayoutPanel87.Controls.Add(this.pictureBox5, 0, 5);
             this.tableLayoutPanel87.Controls.Add(this.maks_hiz, 2, 0);
             this.tableLayoutPanel87.Controls.Add(this.ort_hiz, 2, 1);
@@ -2076,7 +2079,7 @@
             this.pictureBox5.Image = global::yeniform.Properties.Resources.road;
             this.pictureBox5.Location = new System.Drawing.Point(4, 214);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(27, 35);
+            this.pictureBox5.Size = new System.Drawing.Size(31, 35);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 64;
             this.pictureBox5.TabStop = false;
@@ -2087,7 +2090,7 @@
             this.pictureBox4.Image = global::yeniform.Properties.Resources.speed_vector;
             this.pictureBox4.Location = new System.Drawing.Point(4, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(27, 35);
+            this.pictureBox4.Size = new System.Drawing.Size(31, 35);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 11;
             this.pictureBox4.TabStop = false;
@@ -2098,7 +2101,7 @@
             this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
             this.pictureBox13.Location = new System.Drawing.Point(4, 46);
             this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(27, 35);
+            this.pictureBox13.Size = new System.Drawing.Size(31, 35);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox13.TabIndex = 19;
             this.pictureBox13.TabStop = false;
@@ -2109,7 +2112,7 @@
             this.pictureBox7.Image = global::yeniform.Properties.Resources.czxcxz1;
             this.pictureBox7.Location = new System.Drawing.Point(4, 88);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(27, 35);
+            this.pictureBox7.Size = new System.Drawing.Size(31, 35);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 11;
             this.pictureBox7.TabStop = false;
@@ -2120,7 +2123,7 @@
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label33.ForeColor = System.Drawing.Color.White;
-            this.label33.Location = new System.Drawing.Point(40, 259);
+            this.label33.Location = new System.Drawing.Point(47, 259);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(45, 34);
             this.label33.TabIndex = 63;
@@ -2133,9 +2136,9 @@
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label32.ForeColor = System.Drawing.Color.White;
-            this.label32.Location = new System.Drawing.Point(40, 214);
+            this.label32.Location = new System.Drawing.Point(43, 214);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(45, 34);
+            this.label32.Size = new System.Drawing.Size(53, 34);
             this.label32.TabIndex = 62;
             this.label32.Text = "Gidilen Yol";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2146,7 +2149,7 @@
             this.pictureBox2.Image = global::yeniform.Properties.Resources.checkered_flag_clip_art_9511_kopya;
             this.pictureBox2.Location = new System.Drawing.Point(4, 130);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(27, 35);
+            this.pictureBox2.Size = new System.Drawing.Size(31, 35);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
@@ -2157,7 +2160,7 @@
             this.pictureBox3.Image = global::yeniform.Properties.Resources.dadadadda;
             this.pictureBox3.Location = new System.Drawing.Point(4, 172);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(27, 35);
+            this.pictureBox3.Size = new System.Drawing.Size(31, 35);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 10;
             this.pictureBox3.TabStop = false;
@@ -2168,7 +2171,7 @@
             this.pictureBox6.Image = global::yeniform.Properties.Resources.road;
             this.pictureBox6.Location = new System.Drawing.Point(4, 256);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(27, 40);
+            this.pictureBox6.Size = new System.Drawing.Size(31, 40);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 65;
             this.pictureBox6.TabStop = false;
@@ -2178,9 +2181,9 @@
             this.kalan_yol_gps.AutoSize = true;
             this.kalan_yol_gps.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kalan_yol_gps.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.kalan_yol_gps.Location = new System.Drawing.Point(95, 253);
+            this.kalan_yol_gps.Location = new System.Drawing.Point(105, 253);
             this.kalan_yol_gps.Name = "kalan_yol_gps";
-            this.kalan_yol_gps.Size = new System.Drawing.Size(109, 46);
+            this.kalan_yol_gps.Size = new System.Drawing.Size(99, 46);
             this.kalan_yol_gps.TabIndex = 66;
             this.kalan_yol_gps.Text = "NaN";
             this.kalan_yol_gps.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2190,9 +2193,9 @@
             this.gidilen_yol_gps.AutoSize = true;
             this.gidilen_yol_gps.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gidilen_yol_gps.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.gidilen_yol_gps.Location = new System.Drawing.Point(95, 211);
+            this.gidilen_yol_gps.Location = new System.Drawing.Point(105, 211);
             this.gidilen_yol_gps.Name = "gidilen_yol_gps";
-            this.gidilen_yol_gps.Size = new System.Drawing.Size(109, 41);
+            this.gidilen_yol_gps.Size = new System.Drawing.Size(99, 41);
             this.gidilen_yol_gps.TabIndex = 67;
             this.gidilen_yol_gps.Text = "NaN";
             this.gidilen_yol_gps.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2542,247 +2545,12 @@
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.86226F));
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel15, 1, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel14, 0, 0);
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(22, 20);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(9, 20);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.04546F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(439, 261);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(452, 177);
             this.tableLayoutPanel13.TabIndex = 0;
-            // 
-            // tableLayoutPanel15
-            // 
-            this.tableLayoutPanel15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.tableLayoutPanel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tableLayoutPanel15.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
-            this.tableLayoutPanel15.ColumnCount = 2;
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel15.Controls.Add(this.motor_temp, 1, 6);
-            this.tableLayoutPanel15.Controls.Add(this.label45, 0, 6);
-            this.tableLayoutPanel15.Controls.Add(this.vd, 1, 4);
-            this.tableLayoutPanel15.Controls.Add(this.vq, 1, 5);
-            this.tableLayoutPanel15.Controls.Add(this.label73, 0, 3);
-            this.tableLayoutPanel15.Controls.Add(this.label76, 0, 2);
-            this.tableLayoutPanel15.Controls.Add(this.label85, 0, 5);
-            this.tableLayoutPanel15.Controls.Add(this.label78, 0, 1);
-            this.tableLayoutPanel15.Controls.Add(this.label81, 0, 0);
-            this.tableLayoutPanel15.Controls.Add(this.label87, 0, 4);
-            this.tableLayoutPanel15.Controls.Add(this.phase_a_volt, 1, 0);
-            this.tableLayoutPanel15.Controls.Add(this.phase_b_volt, 1, 1);
-            this.tableLayoutPanel15.Controls.Add(this.phase_c_volt, 1, 2);
-            this.tableLayoutPanel15.Controls.Add(this.dc_bus_volt, 1, 3);
-            this.tableLayoutPanel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(67)))), ((int)(((byte)(65)))));
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(223, 3);
-            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
-            this.tableLayoutPanel15.RowCount = 7;
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(213, 255);
-            this.tableLayoutPanel15.TabIndex = 51;
-            // 
-            // motor_temp
-            // 
-            this.motor_temp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.motor_temp.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.motor_temp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.motor_temp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.motor_temp.ForeColor = System.Drawing.Color.White;
-            this.motor_temp.Location = new System.Drawing.Point(141, 216);
-            this.motor_temp.Multiline = true;
-            this.motor_temp.Name = "motor_temp";
-            this.motor_temp.Size = new System.Drawing.Size(66, 33);
-            this.motor_temp.TabIndex = 12;
-            this.motor_temp.Text = " ";
-            this.motor_temp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label45.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label45.ForeColor = System.Drawing.Color.White;
-            this.label45.Location = new System.Drawing.Point(6, 213);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(126, 39);
-            this.label45.TabIndex = 13;
-            this.label45.Text = "  MOTOR TEMP";
-            this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // vd
-            // 
-            this.vd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.vd.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.vd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.vd.ForeColor = System.Drawing.Color.White;
-            this.vd.Location = new System.Drawing.Point(141, 146);
-            this.vd.Multiline = true;
-            this.vd.Name = "vd";
-            this.vd.ReadOnly = true;
-            this.vd.Size = new System.Drawing.Size(66, 26);
-            this.vd.TabIndex = 10;
-            this.vd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // vq
-            // 
-            this.vq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.vq.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.vq.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vq.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.vq.ForeColor = System.Drawing.Color.White;
-            this.vq.Location = new System.Drawing.Point(141, 181);
-            this.vq.Multiline = true;
-            this.vq.Name = "vq";
-            this.vq.ReadOnly = true;
-            this.vq.Size = new System.Drawing.Size(66, 26);
-            this.vq.TabIndex = 11;
-            this.vq.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label73
-            // 
-            this.label73.AutoSize = true;
-            this.label73.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label73.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label73.ForeColor = System.Drawing.Color.White;
-            this.label73.Location = new System.Drawing.Point(6, 108);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(126, 32);
-            this.label73.TabIndex = 8;
-            this.label73.Text = "DC  BUS VOLT";
-            this.label73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label76
-            // 
-            this.label76.AutoSize = true;
-            this.label76.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label76.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label76.ForeColor = System.Drawing.Color.White;
-            this.label76.Location = new System.Drawing.Point(6, 73);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(126, 32);
-            this.label76.TabIndex = 6;
-            this.label76.Text = "PHASE C VOLT";
-            this.label76.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label85
-            // 
-            this.label85.AutoSize = true;
-            this.label85.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label85.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label85.ForeColor = System.Drawing.Color.White;
-            this.label85.Location = new System.Drawing.Point(6, 178);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(126, 32);
-            this.label85.TabIndex = 3;
-            this.label85.Text = "Vq";
-            this.label85.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label78.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label78.ForeColor = System.Drawing.Color.White;
-            this.label78.Location = new System.Drawing.Point(6, 38);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(126, 32);
-            this.label78.TabIndex = 3;
-            this.label78.Text = "PHASE B VOLT";
-            this.label78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label81.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label81.ForeColor = System.Drawing.Color.White;
-            this.label81.Location = new System.Drawing.Point(6, 3);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(126, 32);
-            this.label81.TabIndex = 0;
-            this.label81.Text = "POWER";
-            this.label81.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label87.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label87.ForeColor = System.Drawing.Color.White;
-            this.label87.Location = new System.Drawing.Point(6, 143);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(126, 32);
-            this.label87.TabIndex = 0;
-            this.label87.Text = "Vd";
-            this.label87.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // phase_a_volt
-            // 
-            this.phase_a_volt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.phase_a_volt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.phase_a_volt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.phase_a_volt.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.phase_a_volt.ForeColor = System.Drawing.Color.White;
-            this.phase_a_volt.Location = new System.Drawing.Point(141, 6);
-            this.phase_a_volt.Multiline = true;
-            this.phase_a_volt.Name = "phase_a_volt";
-            this.phase_a_volt.ReadOnly = true;
-            this.phase_a_volt.Size = new System.Drawing.Size(66, 26);
-            this.phase_a_volt.TabIndex = 10;
-            this.phase_a_volt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // phase_b_volt
-            // 
-            this.phase_b_volt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.phase_b_volt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.phase_b_volt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.phase_b_volt.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.phase_b_volt.ForeColor = System.Drawing.Color.White;
-            this.phase_b_volt.Location = new System.Drawing.Point(141, 41);
-            this.phase_b_volt.Multiline = true;
-            this.phase_b_volt.Name = "phase_b_volt";
-            this.phase_b_volt.ReadOnly = true;
-            this.phase_b_volt.Size = new System.Drawing.Size(66, 26);
-            this.phase_b_volt.TabIndex = 11;
-            this.phase_b_volt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // phase_c_volt
-            // 
-            this.phase_c_volt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.phase_c_volt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.phase_c_volt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.phase_c_volt.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.phase_c_volt.ForeColor = System.Drawing.Color.White;
-            this.phase_c_volt.Location = new System.Drawing.Point(141, 76);
-            this.phase_c_volt.Multiline = true;
-            this.phase_c_volt.Name = "phase_c_volt";
-            this.phase_c_volt.ReadOnly = true;
-            this.phase_c_volt.Size = new System.Drawing.Size(66, 26);
-            this.phase_c_volt.TabIndex = 12;
-            this.phase_c_volt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // dc_bus_volt
-            // 
-            this.dc_bus_volt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.dc_bus_volt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dc_bus_volt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dc_bus_volt.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dc_bus_volt.ForeColor = System.Drawing.Color.White;
-            this.dc_bus_volt.Location = new System.Drawing.Point(141, 111);
-            this.dc_bus_volt.Multiline = true;
-            this.dc_bus_volt.Name = "dc_bus_volt";
-            this.dc_bus_volt.ReadOnly = true;
-            this.dc_bus_volt.Size = new System.Drawing.Size(66, 26);
-            this.dc_bus_volt.TabIndex = 13;
-            this.dc_bus_volt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel14
             // 
@@ -2795,33 +2563,27 @@
             this.tableLayoutPanel14.ColumnCount = 2;
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel14.Controls.Add(this.id, 1, 4);
-            this.tableLayoutPanel14.Controls.Add(this.iq, 1, 5);
-            this.tableLayoutPanel14.Controls.Add(this.act_torque, 1, 6);
-            this.tableLayoutPanel14.Controls.Add(this.label13, 0, 6);
-            this.tableLayoutPanel14.Controls.Add(this.label90, 0, 4);
-            this.tableLayoutPanel14.Controls.Add(this.label88, 0, 5);
-            this.tableLayoutPanel14.Controls.Add(this.dc_bus_cur, 1, 3);
-            this.tableLayoutPanel14.Controls.Add(this.phase_c_cur, 1, 2);
             this.tableLayoutPanel14.Controls.Add(this.phase_b_cur, 1, 1);
-            this.tableLayoutPanel14.Controls.Add(this.label80, 0, 3);
-            this.tableLayoutPanel14.Controls.Add(this.label66, 0, 2);
             this.tableLayoutPanel14.Controls.Add(this.label68, 0, 1);
             this.tableLayoutPanel14.Controls.Add(this.label71, 0, 0);
             this.tableLayoutPanel14.Controls.Add(this.phase_a_cur, 1, 0);
+            this.tableLayoutPanel14.Controls.Add(this.label73, 0, 3);
+            this.tableLayoutPanel14.Controls.Add(this.dc_bus_cur, 1, 2);
+            this.tableLayoutPanel14.Controls.Add(this.label80, 0, 2);
+            this.tableLayoutPanel14.Controls.Add(this.label45, 0, 4);
+            this.tableLayoutPanel14.Controls.Add(this.dc_bus_volt, 1, 3);
+            this.tableLayoutPanel14.Controls.Add(this.motor_temp, 1, 4);
             this.tableLayoutPanel14.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(67)))), ((int)(((byte)(65)))));
             this.tableLayoutPanel14.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
-            this.tableLayoutPanel14.RowCount = 7;
+            this.tableLayoutPanel14.RowCount = 5;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(214, 255);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(220, 171);
             this.tableLayoutPanel14.TabIndex = 51;
             // 
             // id
@@ -2831,11 +2593,11 @@
             this.id.Dock = System.Windows.Forms.DockStyle.Fill;
             this.id.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.id.ForeColor = System.Drawing.Color.White;
-            this.id.Location = new System.Drawing.Point(142, 146);
+            this.id.Location = new System.Drawing.Point(146, 6);
             this.id.Multiline = true;
             this.id.Name = "id";
             this.id.ReadOnly = true;
-            this.id.Size = new System.Drawing.Size(66, 26);
+            this.id.Size = new System.Drawing.Size(68, 33);
             this.id.TabIndex = 10;
             this.id.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -2846,40 +2608,13 @@
             this.iq.Dock = System.Windows.Forms.DockStyle.Fill;
             this.iq.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.iq.ForeColor = System.Drawing.Color.White;
-            this.iq.Location = new System.Drawing.Point(142, 181);
+            this.iq.Location = new System.Drawing.Point(146, 48);
             this.iq.Multiline = true;
             this.iq.Name = "iq";
             this.iq.ReadOnly = true;
-            this.iq.Size = new System.Drawing.Size(66, 26);
+            this.iq.Size = new System.Drawing.Size(68, 33);
             this.iq.TabIndex = 11;
             this.iq.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // act_torque
-            // 
-            this.act_torque.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.act_torque.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.act_torque.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.act_torque.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.act_torque.ForeColor = System.Drawing.Color.White;
-            this.act_torque.Location = new System.Drawing.Point(142, 216);
-            this.act_torque.Multiline = true;
-            this.act_torque.Name = "act_torque";
-            this.act_torque.Size = new System.Drawing.Size(66, 33);
-            this.act_torque.TabIndex = 30;
-            this.act_torque.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(6, 213);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(127, 39);
-            this.label13.TabIndex = 29;
-            this.label13.Text = "ACT TORQUE";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label90
             // 
@@ -2887,9 +2622,9 @@
             this.label90.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label90.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label90.ForeColor = System.Drawing.Color.White;
-            this.label90.Location = new System.Drawing.Point(6, 143);
+            this.label90.Location = new System.Drawing.Point(6, 3);
             this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(127, 32);
+            this.label90.Size = new System.Drawing.Size(131, 39);
             this.label90.TabIndex = 54;
             this.label90.Text = "Id";
             this.label90.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2900,9 +2635,9 @@
             this.label88.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label88.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label88.ForeColor = System.Drawing.Color.White;
-            this.label88.Location = new System.Drawing.Point(6, 178);
+            this.label88.Location = new System.Drawing.Point(6, 45);
             this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(127, 32);
+            this.label88.Size = new System.Drawing.Size(131, 39);
             this.label88.TabIndex = 3;
             this.label88.Text = "Iq";
             this.label88.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2914,28 +2649,13 @@
             this.dc_bus_cur.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dc_bus_cur.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dc_bus_cur.ForeColor = System.Drawing.Color.White;
-            this.dc_bus_cur.Location = new System.Drawing.Point(142, 111);
+            this.dc_bus_cur.Location = new System.Drawing.Point(146, 72);
             this.dc_bus_cur.Multiline = true;
             this.dc_bus_cur.Name = "dc_bus_cur";
             this.dc_bus_cur.ReadOnly = true;
-            this.dc_bus_cur.Size = new System.Drawing.Size(66, 26);
+            this.dc_bus_cur.Size = new System.Drawing.Size(68, 24);
             this.dc_bus_cur.TabIndex = 12;
             this.dc_bus_cur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // phase_c_cur
-            // 
-            this.phase_c_cur.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.phase_c_cur.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.phase_c_cur.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.phase_c_cur.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.phase_c_cur.ForeColor = System.Drawing.Color.White;
-            this.phase_c_cur.Location = new System.Drawing.Point(142, 76);
-            this.phase_c_cur.Multiline = true;
-            this.phase_c_cur.Name = "phase_c_cur";
-            this.phase_c_cur.ReadOnly = true;
-            this.phase_c_cur.Size = new System.Drawing.Size(66, 26);
-            this.phase_c_cur.TabIndex = 11;
-            this.phase_c_cur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // phase_b_cur
             // 
@@ -2944,11 +2664,11 @@
             this.phase_b_cur.Dock = System.Windows.Forms.DockStyle.Fill;
             this.phase_b_cur.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.phase_b_cur.ForeColor = System.Drawing.Color.White;
-            this.phase_b_cur.Location = new System.Drawing.Point(142, 41);
+            this.phase_b_cur.Location = new System.Drawing.Point(146, 39);
             this.phase_b_cur.Multiline = true;
             this.phase_b_cur.Name = "phase_b_cur";
             this.phase_b_cur.ReadOnly = true;
-            this.phase_b_cur.Size = new System.Drawing.Size(66, 26);
+            this.phase_b_cur.Size = new System.Drawing.Size(68, 24);
             this.phase_b_cur.TabIndex = 10;
             this.phase_b_cur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -2958,25 +2678,12 @@
             this.label80.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label80.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label80.ForeColor = System.Drawing.Color.White;
-            this.label80.Location = new System.Drawing.Point(6, 108);
+            this.label80.Location = new System.Drawing.Point(6, 69);
             this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(127, 32);
+            this.label80.Size = new System.Drawing.Size(131, 30);
             this.label80.TabIndex = 8;
             this.label80.Text = "DC  BUS CUR";
             this.label80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label66.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label66.ForeColor = System.Drawing.Color.White;
-            this.label66.Location = new System.Drawing.Point(6, 73);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(127, 32);
-            this.label66.TabIndex = 6;
-            this.label66.Text = "PHASE C CUR";
-            this.label66.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label68
             // 
@@ -2984,9 +2691,9 @@
             this.label68.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label68.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label68.ForeColor = System.Drawing.Color.White;
-            this.label68.Location = new System.Drawing.Point(6, 38);
+            this.label68.Location = new System.Drawing.Point(6, 36);
             this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(127, 32);
+            this.label68.Size = new System.Drawing.Size(131, 30);
             this.label68.TabIndex = 3;
             this.label68.Text = "PHASE B CUR";
             this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2999,7 +2706,7 @@
             this.label71.ForeColor = System.Drawing.Color.White;
             this.label71.Location = new System.Drawing.Point(6, 3);
             this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(127, 32);
+            this.label71.Size = new System.Drawing.Size(131, 30);
             this.label71.TabIndex = 0;
             this.label71.Text = "PHASE A CUR";
             this.label71.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3011,11 +2718,11 @@
             this.phase_a_cur.Dock = System.Windows.Forms.DockStyle.Fill;
             this.phase_a_cur.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.phase_a_cur.ForeColor = System.Drawing.Color.White;
-            this.phase_a_cur.Location = new System.Drawing.Point(142, 6);
+            this.phase_a_cur.Location = new System.Drawing.Point(146, 6);
             this.phase_a_cur.Multiline = true;
             this.phase_a_cur.Name = "phase_a_cur";
             this.phase_a_cur.ReadOnly = true;
-            this.phase_a_cur.Size = new System.Drawing.Size(66, 26);
+            this.phase_a_cur.Size = new System.Drawing.Size(68, 24);
             this.phase_a_cur.TabIndex = 9;
             this.phase_a_cur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -3287,7 +2994,7 @@
             this.kayıtToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(3, 3);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1894, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1890, 24);
             this.menuStrip1.TabIndex = 56;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -3405,12 +3112,270 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // dc_bus_volt
+            // 
+            this.dc_bus_volt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.dc_bus_volt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dc_bus_volt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dc_bus_volt.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dc_bus_volt.ForeColor = System.Drawing.Color.White;
+            this.dc_bus_volt.Location = new System.Drawing.Point(146, 105);
+            this.dc_bus_volt.Multiline = true;
+            this.dc_bus_volt.Name = "dc_bus_volt";
+            this.dc_bus_volt.ReadOnly = true;
+            this.dc_bus_volt.Size = new System.Drawing.Size(68, 24);
+            this.dc_bus_volt.TabIndex = 13;
+            this.dc_bus_volt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label87.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label87.ForeColor = System.Drawing.Color.White;
+            this.label87.Location = new System.Drawing.Point(6, 87);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(131, 39);
+            this.label87.TabIndex = 0;
+            this.label87.Text = "Vd";
+            this.label87.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label85.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label85.ForeColor = System.Drawing.Color.White;
+            this.label85.Location = new System.Drawing.Point(6, 129);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(131, 39);
+            this.label85.TabIndex = 3;
+            this.label85.Text = "Vq";
+            this.label85.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label73.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label73.ForeColor = System.Drawing.Color.White;
+            this.label73.Location = new System.Drawing.Point(6, 102);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(131, 30);
+            this.label73.TabIndex = 8;
+            this.label73.Text = "DC  BUS VOLT";
+            this.label73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // vq
+            // 
+            this.vq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.vq.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.vq.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vq.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.vq.ForeColor = System.Drawing.Color.White;
+            this.vq.Location = new System.Drawing.Point(146, 132);
+            this.vq.Multiline = true;
+            this.vq.Name = "vq";
+            this.vq.ReadOnly = true;
+            this.vq.Size = new System.Drawing.Size(68, 33);
+            this.vq.TabIndex = 11;
+            this.vq.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // vd
+            // 
+            this.vd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.vd.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.vd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.vd.ForeColor = System.Drawing.Color.White;
+            this.vd.Location = new System.Drawing.Point(146, 90);
+            this.vd.Multiline = true;
+            this.vd.Name = "vd";
+            this.vd.ReadOnly = true;
+            this.vd.Size = new System.Drawing.Size(68, 33);
+            this.vd.TabIndex = 10;
+            this.vd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label45.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label45.ForeColor = System.Drawing.Color.White;
+            this.label45.Location = new System.Drawing.Point(6, 135);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(131, 33);
+            this.label45.TabIndex = 13;
+            this.label45.Text = "  MOTOR TEMP";
+            this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // motor_temp
+            // 
+            this.motor_temp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.motor_temp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.motor_temp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.motor_temp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.motor_temp.ForeColor = System.Drawing.Color.White;
+            this.motor_temp.Location = new System.Drawing.Point(146, 138);
+            this.motor_temp.Multiline = true;
+            this.motor_temp.Name = "motor_temp";
+            this.motor_temp.Size = new System.Drawing.Size(68, 27);
+            this.motor_temp.TabIndex = 12;
+            this.motor_temp.Text = " ";
+            this.motor_temp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tableLayoutPanel15
+            // 
+            this.tableLayoutPanel15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.tableLayoutPanel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tableLayoutPanel15.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
+            this.tableLayoutPanel15.ColumnCount = 2;
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel15.Controls.Add(this.label85, 0, 3);
+            this.tableLayoutPanel15.Controls.Add(this.label87, 0, 2);
+            this.tableLayoutPanel15.Controls.Add(this.label90, 0, 0);
+            this.tableLayoutPanel15.Controls.Add(this.label88, 0, 1);
+            this.tableLayoutPanel15.Controls.Add(this.id, 1, 0);
+            this.tableLayoutPanel15.Controls.Add(this.vd, 1, 2);
+            this.tableLayoutPanel15.Controls.Add(this.iq, 1, 1);
+            this.tableLayoutPanel15.Controls.Add(this.vq, 1, 3);
+            this.tableLayoutPanel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(67)))), ((int)(((byte)(65)))));
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(229, 3);
+            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            this.tableLayoutPanel15.RowCount = 4;
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(220, 171);
+            this.tableLayoutPanel15.TabIndex = 51;
+            // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel11.ColumnCount = 2;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.21277F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.78723F));
+            this.tableLayoutPanel11.Controls.Add(this.label62, 0, 1);
+            this.tableLayoutPanel11.Controls.Add(this.Latitude, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.label51, 0, 2);
+            this.tableLayoutPanel11.Controls.Add(this.label63, 0, 3);
+            this.tableLayoutPanel11.ForeColor = System.Drawing.Color.White;
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(1746, 177);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 4;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(142, 99);
+            this.tableLayoutPanel11.TabIndex = 94;
+            // 
+            // Latitude
+            // 
+            this.Latitude.AutoSize = true;
+            this.Latitude.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Latitude.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Latitude.ForeColor = System.Drawing.Color.White;
+            this.Latitude.Location = new System.Drawing.Point(4, 1);
+            this.Latitude.Name = "Latitude";
+            this.Latitude.Size = new System.Drawing.Size(91, 23);
+            this.Latitude.TabIndex = 8;
+            this.Latitude.Text = "LATITUDE";
+            this.Latitude.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label51.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label51.ForeColor = System.Drawing.Color.White;
+            this.label51.Location = new System.Drawing.Point(4, 49);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(91, 23);
+            this.label51.TabIndex = 9;
+            this.label51.Text = "UYDU SAYISI";
+            this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label62.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label62.ForeColor = System.Drawing.Color.White;
+            this.label62.Location = new System.Drawing.Point(4, 25);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(91, 23);
+            this.label62.TabIndex = 10;
+            this.label62.Text = "LONGTITUDE";
+            this.label62.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label63.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label63.ForeColor = System.Drawing.Color.White;
+            this.label63.Location = new System.Drawing.Point(4, 73);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(91, 25);
+            this.label63.TabIndex = 11;
+            this.label63.Text = "VERİM";
+            this.label63.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(1743, 158);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(39, 19);
+            this.label13.TabIndex = 95;
+            this.label13.Text = "GPS";
+            // 
+            // angle_gauge
+            // 
+            this.angle_gauge.AnimationSpeed = 0.6F;
+            this.angle_gauge.BaseColor = System.Drawing.Color.Transparent;
+            this.angle_gauge.Controls.Add(this.label64);
+            this.angle_gauge.ForeColor = System.Drawing.Color.White;
+            this.angle_gauge.IdleColor = System.Drawing.Color.Gainsboro;
+            this.angle_gauge.IdleOffset = 10;
+            this.angle_gauge.IdleThickness = 15;
+            this.angle_gauge.Image = null;
+            this.angle_gauge.ImageSize = new System.Drawing.Size(52, 52);
+            this.angle_gauge.Location = new System.Drawing.Point(1753, 38);
+            this.angle_gauge.Name = "angle_gauge";
+            this.angle_gauge.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.angle_gauge.ProgressMinColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.angle_gauge.ProgressOffset = 10;
+            this.angle_gauge.ProgressThickness = 15;
+            this.angle_gauge.Size = new System.Drawing.Size(120, 120);
+            this.angle_gauge.TabIndex = 96;
+            this.angle_gauge.Value = 25;
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label64.ForeColor = System.Drawing.Color.White;
+            this.label64.Location = new System.Drawing.Point(38, 51);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(41, 21);
+            this.label64.TabIndex = 7;
+            this.label64.Text = "AÇI";
+            // 
             // telemetry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.ClientSize = new System.Drawing.Size(1908, 749);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.ana_sekme);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -3459,6 +3424,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gmap_sag.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.tableLayoutPanel86.ResumeLayout(false);
             this.tableLayoutPanel87.ResumeLayout(false);
             this.tableLayoutPanel87.PerformLayout();
@@ -3478,8 +3444,6 @@
             this.tableLayoutPanel20.ResumeLayout(false);
             this.tableLayoutPanel20.PerformLayout();
             this.tableLayoutPanel13.ResumeLayout(false);
-            this.tableLayoutPanel15.ResumeLayout(false);
-            this.tableLayoutPanel15.PerformLayout();
             this.tableLayoutPanel14.ResumeLayout(false);
             this.tableLayoutPanel14.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -3489,6 +3453,12 @@
             this.tableLayoutPanel5.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tableLayoutPanel15.ResumeLayout(false);
+            this.tableLayoutPanel15.PerformLayout();
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel11.PerformLayout();
+            this.angle_gauge.ResumeLayout(false);
+            this.angle_gauge.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3584,33 +3554,14 @@
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
-        private System.Windows.Forms.TextBox motor_temp;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.TextBox vd;
-        private System.Windows.Forms.TextBox vq;
-        private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.Label label76;
-        private System.Windows.Forms.Label label85;
-        private System.Windows.Forms.Label label78;
-        private System.Windows.Forms.Label label81;
-        private System.Windows.Forms.Label label87;
-        private System.Windows.Forms.TextBox phase_a_volt;
-        private System.Windows.Forms.TextBox phase_b_volt;
-        private System.Windows.Forms.TextBox phase_c_volt;
-        private System.Windows.Forms.TextBox dc_bus_volt;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.TextBox id;
         private System.Windows.Forms.TextBox iq;
-        private System.Windows.Forms.TextBox act_torque;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label90;
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.TextBox dc_bus_cur;
-        private System.Windows.Forms.TextBox phase_c_cur;
         private System.Windows.Forms.TextBox phase_b_cur;
         private System.Windows.Forms.Label label80;
-        private System.Windows.Forms.Label label66;
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.TextBox phase_a_cur;
@@ -3719,6 +3670,23 @@
         private System.Windows.Forms.ToolStripMenuItem GpsMouseModAktif;
         private System.Windows.Forms.ToolStripMenuItem GpsMouseModDeaktif;
         private System.Windows.Forms.ToolStripMenuItem MarkerTemizlee;
+        private Guna.UI.WinForms.GunaCircleProgressBar angle_gauge;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Label Latitude;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
+        private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.TextBox vd;
+        private System.Windows.Forms.TextBox vq;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.TextBox dc_bus_volt;
+        private System.Windows.Forms.TextBox motor_temp;
     }
 }
 
