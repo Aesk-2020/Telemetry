@@ -18,50 +18,26 @@ using GMap.NET.WindowsForms.Markers;
 using System.Diagnostics;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
+using yeniform.Variables;
 
 
 namespace yeniform
 {
     public partial class telemetry : Form
     {
+
         public telemetry()
         {
             InitializeComponent();
             Control.CheckForIllegalCrossThreadCalls = false;
         }
-
-        static int crc_hesaplanan = 0;
+       
+        static int gelen_crc = 0;
+        static int gelen_crc_bms = 0;
         string other_datas;
         #region veri
         float my_old_gsm_time = 0;
         float refresh_time;
-        //string data = "10.03.2020 23:00:00.00000 -> Veri -> &0,0$0,0$0,0$0,00$0$0$3,14$14$25$1250$15$0,00$0,00$0,00$0,00$0,00$25,55$0$53$0$0$0$15$1$0$0";
-       
-        //BMS
-        float bms_bat_volt_f32;
-        float bms_bat_current_f32;
-        float bms_bat_cons_f32;
-        float bms_soc_f32;
-        byte  bms_error_u8;
-        byte  bms_dc_bus_state_u8;
-        float bms_worst_cell_voltage_f32;
-        byte  bms_worst_cell_address_u8;
-        byte  bms_temp_u8;
-
-        //Driver
-        UInt32 driver_odometer_u32;
-        float  driver_phase_a_current_f32;
-        float  driver_phase_b_current_f32;
-        float  driver_dc_bus_current_f32;
-        float  driver_dc_bus_voltage_f32;
-        float  driver_id_f32;
-        float  driver_iq_f32;
-        float  driver_vd_f32;
-        float  driver_vq_f32;
-        byte   driver_actual_velocity_u8;
-        byte   driver_motor_temperature_u8;
-        byte   driver_drive_status_u8;
-        byte   driver_error_u8;
 
         //VCU
         byte vcu_wake_up_u8;
@@ -86,6 +62,14 @@ namespace yeniform
         MqttClient Client = new MqttClient("157.230.29.63");
         int MQTT_counter_int32 = 0;
 
+        //Define
+        static readonly int GPS_DIVIDE = 1000000;
+        static readonly UInt32 TOTAL_BYTES = 43;
+        public const int BMS_PACK = 5;
+        public const int BMS_PACK_RECOGNIZE = 6;
+        public const int READ_HEADER = 0;
+        public const int RF_PACK = 1;
+
         //Arayüz verileri
         byte my_maks_hiz = 0;
         double ortalama_hiz_f32;
@@ -99,28 +83,40 @@ namespace yeniform
         bool error_flagg = false;
         string[] ports = SerialPort.GetPortNames();
         Color AeskBlue = new Color();
-        static readonly int GPS_DIVIDE = 1000000;
-        static readonly UInt32 TOTAL_BYTES = 43;
+
+      
         byte[] captured_data = new byte[TOTAL_BYTES + 1];
-        PointLatLng start1 = new PointLatLng(40.744392, 29.786054);
-        PointLatLng lastposition = new PointLatLng(40.744392, 29.786054);
-        bool gps_mouse_mod = false;
-        readonly Int32 start1lat = 40744392;
-        readonly Int32 start1long = 29786054;
         string port_selected;
-        Stopwatch anlik_tur_süresi_time = new Stopwatch();
         TimeSpan gecen_sure_calc;
         TimeSpan ortalama_tur_suresi_time;
         DateTime race_start_time;
-        bool first_start_area = false;
-        bool calculate_about_race = false;
-        UInt16 tour = 1;
+
+        //bi onceki andaki yonelmemiz
+        //form loadda bunu set edecegiz
+        double old_bearing;
+        double scanned_angle=0;
+
+        static public bool calculate_about_race = false;
+
+        readonly double C_RADIUS_EARTH_KM = 6371.1;
+        readonly double C_PI = 3.14159265358979;
+
+        Stopwatch anlik_tur_süresi_time = new Stopwatch();
+        Stopwatch region_suresi_time = new Stopwatch();
+
+        public PointLatLng start1 = new PointLatLng(40.744392, 29.786054);
+        public PointLatLng lastposition = new PointLatLng(40.744392, 29.786054);
+        public PointLatLng Center = new PointLatLng(40.743778, 29.783807);
+
+        bool gps_mouse_mod = false;
+        readonly Int32 start1lat = 40744392;
+        readonly Int32 start1long = 29786054;
+
+        UInt16 tour = 0;
         UInt32 GL_tour_distance_gps_u32 = 0;
         UInt32 GL_general_distance_gps_u32 = 0;
-
+        UInt32 GL_region_distance_gps_u32 = 0;
         #endregion
-
-        string[] dizi = new string[1000];
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -138,8 +134,13 @@ namespace yeniform
             gmap.MinZoom = 5;
             gmap.Zoom = 17;
             anlikhiz_gauge.Value = 75;
+            go_graphs_button.Enabled = false;
+
+            old_bearing = Bearing(Center, start1.Lat, start1.Lng);
+
         }
 
+        //mqtt koparsa otomatik rf'e geçme
         private void timer1_Tick(object sender, EventArgs e)
         {
             calculateTimeOperation();           
@@ -176,7 +177,10 @@ namespace yeniform
 
         static int step = 0;
         static int data_counter = 0;
+        static int BMS_data_type = 0;
+        static int BMS_message_length = 0;
 
+        //time operations eklenebilir, thread invoke gibi arka planda çalışsın ekle o zaman mk ınu da mı ben söyliyim
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             if (serialPort1.IsOpen == true)
@@ -190,33 +194,39 @@ namespace yeniform
                 for (int i = 0; i < bytes; i++)
                 {
                     switch (step)
-                    {                        
-                        case 0:
+                    {         
+                        //TELEMETRİ PAKETİ
+
+                        case READ_HEADER:
                             {
                                 if (buffer[i] == 97)
+                                {                                    
+                                    step = RF_PACK;
+                                    captured_data[data_counter] = buffer[i];
+                                    data_counter = 1;
+                                }
+                                else if(buffer[i] == 0xA0) //paket bms verilerini içeriyorsa o veriler basılacak
                                 {
-                                    
-                                    step = 1;
-                                    //captured_data[data_counter] = buffer[i];
-                                    //data_counter = 1;
+                                    step = BMS_PACK_RECOGNIZE;
+                                    captured_data[data_counter] = buffer[i];
+                                    data_counter = 1;
                                 }
                                 else
                                 {
                                     GL_baslik_hatali_u16++;
-                                    step = 0;
+                                    step = READ_HEADER;
                                 }
                                 break;
                             }
-                        case 1:
+                        case RF_PACK:
                             {
                                 captured_data[data_counter] = buffer[i];
                                 data_counter++;
                                 if(data_counter >= TOTAL_BYTES)
-
                                 {
                                     data_counter = 0;
-                                    crc_hesaplanan = (captured_data[TOTAL_BYTES - 1] << 8) | captured_data[TOTAL_BYTES - 2]; // CRC son iki byte
-                                    ushort gelen_crc = aeskCRCCalculate(captured_data, TOTAL_BYTES - 2);
+                                    gelen_crc = (captured_data[TOTAL_BYTES] << 8) | captured_data[TOTAL_BYTES - 1]; // CRC son iki byte
+                                    ushort crc_hesaplanan = aeskCRCCalculate(captured_data, TOTAL_BYTES - 2);
                                     if(crc_hesaplanan == gelen_crc)
                                     {
                                         GL_cozulen_paket_u16++;
@@ -228,10 +238,37 @@ namespace yeniform
                                     {
                                         GL_crc_hatali_u16++;
                                     }
-                                    step = 0;
+                                    step = READ_HEADER;
                                 }                              
                                 break;
-                            }                                    
+                            }
+
+                            //BMS PAKETİ 
+
+                        case BMS_PACK_RECOGNIZE:
+                            {
+                                BMS_data_type = buffer[i] >> 6;
+                                BMS_message_length = buffer[i] & 0b00111111;
+                                step = BMS_PACK;
+                                break;
+                            }
+                        case BMS_PACK:
+                            {
+                                captured_data[data_counter] = buffer[i];
+                                data_counter++;
+
+                                if(data_counter > (BMS_message_length + 2))
+                                {
+                                    gelen_crc_bms = (captured_data[BMS_message_length + 1] << 8) | captured_data[BMS_message_length];
+                                    ushort crc_hesaplanan = aeskCRCCalculate(captured_data, Convert.ToUInt32(BMS_message_length));
+                                    if(gelen_crc_bms == crc_hesaplanan)
+                                    {
+                                        //do something for nature, making electric cars is not enough you know..
+                                    }
+                                    step = READ_HEADER;
+                                }
+                                break;
+                            }
                         default: break;
                     }
                 }
@@ -260,29 +297,32 @@ namespace yeniform
             vcu_drive_commands_u8 = gelenVeri[1];
             vcu_set_velocity_u8 = gelenVeri[2];
 
-            driver_phase_a_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 3) / 100;
-            driver_phase_b_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 5) / 100;
-            driver_dc_bus_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 7) / 100;
-            driver_dc_bus_voltage_f32 = (float)BitConverter.ToUInt16(gelenVeri, 9) / 10;
-            driver_id_f32 = (float)BitConverter.ToInt16(gelenVeri, 11) / 100;
-            driver_iq_f32 = (float)BitConverter.ToInt16(gelenVeri, 13) / 100;
-            driver_vd_f32 = (float)BitConverter.ToInt16(gelenVeri, 15) / 100;
-            driver_vq_f32 = (float)BitConverter.ToInt16(gelenVeri, 17) / 100;
-            driver_drive_status_u8 = gelenVeri[19];
-            driver_error_u8 = gelenVeri[20];
-            driver_odometer_u32 = BitConverter.ToUInt32(gelenVeri, 21);
-            driver_motor_temperature_u8 = gelenVeri[25];
-            driver_actual_velocity_u8 = gelenVeri[26];
+            Driver.phase_a_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 3) / 100;
+            Driver.phase_b_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 5) / 100;
+            Driver.dc_bus_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 7) / 100;
+            Driver.dc_bus_voltage_f32 = (float)BitConverter.ToUInt16(gelenVeri, 9) / 10;
+            Driver.id_f32 = (float)BitConverter.ToInt16(gelenVeri, 11) / 100;
+            Driver.iq_f32 = (float)BitConverter.ToInt16(gelenVeri, 13) / 100;
+            Driver.vd_f32 = (float)BitConverter.ToInt16(gelenVeri, 15) / 100;
+            Driver.vq_f32 = (float)BitConverter.ToInt16(gelenVeri, 17) / 100;
+            Driver.drive_status_u8 = gelenVeri[19];
+            Driver.error_u8 = gelenVeri[20];
+            Driver.odometer_u32 = BitConverter.ToUInt32(gelenVeri, 21);
+            Driver.motor_temperature_u8 = gelenVeri[25];
+            Driver.actual_velocity_u8 = gelenVeri[26];
 
-            bms_bat_volt_f32 = (float)BitConverter.ToUInt16(gelenVeri, 27) / 10;
-            bms_bat_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 29) / 100;
-            bms_bat_cons_f32 = (float)BitConverter.ToInt16(gelenVeri, 31) / 10;
-            bms_soc_f32 = (float)BitConverter.ToUInt16(gelenVeri, 33) / 100;
-            bms_error_u8 = gelenVeri[35];
-            bms_dc_bus_state_u8 = gelenVeri[36];
-            bms_worst_cell_voltage_f32 = (float)BitConverter.ToUInt16(gelenVeri, 37) / 10;
-            bms_worst_cell_address_u8 = gelenVeri[39];
-            bms_temp_u8 = gelenVeri[40];
+            BMS.bat_volt_f32 = (float)BitConverter.ToUInt16(gelenVeri, 27) / 10;
+            BMS.bat_current_f32 = (float)BitConverter.ToInt16(gelenVeri, 29) / 100;
+            BMS.bat_cons_f32 = (float)BitConverter.ToInt16(gelenVeri, 31) / 10;
+            BMS.soc_f32 = (float)BitConverter.ToUInt16(gelenVeri, 33) / 100;
+            BMS.error_u8 = gelenVeri[35];
+            BMS.dc_bus_state_u8 = gelenVeri[36];
+            BMS.worst_cell_voltage_f32 = (float)BitConverter.ToUInt16(gelenVeri, 37) / 10;
+            BMS.worst_cell_address_u8 = gelenVeri[39];
+            BMS.temp_u8 = gelenVeri[40];
+
+            //kendi custom degiskenim direkt gelmiyor ikisini carparak elde ediyoruz
+            BMS.power_emitted = BMS.bat_volt_f32 * BMS.bat_current_f32;
 
             gps_latitude_f64 = (float)BitConverter.ToInt64(gelenVeri, 41) / GPS_DIVIDE;
             gps_longtitude_f64 = (float)BitConverter.ToInt64(gelenVeri, 45) / GPS_DIVIDE;
@@ -293,88 +333,7 @@ namespace yeniform
             MQTT_counter_int32 = BitConverter.ToInt32(gelenVeri, 52);            
         }
 
-        void gsmDataConvert()
-        {
-            #region kullanılabilir
-            /*
-           
-            #region Yenilenecek_1
-            float myhour = float.Parse(data.Substring(11, 2));
-            float myminute = float.Parse(data.Substring(14, 2));
-            float mysecond = float.Parse(data.Substring(17, 2));
-            float mymillisecond = float.Parse(data.Substring(20, 3));
-            float my_gsm_time = (myhour * 360000) + (myminute * 60000) + (mysecond * 1000) + mymillisecond;
-            float my_gsm_time_millisecond = my_gsm_time;
-            #endregion
-
-            if (my_old_gsm_time == 0)
-            {
-                my_old_gsm_time = my_gsm_time;
-            }
-
-            if (my_gsm_time == my_old_gsm_time)
-            {
-                gsm_yenileme.Text = "NND";
-            }
-
-            else
-            {
-                refresh_time = my_gsm_time_millisecond - my_old_gsm_time;
-                gsm_yenileme.Text = refresh_time.ToString();
-                my_old_gsm_time = my_gsm_time_millisecond;
-            }
-
-            #region yenilenecek_2
-            data = data.Split('&').Last();
-            data = data.Replace('.', ','); //  data.Replace('.', ',')
-            string[] dataarray = data.Split('$');
-            bms_bat_volt_f32 = float.Parse(dataarray[0]);
-            bms_bat_current_f32 = float.Parse(dataarray[1]);
-            bms_bat_cons_f32 = float.Parse(dataarray[2]);
-            bms_soc_f32 = float.Parse(dataarray[3]);
-            bms_error_u8 = Convert.ToByte(dataarray[4]);
-            bms_dc_bus_state_u8 = Convert.ToByte(dataarray[5]);
-            bms_worst_cell_voltage_f32 = float.Parse(dataarray[6]);
-            bms_worst_cell_address_u8 = Convert.ToByte(dataarray[7]);
-            bms_temp_u8 = Convert.ToByte(dataarray[8]);
-            #endregion
-
-            driver_odometer_u32 = Convert.ToUInt32(dataarray[9]);
-
-            #region yenilenecek_3
-            GL_kalan_yol_driver_u32 = 56000 - driver_odometer_u32;
-            driver_actual_velocity_u8 = Convert.ToByte(dataarray[10]);
-            driver_phase_a_current_f32 = float.Parse(dataarray[11]);
-            driver_phase_b_current_f32 = float.Parse(dataarray[12]);
-            driver_phase_c_current_f32 = float.Parse(dataarray[13]);
-            driver_dc_bus_current_f32 = float.Parse(dataarray[14]);
-            driver_dc_bus_voltage_f32 = float.Parse(dataarray[15]);
-            driver_motor_temperature_u8 = float.Parse(dataarray[16]);
-            driver_drive_status_u8 = Convert.ToByte(dataarray[17]);
-            vcu_set_velocity_u8 = Convert.ToByte(dataarray[18]);
-            vcu_drive_commands_u8 = Convert.ToByte(dataarray[19]);
-
-            try
-            {
-                gps_latitude_f64 = (double)Convert.ToDouble(dataarray[20]);
-                gps_longtitude_f64 = (double)Convert.ToDouble(dataarray[21]);
-            }
-            catch
-            {
-
-            }
-            
-
-            anlik_hiz_u8 = Convert.ToByte(dataarray[22]);
-            vcu_wake_up_u8 = Convert.ToByte(dataarray[23]);
-            driver_error_u8 = Convert.ToByte(dataarray[25]);
-            #endregion
-
-           
-            displayAllData();
-            */
-            #endregion
-        }
+   
 
         void displayAllData()
         {
@@ -387,29 +346,29 @@ namespace yeniform
                               vcu_drive_commands_u8.ToString() + '$' +
                               vcu_set_velocity_u8.ToString() + '$' +
 
-                              driver_phase_a_current_f32.ToString() + '$' +
-                              driver_phase_b_current_f32.ToString() + '$' +
-                              driver_dc_bus_current_f32.ToString() + '$' +
-                              driver_dc_bus_voltage_f32.ToString() + '$' +
-                              driver_id_f32.ToString() + '$' +
-                              driver_iq_f32.ToString() + '$' +
-                              driver_vd_f32.ToString() + '$' +
-                              driver_vq_f32.ToString() + '$' +
-                              driver_drive_status_u8.ToString() + '$' +
-                              driver_error_u8.ToString() + '$' +
-                              driver_odometer_u32.ToString() + '$' +
-                              driver_motor_temperature_u8.ToString() + '$' +
-                              driver_actual_velocity_u8.ToString() + '$' +
+                               Driver.phase_a_current_f32.ToString() + '$' +
+                               Driver.phase_b_current_f32.ToString() + '$' +
+                               Driver.dc_bus_current_f32.ToString() + '$' +
+                               Driver.dc_bus_voltage_f32.ToString() + '$' +
+                               Driver.id_f32.ToString() + '$' +
+                               Driver.iq_f32.ToString() + '$' +
+                               Driver.vd_f32.ToString() + '$' +
+                               Driver.vq_f32.ToString() + '$' +
+                               Driver.drive_status_u8.ToString() + '$' +
+                               Driver.error_u8.ToString() + '$' +
+                               Driver.odometer_u32.ToString() + '$' +
+                               Driver.motor_temperature_u8.ToString() + '$' +
+                               Driver.actual_velocity_u8.ToString() + '$' +
 
-                              bms_bat_volt_f32.ToString() + '$' +
-                              bms_bat_current_f32.ToString() + '$' +
-                              bms_bat_cons_f32.ToString() + '$' +
-                              bms_soc_f32.ToString() + '$' +
-                              bms_error_u8.ToString() + '$' +
-                              bms_dc_bus_state_u8.ToString() + '$' +
-                              bms_worst_cell_voltage_f32.ToString() + '$' +
-                              bms_worst_cell_address_u8.ToString() + '$' +
-                              bms_temp_u8.ToString() + '$' +             
+                              BMS.bat_volt_f32.ToString() + '$' +
+                              BMS.bat_current_f32.ToString() + '$' +
+                              BMS.bat_cons_f32.ToString() + '$' +
+                              BMS.soc_f32.ToString() + '$' +
+                              BMS.error_u8.ToString() + '$' +
+                              BMS.dc_bus_state_u8.ToString() + '$' +
+                              BMS.worst_cell_voltage_f32.ToString() + '$' +
+                              BMS.worst_cell_address_u8.ToString() + '$' +
+                              BMS.temp_u8.ToString() + '$' +             
                               
                               gps_latitude_f64.ToString() + '$'+
                               gps_longtitude_f64.ToString() + '$' +
@@ -443,17 +402,17 @@ namespace yeniform
             }
             #endregion       
             #region bms_text_write
-            bms_bat_volt.Text = bms_bat_volt_f32.ToString();
-            bms_bat_current.Text = bms_bat_current_f32.ToString();
-            bms_bat_cons.Text = bms_bat_cons_f32.ToString();
-            bms_soc.Text = bms_soc_f32.ToString();
-            bms_worst_cell_address.Text = bms_worst_cell_address_u8.ToString();
-            bms_worst_cell_volt.Text = bms_worst_cell_voltage_f32.ToString();
-            bms_temp.Text = bms_temp_u8.ToString();
+            bms_bat_volt.Text = BMS.bat_volt_f32.ToString();
+            bms_bat_current.Text = BMS.bat_current_f32.ToString();
+            bms_bat_cons.Text = BMS.bat_cons_f32.ToString();
+            bms_soc.Text = BMS.soc_f32.ToString();
+            bms_worst_cell_address.Text = BMS.worst_cell_address_u8.ToString();
+            bms_worst_cell_volt.Text = BMS.worst_cell_voltage_f32.ToString();
+            bms_temp.Text = BMS.temp_u8.ToString();
             #endregion
             #region bms_error_control
 
-            if ((bms_error_u8 & 0b00000001) != 0)
+            if ((BMS.error_u8 & 0b00000001) != 0)
             {
                 bms_high_volt_error.BackColor = Color.Transparent;
             }
@@ -462,7 +421,7 @@ namespace yeniform
                 bms_high_volt_error.BackColor = AeskBlue;
             }
 
-            if ((bms_error_u8 & 0b00000010) != 0)
+            if ((BMS.error_u8 & 0b00000010) != 0)
             {
                 bms_low_volt_error.BackColor = Color.Transparent;
             }
@@ -471,7 +430,7 @@ namespace yeniform
                 bms_low_volt_error.BackColor = AeskBlue;
             }
 
-            if ((bms_error_u8 & 0b00000100) != 0)
+            if ((BMS.error_u8 & 0b00000100) != 0)
             {
                 bms_temp_error.BackColor = Color.Transparent;
             }
@@ -480,7 +439,7 @@ namespace yeniform
                 bms_temp_error.BackColor = AeskBlue;
             }
 
-            if ((bms_error_u8 & 0b00001000) != 0)
+            if ((BMS.error_u8 & 0b00001000) != 0)
             {
                 bms_comm_error.BackColor = Color.Transparent;
             }
@@ -489,7 +448,7 @@ namespace yeniform
                 bms_comm_error.BackColor = AeskBlue;
             }
 
-            if ((bms_error_u8 & 0b00010000) != 0)
+            if ((BMS.error_u8 & 0b00010000) != 0)
             {
                 bms_over_cur_error.BackColor = Color.Transparent;
             }
@@ -499,7 +458,7 @@ namespace yeniform
             }
             #endregion
             #region dc_bus_state
-            if ((bms_dc_bus_state_u8 & 0b00000001) != 0)
+            if ((BMS.dc_bus_state_u8 & 0b00000001) != 0)
             {
                 bms_precharge_flag.BackColor = AeskBlue;
             }
@@ -508,7 +467,7 @@ namespace yeniform
                 bms_precharge_flag.BackColor = Color.Transparent;
             }
 
-            if ((bms_dc_bus_state_u8 & 0b00000010) != 0)
+            if ((BMS.dc_bus_state_u8 & 0b00000010) != 0)
             {
                 bms_discharge_flag.BackColor = AeskBlue;
             }
@@ -517,7 +476,7 @@ namespace yeniform
                 bms_discharge_flag.BackColor = Color.Transparent;
             }
 
-            if ((bms_dc_bus_state_u8 & 0b00000100) != 0)
+            if ((BMS.dc_bus_state_u8 & 0b00000100) != 0)
             {
                 bms_dc_bus_ready_flag.BackColor = AeskBlue;
             }
@@ -527,27 +486,27 @@ namespace yeniform
             }
             #endregion
             #region driver_text_write
-            gidilen_yol_gps.Text = driver_odometer_u32.ToString();
-            anlik_hiz.Text = driver_actual_velocity_u8.ToString();
+            gidilen_yol_gps.Text = Driver.odometer_u32.ToString();
+            anlik_hiz.Text = Driver.actual_velocity_u8.ToString();
             anlik_hiz_gps.Text = gps_velocity_u8.ToString();
             set_hiz.Text = vcu_set_velocity_u8.ToString();
-            my_maks_hiz = driver_actual_velocity_u8 > my_maks_hiz ? driver_actual_velocity_u8 : my_maks_hiz;
+            my_maks_hiz = Driver.actual_velocity_u8 > my_maks_hiz ? Driver.actual_velocity_u8 : my_maks_hiz;
             maks_hiz.Text = my_maks_hiz.ToString();
-            phase_a_cur.Text = driver_phase_a_current_f32.ToString();
-            phase_b_cur.Text = driver_phase_b_current_f32.ToString();
-            dc_bus_cur.Text = driver_dc_bus_current_f32.ToString();
-            dc_bus_volt.Text = driver_dc_bus_voltage_f32.ToString();
-            motor_temp.Text = driver_motor_temperature_u8.ToString();
-            id.Text = driver_id_f32.ToString();
-            act_torque.Text = Math.Round(((float)driver_id_f32 * 0.45), 2).ToString();
-            iq.Text = driver_iq_f32.ToString();
-            vd.Text = driver_vd_f32.ToString();
-            vq.Text = driver_vq_f32.ToString();
+            phase_a_cur.Text = Driver.phase_a_current_f32.ToString();
+            phase_b_cur.Text = Driver.phase_b_current_f32.ToString();
+            dc_bus_cur.Text = Driver.dc_bus_current_f32.ToString();
+            dc_bus_volt.Text = Driver.dc_bus_voltage_f32.ToString();
+            motor_temp.Text = Driver.motor_temperature_u8.ToString();
+            id.Text = Driver.id_f32.ToString();
+            //act_torque.Text = Math.Round(((float)Driver.id_f32 * 0.45), 2).ToString();
+            iq.Text = Driver.iq_f32.ToString();
+            vd.Text = Driver.vd_f32.ToString();
+            vq.Text = Driver.vq_f32.ToString();
             hedef_hiz.Text = vcu_set_velocity_u8.ToString();
             kalan_yol_gps.Text = GL_kalan_yol_driver_u32.ToString();
             #endregion
             #region statuscommandcontrol
-            if ((driver_drive_status_u8 & 0b00000001) != 0)
+            if ((Driver.drive_status_u8 & 0b00000001) != 0)
             {
                 driver_fwrv_status.Text = "REVERSE";
             }
@@ -556,7 +515,7 @@ namespace yeniform
                 driver_fwrv_status.Text = "FORWARD";
             }
 
-            if ((driver_drive_status_u8 & 0b00000010) != 0)
+            if ((Driver.drive_status_u8 & 0b00000010) != 0)
             {
                 driver_brake_status.Text = "BRAKE ON";
             }
@@ -565,7 +524,7 @@ namespace yeniform
                 driver_brake_status.Text = "BRAKE OFF";
             }
 
-            if ((driver_drive_status_u8 & 0b00000100) != 0)
+            if ((Driver.drive_status_u8 & 0b00000100) != 0)
             {
                 driver_ign_status.Text = "IGN ON";
             }
@@ -602,7 +561,7 @@ namespace yeniform
             }
             #endregion
             #region driver_error_control
-            if ((driver_error_u8 & 0b00000001) != 0)
+            if ((Driver.error_u8 & 0b00000001) != 0)
             {
                 zpc.BackColor = AeskBlue;
             }
@@ -610,7 +569,7 @@ namespace yeniform
             {
                 zpc.BackColor = Color.Transparent;
             }
-            if ((driver_error_u8 & 0b00000010) != 0)
+            if ((Driver.error_u8 & 0b00000010) != 0)
             {
                 pwm_enabled.BackColor = AeskBlue;
             }
@@ -619,7 +578,7 @@ namespace yeniform
                 pwm_enabled.BackColor = Color.Transparent;
             }
 
-            if ((driver_error_u8 & 0b00000100) != 0)
+            if ((Driver.error_u8 & 0b00000100) != 0)
             {
                 dc_bus_voltage_error.BackColor = AeskBlue;
             }
@@ -628,7 +587,7 @@ namespace yeniform
                 dc_bus_voltage_error.BackColor = Color.Transparent;
             }
 
-            if ((driver_error_u8 & 0b00001000) != 0)
+            if ((Driver.error_u8 & 0b00001000) != 0)
             {
                 motor_temp_error.BackColor = AeskBlue;
             }
@@ -637,7 +596,7 @@ namespace yeniform
                 motor_temp_error.BackColor = Color.Transparent;
             }
 
-            if ((driver_error_u8 & 0b00010000) != 0)
+            if ((Driver.error_u8 & 0b00010000) != 0)
             {
                 dc_bus_amper_error.BackColor = AeskBlue;
             }
@@ -646,7 +605,7 @@ namespace yeniform
             {
                 dc_bus_amper_error.BackColor = Color.Transparent;
             }
-            if ((driver_error_u8 & 0b00100000) != 0)
+            if (( Driver.error_u8 & 0b00100000) != 0)
             {
                 id_error.BackColor = AeskBlue;
             }
@@ -672,10 +631,10 @@ namespace yeniform
 
         private void displayGauges()
         {
-            anlikhiz_gauge.Value = ((driver_actual_velocity_u8 * 100) / 60);
+            anlikhiz_gauge.Value = ((Driver.actual_velocity_u8 * 100) / 60);
             gpshiz_gauge.Value = ((gps_velocity_u8 * 100) / 60);
             hedefhiz_gauge.Value = ((vcu_set_velocity_u8 * 100) / 60);
-            kalanyol_bar.Value = Convert.ToInt32(((driver_odometer_u32 * 100) / (driver_odometer_u32 + GL_kalan_yol_u32)));
+            kalanyol_bar.Value = Convert.ToInt32(((Driver.odometer_u32 * 100) / (Driver.odometer_u32 + GL_kalan_yol_u32)));
         }
 
         private void portToolStripMenuItem_MouseHover(object sender, EventArgs e)
@@ -688,37 +647,157 @@ namespace yeniform
             }
         }
 
+        //yaris bolgelerinin flagi
+        //default olarak 0. bolgeden basliyoruz
+        bool[] race_regions = new bool[4] { true, false, false, false };
         private void gps_yazdir(double latitude, double longtitude)
         {
-            long sonuc1;
-            long sonuc2;
+
             PointLatLng receivedPosition = new PointLatLng(latitude, longtitude);
             GMapMarker marker = new GMarkerGoogle(receivedPosition, GMarkerGoogleType.red_small);
             GMapOverlay markers = new GMapOverlay("markers");
             markers.Markers.Add(marker);
             gmap.Overlays.Add(markers);
-            UInt32 markerpointlng = (UInt32)(longtitude * 1000000);
-            UInt32 markerpointlat = (UInt32)(latitude * 1000000);
-            sonuc1 = markerpointlng - start1long;
-            sonuc2 = markerpointlat - start1lat;
-            sonuc1 = Math.Abs(sonuc1);
-            sonuc2 = Math.Abs(sonuc2);
+
+            double new_bearing = Bearing(Center,latitude,longtitude);
+
+            double temp = new_bearing - old_bearing;
+
+            scanned_angle += temp;
+            scanned_angle = (scanned_angle + 360) % 360;
+
+            //her bolge gecislerinde bolge degiskenleri 0 lanacak
+            //itemboxa eklenme yapilacak
+            //bolge degiskenleri ana loop icinde guncellenip bolge gecislerinde 0 lanacak
+            //algoritma bu 
+
+            //3.bolgeden 0 a gecis
+            if (scanned_angle > 355 && race_regions[3])
+            {
+                race_regions[0] = true;
+                race_regions[3] = false;
+                tour++;
+                //burada tur atacak
+                //tur ile ilgili variableler resetlenecek
+            }
+            //0 dan 1 e
+            else if (scanned_angle > 94 && race_regions[0])
+            {
+                race_regions[1] = true;
+                race_regions[0] = false;
+
+            }
+            //1 den 2 e 
+            else if (scanned_angle > 127 && race_regions[1])
+            {
+                race_regions[2] = true;
+                race_regions[1] = false;
+
+            }//2 den 3 e
+            else if (scanned_angle > 230 && race_regions[2])
+            {
+                race_regions[3] = true;
+                race_regions[2] = false;
+
+            }
+            
+            //calculate about flagi
+            //tur bolgesine girmek
+            //Gl_tour_distance_gps_u32 =0;
+            //tour++;
+            //anlik_tur_suresi_time.restart()
+            // start()
+            //gmap.Overlays.Clear();
+
+            /*
+                             GL_tour_distance_gps_u32 += (UInt32)(GreatCircleDistance(latitude, longtitude, lastposition.Lat, lastposition.Lng) * 1000);
+                GL_general_distance_gps_u32 += (UInt32)(GreatCircleDistance(latitude, longtitude, lastposition.Lat, lastposition.Lng) * 1000);
+             
+
+             */
+            //tur bolgesinde marker temizle
+
+            //dursun zarari yok
+            gidilen_yol_gps.Text = GL_general_distance_gps_u32.ToString();
+            turr.Text = tour.ToString();
+            kalan_yol_gps.Text = (GL_kalan_yol_u32 - GL_general_distance_gps_u32).ToString();
+
             gmap.Zoom += 0.00000001;
             gmap.Zoom -= 0.00000001;
 
+            //donusum olmasi icin
+            lastposition.Lat = latitude;
+            lastposition.Lng = longtitude;
+            old_bearing = new_bearing;
+
+            #region gps_logs
             gps_datas = latitude.ToString() + '$' +
-                    longtitude.ToString() + '$' +
-                    GL_gidilen_yol_tour_u32.ToString() + '$' +
-                    GL_tour_distance_gps_u32.ToString() + '$' +
-                    GL_general_distance_gps_u32.ToString() + '$' +
-                    tour.ToString() + '$' +
-                    kalan_yol_gps.Text + '$' +
-                    gidilen_yol_gps.Text + '$' +
-                    GL_ems_bat_cons_tour_f32.ToString() + '$' +
-                    GL_ems_fc_cons_tour_f32.ToString() + '$' +
-                    GL_ems_fc_lt_cons_tour_f32.ToString() + '$'
-                    ;
+        longtitude.ToString() + '$' +
+        GL_gidilen_yol_tour_u32.ToString() + '$' +
+        GL_tour_distance_gps_u32.ToString() + '$' +
+        GL_general_distance_gps_u32.ToString() + '$' +
+        tour.ToString() + '$' +
+        kalan_yol_gps.Text + '$' +
+        gidilen_yol_gps.Text + '$' +
+        GL_ems_bat_cons_tour_f32.ToString() + '$' +
+        GL_ems_fc_cons_tour_f32.ToString() + '$' +
+        GL_ems_fc_lt_cons_tour_f32.ToString() + '$'
+        ;
+            #endregion
         }
+
+        #region MAP_Fonksiyonlari
+        public static double Bearing(PointLatLng Centerr, double lat2, double long2)
+        {
+            double lat1 = Centerr.Lat;
+            double long1 = Centerr.Lng;
+
+            double y = Math.Sin(ConvertToRadians(long2) - ConvertToRadians(long1)) * Math.Cos(ConvertToRadians(lat2));
+
+            double x = Math.Cos(ConvertToRadians(lat1)) * Math.Sin(ConvertToRadians(lat2)) - Math.Sin(ConvertToRadians(lat1)) * Math.Cos(ConvertToRadians(lat2)) * Math.Cos(ConvertToRadians(long2) - ConvertToRadians(long1));
+
+            double brng = Math.Atan2(y, x);
+
+            return (ConvertRadiansToDegrees(brng) + 360) % 360;
+
+        }
+        public static double ConvertToRadians(double angle)
+        {
+            return (Math.PI / 180) * angle;
+        }
+
+        //radian to degree
+        public static double ConvertRadiansToDegrees(double radians)
+        {
+            double degrees = (180 / Math.PI) * radians;
+            return (degrees);
+        }
+
+        double GreatCircleDistance(double Latitude1, double Longitude1, double Latitude2, double Longitude2)
+        {
+            double Lat1;
+            double Lat2;
+            double Long1;
+            double Long2;
+            double Delta;
+
+            Lat1 = Latitude1;
+            Long1 = Longitude1;
+            Lat2 = Latitude2;
+            Long2 = Longitude2;
+            Lat1 = (Lat1 / 180) * C_PI;
+            Lat2 = (Lat2 / 180) * C_PI;
+            Long1 = (Long1 / 180) * C_PI;
+            Long2 = (Long2 / 180) * C_PI;
+            Delta = (2 * Math.Asin(Math.Sqrt((Math.Pow(Math.Sin((Lat1 - Lat2) / 2), 2) + Math.Cos(Lat1) * Math.Cos(Lat2) * (Math.Pow(Math.Sin((Long1 - Long2) / 2), 2))))));
+            return (Delta * C_RADIUS_EARTH_KM);
+        }
+
+
+
+
+
+        #endregion
 
         private void gMapControl1_MouseClick(object sender, MouseEventArgs e)
         {
@@ -736,8 +815,6 @@ namespace yeniform
 
         }
 
-
-
         DateTime mqtt_reference_time;
 
         private void bağlanToolStripMenuItem_Click(object sender, EventArgs e)
@@ -751,6 +828,7 @@ namespace yeniform
                 //Connected
                 gsm_durum.BackColor = AeskBlue;
                 timer1.Start();
+                go_graphs_button.Enabled = true;
             }
             else
             {
@@ -768,10 +846,11 @@ namespace yeniform
             catch (Exception ex)
             {
                 //Subscribe error
-
+                MessageBox.Show(ex.Message);
             }
 
             mqtt_reference_time = DateTime.Now;
+           
         }
 
         private void bağlantıyıKesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -795,6 +874,7 @@ namespace yeniform
                     if (serialPort1.IsOpen == true)
                     {
                         xbee_active.BackColor = Color.Green;
+                        go_graphs_button.Enabled = true;
                     }
                 }
             }
@@ -823,13 +903,14 @@ namespace yeniform
 
         private void go_cells_button_Click(object sender, EventArgs e)
         {
-            BMS bmsform = new BMS();
+            BMS_form bmsform = new BMS_form();
             bmsform.Show();
         }
 
         private void go_graphs_button_Click(object sender, EventArgs e)
         {
-
+            graph_form grafiklerr = new graph_form();
+            grafiklerr.Show();
         }
 
         public static DateTime old_time;
@@ -844,8 +925,6 @@ namespace yeniform
         {
             //sayacin eskisini olda atiyoruz
             mqtt_counter_old = MQTT_counter_int32;
-            
-
             //bu ne mk
             //counter ++;'i direkt bunun altina aldim
             // payda 0 olmamali oran hesaplarinda
@@ -873,22 +952,14 @@ namespace yeniform
             //yani ilk veride hata varsa bilemeyecez
 
             error_counter += find_error(mqtt_counter_old,MQTT_counter_int32);
-            
-
             double c = Convert.ToDouble(error_counter) / Convert.ToDouble(mqtt_total_counter);
-
-            
             gsm_yenileme.Text = (totalTime / (double)mqtt_total_counter).ToString();
 
             //RECEIVE 
             displayAllData();
             displayGauges();
             //RECEIVE
-
             old_time = current_time;
-
-
-            
             // gerekli yerlere yazdik
             mqtt_reference_time = gsm_new_time;
             mqtt_toplam_paket.Text = mqtt_total_counter.ToString();
@@ -913,10 +984,6 @@ namespace yeniform
 
         }
 
-
-
-
-
         private void kayıtAçToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog dosya = new OpenFileDialog();
@@ -935,6 +1002,7 @@ namespace yeniform
             }
             history_displayer.ValueChanged += new EventHandler(this.history_displayer_ValueChanged);
             history_displayer.Maximum = gelenler.Items.Count - 1;
+            go_graphs_button.Enabled = true;
         }
 
         private void history_displayer_ValueChanged(object sender, EventArgs e)
@@ -958,34 +1026,34 @@ namespace yeniform
             GL_ems_bat_cons_tour_f32 = float.Parse(old_datass[15]);
             GL_ems_fc_cons_tour_f32 = float.Parse(old_datass[16]);
             GL_ems_fc_lt_cons_tour_f32 = float.Parse(old_datass[17]);
-            bms_bat_volt_f32 = float.Parse(old_datass[18]);
-            bms_bat_current_f32 = float.Parse(old_datass[19]);
-            bms_bat_cons_f32 = float.Parse(old_datass[20]);
-            bms_soc_f32 = float.Parse(old_datass[21]);
-            bms_error_u8 = Convert.ToByte(old_datass[22]);
-            bms_dc_bus_state_u8 = Convert.ToByte(old_datass[23]);
-            bms_worst_cell_voltage_f32 = float.Parse(old_datass[24]);
-            bms_worst_cell_address_u8 = Convert.ToByte(old_datass[25]);
-            bms_temp_u8 = Convert.ToByte(old_datass[26]);
-            driver_odometer_u32 = Convert.ToUInt32(old_datass[42]);
-            driver_actual_velocity_u8 = Convert.ToByte(old_datass[43]);
-            driver_phase_a_current_f32 = float.Parse(old_datass[44]);
-            driver_phase_b_current_f32 = float.Parse(old_datass[45]);
-            driver_dc_bus_current_f32 = float.Parse(old_datass[47]);
-            driver_dc_bus_voltage_f32 = float.Parse(old_datass[51]);
+            BMS.bat_volt_f32 = float.Parse(old_datass[18]);
+            BMS.bat_current_f32 = float.Parse(old_datass[19]);
+            BMS.bat_cons_f32 = float.Parse(old_datass[20]);
+            BMS.soc_f32 = float.Parse(old_datass[21]);
+            BMS.error_u8 = Convert.ToByte(old_datass[22]);
+            BMS.dc_bus_state_u8 = Convert.ToByte(old_datass[23]);
+            BMS.worst_cell_voltage_f32 = float.Parse(old_datass[24]);
+            BMS.worst_cell_address_u8 = Convert.ToByte(old_datass[25]);
+            BMS.temp_u8 = Convert.ToByte(old_datass[26]);
+            Driver.odometer_u32 = Convert.ToUInt32(old_datass[42]);
+            Driver.actual_velocity_u8 = Convert.ToByte(old_datass[43]);
+            Driver.phase_a_current_f32 = float.Parse(old_datass[44]);
+            Driver.phase_b_current_f32 = float.Parse(old_datass[45]);
+            Driver.dc_bus_current_f32 = float.Parse(old_datass[47]);
+            Driver.dc_bus_voltage_f32 = float.Parse(old_datass[51]);
             //driver_motor_temperature_u8 = float.Parse(old_datass[52]);
-            driver_id_f32 = float.Parse(old_datass[53]);
-            driver_iq_f32 = float.Parse(old_datass[54]);
-            driver_vd_f32 = float.Parse(old_datass[55]);
-            driver_vq_f32 = float.Parse(old_datass[56]);
-            driver_drive_status_u8 = Convert.ToByte(old_datass[57]);
+            Driver.id_f32 = float.Parse(old_datass[53]);
+            Driver.iq_f32 = float.Parse(old_datass[54]);
+            Driver.vd_f32 = float.Parse(old_datass[55]);
+            Driver.vq_f32 = float.Parse(old_datass[56]);
+            Driver.drive_status_u8 = Convert.ToByte(old_datass[57]);
             vcu_set_velocity_u8 = Convert.ToByte(old_datass[58]);
             gsm_yenileme.Text = old_datass[59];
             vcu_drive_commands_u8 = Convert.ToByte(old_datass[60]);
             my_maks_hiz = Convert.ToByte(old_datass[61]);
             GL_kalan_yol_driver_u32 = Convert.ToUInt32(old_datass[62]);
             vcu_wake_up_u8 = Convert.ToByte(old_datass[63]);
-            driver_error_u8 = Convert.ToByte(old_datass[64]);
+            Driver.error_u8 = Convert.ToByte(old_datass[64]);
             history_gps_write(old_latitudes, old_longtitudes);
             displayGauges();
             displayAllData();
@@ -1032,17 +1100,19 @@ namespace yeniform
             ortalama_tur_suresi.Text = ortalama_tur_suresi_time.ToString(@"hh\:mm\:ss");
             TimeSpan kalan_sure_calc = gecen_sure_calc.Subtract(TimeSpan.FromSeconds(3901));
             hedef_hiz.Text = Math.Round((-(GL_kalan_yol_driver_u32 / kalan_sure_calc.TotalSeconds) * 3.6), 2).ToString();
-            ort_hiz.Text = Math.Round(((driver_odometer_u32 / gecen_sure_calc.TotalSeconds) * 3.6), 2).ToString();
+            ort_hiz.Text = Math.Round(((Driver.odometer_u32 / gecen_sure_calc.TotalSeconds) * 3.6), 2).ToString();
             anlik_tur_suresi.Text = anlik_tur_süresi_time.Elapsed.Duration().ToString(@"hh\:mm\:ss");
             kalan_sure.Text = kalan_sure_calc.ToString(@"hh\:mm\:ss");
             gecen_sure.Text = gecen_sure_calc.ToString(@"hh\:mm\:ss");
             
             other_datas = ortalama_tur_suresi.Text + '$' + anlik_tur_suresi.Text + '$' + kalan_sure.Text + '$' + gecen_sure.Text + '$' + turr.Text + '$' + ort_hiz.Text + '$' + hedef_hiz.Text + '$';
-            
-
-
         }
-        
+
+
+
+
+
+
         private void tabPage1_Click(object sender, EventArgs e)
         {
 

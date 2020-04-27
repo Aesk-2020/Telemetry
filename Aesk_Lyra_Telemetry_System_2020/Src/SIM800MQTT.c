@@ -10,7 +10,7 @@
 void SendATCommand(Gsm_Datas* gsm_data, char * command, char* response)
 {
 	gsm_data->at_response = response;
-	HAL_UART_Transmit_IT(gsm_data->gsm_uart, (uint8_t *)command, strlen(command));
+	HAL_UART_Transmit(gsm_data->gsm_uart, (uint8_t *)command, strlen(command), HAL_DELAY);
 }
 
 void writeChar(unsigned char** pptr, char c)
