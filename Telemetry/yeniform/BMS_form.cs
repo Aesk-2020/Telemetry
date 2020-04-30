@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using yeniform.Variables;
 namespace yeniform
 {
-    public partial class BMS : Form
+    public partial class BMS_form : Form
     {
-        public BMS()
+        BMS bms = new BMS();
+        public BMS_form()
         {
             InitializeComponent();
         }
@@ -89,6 +90,7 @@ namespace yeniform
             tempLabelsArray[26] = cell27_temp;
             tempLabelsArray[27] = cell28_temp;
             #endregion
+           
         }
 
         private void tableLayoutPanel68_Paint(object sender, PaintEventArgs e)

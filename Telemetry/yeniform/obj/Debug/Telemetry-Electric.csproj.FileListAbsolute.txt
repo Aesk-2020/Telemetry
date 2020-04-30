@@ -117,7 +117,6 @@ F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\bin\Debug\Guna.
 F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\bin\Debug\M2Mqtt.Net.pdb
 F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\bin\Debug\System.Data.SQLite.dll.config
 F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csprojAssemblyReference.cache
-F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.BMS.resources
 F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.telemetry.resources
 F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.Properties.Resources.resources
 F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csproj.GenerateResource.cache
@@ -125,7 +124,6 @@ F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\obj\Debug\Telem
 F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.exe
 F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.pdb
 C:\Users\Khada\Desktop\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csprojAssemblyReference.cache
-C:\Users\Khada\Desktop\Telemetry\yeniform\obj\Debug\yeniform.BMS.resources
 C:\Users\Khada\Desktop\Telemetry\yeniform\obj\Debug\yeniform.telemetry.resources
 C:\Users\Khada\Desktop\Telemetry\yeniform\obj\Debug\yeniform.Properties.Resources.resources
 C:\Users\Khada\Desktop\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csproj.GenerateResource.cache
@@ -154,3 +152,73 @@ C:\Users\Khada\Desktop\Telemetry\yeniform\bin\Debug\M2Mqtt.Net.pdb
 C:\Users\Khada\Desktop\Telemetry\yeniform\bin\Debug\System.Data.SQLite.dll.config
 C:\Users\Khada\Desktop\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csproj.CopyComplete
 F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.graph_form.resources
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\bin\Debug\yeniform.exe.config
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\bin\Debug\yeniform.exe
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\bin\Debug\yeniform.pdb
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\bin\Debug\AjaxMin.dll
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\bin\Debug\EntityFramework.dll
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\bin\Debug\GMap.NET.Core.dll
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\bin\Debug\Gmap.net.dll
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\bin\Debug\GMap.NET.WindowsForms.dll
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\bin\Debug\GMap.NET.WindowsPresentation.dll
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\bin\Debug\M2Mqtt.Net.dll
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\bin\Debug\SlimDX.dll
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\bin\Debug\System.Data.SQLite.dll
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\bin\Debug\Gmap.net.pdb
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\bin\Debug\Guna.UI.pdb
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\bin\Debug\M2Mqtt.Net.pdb
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csprojAssemblyReference.cache
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.BMS.resources
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.graph_form.resources
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.telemetry.resources
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.Properties.Resources.resources
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csproj.GenerateResource.cache
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csproj.CoreCompileInputs.cache
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csproj.CopyComplete
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.exe
+C:\Users\Khada\Desktop\Aessssksksks\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.pdb
+C:\Users\Khada\Desktop\Telemetry\yeniform\obj\Debug\yeniform.graph_form.resources
+C:\Users\Khada\Desktop\Telemetry\yeniform\obj\Debug\yeniform.BMS_form.resources
+F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.BMS_form.resources
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\obj\Debug\yeniform.BMS_form.resources
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\obj\Debug\yeniform.graph_form.resources
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\obj\Debug\yeniform.telemetry.resources
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\obj\Debug\yeniform.Properties.Resources.resources
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csproj.GenerateResource.cache
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csproj.CoreCompileInputs.cache
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\obj\Debug\yeniform.exe
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\obj\Debug\yeniform.pdb
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\yeniform.exe.config
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\yeniform.exe
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\yeniform.pdb
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\AjaxMin.dll
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\EntityFramework.dll
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\GMap.NET.Core.dll
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\Gmap.net.dll
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\GMap.NET.WindowsForms.dll
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\GMap.NET.WindowsPresentation.dll
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\M2Mqtt.Net.dll
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\Newtonsoft.Json.dll
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\SlimDX.dll
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\System.Data.SQLite.dll
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\EntityFramework.xml
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\Gmap.net.pdb
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\M2Mqtt.Net.pdb
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\Newtonsoft.Json.xml
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\System.Data.SQLite.xml
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csproj.CopyComplete
+F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\bin\Debug\EntityFramework.xml
+F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\bin\Debug\EntityFramework.SqlServer.xml
+F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\bin\Debug\Newtonsoft.Json.xml
+F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\bin\Debug\System.Data.SQLite.xml
+C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csprojAssemblyReference.cache
