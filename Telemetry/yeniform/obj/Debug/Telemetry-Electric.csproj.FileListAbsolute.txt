@@ -217,8 +217,4 @@ C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\Newtonsoft.Json.xml
 C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\System.Data.SQLite.xml
 C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\System.Data.SQLite.dll.config
 C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csproj.CopyComplete
-F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\bin\Debug\EntityFramework.xml
-F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\bin\Debug\EntityFramework.SqlServer.xml
-F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\bin\Debug\Newtonsoft.Json.xml
-F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\bin\Debug\System.Data.SQLite.xml
 C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csprojAssemblyReference.cache
