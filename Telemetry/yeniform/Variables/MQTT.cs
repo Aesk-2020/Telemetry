@@ -74,7 +74,7 @@ namespace yeniform.Variables
             totalTime += (current_time - old_time).TotalMilliseconds;
             dataConvertMQTT(e.Message);
             error_counter += find_error(mqtt_counter_old, MQTT_counter_int32);
-            MQTT_Efficiency = (Convert.ToDouble(error_counter) / Convert.ToDouble(mqtt_total_counter)) + 1;
+            MQTT_Efficiency = 1 - (Convert.ToDouble(error_counter) / Convert.ToDouble(mqtt_total_counter));
             mqtt_refresh_time = (double)totalTime / mqtt_total_counter;
             old_time = current_time;
         }
@@ -133,6 +133,7 @@ namespace yeniform.Variables
             GpsTracker.gps_longtitude_f64 = (double)EncodePackMethods.DataConverterU32(receiveBuffer, ref startIndex) / MACROS.GPS_DIVIDER;
             GpsTracker.gps_velocity_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
             GpsTracker.gps_sattelite_number_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
+            GpsTracker.gps_efficiency_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
             MQTT_counter_int32 = EncodePackMethods.DataConverterS32(receiveBuffer, ref startIndex);
             DisplayMQTTDatasEvent();
         }

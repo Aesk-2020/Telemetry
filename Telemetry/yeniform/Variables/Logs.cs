@@ -24,14 +24,14 @@ namespace yeniform.Variables
         public string onceki_tur_sure;
 
         public object[] HturAtDatas => new object[8] {Timers.currentTour, "ST", anlik_tur_sure, SectorAndTourDatas.gidilen_yol_vcu_sector_T_u32, 
-                                   SectorAndTourDatas.gidilen_yol_gps_sector_T_u32, sector_T_ortalama_hiz_vcu, sector_T_ortalama_hiz_gps, 0};
+                                   SectorAndTourDatas.gidilen_yol_gps_sector_T_u32, sector_T_ortalama_hiz_vcu, sector_T_ortalama_hiz_gps, SectorAndTourDatas.consumption_sector_T_f32};
 
         public object[] Hsector1Datas => new object[8] {Timers.currentTour, "S1", sector_1_sure,
                                            SectorAndTourDatas.gidilen_yol_vcu_sector_1_u32, SectorAndTourDatas.gidilen_yol_gps_sector_1_u32,
-                                           sector_1_ortalama_hiz_vcu, sector_1_ortalama_hiz_gps, 0};
+                                           sector_1_ortalama_hiz_vcu, sector_1_ortalama_hiz_gps, SectorAndTourDatas.consumption_sector_1_f32};
         public object[] Hsector2Datas => new object[8] {Timers.currentTour, "S2", sector_2_sure,
                                            SectorAndTourDatas.gidilen_yol_vcu_sector_2_u32, SectorAndTourDatas.gidilen_yol_gps_sector_2_u32,
-                                           sector_2_ortalama_hiz_vcu, sector_2_ortalama_hiz_gps, 0};
+                                           sector_2_ortalama_hiz_vcu, sector_2_ortalama_hiz_gps, SectorAndTourDatas.consumption_sector_2_f32};
         public static bool _IsLog;
         public int dataCounter = 0;
         public int history_counter = 1;
