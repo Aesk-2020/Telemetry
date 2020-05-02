@@ -87,7 +87,6 @@ D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\Newtonsoft.Json.xml
 D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\System.Data.SQLite.xml
 D:\MyGits\Telemetry\Telemetry\yeniform\bin\Debug\System.Data.SQLite.dll.config
 D:\MyGits\Telemetry\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csprojAssemblyReference.cache
-D:\MyGits\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.BMS.resources
 D:\MyGits\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.telemetry.resources
 D:\MyGits\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.Properties.Resources.resources
 D:\MyGits\Telemetry\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csproj.GenerateResource.cache
@@ -218,3 +217,5 @@ C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\System.Data.SQLite.xml
 C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\bin\Debug\System.Data.SQLite.dll.config
 C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csproj.CopyComplete
 C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csprojAssemblyReference.cache
+D:\MyGits\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.BMS_form.resources
+D:\MyGits\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.graph_form.resources

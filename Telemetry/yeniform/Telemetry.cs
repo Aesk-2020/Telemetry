@@ -330,7 +330,8 @@ namespace yeniform
         {
             if (!(MACROS.sector_flag[0] || MACROS.sector_flag[1] || MACROS.sector_flag[2]))
             {
-                ThreadMethods.LabelDegis(sektor, "S0");
+                SectorAndTourDatas.sector_name = "S0";
+                ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name);
                 if (!(angle > 300 && angle < 355))
                 {
                     MACROS.sector_flag[0] = true;
@@ -339,7 +340,8 @@ namespace yeniform
 
             if (angle > 0 && angle < 94 && (MACROS.sector_flag[0] || MACROS.sector_flag[2]))
             {
-                ThreadMethods.LabelDegis(sektor, "S1");
+                SectorAndTourDatas.sector_name = "S1";
+                ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name);
                 if (MACROS.sector_flag[2])
                 {
                     TurAt();
@@ -370,7 +372,8 @@ namespace yeniform
                     SectorAndTourDatas.sector1_sure.Reset();
                     SectorAndTourDatas.sector2_sure.Start();
                 }
-                ThreadMethods.LabelDegis(sektor,"S2");
+                SectorAndTourDatas.sector_name = "S2";
+                ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name); ;
                 MACROS.sector_flag[1] = true;
                 MACROS.sector_flag[0] = false;
             }
@@ -393,7 +396,8 @@ namespace yeniform
                     
                     SectorAndTourDatas.sector2_sure.Reset();
                 }
-                ThreadMethods.LabelDegis(sektor, "S3");
+                SectorAndTourDatas.sector_name = "S3";
+                ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name);
                 MACROS.sector_flag[2] = true;
                 MACROS.sector_flag[1] = false;
             }
@@ -472,8 +476,6 @@ namespace yeniform
             mylogs.history_counter = history_displayer.Value;
         }
 
-        
-
         private void TurAt()
         {
             SectorAndTourDatas.gidilen_yol_gps_sector_T_u32 = myGmap.odometer_gps - SectorAndTourDatas.gidilen_yol_gps_sector_T_u32;
@@ -490,6 +492,8 @@ namespace yeniform
             }
             else
             {
+                SectorAndTourDatas.sector_name = "S1";
+                ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name);
                 myDataGrid.addGrid(SectorAndTourDatas.turAtDatas);
             }
            

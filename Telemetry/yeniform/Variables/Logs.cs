@@ -86,7 +86,7 @@ namespace yeniform.Variables
 
         public void ReadArayüz(string []old_datass)
         {
-            int count = 0;
+            int count = 2;
             Timers.Gecen_süre = TimeSpan.Parse(old_datass[count++]);
             Timers.Kalan_süre = TimeSpan.Parse(old_datass[count++]);
             anlik_tur_sure = old_datass[count++];

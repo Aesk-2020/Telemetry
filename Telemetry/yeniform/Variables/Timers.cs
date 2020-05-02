@@ -56,7 +56,7 @@ namespace yeniform.Variables
         public static TimeSpan Ortalama_tur_süresi => new TimeSpan(Gecen_süre.Ticks/ currentTour);
         public static bool IsFastestLaps => Anlik_tur_süresi.Elapsed.TotalSeconds < en_hizli_tur_suresi.TotalSeconds;
 
-        public static string log_datas_time => Gecen_süre.ToString(MACROS.TimeStringFormat) + '$' + Kalan_süre.ToString(MACROS.TimeStringFormat) + '$' + 
+        public static string log_datas_time => Timers.currentTour.ToString() + '$' + SectorAndTourDatas.sector_name + '$' + Gecen_süre.ToString(MACROS.TimeStringFormat) + '$' + Kalan_süre.ToString(MACROS.TimeStringFormat) + '$' + 
                                                Anlik_tur_süresi.Elapsed.ToString(MACROS.TimeStringFormat) +  '$' + en_hizli_tur_suresi.ToString(MACROS.TimeStringFormat) + 
                                                '$' + Ortalama_tur_süresi.ToString(MACROS.TimeStringFormat) + '$' + önceki_tur_sure.Elapsed.ToString(MACROS.TimeStringFormat) +
                                                '$' + SectorAndTourDatas.sector1_sure.Elapsed.ToString(MACROS.TimeStringFormat) + '$' + SectorAndTourDatas.sector2_sure.Elapsed.ToString(MACROS.TimeStringFormat)
