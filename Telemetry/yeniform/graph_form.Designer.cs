@@ -121,12 +121,12 @@
             this.DriverPhaseACurrent_4 = new System.Windows.Forms.CheckBox();
             this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.chart0)).BeginInit();
@@ -134,12 +134,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
@@ -154,10 +154,12 @@
             this.chart0.Legends.Add(legend1);
             this.chart0.Location = new System.Drawing.Point(3, 3);
             this.chart0.Name = "chart0";
+            series1.BorderWidth = 5;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series1.Enabled = false;
             series1.Legend = "Legend1";
+            series1.MarkerBorderWidth = 5;
             series1.Name = "0";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
@@ -895,6 +897,24 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(575, 323);
             this.tableLayoutPanel1.TabIndex = 52;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.DriverPhaseACurrent_4);
+            this.panel3.Controls.Add(this.DriverPhaseBCurrent_4);
+            this.panel3.Controls.Add(this.DriverDCBusCurrent_4);
+            this.panel3.Controls.Add(this.DriverID_4);
+            this.panel3.Controls.Add(this.BMSPowerEmitted_4);
+            this.panel3.Controls.Add(this.DriverIQ_4);
+            this.panel3.Controls.Add(this.BMSBatCurrent_4);
+            this.panel3.Controls.Add(this.DriverVD_4);
+            this.panel3.Controls.Add(this.BMSBatVoltage_4);
+            this.panel3.Controls.Add(this.DriverVQ_4);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(417, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(155, 317);
+            this.panel3.TabIndex = 42;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.DriverPhaseACurrent_1);
@@ -976,24 +996,6 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(574, 323);
             this.tableLayoutPanel4.TabIndex = 53;
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.DriverPhaseACurrent_4);
-            this.panel3.Controls.Add(this.DriverPhaseBCurrent_4);
-            this.panel3.Controls.Add(this.DriverDCBusCurrent_4);
-            this.panel3.Controls.Add(this.DriverID_4);
-            this.panel3.Controls.Add(this.BMSPowerEmitted_4);
-            this.panel3.Controls.Add(this.DriverIQ_4);
-            this.panel3.Controls.Add(this.BMSBatCurrent_4);
-            this.panel3.Controls.Add(this.DriverVD_4);
-            this.panel3.Controls.Add(this.BMSBatVoltage_4);
-            this.panel3.Controls.Add(this.DriverVQ_4);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(417, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(155, 317);
-            this.panel3.TabIndex = 42;
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.DriverPhaseACurrent_2);
@@ -1046,6 +1048,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -1053,8 +1057,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);

@@ -36,69 +36,75 @@ namespace yeniform
             graph_thread.Start();
         }
 
-        public void drawDatas(Chart myChart, double mySecond, object myData, int i)
+        public void drawDatas(Chart myChart, object mySecond, object myData, int i)
         {
             if(myChart.InvokeRequired)
             {
-                DrawGraphDelegate del = new DrawGraphDelegate(drawDatas);
-                myChart.Invoke(del, myChart, mySecond, myData, i);
+                MethodInvoker del = delegate
+                {
+                    drawDatas(myChart, mySecond, myData, i);
+                };
+                myChart.Invoke(del);
+                return;
             }
 
-            else
-            {
-                myChart.Series[i].Points.AddXY(mySecond, myData);
-            }
-
+            myChart.Series[i].Points.AddXY(mySecond, myData);
+        
+    
         }
         
         private void draw_funct()
         {
-            while(MACROS.race_start_flag)
+            while(true)
             {
-                double total_sec = (DateTime.Now  - graph_start).TotalSeconds;
-                drawDatas(chart0, total_sec, Driver.phase_a_current_f32, 0);
-                drawDatas(chart0, total_sec, Driver.phase_b_current_f32, 1);
-                drawDatas(chart0, total_sec, Driver.dc_bus_current_f32, 2);
-                drawDatas(chart0, total_sec, Driver.id_f32, 3);          
-                drawDatas(chart0, total_sec, Driver.iq_f32, 4);          
-                drawDatas(chart0, total_sec, Driver.vd_f32, 5);          
-                drawDatas(chart0, total_sec, Driver.vq_f32, 6);          
-                drawDatas(chart0, total_sec, BMS.bat_volt_f32, 7);       
-                drawDatas(chart0, total_sec, BMS.bat_current_f32, 8);    
-                drawDatas(chart0, total_sec, BMS.power_emitted, 9); 
-/*
-            drawDataschart1.Series[0].Points.AddXY(total_sec, Driver.phase_a_current_f32);
-            chart1.Series[1].Points.AddXY(total_sec, Driver.phase_b_current_f32);
-            chart1.Series[2].Points.AddXY(total_sec, Driver.dc_bus_current_f32);
-            chart1.Series[3].Points.AddXY(total_sec, Driver.id_f32);
-            chart1.Series[4].Points.AddXY(total_sec, Driver.iq_f32);
-            chart1.Series[5].Points.AddXY(total_sec, Driver.vd_f32);
-            chart1.Series[6].Points.AddXY(total_sec, Driver.vq_f32);
-            chart1.Series[7].Points.AddXY(total_sec, BMS.bat_volt_f32);
-            chart1.Series[8].Points.AddXY(total_sec, BMS.bat_current_f32);
-            chart1.Series[9].Points.AddXY(total_sec, BMS.power_emitted);
-
-            chart2.Series[0].Points.AddXY(total_sec, Driver.phase_a_current_f32);
-            chart2.Series[1].Points.AddXY(total_sec, Driver.phase_b_current_f32);
-            chart2.Series[2].Points.AddXY(total_sec, Driver.dc_bus_current_f32);
-            chart2.Series[3].Points.AddXY(total_sec, Driver.id_f32);
-            chart2.Series[4].Points.AddXY(total_sec, Driver.iq_f32);
-            chart2.Series[5].Points.AddXY(total_sec, Driver.vd_f32);
-            chart2.Series[6].Points.AddXY(total_sec, Driver.vq_f32);
-            chart2.Series[7].Points.AddXY(total_sec, BMS.bat_volt_f32);
-            chart2.Series[8].Points.AddXY(total_sec, BMS.bat_current_f32);
-            chart2.Series[9].Points.AddXY(total_sec, BMS.power_emitted);
-
-            chart3.Series[0].Points.AddXY(total_sec, Driver.phase_a_current_f32);
-            chart3.Series[1].Points.AddXY(total_sec, Driver.phase_b_current_f32);
-            chart3.Series[2].Points.AddXY(total_sec, Driver.dc_bus_current_f32);
-            chart3.Series[3].Points.AddXY(total_sec, Driver.id_f32);
-            chart3.Series[4].Points.AddXY(total_sec, Driver.iq_f32);
-            chart3.Series[5].Points.AddXY(total_sec, Driver.vd_f32);
-            chart3.Series[6].Points.AddXY(total_sec, Driver.vq_f32);
-            chart3.Series[7].Points.AddXY(total_sec, BMS.bat_volt_f32);
-            chart3.Series[8].Points.AddXY(total_sec, BMS.bat_current_f32);
-            chart3.Series[9].Points.AddXY(total_sec, BMS.power_emitted);*/
+                if (MACROS.race_start_flag)
+                {
+                    string total_sec = Timers.Gecen_süre.ToString(MACROS.TimeStringFormat);
+                    drawDatas(chart0, total_sec, Driver.phase_a_current_f32, 0);
+                    drawDatas(chart0, total_sec, Driver.phase_b_current_f32, 1);
+                    drawDatas(chart0, total_sec, Driver.dc_bus_current_f32, 2);
+                    drawDatas(chart0, total_sec, Driver.id_f32, 3);
+                    drawDatas(chart0, total_sec, Driver.iq_f32, 4);
+                    drawDatas(chart0, total_sec, Driver.vd_f32, 5);
+                    drawDatas(chart0, total_sec, Driver.vq_f32, 6);
+                    drawDatas(chart0, total_sec, BMS.bat_volt_f32, 7);
+                    drawDatas(chart0, total_sec, BMS.bat_current_f32, 8);
+                    drawDatas(chart0, total_sec, BMS.power_emitted, 9);
+                   
+                    drawDatas(chart1, total_sec, Driver.phase_a_current_f32, 0);
+                    drawDatas(chart1, total_sec, Driver.phase_b_current_f32, 1);
+                    drawDatas(chart1, total_sec, Driver.dc_bus_current_f32, 2);
+                    drawDatas(chart1, total_sec, Driver.id_f32, 3);
+                    drawDatas(chart1, total_sec, Driver.iq_f32, 4);
+                    drawDatas(chart1, total_sec, Driver.vd_f32, 5);
+                    drawDatas(chart1, total_sec, Driver.vq_f32, 6);
+                    drawDatas(chart1, total_sec, BMS.bat_volt_f32, 7);
+                    drawDatas(chart1, total_sec, BMS.bat_current_f32, 8);
+                    drawDatas(chart1, total_sec, BMS.power_emitted, 9);
+                    
+                    drawDatas(chart2, total_sec, Driver.phase_a_current_f32, 0);
+                    drawDatas(chart2, total_sec, Driver.phase_b_current_f32, 1);
+                    drawDatas(chart2, total_sec, Driver.dc_bus_current_f32, 2);
+                    drawDatas(chart2, total_sec, Driver.id_f32, 3);
+                    drawDatas(chart2, total_sec, Driver.iq_f32, 4);
+                    drawDatas(chart2, total_sec, Driver.vd_f32, 5);
+                    drawDatas(chart2, total_sec, Driver.vq_f32, 6);
+                    drawDatas(chart2, total_sec, BMS.bat_volt_f32, 7);
+                    drawDatas(chart2, total_sec, BMS.bat_current_f32, 8);
+                    drawDatas(chart2, total_sec, BMS.power_emitted, 9);
+                    
+                    drawDatas(chart3, total_sec, Driver.phase_a_current_f32, 0);
+                    drawDatas(chart3, total_sec, Driver.phase_b_current_f32, 1);
+                    drawDatas(chart3, total_sec, Driver.dc_bus_current_f32, 2);
+                    drawDatas(chart3, total_sec, Driver.id_f32, 3);
+                    drawDatas(chart3, total_sec, Driver.iq_f32, 4);
+                    drawDatas(chart3, total_sec, Driver.vd_f32, 5);
+                    drawDatas(chart3, total_sec, Driver.vq_f32, 6);
+                    drawDatas(chart3, total_sec, BMS.bat_volt_f32, 7);
+                    drawDatas(chart3, total_sec, BMS.bat_current_f32, 8);
+                    drawDatas(chart3, total_sec, BMS.power_emitted, 9);
+                    Thread.Sleep(500);
+                }
             }
         }
 

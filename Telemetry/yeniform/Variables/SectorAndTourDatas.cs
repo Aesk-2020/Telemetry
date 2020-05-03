@@ -34,7 +34,7 @@ namespace yeniform.Variables
                                            SectorAndTourDatas.gidilen_yol_vcu_sector_2_u32, SectorAndTourDatas.gidilen_yol_gps_sector_2_u32,
                                            SectorAndTourDatas.sector_2_ortalama_hiz_vcu, SectorAndTourDatas.sector_2_ortalama_hiz_gps, consumption_sector_2_f32};
 
-
+        
     }
 };
             

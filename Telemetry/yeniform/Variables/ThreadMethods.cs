@@ -6,7 +6,7 @@ namespace yeniform.Variables
 {
     static class ThreadMethods
     {
-        public static void TextDegis(TextBox mytext, object value)
+        public static void TextDegis(TextBox mytext, string value)
         {
             if (mytext.InvokeRequired)
             {
@@ -17,10 +17,10 @@ namespace yeniform.Variables
                 mytext.Invoke(del);
                 return;
             }
-            mytext.Text = "\r" +  value;
+            mytext.Text = value;
         }
 
-        public static void LabelDegis(Label myLabel, object value)
+        public static void LabelDegis(Label myLabel, string value)
         {
             if (myLabel.InvokeRequired)
             {
@@ -31,7 +31,7 @@ namespace yeniform.Variables
                 myLabel.Invoke(del);
                 return;
             }
-            myLabel.Text = "\r" + value;
+            myLabel.Text = value;
             
         }
 

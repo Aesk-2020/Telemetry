@@ -35,5 +35,6 @@ namespace yeniform.Variables
         public static int maks_set_hiz = 65;
         public static bool show_old_datas;
         public static bool hold_my_history;
+        public static bool newDataCome = false;
     }
 }

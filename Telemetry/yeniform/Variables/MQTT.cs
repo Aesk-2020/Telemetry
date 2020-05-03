@@ -4,10 +4,10 @@ using uPLibrary.Networking.M2Mqtt.Messages;
 using System.Windows.Forms;
 namespace yeniform.Variables
 {
-    public delegate void  DisplayMQTTDatas(); 
+   // public delegate void  DisplayMQTTDatas(); 
     public class MQTT : SerialPortCOMRF
     {
-        public event DisplayMQTTDatas DisplayMQTTDatasEvent;
+       // public event DisplayMQTTDatas DisplayMQTTDatasEvent;
         public int mqtt_total_counter = 0;
         public double MQTT_Efficiency;
         public DateTime old_time;
@@ -135,7 +135,7 @@ namespace yeniform.Variables
             GpsTracker.gps_sattelite_number_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
             GpsTracker.gps_efficiency_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
             MQTT_counter_int32 = EncodePackMethods.DataConverterS32(receiveBuffer, ref startIndex);
-            DisplayMQTTDatasEvent();
+            MACROS.newDataCome = true;
         }
     }
 }

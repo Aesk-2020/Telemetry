@@ -48,11 +48,19 @@ namespace yeniform
 
         private void displayMyAllData()
         {
-            if (MACROS.race_start_flag)
+            while (true)
             {
-                mylogs.Writer();
+
+                if (MACROS.race_start_flag)
+                {
+                    mylogs.Writer();
+                }
+
+                if (MACROS.newDataCome)
+                {
+                    displayAllData();
+                }
             }
-            displayAllData();
         }
 
         void displayAllData()
@@ -68,8 +76,8 @@ namespace yeniform
             ThreadMethods.TextDegis(driver_brake_status, Driver.brake_u1 ? "BRAKE ON" : "BRAKE OFF");
             ThreadMethods.TextDegis(driver_ign_status, Driver.ignition_u1 ? "IGN ON" : "IGN OFF");
             ThreadMethods.TextDegis(driver_ign_status, Driver.ignition_u1 ? "IGN ON" : "IGN OFF");
-            ThreadMethods.TextDegis(gps_verim, GpsTracker.gps_efficiency_u8);
-            ThreadMethods.TextDegis(uydu_sayisi, GpsTracker.gps_sattelite_number_u8);
+            ThreadMethods.TextDegis(gps_verim, GpsTracker.gps_efficiency_u8.ToString());
+            ThreadMethods.TextDegis(uydu_sayisi, GpsTracker.gps_sattelite_number_u8.ToString());
 
             ThreadMethods.LabelBackColorDegis(zpc, Driver.zpc_ok_u1 ? MACROS.AeskBlue : Color.Transparent);
             ThreadMethods.LabelBackColorDegis(pwm_enabled, Driver.pwm_enabled_u1 ? MACROS.AeskBlue : Color.Transparent);
@@ -89,30 +97,30 @@ namespace yeniform
             ThreadMethods.PBoxBackColorDegis(bms_fatal_error, !BMS.bms_fatal_error_u1 ? Color.Transparent : MACROS.errorColor);
 
             #region bms_text_write
-            ThreadMethods.TextDegis(bms_bat_volt, BMS.bat_volt_f32);
-            ThreadMethods.TextDegis(bms_bat_current, BMS.bat_current_f32);
-            ThreadMethods.TextDegis(bms_bat_cons, BMS.bat_cons_f32);
-            ThreadMethods.TextDegis(bms_soc, BMS.soc_f32);
-            ThreadMethods.TextDegis(bms_worst_cell_address,BMS.worst_cell_address_u8);
-            ThreadMethods.TextDegis(bms_worst_cell_volt, BMS.worst_cell_voltage_f32);
-            ThreadMethods.TextDegis(bms_temp, BMS.temp_u8);
+            ThreadMethods.TextDegis(bms_bat_volt, BMS.bat_volt_f32.ToString());
+            ThreadMethods.TextDegis(bms_bat_current, BMS.bat_current_f32.ToString());
+            ThreadMethods.TextDegis(bms_bat_cons, BMS.bat_cons_f32.ToString());
+            ThreadMethods.TextDegis(bms_soc, BMS.soc_f32.ToString());
+            ThreadMethods.TextDegis(bms_worst_cell_address,BMS.worst_cell_address_u8.ToString());
+            ThreadMethods.TextDegis(bms_worst_cell_volt, BMS.worst_cell_voltage_f32.ToString());
+            ThreadMethods.TextDegis(bms_temp, BMS.temp_u8.ToString());
             #endregion
             #region driver_text_write
-            ThreadMethods.TextDegis(gidilen_yol_driver, Driver.odometer_u32);
-            ThreadMethods.LabelDegis(anlik_hiz, Driver.actual_velocity_u8);
-            ThreadMethods.LabelDegis(anlik_hiz_gps, GpsTracker.gps_velocity_u8);
-            ThreadMethods.TextDegis(set_hizz, VCU.set_velocity_u8);
+            ThreadMethods.TextDegis(gidilen_yol_driver, Driver.odometer_u32.ToString());
+            ThreadMethods.LabelDegis(anlik_hiz, Driver.actual_velocity_u8.ToString());
+            ThreadMethods.LabelDegis(anlik_hiz_gps, GpsTracker.gps_velocity_u8.ToString());
+            ThreadMethods.TextDegis(set_hizz, VCU.set_velocity_u8.ToString());
 
-            ThreadMethods.TextDegis(maks_hiz, Driver.actual_velocity_u8 > Convert.ToByte(maks_hiz.Text) ? Driver.actual_velocity_u8 : Convert.ToByte(maks_hiz.Text));
-            ThreadMethods.TextDegis(phase_a_cur, Driver.phase_a_current_f32);
-            ThreadMethods.TextDegis(phase_b_cur, Driver.phase_b_current_f32);
-            ThreadMethods.TextDegis(dc_bus_cur, Driver.dc_bus_current_f32);
-            ThreadMethods.TextDegis(dc_bus_volt, Driver.dc_bus_voltage_f32);
-            ThreadMethods.TextDegis(motor_temp, Driver.motor_temperature_u8);
-            ThreadMethods.TextDegis(id, Driver.id_f32);
-            ThreadMethods.TextDegis(iq, Driver.iq_f32);
-            ThreadMethods.TextDegis(vd, Driver.vd_f32);
-            ThreadMethods.TextDegis(vq, Driver.vq_f32);
+            ThreadMethods.TextDegis(maks_hiz, Driver.actual_velocity_u8 > Convert.ToByte(maks_hiz.Text) ? Driver.actual_velocity_u8.ToString() : maks_hiz.Text);
+            ThreadMethods.TextDegis(phase_a_cur, Driver.phase_a_current_f32.ToString());
+            ThreadMethods.TextDegis(phase_b_cur, Driver.phase_b_current_f32.ToString());
+            ThreadMethods.TextDegis(dc_bus_cur, Driver.dc_bus_current_f32.ToString());
+            ThreadMethods.TextDegis(dc_bus_volt, Driver.dc_bus_voltage_f32.ToString());
+            ThreadMethods.TextDegis(motor_temp, Driver.motor_temperature_u8.ToString());
+            ThreadMethods.TextDegis(id, Driver.id_f32.ToString());
+            ThreadMethods.TextDegis(iq, Driver.iq_f32.ToString());
+            ThreadMethods.TextDegis(vd, Driver.vd_f32.ToString());
+            ThreadMethods.TextDegis(vq, Driver.vq_f32.ToString());
             #endregion
             double angle = 0;
             if (!MACROS.mouse_mod)
@@ -135,7 +143,9 @@ namespace yeniform
             ThreadMethods.TextDegis(baslik_hatali, serialportRF.GL_baslik_hatali_u32.ToString());
             ThreadMethods.TextDegis(verim, serialportRF.GL_rf_efficiency_f32.ToString());
             displayGauges();
-        }
+            MACROS.newDataCome = false;
+            }
+        
 
         private void calculateRaceTimeOperations()
         {
@@ -194,7 +204,6 @@ namespace yeniform
             if (serialPort1.IsOpen)
             {
                 serialportRF.DisconnectSerialPort(serialportRF.portname);
-                serialportRF.DisplayRFDataEvent -= displayMyAllData;
                 xbee_active.BackColor = Color.Transparent;
             }
             byte code = mqtt.ConnectRequestMQTT();
@@ -203,11 +212,10 @@ namespace yeniform
                 //Connected
                 gsm_durum.BackColor = MACROS.AeskBlue;
                 go_graphs_button.Enabled = true;
-                mqtt.DisplayMQTTDatasEvent += displayMyAllData;
-
-                myDisplayThread.Start();
-                
-
+                if(!myDisplayThread.IsAlive)
+                {
+                    myDisplayThread.Start();
+                }
             }
             else
             {
@@ -221,10 +229,7 @@ namespace yeniform
         {
             mqtt.disConnectMQTT();
             gsm_durum.BackColor = Color.Transparent;
-            if(myDisplayThread.IsAlive)
-            {
-                myDisplayThread.Abort();
-            }
+            MACROS.newDataCome = false;
 
             //event kapama
         }
@@ -234,7 +239,6 @@ namespace yeniform
             if(MACROS.client.IsConnected)
             {
                 mqtt.disConnectMQTT();
-                mqtt.DisplayMQTTDatasEvent -= displayMyAllData;
                 gsm_durum.BackColor = Color.Transparent;
             }
 
@@ -244,9 +248,10 @@ namespace yeniform
                 xbee_active.BackColor = MACROS.AeskBlue;
             }
 
-            myDisplayThread.Start();
-            
-            serialportRF.DisplayRFDataEvent += displayMyAllData;
+            if(!myDisplayThread.IsAlive)
+            {
+               myDisplayThread.Start();
+            }
         }
 
         private void bağlantıyıKesToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -254,12 +259,8 @@ namespace yeniform
             if(serialPort1.IsOpen)
             {
                 serialportRF.DisconnectSerialPort(serialportRF.portname);
-                serialportRF.DisplayRFDataEvent -= displayMyAllData;
             }
-            if(myDisplayThread.IsAlive)
-            {
-                myDisplayThread.Abort();
-            }
+            MACROS.newDataCome = false;
         }
 
         private void portToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
