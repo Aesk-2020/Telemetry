@@ -24,17 +24,6 @@ namespace yeniform.Variables
         public const int GPS_DIVIDER = 1000000;
         public static bool race_start_flag;
         public static bool[] sector_flag = new bool[4] { false, false, false, false};
-        public static bool IsFirstTourComplete
-        {
-            get
-            {
-                if(Timers.currentTour == 1)
-                {
-                    return false;
-                }
-                return true;
-            }
-        }
         public static readonly double mstokmh = 3.6;
         public static bool mouse_mod = false;
         public static byte[] gsm_reset_buffer = new byte[4] { 0x01, 0x02, 0x03, 0x04 };
@@ -60,5 +49,7 @@ namespace yeniform.Variables
         public static double S4_Start => 282.2;
         public static double S4_Stop => 341.4;
 
+        public static double turAtStart => 357.0;
+        public static double turAtStop => 3.0;
     }
 }

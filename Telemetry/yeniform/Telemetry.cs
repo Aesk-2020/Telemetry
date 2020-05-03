@@ -331,31 +331,56 @@ namespace yeniform
 
         private void AngleControl(double angle)
         {
-            if (!(MACROS.sector_flag[0] || MACROS.sector_flag[1] || MACROS.sector_flag[2]))
+           /* if (!(MACROS.sector_flag[0] || MACROS.sector_flag[1] || MACROS.sector_flag[2] || MACROS.sector_flag[3]))
             {
-                SectorAndTourDatas.sector_name = "S0";
-                ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name);
-                if (!(angle > 300 && angle < 355))
+
+            }*/
+
+            if ((angle > MACROS.S1_Start || angle < MACROS.S1_Stop))
+            {
+                if(MACROS.sector_flag[0] == false)
                 {
+                    SectorAndTourDatas.sector_name = "S1";
+                    ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name);
                     MACROS.sector_flag[0] = true;
                 }
+
+                if(MACROS.sector_flag[3] == true && (angle >= MACROS.turAtStart || angle <= MACROS.turAtStop))
+                {
+
+                    MACROS.sector_flag[3] = false;
+                }
+
             }
 
-            if (angle > 0 && angle < 94 && (MACROS.sector_flag[0] || MACROS.sector_flag[2]))
+            if (angle > MACROS.S2_Start && angle < MACROS.S2_Stop && (MACROS.sector_flag[0]))
             {
-                SectorAndTourDatas.sector_name = "S1";
-                ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name);
-                if (MACROS.sector_flag[2])
+                if(MACROS.sector_flag[1] == false)
+                {
+                    SectorAndTourDatas.sector_name = "S2";
+                    ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name);
+                    MACROS.sector_flag[0] = false;
+                    MACROS.sector_flag[1] = true;
+                }
+
+                /*if (MACROS.sector_flag[2])
                 {
                     TurAt();
                     SectorAndTourDatas.sector1_sure.Start();
                     MACROS.sector_flag[2] = false;
-                };
+                };*/
             }
 
-            if (angle > 94 && angle < 220 && MACROS.sector_flag[0])
+            if (angle > MACROS.S3_Start && angle < MACROS.S3_Stop && MACROS.sector_flag[1])
             {
-                if (MACROS.sector_flag[0])
+                if(MACROS.sector_flag[2] == false)
+                {
+                    SectorAndTourDatas.sector_name = "S3";
+                    ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name);
+                    MACROS.sector_flag[2] = true;
+                    MACROS.sector_flag[1] = false;
+                }
+                /*if (MACROS.sector_flag[0])
                 {
                     SectorAndTourDatas.gidilen_yol_gps_sector_1_u32 = myGmap.odometer_gps - SectorAndTourDatas.gidilen_yol_gps_sector_1_u32;
                     SectorAndTourDatas.gidilen_yol_gps_sector_2_u32 = myGmap.odometer_gps;
@@ -380,12 +405,20 @@ namespace yeniform
                 SectorAndTourDatas.sector_name = "S2";
                 ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name); ;
                 MACROS.sector_flag[1] = true;
-                MACROS.sector_flag[0] = false;
+                MACROS.sector_flag[0] = false;*/
             }
 
-            if (angle > 220 && angle < 355 && MACROS.sector_flag[1])
+            if (angle > MACROS.S4_Start && angle < MACROS.S4_Stop && MACROS.sector_flag[2])
             {
-                if (MACROS.sector_flag[1])
+
+                if(MACROS.sector_flag[3] == false)
+                {
+                    SectorAndTourDatas.sector_name = "S4";
+                    ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name);
+                    MACROS.sector_flag[3] = true;
+                    MACROS.sector_flag[2] = false;
+                }
+               /* if (MACROS.sector_flag[1])
                 {
                     SectorAndTourDatas.gidilen_yol_gps_sector_2_u32 = myGmap.odometer_gps - SectorAndTourDatas.gidilen_yol_gps_sector_2_u32;
                     SectorAndTourDatas.gidilen_yol_vcu_sector_2_u32 = Driver.odometer_u32 - SectorAndTourDatas.gidilen_yol_vcu_sector_2_u32;
@@ -405,7 +438,8 @@ namespace yeniform
                 SectorAndTourDatas.sector_name = "S3";
                 ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name);
                 MACROS.sector_flag[2] = true;
-                MACROS.sector_flag[1] = false;
+                MACROS.sector_flag[1] = false;*/
+
             }
         }
         
