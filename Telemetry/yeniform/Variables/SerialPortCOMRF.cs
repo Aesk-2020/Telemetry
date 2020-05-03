@@ -4,8 +4,10 @@ using System.Windows.Forms;
 
 namespace yeniform.Variables
 {
+    public delegate void DisplayRFDatas();
     public class SerialPortCOMRF
     {
+        public event DisplayRFDatas DisplayRFDataEvent;
         private enum receiveDataStates
         {
             CatchHeader = 0,
@@ -107,7 +109,7 @@ namespace yeniform.Variables
             GpsTracker.gps_longtitude_f64 = (double)EncodePackMethods.DataConverterU32(receiveBuffer, ref startIndex) / MACROS.GPS_DIVIDER;
             GpsTracker.gps_velocity_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
             GpsTracker.gps_sattelite_number_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
-            MACROS.newDataCome = true;
+            DisplayRFDataEvent();
         }
 
         private ushort aeskCRCCalculate(byte[] frame, uint framesize)
@@ -184,5 +186,8 @@ namespace yeniform.Variables
         {
             _serialPort.Write(buffer, 0, buffer.Length);
         }
+
+
+
     }
 }

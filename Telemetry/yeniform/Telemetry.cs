@@ -48,19 +48,11 @@ namespace yeniform
 
         private void displayMyAllData()
         {
-            while (true)
+            if (MACROS.race_start_flag)
             {
-
-                if (MACROS.race_start_flag)
-                {
-                    mylogs.Writer();
-                }
-
-                if (MACROS.newDataCome)
-                {
-                    displayAllData();
-                }
+                mylogs.Writer();
             }
+            displayAllData();
         }
 
         void displayAllData()
@@ -75,10 +67,8 @@ namespace yeniform
             ThreadMethods.TextDegis(driver_fwrv_status ,Driver.direction_u1 ? "REVERSE" : "FORWARD");
             ThreadMethods.TextDegis(driver_brake_status, Driver.brake_u1 ? "BRAKE ON" : "BRAKE OFF");
             ThreadMethods.TextDegis(driver_ign_status, Driver.ignition_u1 ? "IGN ON" : "IGN OFF");
-            ThreadMethods.TextDegis(driver_ign_status, Driver.ignition_u1 ? "IGN ON" : "IGN OFF");
-            ThreadMethods.TextDegis(gps_verim, GpsTracker.gps_efficiency_u8.ToString());
-            ThreadMethods.TextDegis(uydu_sayisi, GpsTracker.gps_sattelite_number_u8.ToString());
-
+          
+       
             ThreadMethods.LabelBackColorDegis(zpc, Driver.zpc_ok_u1 ? MACROS.AeskBlue : Color.Transparent);
             ThreadMethods.LabelBackColorDegis(pwm_enabled, Driver.pwm_enabled_u1 ? MACROS.AeskBlue : Color.Transparent);
             ThreadMethods.LabelBackColorDegis(dc_bus_voltage_error, !Driver.dc_bus_voltager_error_u1 ? Color.Transparent : MACROS.errorColor);
@@ -129,23 +119,21 @@ namespace yeniform
                 AngleControl(angle);
             }
 
-            ThreadMethods.CBarValueDegis(angle_gauge, (int)angle);
+            angle_gauge.Value = (int)angle;
             ThreadMethods.TextDegis(gidilen_yol_gps, myGmap.odometer_gps.ToString());
             ThreadMethods.TextDegis(kalan_yol_driver, Timers.kalan_yol.ToString());
             ThreadMethods.TextDegis(turrr, Timers.currentTour.ToString());
             ThreadMethods.TextDegis(mqtt_solved_paket, mqtt.mqtt_total_counter.ToString());
             ThreadMethods.TextDegis(mqtt_toplam_paket, mqtt.MQTT_counter_int32.ToString());
-            ThreadMethods.TextDegis(mqtt_verim, ((int)mqtt.MQTT_Efficiency * MACROS.FLOAT_CONVERTER_2).ToString());
-            ThreadMethods.LabelDegis(gsm_yenileme, ((int)(mqtt.mqtt_refresh_time)).ToString());
+            ThreadMethods.TextDegis(mqtt_verim, mqtt.MQTT_Efficiency.ToString());
+            ThreadMethods.LabelDegis(gsm_yenileme, mqtt.mqtt_refresh_time.ToString());
             ThreadMethods.TextDegis(gelen_bayt, serialportRF.GL_gelen_bayt_u32.ToString());
             ThreadMethods.TextDegis(cozulen_paket, serialportRF.GL_cozulen_paket_u32.ToString());
             ThreadMethods.TextDegis(crc_hatali, serialportRF.GL_crc_hatali_u32.ToString());
             ThreadMethods.TextDegis(baslik_hatali, serialportRF.GL_baslik_hatali_u32.ToString());
             ThreadMethods.TextDegis(verim, serialportRF.GL_rf_efficiency_f32.ToString());
             displayGauges();
-            MACROS.newDataCome = false;
-            }
-        
+        }
 
         private void calculateRaceTimeOperations()
         {
@@ -204,6 +192,7 @@ namespace yeniform
             if (serialPort1.IsOpen)
             {
                 serialportRF.DisconnectSerialPort(serialportRF.portname);
+                serialportRF.DisplayRFDataEvent -= displayMyAllData;
                 xbee_active.BackColor = Color.Transparent;
             }
             byte code = mqtt.ConnectRequestMQTT();
@@ -212,10 +201,11 @@ namespace yeniform
                 //Connected
                 gsm_durum.BackColor = MACROS.AeskBlue;
                 go_graphs_button.Enabled = true;
-                if(!myDisplayThread.IsAlive)
-                {
-                    myDisplayThread.Start();
-                }
+                mqtt.DisplayMQTTDatasEvent += displayMyAllData;
+
+                myDisplayThread.Start();
+                
+
             }
             else
             {
@@ -229,7 +219,10 @@ namespace yeniform
         {
             mqtt.disConnectMQTT();
             gsm_durum.BackColor = Color.Transparent;
-            MACROS.newDataCome = false;
+            if(myDisplayThread.IsAlive)
+            {
+                myDisplayThread.Abort();
+            }
 
             //event kapama
         }
@@ -239,6 +232,7 @@ namespace yeniform
             if(MACROS.client.IsConnected)
             {
                 mqtt.disConnectMQTT();
+                mqtt.DisplayMQTTDatasEvent -= displayMyAllData;
                 gsm_durum.BackColor = Color.Transparent;
             }
 
@@ -248,10 +242,9 @@ namespace yeniform
                 xbee_active.BackColor = MACROS.AeskBlue;
             }
 
-            if(!myDisplayThread.IsAlive)
-            {
-               myDisplayThread.Start();
-            }
+            myDisplayThread.Start();
+            
+            serialportRF.DisplayRFDataEvent += displayMyAllData;
         }
 
         private void bağlantıyıKesToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -259,8 +252,12 @@ namespace yeniform
             if(serialPort1.IsOpen)
             {
                 serialportRF.DisconnectSerialPort(serialportRF.portname);
+                serialportRF.DisplayRFDataEvent -= displayMyAllData;
             }
-            MACROS.newDataCome = false;
+            if(myDisplayThread.IsAlive)
+            {
+                myDisplayThread.Abort();
+            }
         }
 
         private void portToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -333,8 +330,7 @@ namespace yeniform
         {
             if (!(MACROS.sector_flag[0] || MACROS.sector_flag[1] || MACROS.sector_flag[2]))
             {
-                SectorAndTourDatas.sector_name = "S0";
-                ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name);
+                ThreadMethods.LabelDegis(sektor, "S0");
                 if (!(angle > 300 && angle < 355))
                 {
                     MACROS.sector_flag[0] = true;
@@ -343,8 +339,7 @@ namespace yeniform
 
             if (angle > 0 && angle < 94 && (MACROS.sector_flag[0] || MACROS.sector_flag[2]))
             {
-                SectorAndTourDatas.sector_name = "S1";
-                ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name);
+                ThreadMethods.LabelDegis(sektor, "S1");
                 if (MACROS.sector_flag[2])
                 {
                     TurAt();
@@ -362,9 +357,7 @@ namespace yeniform
                     SectorAndTourDatas.gidilen_yol_vcu_sector_1_u32 = Driver.odometer_u32 - SectorAndTourDatas.gidilen_yol_vcu_sector_1_u32;
                     SectorAndTourDatas.gidilen_yol_vcu_sector_2_u32 = Driver.odometer_u32;
                     SectorAndTourDatas.gidilen_yol_vcu_sector_2_u32 = Driver.odometer_u32;
-                    SectorAndTourDatas.consumption_sector_1_f32 = BMS.bat_cons_f32 - SectorAndTourDatas.consumption_sector_1_f32;
-                    SectorAndTourDatas.consumption_sector_2_f32 = BMS.bat_cons_f32;
-                    if (Logs._IsLog)
+                    if(Logs._IsLog)
                     {
                         myDataGrid.addGrid(mylogs.Hsector1Datas);
                     }
@@ -377,8 +370,7 @@ namespace yeniform
                     SectorAndTourDatas.sector1_sure.Reset();
                     SectorAndTourDatas.sector2_sure.Start();
                 }
-                SectorAndTourDatas.sector_name = "S2";
-                ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name); ;
+                ThreadMethods.LabelDegis(sektor,"S2");
                 MACROS.sector_flag[1] = true;
                 MACROS.sector_flag[0] = false;
             }
@@ -389,7 +381,6 @@ namespace yeniform
                 {
                     SectorAndTourDatas.gidilen_yol_gps_sector_2_u32 = myGmap.odometer_gps - SectorAndTourDatas.gidilen_yol_gps_sector_2_u32;
                     SectorAndTourDatas.gidilen_yol_vcu_sector_2_u32 = Driver.odometer_u32 - SectorAndTourDatas.gidilen_yol_vcu_sector_2_u32;
-                    SectorAndTourDatas.consumption_sector_2_f32 = BMS.bat_cons_f32 - SectorAndTourDatas.consumption_sector_2_f32;
                     if (Logs._IsLog)
                     {
                         myDataGrid.addGrid(mylogs.Hsector2Datas);
@@ -402,8 +393,7 @@ namespace yeniform
                     
                     SectorAndTourDatas.sector2_sure.Reset();
                 }
-                SectorAndTourDatas.sector_name = "S3";
-                ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name);
+                ThreadMethods.LabelDegis(sektor, "S3");
                 MACROS.sector_flag[2] = true;
                 MACROS.sector_flag[1] = false;
             }
@@ -482,12 +472,13 @@ namespace yeniform
             mylogs.history_counter = history_displayer.Value;
         }
 
+        
+
         private void TurAt()
         {
             SectorAndTourDatas.gidilen_yol_gps_sector_T_u32 = myGmap.odometer_gps - SectorAndTourDatas.gidilen_yol_gps_sector_T_u32;
             SectorAndTourDatas.gidilen_yol_vcu_sector_T_u32 = Driver.odometer_u32 - SectorAndTourDatas.gidilen_yol_vcu_sector_T_u32;
-            SectorAndTourDatas.consumption_sector_T_f32 = BMS.bat_cons_f32 - SectorAndTourDatas.consumption_sector_T_f32;
-            if (!Logs._IsLog)
+            if(!Logs._IsLog)
             {
                 ThreadMethods.TextDegis(önceki_tur_timer, Timers.Anlik_tur_süresi.Elapsed.ToString(MACROS.TimeStringFormat));
                 ThreadMethods.TextDegis(ortalama_tur_suresi, Timers.Ortalama_tur_süresi.ToString(MACROS.TimeStringFormat));
@@ -499,8 +490,6 @@ namespace yeniform
             }
             else
             {
-                SectorAndTourDatas.sector_name = "ST";
-                ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name);
                 myDataGrid.addGrid(SectorAndTourDatas.turAtDatas);
             }
            
@@ -527,9 +516,6 @@ namespace yeniform
             SectorAndTourDatas.gidilen_yol_gps_sector_T_u32 = myGmap.odometer_gps;
             SectorAndTourDatas.gidilen_yol_vcu_sector_1_u32 = Driver.odometer_u32;
             SectorAndTourDatas.gidilen_yol_vcu_sector_T_u32 = Driver.odometer_u32;
-            SectorAndTourDatas.consumption_sector_1_f32 = BMS.bat_cons_f32;
-            SectorAndTourDatas.consumption_sector_T_f32 = BMS.bat_cons_f32;
-
             myGmap.OverlayDelete();
         }
 

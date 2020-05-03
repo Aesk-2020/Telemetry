@@ -9,7 +9,7 @@ namespace yeniform.Variables
 
         public static float bat_volt_f32; // bu graphda olacak
         public static float bat_current_f32; // bu da olacak
-        public static float power_emitted => (bat_volt_f32 * bat_current_f32);
+        public static float power_emitted;
         // bi de bunlarin carpimlari
         
         public static float bat_cons_f32;

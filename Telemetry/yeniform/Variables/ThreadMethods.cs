@@ -12,7 +12,7 @@ namespace yeniform.Variables
             {
                 MethodInvoker del = delegate
                 {
-                    TextDegis(mytext,  value);
+                    TextDegis(mytext, value);
                 };
                 mytext.Invoke(del);
                 return;
