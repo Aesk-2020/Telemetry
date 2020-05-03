@@ -49,7 +49,7 @@ namespace yeniform.Variables
         public static double S4_Start => 282.2;
         public static double S4_Stop => 341.4;
 
-        public static double turAtStart => 357.0;
-        public static double turAtStop => 3.0;
+        public static double turAtStart => 350.0;
+        public static double turAtStop => 20.0;
     }
 }

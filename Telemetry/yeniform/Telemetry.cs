@@ -349,6 +349,7 @@ namespace yeniform
                 {
 
                     MACROS.sector_flag[3] = false;
+                    myGmap.OverlayDelete();
                 }
 
             }
