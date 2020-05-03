@@ -51,7 +51,7 @@ namespace yeniform
             while (true)
             {
 
-                if (MACROS.race_start_flag)
+                if (MACROS.newDataCome && MACROS.race_start_flag)
                 {
                     mylogs.Writer();
                 }
@@ -445,6 +445,7 @@ namespace yeniform
 
         private void history_displayer_ValueChanged(object sender, EventArgs e)
         {
+            MACROS.newDataCome = true;
             if(mylogs.history_counter > history_displayer.Value)
             {
                 if(!MACROS.hold_my_history && !MACROS.show_old_datas)

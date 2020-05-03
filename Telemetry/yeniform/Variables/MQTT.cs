@@ -4,10 +4,8 @@ using uPLibrary.Networking.M2Mqtt.Messages;
 using System.Windows.Forms;
 namespace yeniform.Variables
 {
-   // public delegate void  DisplayMQTTDatas(); 
     public class MQTT : SerialPortCOMRF
     {
-       // public event DisplayMQTTDatas DisplayMQTTDatasEvent;
         public int mqtt_total_counter = 0;
         public double MQTT_Efficiency;
         public DateTime old_time;

@@ -108,7 +108,6 @@ namespace yeniform.Variables
             }
 
             myCircle.Value = value;
-
         }
     }
 }
