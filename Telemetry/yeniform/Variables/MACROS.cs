@@ -24,6 +24,7 @@ namespace yeniform.Variables
         public const int GPS_DIVIDER = 1000000;
         public static bool race_start_flag;
         public static bool[] sector_flag = new bool[4] { false, false, false, false};
+        public static bool sector_4to_1 = false;
         public static readonly double mstokmh = 3.6;
         public static bool mouse_mod = false;
         public static byte[] gsm_reset_buffer = new byte[4] { 0x01, 0x02, 0x03, 0x04 };

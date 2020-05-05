@@ -79,3 +79,7 @@ Telemetry/yeniform/obj/Debug/yeniform.pdb
 *.cache
 *.exe
 *.pdb
+*.ide-wal
+*.ide-shm
+*.ide
+Telemetry/.vs/Telemetry-Electric/v15/.suo

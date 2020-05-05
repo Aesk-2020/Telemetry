@@ -47,10 +47,7 @@ namespace yeniform
                 myChart.Invoke(del);
                 return;
             }
-
-            myChart.Series[i].Points.AddXY(mySecond, myData);
-        
-    
+            myChart.Series[i].Points.AddXY(mySecond, myData);   
         }
 
         Dictionary<string, int> Graph_dic = new Dictionary<string, int>
@@ -65,8 +62,6 @@ namespace yeniform
             {"BMSBatVoltage",7 },
             {"BMSBatCurrent",8 },
             {"BMSPower",9 }
-
-
         };
         
 
