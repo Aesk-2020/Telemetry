@@ -184,7 +184,7 @@ namespace yeniform
 
         private void gMapControl1_MouseClick(object sender, MouseEventArgs e)
         {
-
+            MACROS.newDataCome = true;
             if (e.Button == MouseButtons.Left)
             {
                 PointLatLng mouse_position = gmap.FromLocalToLatLng(e.X, e.Y);
@@ -287,6 +287,7 @@ namespace yeniform
         {
             gmap.MouseClick += new MouseEventHandler(gMapControl1_MouseClick);
             MACROS.mouse_mod = true;
+
         }
 
 
@@ -294,6 +295,7 @@ namespace yeniform
         {
             gmap.MouseClick -= new MouseEventHandler(gMapControl1_MouseClick);
             MACROS.mouse_mod = false;
+            MACROS.newDataCome = false;
         }
 
 
@@ -337,11 +339,19 @@ namespace yeniform
             {
                 if(MACROS.sector_4to_1)
                 {
-                    SectorAndTourDatas.gidilen_yol_gps_sector_4_u32 = myGmap.odometer_gps - SectorAndTourDatas.gidilen_yol_gps_sector_3_u32;
-                    SectorAndTourDatas.consumption_sector_4_f32 = BMS.bat_cons_f32 - SectorAndTourDatas.consumption_sector_3_f32;
-                    SectorAndTourDatas.gidilen_yol_vcu_sector_4_u32 = Driver.odometer_u32 - SectorAndTourDatas.gidilen_yol_vcu_sector_3_u32;
+                    SectorAndTourDatas.gidilen_yol_gps_sector_4_u32 = myGmap.odometer_gps - SectorAndTourDatas.gidilen_yol_gps_sector_4_u32;
+                    SectorAndTourDatas.consumption_sector_4_f32 = BMS.bat_cons_f32 - SectorAndTourDatas.consumption_sector_4_f32;
+                    SectorAndTourDatas.gidilen_yol_vcu_sector_4_u32 = Driver.odometer_u32 - SectorAndTourDatas.gidilen_yol_vcu_sector_4_u32;
                     SectorAndTourDatas.sector4_sure.Stop();
-                    myDataGrid.addGrid(SectorAndTourDatas.sector4Datas);
+                    if (Logs._IsLog)
+                    {
+                        myDataGrid.addGrid(mylogs.Hsector4Datas);
+                    }
+                    else
+                    {
+                        myDataGrid.addGrid(SectorAndTourDatas.sector4Datas);
+                    }
+
                     MACROS.sector_4to_1 = false;
                 }
 
@@ -371,8 +381,7 @@ namespace yeniform
             {
                 if(MACROS.sector_flag[1] == false)
                 {
-                    SectorAndTourDatas.sector1_sure.Stop();
-                    SectorAndTourDatas.sector2_sure.Start();
+
                     SectorAndTourDatas.gidilen_yol_gps_sector_1_u32 = myGmap.odometer_gps - SectorAndTourDatas.gidilen_yol_gps_sector_1_u32;
                     SectorAndTourDatas.consumption_sector_1_f32 = BMS.bat_cons_f32 - SectorAndTourDatas.consumption_sector_1_f32;
                     SectorAndTourDatas.gidilen_yol_vcu_sector_1_u32 = Driver.odometer_u32 - SectorAndTourDatas.gidilen_yol_vcu_sector_1_u32;
@@ -382,7 +391,18 @@ namespace yeniform
                     SectorAndTourDatas.gidilen_yol_vcu_sector_2_u32 = Driver.odometer_u32;
 
                     SectorAndTourDatas.sector_name = "S1";
-                    myDataGrid.addGrid(SectorAndTourDatas.sector1Datas);
+
+
+                    if (Logs._IsLog)
+                    {
+                        myDataGrid.addGrid(mylogs.Hsector1Datas);
+                    }
+                    else
+                    {
+                        myDataGrid.addGrid(SectorAndTourDatas.sector1Datas);
+                    }
+                    SectorAndTourDatas.sector1_sure.Reset();
+                    SectorAndTourDatas.sector2_sure.Start();
                     SectorAndTourDatas.sector_name = "S2";
                     ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name);
                     MACROS.sector_flag[0] = false;
@@ -401,11 +421,20 @@ namespace yeniform
                     SectorAndTourDatas.gidilen_yol_gps_sector_3_u32 = myGmap.odometer_gps;
                     SectorAndTourDatas.consumption_sector_3_f32 = BMS.bat_cons_f32;
                     SectorAndTourDatas.gidilen_yol_vcu_sector_3_u32 = Driver.odometer_u32;
+                    if (Logs._IsLog)
+                    {
+                        myDataGrid.addGrid(mylogs.Hsector2Datas);
+                    }
+                    else
+                    {
+                        myDataGrid.addGrid(SectorAndTourDatas.sector2Datas);
+                    }
 
-                    SectorAndTourDatas.sector2_sure.Stop();
+
+
+                    SectorAndTourDatas.sector2_sure.Reset();
                     SectorAndTourDatas.sector3_sure.Start();
-       
-                    myDataGrid.addGrid(SectorAndTourDatas.sector2Datas);
+
                     SectorAndTourDatas.sector_name = "S3";
                     ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name);
                     MACROS.sector_flag[2] = true;
@@ -417,8 +446,7 @@ namespace yeniform
             {
                 if (MACROS.sector_flag[3] == false)
                 {
-                    SectorAndTourDatas.sector3_sure.Stop();
-                    SectorAndTourDatas.sector4_sure.Start();
+
 
                     SectorAndTourDatas.gidilen_yol_gps_sector_3_u32 = myGmap.odometer_gps - SectorAndTourDatas.gidilen_yol_gps_sector_3_u32;
                     SectorAndTourDatas.consumption_sector_3_f32 = BMS.bat_cons_f32 - SectorAndTourDatas.consumption_sector_3_f32;
@@ -427,7 +455,19 @@ namespace yeniform
                     SectorAndTourDatas.gidilen_yol_gps_sector_4_u32 = myGmap.odometer_gps;
                     SectorAndTourDatas.consumption_sector_4_f32 = BMS.bat_cons_f32;
                     SectorAndTourDatas.gidilen_yol_vcu_sector_4_u32 = Driver.odometer_u32;
-                    myDataGrid.addGrid(SectorAndTourDatas.sector3Datas);
+                    if (Logs._IsLog)
+                    {
+                        myDataGrid.addGrid(mylogs.Hsector3Datas);
+                    }
+                    else
+                    {
+                        myDataGrid.addGrid(SectorAndTourDatas.sector3Datas);
+                    }
+
+
+                    SectorAndTourDatas.sector3_sure.Reset();
+                    SectorAndTourDatas.sector4_sure.Start();
+
                     SectorAndTourDatas.sector_name = "S4";
                     ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name);
                     MACROS.sector_flag[3] = true;
@@ -524,13 +564,13 @@ namespace yeniform
   
             if (Logs._IsLog)
             {
-               // myDataGrid.addGrid(mylogs.HturAtDatas);
+               myDataGrid.addGrid(mylogs.HturAtDatas);
             }
             else
             {
                 SectorAndTourDatas.sector_name = "ST";
                 myDataGrid.addGrid(SectorAndTourDatas.turAtDatas);
-            };
+            }
 
             if (!Logs._IsLog)
             {

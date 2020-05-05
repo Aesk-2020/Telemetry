@@ -13,11 +13,19 @@ namespace yeniform.Variables
         public string anlik_tur_sure;
         public string sector_1_sure;
         public string sector_2_sure;
+        public string sector_3_sure;
+        public string sector_4_sure;
+
         public uint sector_1_ortalama_hiz_vcu => (uint)((double)(SectorAndTourDatas.gidilen_yol_vcu_sector_1_u32 / TimeSpan.Parse(sector_1_sure).TotalSeconds) * MACROS.mstokmh);
         public uint sector_2_ortalama_hiz_vcu => (uint)((double)(SectorAndTourDatas.gidilen_yol_vcu_sector_2_u32 / TimeSpan.Parse(sector_2_sure).TotalSeconds) * MACROS.mstokmh);
+        public uint sector_3_ortalama_hiz_vcu => (uint)((double)(SectorAndTourDatas.gidilen_yol_vcu_sector_3_u32 / TimeSpan.Parse(sector_3_sure).TotalSeconds) * MACROS.mstokmh);
+        public uint sector_4_ortalama_hiz_vcu => (uint)((double)(SectorAndTourDatas.gidilen_yol_vcu_sector_4_u32 / TimeSpan.Parse(sector_4_sure).TotalSeconds) * MACROS.mstokmh);
         public uint sector_T_ortalama_hiz_vcu => (uint)((double)(SectorAndTourDatas.gidilen_yol_vcu_sector_T_u32 / TimeSpan.Parse(anlik_tur_sure).TotalSeconds) * MACROS.mstokmh);
+
         public uint sector_1_ortalama_hiz_gps => (uint)((double)(SectorAndTourDatas.gidilen_yol_gps_sector_1_u32 /  TimeSpan.Parse(sector_1_sure).TotalSeconds) * MACROS.mstokmh);
         public uint sector_2_ortalama_hiz_gps => (uint)((double)(SectorAndTourDatas.gidilen_yol_gps_sector_2_u32 /  TimeSpan.Parse(sector_2_sure).TotalSeconds) * MACROS.mstokmh);
+        public uint sector_3_ortalama_hiz_gps => (uint)((double)(SectorAndTourDatas.gidilen_yol_gps_sector_3_u32 / TimeSpan.Parse(sector_3_sure).TotalSeconds) * MACROS.mstokmh);
+        public uint sector_4_ortalama_hiz_gps => (uint)((double)(SectorAndTourDatas.gidilen_yol_gps_sector_4_u32 / TimeSpan.Parse(sector_4_sure).TotalSeconds) * MACROS.mstokmh);
         public uint sector_T_ortalama_hiz_gps => (uint)((double)(SectorAndTourDatas.gidilen_yol_gps_sector_T_u32 / TimeSpan.Parse(anlik_tur_sure).TotalSeconds) * MACROS.mstokmh);
         public string en_hizli_tur_sure;                         
         public string ortalama_tur_sure;
@@ -29,9 +37,19 @@ namespace yeniform.Variables
         public object[] Hsector1Datas => new object[8] {Timers.currentTour, "S1", sector_1_sure,
                                            SectorAndTourDatas.gidilen_yol_vcu_sector_1_u32, SectorAndTourDatas.gidilen_yol_gps_sector_1_u32,
                                            sector_1_ortalama_hiz_vcu, sector_1_ortalama_hiz_gps, SectorAndTourDatas.consumption_sector_1_f32};
+
         public object[] Hsector2Datas => new object[8] {Timers.currentTour, "S2", sector_2_sure,
                                            SectorAndTourDatas.gidilen_yol_vcu_sector_2_u32, SectorAndTourDatas.gidilen_yol_gps_sector_2_u32,
                                            sector_2_ortalama_hiz_vcu, sector_2_ortalama_hiz_gps, SectorAndTourDatas.consumption_sector_2_f32};
+
+        public object[] Hsector3Datas => new object[8] {Timers.currentTour, "S3", sector_3_sure,
+                                           SectorAndTourDatas.gidilen_yol_vcu_sector_3_u32, SectorAndTourDatas.gidilen_yol_gps_sector_3_u32,
+                                           sector_3_ortalama_hiz_vcu, sector_3_ortalama_hiz_gps, SectorAndTourDatas.consumption_sector_3_f32};
+
+        public object[] Hsector4Datas => new object[8] {Timers.currentTour, "S4", sector_4_sure,
+                                           SectorAndTourDatas.gidilen_yol_vcu_sector_4_u32, SectorAndTourDatas.gidilen_yol_gps_sector_4_u32,
+                                           sector_4_ortalama_hiz_vcu, sector_4_ortalama_hiz_gps, SectorAndTourDatas.consumption_sector_4_f32};
+
         public static bool _IsLog;
         public int dataCounter = 0;
         public int history_counter = 1;
@@ -95,6 +113,8 @@ namespace yeniform.Variables
             onceki_tur_sure = old_datass[count++];
             sector_1_sure = old_datass[count++];
             sector_2_sure = old_datass[count++];
+            sector_3_sure = old_datass[count++];
+            sector_4_sure = old_datass[count++];
             VCU.wake_up_u8 = Byte.Parse(old_datass[count++]);
             VCU.drive_commands_u8 = Byte.Parse(old_datass[count++]);
             VCU.set_velocity_u8 = Byte.Parse(old_datass[count++]);

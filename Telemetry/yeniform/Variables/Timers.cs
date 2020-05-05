@@ -57,10 +57,13 @@ namespace yeniform.Variables
         public static bool IsFastestLaps => Anlik_tur_süresi.Elapsed.TotalSeconds < en_hizli_tur_suresi.TotalSeconds;
 
         public static string log_datas_time => Timers.currentTour.ToString() + '$' + SectorAndTourDatas.sector_name + '$' + Gecen_süre.ToString(MACROS.TimeStringFormat) + '$' + Kalan_süre.ToString(MACROS.TimeStringFormat) + '$' + 
-                                               Anlik_tur_süresi.Elapsed.ToString(MACROS.TimeStringFormat) +  '$' + en_hizli_tur_suresi.ToString(MACROS.TimeStringFormat) + 
-                                               '$' + Ortalama_tur_süresi.ToString(MACROS.TimeStringFormat) + '$' + önceki_tur_sure.Elapsed.ToString(MACROS.TimeStringFormat) +
-                                               '$' + SectorAndTourDatas.sector1_sure.Elapsed.ToString(MACROS.TimeStringFormat) + '$' + SectorAndTourDatas.sector2_sure.Elapsed.ToString(MACROS.TimeStringFormat)
-                                               + '$';
+                                               Anlik_tur_süresi.Elapsed.ToString(MACROS.TimeStringFormat) +  '$' + en_hizli_tur_suresi.ToString(MACROS.TimeStringFormat) + '$' + 
+                                               Ortalama_tur_süresi.ToString(MACROS.TimeStringFormat) + '$' + önceki_tur_sure.Elapsed.ToString(MACROS.TimeStringFormat) + '$' + 
+                                               SectorAndTourDatas.sector1_sure.Elapsed.ToString(MACROS.TimeStringFormat) + '$' + SectorAndTourDatas.sector2_sure.Elapsed.ToString(MACROS.TimeStringFormat) + '$' + 
+                                               SectorAndTourDatas.sector3_sure.Elapsed.ToString(MACROS.TimeStringFormat) + '$' + SectorAndTourDatas.sector4_sure.Elapsed.ToString(MACROS.TimeStringFormat) + '$';
+
+
+
         public static byte hedef_hiz =>(byte)((kalan_yol/ Timers.Kalan_süre.TotalSeconds) * MACROS.mstokmh);
         public static uint kalan_yol => (MACROS.toplam_yol - Driver.odometer_u32);
      
