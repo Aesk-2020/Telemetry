@@ -30,6 +30,7 @@ namespace yeniform
             myTimeTickThread = new Thread(calculateRaceTimeOperations) { IsBackground = true, Priority = ThreadPriority.Highest };
             history_displayer.ValueChanged -= history_displayer_ValueChanged;
             mqtt.LogEvent += logDatas;
+            serialportRF.LogRFEvent += logDatas;
         }
 
         private void InitBars()
