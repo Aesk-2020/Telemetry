@@ -13,6 +13,7 @@ namespace yeniform.Variables
         private static DateTime race_start_time;
         private static DateTime race_stop_time;
         private DateTime tur_start_time;
+        public static byte ort_hiz => (byte)((Driver.odometer_u32 / Timers.Gecen_süre.TotalSeconds) * MACROS.mstokmh);
         public static TimeSpan Kalan_süre
         {
             get

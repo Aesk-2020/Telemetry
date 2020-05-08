@@ -31,8 +31,7 @@ namespace yeniform.Variables
                 myLabel.Invoke(del);
                 return;
             }
-            myLabel.Text = value;
-            
+            myLabel.Text = value;            
         }
 
         public static void LabelBackColorDegis(Label myLabel, Color value)
@@ -74,9 +73,7 @@ namespace yeniform.Variables
                 myGauge.Invoke(del);
                 return;
             }
-
-            myGauge.Value = value;
-            
+            myGauge.Value = value;        
         }
 
         public static void PBarValueDegis(GunaProgressBar myBar, int value)
@@ -89,8 +86,7 @@ namespace yeniform.Variables
                 };         
                 myBar.Invoke(del);
                 return;
-            }
-        
+            }       
             myBar.Value = value;
         }
 
@@ -106,7 +102,6 @@ namespace yeniform.Variables
                 myCircle.Invoke(del);
                 return;
             }
-
             myCircle.Value = value;
         }
     }

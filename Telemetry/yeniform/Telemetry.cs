@@ -159,7 +159,7 @@ namespace yeniform
                 ThreadMethods.TextDegis(gecen_sure, Timers.Gecen_süre.ToString(MACROS.TimeStringFormat));
                 ThreadMethods.TextDegis(kalan_sure, Timers.Kalan_süre.ToString(MACROS.TimeStringFormat));
                 ThreadMethods.TextDegis(anlik_tur_suresi, Timers.Anlik_tur_süresi.Elapsed.ToString(MACROS.TimeStringFormat));
-                ThreadMethods.TextDegis(ort_hiz,((byte)(Driver.odometer_u32 / Timers.Gecen_süre.TotalSeconds) * MACROS.mstokmh).ToString());
+                ThreadMethods.TextDegis(ort_hiz, Convert.ToString(Timers.ort_hiz));
                 ThreadMethods.LabelDegis(hedef_hiz, Convert.ToString(Timers.hedef_hiz));
                 Thread.Sleep(1000);
             }
@@ -173,7 +173,6 @@ namespace yeniform
             ThreadMethods.PBarValueDegis(kalanyol_bar, (int)Driver.odometer_u32);
             ThreadMethods.CBarValueDegis(atilan_Tur, Timers.currentTour);
             ThreadMethods.CBarValueDegis(set_hiz_bar, VCU.set_velocity_u8);
-
         }
 
         private void portToolStripMenuItem_MouseHover(object sender, EventArgs e)
@@ -539,7 +538,6 @@ namespace yeniform
             ThreadMethods.TextDegis(gecen_sure, Timers.Gecen_süre.ToString(MACROS.TimeStringFormat));
             ThreadMethods.TextDegis(kalan_sure, Timers.Kalan_süre.ToString(MACROS.TimeStringFormat));
             ThreadMethods.TextDegis(anlik_tur_suresi, mylogs.anlik_tur_sure);
-            ThreadMethods.TextDegis(ortalama_tur_suresi, mylogs.ortalama_tur_sure);
             ThreadMethods.TextDegis(en_hizli_tur_timer, mylogs.en_hizli_tur_sure);
             ThreadMethods.TextDegis(ort_hiz, ((byte)(Driver.odometer_u32 / Timers.Gecen_süre.TotalSeconds) * MACROS.mstokmh).ToString());
             ThreadMethods.LabelDegis(hedef_hiz, Convert.ToString(Timers.hedef_hiz));
@@ -555,6 +553,7 @@ namespace yeniform
             if (Logs._IsLog)
             {
                 myDataGrid.addGrid(mylogs.HturAtDatas);
+                ThreadMethods.TextDegis(ortalama_tur_suresi, mylogs.ortalama_tur_sure);
                 Timers.currentTour++;
             }
 
@@ -585,7 +584,6 @@ namespace yeniform
             {
                 serialportRF.ConnectSerialPort(serialportRF.portname);
             }
-
             serialportRF.write(MACROS.gsm_reset_buffer);
         }
     }
