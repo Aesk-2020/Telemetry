@@ -7,6 +7,9 @@
 #include "SIM800MQTT.h"
 #include "StackTrace.h"
 #include "string.h"
+
+
+
 void SendATCommand(Gsm_Datas* gsm_data, char * command, char* response)
 {
 	gsm_data->at_response = response;

@@ -83,8 +83,6 @@ RTC_DateTypeDef rtcdate;
 RTC_TimeTypeDef sTime;
 RTC_DateTypeDef sDate;
 
-uint32_t MQTT_Counter = 0;
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -870,9 +868,9 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 		case CreateMQTTConnectPack :
 		{
 			char atcommand[255];
-			connectData.username.cstring = "digital";
-			connectData.password.cstring = "aesk";
-			connectData.clientID.cstring = "LYRA";
+			connectData.username.cstring = MQTT_USERNAME;
+			connectData.password.cstring = MQTT_PASSWORd;
+			connectData.clientID.cstring = MQTT_CLIENT_ID;
 			connectData.keepAliveInterval = 60;
 			connectData.cleansession = SendMQTTConnectPack;
 			gsm_data->len =  MQTTSerialize_connect((unsigned char *)gsm_data->gsmconnectpackage, (int)sizeof(gsm_data->gsmconnectpackage),&connectData);
@@ -895,7 +893,7 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 		case CreateMQTTPublishPack :
 		{
 
-		    topicString.cstring = "home/sensor";
+		    topicString.cstring = MQTT_TOPIC;
 		    char atcommand[255];
 		    uint16_t index = 0;
 		    createMQTTPackage(&lyradata, &gps_data, gsm_data->MQTTPackage, &index);
@@ -985,6 +983,7 @@ void createMQTTPackage(LyraDatas *lyradata, GPS_Handle*gps_data, uint8_t* packBu
 	AESK_UINT8toUINT8CODE(&(gps_data->speed_u8), packBuf, index);
 	AESK_UINT8toUINT8CODE(&(gps_data->satellite_number_u8), packBuf, index);
 	AESK_UINT8toUINT8CODE(&(gps_data->gpsEfficiency_u8), packBuf, index);
+	static uint32_t MQTT_Counter = 0;
 	MQTT_Counter++;
 	AESK_UINT32toUINT8_LE(&MQTT_Counter, packBuf, index);
 }
