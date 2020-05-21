@@ -219,3 +219,4 @@ C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csp
 C:\Users\yemrelaydin\Desktop\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csprojAssemblyReference.cache
 D:\MyGits\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.BMS_form.resources
 D:\MyGits\Telemetry\Telemetry\yeniform\obj\Debug\yeniform.graph_form.resources
+F:\Yusuf\Ders & Bölüm\AESK\github\Telemetry\Telemetry\yeniform\obj\Debug\Telemetry-Electric.csproj.CoreCompileInputs.cache

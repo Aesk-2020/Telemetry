@@ -109,6 +109,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Variables\BmsUI.cs" />
     <Compile Include="Variables\myDataGrid.cs" />
     <Compile Include="Variables\EncodePackMethods.cs" />
     <Compile Include="Variables\GMAPController.cs" />
