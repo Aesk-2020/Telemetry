@@ -8,3 +8,5 @@ void main() => runApp(MaterialApp(
         ),
       ),
     ));
+
+// bu bir github çalışıyor mu denemesidir
