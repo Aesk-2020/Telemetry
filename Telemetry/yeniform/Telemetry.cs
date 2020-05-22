@@ -586,5 +586,15 @@ namespace yeniform
             }
             serialportRF.write(MACROS.gsm_reset_buffer);
         }
+
+        private void sDKayıtAçToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mylogs = new Logs(true);
+            mylogs.Reader();
+            history_displayer.Maximum = mylogs.dataCounter;
+            MACROS.race_start_flag = true;
+            history_displayer.ValueChanged += history_displayer_ValueChanged;
+            history_displayer.Value = 0;
+        }
     }
 }
