@@ -157,7 +157,7 @@ int main(void)
    {
 	   HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 	   HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
-	   vars_to_str(sd_card_data.path, "%d_%d_%d_(%d).txt", sDate.Date, sDate.Month, sDate.Year, sd_card_data.logger_u32);
+	   vars_to_str(sd_card_data.path, "%d_%d_%d_%d_%d_%d_(%d).txt", sDate.Date, sDate.Month, sDate.Year, sTime.Hours, sTime.Minutes, sTime.Seconds, sd_card_data.logger_u32);
 	   sd_card_data.state = SD_Card_Detect;
    }
 
