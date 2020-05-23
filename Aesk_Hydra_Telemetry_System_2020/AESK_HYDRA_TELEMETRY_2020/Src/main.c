@@ -24,7 +24,14 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "stdio.h"
+#include "SIM800MQTT.h"
+#include "AESK_CAN_Library.h"
+#include "AESK_Gps_lib.h"
+#include "TelemetryGlobalvar.h"
+#include "Can_Hydra_Header.h"
+#include "AESK_Data_Pack_lib.h"
+#include "stdarg.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -58,7 +65,23 @@ UART_HandleTypeDef huart2;
 UART_HandleTypeDef huart3;
 
 /* USER CODE BEGIN PV */
+int SetTime = 0;
+int SetDate = 0;
 
+Time_Task_union time_task;
+Xbee_Datas xbee_data;
+Gsm_Datas gsm_data;
+MQTTPacket_connectData connectData = MQTTPacket_connectData_initializer;
+MQTTString topicString = MQTTString_initializer;
+HydraDatas hydradata;
+Sd_Card_Datas sd_card_data;
+GPS_Handle gps_data;
+
+RTC_TimeTypeDef rtctime;
+RTC_DateTypeDef rtcdate;
+
+RTC_TimeTypeDef sTime;
+RTC_DateTypeDef sDate;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -74,7 +97,10 @@ static void MX_USART1_UART_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_USART3_UART_Init(void);
 /* USER CODE BEGIN PFP */
-
+void Gsm_Calibration(Gsm_Datas* gsm_data);
+void createMQTTPackage(HydraDatas *hydradata, GPS_Handle*gps_data, uint8_t* packBuf, uint16_t *index);
+void RTC_Set_Time_Date();
+void vars_to_str(char *buffer, const char *format, ...);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -121,7 +147,40 @@ int main(void)
   MX_USART3_UART_Init();
   MX_FATFS_Init();
   /* USER CODE BEGIN 2 */
+  gsm_data.gsm_uart = &huart1;
+    MX_RTC_Init();
+    RTC_Set_Time_Date();
 
+    if(f_mount(&sd_card_data.myFATAFS,(TCHAR const *)SDPath, 1) == FR_OK)
+    {
+ 	   HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+ 	   HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
+ 	   vars_to_str(sd_card_data.path, "%d_%d_%d_%d_%d_%d_(%d).txt", sDate.Date, sDate.Month, sDate.Year, sTime.Hours, sTime.Minutes, sTime.Seconds, sd_card_data.logger_u32);
+ 	   sd_card_data.state = SD_Card_Detect;
+    }
+
+    if((GSM_STATUS_GPIO_Port->IDR & GSM_STATUS_Pin) == (uint32_t)GPIO_PIN_RESET)
+    {
+ 		GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin;
+ 	    HAL_Delay(1500);
+ 	    GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin << 16U;
+    }
+
+    else
+    {
+ 	   HAL_UART_Transmit(gsm_data.gsm_uart, (uint8_t*)RESET_AT_COMMAND, (uint16_t)strlen(RESET_AT_COMMAND), HAL_DELAY);
+    }
+
+    while((GSM_STATUS_GPIO_Port->IDR & GSM_STATUS_Pin) == (uint32_t)GPIO_PIN_RESET)
+    {
+ 	   ;
+    }
+
+
+     HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
+     HAL_UART_Receive_IT(&huart3, &xbee_data.receiveData, 1);
+     HAL_UART_Receive_IT(&huart2, &gps_data.uartReceiveData_u8, 1);
+     HAL_TIM_Base_Start_IT(&htim6);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -131,6 +190,53 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  if(time_task.Time_Task.Task_60_ms == TRUE)
+	  {
+		  Gsm_Calibration(&gsm_data);
+		  time_task.Time_Task.Task_60_ms = FALSE;
+	  }
+
+	  if(time_task.Time_Task.Task_50_ms == TRUE)
+	  {
+		  if(sd_card_data.state == SD_Card_Detect)
+		  {
+
+			  HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+			  HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
+			  vars_to_str((char *)sd_card_data.transmitBuf, "%d$%d$%d$%.2f$%.2f$%.2f$%.1f$%.2f$%.2f$%.2f$%.2f$%d$%d$%d$%d$%d$%.1f$%.2f$%.1f$%.2f$%d$%d$%.1f$%d$%d$%.6f$%.6f$%d$%d$%d$%d$%d\n",
+					  hydradata.vcu_data.wake_up_union.wake_up_u8, hydradata.vcu_data.drive_command_union.drive_command_u8, hydradata.vcu_data.set_velocity_u8,
+					  hydradata.driver_data.Phase_A_Current_f32, hydradata.driver_data.Phase_B_Current_f32, hydradata.driver_data.Dc_Bus_Current_f32,
+					  hydradata.driver_data.Dc_Bus_voltage_f32, hydradata.driver_data.Id_f32, hydradata.driver_data.Iq_f32, hydradata.driver_data.Vd_f32, hydradata.driver_data.Vq_f32,
+					  hydradata.driver_data.drive_status_union.drive_status_u8, hydradata.driver_data.driver_error_union.driver_error_u8, hydradata.driver_data.Odometer_u32,
+					  hydradata.driver_data.Motor_Temperature_u8, hydradata.driver_data.actual_velocity_u8, hydradata.bms_data.Bat_Voltage_f32,
+					  hydradata.bms_data.Bat_Current_f32, hydradata.bms_data.Bat_Cons_f32, hydradata.bms_data.Soc_f32, hydradata.bms_data.bms_error.bms_error_u8,
+					  hydradata.bms_data.dc_bus_state.dc_bus_state_u8, hydradata.bms_data.Worst_Cell_Voltage_f32, hydradata.bms_data.Worst_Cell_Address_u8,
+					  hydradata.bms_data.Temperature_u8, gps_data.latitude_f32, gps_data.longtitude_f32, gps_data.speed_u8, gps_data.satellite_number_u8, gps_data.gpsEfficiency_u8,
+																			 gps_data.gps_errorhandler.trueData_u32, gps_data.gps_errorhandler.checksumError_u32, gps_data.gps_errorhandler.validDataError_u32);
+			  vars_to_str((char *)sd_card_data.total_log, "%d:%d:%d$", sTime.Hours, sTime.Minutes, sTime.Seconds);
+			  strcat(sd_card_data.total_log, (const char*)sd_card_data.transmitBuf);
+			  sd_card_data.result = f_open(&sd_card_data.myFile, sd_card_data.path, FA_WRITE | FA_OPEN_APPEND | FA_OPEN_EXISTING | FA_OPEN_ALWAYS);
+			  f_write(&sd_card_data.myFile, sd_card_data.total_log, strlen(sd_card_data.total_log), (void*)&sd_card_data.writtenbyte);
+			  if((sd_card_data.writtenbyte != 0) && (sd_card_data.result == FR_OK))
+			  {
+				  f_close(&sd_card_data.myFile);
+				  SetTime++;
+			  }
+
+			  else
+			  {
+				  if(f_mount(&sd_card_data.myFATAFS,(TCHAR const *)SDPath, 1) == FR_OK)
+				  {
+					  sd_card_data.logger_u32++;
+					  HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+					  HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
+					  vars_to_str(sd_card_data.path, "%d_%d_%d_(%d).txt", sDate.Date, sDate.Month, sDate.Year, sd_card_data.logger_u32);
+					  sd_card_data.state = SD_Card_Detect;
+				  }
+			  }
+			}
+	 		time_task.Time_Task.Task_50_ms = FALSE;
+	 }
   }
   /* USER CODE END 3 */
 }
@@ -542,7 +648,366 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	static uint32_t  task_counter_50_ms = 0;
+	static uint32_t task_counter_60_ms = 0;
+	task_counter_60_ms++;
+	task_counter_50_ms++;
 
+	if(task_counter_50_ms == 50)
+	{
+		time_task.Time_Task.Task_50_ms = TRUE;
+		task_counter_50_ms = 0;
+	}
+
+	if(task_counter_60_ms == 60)
+	{
+		time_task.Time_Task.Task_60_ms = TRUE;
+		task_counter_60_ms = 0;
+	}
+}
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+	switch((uint32_t)huart->Instance)
+	{
+
+		case (uint32_t)USART1 :
+		{
+			static uint8_t cifsr_control = 0;
+
+			gsm_data.gsmreceivebuffer[gsm_data.gsmreceivebuffer_index++] = gsm_data.receivegsmdata;
+			if(gsm_data.gsm_state_next_index != CreateMQTTPublishPack && (strstr((const char *)gsm_data.gsmreceivebuffer, gsm_data.at_response) != NULL))
+			{
+				gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index;
+				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer));
+				gsm_data.gsmreceivebuffer_index = 0;
+			}
+
+
+			else if(gsm_data.gsm_state_next_index == CreateMQTTPublishPack && (strstr((const char *)gsm_data.gsmreceivebuffer, "SE") != NULL))
+			{
+				gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index;
+				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer));
+				gsm_data.gsmreceivebuffer_index = 0;
+			}
+
+			else if(strstr((const char *)gsm_data.gsmreceivebuffer, (const char *)"ERROR") != NULL)
+			{
+				gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index - 1;
+				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer));
+				gsm_data.gsmreceivebuffer_index = 0;
+			}
+
+			if(gsm_data.receivegsmdata =='.')
+			{
+				cifsr_control++;
+			}
+
+			if(cifsr_control == 3 && gsm_data.receivegsmdata == '\n')
+			{
+				gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index;
+				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer));
+				gsm_data.gsmreceivebuffer_index = 0;
+				cifsr_control = 0;
+			}
+
+			if(gsm_data.gsm_state_next_index == SendMQTTPublishPack && gsm_data.receivegsmdata == '>')
+			{
+
+				gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index;
+				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer));
+				gsm_data.gsmreceivebuffer_index = 0;
+			}
+
+			if(gsm_data.gsmreceivebuffer_index == 31)
+			{
+				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer));
+				gsm_data.gsmreceivebuffer_index = 0;
+			}
+			HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
+			break;
+		}
+
+		case (uint32_t)USART2 :
+		{
+			GPS_Control(&gps_data);
+			HAL_UART_Receive_IT(&huart2, &gps_data.uartReceiveData_u8, 1);
+			break;
+		}
+
+		case (uint32_t)USART3 :
+		{
+			switch(xbee_data.states)
+			{
+				case ID_Control :
+				{
+					if(xbee_data.receiveData == FIRST_CONTROL_BYTE)
+					{
+						xbee_data.states = Reset_Data_Control;
+					}
+				break;
+				}
+				case Reset_Data_Control:
+				{
+					if(xbee_data.receiveData == SECOND_CONTROL_BYTE)
+					{
+						xbee_data.states = End_Communication_Control_1;
+					}
+					else
+					{
+						xbee_data.states = Reset_Data_Control;
+					}
+					break;
+				}
+				case End_Communication_Control_1:
+				{
+					if(xbee_data.receiveData == FIRST_COMMAND)
+					{
+						xbee_data.states = End_Communication_Control_2;
+					}
+					else
+					{
+						xbee_data.states = Reset_Data_Control;
+					}
+					break;
+				}
+
+				case End_Communication_Control_2:
+				{
+					if(xbee_data.receiveData == SECOND_COMMAND)
+					{
+						gsm_data.gsm_state_current_index = GsmOnOffSet;
+					}
+					else
+					{
+						xbee_data.states = Reset_Data_Control;
+					}
+					break;
+				}
+			}
+			HAL_UART_Receive_IT(&huart3, &xbee_data.receiveData, 1);
+			break;
+		}
+	}
+}
+
+void Gsm_Calibration(Gsm_Datas* gsm_data)
+{
+	switch(gsm_data->gsm_state_current_index)
+	{
+		case SerialCommunicationControl :
+		{
+			SendATCommand(gsm_data, "AT\r\n", "OK\r\n");
+			gsm_data->gsm_state_next_index = SerialEchoOff;
+			gsm_data->gsm_state_current_index = SerialCommunicationControl;
+			break;
+		}
+
+		case SerialEchoOff :
+		{
+			SendATCommand(gsm_data, "ATE0\r\n", "OK\r\n");
+			gsm_data->gsm_state_next_index = DeactiveGPRS;
+			gsm_data->gsm_state_current_index = EmptyState;
+			break;
+		}
+
+		case DeactiveGPRS :
+		{
+			SendATCommand(gsm_data, "AT+CIPSHUT\r\n", "SHUT OK\r\n");
+			gsm_data->gsm_state_next_index = ConnectGPRS;
+			gsm_data->gsm_state_current_index = EmptyState;
+			break;
+		}
+
+
+		case ConnectGPRS :
+		{
+			SendATCommand(gsm_data, "AT+CGATT=1\r\n", "OK\r\n");
+			gsm_data->gsm_state_next_index = SetGPRSProfile;
+			gsm_data->gsm_state_current_index = EmptyState;
+			break;
+		}
+
+		case SetGPRSProfile :
+		{
+			SendATCommand(gsm_data, "AT+CSTT=\"internet\",\"\",\"\"\r\n", "OK\r\n");
+			gsm_data->gsm_state_next_index = BringUPGPRS;
+			gsm_data->gsm_state_current_index = EmptyState;
+			break;
+		}
+
+		case BringUPGPRS :
+		{
+			SendATCommand(gsm_data, "AT+CIICR\r\n", "OK\r\n");
+			gsm_data->gsm_state_next_index = LearnSIM800IP;
+			gsm_data->gsm_state_current_index = EmptyState;
+			break;
+		}
+
+		case LearnSIM800IP :
+		{
+			SendATCommand(gsm_data, "AT+CIFSR\r\n", "OK\r\n");
+			gsm_data->gsm_state_next_index = StartTCPConnect;
+			gsm_data->gsm_state_current_index = EmptyState;
+			break;
+		}
+
+		case StartTCPConnect :
+		{
+			SendATCommand(gsm_data, "AT+CIPSTART=\"TCP\",\"157.230.29.63\",\"1883\"\r\n", "CONNECT OK\r\n");
+			gsm_data->gsm_state_next_index = CreateMQTTConnectPack;
+			gsm_data->gsm_state_current_index = EmptyState;
+			break;
+		}
+
+		case CreateMQTTConnectPack :
+		{
+			char atcommand[255];
+			connectData.username.cstring = MQTT_USERNAME;
+			connectData.password.cstring = MQTT_PASSWORd;
+			connectData.clientID.cstring = MQTT_CLIENT_ID;
+			connectData.keepAliveInterval = 60;
+			connectData.cleansession = SendMQTTConnectPack;
+			gsm_data->len =  MQTTSerialize_connect((unsigned char *)gsm_data->gsmconnectpackage, (int)sizeof(gsm_data->gsmconnectpackage),&connectData);
+			sprintf(atcommand,(const char*)"AT+CIPSEND=%d\r\n", gsm_data->len);
+			SendATCommand(gsm_data, atcommand, "\r\n>");
+			gsm_data->gsm_state_next_index = SendMQTTConnectPack;
+			gsm_data->gsm_state_current_index = EmptyState;
+			break;
+		}
+
+		case SendMQTTConnectPack :
+		{
+			gsm_data->at_response = "SEND OK\r\n";
+			HAL_UART_Transmit(gsm_data->gsm_uart, (uint8_t *)gsm_data->gsmconnectpackage, gsm_data->len, HAL_DELAY);
+			gsm_data->gsm_state_next_index = CreateMQTTPublishPack;
+			gsm_data->gsm_state_current_index = EmptyState;
+			break;
+		}
+
+		case CreateMQTTPublishPack :
+		{
+
+		    topicString.cstring = MQTT_TOPIC;
+		    char atcommand[255];
+		    uint16_t index = 0;
+		    createMQTTPackage(&hydradata, &gps_data, gsm_data->MQTTPackage, &index);
+		    gsm_data->mqtt_len = MQTTSerialize_publish(gsm_data->gsmpublishpackage, (int)sizeof(gsm_data->gsmpublishpackage), 0, 0, 0, 0, topicString, gsm_data->MQTTPackage, index);
+			sprintf(atcommand,(const char*)"AT+CIPSEND=%d\r\n", gsm_data->mqtt_len);
+			SendATCommand(gsm_data, atcommand, ">");
+			gsm_data->gsm_state_next_index = SendMQTTPublishPack;
+			gsm_data->gsm_state_current_index = EmptyState;
+			break;
+		}
+
+		case SendMQTTPublishPack :
+		{
+
+			HAL_UART_Transmit(gsm_data->gsm_uart, (uint8_t *)gsm_data->gsmpublishpackage, gsm_data->mqtt_len, HAL_DELAY);
+			gsm_data->gsm_state_current_index = CreateMQTTPublishPack;
+			gsm_data->gsm_state_next_index = EmptyState;
+			break;
+		}
+
+		case GsmOnOffSet :
+		{
+			HAL_UART_Transmit(gsm_data->gsm_uart, (uint8_t*)RESET_AT_COMMAND, (uint16_t)strlen(RESET_AT_COMMAND), HAL_DELAY);
+			gsm_data->gsm_state_current_index = Gsm1500msWait;
+			break;
+		}
+
+		case Gsm1500msWait :
+		{
+			if((GSM_STATUS_GPIO_Port->IDR & GSM_STATUS_Pin) == (uint32_t)GPIO_PIN_RESET)
+			{
+				gsm_data->gsm_state_current_index = Gsm1500msWait;
+			}
+
+			else
+			{
+				gsm_data->gsm_state_current_index = SerialCommunicationControl;
+			}
+			break;
+		}
+	}
+}
+
+
+void createMQTTPackage(HydraDatas *hydradata, GPS_Handle*gps_data, uint8_t* packBuf, uint16_t *index)
+{
+	AESK_UINT8toUINT8CODE(&hydradata->vcu_data.wake_up_union.wake_up_u8, packBuf, index);
+	AESK_UINT8toUINT8CODE(&hydradata->vcu_data.drive_command_union.drive_command_u8, packBuf, index);
+	AESK_UINT8toUINT8CODE(&hydradata->vcu_data.set_velocity_u8, packBuf, index);
+	int16_t phase_a_current_s16 = (int16_t)(hydradata->driver_data.Phase_A_Current_f32 * FLOAT_CONVERTER_2);
+	int16_t phase_b_current_s16 = (int16_t)(hydradata->driver_data.Phase_B_Current_f32 * FLOAT_CONVERTER_2);
+	uint16_t dc_bus_voltage_u16 = (uint16_t)(hydradata->driver_data.Dc_Bus_voltage_f32 * FLOAT_CONVERTER_1);
+	int16_t dc_bus_current_s16 = (int16_t)(hydradata->driver_data.Dc_Bus_Current_f32 * FLOAT_CONVERTER_2);
+	int16_t id_f32 = (int16_t)(hydradata->driver_data.Id_f32 * FLOAT_CONVERTER_2);
+	int16_t iq_f32 = (int16_t)(hydradata->driver_data.Iq_f32 * FLOAT_CONVERTER_2);
+	int16_t vd_f32 = (int16_t)(hydradata->driver_data.Vd_f32 * FLOAT_CONVERTER_2);
+	int16_t vq_f32 = (int16_t)(hydradata->driver_data.Vq_f32 * FLOAT_CONVERTER_2);
+	AESK_INT16toUINT8_LE(&phase_a_current_s16, packBuf, index);
+	AESK_INT16toUINT8_LE(&phase_b_current_s16, packBuf, index);
+	AESK_INT16toUINT8_LE(&dc_bus_current_s16, packBuf, index);
+	AESK_UINT16toUINT8_LE(&dc_bus_voltage_u16, packBuf, index);
+	AESK_INT16toUINT8_LE(&id_f32, packBuf, index);
+	AESK_INT16toUINT8_LE(&iq_f32, packBuf, index);
+	AESK_INT16toUINT8_LE(&vd_f32, packBuf, index);
+	AESK_INT16toUINT8_LE(&vq_f32, packBuf, index);
+	AESK_UINT8toUINT8CODE(&(hydradata->driver_data.drive_status_union.drive_status_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(hydradata->driver_data.driver_error_union.driver_error_u8), packBuf, index);
+	AESK_UINT32toUINT8_LE(&(hydradata->driver_data.Odometer_u32), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(hydradata->driver_data.Motor_Temperature_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(hydradata->driver_data.actual_velocity_u8), packBuf, index);
+	uint16_t bat_volt_u16 = (uint16_t)(hydradata->bms_data.Bat_Voltage_f32 * FLOAT_CONVERTER_1);
+	int16_t  bat_cur_s16 = (int16_t)(hydradata->bms_data.Bat_Current_f32 * FLOAT_CONVERTER_2);
+	uint16_t bat_cons_u16 = (uint16_t)(hydradata->bms_data.Bat_Cons_f32 * FLOAT_CONVERTER_1);
+	uint16_t soc_u16 = (uint16_t)(hydradata->bms_data.Soc_f32 * FLOAT_CONVERTER_2);
+	uint16_t worst_cell_voltage_u16 = (uint16_t)(hydradata->bms_data.Worst_Cell_Voltage_f32 * FLOAT_CONVERTER_1);
+	AESK_UINT16toUINT8_LE(&bat_volt_u16, packBuf, index);
+	AESK_INT16toUINT8_LE(&bat_cur_s16, packBuf, index);
+	AESK_UINT16toUINT8_LE(&bat_cons_u16, packBuf, index);
+	AESK_UINT16toUINT8_LE(&soc_u16, packBuf, index);
+	AESK_UINT8toUINT8CODE(&(hydradata->bms_data.bms_error.bms_error_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(hydradata->bms_data.dc_bus_state.dc_bus_state_u8), packBuf, index);
+	AESK_UINT16toUINT8_LE(&worst_cell_voltage_u16, packBuf, index);
+	AESK_UINT8toUINT8CODE(&(hydradata->bms_data.Worst_Cell_Address_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(hydradata->bms_data.Temperature_u8), packBuf, index);
+	AESK_FLOAT32toUINT8_LE(&(gps_data->latitude_f32), packBuf, index);
+	AESK_FLOAT32toUINT8_LE(&(gps_data->longtitude_f32), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(gps_data->speed_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(gps_data->satellite_number_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(gps_data->gpsEfficiency_u8), packBuf, index);
+	static uint32_t MQTT_Counter = 0;
+	MQTT_Counter++;
+	AESK_UINT32toUINT8_LE(&MQTT_Counter, packBuf, index);
+}
+
+
+
+void RTC_Set_Time_Date()
+{
+	if(SetTime == 1)
+	{
+	HAL_RTC_SetTime(&hrtc, &rtctime, RTC_FORMAT_BIN);
+	SetTime = 0;
+	}
+	if(SetDate == 1)
+	{
+	HAL_RTC_SetDate(&hrtc, &rtcdate, RTC_FORMAT_BIN);
+	SetDate = 0;
+	}
+}
+
+void vars_to_str(char *buffer, const char *format, ...)
+{
+	va_list args;
+	va_start (args, format);
+	vsprintf (buffer, format, args);
+	va_end (args);
+}
 /* USER CODE END 4 */
 
 /**

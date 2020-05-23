@@ -1,12 +1,12 @@
 /*
- * Can_Lyra_Header.h
+ * Can_Hydra_Header.h
  *
  *  Created on: 8 Nis 2020
  *      Author: ahmet
  */
 
-#ifndef CAN_LYRA_HEADER_H_
-#define CAN_LYRA_HEADER_H_
+#ifndef CAN_HYDRA_HEADER_H_
+#define CAN_HYDRA_HEADER_H_
 
 #define DRIVER_CUR_VOLT					0x1555DDD0
 #define DRIVER_ID_IQ_VD_VQ				0x1555DDD1
@@ -147,5 +147,5 @@ typedef struct
 	Bms_Datas 	 bms_data;
 	VCU_Datas 	 vcu_data;
 	Driver_Datas driver_data;
-}LyraDatas;
-#endif /* CAN_LYRA_HEADER_H_ */
+}HydraDatas;
+#endif /* CAN_HYDRA_HEADER_H_ */
