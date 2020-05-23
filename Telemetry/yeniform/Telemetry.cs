@@ -131,7 +131,10 @@ namespace yeniform
             if (!MACROS.mouse_mod)
             {
                 angle = myGmap.addGMapCalcAngleCalcOdometer(GpsTracker.gps_latitude_f64, GpsTracker.gps_longtitude_f64);
-                AngleControl(angle);
+                if(!MACROS.IsSd)
+                {
+                    AngleControl(angle);
+                }
             }
 
             ThreadMethods.CBarValueDegis(angle_gauge, (int)angle);
@@ -204,7 +207,6 @@ namespace yeniform
 
         private void bağlanToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             if (serialPort1.IsOpen)
             {
                 serialportRF.DisconnectSerialPort(serialportRF.portname);
@@ -226,8 +228,6 @@ namespace yeniform
             {
                 gsm_durum.BackColor = MACROS.errorColor;
             }
-
-
         }
 
         private void bağlantıyıKesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -533,14 +533,22 @@ namespace yeniform
             }
                 
             string[] old_datass = mylogs.read_string[mylogs.read_string.Keys.ElementAt(history_displayer.Value)].Split('$');
-            mylogs.ReadArayüz(old_datass);
-            displayAllData();
-            ThreadMethods.TextDegis(gecen_sure, Timers.Gecen_süre.ToString(MACROS.TimeStringFormat));
-            ThreadMethods.TextDegis(kalan_sure, Timers.Kalan_süre.ToString(MACROS.TimeStringFormat));
-            ThreadMethods.TextDegis(anlik_tur_suresi, mylogs.anlik_tur_sure);
-            ThreadMethods.TextDegis(en_hizli_tur_timer, mylogs.en_hizli_tur_sure);
-            ThreadMethods.TextDegis(ort_hiz, ((byte)(Driver.odometer_u32 / Timers.Gecen_süre.TotalSeconds) * MACROS.mstokmh).ToString());
-            ThreadMethods.LabelDegis(hedef_hiz, Convert.ToString(Timers.hedef_hiz));
+            if (MACROS.IsSd == false)
+            {
+                mylogs.ReadArayüz(old_datass);
+                displayAllData();
+                ThreadMethods.TextDegis(gecen_sure, Timers.Gecen_süre.ToString(MACROS.TimeStringFormat));
+                ThreadMethods.TextDegis(kalan_sure, Timers.Kalan_süre.ToString(MACROS.TimeStringFormat));
+                ThreadMethods.TextDegis(anlik_tur_suresi, mylogs.anlik_tur_sure);
+                ThreadMethods.TextDegis(en_hizli_tur_timer, mylogs.en_hizli_tur_sure);
+                ThreadMethods.TextDegis(ort_hiz, ((byte)(Driver.odometer_u32 / Timers.Gecen_süre.TotalSeconds) * MACROS.mstokmh).ToString());
+                ThreadMethods.LabelDegis(hedef_hiz, Convert.ToString(Timers.hedef_hiz));
+            }
+            else
+            {
+                mylogs.readSdCard(old_datass);
+                displayAllData();
+            }
             mylogs.history_counter = history_displayer.Value;
         }
 
@@ -593,6 +601,7 @@ namespace yeniform
             mylogs.Reader();
             history_displayer.Maximum = mylogs.dataCounter;
             MACROS.race_start_flag = true;
+            MACROS.IsSd = true;
             history_displayer.ValueChanged += history_displayer_ValueChanged;
             history_displayer.Value = 0;
         }

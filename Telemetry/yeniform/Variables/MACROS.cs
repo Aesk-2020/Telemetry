@@ -37,6 +37,7 @@ namespace yeniform.Variables
         public static bool show_old_datas;
         public static bool hold_my_history;
         public static bool newDataCome = false;
+        public static bool IsSd = false;
 
         public static double S1_Start => 341.4;
         public static double S1_Stop => 70.3;
