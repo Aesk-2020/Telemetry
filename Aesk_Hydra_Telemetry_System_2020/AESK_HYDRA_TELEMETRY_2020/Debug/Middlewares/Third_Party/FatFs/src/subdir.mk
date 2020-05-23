@@ -24,7 +24,7 @@ Middlewares/Third_Party/FatFs/src/%.o: ../Middlewares/Third_Party/FatFs/src/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: MCU GCC Compiler'
 	@echo $(PWD)
-	arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F412Rx -I"D:/AESK_HYDRA_TELEMETRY_2020/Inc" -I"D:/AESK_HYDRA_TELEMETRY_2020/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/AESK_HYDRA_TELEMETRY_2020/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/AESK_HYDRA_TELEMETRY_2020/Middlewares/Third_Party/FatFs/src" -I"D:/AESK_HYDRA_TELEMETRY_2020/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/AESK_HYDRA_TELEMETRY_2020/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" -o "$@" "$<"
+	arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F412Rx -I"D:/GitHub/Telemetry/Aesk_Hydra_Telemetry_System_2020/AESK_HYDRA_TELEMETRY_2020/Inc" -I"D:/GitHub/Telemetry/Aesk_Hydra_Telemetry_System_2020/AESK_HYDRA_TELEMETRY_2020/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/GitHub/Telemetry/Aesk_Hydra_Telemetry_System_2020/AESK_HYDRA_TELEMETRY_2020/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/GitHub/Telemetry/Aesk_Hydra_Telemetry_System_2020/AESK_HYDRA_TELEMETRY_2020/Middlewares/Third_Party/FatFs/src" -I"D:/GitHub/Telemetry/Aesk_Hydra_Telemetry_System_2020/AESK_HYDRA_TELEMETRY_2020/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/GitHub/Telemetry/Aesk_Hydra_Telemetry_System_2020/AESK_HYDRA_TELEMETRY_2020/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
