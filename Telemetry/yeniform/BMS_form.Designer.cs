@@ -621,7 +621,11 @@
             this.tableLayoutPanel52.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel52.ColumnCount = 2;
             this.tableLayoutPanel52.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel52.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+=======
+            this.tableLayoutPanel52.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+>>>>>>> master
             this.tableLayoutPanel52.Controls.Add(this.cell23_voltage, 1, 1);
             this.tableLayoutPanel52.Controls.Add(this.cell23_temp, 1, 0);
             this.tableLayoutPanel52.Controls.Add(this.label133, 0, 0);
@@ -637,7 +641,11 @@
             // cell23_voltage
             // 
             this.cell23_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell23_voltage.Location = new System.Drawing.Point(59, 33);
+=======
+            this.cell23_voltage.Location = new System.Drawing.Point(54, 33);
+>>>>>>> master
             this.cell23_voltage.Name = "cell23_voltage";
             this.cell23_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell23_voltage.TabIndex = 14;
@@ -646,7 +654,11 @@
             // cell23_temp
             // 
             this.cell23_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell23_temp.Location = new System.Drawing.Point(59, 1);
+=======
+            this.cell23_temp.Location = new System.Drawing.Point(54, 1);
+>>>>>>> master
             this.cell23_temp.Name = "cell23_temp";
             this.cell23_temp.Size = new System.Drawing.Size(30, 13);
             this.cell23_temp.TabIndex = 13;
@@ -710,7 +722,11 @@
             this.tableLayoutPanel62.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel62.ColumnCount = 2;
             this.tableLayoutPanel62.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel62.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+=======
+            this.tableLayoutPanel62.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+>>>>>>> master
             this.tableLayoutPanel62.Controls.Add(this.cell28_voltage, 1, 1);
             this.tableLayoutPanel62.Controls.Add(this.cell28_temp, 1, 0);
             this.tableLayoutPanel62.Controls.Add(this.label163, 0, 0);
@@ -726,7 +742,11 @@
             // cell28_voltage
             // 
             this.cell28_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell28_voltage.Location = new System.Drawing.Point(62, 35);
+=======
+            this.cell28_voltage.Location = new System.Drawing.Point(57, 35);
+>>>>>>> master
             this.cell28_voltage.Name = "cell28_voltage";
             this.cell28_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell28_voltage.TabIndex = 14;
@@ -735,7 +755,11 @@
             // cell28_temp
             // 
             this.cell28_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell28_temp.Location = new System.Drawing.Point(62, 1);
+=======
+            this.cell28_temp.Location = new System.Drawing.Point(57, 1);
+>>>>>>> master
             this.cell28_temp.Name = "cell28_temp";
             this.cell28_temp.Size = new System.Drawing.Size(30, 13);
             this.cell28_temp.TabIndex = 13;
@@ -798,7 +822,11 @@
             this.tableLayoutPanel58.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel58.ColumnCount = 2;
             this.tableLayoutPanel58.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel58.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+=======
+            this.tableLayoutPanel58.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+>>>>>>> master
             this.tableLayoutPanel58.Controls.Add(this.cell26_voltage, 1, 1);
             this.tableLayoutPanel58.Controls.Add(this.cell26_temp, 1, 0);
             this.tableLayoutPanel58.Controls.Add(this.label151, 0, 0);
@@ -815,7 +843,11 @@
             // 
             this.cell26_voltage.AutoSize = true;
             this.cell26_voltage.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< HEAD
             this.cell26_voltage.Location = new System.Drawing.Point(59, 35);
+=======
+            this.cell26_voltage.Location = new System.Drawing.Point(54, 35);
+>>>>>>> master
             this.cell26_voltage.Name = "cell26_voltage";
             this.cell26_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell26_voltage.TabIndex = 14;
@@ -825,7 +857,11 @@
             // 
             this.cell26_temp.AutoSize = true;
             this.cell26_temp.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< HEAD
             this.cell26_temp.Location = new System.Drawing.Point(59, 1);
+=======
+            this.cell26_temp.Location = new System.Drawing.Point(54, 1);
+>>>>>>> master
             this.cell26_temp.Name = "cell26_temp";
             this.cell26_temp.Size = new System.Drawing.Size(30, 13);
             this.cell26_temp.TabIndex = 13;
@@ -889,7 +925,11 @@
             this.tableLayoutPanel60.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel60.ColumnCount = 2;
             this.tableLayoutPanel60.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel60.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+=======
+            this.tableLayoutPanel60.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+>>>>>>> master
             this.tableLayoutPanel60.Controls.Add(this.cell27_voltage, 1, 1);
             this.tableLayoutPanel60.Controls.Add(this.cell27_temp, 1, 0);
             this.tableLayoutPanel60.Controls.Add(this.label157, 0, 0);
@@ -905,7 +945,11 @@
             // cell27_voltage
             // 
             this.cell27_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell27_voltage.Location = new System.Drawing.Point(59, 35);
+=======
+            this.cell27_voltage.Location = new System.Drawing.Point(54, 35);
+>>>>>>> master
             this.cell27_voltage.Name = "cell27_voltage";
             this.cell27_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell27_voltage.TabIndex = 14;
@@ -914,7 +958,11 @@
             // cell27_temp
             // 
             this.cell27_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell27_temp.Location = new System.Drawing.Point(59, 1);
+=======
+            this.cell27_temp.Location = new System.Drawing.Point(54, 1);
+>>>>>>> master
             this.cell27_temp.Name = "cell27_temp";
             this.cell27_temp.Size = new System.Drawing.Size(30, 13);
             this.cell27_temp.TabIndex = 13;
@@ -978,7 +1026,11 @@
             this.tableLayoutPanel54.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel54.ColumnCount = 2;
             this.tableLayoutPanel54.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel54.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+=======
+            this.tableLayoutPanel54.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+>>>>>>> master
             this.tableLayoutPanel54.Controls.Add(this.cell24_voltage, 1, 1);
             this.tableLayoutPanel54.Controls.Add(this.cell24_temp, 1, 0);
             this.tableLayoutPanel54.Controls.Add(this.label139, 0, 0);
@@ -994,7 +1046,11 @@
             // cell24_voltage
             // 
             this.cell24_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell24_voltage.Location = new System.Drawing.Point(59, 35);
+=======
+            this.cell24_voltage.Location = new System.Drawing.Point(54, 35);
+>>>>>>> master
             this.cell24_voltage.Name = "cell24_voltage";
             this.cell24_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell24_voltage.TabIndex = 14;
@@ -1003,7 +1059,11 @@
             // cell24_temp
             // 
             this.cell24_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell24_temp.Location = new System.Drawing.Point(59, 1);
+=======
+            this.cell24_temp.Location = new System.Drawing.Point(54, 1);
+>>>>>>> master
             this.cell24_temp.Name = "cell24_temp";
             this.cell24_temp.Size = new System.Drawing.Size(30, 13);
             this.cell24_temp.TabIndex = 13;
@@ -1067,7 +1127,11 @@
             this.tableLayoutPanel56.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel56.ColumnCount = 2;
             this.tableLayoutPanel56.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel56.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+=======
+            this.tableLayoutPanel56.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+>>>>>>> master
             this.tableLayoutPanel56.Controls.Add(this.cell25_voltage, 1, 1);
             this.tableLayoutPanel56.Controls.Add(this.cell25_temp, 1, 0);
             this.tableLayoutPanel56.Controls.Add(this.label145, 0, 0);
@@ -1083,7 +1147,11 @@
             // cell25_voltage
             // 
             this.cell25_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell25_voltage.Location = new System.Drawing.Point(59, 35);
+=======
+            this.cell25_voltage.Location = new System.Drawing.Point(54, 35);
+>>>>>>> master
             this.cell25_voltage.Name = "cell25_voltage";
             this.cell25_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell25_voltage.TabIndex = 14;
@@ -1092,7 +1160,11 @@
             // cell25_temp
             // 
             this.cell25_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell25_temp.Location = new System.Drawing.Point(59, 1);
+=======
+            this.cell25_temp.Location = new System.Drawing.Point(54, 1);
+>>>>>>> master
             this.cell25_temp.Name = "cell25_temp";
             this.cell25_temp.Size = new System.Drawing.Size(30, 13);
             this.cell25_temp.TabIndex = 13;
@@ -1156,7 +1228,11 @@
             this.tableLayoutPanel50.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel50.ColumnCount = 2;
             this.tableLayoutPanel50.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel50.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+=======
+            this.tableLayoutPanel50.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+>>>>>>> master
             this.tableLayoutPanel50.Controls.Add(this.cell22_voltage, 1, 1);
             this.tableLayoutPanel50.Controls.Add(this.cell22_temp, 1, 0);
             this.tableLayoutPanel50.Controls.Add(this.label127, 0, 0);
@@ -1172,7 +1248,11 @@
             // cell22_voltage
             // 
             this.cell22_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell22_voltage.Location = new System.Drawing.Point(59, 35);
+=======
+            this.cell22_voltage.Location = new System.Drawing.Point(54, 35);
+>>>>>>> master
             this.cell22_voltage.Name = "cell22_voltage";
             this.cell22_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell22_voltage.TabIndex = 14;
@@ -1181,7 +1261,11 @@
             // cell22_temp
             // 
             this.cell22_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell22_temp.Location = new System.Drawing.Point(59, 1);
+=======
+            this.cell22_temp.Location = new System.Drawing.Point(54, 1);
+>>>>>>> master
             this.cell22_temp.Name = "cell22_temp";
             this.cell22_temp.Size = new System.Drawing.Size(30, 13);
             this.cell22_temp.TabIndex = 13;
@@ -1274,7 +1358,11 @@
             this.tableLayoutPanel36.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel36.ColumnCount = 2;
             this.tableLayoutPanel36.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel36.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+=======
+            this.tableLayoutPanel36.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+>>>>>>> master
             this.tableLayoutPanel36.Controls.Add(this.cell15_voltage, 1, 1);
             this.tableLayoutPanel36.Controls.Add(this.cell15_temp, 1, 0);
             this.tableLayoutPanel36.Controls.Add(this.label85, 0, 0);
@@ -1290,7 +1378,11 @@
             // cell15_voltage
             // 
             this.cell15_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell15_voltage.Location = new System.Drawing.Point(59, 34);
+=======
+            this.cell15_voltage.Location = new System.Drawing.Point(54, 34);
+>>>>>>> master
             this.cell15_voltage.Name = "cell15_voltage";
             this.cell15_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell15_voltage.TabIndex = 14;
@@ -1299,7 +1391,11 @@
             // cell15_temp
             // 
             this.cell15_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell15_temp.Location = new System.Drawing.Point(59, 1);
+=======
+            this.cell15_temp.Location = new System.Drawing.Point(54, 1);
+>>>>>>> master
             this.cell15_temp.Name = "cell15_temp";
             this.cell15_temp.Size = new System.Drawing.Size(30, 13);
             this.cell15_temp.TabIndex = 13;
@@ -1363,7 +1459,11 @@
             this.tableLayoutPanel38.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel38.ColumnCount = 2;
             this.tableLayoutPanel38.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel38.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+=======
+            this.tableLayoutPanel38.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+>>>>>>> master
             this.tableLayoutPanel38.Controls.Add(this.cell16_voltage, 1, 1);
             this.tableLayoutPanel38.Controls.Add(this.cell16_temp, 1, 0);
             this.tableLayoutPanel38.Controls.Add(this.label91, 0, 0);
@@ -1379,7 +1479,11 @@
             // cell16_voltage
             // 
             this.cell16_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell16_voltage.Location = new System.Drawing.Point(59, 34);
+=======
+            this.cell16_voltage.Location = new System.Drawing.Point(54, 34);
+>>>>>>> master
             this.cell16_voltage.Name = "cell16_voltage";
             this.cell16_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell16_voltage.TabIndex = 14;
@@ -1388,7 +1492,11 @@
             // cell16_temp
             // 
             this.cell16_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell16_temp.Location = new System.Drawing.Point(59, 1);
+=======
+            this.cell16_temp.Location = new System.Drawing.Point(54, 1);
+>>>>>>> master
             this.cell16_temp.Name = "cell16_temp";
             this.cell16_temp.Size = new System.Drawing.Size(30, 13);
             this.cell16_temp.TabIndex = 13;
@@ -1452,7 +1560,11 @@
             this.tableLayoutPanel40.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel40.ColumnCount = 2;
             this.tableLayoutPanel40.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel40.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+=======
+            this.tableLayoutPanel40.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+>>>>>>> master
             this.tableLayoutPanel40.Controls.Add(this.cell17_voltage, 1, 1);
             this.tableLayoutPanel40.Controls.Add(this.cell17_temp, 1, 0);
             this.tableLayoutPanel40.Controls.Add(this.label97, 0, 0);
@@ -1468,7 +1580,11 @@
             // cell17_voltage
             // 
             this.cell17_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell17_voltage.Location = new System.Drawing.Point(59, 34);
+=======
+            this.cell17_voltage.Location = new System.Drawing.Point(54, 34);
+>>>>>>> master
             this.cell17_voltage.Name = "cell17_voltage";
             this.cell17_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell17_voltage.TabIndex = 14;
@@ -1477,7 +1593,11 @@
             // cell17_temp
             // 
             this.cell17_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell17_temp.Location = new System.Drawing.Point(59, 1);
+=======
+            this.cell17_temp.Location = new System.Drawing.Point(54, 1);
+>>>>>>> master
             this.cell17_temp.Name = "cell17_temp";
             this.cell17_temp.Size = new System.Drawing.Size(30, 13);
             this.cell17_temp.TabIndex = 13;
@@ -1541,7 +1661,11 @@
             this.tableLayoutPanel42.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel42.ColumnCount = 2;
             this.tableLayoutPanel42.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel42.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+=======
+            this.tableLayoutPanel42.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+>>>>>>> master
             this.tableLayoutPanel42.Controls.Add(this.cell18_voltage, 1, 1);
             this.tableLayoutPanel42.Controls.Add(this.cell18_temp, 1, 0);
             this.tableLayoutPanel42.Controls.Add(this.label103, 0, 0);
@@ -1557,7 +1681,11 @@
             // cell18_voltage
             // 
             this.cell18_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell18_voltage.Location = new System.Drawing.Point(59, 34);
+=======
+            this.cell18_voltage.Location = new System.Drawing.Point(54, 34);
+>>>>>>> master
             this.cell18_voltage.Name = "cell18_voltage";
             this.cell18_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell18_voltage.TabIndex = 14;
@@ -1566,7 +1694,11 @@
             // cell18_temp
             // 
             this.cell18_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell18_temp.Location = new System.Drawing.Point(59, 1);
+=======
+            this.cell18_temp.Location = new System.Drawing.Point(54, 1);
+>>>>>>> master
             this.cell18_temp.Name = "cell18_temp";
             this.cell18_temp.Size = new System.Drawing.Size(30, 13);
             this.cell18_temp.TabIndex = 13;
@@ -1630,7 +1762,11 @@
             this.tableLayoutPanel44.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel44.ColumnCount = 2;
             this.tableLayoutPanel44.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel44.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+=======
+            this.tableLayoutPanel44.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+>>>>>>> master
             this.tableLayoutPanel44.Controls.Add(this.cell19_voltage, 1, 1);
             this.tableLayoutPanel44.Controls.Add(this.cell19_temp, 1, 0);
             this.tableLayoutPanel44.Controls.Add(this.label109, 0, 0);
@@ -1646,7 +1782,11 @@
             // cell19_voltage
             // 
             this.cell19_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell19_voltage.Location = new System.Drawing.Point(61, 34);
+=======
+            this.cell19_voltage.Location = new System.Drawing.Point(56, 34);
+>>>>>>> master
             this.cell19_voltage.Name = "cell19_voltage";
             this.cell19_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell19_voltage.TabIndex = 14;
@@ -1655,7 +1795,11 @@
             // cell19_temp
             // 
             this.cell19_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell19_temp.Location = new System.Drawing.Point(61, 1);
+=======
+            this.cell19_temp.Location = new System.Drawing.Point(56, 1);
+>>>>>>> master
             this.cell19_temp.Name = "cell19_temp";
             this.cell19_temp.Size = new System.Drawing.Size(30, 13);
             this.cell19_temp.TabIndex = 13;
@@ -1719,7 +1863,11 @@
             this.tableLayoutPanel46.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel46.ColumnCount = 2;
             this.tableLayoutPanel46.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel46.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+=======
+            this.tableLayoutPanel46.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+>>>>>>> master
             this.tableLayoutPanel46.Controls.Add(this.cell20_voltage, 1, 1);
             this.tableLayoutPanel46.Controls.Add(this.cell20_temp, 1, 0);
             this.tableLayoutPanel46.Controls.Add(this.label115, 0, 0);
@@ -1736,9 +1884,15 @@
             // 
             this.cell20_voltage.AutoSize = true;
             this.cell20_voltage.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< HEAD
             this.cell20_voltage.Location = new System.Drawing.Point(59, 35);
             this.cell20_voltage.Name = "cell20_voltage";
             this.cell20_voltage.Size = new System.Drawing.Size(51, 33);
+=======
+            this.cell20_voltage.Location = new System.Drawing.Point(54, 35);
+            this.cell20_voltage.Name = "cell20_voltage";
+            this.cell20_voltage.Size = new System.Drawing.Size(56, 33);
+>>>>>>> master
             this.cell20_voltage.TabIndex = 14;
             this.cell20_voltage.Text = "volt";
             // 
@@ -1746,9 +1900,15 @@
             // 
             this.cell20_temp.AutoSize = true;
             this.cell20_temp.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< HEAD
             this.cell20_temp.Location = new System.Drawing.Point(59, 1);
             this.cell20_temp.Name = "cell20_temp";
             this.cell20_temp.Size = new System.Drawing.Size(51, 33);
+=======
+            this.cell20_temp.Location = new System.Drawing.Point(54, 1);
+            this.cell20_temp.Name = "cell20_temp";
+            this.cell20_temp.Size = new System.Drawing.Size(56, 33);
+>>>>>>> master
             this.cell20_temp.TabIndex = 13;
             this.cell20_temp.Text = "temp";
             // 
@@ -1758,7 +1918,11 @@
             this.label115.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label115.Location = new System.Drawing.Point(4, 1);
             this.label115.Name = "label115";
+<<<<<<< HEAD
             this.label115.Size = new System.Drawing.Size(48, 33);
+=======
+            this.label115.Size = new System.Drawing.Size(43, 33);
+>>>>>>> master
             this.label115.TabIndex = 10;
             this.label115.Text = "Temp (°C)";
             // 
@@ -1811,7 +1975,11 @@
             this.tableLayoutPanel48.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel48.ColumnCount = 2;
             this.tableLayoutPanel48.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel48.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+=======
+            this.tableLayoutPanel48.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+>>>>>>> master
             this.tableLayoutPanel48.Controls.Add(this.cell21_voltage, 1, 1);
             this.tableLayoutPanel48.Controls.Add(this.cell21_temp, 1, 0);
             this.tableLayoutPanel48.Controls.Add(this.label121, 0, 0);
@@ -1827,7 +1995,11 @@
             // cell21_voltage
             // 
             this.cell21_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell21_voltage.Location = new System.Drawing.Point(62, 34);
+=======
+            this.cell21_voltage.Location = new System.Drawing.Point(57, 34);
+>>>>>>> master
             this.cell21_voltage.Name = "cell21_voltage";
             this.cell21_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell21_voltage.TabIndex = 14;
@@ -1836,7 +2008,11 @@
             // cell21_temp
             // 
             this.cell21_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell21_temp.Location = new System.Drawing.Point(62, 1);
+=======
+            this.cell21_temp.Location = new System.Drawing.Point(57, 1);
+>>>>>>> master
             this.cell21_temp.Name = "cell21_temp";
             this.cell21_temp.Size = new System.Drawing.Size(30, 13);
             this.cell21_temp.TabIndex = 13;
@@ -1929,7 +2105,11 @@
             this.tableLayoutPanel65.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel65.ColumnCount = 2;
             this.tableLayoutPanel65.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel65.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+=======
+            this.tableLayoutPanel65.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+>>>>>>> master
             this.tableLayoutPanel65.Controls.Add(this.cell6_voltage, 1, 1);
             this.tableLayoutPanel65.Controls.Add(this.cell6_temp, 1, 0);
             this.tableLayoutPanel65.Controls.Add(this.label175, 0, 0);
@@ -1945,7 +2125,11 @@
             // cell6_voltage
             // 
             this.cell6_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell6_voltage.Location = new System.Drawing.Point(58, 34);
+=======
+            this.cell6_voltage.Location = new System.Drawing.Point(53, 34);
+>>>>>>> master
             this.cell6_voltage.Name = "cell6_voltage";
             this.cell6_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell6_voltage.TabIndex = 14;
@@ -1954,7 +2138,11 @@
             // cell6_temp
             // 
             this.cell6_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell6_temp.Location = new System.Drawing.Point(58, 1);
+=======
+            this.cell6_temp.Location = new System.Drawing.Point(53, 1);
+>>>>>>> master
             this.cell6_temp.Name = "cell6_temp";
             this.cell6_temp.Size = new System.Drawing.Size(30, 13);
             this.cell6_temp.TabIndex = 13;
@@ -1974,7 +2162,11 @@
             this.label176.AutoSize = true;
             this.label176.Location = new System.Drawing.Point(4, 34);
             this.label176.Name = "label176";
+<<<<<<< HEAD
             this.label176.Size = new System.Drawing.Size(43, 13);
+=======
+            this.label176.Size = new System.Drawing.Size(37, 26);
+>>>>>>> master
             this.label176.TabIndex = 11;
             this.label176.Text = "Voltage";
             // 
@@ -2018,7 +2210,11 @@
             this.tableLayoutPanel22.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel22.ColumnCount = 2;
             this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+=======
+            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+>>>>>>> master
             this.tableLayoutPanel22.Controls.Add(this.cell4_voltage, 1, 1);
             this.tableLayoutPanel22.Controls.Add(this.cell4_temp, 1, 0);
             this.tableLayoutPanel22.Controls.Add(this.label43, 0, 0);
@@ -2034,7 +2230,11 @@
             // cell4_voltage
             // 
             this.cell4_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell4_voltage.Location = new System.Drawing.Point(58, 34);
+=======
+            this.cell4_voltage.Location = new System.Drawing.Point(53, 34);
+>>>>>>> master
             this.cell4_voltage.Name = "cell4_voltage";
             this.cell4_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell4_voltage.TabIndex = 14;
@@ -2044,9 +2244,15 @@
             // 
             this.cell4_temp.AutoSize = true;
             this.cell4_temp.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< HEAD
             this.cell4_temp.Location = new System.Drawing.Point(58, 1);
             this.cell4_temp.Name = "cell4_temp";
             this.cell4_temp.Size = new System.Drawing.Size(52, 32);
+=======
+            this.cell4_temp.Location = new System.Drawing.Point(53, 1);
+            this.cell4_temp.Name = "cell4_temp";
+            this.cell4_temp.Size = new System.Drawing.Size(57, 32);
+>>>>>>> master
             this.cell4_temp.TabIndex = 13;
             this.cell4_temp.Text = "temp";
             // 
@@ -2064,7 +2270,11 @@
             this.label44.AutoSize = true;
             this.label44.Location = new System.Drawing.Point(4, 34);
             this.label44.Name = "label44";
+<<<<<<< HEAD
             this.label44.Size = new System.Drawing.Size(43, 13);
+=======
+            this.label44.Size = new System.Drawing.Size(37, 26);
+>>>>>>> master
             this.label44.TabIndex = 11;
             this.label44.Text = "Voltage";
             // 
@@ -2105,7 +2315,11 @@
             this.tableLayoutPanel20.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel20.ColumnCount = 2;
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+=======
+            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+>>>>>>> master
             this.tableLayoutPanel20.Controls.Add(this.cell3_voltage, 1, 1);
             this.tableLayoutPanel20.Controls.Add(this.cell3_temp, 1, 0);
             this.tableLayoutPanel20.Controls.Add(this.label37, 0, 0);
@@ -2122,7 +2336,11 @@
             // cell3_voltage
             // 
             this.cell3_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell3_voltage.Location = new System.Drawing.Point(58, 35);
+=======
+            this.cell3_voltage.Location = new System.Drawing.Point(53, 35);
+>>>>>>> master
             this.cell3_voltage.Name = "cell3_voltage";
             this.cell3_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell3_voltage.TabIndex = 14;
@@ -2131,7 +2349,11 @@
             // cell3_temp
             // 
             this.cell3_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell3_temp.Location = new System.Drawing.Point(58, 1);
+=======
+            this.cell3_temp.Location = new System.Drawing.Point(53, 1);
+>>>>>>> master
             this.cell3_temp.Name = "cell3_temp";
             this.cell3_temp.Size = new System.Drawing.Size(30, 13);
             this.cell3_temp.TabIndex = 13;
@@ -2151,7 +2373,11 @@
             this.label38.AutoSize = true;
             this.label38.Location = new System.Drawing.Point(4, 35);
             this.label38.Name = "label38";
+<<<<<<< HEAD
             this.label38.Size = new System.Drawing.Size(43, 13);
+=======
+            this.label38.Size = new System.Drawing.Size(37, 26);
+>>>>>>> master
             this.label38.TabIndex = 11;
             this.label38.Text = "Voltage";
             // 
@@ -2195,7 +2421,11 @@
             this.tableLayoutPanel18.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel18.ColumnCount = 2;
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+=======
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+>>>>>>> master
             this.tableLayoutPanel18.Controls.Add(this.cell2_voltage, 1, 1);
             this.tableLayoutPanel18.Controls.Add(this.cell2_temp, 1, 0);
             this.tableLayoutPanel18.Controls.Add(this.label31, 0, 0);
@@ -2211,7 +2441,11 @@
             // cell2_voltage
             // 
             this.cell2_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell2_voltage.Location = new System.Drawing.Point(58, 34);
+=======
+            this.cell2_voltage.Location = new System.Drawing.Point(53, 34);
+>>>>>>> master
             this.cell2_voltage.Name = "cell2_voltage";
             this.cell2_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell2_voltage.TabIndex = 14;
@@ -2220,7 +2454,11 @@
             // cell2_temp
             // 
             this.cell2_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell2_temp.Location = new System.Drawing.Point(58, 1);
+=======
+            this.cell2_temp.Location = new System.Drawing.Point(53, 1);
+>>>>>>> master
             this.cell2_temp.Name = "cell2_temp";
             this.cell2_temp.Size = new System.Drawing.Size(30, 13);
             this.cell2_temp.TabIndex = 13;
@@ -2240,7 +2478,11 @@
             this.label32.AutoSize = true;
             this.label32.Location = new System.Drawing.Point(4, 34);
             this.label32.Name = "label32";
+<<<<<<< HEAD
             this.label32.Size = new System.Drawing.Size(43, 13);
+=======
+            this.label32.Size = new System.Drawing.Size(37, 26);
+>>>>>>> master
             this.label32.TabIndex = 11;
             this.label32.Text = "Voltage";
             // 
@@ -2284,7 +2526,11 @@
             this.tableLayoutPanel16.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel16.ColumnCount = 2;
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+=======
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+>>>>>>> master
             this.tableLayoutPanel16.Controls.Add(this.cell1_voltage, 1, 1);
             this.tableLayoutPanel16.Controls.Add(this.cell1_temp, 1, 0);
             this.tableLayoutPanel16.Controls.Add(this.label25, 0, 0);
@@ -2300,7 +2546,11 @@
             // cell1_voltage
             // 
             this.cell1_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell1_voltage.Location = new System.Drawing.Point(58, 34);
+=======
+            this.cell1_voltage.Location = new System.Drawing.Point(53, 34);
+>>>>>>> master
             this.cell1_voltage.Name = "cell1_voltage";
             this.cell1_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell1_voltage.TabIndex = 14;
@@ -2309,7 +2559,11 @@
             // cell1_temp
             // 
             this.cell1_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell1_temp.Location = new System.Drawing.Point(58, 1);
+=======
+            this.cell1_temp.Location = new System.Drawing.Point(53, 1);
+>>>>>>> master
             this.cell1_temp.Name = "cell1_temp";
             this.cell1_temp.Size = new System.Drawing.Size(30, 13);
             this.cell1_temp.TabIndex = 13;
@@ -2329,7 +2583,11 @@
             this.label26.AutoSize = true;
             this.label26.Location = new System.Drawing.Point(4, 34);
             this.label26.Name = "label26";
+<<<<<<< HEAD
             this.label26.Size = new System.Drawing.Size(43, 13);
+=======
+            this.label26.Size = new System.Drawing.Size(37, 26);
+>>>>>>> master
             this.label26.TabIndex = 11;
             this.label26.Text = "Voltage";
             // 
@@ -2373,7 +2631,11 @@
             this.tableLayoutPanel12.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel12.ColumnCount = 2;
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+=======
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+>>>>>>> master
             this.tableLayoutPanel12.Controls.Add(this.cell7_voltage, 1, 1);
             this.tableLayoutPanel12.Controls.Add(this.cell7_temp, 1, 0);
             this.tableLayoutPanel12.Controls.Add(this.label13, 0, 0);
@@ -2389,7 +2651,11 @@
             // cell7_voltage
             // 
             this.cell7_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell7_voltage.Location = new System.Drawing.Point(61, 34);
+=======
+            this.cell7_voltage.Location = new System.Drawing.Point(56, 34);
+>>>>>>> master
             this.cell7_voltage.Name = "cell7_voltage";
             this.cell7_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell7_voltage.TabIndex = 14;
@@ -2398,7 +2664,11 @@
             // cell7_temp
             // 
             this.cell7_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell7_temp.Location = new System.Drawing.Point(61, 1);
+=======
+            this.cell7_temp.Location = new System.Drawing.Point(56, 1);
+>>>>>>> master
             this.cell7_temp.Name = "cell7_temp";
             this.cell7_temp.Size = new System.Drawing.Size(30, 13);
             this.cell7_temp.TabIndex = 13;
@@ -2462,7 +2732,11 @@
             this.tableLayoutPanel8.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel8.ColumnCount = 2;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+=======
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+>>>>>>> master
             this.tableLayoutPanel8.Controls.Add(this.cell5_voltage, 1, 1);
             this.tableLayoutPanel8.Controls.Add(this.cell5_temp, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.label1, 0, 0);
@@ -2478,7 +2752,11 @@
             // cell5_voltage
             // 
             this.cell5_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell5_voltage.Location = new System.Drawing.Point(57, 34);
+=======
+            this.cell5_voltage.Location = new System.Drawing.Point(52, 34);
+>>>>>>> master
             this.cell5_voltage.Name = "cell5_voltage";
             this.cell5_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell5_voltage.TabIndex = 14;
@@ -2488,9 +2766,15 @@
             // 
             this.cell5_temp.AutoSize = true;
             this.cell5_temp.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< HEAD
             this.cell5_temp.Location = new System.Drawing.Point(57, 1);
             this.cell5_temp.Name = "cell5_temp";
             this.cell5_temp.Size = new System.Drawing.Size(53, 32);
+=======
+            this.cell5_temp.Location = new System.Drawing.Point(52, 1);
+            this.cell5_temp.Name = "cell5_temp";
+            this.cell5_temp.Size = new System.Drawing.Size(58, 32);
+>>>>>>> master
             this.cell5_temp.TabIndex = 13;
             this.cell5_temp.Text = "temp";
             // 
@@ -2508,7 +2792,11 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(4, 34);
             this.label2.Name = "label2";
+<<<<<<< HEAD
             this.label2.Size = new System.Drawing.Size(43, 13);
+=======
+            this.label2.Size = new System.Drawing.Size(37, 26);
+>>>>>>> master
             this.label2.TabIndex = 11;
             this.label2.Text = "Voltage";
             // 
@@ -2581,7 +2869,11 @@
             this.tableLayoutPanel14.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel14.ColumnCount = 2;
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+=======
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+>>>>>>> master
             this.tableLayoutPanel14.Controls.Add(this.cell8_voltage, 1, 1);
             this.tableLayoutPanel14.Controls.Add(this.cell8_temp, 1, 0);
             this.tableLayoutPanel14.Controls.Add(this.label19, 0, 0);
@@ -2597,7 +2889,11 @@
             // cell8_voltage
             // 
             this.cell8_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell8_voltage.Location = new System.Drawing.Point(59, 34);
+=======
+            this.cell8_voltage.Location = new System.Drawing.Point(54, 34);
+>>>>>>> master
             this.cell8_voltage.Name = "cell8_voltage";
             this.cell8_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell8_voltage.TabIndex = 14;
@@ -2606,7 +2902,11 @@
             // cell8_temp
             // 
             this.cell8_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell8_temp.Location = new System.Drawing.Point(59, 1);
+=======
+            this.cell8_temp.Location = new System.Drawing.Point(54, 1);
+>>>>>>> master
             this.cell8_temp.Name = "cell8_temp";
             this.cell8_temp.Size = new System.Drawing.Size(30, 13);
             this.cell8_temp.TabIndex = 13;
@@ -2670,7 +2970,11 @@
             this.tableLayoutPanel24.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel24.ColumnCount = 2;
             this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+=======
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+>>>>>>> master
             this.tableLayoutPanel24.Controls.Add(this.cell9_voltage, 1, 1);
             this.tableLayoutPanel24.Controls.Add(this.cell9_temp, 1, 0);
             this.tableLayoutPanel24.Controls.Add(this.label49, 0, 0);
@@ -2686,7 +2990,11 @@
             // cell9_voltage
             // 
             this.cell9_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell9_voltage.Location = new System.Drawing.Point(59, 34);
+=======
+            this.cell9_voltage.Location = new System.Drawing.Point(54, 34);
+>>>>>>> master
             this.cell9_voltage.Name = "cell9_voltage";
             this.cell9_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell9_voltage.TabIndex = 14;
@@ -2695,7 +3003,11 @@
             // cell9_temp
             // 
             this.cell9_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell9_temp.Location = new System.Drawing.Point(59, 1);
+=======
+            this.cell9_temp.Location = new System.Drawing.Point(54, 1);
+>>>>>>> master
             this.cell9_temp.Name = "cell9_temp";
             this.cell9_temp.Size = new System.Drawing.Size(30, 13);
             this.cell9_temp.TabIndex = 13;
@@ -2759,7 +3071,11 @@
             this.tableLayoutPanel26.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel26.ColumnCount = 2;
             this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+=======
+            this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+>>>>>>> master
             this.tableLayoutPanel26.Controls.Add(this.cell10_voltage, 1, 1);
             this.tableLayoutPanel26.Controls.Add(this.cell10_temp, 1, 0);
             this.tableLayoutPanel26.Controls.Add(this.label55, 0, 0);
@@ -2775,7 +3091,11 @@
             // cell10_voltage
             // 
             this.cell10_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell10_voltage.Location = new System.Drawing.Point(59, 34);
+=======
+            this.cell10_voltage.Location = new System.Drawing.Point(54, 34);
+>>>>>>> master
             this.cell10_voltage.Name = "cell10_voltage";
             this.cell10_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell10_voltage.TabIndex = 14;
@@ -2784,7 +3104,11 @@
             // cell10_temp
             // 
             this.cell10_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell10_temp.Location = new System.Drawing.Point(59, 1);
+=======
+            this.cell10_temp.Location = new System.Drawing.Point(54, 1);
+>>>>>>> master
             this.cell10_temp.Name = "cell10_temp";
             this.cell10_temp.Size = new System.Drawing.Size(30, 13);
             this.cell10_temp.TabIndex = 13;
@@ -2848,7 +3172,11 @@
             this.tableLayoutPanel28.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel28.ColumnCount = 2;
             this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+=======
+            this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+>>>>>>> master
             this.tableLayoutPanel28.Controls.Add(this.cell11_voltage, 1, 1);
             this.tableLayoutPanel28.Controls.Add(this.cell11_temp, 1, 0);
             this.tableLayoutPanel28.Controls.Add(this.label61, 0, 0);
@@ -2864,7 +3192,11 @@
             // cell11_voltage
             // 
             this.cell11_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell11_voltage.Location = new System.Drawing.Point(59, 34);
+=======
+            this.cell11_voltage.Location = new System.Drawing.Point(54, 34);
+>>>>>>> master
             this.cell11_voltage.Name = "cell11_voltage";
             this.cell11_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell11_voltage.TabIndex = 14;
@@ -2873,7 +3205,11 @@
             // cell11_temp
             // 
             this.cell11_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell11_temp.Location = new System.Drawing.Point(59, 1);
+=======
+            this.cell11_temp.Location = new System.Drawing.Point(54, 1);
+>>>>>>> master
             this.cell11_temp.Name = "cell11_temp";
             this.cell11_temp.Size = new System.Drawing.Size(30, 13);
             this.cell11_temp.TabIndex = 13;
@@ -2937,7 +3273,11 @@
             this.tableLayoutPanel30.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel30.ColumnCount = 2;
             this.tableLayoutPanel30.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel30.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+=======
+            this.tableLayoutPanel30.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+>>>>>>> master
             this.tableLayoutPanel30.Controls.Add(this.cell12_voltage, 1, 1);
             this.tableLayoutPanel30.Controls.Add(this.cell12_temp, 1, 0);
             this.tableLayoutPanel30.Controls.Add(this.label67, 0, 0);
@@ -2953,7 +3293,11 @@
             // cell12_voltage
             // 
             this.cell12_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell12_voltage.Location = new System.Drawing.Point(59, 34);
+=======
+            this.cell12_voltage.Location = new System.Drawing.Point(54, 34);
+>>>>>>> master
             this.cell12_voltage.Name = "cell12_voltage";
             this.cell12_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell12_voltage.TabIndex = 14;
@@ -2962,7 +3306,11 @@
             // cell12_temp
             // 
             this.cell12_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell12_temp.Location = new System.Drawing.Point(59, 1);
+=======
+            this.cell12_temp.Location = new System.Drawing.Point(54, 1);
+>>>>>>> master
             this.cell12_temp.Name = "cell12_temp";
             this.cell12_temp.Size = new System.Drawing.Size(30, 13);
             this.cell12_temp.TabIndex = 13;
@@ -3026,7 +3374,11 @@
             this.tableLayoutPanel32.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel32.ColumnCount = 2;
             this.tableLayoutPanel32.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel32.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+=======
+            this.tableLayoutPanel32.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+>>>>>>> master
             this.tableLayoutPanel32.Controls.Add(this.cell13_voltage, 1, 1);
             this.tableLayoutPanel32.Controls.Add(this.cell13_temp, 1, 0);
             this.tableLayoutPanel32.Controls.Add(this.label73, 0, 0);
@@ -3042,7 +3394,11 @@
             // cell13_voltage
             // 
             this.cell13_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell13_voltage.Location = new System.Drawing.Point(59, 34);
+=======
+            this.cell13_voltage.Location = new System.Drawing.Point(54, 34);
+>>>>>>> master
             this.cell13_voltage.Name = "cell13_voltage";
             this.cell13_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell13_voltage.TabIndex = 14;
@@ -3051,7 +3407,11 @@
             // cell13_temp
             // 
             this.cell13_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell13_temp.Location = new System.Drawing.Point(59, 1);
+=======
+            this.cell13_temp.Location = new System.Drawing.Point(54, 1);
+>>>>>>> master
             this.cell13_temp.Name = "cell13_temp";
             this.cell13_temp.Size = new System.Drawing.Size(30, 13);
             this.cell13_temp.TabIndex = 13;
@@ -3115,7 +3475,11 @@
             this.tableLayoutPanel34.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel34.ColumnCount = 2;
             this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+<<<<<<< HEAD
             this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+=======
+            this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+>>>>>>> master
             this.tableLayoutPanel34.Controls.Add(this.cell14_voltage, 1, 1);
             this.tableLayoutPanel34.Controls.Add(this.cell14_temp, 1, 0);
             this.tableLayoutPanel34.Controls.Add(this.label79, 0, 0);
@@ -3131,7 +3495,11 @@
             // cell14_voltage
             // 
             this.cell14_voltage.AutoSize = true;
+<<<<<<< HEAD
             this.cell14_voltage.Location = new System.Drawing.Point(62, 34);
+=======
+            this.cell14_voltage.Location = new System.Drawing.Point(57, 34);
+>>>>>>> master
             this.cell14_voltage.Name = "cell14_voltage";
             this.cell14_voltage.Size = new System.Drawing.Size(24, 13);
             this.cell14_voltage.TabIndex = 14;
@@ -3140,7 +3508,11 @@
             // cell14_temp
             // 
             this.cell14_temp.AutoSize = true;
+<<<<<<< HEAD
             this.cell14_temp.Location = new System.Drawing.Point(62, 1);
+=======
+            this.cell14_temp.Location = new System.Drawing.Point(57, 1);
+>>>>>>> master
             this.cell14_temp.Name = "cell14_temp";
             this.cell14_temp.Size = new System.Drawing.Size(30, 13);
             this.cell14_temp.TabIndex = 13;
@@ -3288,13 +3660,21 @@
             this.tableLayoutPanel66.Size = new System.Drawing.Size(797, 480);
             this.tableLayoutPanel66.TabIndex = 15;
             // 
+<<<<<<< HEAD
             // BMS
+=======
+            // BMS_form
+>>>>>>> master
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1172, 661);
             this.Controls.Add(this.MAIN_LAYOUT);
+<<<<<<< HEAD
             this.Name = "BMS";
+=======
+            this.Name = "BMS_form";
+>>>>>>> master
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.BMS_Load);
             this.MAIN_LAYOUT.ResumeLayout(false);

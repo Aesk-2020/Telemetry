@@ -7,11 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+<<<<<<< HEAD
 
+=======
+using yeniform.Variables;
+>>>>>>> master
 namespace yeniform
 {
     public partial class BMS_form : Form
     {
+<<<<<<< HEAD
+=======
+        BMS bms = new BMS();
+>>>>>>> master
         public BMS_form()
         {
             InitializeComponent();
@@ -89,6 +97,10 @@ namespace yeniform
             tempLabelsArray[26] = cell27_temp;
             tempLabelsArray[27] = cell28_temp;
             #endregion
+<<<<<<< HEAD
+=======
+           
+>>>>>>> master
         }
 
         private void tableLayoutPanel68_Paint(object sender, PaintEventArgs e)
