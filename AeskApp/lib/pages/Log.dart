@@ -14,4 +14,4 @@ class _LogState extends State<Log> {
       myBody: Container(),
     );
   }
-}
+}//asd
