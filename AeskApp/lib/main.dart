@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
       // Burası maceramızın başlangıcı :D
-    initialRoute: "/Login",
+    initialRoute: "/Home",
     routes: {
       "/Login": (context) => Logging(),
       "/Home": (context) => Home(),
