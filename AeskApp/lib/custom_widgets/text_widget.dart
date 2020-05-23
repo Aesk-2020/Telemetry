@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 
-Widget myText(String input,double mySize,Color myColor){
+Widget myText(String input,double mySize,Color myColor,String myFont ){
   return Text(
     input,
     style: TextStyle(
-      fontFamily: "IndieFlower",
+      fontFamily: myFont,
       fontSize: mySize,
       color: myColor,
 
