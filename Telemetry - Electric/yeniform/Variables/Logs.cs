@@ -146,5 +146,41 @@ namespace yeniform.Variables
             GpsTracker.gps_sattelite_number_u8 = byte.Parse(old_datass[count++]);
             GpsTracker.gps_efficiency_u8 = byte.Parse(old_datass[count++]);
         }
+
+        public void readSdCard(string[] old_datass)
+        {
+            int count = 0;
+            Timers.Gecen_süre = TimeSpan.Parse(old_datass[count++]);
+            VCU.wake_up_u8 = Byte.Parse(old_datass[count++]);
+            VCU.drive_commands_u8 = Byte.Parse(old_datass[count++]);
+            VCU.set_velocity_u8 = Byte.Parse(old_datass[count++]);
+            Driver.phase_a_current_f32 = float.Parse(old_datass[count++]);
+            Driver.phase_b_current_f32 = float.Parse(old_datass[count++]);
+            Driver.dc_bus_current_f32 = float.Parse(old_datass[count++]);
+            Driver.dc_bus_voltage_f32 = float.Parse(old_datass[count++]);
+            Driver.id_f32 = float.Parse(old_datass[count++]);
+            Driver.iq_f32 = float.Parse(old_datass[count++]);
+            Driver.vd_f32 = float.Parse(old_datass[count++]);
+            Driver.vq_f32 = float.Parse(old_datass[count++]);
+            Driver.drive_status_u8 = byte.Parse(old_datass[count++]);
+            Driver.driver_error_u8 = byte.Parse(old_datass[count++]);
+            Driver.odometer_u32 = UInt32.Parse(old_datass[count++]);
+            Driver.motor_temperature_u8 = byte.Parse(old_datass[count++]);
+            Driver.actual_velocity_u8 = byte.Parse(old_datass[count++]);
+            BMS.bat_volt_f32 = float.Parse(old_datass[count++]);
+            BMS.bat_current_f32 = float.Parse(old_datass[count++]);
+            BMS.bat_cons_f32 = float.Parse(old_datass[count++]);
+            BMS.soc_f32 = float.Parse(old_datass[count++]);
+            BMS.bms_error_u8 = byte.Parse(old_datass[count++]);
+            BMS.dc_bus_state_u8 = byte.Parse(old_datass[count++]);
+            BMS.worst_cell_voltage_f32 = float.Parse(old_datass[count++]);
+            BMS.worst_cell_address_u8 = byte.Parse(old_datass[count++]);
+            BMS.temp_u8 = byte.Parse(old_datass[count++]);
+            GpsTracker.gps_latitude_f64 = float.Parse(old_datass[count++]);
+            GpsTracker.gps_longtitude_f64 = float.Parse(old_datass[count++]);
+            GpsTracker.gps_velocity_u8 = byte.Parse(old_datass[count++]);
+            GpsTracker.gps_sattelite_number_u8 = byte.Parse(old_datass[count++]);
+            GpsTracker.gps_efficiency_u8 = byte.Parse(old_datass[count++]);
+        }
     }
 }

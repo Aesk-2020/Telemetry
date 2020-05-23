@@ -10,7 +10,7 @@ namespace yeniform.Variables
         public const string aesk_IP = "157.230.29.63";
         public const string MQTT_username = "digital";
         public const string MQTT_password = "aesk";
-        public const string MQTT_topic = "/home/sensor";
+        public const string MQTT_topic = "LYRADATA";
         public const double centerLat = 40.743778;
         public const double centerLong = 29.783807;
         public const double startLineLat = 40.744392;
@@ -37,6 +37,7 @@ namespace yeniform.Variables
         public static bool show_old_datas;
         public static bool hold_my_history;
         public static bool newDataCome = false;
+        public static bool IsSd = false;
 
         public static double S1_Start => 341.4;
         public static double S1_Stop => 70.3;
