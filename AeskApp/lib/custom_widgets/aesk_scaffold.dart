@@ -23,12 +23,24 @@ Widget aeskScaffold({Widget myBody, BuildContext context}) {
             Container(
               color: Colors.grey,
               child: ListTile(
-                title: myText("sayfa1", 20, Colors.white, "IndieFlower"),
+                title: myText("Genel Durum", 20, Colors.white, "IndieFlower"),
                 leading: CircleAvatar(
-                  backgroundImage: AssetImage("assets/images/manzara.jpg"),
+                  backgroundImage: AssetImage("assets/images/aesk-logo.png"),
                 ),
-                onTap: (){
+                onTap: () {
                   Navigator.pushReplacementNamed(context, "/General");
+                },
+              ),
+            ),
+            Container(
+              color: Colors.grey,
+              child: ListTile(
+                title: myText("BMS", 20, Colors.white, "IndieFlower"),
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage("assets/images/aesk-logo.png"),
+                ),
+                onTap: () {
+                  Navigator.pushReplacementNamed(context, "/BMS");
                 },
               ),
             ),

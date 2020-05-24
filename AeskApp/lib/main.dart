@@ -1,3 +1,4 @@
+import 'package:aeskapp/pages/Bms.dart';
 import 'package:aeskapp/pages/Custom.dart';
 import 'package:aeskapp/pages/General.dart';
 import 'package:aeskapp/pages/Loading.dart';
@@ -17,6 +18,7 @@ void main() => runApp(MaterialApp(
       "/Custom": (context) => Custom(),
       "/Graphs": (context) => Graphs(),
       "/Loading": (context) => Loading(),
+      "/BMS": (context) => Bms(),
     },
     ));
 
