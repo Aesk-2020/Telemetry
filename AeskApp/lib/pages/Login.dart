@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:aeskapp/custom_widgets/text_widget.dart';
-import 'package:aeskapp/custom_widgets/front_inventory.dart';
+import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
 
 class Logging extends StatefulWidget {
   @override

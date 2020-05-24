@@ -1,7 +1,5 @@
 //Hız, süre, atılan tur, taranan açı
-
-import 'package:aeskapp/custom_widgets/aesk_scaffold.dart';
-import 'package:aeskapp/custom_widgets/text_widget.dart';
+import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
 import 'package:flutter/material.dart';
 
 class General extends StatelessWidget {
@@ -10,7 +8,7 @@ class General extends StatelessWidget {
     return aeskScaffold(
       context: context,
       myBody: Center(
-        child: myText("jkashdjkashdjk", 100, Colors.redAccent, "IndieFlower"),
+        child: myText("jkashdjkashdjk", 100, Colors.redAccent, "IndieFlower",FontWeight.bold),
       ),
     );
   }

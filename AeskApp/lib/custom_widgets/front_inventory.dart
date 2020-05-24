@@ -1,4 +1,25 @@
 import 'package:flutter/material.dart';
 
-Color Aesk_blue = Color.fromARGB(255, 47, 136, 202);
-Color Aesk_background = Color.fromARGB(255, 48, 51, 58);
+ThemeData DarkTheme() {
+  return ThemeData(
+
+  );
+}
+
+ThemeData LightTheme() {
+  return ThemeData(
+    backgroundColor: Colors.pink,
+    buttonColor: Colors.pink,
+    textSelectionColor: Colors.amber,
+    textTheme: TextTheme(
+        body1: TextStyle(
+          color: Colors.yellow,
+        ),
+        title: TextStyle(
+          color: Colors.amber,
+        ),
+    ),
+
+
+  );
+}
