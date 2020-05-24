@@ -1,4 +1,4 @@
-import 'package:aeskapp/custom_widgets/aesk_scaffold.dart';
+import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
 import 'package:flutter/material.dart';
 
 class Log extends StatefulWidget {
