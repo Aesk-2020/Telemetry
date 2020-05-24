@@ -1,3 +1,4 @@
+import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
 import 'package:flutter/material.dart';
 
 class Settings extends StatefulWidget {
@@ -8,6 +9,14 @@ class Settings extends StatefulWidget {
 class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return aeskScaffold(
+      myBody: Center(
+        child: Text(
+          "dsagfs",
+          style: Theme.of(context).textTheme.body1,
+        ),
+      ),
+      context: context
+    );
   }
 }
