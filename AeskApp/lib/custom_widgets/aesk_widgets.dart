@@ -26,7 +26,7 @@ Widget aeskScaffold({Widget myBody, BuildContext context}) {
             ListTile(
                 title: Text(
               "asdasd",
-              style: Theme.of(context).textTheme.body1,
+              style: Theme.of(context).textTheme.body2,
             )),
           ],
         ),
@@ -47,7 +47,9 @@ Widget aeskScaffold({Widget myBody, BuildContext context}) {
                         textDirection: TextDirection.rtl,
                         color: Theme.of(context).buttonColor,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/Settings");
+                      },
                       alignment: Alignment.centerRight,
                     ),
                     leading: myText("AnaSayfa", 25, Theme.of(context).textSelectionColor, "GOTHIC", FontWeight.bold),

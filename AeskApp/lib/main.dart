@@ -7,6 +7,7 @@ import 'package:aeskapp/pages/Home.dart';
 import 'package:aeskapp/pages/Login.dart';
 import 'package:aeskapp/pages/Log.dart';
 import 'package:aeskapp/pages/Bms.dart';
+import 'package:aeskapp/pages/Settings.dart';
 
 import 'package:flutter/material.dart';
 
@@ -23,5 +24,6 @@ void main() => runApp(MaterialApp(
         "/Loading": (context) => Loading(),
         "/Log": (context) => Log(),
         "/Bms": (context) => Bms(),
+        "/Settings": (context) => Settings(),
       },
     ));
