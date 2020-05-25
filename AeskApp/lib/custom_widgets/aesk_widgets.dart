@@ -35,41 +35,35 @@ Widget aeskScaffold({Widget myBody, BuildContext context}) {
     drawer: Drawer(
       child: Container(
         color: Colors.grey[800],
-        child: SizedBox(
-          height: 50,
-          child: ListView(
-            scrollDirection: Axis.vertical,
-            children: [
-                  ListTile(
-                    title: IconButton(
-                      icon: Icon(
-                        Icons.settings,
-                        textDirection: TextDirection.rtl,
-                        color: Theme.of(context).buttonColor,
-                      ),
-                      onPressed: () {
-                        Navigator.popAndPushNamed(context, "/Settings");
-                      },
-                      alignment: Alignment.centerRight,
-                    ),
-                    leading: myText("AnaSayfa", 25, Theme.of(context).textSelectionColor, "GOTHIC", FontWeight.bold),
-                  )
-                ]
-                + drawerList.map((index) {
-                  return ListTile(
-                    title: myText(index.text, 20, Colors.white, "gilroy-light",
-                        FontWeight.bold),
-                    leading: CircleAvatar(
-                      backgroundImage:
-                          AssetImage("assets/images/${index.image}"),
-                    ),
-                    onTap: () {
-                      Navigator.pushReplacementNamed(
-                          context, index.destination);
-                    },
-                  );
-                }).toList(),
-          ),
+        height: 50,
+        child: ListView(
+          scrollDirection: Axis.vertical,
+          children: [
+              ListTile(
+                title: IconButton(
+                  icon: Icon(
+                    Icons.settings,
+                    textDirection: TextDirection.rtl,
+                    color: Theme.of(context).buttonColor,
+                  ),
+                  onPressed: () => Navigator.popAndPushNamed(context, "/Settings"),
+                  alignment: Alignment.centerRight,
+                ),
+                leading: myText(
+                    "AnaSayfa",
+                    25,
+                    Theme.of(context).textSelectionColor,
+                    "GOTHIC",
+                    FontWeight.bold),
+              )
+            ] +
+              drawerList.map((index) {
+                return ListTile(
+                  title: myText(index.text, 20, Colors.white, "gilroy-light", FontWeight.bold),
+                  leading: CircleAvatar(backgroundImage: AssetImage("assets/images/${index.image}"),),
+                  onTap: () => Navigator.pushReplacementNamed(context, index.destination),
+                );
+              }).toList(),
         ),
       ),
     ),
