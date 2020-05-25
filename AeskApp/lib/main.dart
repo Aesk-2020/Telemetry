@@ -11,9 +11,26 @@ import 'package:aeskapp/pages/Settings.dart';
 
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(
-      // Burası maceramızın başlangıcı :D
-      theme: LightTheme(),
+void main() => runApp(MyApp(isDarkMode: false,));
+
+
+class MyApp extends StatefulWidget {
+
+  bool isDarkMode;
+  MyApp({this.isDarkMode});
+
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+
+    print(widget.isDarkMode);
+
+    return MaterialApp(
+      theme: MyTheme(widget.isDarkMode),
       initialRoute: "/Home",
       routes: {
         "/Login": (context) => Logging(),
@@ -26,4 +43,6 @@ void main() => runApp(MaterialApp(
         "/Bms": (context) => Bms(),
         "/Settings": (context) => Settings(),
       },
-    ));
+    );
+  }
+}
