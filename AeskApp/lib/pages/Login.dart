@@ -9,6 +9,23 @@ class Logging extends StatefulWidget {
 class _LoggingState extends State<Logging> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            myText("AESKAPP", 35, Theme.of(context).appBarTheme.color, "GOTHIC", FontWeight.bold),
+            Row(
+              children: <Widget>[
+                myText("Kullanıcı Adı:", 25, Theme.of(context).textTheme.title.color,"GOTHIC", FontWeight.normal),
+                TextField(
+
+
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

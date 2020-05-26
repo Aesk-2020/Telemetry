@@ -1,6 +1,9 @@
+import 'package:aeskapp/classes/theme.dart';
 import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
-import 'package:aeskapp/main.dart';
+import 'package:aeskapp/custom_widgets/front_inventory.dart';
 import 'package:flutter/material.dart';
+
+import 'package:provider/provider.dart';
 
 class Settings extends StatefulWidget {
   @override
@@ -12,6 +15,9 @@ class _SettingsState extends State<Settings> {
 
   @override
   Widget build(BuildContext context) {
+
+    MyThemeData myThemeData = Provider.of<MyThemeData>(context);
+
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
@@ -41,14 +47,8 @@ class _SettingsState extends State<Settings> {
                 title: Center(child: myText("Karanlık mod", 20, Theme.of(context).textTheme.body1.color, "GOTHIC", FontWeight.normal)),
                 value: isDarkMode,
                 onChanged: (bool value){
-                  setState(() {
                     isDarkMode = value;
-                    print(isDarkMode);
-                    var route = MaterialPageRoute(
-                      builder: (BuildContext context) => MyApp(isDarkMode: isDarkMode,)
-                    );
-                    Navigator.of(context).push(route);
-                  });
+                    myThemeData.setTheme((isDarkMode) ? DarkTheme() : LightTheme());
                 }
               ),
             ),
