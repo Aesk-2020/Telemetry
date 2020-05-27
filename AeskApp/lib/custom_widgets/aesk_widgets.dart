@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 
 List<DrawerListClass> drawerList = [
   DrawerListClass(image: "manzara.jpg", text: "AnaSayfa", destination: "/Home"),
-  DrawerListClass(image: "manzara.jpg", text: "Kayıt Defteri", destination: "/Log"),
   DrawerListClass(image: "manzara.jpg", text: "Grafikler", destination: "/Graphs"),
   DrawerListClass(image: "manzara.jpg", text: "BMS Verileri", destination: "/Bms"),
+  DrawerListClass(image: "manzara.jpg", text: "Custom", destination: "/Custom"),
 ];
 
 //************************* Header Widget *****************************************
