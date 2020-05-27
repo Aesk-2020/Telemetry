@@ -1,0 +1,107 @@
+import 'package:mqtt_client/mqtt_client.dart' as mqtt;
+import 'package:flutter/foundation.dart';
+import 'dart:async';
+
+///bit işlemleri kütüğhaneleri byte array vs.
+
+
+
+class MqttAesk extends ChangeNotifier{
+
+  static String broker           = '157.230.29.63';
+  static int port                = 1883;
+  static String username         = 'digital';
+  static String password           = 'aesk';
+  static String clientIdentifier = 'ff'; //cihaz isimlerine göre atama yap
+
+  mqtt.MqttClient client;
+  mqtt.MqttConnectionState connectionState;
+
+//kilit eleman
+  StreamSubscription subscription;
+
+  void connect() async {
+
+    client = mqtt.MqttClient(broker,"");
+    client.port = port;
+
+
+    client.logging(on: true);
+
+
+    client.keepAlivePeriod = 30;
+
+
+    client.onDisconnected = _onDisconnected;
+
+    //arastiracaz
+    final mqtt.MqttConnectMessage connMess = mqtt.MqttConnectMessage()
+        .withClientIdentifier(clientIdentifier)
+        .startClean()
+        .keepAliveFor(30)
+        .withWillTopic('test/test')
+        .withWillMessage('lamhx message test')
+        .withWillQos(mqtt.MqttQos.atMostOnce);
+    client.connectionMessage = connMess;
+
+    //baglanilan yer burasi
+    try {
+      await client.connect(username, password);
+    } catch (e) {
+      print(e);
+      disconnect();
+    }
+
+    /// Check if we are connected
+    if (client.connectionState == mqtt.MqttConnectionState.connected) {
+      print('MQTT client connected');
+        connectionState = client.connectionState;
+    } else {
+      disconnect();
+    }
+
+    /// The client has a change notifier object(see the Observable class) which we then listen to to get
+    /// notifications of published updates to each subscribed topic.
+    subscription = client.updates.listen(_onMessage);
+  }
+
+//baglanti kopmasi
+  void disconnect() {
+    client.disconnect();
+    _onDisconnected();
+  }
+
+  void _onDisconnected() {
+//
+    connectionState = client.connectionState;
+    client = null;
+    subscription.cancel();
+    subscription = null;
+    notifyListeners();
+  }
+
+  void _onMessage(List<mqtt.MqttReceivedMessage> event) {
+
+
+    final mqtt.MqttPublishMessage recMess = event[0].payload as mqtt.MqttPublishMessage;
+    //Başka değişkenleri değiştir.
+
+    notifyListeners();
+  }
+
+  void subscribeToTopic(String topic) {
+    if (connectionState == mqtt.MqttConnectionState.connected) {
+      client.subscribe(topic, mqtt.MqttQos.exactlyOnce);
+    }
+    notifyListeners();
+  }
+
+
+  void unsubscribeFromTopic(String topic) {
+    if (connectionState == mqtt.MqttConnectionState.connected) {
+      client.unsubscribe(topic);
+    }
+    notifyListeners();
+  }
+}
+

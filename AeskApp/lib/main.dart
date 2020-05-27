@@ -11,10 +11,12 @@ import 'package:aeskapp/pages/Home.dart';
 import 'package:aeskapp/pages/Login.dart';
 import 'package:aeskapp/pages/Bms.dart';
 import 'package:aeskapp/pages/Settings.dart';
+import 'package:aeskapp/pages/Mqtt.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -44,7 +46,6 @@ class MyApp extends StatelessWidget {
               "/Loading": (context) => Loading(),
               "/Bms": (context) => Bms(),
               "/Settings": (context) => Settings(),
-              "/Custom": (context) => Custom(),
             },
           );
         },

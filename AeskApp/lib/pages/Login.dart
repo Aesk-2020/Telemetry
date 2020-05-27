@@ -1,6 +1,6 @@
+import 'package:aeskapp/pages/Mqtt.dart';
 import 'package:flutter/material.dart';
 import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
-import 'package:aeskapp/classes/user_class.dart';
 
 var user1 = Users(username: "admin", password: "1234");
 String username;
@@ -65,8 +65,9 @@ class _LoggingState extends State<Logging> {
             ),
             RaisedButton(
               onPressed: () {
-                if (username == user1.username && password == user1.password) {
+                if (username == MqttAesk.username && password == MqttAesk.password) {
                   Navigator.pushNamed(context, "/Home");
+                  //mqtt olayları
                 } else {
                   showDialog(
                       context: context,
