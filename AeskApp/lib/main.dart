@@ -12,27 +12,29 @@ import 'package:aeskapp/pages/Login.dart';
 import 'package:aeskapp/pages/Bms.dart';
 import 'package:aeskapp/pages/Settings.dart';
 
-
 void main() => runApp(MyApp());
-
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(   //Burda Tedarikçi ekliyoruz böylece istediğimiz classtaki değişikliği anında tespit edebiliriz
-    providers: [
+    return MultiProvider(
+      //Burda Tedarikçi ekliyoruz böylece istediğimiz classtaki değişikliği anında tespit edebiliriz
+      providers: [
         ChangeNotifierProvider<MyThemeData>(
           create: (context) => MyThemeData(),
         ),
       ],
-      child: Consumer<MyThemeData>(     //Burda tedarikçiden gelen bilgiyi kullanacak widget bulunmakta
-        builder: (context , myTheme, child){     /// builderda [MyThemeData] tipinde [context] içinde(sanırım) myTheme objesi oluşturuluyor
+      child: Consumer<MyThemeData>(
+        //Burda tedarikçiden gelen bilgiyi kullanacak widget bulunmakta
+        builder: (context, myTheme, child) {
+          /// builderda [MyThemeData] tipinde [context] içinde(sanırım) myTheme objesi oluşturuluyor
           return MaterialApp(
             theme: LightTheme(),
             darkTheme: DarkTheme(),
-            themeMode: (myTheme.myTheme == DarkTheme()) ? ThemeMode.dark : ThemeMode.light, // daha
+            themeMode: (myTheme.myTheme == DarkTheme()) ? ThemeMode.dark : ThemeMode.light,
+            // daha
 
-            initialRoute: "/Home",
+            initialRoute: "/Login",
             routes: {
               "/Login": (context) => Logging(),
               "/Home": (context) => Home(),
