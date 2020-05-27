@@ -1,8 +1,7 @@
-import 'package:aeskapp/pages/Mqtt.dart';
+import 'package:aeskapp/classes/Mqtt.dart';
 import 'package:flutter/material.dart';
 import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
 
-var user1 = Users(username: "admin", password: "1234");
 String username;
 String password;
 

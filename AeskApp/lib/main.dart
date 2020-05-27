@@ -11,7 +11,7 @@ import 'package:aeskapp/pages/Home.dart';
 import 'package:aeskapp/pages/Login.dart';
 import 'package:aeskapp/pages/Bms.dart';
 import 'package:aeskapp/pages/Settings.dart';
-import 'package:aeskapp/pages/Mqtt.dart';
+import 'file:///C:/Users/JosephStar/AndroidStudioProjects/Telemetry/AeskApp/lib/classes/Mqtt.dart';
 
 void main() => runApp(MyApp());
 
