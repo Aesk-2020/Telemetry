@@ -60,6 +60,7 @@ class _LoggingState extends State<Logging> {
                 enableInteractiveSelection: false,
                 decoration: InputDecoration(
                   hintText: "Şifre",
+                  icon: Icon(Icons.lock),
                   border: OutlineInputBorder(),
                 ),
                 onChanged: (String value) {
@@ -69,9 +70,10 @@ class _LoggingState extends State<Logging> {
             ),
             RaisedButton(
               onPressed: () async {
-                if (ip == MqttAesk.broker && password == MqttAesk.password) {
+                if (ip == "1" && password == MqttAesk.password) {
                   dynamic state = await mqttAesk.connect();
                   if(state){
+                    mqttAesk.subscribeToTopic("/home/sensor");
                     Navigator.pushNamed(context, "/Home");
                   }else{
                     showDialog(

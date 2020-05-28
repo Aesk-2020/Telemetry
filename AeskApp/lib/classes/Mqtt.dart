@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:mqtt_client/mqtt_client.dart' as mqtt;
 import 'package:flutter/foundation.dart';
 import 'dart:async';
@@ -7,6 +9,8 @@ import 'dart:async';
 
 
 class MqttAesk extends ChangeNotifier{
+
+  var data1;
 
   static String broker           = '157.230.29.63';
   static int port                = 1883;
@@ -92,6 +96,11 @@ class MqttAesk extends ChangeNotifier{
     final mqtt.MqttPublishMessage recMess = event[0].payload as mqtt.MqttPublishMessage;
     //Başka değişkenleri değiştir.
 
+    var byteBuffer = recMess.payload.message.buffer.asByteData(0);
+    _mqttDecoder(byteBuffer,Endian.little);
+
+//  var x = recMess.payload.message.buffer.asByteData(0);
+
     notifyListeners();
   }
 
@@ -108,6 +117,10 @@ class MqttAesk extends ChangeNotifier{
       client.unsubscribe(topic);
     }
     notifyListeners();
+  }
+
+  void _mqttDecoder(ByteData message, Endian endian){
+      data1 = message.getUint32(0,endian);
   }
 }
 
