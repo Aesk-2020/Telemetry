@@ -19,5 +19,4 @@ Drivers/STM32F4xx_HAL_Driver/Src \
 Middlewares/Third_Party/FatFs/src \
 Middlewares/Third_Party/FatFs/src/option \
 Src \
-startup \
 

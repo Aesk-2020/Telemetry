@@ -212,7 +212,7 @@ int main(void)
 					  hydradata.bms_data.Bat_Current_f32, hydradata.bms_data.Bat_Cons_f32, hydradata.bms_data.Soc_f32, hydradata.bms_data.bms_error.bms_error_u8,
 					  hydradata.bms_data.dc_bus_state.dc_bus_state_u8, hydradata.bms_data.Worst_Cell_Voltage_f32, hydradata.bms_data.Worst_Cell_Address_u8,
 					  hydradata.bms_data.Temperature_u8, gps_data.latitude_f32, gps_data.longtitude_f32, gps_data.speed_u8, gps_data.satellite_number_u8, gps_data.gpsEfficiency_u8,
-																			 gps_data.gps_errorhandler.trueData_u32, gps_data.gps_errorhandler.checksumError_u32, gps_data.gps_errorhandler.validDataError_u32);
+					  gps_data.gps_errorhandler.trueData_u32, gps_data.gps_errorhandler.checksumError_u32, gps_data.gps_errorhandler.validDataError_u32);
 			  vars_to_str((char *)sd_card_data.total_log, "%d:%d:%d$", sTime.Hours, sTime.Minutes, sTime.Seconds);
 			  strcat(sd_card_data.total_log, (const char*)sd_card_data.transmitBuf);
 			  sd_card_data.result = f_open(&sd_card_data.myFile, sd_card_data.path, FA_WRITE | FA_OPEN_APPEND | FA_OPEN_EXISTING | FA_OPEN_ALWAYS);
@@ -980,6 +980,31 @@ void createMQTTPackage(HydraDatas *hydradata, GPS_Handle*gps_data, uint8_t* pack
 	AESK_UINT8toUINT8CODE(&(gps_data->speed_u8), packBuf, index);
 	AESK_UINT8toUINT8CODE(&(gps_data->satellite_number_u8), packBuf, index);
 	AESK_UINT8toUINT8CODE(&(gps_data->gpsEfficiency_u8), packBuf, index);
+	int16_t   bat_current_s16 = (int16_t)(hydradata->ems_datas.Bat_Current_f32 * FLOAT_CONVERTER_1);
+	int16_t   fc_current_s16 = (int16_t)(hydradata->ems_datas.FC_Current_f32 * FLOAT_CONVERTER_1);
+	int16_t   out_current_s16 = (int16_t)(hydradata->ems_datas.Out_Current_f32 * FLOAT_CONVERTER_1);
+	uint16_t  bat_voltage_u16 = (uint16_t)(hydradata->ems_datas.Bat_Voltage_f32 * FLOAT_CONVERTER_1);
+	uint16_t  fc_voltage_u16 = (uint16_t)(hydradata->ems_datas.FC_Voltage_f32 * FLOAT_CONVERTER_1);
+	uint16_t  out_voltage_u16 = (uint16_t)(hydradata->ems_datas.Out_Voltage_f32 * FLOAT_CONVERTER_1);
+	uint16_t  bat_cons_ems_u16 = (uint16_t)(hydradata->ems_datas.Bat_Cons_f32 * FLOAT_CONVERTER_1);
+	uint16_t  fc_cons_u16 = (uint16_t)(hydradata->ems_datas.FC_Cons_f32 * FLOAT_CONVERTER_1);
+	uint16_t  fc_lt_cons_u16 = (uint16_t)(hydradata->ems_datas.FC_Lt_Cons_f32 * FLOAT_CONVERTER_1);
+	uint16_t  out_cons_u16 = (uint16_t)(hydradata->ems_datas.Out_Cons_f32 * FLOAT_CONVERTER_1);
+	uint16_t  bat_soc_u16 = (uint16_t)(hydradata->ems_datas.Bat_Soc_f32 * FLOAT_CONVERTER_2);
+	AESK_INT16toUINT8_LE(&bat_current_s16, packBuf, index);
+	AESK_INT16toUINT8_LE(&fc_current_s16, packBuf, index);
+	AESK_INT16toUINT8_LE(&out_current_s16, packBuf, index);
+	AESK_UINT16toUINT8_LE(&bat_voltage_u16, packBuf, index);
+	AESK_UINT16toUINT8_LE(&fc_voltage_u16, packBuf, index);
+	AESK_UINT16toUINT8_LE(&out_voltage_u16, packBuf, index);
+	AESK_UINT16toUINT8_LE(&bat_cons_ems_u16, packBuf, index);
+	AESK_UINT16toUINT8_LE(&fc_cons_u16, packBuf, index);
+	AESK_UINT16toUINT8_LE(&fc_lt_cons_u16, packBuf, index);
+	AESK_UINT16toUINT8_LE(&out_cons_u16, packBuf, index);
+	AESK_INT8toUINT8CODE(&(hydradata->ems_datas.Penalty_s8), packBuf, index);
+	AESK_UINT16toUINT8_LE(&bat_soc_u16, packBuf, index);
+	AESK_UINT8toUINT8CODE(&(hydradata.ems_datas.Temperature_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(hydradata->ems_datas.ems_state.ems_error_u8), packBuf, index);
 	static uint32_t MQTT_Counter = 0;
 	MQTT_Counter++;
 	AESK_UINT32toUINT8_LE(&MQTT_Counter, packBuf, index);

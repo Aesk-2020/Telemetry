@@ -173,7 +173,6 @@ typedef struct
 	float   Bat_Soc_f32;
 	uint8_t Temperature_u8;
 	Ems_State_Union ems_state;
-
 }Ems_Datas;
 
 
