@@ -20,7 +20,7 @@ class MqttAesk extends ChangeNotifier{
 //kilit eleman
   StreamSubscription subscription;
 
-  void connect() async {
+  Future<bool> connect() async {
 
     client = mqtt.MqttClient(broker,"");
     client.port = port;
@@ -63,6 +63,12 @@ class MqttAesk extends ChangeNotifier{
     /// The client has a change notifier object(see the Observable class) which we then listen to to get
     /// notifications of published updates to each subscribed topic.
     subscription = client.updates.listen(_onMessage);
+
+    if(client.connectionState == mqtt.MqttConnectionState.connected){
+      return true;
+    }else{
+      return false;
+    }
   }
 
 //baglanti kopmasi

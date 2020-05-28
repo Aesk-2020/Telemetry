@@ -11,7 +11,7 @@ import 'package:aeskapp/pages/Home.dart';
 import 'package:aeskapp/pages/Login.dart';
 import 'package:aeskapp/pages/Bms.dart';
 import 'package:aeskapp/pages/Settings.dart';
-import 'file:///C:/Users/JosephStar/AndroidStudioProjects/Telemetry/AeskApp/lib/classes/Mqtt.dart';
+import 'package:aeskapp/classes/Mqtt.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,11 +25,13 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<MyThemeData>(
           create: (context) => MyThemeData(),
         ),
+        ChangeNotifierProvider<MqttAesk>(
+          create: (context) => MqttAesk(),
+        ),
       ],
-      child: Consumer<MyThemeData>(
-        //Burda tedarikçiden gelen bilgiyi kullanacak widget bulunmakta
-        builder: (context, myTheme, child) {
-          /// builderda [MyThemeData] tipinde [context] içinde(sanırım) myTheme objesi oluşturuluyor
+      child: Consumer<MyThemeData>(     //Burda tedarikçiden gelen bilgiyi kullanacak widget bulunmakta
+        builder: (context, myTheme, child) {   /// builderda [MyThemeData] tipinde [context] içinde(sanırım) myTheme objesi oluşturuluyor
+//          print();
           return MaterialApp(
             theme: LightTheme(),
             darkTheme: DarkTheme(),

@@ -1,8 +1,10 @@
 import 'package:aeskapp/classes/Mqtt.dart';
 import 'package:flutter/material.dart';
 import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
+import 'package:provider/provider.dart';
+import 'dart:async';
 
-String username;
+String ip;
 String password;
 
 class Logging extends StatefulWidget {
@@ -13,6 +15,9 @@ class Logging extends StatefulWidget {
 class _LoggingState extends State<Logging> {
   @override
   Widget build(BuildContext context) {
+
+    MqttAesk mqttAesk = Provider.of<MqttAesk>(context);     // Mqtt connect methodunu dinlemek için provider ekliyoruz
+
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       body: Center(
@@ -25,20 +30,20 @@ class _LoggingState extends State<Logging> {
               height: 20,
             ),
             Container(
-              width: 120,
+              width: 140,
               child: TextField(
                 style: TextStyle(
                   color: Theme.of(context).appBarTheme.color,
                 ),
                 enableInteractiveSelection: false,
                 decoration: InputDecoration(
-                  hintText: "Kullanıcı Adı",
+                  hintText: "IP Adresi",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10))
                   ),
                 ),
                 onChanged: (String value) {
-                  username = value;
+                  ip = value;
                 },
               ),
             ),
@@ -46,7 +51,7 @@ class _LoggingState extends State<Logging> {
               height: 5,
             ),
             Container(
-              width: 120,
+              width: 140,
               child: TextField(
                 style: TextStyle(
                   color: Theme.of(context).appBarTheme.color,
@@ -63,10 +68,22 @@ class _LoggingState extends State<Logging> {
               ),
             ),
             RaisedButton(
-              onPressed: () {
-                if (username == MqttAesk.username && password == MqttAesk.password) {
-                  Navigator.pushNamed(context, "/Home");
-                  //mqtt olayları
+              onPressed: () async {
+                if (ip == MqttAesk.broker && password == MqttAesk.password) {
+                  dynamic state = await mqttAesk.connect();
+                  if(state){
+                    Navigator.pushNamed(context, "/Home");
+                  }else{
+                    showDialog(
+                      context: context,
+                      child: AlertDialog(
+                        title: myText("HATA", 30, Theme.of(context).textTheme.body1.color, "GOTHIC", FontWeight.bold),
+                        content: myText("Bağlantı başarısız!", 25,Theme.of(context).textTheme.body1.color , "GOTHIC", FontWeight.bold),
+                        backgroundColor: Theme.of(context).backgroundColor,
+                      ),
+                    );
+                  }
+
                 } else {
                   showDialog(
                       context: context,
