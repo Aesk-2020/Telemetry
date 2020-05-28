@@ -1003,7 +1003,7 @@ void createMQTTPackage(HydraDatas *hydradata, GPS_Handle*gps_data, uint8_t* pack
 	AESK_UINT16toUINT8_LE(&out_cons_u16, packBuf, index);
 	AESK_INT8toUINT8CODE(&(hydradata->ems_datas.Penalty_s8), packBuf, index);
 	AESK_UINT16toUINT8_LE(&bat_soc_u16, packBuf, index);
-	AESK_UINT8toUINT8CODE(&(hydradata.ems_datas.Temperature_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(hydradata->ems_datas.Temperature_u8), packBuf, index);
 	AESK_UINT8toUINT8CODE(&(hydradata->ems_datas.ems_state.ems_error_u8), packBuf, index);
 	static uint32_t MQTT_Counter = 0;
 	MQTT_Counter++;
