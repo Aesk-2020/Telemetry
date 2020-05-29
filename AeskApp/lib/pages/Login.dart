@@ -1,9 +1,10 @@
+import 'package:aeskapp/classes/Mqtt.dart';
 import 'package:flutter/material.dart';
 import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
-import 'package:aeskapp/classes/user_class.dart';
+import 'package:provider/provider.dart';
+import 'dart:async';
 
-var user1 = Users(username: "admin", password: "1234");
-String username;
+String ip;
 String password;
 
 class Logging extends StatefulWidget {
@@ -14,6 +15,9 @@ class Logging extends StatefulWidget {
 class _LoggingState extends State<Logging> {
   @override
   Widget build(BuildContext context) {
+
+    MqttAesk mqttAesk = Provider.of<MqttAesk>(context);     // Mqtt connect methodunu dinlemek için provider ekliyoruz
+
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       body: Center(
@@ -21,25 +25,25 @@ class _LoggingState extends State<Logging> {
 
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            myText("AESKAPP", 35, Theme.of(context).appBarTheme.color, "GOTHIC", FontWeight.bold),
+            myText("AESKAPP", 35, Theme.of(context).appBarTheme.color, FontWeight.bold),
             SizedBox(
               height: 20,
             ),
             Container(
-              width: 120,
+              width: 140,
               child: TextField(
                 style: TextStyle(
                   color: Theme.of(context).appBarTheme.color,
                 ),
                 enableInteractiveSelection: false,
                 decoration: InputDecoration(
-                  hintText: "Kullanıcı Adı",
+                  hintText: "IP Adresi",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10))
                   ),
                 ),
                 onChanged: (String value) {
-                  username = value;
+                  ip = value;
                 },
               ),
             ),
@@ -47,7 +51,7 @@ class _LoggingState extends State<Logging> {
               height: 5,
             ),
             Container(
-              width: 120,
+              width: 140,
               child: TextField(
                 style: TextStyle(
                   color: Theme.of(context).appBarTheme.color,
@@ -56,6 +60,7 @@ class _LoggingState extends State<Logging> {
                 enableInteractiveSelection: false,
                 decoration: InputDecoration(
                   hintText: "Şifre",
+                  icon: Icon(Icons.lock),
                   border: OutlineInputBorder(),
                 ),
                 onChanged: (String value) {
@@ -64,21 +69,35 @@ class _LoggingState extends State<Logging> {
               ),
             ),
             RaisedButton(
-              onPressed: () {
-                if (username == user1.username && password == user1.password) {
-                  Navigator.pushNamed(context, "/Home");
+              onPressed: () async {
+                if (ip == "1" && password == MqttAesk.password) {
+                  dynamic state = await mqttAesk.connect();
+                  if(state){
+                    mqttAesk.subscribeToTopic("/home/sensor");
+                    Navigator.pushNamed(context, "/Home");
+                  }else{
+                    showDialog(
+                      context: context,
+                      child: AlertDialog(
+                        title: myText("HATA", 30, Theme.of(context).textTheme.body1.color, FontWeight.bold),
+                        content: myText("Bağlantı başarısız!", 25,Theme.of(context).textTheme.body1.color , FontWeight.bold),
+                        backgroundColor: Theme.of(context).backgroundColor,
+                      ),
+                    );
+                  }
+
                 } else {
                   showDialog(
                       context: context,
                       child: AlertDialog(
-                        title: myText("HATA", 30, Theme.of(context).textTheme.body1.color, "GOTHIC", FontWeight.bold),
-                        content: myText("Girdiğiniz kullanıcı adı ile parola eşleşmedi!", 25,Theme.of(context).textTheme.body1.color , "GOTHIC", FontWeight.bold),
+                        title: myText("HATA", 30, Theme.of(context).textTheme.body1.color, FontWeight.bold),
+                        content: myText("Girdiğiniz kullanıcı adı ile parola eşleşmedi!", 25,Theme.of(context).textTheme.body1.color, FontWeight.bold),
                         backgroundColor: Theme.of(context).backgroundColor,
                       ),
                   );
                 }
               },
-              child: myText("Giriş", 20, Colors.white, "GOTHIC", FontWeight.normal),
+              child: myText("Giriş", 20, Colors.white, FontWeight.normal),
             ),
           ],
         ),

@@ -11,10 +11,12 @@ import 'package:aeskapp/pages/Home.dart';
 import 'package:aeskapp/pages/Login.dart';
 import 'package:aeskapp/pages/Bms.dart';
 import 'package:aeskapp/pages/Settings.dart';
+import 'package:aeskapp/classes/Mqtt.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -23,18 +25,20 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<MyThemeData>(
           create: (context) => MyThemeData(),
         ),
+        ChangeNotifierProvider<MqttAesk>(
+          create: (context) => MqttAesk(),
+        ),
       ],
-      child: Consumer<MyThemeData>(
-        //Burda tedarikçiden gelen bilgiyi kullanacak widget bulunmakta
-        builder: (context, myTheme, child) {
-          /// builderda [MyThemeData] tipinde [context] içinde(sanırım) myTheme objesi oluşturuluyor
+      child: Consumer<MyThemeData>(     //Burda tedarikçiden gelen bilgiyi kullanacak widget bulunmakta
+        builder: (context, myTheme, child) {   /// builderda [MyThemeData] tipinde [context] içinde(sanırım) myTheme objesi oluşturuluyor
+//          print();
           return MaterialApp(
             theme: LightTheme(),
             darkTheme: DarkTheme(),
             themeMode: (myTheme.myTheme == DarkTheme()) ? ThemeMode.dark : ThemeMode.light,
             // daha
 
-            initialRoute: "/Login",
+            initialRoute: "/Custom",
             routes: {
               "/Login": (context) => Logging(),
               "/Home": (context) => Home(),
@@ -44,7 +48,6 @@ class MyApp extends StatelessWidget {
               "/Loading": (context) => Loading(),
               "/Bms": (context) => Bms(),
               "/Settings": (context) => Settings(),
-              "/Custom": (context) => Custom(),
             },
           );
         },

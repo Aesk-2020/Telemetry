@@ -44,7 +44,7 @@ class _SettingsState extends State<Settings> {
               ),
               child: SwitchListTile(
 
-                title: Center(child: myText("Karanlık mod", 20, Theme.of(context).textTheme.body1.color, "GOTHIC", FontWeight.normal)),
+                title: Center(child: myText("Karanlık mod", 20, Theme.of(context).textTheme.body1.color, FontWeight.normal)),
                 value: isDarkMode,
                 onChanged: (bool value){
                     isDarkMode = value;

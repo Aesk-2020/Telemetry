@@ -30,6 +30,7 @@ ThemeData LightTheme() {
       body2: TextStyle(
         color: Colors.white,
       ),
+
     ),
   );
 }
