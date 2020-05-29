@@ -25,7 +25,7 @@ class _LoggingState extends State<Logging> {
 
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            myText("AESKAPP", 35, Theme.of(context).appBarTheme.color, "GOTHIC", FontWeight.bold),
+            myText("AESKAPP", 35, Theme.of(context).appBarTheme.color, FontWeight.bold),
             SizedBox(
               height: 20,
             ),
@@ -79,8 +79,8 @@ class _LoggingState extends State<Logging> {
                     showDialog(
                       context: context,
                       child: AlertDialog(
-                        title: myText("HATA", 30, Theme.of(context).textTheme.body1.color, "GOTHIC", FontWeight.bold),
-                        content: myText("Bağlantı başarısız!", 25,Theme.of(context).textTheme.body1.color , "GOTHIC", FontWeight.bold),
+                        title: myText("HATA", 30, Theme.of(context).textTheme.body1.color, FontWeight.bold),
+                        content: myText("Bağlantı başarısız!", 25,Theme.of(context).textTheme.body1.color , FontWeight.bold),
                         backgroundColor: Theme.of(context).backgroundColor,
                       ),
                     );
@@ -90,14 +90,14 @@ class _LoggingState extends State<Logging> {
                   showDialog(
                       context: context,
                       child: AlertDialog(
-                        title: myText("HATA", 30, Theme.of(context).textTheme.body1.color, "GOTHIC", FontWeight.bold),
-                        content: myText("Girdiğiniz kullanıcı adı ile parola eşleşmedi!", 25,Theme.of(context).textTheme.body1.color , "GOTHIC", FontWeight.bold),
+                        title: myText("HATA", 30, Theme.of(context).textTheme.body1.color, FontWeight.bold),
+                        content: myText("Girdiğiniz kullanıcı adı ile parola eşleşmedi!", 25,Theme.of(context).textTheme.body1.color, FontWeight.bold),
                         backgroundColor: Theme.of(context).backgroundColor,
                       ),
                   );
                 }
               },
-              child: myText("Giriş", 20, Colors.white, "GOTHIC", FontWeight.normal),
+              child: myText("Giriş", 20, Colors.white, FontWeight.normal),
             ),
           ],
         ),
