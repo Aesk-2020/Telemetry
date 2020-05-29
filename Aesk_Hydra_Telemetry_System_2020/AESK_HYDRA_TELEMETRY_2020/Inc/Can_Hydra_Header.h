@@ -1,12 +1,12 @@
 /*
- * Can_Lyra_Header.h
+ * Can_Hydra_Header.h
  *
  *  Created on: 8 Nis 2020
  *      Author: ahmet
  */
 
-#ifndef CAN_LYRA_HEADER_H_
-#define CAN_LYRA_HEADER_H_
+#ifndef CAN_HYDRA_HEADER_H_
+#define CAN_HYDRA_HEADER_H_
 
 #define DRIVER_CUR_VOLT					0x1555DDD0
 #define DRIVER_ID_IQ_VD_VQ				0x1555DDD1
@@ -123,7 +123,7 @@ typedef union
 		uint8_t Precharge_Flag : 1;
 		uint8_t Discharge_Flag : 1;
 		uint8_t Dc_Bus_Ready   : 1;
-		uint8_t Reserved             :5;
+		uint8_t Reserved       : 5;
 	}Bms_State_Data_Dc_Bus_State;
 	uint8_t dc_bus_state_u8;
 }Dc_Bus_State_union;
@@ -141,11 +141,47 @@ typedef struct
 	Dc_Bus_State_union dc_bus_state;
 }Bms_Datas;
 
+typedef union
+{
+	struct
+	{
+		uint8_t Bat_Current_Error : 1;
+		uint8_t Fc_Current_Error  : 1;
+		uint8_t Out_Current_Error : 1;
+		uint8_t Bat_Voltage_Error : 1;
+		uint8_t Fc_Voltage_Error  : 1;
+		uint8_t Out_Voltage_Error : 1;
+		uint8_t Wake_Up_Control   : 1;
+		uint8_t Reserved          : 1;
+	}State_Data_Error;
+	uint8_t ems_error_u8;
+}Ems_State_Union;
+
+typedef struct
+{
+	float   Bat_Current_f32;
+	float   FC_Current_f32;
+	float   Out_Current_f32;
+	float   Bat_Voltage_f32;
+	float   FC_Voltage_f32;
+	float   Out_Voltage_f32;
+	float   Bat_Cons_f32;
+	float   FC_Cons_f32;
+	float   FC_Lt_Cons_f32;
+	float   Out_Cons_f32;
+	int8_t  Penalty_s8;
+	float   Bat_Soc_f32;
+	uint8_t Temperature_u8;
+	Ems_State_Union ems_state;
+
+}Ems_Datas;
+
 
 typedef struct
 {
 	Bms_Datas 	 bms_data;
 	VCU_Datas 	 vcu_data;
 	Driver_Datas driver_data;
-}LyraDatas;
-#endif /* CAN_LYRA_HEADER_H_ */
+	Ems_Datas 	 ems_datas;
+}HydraDatas;
+#endif /* CAN_HYDRA_HEADER_H_ */
