@@ -10,6 +10,8 @@ import 'dart:async';
 
 class MqttAesk extends ChangeNotifier{
 
+  DateTime ping, receivedDateTime;
+
   var vcu_wake_up_u8;
   var vcu_drive_command_u8;
   var vcu_set_velocity_u8;
@@ -85,12 +87,9 @@ class MqttAesk extends ChangeNotifier{
     client = mqtt.MqttClient(broker,"");
     client.port = port;
 
-
     client.logging(on: true);
 
-
     client.keepAlivePeriod = 30;
-
 
     client.onDisconnected = _onDisconnected;
 
@@ -148,15 +147,9 @@ class MqttAesk extends ChangeNotifier{
 
   void _onMessage(List<mqtt.MqttReceivedMessage> event) {
 
-
     final mqtt.MqttPublishMessage recMess = event[0].payload as mqtt.MqttPublishMessage;
-    //Başka değişkenleri değiştir.
-
     var message = recMess.payload.message.buffer.asByteData(0);
     _mqttDecoder(message, Endian.little);
-
-//  var x = recMess.payload.message.buffer.asByteData(0);
-
     notifyListeners();
   }
 
