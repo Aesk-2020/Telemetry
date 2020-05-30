@@ -12,8 +12,13 @@ import 'package:aeskapp/pages/Login.dart';
 import 'package:aeskapp/pages/Bms.dart';
 import 'package:aeskapp/pages/Settings.dart';
 import 'package:aeskapp/classes/Mqtt.dart';
+import 'package:syncfusion_flutter_core/core.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  SyncfusionLicense.registerLicense(
+      "NT8mJyc2IWhia31ifWN9Z2FoYmF8YGJ8ampqanNiYmlmamlmanMDHmgqJiAmNTg2PjI/IzI/MjA6EyoyMj06fTA8Pg==");
+  return runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
 
