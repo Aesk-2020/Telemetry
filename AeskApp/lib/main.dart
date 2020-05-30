@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
             themeMode: (myTheme.myTheme == DarkTheme()) ? ThemeMode.dark : ThemeMode.light,
             // daha
 
-            initialRoute: "/Custom",
+            initialRoute: "/Graphs",
             routes: {
               "/Login": (context) => Logging(),
               "/Home": (context) => Home(),
