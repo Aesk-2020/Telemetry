@@ -1,3 +1,4 @@
+import 'package:aeskapp/classes/aeskData.dart';
 import 'package:aeskapp/classes/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      //Burda Tedarikçi ekliyoruz böylece istediğimiz classtaki değişikliği anında tespit edebiliriz
+      //Burda Tedarikçi ekliyoruz böylece istediğimiz sınıftaki değişikliği anında tespit edebiliriz
       providers: [
         ChangeNotifierProvider<MyThemeData>(
           create: (context) => MyThemeData(),
@@ -36,12 +37,10 @@ class MyApp extends StatelessWidget {
       ],
       child: Consumer<MyThemeData>(     //Burda tedarikçiden gelen bilgiyi kullanacak widget bulunmakta
         builder: (context, myTheme, child) {   /// builderda [MyThemeData] tipinde [context] içinde(sanırım) myTheme objesi oluşturuluyor
-//          print();
           return MaterialApp(
             theme: LightTheme(),
             darkTheme: DarkTheme(),
             themeMode: (myTheme.myTheme == DarkTheme()) ? ThemeMode.dark : ThemeMode.light,
-            // daha
 
             initialRoute: "/Login",
             routes: {

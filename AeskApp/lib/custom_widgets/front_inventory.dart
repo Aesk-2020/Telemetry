@@ -5,32 +5,19 @@ Color aeskBlack = Color.fromRGBO(48, 51, 58, 1.0);
 
 ThemeData LightTheme() {
   return ThemeData(
-    // Aydınlık mod
     backgroundColor: Colors.white70,
     buttonColor: aeskBlue,
     appBarTheme: AppBarTheme(
       color: Colors.blueAccent,
       textTheme: TextTheme(
-        title: TextStyle(
-          color: Colors.amber,
-          fontFamily: "GOTHIC",
-          fontSize: 25,
-          fontWeight: FontWeight.bold,
-        ),
+        headline1: TextStyle(color: Colors.amber, fontFamily: "GOTHIC", fontSize: 25, fontWeight: FontWeight.bold,),
       ),
     ),
     textSelectionColor: Colors.blue,
     textTheme: TextTheme(
-      body1: TextStyle(
-        color: Colors.black,
-      ),
-      title: TextStyle(
-        color: Colors.amber,
-      ),
-      body2: TextStyle(
-        color: Colors.white,
-      ),
-
+      headline1: TextStyle(color: Colors.black,),
+      headline2: TextStyle(color: Colors.amber,),
+      headline3: TextStyle(color: Colors.white,),
     ),
   );
 }
@@ -42,25 +29,14 @@ ThemeData DarkTheme() {
     appBarTheme: AppBarTheme(
       color: Colors.grey,
       textTheme: TextTheme(
-        title: TextStyle(
-          color: Colors.white,
-          fontFamily: "GOTHIC",
-          fontSize: 25,
-          fontWeight: FontWeight.bold,
-        ),
+        headline1: TextStyle(color: Colors.white, fontFamily: "GOTHIC", fontSize: 25, fontWeight: FontWeight.bold,),
       ),
     ),
     textSelectionColor: Colors.blue,
     textTheme: TextTheme(
-      body1: TextStyle(
-        color: Colors.white,
-      ),
-      title: TextStyle(
-        color: Colors.amber,
-      ),
-      body2: TextStyle(
-        color: Colors.black,
-      ),
+      headline1: TextStyle(color: Colors.white,),
+      headline2: TextStyle(color: Colors.amber,),
+      headline3: TextStyle(color: Colors.black,),
     ),
   );
 }

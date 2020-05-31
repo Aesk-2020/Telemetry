@@ -1,4 +1,5 @@
 import 'package:aeskapp/classes/Mqtt.dart';
+import 'package:aeskapp/classes/aeskData.dart';
 import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class _CustomState extends State<Custom> {
     switch (content) {
       case "bms":
         return Consumer<MqttAesk>(
-          builder: (context, MqttAesk, child){
+          builder: (context, _, child){
             return Card(
               child: Column(
                 children: <Widget>[
@@ -45,7 +46,7 @@ class _CustomState extends State<Custom> {
               return Card(
                 child: Column(
                   children: <Widget>[
-                    myText("Driver verileri : ${mqttAesk.driver_phase_a_current_f32}", 20, Colors.black, FontWeight.bold),
+                    myText("Driver verileri : ${AeskData.driver_phase_a_current_f32}", 20, Colors.black, FontWeight.bold),
                     IconButton(
                       icon: Icon(Icons.delete),
                       alignment: Alignment.bottomRight,
@@ -93,7 +94,7 @@ class _CustomState extends State<Custom> {
 
   Widget modifiedExpansionTile(int index) {
     return ExpansionTile(
-      title: Center(child: myText("     Ekle", 25, Theme.of(context).textTheme.body1.color, FontWeight.bold)),
+      title: Center(child: myText("     Ekle", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold)),
       children: <Widget>[
         FlatButton(
           onPressed: () {
@@ -102,7 +103,7 @@ class _CustomState extends State<Custom> {
               contentCount++;
             });
           },
-          child: myText("Driver Verileri", 25, Theme.of(context).textTheme.body1.color, FontWeight.bold),
+          child: myText("Driver Verileri", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
         ),
         FlatButton(
           onPressed: () {
@@ -111,7 +112,7 @@ class _CustomState extends State<Custom> {
               contentCount++;
             });
           },
-          child: myText("BMS Verileri", 25, Theme.of(context).textTheme.body1.color, FontWeight.bold),
+          child: myText("BMS Verileri", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
         ),
         FlatButton(
           onPressed: () {
@@ -120,7 +121,7 @@ class _CustomState extends State<Custom> {
               contentCount++;
             });
           },
-          child: myText("GPS Verileri", 25, Theme.of(context).textTheme.body1.color, FontWeight.bold),
+          child: myText("GPS Verileri", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
         ),
       ],
     );
