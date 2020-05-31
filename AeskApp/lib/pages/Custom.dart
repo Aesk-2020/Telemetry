@@ -42,7 +42,7 @@ class _CustomState extends State<Custom> {
         break;
       case "driver":
         return Consumer<MqttAesk>(
-           builder : (context, mqttAesk, child){
+           builder : (context, _, child){
               return Card(
                 child: Column(
                   children: <Widget>[
@@ -65,7 +65,7 @@ class _CustomState extends State<Custom> {
         break;
       case "gps":
         return Consumer<MqttAesk>(
-          builder: (context, mqttAesk, child){
+          builder: (context, _, child){
             return Card(
               child: Column(
                 children: <Widget>[
