@@ -114,9 +114,6 @@ var eys_error_uint8;
     bms_bat_cons_f32 = message.getUint16(_startIndex,myEndian)/10;
     _startIndex+=2;
 
-    bms_bat_cons_f32 = message.getUint16(_startIndex,myEndian)/100;
-    _startIndex+=2;
-
     bms_soc_f32 = message.getUint16(_startIndex,myEndian);
     _startIndex+=2;
 
@@ -152,6 +149,7 @@ var eys_error_uint8;
 
     MQTT_counter_int32 = message.getInt32(_startIndex,myEndian);
     _startIndex+=4;
+    print("laskfjsdjflkjflksdj $_startIndex");
 
     notifyListeners();
   }

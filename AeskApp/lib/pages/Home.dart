@@ -20,7 +20,7 @@ class Home extends StatelessWidget {
                 Text((ourTheme.myTheme == DarkTheme()) ? "bu bir karanlık moddur" : "bu aydınlık moddur"),
                 Consumer<MqttAesk>(
                   builder: (context, _, child){
-                    return myText("${AeskData.driver_phase_a_current_f32}", 40, Colors.pink, FontWeight.bold);
+                    return myText("${AeskData.gpsTracker_gps_latitude_f64}", 40, Colors.pink, FontWeight.bold);
                   },
                 ),
               ],

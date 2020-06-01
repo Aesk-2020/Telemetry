@@ -103,7 +103,7 @@ class _CustomState extends State<Custom> {
               contentCount++;
             });
           },
-          child: myText("Driver Verileri", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+          child: myText("Driver", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
         ),
         FlatButton(
           onPressed: () {
@@ -112,7 +112,7 @@ class _CustomState extends State<Custom> {
               contentCount++;
             });
           },
-          child: myText("BMS Verileri", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+          child: myText("BMS", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
         ),
         FlatButton(
           onPressed: () {
@@ -121,7 +121,7 @@ class _CustomState extends State<Custom> {
               contentCount++;
             });
           },
-          child: myText("GPS Verileri", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+          child: myText("GPS", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
         ),
       ],
     );
