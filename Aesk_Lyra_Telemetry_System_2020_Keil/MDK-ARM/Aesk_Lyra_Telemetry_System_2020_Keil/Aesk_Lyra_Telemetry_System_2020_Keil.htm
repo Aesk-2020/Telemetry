@@ -3,7 +3,7 @@
 <title>Static Call Graph - [Aesk_Lyra_Telemetry_System_2020_Keil\Aesk_Lyra_Telemetry_System_2020_Keil.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image Aesk_Lyra_Telemetry_System_2020_Keil\Aesk_Lyra_Telemetry_System_2020_Keil.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Mon Jun 01 20:53:38 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Mon Jun 01 21:38:03 2020
 <BR><P>
 <H3>Maximum Stack Usage =        620 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -372,9 +372,9 @@ Global Symbols
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetSysClockFreq
-<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetConfig
 <LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 <LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetConfig
 </UL>
 
 <P><STRONG><a name="[a5]"></a>__aeabi_memcpy</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, memcpya.o(.text))
@@ -459,9 +459,9 @@ Global Symbols
 <LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;convertDegMinToDecDeg
-<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
 <LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
 </UL>
 
 <P><STRONG><a name="[79]"></a>__aeabi_dsub</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, dadd.o(.text), UNUSED)
@@ -535,18 +535,18 @@ Global Symbols
 
 <P><STRONG><a name="[6e]"></a>__aeabi_llsl</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, llshl.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 <LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2ulz
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 
 <P><STRONG><a name="[189]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
 
 <P><STRONG><a name="[6d]"></a>__aeabi_llsr</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, llushr.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 <LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2ulz
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 
 <P><STRONG><a name="[18a]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
@@ -601,8 +601,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
-<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_drem
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ul2d
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_drem
 </UL>
 
 <P><STRONG><a name="[86]"></a>_drem</STRONG> (Thumb, 134 bytes, Stack size 48 bytes, drem.o(.text))
@@ -864,10 +864,10 @@ Global Symbols
 <LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NMEA_CheckSum
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Find_Comma_Address
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CHECKSUM_Find
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atoi
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strstr
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atof
-<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atoi
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_Control
 </UL>
@@ -924,8 +924,8 @@ Global Symbols
 <P><STRONG><a name="[bd]"></a>HAL_CAN_Init</STRONG> (Thumb, 282 bytes, Stack size 16 bytes, stm32f4xx_hal_can.o(i.HAL_CAN_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = HAL_CAN_Init &rArr; HAL_CAN_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_MspInit
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_MspInit
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
 <BR>[Called By]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_CAN2_Init
 <LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_CAN1_Init
@@ -1009,9 +1009,9 @@ Global Symbols
 <P><STRONG><a name="[c4]"></a>HAL_DMA_Init</STRONG> (Thumb, 206 bytes, Stack size 24 bytes, stm32f4xx_hal_dma.o(i.HAL_DMA_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = HAL_DMA_Init &rArr; DMA_CheckFifoParam
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_CheckFifoParam
+<BR>[Calls]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_CheckFifoParam
 <LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_CalcBaseAndBitshift
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_MspInit
 </UL>
@@ -1126,9 +1126,9 @@ Global Symbols
 <P><STRONG><a name="[d1]"></a>HAL_RCC_ClockConfig</STRONG> (Thumb, 288 bytes, Stack size 32 bytes, stm32f4xx_hal_rcc.o(i.HAL_RCC_ClockConfig))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = HAL_RCC_ClockConfig &rArr; HAL_RCC_GetSysClockFreq &rArr; __aeabi_uldivmod
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetSysClockFreq
+<BR>[Calls]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetSysClockFreq
 <LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
 <BR>[Called By]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
@@ -1651,10 +1651,10 @@ Global Symbols
 
 <P><STRONG><a name="[e1]"></a>SDIO_GetResponse</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f4xx_ll_sdmmc.o(i.SDIO_GetResponse))
 <BR><BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_GetCardState
-<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp6
-<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_PowerON
 <LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_InitCard
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp6
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 </UL>
 
 <P><STRONG><a name="[3a]"></a>SDIO_IRQHandler</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f4xx_it.o(i.SDIO_IRQHandler))
@@ -1708,8 +1708,8 @@ Global Symbols
 <P><STRONG><a name="[121]"></a>SDMMC_CmdAppCommand</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, stm32f4xx_ll_sdmmc.o(i.SDMMC_CmdAppCommand))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SDMMC_CmdAppCommand &rArr; SDMMC_GetCmdResp1
 </UL>
-<BR>[Calls]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_PowerON
 </UL>
@@ -1717,8 +1717,8 @@ Global Symbols
 <P><STRONG><a name="[124]"></a>SDMMC_CmdAppOperCommand</STRONG> (Thumb, 48 bytes, Stack size 32 bytes, stm32f4xx_ll_sdmmc.o(i.SDMMC_CmdAppOperCommand))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = SDMMC_CmdAppOperCommand
 </UL>
-<BR>[Calls]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp3
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp3
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_PowerON
 </UL>
@@ -1726,8 +1726,8 @@ Global Symbols
 <P><STRONG><a name="[f1]"></a>SDMMC_CmdBlockLength</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, stm32f4xx_ll_sdmmc.o(i.SDMMC_CmdBlockLength))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SDMMC_CmdBlockLength &rArr; SDMMC_GetCmdResp1
 </UL>
-<BR>[Calls]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_WriteBlocks_DMA
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ReadBlocks_DMA
@@ -1752,8 +1752,8 @@ Global Symbols
 <P><STRONG><a name="[f3]"></a>SDMMC_CmdReadMultiBlock</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, stm32f4xx_ll_sdmmc.o(i.SDMMC_CmdReadMultiBlock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SDMMC_CmdReadMultiBlock &rArr; SDMMC_GetCmdResp1
 </UL>
-<BR>[Calls]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ReadBlocks_DMA
 </UL>
@@ -1761,8 +1761,8 @@ Global Symbols
 <P><STRONG><a name="[f4]"></a>SDMMC_CmdReadSingleBlock</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, stm32f4xx_ll_sdmmc.o(i.SDMMC_CmdReadSingleBlock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SDMMC_CmdReadSingleBlock &rArr; SDMMC_GetCmdResp1
 </UL>
-<BR>[Calls]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ReadBlocks_DMA
 </UL>
@@ -1770,8 +1770,8 @@ Global Symbols
 <P><STRONG><a name="[128]"></a>SDMMC_CmdSelDesel</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, stm32f4xx_ll_sdmmc.o(i.SDMMC_CmdSelDesel))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SDMMC_CmdSelDesel &rArr; SDMMC_GetCmdResp1
 </UL>
-<BR>[Calls]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_InitCard
 </UL>
@@ -1779,8 +1779,8 @@ Global Symbols
 <P><STRONG><a name="[129]"></a>SDMMC_CmdSendCID</STRONG> (Thumb, 44 bytes, Stack size 32 bytes, stm32f4xx_ll_sdmmc.o(i.SDMMC_CmdSendCID))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = SDMMC_CmdSendCID
 </UL>
-<BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp2
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_InitCard
 </UL>
@@ -1788,8 +1788,8 @@ Global Symbols
 <P><STRONG><a name="[12b]"></a>SDMMC_CmdSendCSD</STRONG> (Thumb, 44 bytes, Stack size 32 bytes, stm32f4xx_ll_sdmmc.o(i.SDMMC_CmdSendCSD))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = SDMMC_CmdSendCSD
 </UL>
-<BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp2
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_InitCard
 </UL>
@@ -1797,8 +1797,8 @@ Global Symbols
 <P><STRONG><a name="[e0]"></a>SDMMC_CmdSendStatus</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, stm32f4xx_ll_sdmmc.o(i.SDMMC_CmdSendStatus))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SDMMC_CmdSendStatus &rArr; SDMMC_GetCmdResp1
 </UL>
-<BR>[Calls]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_GetCardState
 </UL>
@@ -1806,8 +1806,8 @@ Global Symbols
 <P><STRONG><a name="[12c]"></a>SDMMC_CmdSetRelAdd</STRONG> (Thumb, 48 bytes, Stack size 32 bytes, stm32f4xx_ll_sdmmc.o(i.SDMMC_CmdSetRelAdd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = SDMMC_CmdSetRelAdd &rArr; SDMMC_GetCmdResp6
 </UL>
-<BR>[Calls]<UL><LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp6
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp6
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_InitCard
 </UL>
@@ -1815,8 +1815,8 @@ Global Symbols
 <P><STRONG><a name="[e4]"></a>SDMMC_CmdStopTransfer</STRONG> (Thumb, 46 bytes, Stack size 32 bytes, stm32f4xx_ll_sdmmc.o(i.SDMMC_CmdStopTransfer))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SDMMC_CmdStopTransfer &rArr; SDMMC_GetCmdResp1
 </UL>
-<BR>[Calls]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_IRQHandler
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_DMATxAbort
@@ -1828,8 +1828,8 @@ Global Symbols
 <P><STRONG><a name="[f7]"></a>SDMMC_CmdWriteMultiBlock</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, stm32f4xx_ll_sdmmc.o(i.SDMMC_CmdWriteMultiBlock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SDMMC_CmdWriteMultiBlock &rArr; SDMMC_GetCmdResp1
 </UL>
-<BR>[Calls]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_WriteBlocks_DMA
 </UL>
@@ -1837,8 +1837,8 @@ Global Symbols
 <P><STRONG><a name="[f8]"></a>SDMMC_CmdWriteSingleBlock</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, stm32f4xx_ll_sdmmc.o(i.SDMMC_CmdWriteSingleBlock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SDMMC_CmdWriteSingleBlock &rArr; SDMMC_GetCmdResp1
 </UL>
-<BR>[Calls]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_WriteBlocks_DMA
 </UL>
@@ -2006,10 +2006,10 @@ Global Symbols
 <P><STRONG><a name="[13b]"></a>__hardfp_fmod</STRONG> (Thumb, 254 bytes, Stack size 48 bytes, fmod.o(i.__hardfp_fmod))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = __hardfp_fmod &rArr; _drem &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_drem
-<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
-<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
+<BR>[Calls]<UL><LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
 <LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_dbl_invalid
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_drem
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;convertDegMinToDecDeg
 </UL>
@@ -2052,7 +2052,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPRMC_Parser
 </UL>
 
-<P><STRONG><a name="[ae]"></a>createMQTTPackage</STRONG> (Thumb, 642 bytes, Stack size 80 bytes, main.o(i.createMQTTPackage))
+<P><STRONG><a name="[ae]"></a>createMQTTPackage</STRONG> (Thumb, 648 bytes, Stack size 80 bytes, main.o(i.createMQTTPackage))
 <BR><BR>[Stack]<UL><LI>Max Depth = 92<LI>Call Chain = createMQTTPackage &rArr; AESK_UINT32toUINT8_LE
 </UL>
 <BR>[Calls]<UL><LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AESK_UINT8toUINT8CODE
@@ -2808,19 +2808,19 @@ Local Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2ulz
 <LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdrcmple
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 <BR>[Called By]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
 <P><STRONG><a name="[137]"></a>_printf_core</STRONG> (Thumb, 1744 bytes, Stack size 136 bytes, printfa.o(i._printf_core), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
-<LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+<BR><BR>[Calls]<UL><LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
 <LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
 <LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
 <LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 <BR>[Called By]<UL><LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0vsprintf
 <LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0sprintf

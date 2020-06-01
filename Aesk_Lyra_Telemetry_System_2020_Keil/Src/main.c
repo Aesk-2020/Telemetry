@@ -983,9 +983,8 @@ void createMQTTPackage(LyraDatas *lyradata, GPS_Handle*gps_data, uint8_t* packBu
 	AESK_UINT8toUINT8CODE(&(gps_data->speed_u8), packBuf, index);
 	AESK_UINT8toUINT8CODE(&(gps_data->satellite_number_u8), packBuf, index);
 	AESK_UINT8toUINT8CODE(&(gps_data->gpsEfficiency_u8), packBuf, index);
-	static uint32_t MQTT_Counter = 0;
-	MQTT_Counter++;
-	AESK_UINT32toUINT8_LE(&MQTT_Counter, packBuf, index);
+	gsm_data.MQTT_Counter++;
+	AESK_UINT32toUINT8_LE(&gsm_data.MQTT_Counter, packBuf, index);
 }
 
 
