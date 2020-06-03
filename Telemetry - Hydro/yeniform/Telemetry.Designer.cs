@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telemetry));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.error_ready = new System.Windows.Forms.ImageList(this.components);
             this.gmap_sag = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.GpsMouseModAktif = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,6 +100,8 @@
             this.label54 = new System.Windows.Forms.Label();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.motor_temp = new System.Windows.Forms.TextBox();
+            this.label96 = new System.Windows.Forms.Label();
             this.label90 = new System.Windows.Forms.Label();
             this.label88 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.TextBox();
@@ -116,6 +118,40 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
+            this.bms_dc_bus_ready_flag = new System.Windows.Forms.PictureBox();
+            this.bms_discharge_flag = new System.Windows.Forms.PictureBox();
+            this.bms_precharge_flag = new System.Windows.Forms.PictureBox();
+            this.label95 = new System.Windows.Forms.Label();
+            this.bms_fatal_error = new System.Windows.Forms.PictureBox();
+            this.label85 = new System.Windows.Forms.Label();
+            this.bms_over_cur_error = new System.Windows.Forms.PictureBox();
+            this.bms_comm_error = new System.Windows.Forms.PictureBox();
+            this.bms_temp_error = new System.Windows.Forms.PictureBox();
+            this.bms_low_volt_error = new System.Windows.Forms.PictureBox();
+            this.label86 = new System.Windows.Forms.Label();
+            this.label87 = new System.Windows.Forms.Label();
+            this.label89 = new System.Windows.Forms.Label();
+            this.label91 = new System.Windows.Forms.Label();
+            this.label92 = new System.Windows.Forms.Label();
+            this.bms_high_volt_error = new System.Windows.Forms.PictureBox();
+            this.label93 = new System.Windows.Forms.Label();
+            this.label94 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
+            this.bms_temp = new System.Windows.Forms.TextBox();
+            this.bms_worst_cell_address = new System.Windows.Forms.TextBox();
+            this.bms_worst_cell_voltage = new System.Windows.Forms.TextBox();
+            this.bms_soc = new System.Windows.Forms.TextBox();
+            this.bms_bat_cons = new System.Windows.Forms.TextBox();
+            this.bms_bat_current = new System.Windows.Forms.TextBox();
+            this.bms_bat_voltage = new System.Windows.Forms.TextBox();
+            this.label77 = new System.Windows.Forms.Label();
+            this.label78 = new System.Windows.Forms.Label();
+            this.label79 = new System.Windows.Forms.Label();
+            this.label81 = new System.Windows.Forms.Label();
+            this.label82 = new System.Windows.Forms.Label();
+            this.label83 = new System.Windows.Forms.Label();
+            this.label84 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.ems_temp = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -240,42 +276,8 @@
             this.anlik_hiz = new System.Windows.Forms.Label();
             this.anlikhiz_gauge = new Guna.UI.WinForms.GunaGauge();
             this.ana_sekme = new System.Windows.Forms.TabControl();
-            this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
-            this.bms_temp = new System.Windows.Forms.TextBox();
-            this.bms_worst_cell_address = new System.Windows.Forms.TextBox();
-            this.bms_worst_cell_voltage = new System.Windows.Forms.TextBox();
-            this.bms_soc = new System.Windows.Forms.TextBox();
-            this.bms_bat_cons = new System.Windows.Forms.TextBox();
-            this.bms_bat_current = new System.Windows.Forms.TextBox();
-            this.bms_bat_voltage = new System.Windows.Forms.TextBox();
-            this.label77 = new System.Windows.Forms.Label();
-            this.label78 = new System.Windows.Forms.Label();
-            this.label79 = new System.Windows.Forms.Label();
-            this.label81 = new System.Windows.Forms.Label();
-            this.label82 = new System.Windows.Forms.Label();
-            this.label83 = new System.Windows.Forms.Label();
-            this.label84 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
-            this.bms_fatal_error = new System.Windows.Forms.PictureBox();
-            this.label85 = new System.Windows.Forms.Label();
-            this.bms_over_cur_error = new System.Windows.Forms.PictureBox();
-            this.bms_comm_error = new System.Windows.Forms.PictureBox();
-            this.bms_temp_error = new System.Windows.Forms.PictureBox();
-            this.bms_low_volt_error = new System.Windows.Forms.PictureBox();
-            this.label86 = new System.Windows.Forms.Label();
-            this.label87 = new System.Windows.Forms.Label();
-            this.label89 = new System.Windows.Forms.Label();
-            this.label91 = new System.Windows.Forms.Label();
-            this.label92 = new System.Windows.Forms.Label();
-            this.bms_high_volt_error = new System.Windows.Forms.PictureBox();
-            this.label93 = new System.Windows.Forms.Label();
-            this.label94 = new System.Windows.Forms.Label();
-            this.label95 = new System.Windows.Forms.Label();
-            this.bms_precharge_flag = new System.Windows.Forms.PictureBox();
-            this.bms_discharge_flag = new System.Windows.Forms.PictureBox();
-            this.bms_dc_bus_ready_flag = new System.Windows.Forms.PictureBox();
-            this.label96 = new System.Windows.Forms.Label();
-            this.motor_temp = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.gmap_sag.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -300,6 +302,17 @@
             this.tableLayoutPanel14.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel24.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_dc_bus_ready_flag)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_discharge_flag)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_precharge_flag)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_fatal_error)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_over_cur_error)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_comm_error)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_temp_error)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_low_volt_error)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_high_volt_error)).BeginInit();
+            this.tableLayoutPanel23.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -322,17 +335,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.ana_sekme.SuspendLayout();
-            this.tableLayoutPanel23.SuspendLayout();
-            this.tableLayoutPanel24.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bms_fatal_error)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bms_over_cur_error)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bms_comm_error)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bms_temp_error)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bms_low_volt_error)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bms_high_volt_error)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bms_precharge_flag)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bms_discharge_flag)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bms_dc_bus_ready_flag)).BeginInit();
             this.SuspendLayout();
             // 
             // error_ready
@@ -1232,21 +1234,51 @@
             this.tableLayoutPanel15.ColumnCount = 2;
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel15.Controls.Add(this.motor_temp, 1, 2);
-            this.tableLayoutPanel15.Controls.Add(this.label96, 0, 2);
+            this.tableLayoutPanel15.Controls.Add(this.textBox1, 1, 2);
+            this.tableLayoutPanel15.Controls.Add(this.label29, 0, 2);
             this.tableLayoutPanel15.Controls.Add(this.label90, 0, 0);
             this.tableLayoutPanel15.Controls.Add(this.label88, 0, 1);
             this.tableLayoutPanel15.Controls.Add(this.id, 1, 0);
             this.tableLayoutPanel15.Controls.Add(this.iq, 1, 1);
+            this.tableLayoutPanel15.Controls.Add(this.motor_temp, 1, 3);
+            this.tableLayoutPanel15.Controls.Add(this.label96, 0, 3);
             this.tableLayoutPanel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(67)))), ((int)(((byte)(65)))));
             this.tableLayoutPanel15.Location = new System.Drawing.Point(229, 3);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
-            this.tableLayoutPanel15.RowCount = 3;
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel15.RowCount = 4;
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel15.Size = new System.Drawing.Size(220, 111);
             this.tableLayoutPanel15.TabIndex = 51;
+            // 
+            // motor_temp
+            // 
+            this.motor_temp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.motor_temp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.motor_temp.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.motor_temp.ForeColor = System.Drawing.Color.White;
+            this.motor_temp.Location = new System.Drawing.Point(146, 87);
+            this.motor_temp.Multiline = true;
+            this.motor_temp.Name = "motor_temp";
+            this.motor_temp.Size = new System.Drawing.Size(68, 18);
+            this.motor_temp.TabIndex = 98;
+            this.motor_temp.Text = "NaN";
+            this.motor_temp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label96.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label96.ForeColor = System.Drawing.Color.White;
+            this.label96.Location = new System.Drawing.Point(6, 84);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(131, 24);
+            this.label96.TabIndex = 55;
+            this.label96.Text = "  MOTOR TEMP";
+            this.label96.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label90
             // 
@@ -1256,7 +1288,7 @@
             this.label90.ForeColor = System.Drawing.Color.White;
             this.label90.Location = new System.Drawing.Point(6, 3);
             this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(131, 32);
+            this.label90.Size = new System.Drawing.Size(131, 24);
             this.label90.TabIndex = 54;
             this.label90.Text = "Id";
             this.label90.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1267,9 +1299,9 @@
             this.label88.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label88.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label88.ForeColor = System.Drawing.Color.White;
-            this.label88.Location = new System.Drawing.Point(6, 38);
+            this.label88.Location = new System.Drawing.Point(6, 30);
             this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(131, 32);
+            this.label88.Size = new System.Drawing.Size(131, 24);
             this.label88.TabIndex = 3;
             this.label88.Text = "Iq";
             this.label88.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1285,7 +1317,7 @@
             this.id.Multiline = true;
             this.id.Name = "id";
             this.id.ReadOnly = true;
-            this.id.Size = new System.Drawing.Size(68, 26);
+            this.id.Size = new System.Drawing.Size(68, 18);
             this.id.TabIndex = 10;
             this.id.Text = "NaN";
             this.id.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1296,11 +1328,11 @@
             this.iq.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.iq.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.iq.ForeColor = System.Drawing.Color.White;
-            this.iq.Location = new System.Drawing.Point(146, 41);
+            this.iq.Location = new System.Drawing.Point(146, 33);
             this.iq.Multiline = true;
             this.iq.Name = "iq";
             this.iq.ReadOnly = true;
-            this.iq.Size = new System.Drawing.Size(68, 26);
+            this.iq.Size = new System.Drawing.Size(68, 18);
             this.iq.TabIndex = 11;
             this.iq.Text = "NaN";
             this.iq.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1497,6 +1529,515 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 246F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(500, 468);
             this.tableLayoutPanel3.TabIndex = 50;
+            // 
+            // tableLayoutPanel24
+            // 
+            this.tableLayoutPanel24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.tableLayoutPanel24.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
+            this.tableLayoutPanel24.ColumnCount = 2;
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.12448F));
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.87552F));
+            this.tableLayoutPanel24.Controls.Add(this.bms_dc_bus_ready_flag, 1, 8);
+            this.tableLayoutPanel24.Controls.Add(this.bms_discharge_flag, 1, 7);
+            this.tableLayoutPanel24.Controls.Add(this.bms_precharge_flag, 1, 6);
+            this.tableLayoutPanel24.Controls.Add(this.label95, 0, 8);
+            this.tableLayoutPanel24.Controls.Add(this.bms_fatal_error, 1, 5);
+            this.tableLayoutPanel24.Controls.Add(this.label85, 0, 5);
+            this.tableLayoutPanel24.Controls.Add(this.bms_over_cur_error, 1, 4);
+            this.tableLayoutPanel24.Controls.Add(this.bms_comm_error, 1, 3);
+            this.tableLayoutPanel24.Controls.Add(this.bms_temp_error, 1, 2);
+            this.tableLayoutPanel24.Controls.Add(this.bms_low_volt_error, 1, 1);
+            this.tableLayoutPanel24.Controls.Add(this.label86, 0, 4);
+            this.tableLayoutPanel24.Controls.Add(this.label87, 0, 3);
+            this.tableLayoutPanel24.Controls.Add(this.label89, 0, 2);
+            this.tableLayoutPanel24.Controls.Add(this.label91, 0, 1);
+            this.tableLayoutPanel24.Controls.Add(this.label92, 0, 0);
+            this.tableLayoutPanel24.Controls.Add(this.bms_high_volt_error, 1, 0);
+            this.tableLayoutPanel24.Controls.Add(this.label93, 0, 7);
+            this.tableLayoutPanel24.Controls.Add(this.label94, 0, 6);
+            this.tableLayoutPanel24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(166)))), ((int)(((byte)(181)))));
+            this.tableLayoutPanel24.Location = new System.Drawing.Point(253, 225);
+            this.tableLayoutPanel24.Name = "tableLayoutPanel24";
+            this.tableLayoutPanel24.RowCount = 9;
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel24.Size = new System.Drawing.Size(244, 240);
+            this.tableLayoutPanel24.TabIndex = 98;
+            // 
+            // bms_dc_bus_ready_flag
+            // 
+            this.bms_dc_bus_ready_flag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bms_dc_bus_ready_flag.Location = new System.Drawing.Point(173, 214);
+            this.bms_dc_bus_ready_flag.Name = "bms_dc_bus_ready_flag";
+            this.bms_dc_bus_ready_flag.Size = new System.Drawing.Size(65, 20);
+            this.bms_dc_bus_ready_flag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bms_dc_bus_ready_flag.TabIndex = 102;
+            this.bms_dc_bus_ready_flag.TabStop = false;
+            // 
+            // bms_discharge_flag
+            // 
+            this.bms_discharge_flag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bms_discharge_flag.Location = new System.Drawing.Point(173, 188);
+            this.bms_discharge_flag.Name = "bms_discharge_flag";
+            this.bms_discharge_flag.Size = new System.Drawing.Size(65, 17);
+            this.bms_discharge_flag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bms_discharge_flag.TabIndex = 102;
+            this.bms_discharge_flag.TabStop = false;
+            // 
+            // bms_precharge_flag
+            // 
+            this.bms_precharge_flag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bms_precharge_flag.Location = new System.Drawing.Point(173, 162);
+            this.bms_precharge_flag.Name = "bms_precharge_flag";
+            this.bms_precharge_flag.Size = new System.Drawing.Size(65, 17);
+            this.bms_precharge_flag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bms_precharge_flag.TabIndex = 102;
+            this.bms_precharge_flag.TabStop = false;
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label95.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label95.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label95.ForeColor = System.Drawing.Color.White;
+            this.label95.Location = new System.Drawing.Point(6, 211);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(158, 26);
+            this.label95.TabIndex = 100;
+            this.label95.Text = "DC BUS";
+            this.label95.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bms_fatal_error
+            // 
+            this.bms_fatal_error.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bms_fatal_error.Location = new System.Drawing.Point(173, 136);
+            this.bms_fatal_error.Name = "bms_fatal_error";
+            this.bms_fatal_error.Size = new System.Drawing.Size(65, 17);
+            this.bms_fatal_error.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bms_fatal_error.TabIndex = 97;
+            this.bms_fatal_error.TabStop = false;
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label85.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label85.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label85.ForeColor = System.Drawing.Color.White;
+            this.label85.Location = new System.Drawing.Point(6, 133);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(158, 23);
+            this.label85.TabIndex = 14;
+            this.label85.Text = "FATAL ERROR";
+            this.label85.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bms_over_cur_error
+            // 
+            this.bms_over_cur_error.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bms_over_cur_error.Location = new System.Drawing.Point(173, 110);
+            this.bms_over_cur_error.Name = "bms_over_cur_error";
+            this.bms_over_cur_error.Size = new System.Drawing.Size(65, 17);
+            this.bms_over_cur_error.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bms_over_cur_error.TabIndex = 13;
+            this.bms_over_cur_error.TabStop = false;
+            // 
+            // bms_comm_error
+            // 
+            this.bms_comm_error.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bms_comm_error.Location = new System.Drawing.Point(173, 84);
+            this.bms_comm_error.Name = "bms_comm_error";
+            this.bms_comm_error.Size = new System.Drawing.Size(65, 17);
+            this.bms_comm_error.TabIndex = 12;
+            this.bms_comm_error.TabStop = false;
+            // 
+            // bms_temp_error
+            // 
+            this.bms_temp_error.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bms_temp_error.Location = new System.Drawing.Point(173, 58);
+            this.bms_temp_error.Name = "bms_temp_error";
+            this.bms_temp_error.Size = new System.Drawing.Size(65, 17);
+            this.bms_temp_error.TabIndex = 11;
+            this.bms_temp_error.TabStop = false;
+            // 
+            // bms_low_volt_error
+            // 
+            this.bms_low_volt_error.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bms_low_volt_error.Location = new System.Drawing.Point(173, 32);
+            this.bms_low_volt_error.Name = "bms_low_volt_error";
+            this.bms_low_volt_error.Size = new System.Drawing.Size(65, 17);
+            this.bms_low_volt_error.TabIndex = 10;
+            this.bms_low_volt_error.TabStop = false;
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label86.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label86.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label86.ForeColor = System.Drawing.Color.White;
+            this.label86.Location = new System.Drawing.Point(6, 107);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(158, 23);
+            this.label86.TabIndex = 8;
+            this.label86.Text = "OVER CURRENT";
+            this.label86.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label87.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label87.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label87.ForeColor = System.Drawing.Color.White;
+            this.label87.Location = new System.Drawing.Point(6, 81);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(158, 23);
+            this.label87.TabIndex = 6;
+            this.label87.Text = "COMM";
+            this.label87.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label89.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label89.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label89.ForeColor = System.Drawing.Color.White;
+            this.label89.Location = new System.Drawing.Point(6, 55);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(158, 23);
+            this.label89.TabIndex = 4;
+            this.label89.Text = "TEMP ERROR";
+            this.label89.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label91.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label91.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label91.ForeColor = System.Drawing.Color.White;
+            this.label91.Location = new System.Drawing.Point(6, 29);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(158, 23);
+            this.label91.TabIndex = 2;
+            this.label91.Text = "LOW VOLT ERROR";
+            this.label91.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label92.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label92.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label92.ForeColor = System.Drawing.Color.White;
+            this.label92.Location = new System.Drawing.Point(6, 3);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(158, 23);
+            this.label92.TabIndex = 0;
+            this.label92.Text = "HIGH VOLT ERROR";
+            this.label92.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bms_high_volt_error
+            // 
+            this.bms_high_volt_error.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bms_high_volt_error.Location = new System.Drawing.Point(173, 6);
+            this.bms_high_volt_error.Name = "bms_high_volt_error";
+            this.bms_high_volt_error.Size = new System.Drawing.Size(65, 17);
+            this.bms_high_volt_error.TabIndex = 9;
+            this.bms_high_volt_error.TabStop = false;
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label93.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label93.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label93.ForeColor = System.Drawing.Color.White;
+            this.label93.Location = new System.Drawing.Point(6, 185);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(158, 23);
+            this.label93.TabIndex = 98;
+            this.label93.Text = "DISCHARGE";
+            this.label93.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label94.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label94.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label94.ForeColor = System.Drawing.Color.White;
+            this.label94.Location = new System.Drawing.Point(6, 159);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(158, 23);
+            this.label94.TabIndex = 99;
+            this.label94.Text = "PRECHARGE";
+            this.label94.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel23
+            // 
+            this.tableLayoutPanel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.tableLayoutPanel23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tableLayoutPanel23.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
+            this.tableLayoutPanel23.ColumnCount = 2;
+            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.12448F));
+            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.87552F));
+            this.tableLayoutPanel23.Controls.Add(this.bms_temp, 1, 6);
+            this.tableLayoutPanel23.Controls.Add(this.bms_worst_cell_address, 1, 5);
+            this.tableLayoutPanel23.Controls.Add(this.bms_worst_cell_voltage, 1, 4);
+            this.tableLayoutPanel23.Controls.Add(this.bms_soc, 1, 3);
+            this.tableLayoutPanel23.Controls.Add(this.bms_bat_cons, 1, 2);
+            this.tableLayoutPanel23.Controls.Add(this.bms_bat_current, 1, 1);
+            this.tableLayoutPanel23.Controls.Add(this.bms_bat_voltage, 1, 0);
+            this.tableLayoutPanel23.Controls.Add(this.label77, 0, 1);
+            this.tableLayoutPanel23.Controls.Add(this.label78, 0, 6);
+            this.tableLayoutPanel23.Controls.Add(this.label79, 0, 0);
+            this.tableLayoutPanel23.Controls.Add(this.label81, 0, 5);
+            this.tableLayoutPanel23.Controls.Add(this.label82, 0, 2);
+            this.tableLayoutPanel23.Controls.Add(this.label83, 0, 4);
+            this.tableLayoutPanel23.Controls.Add(this.label84, 0, 3);
+            this.tableLayoutPanel23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(45)))), ((int)(((byte)(29)))));
+            this.tableLayoutPanel23.Location = new System.Drawing.Point(3, 225);
+            this.tableLayoutPanel23.Name = "tableLayoutPanel23";
+            this.tableLayoutPanel23.RowCount = 7;
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel23.Size = new System.Drawing.Size(244, 240);
+            this.tableLayoutPanel23.TabIndex = 51;
+            // 
+            // bms_temp
+            // 
+            this.bms_temp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bms_temp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.bms_temp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bms_temp.ForeColor = System.Drawing.Color.White;
+            this.bms_temp.Location = new System.Drawing.Point(173, 204);
+            this.bms_temp.Multiline = true;
+            this.bms_temp.Name = "bms_temp";
+            this.bms_temp.Size = new System.Drawing.Size(65, 30);
+            this.bms_temp.TabIndex = 103;
+            this.bms_temp.Tag = "";
+            this.bms_temp.Text = "NaN";
+            this.bms_temp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // bms_worst_cell_address
+            // 
+            this.bms_worst_cell_address.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bms_worst_cell_address.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.bms_worst_cell_address.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bms_worst_cell_address.ForeColor = System.Drawing.Color.White;
+            this.bms_worst_cell_address.Location = new System.Drawing.Point(173, 171);
+            this.bms_worst_cell_address.Multiline = true;
+            this.bms_worst_cell_address.Name = "bms_worst_cell_address";
+            this.bms_worst_cell_address.Size = new System.Drawing.Size(65, 24);
+            this.bms_worst_cell_address.TabIndex = 102;
+            this.bms_worst_cell_address.Tag = "";
+            this.bms_worst_cell_address.Text = "NaN";
+            this.bms_worst_cell_address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // bms_worst_cell_voltage
+            // 
+            this.bms_worst_cell_voltage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bms_worst_cell_voltage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.bms_worst_cell_voltage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bms_worst_cell_voltage.ForeColor = System.Drawing.Color.White;
+            this.bms_worst_cell_voltage.Location = new System.Drawing.Point(173, 138);
+            this.bms_worst_cell_voltage.Multiline = true;
+            this.bms_worst_cell_voltage.Name = "bms_worst_cell_voltage";
+            this.bms_worst_cell_voltage.Size = new System.Drawing.Size(65, 24);
+            this.bms_worst_cell_voltage.TabIndex = 101;
+            this.bms_worst_cell_voltage.Tag = "";
+            this.bms_worst_cell_voltage.Text = "NaN";
+            this.bms_worst_cell_voltage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // bms_soc
+            // 
+            this.bms_soc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bms_soc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.bms_soc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bms_soc.ForeColor = System.Drawing.Color.White;
+            this.bms_soc.Location = new System.Drawing.Point(173, 105);
+            this.bms_soc.Multiline = true;
+            this.bms_soc.Name = "bms_soc";
+            this.bms_soc.Size = new System.Drawing.Size(65, 24);
+            this.bms_soc.TabIndex = 100;
+            this.bms_soc.Tag = "";
+            this.bms_soc.Text = "NaN";
+            this.bms_soc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // bms_bat_cons
+            // 
+            this.bms_bat_cons.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bms_bat_cons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.bms_bat_cons.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bms_bat_cons.ForeColor = System.Drawing.Color.White;
+            this.bms_bat_cons.Location = new System.Drawing.Point(173, 72);
+            this.bms_bat_cons.Multiline = true;
+            this.bms_bat_cons.Name = "bms_bat_cons";
+            this.bms_bat_cons.Size = new System.Drawing.Size(65, 24);
+            this.bms_bat_cons.TabIndex = 99;
+            this.bms_bat_cons.Tag = "";
+            this.bms_bat_cons.Text = "NaN";
+            this.bms_bat_cons.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // bms_bat_current
+            // 
+            this.bms_bat_current.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bms_bat_current.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.bms_bat_current.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bms_bat_current.ForeColor = System.Drawing.Color.White;
+            this.bms_bat_current.Location = new System.Drawing.Point(173, 39);
+            this.bms_bat_current.Multiline = true;
+            this.bms_bat_current.Name = "bms_bat_current";
+            this.bms_bat_current.Size = new System.Drawing.Size(65, 24);
+            this.bms_bat_current.TabIndex = 98;
+            this.bms_bat_current.Tag = "";
+            this.bms_bat_current.Text = "NaN";
+            this.bms_bat_current.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // bms_bat_voltage
+            // 
+            this.bms_bat_voltage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bms_bat_voltage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.bms_bat_voltage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bms_bat_voltage.ForeColor = System.Drawing.Color.White;
+            this.bms_bat_voltage.Location = new System.Drawing.Point(173, 6);
+            this.bms_bat_voltage.Multiline = true;
+            this.bms_bat_voltage.Name = "bms_bat_voltage";
+            this.bms_bat_voltage.Size = new System.Drawing.Size(65, 24);
+            this.bms_bat_voltage.TabIndex = 97;
+            this.bms_bat_voltage.Tag = "";
+            this.bms_bat_voltage.Text = "NaN";
+            this.bms_bat_voltage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label77.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label77.ForeColor = System.Drawing.Color.White;
+            this.label77.Location = new System.Drawing.Point(6, 36);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(158, 30);
+            this.label77.TabIndex = 3;
+            this.label77.Text = "BAT CUR";
+            this.label77.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label78.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label78.ForeColor = System.Drawing.Color.White;
+            this.label78.Location = new System.Drawing.Point(6, 201);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(158, 36);
+            this.label78.TabIndex = 9;
+            this.label78.Text = "MAX CELL TEMP";
+            this.label78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label79.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label79.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label79.ForeColor = System.Drawing.Color.White;
+            this.label79.Location = new System.Drawing.Point(6, 3);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(158, 30);
+            this.label79.TabIndex = 0;
+            this.label79.Text = "BAT VOLT";
+            this.label79.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label81.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label81.ForeColor = System.Drawing.Color.White;
+            this.label81.Location = new System.Drawing.Point(6, 168);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(158, 30);
+            this.label81.TabIndex = 6;
+            this.label81.Text = "WORST CELL ADDRESS";
+            this.label81.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label82
+            // 
+            this.label82.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label82.AutoSize = true;
+            this.label82.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label82.ForeColor = System.Drawing.Color.White;
+            this.label82.Location = new System.Drawing.Point(6, 69);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(158, 30);
+            this.label82.TabIndex = 6;
+            this.label82.Text = "BAT CONS";
+            this.label82.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label83.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label83.ForeColor = System.Drawing.Color.White;
+            this.label83.Location = new System.Drawing.Point(6, 135);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(158, 30);
+            this.label83.TabIndex = 3;
+            this.label83.Text = "WORST CELL VOLT";
+            this.label83.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label84.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label84.ForeColor = System.Drawing.Color.White;
+            this.label84.Location = new System.Drawing.Point(6, 102);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(158, 30);
+            this.label84.TabIndex = 0;
+            this.label84.Text = "SOC";
+            this.label84.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
             // 
@@ -3013,43 +3554,43 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Location = new System.Drawing.Point(49, 750);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowHeadersWidth = 55;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -3282,541 +3823,33 @@
             this.ana_sekme.Size = new System.Drawing.Size(1904, 1041);
             this.ana_sekme.TabIndex = 48;
             // 
-            // tableLayoutPanel23
-            // 
-            this.tableLayoutPanel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.tableLayoutPanel23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tableLayoutPanel23.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
-            this.tableLayoutPanel23.ColumnCount = 2;
-            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.12448F));
-            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.87552F));
-            this.tableLayoutPanel23.Controls.Add(this.bms_temp, 1, 6);
-            this.tableLayoutPanel23.Controls.Add(this.bms_worst_cell_address, 1, 5);
-            this.tableLayoutPanel23.Controls.Add(this.bms_worst_cell_voltage, 1, 4);
-            this.tableLayoutPanel23.Controls.Add(this.bms_soc, 1, 3);
-            this.tableLayoutPanel23.Controls.Add(this.bms_bat_cons, 1, 2);
-            this.tableLayoutPanel23.Controls.Add(this.bms_bat_current, 1, 1);
-            this.tableLayoutPanel23.Controls.Add(this.bms_bat_voltage, 1, 0);
-            this.tableLayoutPanel23.Controls.Add(this.label77, 0, 1);
-            this.tableLayoutPanel23.Controls.Add(this.label78, 0, 6);
-            this.tableLayoutPanel23.Controls.Add(this.label79, 0, 0);
-            this.tableLayoutPanel23.Controls.Add(this.label81, 0, 5);
-            this.tableLayoutPanel23.Controls.Add(this.label82, 0, 2);
-            this.tableLayoutPanel23.Controls.Add(this.label83, 0, 4);
-            this.tableLayoutPanel23.Controls.Add(this.label84, 0, 3);
-            this.tableLayoutPanel23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(45)))), ((int)(((byte)(29)))));
-            this.tableLayoutPanel23.Location = new System.Drawing.Point(3, 225);
-            this.tableLayoutPanel23.Name = "tableLayoutPanel23";
-            this.tableLayoutPanel23.RowCount = 7;
-            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel23.Size = new System.Drawing.Size(244, 240);
-            this.tableLayoutPanel23.TabIndex = 51;
-            // 
-            // bms_temp
-            // 
-            this.bms_temp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bms_temp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.bms_temp.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bms_temp.ForeColor = System.Drawing.Color.White;
-            this.bms_temp.Location = new System.Drawing.Point(173, 204);
-            this.bms_temp.Multiline = true;
-            this.bms_temp.Name = "bms_temp";
-            this.bms_temp.Size = new System.Drawing.Size(65, 30);
-            this.bms_temp.TabIndex = 103;
-            this.bms_temp.Tag = "";
-            this.bms_temp.Text = "NaN";
-            this.bms_temp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // bms_worst_cell_address
-            // 
-            this.bms_worst_cell_address.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bms_worst_cell_address.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.bms_worst_cell_address.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bms_worst_cell_address.ForeColor = System.Drawing.Color.White;
-            this.bms_worst_cell_address.Location = new System.Drawing.Point(173, 171);
-            this.bms_worst_cell_address.Multiline = true;
-            this.bms_worst_cell_address.Name = "bms_worst_cell_address";
-            this.bms_worst_cell_address.Size = new System.Drawing.Size(65, 24);
-            this.bms_worst_cell_address.TabIndex = 102;
-            this.bms_worst_cell_address.Tag = "";
-            this.bms_worst_cell_address.Text = "NaN";
-            this.bms_worst_cell_address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // bms_worst_cell_voltage
-            // 
-            this.bms_worst_cell_voltage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bms_worst_cell_voltage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.bms_worst_cell_voltage.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bms_worst_cell_voltage.ForeColor = System.Drawing.Color.White;
-            this.bms_worst_cell_voltage.Location = new System.Drawing.Point(173, 138);
-            this.bms_worst_cell_voltage.Multiline = true;
-            this.bms_worst_cell_voltage.Name = "bms_worst_cell_voltage";
-            this.bms_worst_cell_voltage.Size = new System.Drawing.Size(65, 24);
-            this.bms_worst_cell_voltage.TabIndex = 101;
-            this.bms_worst_cell_voltage.Tag = "";
-            this.bms_worst_cell_voltage.Text = "NaN";
-            this.bms_worst_cell_voltage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // bms_soc
-            // 
-            this.bms_soc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bms_soc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.bms_soc.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bms_soc.ForeColor = System.Drawing.Color.White;
-            this.bms_soc.Location = new System.Drawing.Point(173, 105);
-            this.bms_soc.Multiline = true;
-            this.bms_soc.Name = "bms_soc";
-            this.bms_soc.Size = new System.Drawing.Size(65, 24);
-            this.bms_soc.TabIndex = 100;
-            this.bms_soc.Tag = "";
-            this.bms_soc.Text = "NaN";
-            this.bms_soc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // bms_bat_cons
-            // 
-            this.bms_bat_cons.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bms_bat_cons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.bms_bat_cons.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bms_bat_cons.ForeColor = System.Drawing.Color.White;
-            this.bms_bat_cons.Location = new System.Drawing.Point(173, 72);
-            this.bms_bat_cons.Multiline = true;
-            this.bms_bat_cons.Name = "bms_bat_cons";
-            this.bms_bat_cons.Size = new System.Drawing.Size(65, 24);
-            this.bms_bat_cons.TabIndex = 99;
-            this.bms_bat_cons.Tag = "";
-            this.bms_bat_cons.Text = "NaN";
-            this.bms_bat_cons.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // bms_bat_current
-            // 
-            this.bms_bat_current.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bms_bat_current.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.bms_bat_current.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bms_bat_current.ForeColor = System.Drawing.Color.White;
-            this.bms_bat_current.Location = new System.Drawing.Point(173, 39);
-            this.bms_bat_current.Multiline = true;
-            this.bms_bat_current.Name = "bms_bat_current";
-            this.bms_bat_current.Size = new System.Drawing.Size(65, 24);
-            this.bms_bat_current.TabIndex = 98;
-            this.bms_bat_current.Tag = "";
-            this.bms_bat_current.Text = "NaN";
-            this.bms_bat_current.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // bms_bat_voltage
-            // 
-            this.bms_bat_voltage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bms_bat_voltage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.bms_bat_voltage.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bms_bat_voltage.ForeColor = System.Drawing.Color.White;
-            this.bms_bat_voltage.Location = new System.Drawing.Point(173, 6);
-            this.bms_bat_voltage.Multiline = true;
-            this.bms_bat_voltage.Name = "bms_bat_voltage";
-            this.bms_bat_voltage.Size = new System.Drawing.Size(65, 24);
-            this.bms_bat_voltage.TabIndex = 97;
-            this.bms_bat_voltage.Tag = "";
-            this.bms_bat_voltage.Text = "NaN";
-            this.bms_bat_voltage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label77
-            // 
-            this.label77.AutoSize = true;
-            this.label77.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label77.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label77.ForeColor = System.Drawing.Color.White;
-            this.label77.Location = new System.Drawing.Point(6, 36);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(158, 30);
-            this.label77.TabIndex = 3;
-            this.label77.Text = "BAT CUR";
-            this.label77.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label78.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label78.ForeColor = System.Drawing.Color.White;
-            this.label78.Location = new System.Drawing.Point(6, 201);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(158, 36);
-            this.label78.TabIndex = 9;
-            this.label78.Text = "TEMP";
-            this.label78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label79
-            // 
-            this.label79.AutoSize = true;
-            this.label79.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.label79.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label79.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label79.ForeColor = System.Drawing.Color.White;
-            this.label79.Location = new System.Drawing.Point(6, 3);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(158, 30);
-            this.label79.TabIndex = 0;
-            this.label79.Text = "BAT VOLT";
-            this.label79.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label81.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label81.ForeColor = System.Drawing.Color.White;
-            this.label81.Location = new System.Drawing.Point(6, 168);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(158, 30);
-            this.label81.TabIndex = 6;
-            this.label81.Text = "WORST CELL ADDRESS";
-            this.label81.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label82
-            // 
-            this.label82.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label82.AutoSize = true;
-            this.label82.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label82.ForeColor = System.Drawing.Color.White;
-            this.label82.Location = new System.Drawing.Point(6, 69);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(158, 30);
-            this.label82.TabIndex = 6;
-            this.label82.Text = "BAT CONS";
-            this.label82.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label83
-            // 
-            this.label83.AutoSize = true;
-            this.label83.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label83.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label83.ForeColor = System.Drawing.Color.White;
-            this.label83.Location = new System.Drawing.Point(6, 135);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(158, 30);
-            this.label83.TabIndex = 3;
-            this.label83.Text = "WORST CELL VOLT";
-            this.label83.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label84
-            // 
-            this.label84.AutoSize = true;
-            this.label84.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label84.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label84.ForeColor = System.Drawing.Color.White;
-            this.label84.Location = new System.Drawing.Point(6, 102);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(158, 30);
-            this.label84.TabIndex = 0;
-            this.label84.Text = "SOC";
-            this.label84.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel24
-            // 
-            this.tableLayoutPanel24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.tableLayoutPanel24.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
-            this.tableLayoutPanel24.ColumnCount = 2;
-            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.12448F));
-            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.87552F));
-            this.tableLayoutPanel24.Controls.Add(this.bms_dc_bus_ready_flag, 1, 8);
-            this.tableLayoutPanel24.Controls.Add(this.bms_discharge_flag, 1, 7);
-            this.tableLayoutPanel24.Controls.Add(this.bms_precharge_flag, 1, 6);
-            this.tableLayoutPanel24.Controls.Add(this.label95, 0, 8);
-            this.tableLayoutPanel24.Controls.Add(this.bms_fatal_error, 1, 5);
-            this.tableLayoutPanel24.Controls.Add(this.label85, 0, 5);
-            this.tableLayoutPanel24.Controls.Add(this.bms_over_cur_error, 1, 4);
-            this.tableLayoutPanel24.Controls.Add(this.bms_comm_error, 1, 3);
-            this.tableLayoutPanel24.Controls.Add(this.bms_temp_error, 1, 2);
-            this.tableLayoutPanel24.Controls.Add(this.bms_low_volt_error, 1, 1);
-            this.tableLayoutPanel24.Controls.Add(this.label86, 0, 4);
-            this.tableLayoutPanel24.Controls.Add(this.label87, 0, 3);
-            this.tableLayoutPanel24.Controls.Add(this.label89, 0, 2);
-            this.tableLayoutPanel24.Controls.Add(this.label91, 0, 1);
-            this.tableLayoutPanel24.Controls.Add(this.label92, 0, 0);
-            this.tableLayoutPanel24.Controls.Add(this.bms_high_volt_error, 1, 0);
-            this.tableLayoutPanel24.Controls.Add(this.label93, 0, 7);
-            this.tableLayoutPanel24.Controls.Add(this.label94, 0, 6);
-            this.tableLayoutPanel24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(166)))), ((int)(((byte)(181)))));
-            this.tableLayoutPanel24.Location = new System.Drawing.Point(253, 225);
-            this.tableLayoutPanel24.Name = "tableLayoutPanel24";
-            this.tableLayoutPanel24.RowCount = 9;
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel24.Size = new System.Drawing.Size(244, 240);
-            this.tableLayoutPanel24.TabIndex = 98;
-            // 
-            // bms_fatal_error
-            // 
-            this.bms_fatal_error.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bms_fatal_error.Location = new System.Drawing.Point(173, 136);
-            this.bms_fatal_error.Name = "bms_fatal_error";
-            this.bms_fatal_error.Size = new System.Drawing.Size(65, 17);
-            this.bms_fatal_error.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bms_fatal_error.TabIndex = 97;
-            this.bms_fatal_error.TabStop = false;
-            // 
-            // label85
-            // 
-            this.label85.AutoSize = true;
-            this.label85.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.label85.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label85.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label85.ForeColor = System.Drawing.Color.White;
-            this.label85.Location = new System.Drawing.Point(6, 133);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(158, 23);
-            this.label85.TabIndex = 14;
-            this.label85.Text = "FATAL ERROR";
-            this.label85.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bms_over_cur_error
-            // 
-            this.bms_over_cur_error.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bms_over_cur_error.Location = new System.Drawing.Point(173, 110);
-            this.bms_over_cur_error.Name = "bms_over_cur_error";
-            this.bms_over_cur_error.Size = new System.Drawing.Size(65, 17);
-            this.bms_over_cur_error.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bms_over_cur_error.TabIndex = 13;
-            this.bms_over_cur_error.TabStop = false;
-            // 
-            // bms_comm_error
-            // 
-            this.bms_comm_error.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bms_comm_error.Location = new System.Drawing.Point(173, 84);
-            this.bms_comm_error.Name = "bms_comm_error";
-            this.bms_comm_error.Size = new System.Drawing.Size(65, 17);
-            this.bms_comm_error.TabIndex = 12;
-            this.bms_comm_error.TabStop = false;
-            // 
-            // bms_temp_error
-            // 
-            this.bms_temp_error.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bms_temp_error.Location = new System.Drawing.Point(173, 58);
-            this.bms_temp_error.Name = "bms_temp_error";
-            this.bms_temp_error.Size = new System.Drawing.Size(65, 17);
-            this.bms_temp_error.TabIndex = 11;
-            this.bms_temp_error.TabStop = false;
-            // 
-            // bms_low_volt_error
-            // 
-            this.bms_low_volt_error.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bms_low_volt_error.Location = new System.Drawing.Point(173, 32);
-            this.bms_low_volt_error.Name = "bms_low_volt_error";
-            this.bms_low_volt_error.Size = new System.Drawing.Size(65, 17);
-            this.bms_low_volt_error.TabIndex = 10;
-            this.bms_low_volt_error.TabStop = false;
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.label86.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label86.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label86.ForeColor = System.Drawing.Color.White;
-            this.label86.Location = new System.Drawing.Point(6, 107);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(158, 23);
-            this.label86.TabIndex = 8;
-            this.label86.Text = "OVER CURRENT";
-            this.label86.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.label87.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label87.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label87.ForeColor = System.Drawing.Color.White;
-            this.label87.Location = new System.Drawing.Point(6, 81);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(158, 23);
-            this.label87.TabIndex = 6;
-            this.label87.Text = "COMM";
-            this.label87.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label89
-            // 
-            this.label89.AutoSize = true;
-            this.label89.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.label89.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label89.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label89.ForeColor = System.Drawing.Color.White;
-            this.label89.Location = new System.Drawing.Point(6, 55);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(158, 23);
-            this.label89.TabIndex = 4;
-            this.label89.Text = "TEMP ERROR";
-            this.label89.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.label91.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label91.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label91.ForeColor = System.Drawing.Color.White;
-            this.label91.Location = new System.Drawing.Point(6, 29);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(158, 23);
-            this.label91.TabIndex = 2;
-            this.label91.Text = "LOW VOLT ERROR";
-            this.label91.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label92
-            // 
-            this.label92.AutoSize = true;
-            this.label92.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.label92.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label92.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label92.ForeColor = System.Drawing.Color.White;
-            this.label92.Location = new System.Drawing.Point(6, 3);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(158, 23);
-            this.label92.TabIndex = 0;
-            this.label92.Text = "HIGH VOLT ERROR";
-            this.label92.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bms_high_volt_error
-            // 
-            this.bms_high_volt_error.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bms_high_volt_error.Location = new System.Drawing.Point(173, 6);
-            this.bms_high_volt_error.Name = "bms_high_volt_error";
-            this.bms_high_volt_error.Size = new System.Drawing.Size(65, 17);
-            this.bms_high_volt_error.TabIndex = 9;
-            this.bms_high_volt_error.TabStop = false;
-            // 
-            // label93
-            // 
-            this.label93.AutoSize = true;
-            this.label93.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.label93.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label93.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label93.ForeColor = System.Drawing.Color.White;
-            this.label93.Location = new System.Drawing.Point(6, 185);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(158, 23);
-            this.label93.TabIndex = 98;
-            this.label93.Text = "DISCHARGE";
-            this.label93.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label94
-            // 
-            this.label94.AutoSize = true;
-            this.label94.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.label94.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label94.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label94.ForeColor = System.Drawing.Color.White;
-            this.label94.Location = new System.Drawing.Point(6, 159);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(158, 23);
-            this.label94.TabIndex = 99;
-            this.label94.Text = "PRECHARGE";
-            this.label94.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label95
-            // 
-            this.label95.AutoSize = true;
-            this.label95.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.label95.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label95.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label95.ForeColor = System.Drawing.Color.White;
-            this.label95.Location = new System.Drawing.Point(6, 211);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(158, 26);
-            this.label95.TabIndex = 100;
-            this.label95.Text = "DC BUS";
-            this.label95.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bms_precharge_flag
-            // 
-            this.bms_precharge_flag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bms_precharge_flag.Location = new System.Drawing.Point(173, 162);
-            this.bms_precharge_flag.Name = "bms_precharge_flag";
-            this.bms_precharge_flag.Size = new System.Drawing.Size(65, 17);
-            this.bms_precharge_flag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bms_precharge_flag.TabIndex = 102;
-            this.bms_precharge_flag.TabStop = false;
-            // 
-            // bms_discharge_flag
-            // 
-            this.bms_discharge_flag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bms_discharge_flag.Location = new System.Drawing.Point(173, 188);
-            this.bms_discharge_flag.Name = "bms_discharge_flag";
-            this.bms_discharge_flag.Size = new System.Drawing.Size(65, 17);
-            this.bms_discharge_flag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bms_discharge_flag.TabIndex = 102;
-            this.bms_discharge_flag.TabStop = false;
-            // 
-            // bms_dc_bus_ready_flag
-            // 
-            this.bms_dc_bus_ready_flag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bms_dc_bus_ready_flag.Location = new System.Drawing.Point(173, 214);
-            this.bms_dc_bus_ready_flag.Name = "bms_dc_bus_ready_flag";
-            this.bms_dc_bus_ready_flag.Size = new System.Drawing.Size(65, 20);
-            this.bms_dc_bus_ready_flag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bms_dc_bus_ready_flag.TabIndex = 102;
-            this.bms_dc_bus_ready_flag.TabStop = false;
-            // 
-            // label96
-            // 
-            this.label96.AutoSize = true;
-            this.label96.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label96.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label96.ForeColor = System.Drawing.Color.White;
-            this.label96.Location = new System.Drawing.Point(6, 73);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(131, 35);
-            this.label96.TabIndex = 55;
-            this.label96.Text = "  MOTOR TEMP";
-            this.label96.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // motor_temp
-            // 
-            this.motor_temp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.motor_temp.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.motor_temp.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.motor_temp.ForeColor = System.Drawing.Color.White;
-            this.motor_temp.Location = new System.Drawing.Point(146, 76);
-            this.motor_temp.Multiline = true;
-            this.motor_temp.Name = "motor_temp";
-            this.motor_temp.Size = new System.Drawing.Size(68, 22);
-            this.motor_temp.TabIndex = 98;
-            this.motor_temp.Text = "NaN";
-            this.motor_temp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label29.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label29.ForeColor = System.Drawing.Color.White;
+            this.label29.Location = new System.Drawing.Point(6, 57);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(131, 24);
+            this.label29.TabIndex = 98;
+            this.label29.Text = "IArms";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(146, 60);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(68, 18);
+            this.textBox1.TabIndex = 98;
+            this.textBox1.Text = "NaN";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // telemetry
             // 
@@ -3865,6 +3898,19 @@
             this.tableLayoutPanel14.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel24.ResumeLayout(false);
+            this.tableLayoutPanel24.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_dc_bus_ready_flag)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_discharge_flag)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_precharge_flag)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_fatal_error)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_over_cur_error)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_comm_error)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_temp_error)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_low_volt_error)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_high_volt_error)).EndInit();
+            this.tableLayoutPanel23.ResumeLayout(false);
+            this.tableLayoutPanel23.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
@@ -3897,19 +3943,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ana_sekme.ResumeLayout(false);
-            this.tableLayoutPanel23.ResumeLayout(false);
-            this.tableLayoutPanel23.PerformLayout();
-            this.tableLayoutPanel24.ResumeLayout(false);
-            this.tableLayoutPanel24.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bms_fatal_error)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bms_over_cur_error)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bms_comm_error)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bms_temp_error)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bms_low_volt_error)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bms_high_volt_error)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bms_precharge_flag)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bms_discharge_flag)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bms_dc_bus_ready_flag)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4156,6 +4189,8 @@
         private System.Windows.Forms.PictureBox bms_dc_bus_ready_flag;
         private System.Windows.Forms.PictureBox bms_discharge_flag;
         private System.Windows.Forms.PictureBox bms_precharge_flag;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label29;
     }
 }
 

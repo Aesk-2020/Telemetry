@@ -15,7 +15,7 @@ namespace telemetry_hydro.Variables
         public static float fc_volt_f32;
         public static float out_volt_f32;
         public static float bat_soc_f32;
-        public static byte error_u8;
+        public static byte  error_u8;
         public static sbyte penalty_s8;
 
         public static bool bat_current_error_u1 => Convert.ToBoolean((error_u8 & 0b00000001));
