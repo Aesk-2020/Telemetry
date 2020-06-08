@@ -7,7 +7,7 @@
 
 #ifndef CAN_LYRA_HEADER_H_
 #define CAN_LYRA_HEADER_H_
-
+#include "main.h"
 #define DRIVER_CUR_VOLT					0x1555DDD0
 #define DRIVER_ID_IQ_VD_VQ				0x1555DDD1
 #define	DRIVER_STATE_AREA				0x1555DDD2

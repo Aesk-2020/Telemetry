@@ -67,7 +67,7 @@ UART_HandleTypeDef huart3;
 /* USER CODE BEGIN PV */
 int SetTime = 0;
 int SetDate = 0;
-
+AESK_CAN_Struct aesk_can;
 Time_Task_union time_task;
 Xbee_Datas xbee_data;
 Gsm_Datas gsm_data;
@@ -177,8 +177,16 @@ int main(void)
    {
 	   ;
    }
-
-
+	
+		AESK_CAN_ExtIDListFilterConfiguration(&aesk_can, DRIVER_CUR_VOLT, CAN_RX_FIFO0, 0);
+		AESK_CAN_ExtIDListFilterConfiguration(&aesk_can, DRIVER_STATE_AREA, CAN_RX_FIFO0, 2);
+		AESK_CAN_ExtIDListFilterConfiguration(&aesk_can, BMS_MEASUREMENTS, CAN_RX_FIFO0, 6);
+		AESK_CAN_ExtIDListFilterConfiguration(&aesk_can, BMS_STATE_DATA, CAN_RX_FIFO0, 7);
+	  AESK_CAN_Init(&aesk_can, CAN_IT_RX_FIFO0_MSG_PENDING);
+  /* CAN1 WAKE - CAN2 SLEEP*/
+		CAN2_STDBY_GPIO_Port->BSRR = CAN2_STDBY_Pin;
+		CAN1_STDBY_GPIO_Port->BSRR = (uint32_t)CAN1_STDBY_Pin << 16U;
+  //////////////////////////
     HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
     HAL_UART_Receive_IT(&huart3, &xbee_data.receiveData, 1);
     HAL_UART_Receive_IT(&huart2, &gps_data.uartReceiveData_u8, 1);
@@ -985,6 +993,61 @@ void createMQTTPackage(LyraDatas *lyradata, GPS_Handle*gps_data, uint8_t* packBu
 	AESK_UINT8toUINT8CODE(&(gps_data->gpsEfficiency_u8), packBuf, index);
 	gsm_data.MQTT_Counter++;
 	AESK_UINT32toUINT8_LE(&gsm_data.MQTT_Counter, packBuf, index);
+}
+
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
+{
+	AESK_CAN_ReadExtIDMessage(&aesk_can, CAN_RX_FIFO0);
+
+	switch(aesk_can.rxMsg.ExtId)
+	{
+		case DRIVER_CUR_VOLT :
+		{
+			uint16_t driver_current_voltage_index = 0;
+			AESK_INT16toFLOAT_LE(&lyradata.driver_data.Phase_A_Current_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &driver_current_voltage_index);
+			AESK_INT16toFLOAT_LE(&lyradata.driver_data.Phase_B_Current_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &driver_current_voltage_index);
+			AESK_INT16toFLOAT_LE(&lyradata.driver_data.Dc_Bus_Current_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &driver_current_voltage_index);
+			AESK_INT16toFLOAT_LE(&lyradata.driver_data.Dc_Bus_voltage_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &driver_current_voltage_index);
+			break;
+		}
+
+
+		case DRIVER_STATE_AREA :
+		{
+			uint16_t driver_state_area_index = 0;
+			AESK_UINT8toUINT8ENCODE((uint8_t *)&lyradata.driver_data.drive_status_union.drive_status_u8,aesk_can.receivedData, &driver_state_area_index);
+			AESK_UINT8toUINT8ENCODE((uint8_t *)&lyradata.driver_data.driver_error_union.driver_error_u8, aesk_can.receivedData, &driver_state_area_index);
+			AESK_UINT8toUINT32_LE(&lyradata.driver_data.Odometer_u32, aesk_can.receivedData, &driver_state_area_index);
+			AESK_UINT8toUINT8ENCODE(&lyradata.driver_data.Motor_Temperature_u8, aesk_can.receivedData, &driver_state_area_index);
+			AESK_UINT8toUINT8ENCODE(&lyradata.driver_data.actual_velocity_u8, aesk_can.receivedData, &driver_state_area_index);
+			break;
+		}
+
+		case BMS_MEASUREMENTS :
+		{
+			uint16_t bms_measurement_index = 0;
+		    AESK_UINT16toFLOAT_LE(&lyradata.bms_data.Bat_Voltage_f32, aesk_can.receivedData, FLOAT_CONVERTER_1, &bms_measurement_index);
+		    AESK_INT16toFLOAT_LE(&lyradata.bms_data.Bat_Current_f32, aesk_can.receivedData, FLOAT_CONVERTER_1, &bms_measurement_index);
+		    AESK_UINT16toFLOAT_LE(&lyradata.bms_data.Bat_Cons_f32, aesk_can.receivedData, FLOAT_CONVERTER_1, &bms_measurement_index);
+		    AESK_UINT16toFLOAT_LE(&lyradata.bms_data.Soc_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &bms_measurement_index);
+			break;
+		}
+
+		case BMS_STATE_DATA :
+		{
+			uint16_t bms_state_data_index = 0;
+		    AESK_UINT8toUINT8ENCODE(&lyradata.bms_data.bms_error.bms_error_u8, aesk_can.receivedData, &bms_state_data_index);
+		    AESK_UINT8toUINT8ENCODE(&lyradata.bms_data.dc_bus_state.dc_bus_state_u8, aesk_can.receivedData, &bms_state_data_index);
+		    AESK_UINT16toFLOAT_LE(&lyradata.bms_data.Worst_Cell_Voltage_f32, aesk_can.receivedData, FLOAT_CONVERTER_1, &bms_state_data_index);
+		    AESK_UINT8toUINT8ENCODE(&lyradata.bms_data.Worst_Cell_Address_u8, aesk_can.receivedData, &bms_state_data_index);
+		    AESK_UINT8toUINT8ENCODE(&lyradata.bms_data.Temperature_u8, aesk_can.receivedData, &bms_state_data_index);
+			break;
+		}
+		default :
+		{
+			break;
+		}
+	}
 }
 
 
