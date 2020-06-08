@@ -23,7 +23,7 @@ class _SettingsState extends State<Settings> {
       appBar: AppBar(
         title: Text(
           "Ayarlar",
-          style: Theme.of(context).appBarTheme.textTheme.title,
+          style: Theme.of(context).appBarTheme.textTheme.headline1,
         ),
         backgroundColor: Theme.of(context).appBarTheme.color,
       ),
@@ -44,7 +44,7 @@ class _SettingsState extends State<Settings> {
               ),
               child: SwitchListTile(
 
-                title: Center(child: myText("Karanlık mod", 20, Theme.of(context).textTheme.body1.color, "GOTHIC", FontWeight.normal)),
+                title: Center(child: myText("Karanlık mod", 20, Theme.of(context).textTheme.headline1.color, FontWeight.normal)),
                 value: isDarkMode,
                 onChanged: (bool value){
                     isDarkMode = value;

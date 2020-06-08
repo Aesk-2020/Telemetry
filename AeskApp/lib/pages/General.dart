@@ -8,7 +8,7 @@ class General extends StatelessWidget {
     return aeskScaffold(
       context: context,
       myBody: Center(
-        child: myText("jkashdjkashdjk", 100, Colors.redAccent, "IndieFlower",FontWeight.bold),
+        child: myText("jkashdjkashdjk", 100, Colors.redAccent,FontWeight.bold),
       ),
     );
   }

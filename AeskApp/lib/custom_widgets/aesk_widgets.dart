@@ -8,12 +8,10 @@ List<DrawerListClass> drawerList = [
   DrawerListClass(image: "manzara.jpg", text: "Grafikler", destination: "/Graphs"),
   DrawerListClass(image: "manzara.jpg", text: "BMS Verileri", destination: "/Bms"),
   DrawerListClass(image: "manzara.jpg", text: "Custom", destination: "/Custom"),
+  DrawerListClass(image: "manzara.jpg", text: "Harita", destination: "/Location"),
 ];
 
-//************************* Header Widget *****************************************
-//Widget _header =
-
-// **********************************Scaffold Widget****************************************************
+//********************************** Scaffold Widget ****************************************************//
 Widget aeskScaffold({Widget myBody, BuildContext context}) {
   return Scaffold(
     backgroundColor: Theme.of(context).backgroundColor,
@@ -25,8 +23,8 @@ Widget aeskScaffold({Widget myBody, BuildContext context}) {
           children: <Widget>[
             ListTile(
                 title: Text(
-              "asdasd",
-              style: Theme.of(context).textTheme.body2,
+              "Sağ çekmece",
+              style: Theme.of(context).textTheme.headline2,
             )),
           ],
         ),
@@ -38,8 +36,7 @@ Widget aeskScaffold({Widget myBody, BuildContext context}) {
         height: 50,
         child: ListView(
           scrollDirection: Axis.vertical,
-          children: [
-              ListTile(
+          children: [ListTile(
                 title: IconButton(
                   icon: Icon(
                     Icons.settings,
@@ -49,17 +46,11 @@ Widget aeskScaffold({Widget myBody, BuildContext context}) {
                   onPressed: () => Navigator.popAndPushNamed(context, "/Settings"),
                   alignment: Alignment.centerRight,
                 ),
-                leading: myText(
-                    "AnaSayfa",
-                    25,
-                    Theme.of(context).textSelectionColor,
-                    "GOTHIC",
-                    FontWeight.bold),
-              )
-            ] +
-              drawerList.map((index) {
+                leading: myText("AnaSayfa", 25, Theme.of(context).textSelectionColor, FontWeight.bold),
+              )]
+              + drawerList.map((index) {
                 return ListTile(
-                  title: myText(index.text, 20, Colors.white, "gilroy-light", FontWeight.bold),
+                  title: myText(index.text, 20, Colors.white, FontWeight.bold),
                   leading: CircleAvatar(backgroundImage: AssetImage("assets/images/${index.image}"),),
                   onTap: () => Navigator.pushReplacementNamed(context, index.destination),
                 );
@@ -70,26 +61,21 @@ Widget aeskScaffold({Widget myBody, BuildContext context}) {
   );
 }
 
-//***************************************Text Widget************************************************
-Widget myText(String input, double mySize, Color myColor, String myFont,
+//*************************************** Text Widget ************************************************//
+Widget myText(String input, double mySize, Color myColor,
     FontWeight weight) {
   return Text(
     input,
     style: TextStyle(
-        fontFamily: myFont,
+        fontFamily: "GOTHIC",
         fontSize: mySize,
         color: myColor,
         fontWeight: weight),
   );
 }
 
-//***************************************Container Widget***************************************************
-Widget MyContainer({
-  List<Widget> arrayOfWidgets,
-  EdgeInsets myMargin,
-  EdgeInsets myPadding,
-  Color myColor,
-}) {
+//*************************************** Container Widget ***************************************************//
+Widget MyContainer({List<Widget> arrayOfWidgets, EdgeInsets myMargin, EdgeInsets myPadding, Color myColor,}) {
   return Container(
     margin: myMargin,
     padding: myPadding,
