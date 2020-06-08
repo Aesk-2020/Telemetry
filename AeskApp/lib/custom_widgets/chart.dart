@@ -23,18 +23,17 @@ class AeskChart extends StatelessWidget {
     double currentTime = 0 ;
     dynamic data;
 
-    if(_chartName == "driverPhaseA") data = AeskData.driver_phase_a_current_f32;
-    else if(_chartName == "driverPhaseB") data = AeskData.driver_phase_b_current_f32;
-    else if(_chartName == "driverMotorTemp") data = AeskData.driver_motor_temperature_u8;
-    else if(_chartName == "driverDcBusCurrent") data =AeskData.driver_dc_bus_current_f32;
-    else if(_chartName == "driverDcBusVolt") data =  AeskData.driver_dc_bus_voltage_f32;
-    else if(_chartName == "driverActualVelocity") data = AeskData.driver_actual_velocity_u8;
-    else if(_chartName == "bmsBatVolt") data = AeskData.bms_bat_volt_f32;
-    else if(_chartName == "bmsBatCurrent") data = AeskData.bms_bat_current_f32;
-    else if(_chartName == "bmsTemp") data = AeskData.bms_temp_u8;
-
     return Consumer<MqttAesk>(
       builder: (context, _, child){
+        if(_chartName == "driverPhaseA") data = AeskData.driver_phase_a_current_f32;
+        else if(_chartName == "driverPhaseB") data = AeskData.driver_phase_b_current_f32;
+        else if(_chartName == "driverMotorTemp") data = AeskData.driver_motor_temperature_u8;
+        else if(_chartName == "driverDcBusCurrent") data =AeskData.driver_dc_bus_current_f32;
+        else if(_chartName == "driverDcBusVolt") data =  AeskData.driver_dc_bus_voltage_f32;
+        else if(_chartName == "driverActualVelocity") data = AeskData.driver_actual_velocity_u8;
+        else if(_chartName == "bmsBatVolt") data = AeskData.bms_bat_volt_f32;
+        else if(_chartName == "bmsBatCurrent") data = AeskData.bms_bat_current_f32;
+        else if(_chartName == "bmsTemp") data = AeskData.bms_temp_u8;
 
         graphData.add(CurrentData(currentTime, data));
         currentTime += 0.5;

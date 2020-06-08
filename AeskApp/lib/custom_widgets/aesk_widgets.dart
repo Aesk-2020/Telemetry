@@ -8,6 +8,7 @@ List<DrawerListClass> drawerList = [
   DrawerListClass(image: "manzara.jpg", text: "Grafikler", destination: "/Graphs"),
   DrawerListClass(image: "manzara.jpg", text: "BMS Verileri", destination: "/Bms"),
   DrawerListClass(image: "manzara.jpg", text: "Custom", destination: "/Custom"),
+  DrawerListClass(image: "manzara.jpg", text: "Harita", destination: "/Location"),
 ];
 
 //********************************** Scaffold Widget ****************************************************//

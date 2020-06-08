@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:aeskapp/custom_widgets/front_inventory.dart';
+
 import 'package:aeskapp/pages/Custom.dart';
 import 'package:aeskapp/pages/General.dart';
 import 'package:aeskapp/pages/Loading.dart';
@@ -12,6 +13,8 @@ import 'package:aeskapp/pages/Home.dart';
 import 'package:aeskapp/pages/Login.dart';
 import 'package:aeskapp/pages/Bms.dart';
 import 'package:aeskapp/pages/Settings.dart';
+import 'package:aeskapp/pages/Location.dart';
+
 import 'package:aeskapp/classes/Mqtt.dart';
 import 'package:syncfusion_flutter_core/core.dart';
 
@@ -52,6 +55,7 @@ class MyApp extends StatelessWidget {
               "/Loading": (context) => Loading(),
               "/Bms": (context) => Bms(),
               "/Settings": (context) => Settings(),
+              "/Location": (context) => Konum(),
             },
           );
         },
