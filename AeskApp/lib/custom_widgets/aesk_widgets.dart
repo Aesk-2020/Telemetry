@@ -8,6 +8,7 @@ List<DrawerListClass> drawerList = [
   DrawerListClass(image: "manzara.jpg", text: "Grafikler", destination: "/Graphs"),
   DrawerListClass(image: "manzara.jpg", text: "BMS Verileri", destination: "/Bms"),
   DrawerListClass(image: "manzara.jpg", text: "Custom", destination: "/Custom"),
+  DrawerListClass(image: "manzara.jpg", text: "Harita", destination: "/Location"),
 ];
 
 //********************************** Scaffold Widget ****************************************************//
@@ -22,8 +23,8 @@ Widget aeskScaffold({Widget myBody, BuildContext context}) {
           children: <Widget>[
             ListTile(
                 title: Text(
-              "asdasd",
-              style: Theme.of(context).textTheme.body2,
+              "Sağ çekmece",
+              style: Theme.of(context).textTheme.headline2,
             )),
           ],
         ),
@@ -35,8 +36,7 @@ Widget aeskScaffold({Widget myBody, BuildContext context}) {
         height: 50,
         child: ListView(
           scrollDirection: Axis.vertical,
-          children: [
-              ListTile(
+          children: [ListTile(
                 title: IconButton(
                   icon: Icon(
                     Icons.settings,
@@ -47,9 +47,8 @@ Widget aeskScaffold({Widget myBody, BuildContext context}) {
                   alignment: Alignment.centerRight,
                 ),
                 leading: myText("AnaSayfa", 25, Theme.of(context).textSelectionColor, FontWeight.bold),
-              )
-            ] +
-              drawerList.map((index) {
+              )]
+              + drawerList.map((index) {
                 return ListTile(
                   title: myText(index.text, 20, Colors.white, FontWeight.bold),
                   leading: CircleAvatar(backgroundImage: AssetImage("assets/images/${index.image}"),),
@@ -76,12 +75,7 @@ Widget myText(String input, double mySize, Color myColor,
 }
 
 //*************************************** Container Widget ***************************************************//
-Widget MyContainer({
-  List<Widget> arrayOfWidgets,
-  EdgeInsets myMargin,
-  EdgeInsets myPadding,
-  Color myColor,
-}) {
+Widget MyContainer({List<Widget> arrayOfWidgets, EdgeInsets myMargin, EdgeInsets myPadding, Color myColor,}) {
   return Container(
     margin: myMargin,
     padding: myPadding,

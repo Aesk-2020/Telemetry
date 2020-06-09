@@ -6,6 +6,4 @@ class DrawerListClass{
   String destination = "";
 
   DrawerListClass({@required this.image, @required this.text, this.destination});
-
-
 }

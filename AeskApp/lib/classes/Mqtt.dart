@@ -1,16 +1,13 @@
 import 'dart:typed_data';
 
+import 'package:aeskapp/classes/aeskData.dart';
 import 'package:mqtt_client/mqtt_client.dart' as mqtt;
 import 'package:flutter/foundation.dart';
 import 'dart:async';
 
 ///bit işlemleri kütüğhaneleri byte array vs.
 
-
-
 class MqttAesk extends ChangeNotifier{
-
-  var data1;
 
   static String broker           = '157.230.29.63';
   static int port                = 1883;
@@ -28,14 +25,8 @@ class MqttAesk extends ChangeNotifier{
 
     client = mqtt.MqttClient(broker,"");
     client.port = port;
-
-
     client.logging(on: true);
-
-
     client.keepAlivePeriod = 30;
-
-
     client.onDisconnected = _onDisconnected;
 
     //arastiracaz
@@ -82,7 +73,6 @@ class MqttAesk extends ChangeNotifier{
   }
 
   void _onDisconnected() {
-//
     connectionState = client.connectionState;
     client = null;
     subscription.cancel();
@@ -92,15 +82,9 @@ class MqttAesk extends ChangeNotifier{
 
   void _onMessage(List<mqtt.MqttReceivedMessage> event) {
 
-
     final mqtt.MqttPublishMessage recMess = event[0].payload as mqtt.MqttPublishMessage;
-    //Başka değişkenleri değiştir.
-
-    var byteBuffer = recMess.payload.message.buffer.asByteData(0);
-    _mqttDecoder(byteBuffer,Endian.little);
-
-//  var x = recMess.payload.message.buffer.asByteData(0);
-
+    var message = recMess.payload.message.buffer.asByteData(0);
+    AeskData(message, Endian.little);
     notifyListeners();
   }
 
@@ -111,16 +95,11 @@ class MqttAesk extends ChangeNotifier{
     notifyListeners();
   }
 
-
   void unsubscribeFromTopic(String topic) {
     if (connectionState == mqtt.MqttConnectionState.connected) {
       client.unsubscribe(topic);
     }
     notifyListeners();
-  }
-
-  void _mqttDecoder(ByteData message, Endian endian){
-      data1 = message.getUint32(0,endian);
   }
 }
 

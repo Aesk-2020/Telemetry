@@ -1,7 +1,10 @@
+import 'package:aeskapp/classes/Mqtt.dart';
+import 'package:aeskapp/classes/aeskData.dart';
 import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:provider/provider.dart';
 
 class Custom extends StatefulWidget {
   @override
@@ -15,75 +18,72 @@ class _CustomState extends State<Custom> {
   Widget contentAdder(String content, int index) {
     switch (content) {
       case "bms":
-        return Container(
-          decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey, width: 10),
-            color: Colors.white,
-          ),
-          padding: EdgeInsets.all(10),
-          child: Column(
-            children: <Widget>[
-              myText("Bms verileri burada", 20, Colors.black, FontWeight.bold),
-              IconButton(
-                icon: Icon(Icons.delete),
-                alignment: Alignment.bottomRight,
-                onPressed: () {
-                  setState(() {
-                    currentContent.removeAt(index);
-                    contentCount--;
-                  });
-                },
-              )
-            ],
-          ),
+        return Consumer<MqttAesk>(
+          builder: (context, _, child){
+            return Card(
+              child: Column(
+                children: <Widget>[
+                  myText("Bms verileri burada", 20, Colors.black, FontWeight.bold),
+                  IconButton(
+                    icon: Icon(Icons.delete),
+                    alignment: Alignment.bottomRight,
+                    onPressed: () {
+                      setState(() {
+                        currentContent.removeAt(index);
+                        contentCount--;
+                      });
+                    },
+                  )
+                ],
+              ),
+            );
+          },
         );
         break;
       case "driver":
-        return Container(
-          decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey, width: 10),
-            color: Colors.white,
-          ),
-          padding: EdgeInsets.all(10),
-          child: Column(
-            children: <Widget>[
-              myText("Driver verileri burada", 20, Colors.black, FontWeight.bold),
-              IconButton(
-                icon: Icon(Icons.delete),
-                alignment: Alignment.bottomRight,
-                onPressed: () {
-                  setState(() {
-                    currentContent.removeAt(index);
-                    contentCount--;
-                  });
-                },
-              )
-            ],
-          ),
+        return Consumer<MqttAesk>(
+           builder : (context, _, child){
+              return Card(
+                child: Column(
+                  children: <Widget>[
+                    myText("Driver verileri : ${AeskData.driver_phase_a_current_f32}", 20, Colors.black, FontWeight.bold),
+                    IconButton(
+                      icon: Icon(Icons.delete),
+                      alignment: Alignment.bottomRight,
+                      onPressed: () {
+                        setState(() {
+                          currentContent.removeAt(index);
+                          contentCount--;
+                        });
+                      },
+                    )
+                  ],
+                ),
+              );
+            }
         );
         break;
       case "gps":
-        return Container(
-          decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey, width: 10),
-            color: Colors.white,
-          ),
-          padding: EdgeInsets.all(10),
-          child: Column(
-            children: <Widget>[
-              myText("GPS verileri burada", 20, Colors.black, FontWeight.bold),
-              IconButton(
-                icon: Icon(Icons.delete),
-                alignment: Alignment.bottomRight,
-                onPressed: () {
-                  setState(() {
-                    currentContent.removeAt(index);
-                    contentCount--;
-                  });
-                },
-              )
-            ],
-          ),
+        return Consumer<MqttAesk>(
+          builder: (context, _, child){
+            return Card(
+              child: Column(
+                children: <Widget>[
+                  myText("GPS verileri burada", 20, Colors.black, FontWeight.bold),
+                  IconButton(
+                    icon: Icon(Icons.delete),
+                    alignment: Alignment.bottomRight,
+                    onPressed: () {
+                      setState(() {
+                        currentContent.removeAt(index);
+                        contentCount--;
+                      });
+                    },
+                  )
+                ],
+              ),
+            );
+          },
         );
         break;
       default:
@@ -94,7 +94,7 @@ class _CustomState extends State<Custom> {
 
   Widget modifiedExpansionTile(int index) {
     return ExpansionTile(
-      title: myText("Ekle", 25, Theme.of(context).textTheme.body1.color, FontWeight.bold),
+      title: Center(child: myText("     Ekle", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold)),
       children: <Widget>[
         FlatButton(
           onPressed: () {
@@ -103,7 +103,7 @@ class _CustomState extends State<Custom> {
               contentCount++;
             });
           },
-          child: myText("Driver Verileri", 25, Theme.of(context).textTheme.body1.color, FontWeight.bold),
+          child: myText("Driver", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
         ),
         FlatButton(
           onPressed: () {
@@ -112,7 +112,7 @@ class _CustomState extends State<Custom> {
               contentCount++;
             });
           },
-          child: myText("BMS Verileri", 25, Theme.of(context).textTheme.body1.color, FontWeight.bold),
+          child: myText("BMS", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
         ),
         FlatButton(
           onPressed: () {
@@ -121,7 +121,7 @@ class _CustomState extends State<Custom> {
               contentCount++;
             });
           },
-          child: myText("GPS Verileri", 25, Theme.of(context).textTheme.body1.color, FontWeight.bold),
+          child: myText("GPS", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
         ),
       ],
     );
@@ -143,7 +143,6 @@ class _CustomState extends State<Custom> {
               ),
             ),
           ),
-
         ],
       ),
     );

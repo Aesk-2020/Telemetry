@@ -22,13 +22,11 @@ class _LoggingState extends State<Logging> {
       backgroundColor: Theme.of(context).backgroundColor,
       body: Center(
         child: Column(
-
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             myText("AESKAPP", 35, Theme.of(context).appBarTheme.color, FontWeight.bold),
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20,),
+            //IP textfield
             Container(
               width: 140,
               child: TextField(
@@ -47,9 +45,8 @@ class _LoggingState extends State<Logging> {
                 },
               ),
             ),
-            SizedBox(
-              height: 5,
-            ),
+            SizedBox(height: 5,),
+            //Şifre textfield
             Container(
               width: 140,
               child: TextField(
@@ -68,6 +65,7 @@ class _LoggingState extends State<Logging> {
                 },
               ),
             ),
+            //Giriş butonu
             RaisedButton(
               onPressed: () async {
                 if (ip == "1" && password == MqttAesk.password) {
@@ -79,19 +77,18 @@ class _LoggingState extends State<Logging> {
                     showDialog(
                       context: context,
                       child: AlertDialog(
-                        title: myText("HATA", 30, Theme.of(context).textTheme.body1.color, FontWeight.bold),
-                        content: myText("Bağlantı başarısız!", 25,Theme.of(context).textTheme.body1.color , FontWeight.bold),
+                        title: myText("HATA", 30, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                        content: myText("Bağlantı başarısız!", 25,Theme.of(context).textTheme.headline1.color , FontWeight.bold),
                         backgroundColor: Theme.of(context).backgroundColor,
                       ),
                     );
                   }
-
                 } else {
                   showDialog(
                       context: context,
                       child: AlertDialog(
-                        title: myText("HATA", 30, Theme.of(context).textTheme.body1.color, FontWeight.bold),
-                        content: myText("Girdiğiniz kullanıcı adı ile parola eşleşmedi!", 25,Theme.of(context).textTheme.body1.color, FontWeight.bold),
+                        title: myText("HATA", 30, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                        content: myText("Girdiğiniz kullanıcı adı ile parola eşleşmedi!", 25,Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                         backgroundColor: Theme.of(context).backgroundColor,
                       ),
                   );
