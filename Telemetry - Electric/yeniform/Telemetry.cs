@@ -143,7 +143,7 @@ namespace yeniform
             ThreadMethods.TextDegis(turrr, Timers.currentTour.ToString());
             ThreadMethods.TextDegis(mqtt_solved_paket, mqtt.mqtt_total_counter.ToString());
             ThreadMethods.TextDegis(mqtt_toplam_paket, mqtt.MQTT_counter_int32.ToString());
-            ThreadMethods.TextDegis(mqtt_verim, ((int)mqtt.MQTT_Efficiency * MACROS.FLOAT_CONVERTER_2).ToString());
+            ThreadMethods.TextDegis(mqtt_verim, ((int)(mqtt.MQTT_Efficiency * MACROS.FLOAT_CONVERTER_2)).ToString());
             ThreadMethods.LabelDegis(gsm_yenileme, ((int)(mqtt.mqtt_refresh_time)).ToString());
             ThreadMethods.TextDegis(gelen_bayt, serialportRF.GL_gelen_bayt_u32.ToString());
             ThreadMethods.TextDegis(cozulen_paket, serialportRF.GL_cozulen_paket_u32.ToString());
