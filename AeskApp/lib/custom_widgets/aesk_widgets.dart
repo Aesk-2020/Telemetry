@@ -5,10 +5,11 @@ import 'package:flutter/material.dart';
 
 List<DrawerListClass> drawerList = [
   DrawerListClass(image: "manzara.jpg", text: "AnaSayfa", destination: "/Home"),
-  DrawerListClass(image: "manzara.jpg", text: "Grafikler", destination: "/Graphs"),
-  DrawerListClass(image: "manzara.jpg", text: "BMS Verileri", destination: "/Bms"),
-  DrawerListClass(image: "manzara.jpg", text: "Custom", destination: "/Custom"),
+  DrawerListClass(image: "manzara.jpg", text: "MCU & VCU", destination: "/Vcu"),
+  DrawerListClass(image: "manzara.jpg", text: "BMS", destination: "/Bms"),
   DrawerListClass(image: "manzara.jpg", text: "Harita", destination: "/Location"),
+  DrawerListClass(image: "manzara.jpg", text: "Grafikler", destination: "/Graphs"),
+  DrawerListClass(image: "manzara.jpg", text: "Özelleştirme Ekranı", destination: "/Custom"),
 ];
 
 //********************************** Scaffold Widget ****************************************************//
@@ -16,6 +17,7 @@ Widget aeskScaffold({Widget myBody, BuildContext context}) {
   return Scaffold(
     backgroundColor: Theme.of(context).backgroundColor,
     body: myBody,
+    drawerEdgeDragWidth: 25,
     endDrawer: Drawer(
       child: Container(
         color: Colors.grey[800],
@@ -46,7 +48,7 @@ Widget aeskScaffold({Widget myBody, BuildContext context}) {
                   onPressed: () => Navigator.popAndPushNamed(context, "/Settings"),
                   alignment: Alignment.centerRight,
                 ),
-                leading: myText("AnaSayfa", 25, Theme.of(context).textSelectionColor, FontWeight.bold),
+                leading: myText("AeskApp", 25, Theme.of(context).textSelectionColor, FontWeight.bold),
               )]
               + drawerList.map((index) {
                 return ListTile(

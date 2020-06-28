@@ -7,6 +7,10 @@ ThemeData LightTheme() {
   return ThemeData(
     backgroundColor: Colors.white70,
     buttonColor: aeskBlue,
+    cardColor: Colors.white70,
+    iconTheme: IconThemeData(
+      color: Colors.black,
+    ),
     appBarTheme: AppBarTheme(
       color: Colors.blueAccent,
       textTheme: TextTheme(
@@ -26,6 +30,10 @@ ThemeData DarkTheme() {
   return ThemeData(
     backgroundColor: aeskBlack,
     buttonColor: aeskBlue,
+    cardColor: Colors.black26,
+    iconTheme: IconThemeData(
+      color: Colors.white,
+    ),
     appBarTheme: AppBarTheme(
       color: Colors.grey,
       textTheme: TextTheme(
