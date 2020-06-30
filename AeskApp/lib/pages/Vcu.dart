@@ -30,22 +30,22 @@ Widget Vcu(){
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        myText("IGNI ON", 20, Theme.of(context).textTheme.headline1.color, FontWeight.normal),
-                        myText("IGNI ON", 20, Theme.of(context).textTheme.headline1.color, FontWeight.normal),
+                        myText("IGNI ON", 20, Theme.of(context).textTheme.headline1.color, FontWeight.normal), //MCU
+                        myText("IGNI ON", 20, Theme.of(context).textTheme.headline1.color, FontWeight.normal), //VCU
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        myText("BRAKE OFF", 20, Theme.of(context).textTheme.headline1.color, FontWeight.normal),
-                        myText("BRAKE OFF", 20, Theme.of(context).textTheme.headline1.color, FontWeight.normal),
+                        myText("BRAKE OFF", 20, Theme.of(context).textTheme.headline1.color, FontWeight.normal), //MCU
+                        myText("BRAKE OFF", 20, Theme.of(context).textTheme.headline1.color, FontWeight.normal), //VCU
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        myText("FORWARD", 20, Theme.of(context).textTheme.headline1.color, FontWeight.normal),
-                        myText("FORWARD", 20, Theme.of(context).textTheme.headline1.color, FontWeight.normal),
+                        myText("FORWARD", 20, Theme.of(context).textTheme.headline1.color, FontWeight.normal), //MCU
+                        myText("FORWARD", 20, Theme.of(context).textTheme.headline1.color, FontWeight.normal), //VCU
                       ],
                     ),
                     SizedBox(height: 15,),

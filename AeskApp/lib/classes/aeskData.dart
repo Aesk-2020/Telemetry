@@ -16,7 +16,16 @@ class AeskData extends ChangeNotifier{
  static var driver_vd_f32;//100
  static var driver_vq_f32;//100
  static var driver_drive_status_u8;
+ bool drive_status_direction_u1; //1 forward 0 reverse
+ bool drive_status_brake_u1; //1 on 0 off
+ bool drive_status_ignition_u1; //1 on 0 off
  static var driver_driver_error_u8;
+ bool driver_error_ZPC_u1;
+ bool driver_error_PWM_u1;
+ bool driver_error_DC_bara_u1;
+ bool driver_error_temprature_u1;
+ bool driver_error_DC_bara_current_u1;
+ bool driver_error_WakeUp_u1;
  static var driver_odometer_u32;
  static var driver_motor_temperature_u8;
  static var driver_actual_velocity_u8;
@@ -153,4 +162,5 @@ var eys_error_uint8;
 
     notifyListeners();
   }
+
 }

@@ -1,5 +1,7 @@
+import 'package:aeskapp/classes/Mqtt.dart';
 import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Bms extends StatefulWidget {
   @override
@@ -9,9 +11,18 @@ class Bms extends StatefulWidget {
 class _BmsState extends State<Bms> {
   @override
   Widget build(BuildContext context) {
-    return aeskScaffold(
-      context: context,
-      myBody: Center(child: Text("BMS")),
+    return SafeArea(
+      child: SingleChildScrollView(
+        child: Consumer<MqttAesk>(
+          builder: (context, _, child){
+            return Column(
+              children: <Widget>[
+
+              ],
+            );
+          }
+        )
+      ),
     );
   }
 }
