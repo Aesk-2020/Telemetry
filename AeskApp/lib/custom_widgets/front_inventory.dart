@@ -21,9 +21,7 @@ ThemeData LightTheme() {
     textTheme: TextTheme(
       headline1: TextStyle(color: Colors.black,),
       headline2: TextStyle(color: Colors.amber,),
-      headline3: TextStyle(color: Colors.white, fontSize: 25, fontFamily: "GOTHIC"), //Ana başlık yazısı
-      headline4: TextStyle(color: Colors.grey[700], fontSize: 10), //Küçük başlık yazısı
-      headline5: TextStyle(color: Colors.black, fontSize: 20), //Değeri gösteren yazı
+      headline3: TextStyle(color: Colors.white,),
     ),
   );
 }
