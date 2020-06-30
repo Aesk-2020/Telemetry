@@ -14,6 +14,7 @@ import 'package:aeskapp/pages/Login.dart';
 import 'package:aeskapp/pages/Bms.dart';
 import 'package:aeskapp/pages/Settings.dart';
 import 'package:aeskapp/pages/Location.dart';
+import 'package:aeskapp/pages/Vcu.dart';
 
 import 'package:aeskapp/classes/Mqtt.dart';
 import 'package:syncfusion_flutter_core/core.dart';
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
             darkTheme: DarkTheme(),
             themeMode: (myTheme.myTheme == DarkTheme()) ? ThemeMode.dark : ThemeMode.light,
 
-            initialRoute: "/Login",
+            initialRoute: "/Vcu",
             routes: {
               "/Login": (context) => Logging(),
               "/Home": (context) => Home(),
@@ -56,6 +57,7 @@ class MyApp extends StatelessWidget {
               "/Bms": (context) => Bms(),
               "/Settings": (context) => Settings(),
               "/Location": (context) => Konum(),
+              "/Vcu": (context) => VcuPage(),
             },
           );
         },

@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:provider/provider.dart';
 
+import 'package:aeskapp/pages/Vcu.dart';
+
 class Custom extends StatefulWidget {
   @override
   _CustomState createState() => _CustomState();
@@ -40,27 +42,25 @@ class _CustomState extends State<Custom> {
           },
         );
         break;
-      case "driver":
-        return Consumer<MqttAesk>(
-           builder : (context, _, child){
-              return Card(
-                child: Column(
-                  children: <Widget>[
-                    myText("Driver verileri : ${AeskData.driver_phase_a_current_f32}", 20, Colors.black, FontWeight.bold),
-                    IconButton(
-                      icon: Icon(Icons.delete),
-                      alignment: Alignment.bottomRight,
-                      onPressed: () {
-                        setState(() {
-                          currentContent.removeAt(index);
-                          contentCount--;
-                        });
-                      },
-                    )
-                  ],
-                ),
-              );
-            }
+      case "vcuDriver":
+        return Stack(
+          children: <Widget>[
+            Vcu(),
+            Positioned(
+              bottom: 25,
+              right: 185,
+              child: IconButton(
+                icon: Icon(Icons.delete),
+                alignment: Alignment.bottomRight,
+                onPressed: () {
+                  setState(() {
+                    currentContent.removeAt(index);
+                    contentCount--;
+                  });
+                },
+              ),
+            )
+          ],
         );
         break;
       case "gps":
@@ -99,7 +99,7 @@ class _CustomState extends State<Custom> {
         FlatButton(
           onPressed: () {
             setState(() {
-              currentContent.insert(index, "driver");
+              currentContent.insert(index, "vcuDriver");
               contentCount++;
             });
           },
@@ -132,6 +132,7 @@ class _CustomState extends State<Custom> {
     return aeskScaffold(
       context: context,
       myBody: CustomScrollView(
+
         slivers: <Widget>[
           SliverSafeArea(
             sliver: SliverList(
