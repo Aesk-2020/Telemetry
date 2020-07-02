@@ -13,7 +13,7 @@ Widget Vcu(){
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              myText("    MCU & VCU", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+              myText("    MCU & VCU", 25, Theme.of(context).textTheme.headline3.color, FontWeight.bold),
               Card(
                 margin: EdgeInsets.fromLTRB(20, 0, 20, 30),
                 child: Column(
@@ -22,15 +22,15 @@ Widget Vcu(){
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        myText("Commands", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                        myText("Status", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                        myText("Komutlar", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                        myText("Durum", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                       ],
                     ),
-                    Divider(thickness: 4,color: Theme.of(context).textTheme.headline1.color,endIndent: 25,indent: 25,),
+                    Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        myText("IGNI ON", 20, Theme.of(context).textTheme.headline1.color, FontWeight.normal), //MCU
+                        myText("IGNITION", 20, Theme.of(context).textTheme.headline1.color, FontWeight.normal), //MCU
                         myText("IGNI ON", 20, Theme.of(context).textTheme.headline1.color, FontWeight.normal), //VCU
                       ],
                     ),
@@ -50,15 +50,16 @@ Widget Vcu(){
                     ),
                     SizedBox(height: 15,),
                     myText("     Hatalar", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                    Divider(thickness: 4,color: Theme.of(context).textTheme.headline1.color,endIndent: 25,indent: 25,),
+                    Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
                     myText("     Yok", 20, Theme.of(context).textTheme.headline1.color, FontWeight.normal),
                     SizedBox(height: 15,),
                     myText("     MCU Akım ve Gerilim Seviyeleri", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                    Divider(thickness: 4,color: Theme.of(context).textTheme.headline1.color,endIndent: 25,indent: 25,),
+                    Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
 
                     Container(
                       child: myText(" ID : xx         IQ : xx         IArms : xx ", 20, Theme.of(context).textTheme.headline1.color, FontWeight.normal),
-                      alignment: Alignment.topCenter,
+                      alignment: Alignment.center,
+                      height: 50,
                       margin: EdgeInsets.fromLTRB(25, 0, 25, 5),
                       decoration: BoxDecoration(
                         border: Border.all(width: 2,color: Theme.of(context).textTheme.headline1.color),
@@ -69,6 +70,7 @@ Widget Vcu(){
                     Container(
                       child: myText("Phase A : xx         Phase B : xx", 20, Theme.of(context).textTheme.headline1.color, FontWeight.normal),
                       alignment: Alignment.center,
+                      height: 50,
                       margin: EdgeInsets.fromLTRB(25, 0, 25, 5),
                       decoration: BoxDecoration(
                         border: Border.all(width: 2,color: Theme.of(context).textTheme.headline1.color),
@@ -78,6 +80,7 @@ Widget Vcu(){
                     Container(
                       child: myText("IDC : xx         VDC : xx", 20, Theme.of(context).textTheme.headline1.color, FontWeight.normal),
                       alignment: Alignment.center,
+                      height: 50,
                       margin: EdgeInsets.fromLTRB(25, 0, 25, 5),
                       decoration: BoxDecoration(
                         border: Border.all(width: 2,color: Theme.of(context).textTheme.headline1.color),
@@ -86,7 +89,7 @@ Widget Vcu(){
                     ),
                     SizedBox(height: 15,),
                     myText("     Diğer Veriler", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                    Divider(thickness: 4,color: Theme.of(context).textTheme.headline1.color,endIndent: 25,indent: 25,),
+                    Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
                     Container(
                       child: myText("Sıcaklık : 30°C", 20, Theme.of(context).textTheme.headline1.color, FontWeight.normal),
                       alignment: Alignment.center,
