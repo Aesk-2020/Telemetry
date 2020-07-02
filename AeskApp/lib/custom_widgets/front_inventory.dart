@@ -7,10 +7,13 @@ ThemeData LightTheme() {
   return ThemeData(
     backgroundColor: Colors.white70,
     buttonColor: aeskBlue,
+<<<<<<< HEAD
     cardColor: Colors.white70,
     iconTheme: IconThemeData(
       color: Colors.black,
     ),
+=======
+>>>>>>> emreurcu
     appBarTheme: AppBarTheme(
       color: Colors.blueAccent,
       textTheme: TextTheme(
@@ -21,7 +24,11 @@ ThemeData LightTheme() {
     textTheme: TextTheme(
       headline1: TextStyle(color: Colors.black,),
       headline2: TextStyle(color: Colors.amber,),
+<<<<<<< HEAD
       headline3: TextStyle(color: aeskBlue,),
+=======
+      headline3: TextStyle(color: Colors.white,),
+>>>>>>> emreurcu
     ),
   );
 }
@@ -30,10 +37,13 @@ ThemeData DarkTheme() {
   return ThemeData(
     backgroundColor: aeskBlack,
     buttonColor: aeskBlue,
+<<<<<<< HEAD
     cardColor: Colors.black26,
     iconTheme: IconThemeData(
       color: Colors.white,
     ),
+=======
+>>>>>>> emreurcu
     appBarTheme: AppBarTheme(
       color: Colors.grey,
       textTheme: TextTheme(
@@ -44,7 +54,11 @@ ThemeData DarkTheme() {
     textTheme: TextTheme(
       headline1: TextStyle(color: Colors.white,),
       headline2: TextStyle(color: Colors.amber,),
+<<<<<<< HEAD
       headline3: TextStyle(color: aeskBlue,),
+=======
+      headline3: TextStyle(color: Colors.black,),
+>>>>>>> emreurcu
     ),
   );
 }

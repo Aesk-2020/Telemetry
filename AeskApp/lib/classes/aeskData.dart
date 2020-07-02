@@ -2,6 +2,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/foundation.dart';
 
+<<<<<<< HEAD
 class AeskData extends ChangeNotifier{
 
  static var vcu_wake_up_u8;
@@ -43,6 +44,83 @@ class AeskData extends ChangeNotifier{
  static var gpsTracker_gps_velocity_u8;
  static var gpsTracker_gps_sattelite_number_u8;
  static var gpsTracker_gps_efficiency_u8;
+=======
+class graph_data{
+  var driver_phase_a_current_g;
+  var driver_phase_b_current_g;
+  var driver_dc_bus_current_g;
+  var driver_id_g;
+  var driver_iq_g;
+  var driver_vd_g;
+  var driver_vq_g;
+  var bms_bat_volt_g;
+  var bms_bat_current_g;
+  var bms_bat_cons_g;
+  double time;
+  graph_data(this.driver_phase_a_current_g,
+      this.driver_phase_b_current_g,
+      this.driver_dc_bus_current_g,
+      this.driver_id_g,
+      this.driver_iq_g,
+      this.driver_vd_g,
+      this.driver_vq_g,
+      this.bms_bat_volt_g,
+      this.bms_bat_current_g,
+      this.bms_bat_cons_g,
+      this.time
+      );
+}
+
+int i;
+
+class AeskData extends ChangeNotifier{
+
+  static var vcu_wake_up_u8;
+  static var vcu_drive_command_u8;
+  static var vcu_set_velocity_u8;
+  static var driver_phase_a_current_f32;//100
+  static var driver_phase_b_current_f32;//100
+  static var driver_dc_bus_current_f32;//100
+  static var driver_dc_bus_voltage_f32;//10
+  static var driver_id_f32;//100
+  static var driver_iq_f32;//100
+  static var driver_vd_f32;//100
+  static var driver_vq_f32;//100
+  static var driver_drive_status_u8;
+  static bool drive_status_direction_u1; //1 forward 0 reverse
+  static bool drive_status_brake_u1; //1 on 0 off
+  static bool drive_status_ignition_u1; //1 on 0 off
+  static var driver_driver_error_u8;
+  static bool driver_error_ZPC_u1;
+  static bool driver_error_PWM_u1;
+  static bool driver_error_DC_bara_u1;
+  static bool driver_error_temprature_u1;
+  static bool driver_error_DC_bara_current_u1;
+  static bool driver_error_WakeUp_u1;
+  static var driver_odometer_u32;
+  static var driver_motor_temperature_u8;
+  static var driver_actual_velocity_u8;
+  static var bms_bat_volt_f32;//10
+  static var bms_bat_current_f32;//100
+  static var bms_bat_cons_f32;//10
+  static var bms_soc_f32;//100
+  static var bms_bms_error_u8;
+  static var bms_dc_bus_state_u8;
+  static var bms_worst_cell_voltage_f32;//10
+  static var bms_worst_cell_address_u8;
+  static var bms_temp_u8;
+  static var gpsTracker_gps_latitude_f64;  //1000000
+  static var gpsTracker_gps_longtitude_f64;
+  static var gpsTracker_gps_velocity_u8;
+  static var gpsTracker_gps_sattelite_number_u8;
+  static var gpsTracker_gps_efficiency_u8;
+
+
+  static double x_time=0;
+  static var ping = 0;
+
+  static List<graph_data> graphData_array = List.generate(100, (index) => graph_data(0,0,0,0,0,0,0,0,0,0,0), growable: false);
+>>>>>>> emreurcu
 
 
 //EMS
@@ -62,7 +140,11 @@ var eys_temp_uint8;
 var eys_error_uint8;
 */
   static var MQTT_counter_int32;
+<<<<<<< HEAD
 
+=======
+//threadlamamız gerekecekse burayı threadlayacaz
+>>>>>>> emreurcu
   AeskData(ByteData message,Endian myEndian){
 
     int _startIndex =0;
@@ -158,7 +240,11 @@ var eys_error_uint8;
 
     MQTT_counter_int32 = message.getInt32(_startIndex,myEndian);
     _startIndex+=4;
+<<<<<<< HEAD
     print("laskfjsdjflkjflksdj $_startIndex");
+=======
+
+>>>>>>> emreurcu
 
     drive_status_direction_u1 = ((driver_drive_status_u8 & 1) == 1) ? true : false;
     drive_status_brake_u1 = (((driver_drive_status_u8 >> 1) & 1) == 1) ? true : false;
@@ -171,7 +257,28 @@ var eys_error_uint8;
     driver_error_DC_bara_current_u1 = (((driver_driver_error_u8 >> 1) & 1) == 1) ? true : false;
     driver_error_WakeUp_u1 = (((driver_driver_error_u8 >> 1) & 1) == 1) ? true : false;
 
+<<<<<<< HEAD
     notifyListeners();
+=======
+    for(i=0;i<graphData_array.length-1;i++){
+      graphData_array[i] = graphData_array[i+1];
+    }
+    graphData_array[graphData_array.length-1] = graph_data(driver_phase_a_current_f32,
+            driver_phase_b_current_f32,
+            driver_dc_bus_current_f32,
+            driver_id_f32,
+            driver_iq_f32,
+            driver_vd_f32,
+            driver_vq_f32,
+            bms_bat_volt_f32,
+            bms_bat_current_f32,
+            bms_bat_cons_f32,
+            x_time);
+    notifyListeners();
+    for(i=0;i<graphData_array.length;i++){
+      debugPrint(i.toString()+' '+graphData_array[i].driver_phase_a_current_g.toString());
+    }
+>>>>>>> emreurcu
   }
 
 }
