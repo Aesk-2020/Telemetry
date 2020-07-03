@@ -69,9 +69,9 @@ class KonumState extends State<Konum> {
             return GoogleMap(
               mapType: MapType.satellite,
               markers: Set<Marker>.of(_markers.values),
-              scrollGesturesEnabled: false,
-              zoomControlsEnabled: false,
-              zoomGesturesEnabled: false,
+              //scrollGesturesEnabled: false,
+              //zoomControlsEnabled: false,
+              //zoomGesturesEnabled: false,
               //circles: _circles,
               initialCameraPosition: CameraPosition(
                 target: LatLng(40.7435979, 29.7832885),

@@ -15,11 +15,7 @@ class Graphs extends StatelessWidget {
           children: <Widget>[
             Expanded(
               flex: 5,
-              child: AeskGauge(),
-            ),
-            Expanded(
-              flex: 5,
-              child: AeskChart("driverPhaseA"),
+              child: AeskChart(),
             )
           ],
         ),

@@ -10,8 +10,8 @@ class AeskChart extends StatefulWidget {
 
   //final List<CurrentData> x = List.generate(100, (index) => index, growable: true);
 
-  String _chartName;
-  AeskChart(this._chartName);
+  //String _chartName;
+  //AeskChart(this._chartName);
 
   @override
   _AeskChartState createState() => _AeskChartState();
@@ -23,241 +23,249 @@ class _AeskChartState extends State<AeskChart> {
     double currentTime = 0;
     dynamic data;
 
-    return Consumer<MqttAesk>(builder: (context, _, child) {
-      
-      if (widget._chartName == "driverMotorTemp")
-        data = AeskData.driver_motor_temperature_u8;
-      else if (widget._chartName == "driverDcBusCurrent")
-        data = AeskData.driver_dc_bus_current_f32;
-      else if (widget._chartName == "driverDcBusVolt")
-        data = AeskData.driver_dc_bus_voltage_f32;
-      else if (widget._chartName == "driverActualVelocity")
-        data = AeskData.driver_actual_velocity_u8;
-      else if (widget._chartName == "bmsBatVolt")
-        data = AeskData.bms_bat_volt_f32;
-      else if (widget._chartName == "bmsBatCurrent")
-        data = AeskData.bms_bat_current_f32;
-      else if (widget._chartName == "bmsTemp") data = AeskData.bms_temp_u8;
+    return Consumer<MqttAesk>(
+      builder: (context, _, child) {
+        //if (widget._chartName == "driverMotorTemp")
+        //  data = AeskData.driver_motor_temperature_u8;
+        //else if (widget._chartName == "driverDcBusVolt")
+        //  data = AeskData.driver_dc_bus_voltage_f32;
+        //else if (widget._chartName == "driverActualVelocity")
+        //  data = AeskData.driver_actual_velocity_u8;
+        //else if (widget._chartName == "bmsTemp") data = AeskData.bms_temp_u8;
 
-      //graphData.add(CurrentData(currentTime, data));
-      //currentTime += 0.5;
-      //graphData.removeAt(0);
+        //graphData.add(CurrentData(currentTime, data));
+        //currentTime += 0.5;
+        //graphData.removeAt(0);
 
-      return PageView(
-        scrollDirection: Axis.vertical,
-        children: <Widget>[
-          Container(
-            padding: EdgeInsets.only(top: 40, bottom: 40),
-            child: SfCartesianChart(
-              title: ChartTitle(
-                  text: "driverPhaseA",
-                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-              primaryXAxis: CategoryAxis(),
-              tooltipBehavior: TooltipBehavior(enable: true),
-              series: <ChartSeries>[
-                SplineSeries<graph_data, double>(
-                  enableTooltip: true,
-                  dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) =>
-                      data.driver_phase_a_current_g,
-                  xValueMapper: (graph_data data, _) => data.time / 1000,
-                  name: widget._chartName,
-                  splineType: SplineType.monotonic,
-                )
-              ],
+        return ListView(
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.only(top: 10, bottom: 10),
+              child: Card(
+                child: SfCartesianChart(
+                  title: ChartTitle(
+                      text: "driverPhaseA",
+                      textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+                  primaryXAxis: CategoryAxis(),
+                  tooltipBehavior: TooltipBehavior(enable: true),
+                  series: <ChartSeries>[
+                    SplineSeries<graph_data, double>(
+                      enableTooltip: true,
+                      dataSource: AeskData.graphData_array,
+                      yValueMapper: (graph_data data, _) =>
+                          data.driver_phase_a_current_g,
+                      xValueMapper: (graph_data data, _) => data.time / 1000,
+                      //name: widget._chartName,
+                      splineType: SplineType.monotonic,
+                    )
+                  ],
+                ),
+              ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 40, bottom: 40),
-            child: SfCartesianChart(
-              title: ChartTitle(
-                  text: "driverPhaseB",
-                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-              primaryXAxis: CategoryAxis(),
-              tooltipBehavior: TooltipBehavior(enable: true),
-              series: <ChartSeries>[
-                SplineSeries<graph_data, double>(
-                  enableTooltip: true,
-                  dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) =>
-                      data.driver_phase_b_current_g,
-                  xValueMapper: (graph_data data, _) => data.time / 1000,
-                  name: widget._chartName,
-                  splineType: SplineType.monotonic,
-                )
-              ],
+            Container(
+              padding: EdgeInsets.only(top: 40, bottom: 40),
+              child: Card(
+                child: SfCartesianChart(
+                  title: ChartTitle(
+                      text: "driverPhaseB",
+                      textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+                  primaryXAxis: CategoryAxis(),
+                  tooltipBehavior: TooltipBehavior(enable: true),
+                  series: <ChartSeries>[
+                    SplineSeries<graph_data, double>(
+                      enableTooltip: true,
+                      dataSource: AeskData.graphData_array,
+                      yValueMapper: (graph_data data, _) =>
+                          data.driver_phase_b_current_g,
+                      xValueMapper: (graph_data data, _) => data.time / 1000,
+                      //name: widget._chartName,
+                      splineType: SplineType.monotonic,
+                    )
+                  ],
+                ),
+              ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 40, bottom: 40),
-            child: SfCartesianChart(
-              title: ChartTitle(
-                  text: widget._chartName,
-                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-              primaryXAxis: CategoryAxis(),
-              tooltipBehavior: TooltipBehavior(enable: true),
-              series: <ChartSeries>[
-                SplineSeries<graph_data, double>(
-                  enableTooltip: true,
-                  dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) =>
-                      data.driver_dc_bus_current_g,
-                  xValueMapper: (graph_data data, _) => data.time / 1000,
-                  name: widget._chartName,
-                  splineType: SplineType.monotonic,
-                )
-              ],
+            Container(
+              padding: EdgeInsets.only(top: 40, bottom: 40),
+              child: Card(
+                child: SfCartesianChart(
+                  title: ChartTitle(
+                      text: "DC BUS CUR",
+                      textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+                  primaryXAxis: CategoryAxis(),
+                  tooltipBehavior: TooltipBehavior(enable: true),
+                  series: <ChartSeries>[
+                    SplineSeries<graph_data, double>(
+                      enableTooltip: true,
+                      dataSource: AeskData.graphData_array,
+                      yValueMapper: (graph_data data, _) =>
+                          data.driver_dc_bus_current_g,
+                      xValueMapper: (graph_data data, _) => data.time / 1000,
+                      //name: widget._chartName,
+                      splineType: SplineType.monotonic,
+                    )
+                  ],
+                ),
+              ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 40, bottom: 40),
-            child: SfCartesianChart(
-              title: ChartTitle(
-                  text: widget._chartName,
-                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-              primaryXAxis: CategoryAxis(),
-              tooltipBehavior: TooltipBehavior(enable: true),
-              series: <ChartSeries>[
-                SplineSeries<graph_data, double>(
-                  enableTooltip: true,
-                  dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) =>
-                      data.driver_id_g,
-                  xValueMapper: (graph_data data, _) => data.time / 1000,
-                  name: widget._chartName,
-                  splineType: SplineType.monotonic,
-                )
-              ],
+            Container(
+              padding: EdgeInsets.only(top: 40, bottom: 40),
+              child: Card(
+                child: SfCartesianChart(
+                  title: ChartTitle(
+                      text: "Driver ID G",
+                      textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+                  primaryXAxis: CategoryAxis(),
+                  tooltipBehavior: TooltipBehavior(enable: true),
+                  series: <ChartSeries>[
+                    SplineSeries<graph_data, double>(
+                      enableTooltip: true,
+                      dataSource: AeskData.graphData_array,
+                      yValueMapper: (graph_data data, _) => data.driver_id_g,
+                      xValueMapper: (graph_data data, _) => data.time / 1000,
+                      //name: widget._chartName,
+                      splineType: SplineType.monotonic,
+                    )
+                  ],
+                ),
+              ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 40, bottom: 40),
-            child: SfCartesianChart(
-              title: ChartTitle(
-                  text: widget._chartName,
-                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-              primaryXAxis: CategoryAxis(),
-              tooltipBehavior: TooltipBehavior(enable: true),
-              series: <ChartSeries>[
-                SplineSeries<graph_data, double>(
-                  enableTooltip: true,
-                  dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) =>
-                      data.driver_iq_g,
-                  xValueMapper: (graph_data data, _) => data.time / 1000,
-                  name: widget._chartName,
-                  splineType: SplineType.monotonic,
-                )
-              ],
+            Container(
+              padding: EdgeInsets.only(top: 40, bottom: 40),
+              child: Card(
+                child: SfCartesianChart(
+                  title: ChartTitle(
+                      text: "Driver ID Q",
+                      textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+                  primaryXAxis: CategoryAxis(),
+                  tooltipBehavior: TooltipBehavior(enable: true),
+                  series: <ChartSeries>[
+                    SplineSeries<graph_data, double>(
+                      enableTooltip: true,
+                      dataSource: AeskData.graphData_array,
+                      yValueMapper: (graph_data data, _) => data.driver_iq_g,
+                      xValueMapper: (graph_data data, _) => data.time / 1000,
+                      //name: widget._chartName,
+                      splineType: SplineType.monotonic,
+                    )
+                  ],
+                ),
+              ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 40, bottom: 40),
-            child: SfCartesianChart(
-              title: ChartTitle(
-                  text: widget._chartName,
-                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-              primaryXAxis: CategoryAxis(),
-              tooltipBehavior: TooltipBehavior(enable: true),
-              series: <ChartSeries>[
-                SplineSeries<graph_data, double>(
-                  enableTooltip: true,
-                  dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) =>
-                      data.driver_vd_g,
-                  xValueMapper: (graph_data data, _) => data.time / 1000,
-                  name: widget._chartName,
-                  splineType: SplineType.monotonic,
-                )
-              ],
+            Container(
+              padding: EdgeInsets.only(top: 40, bottom: 40),
+              child: Card(
+                child: SfCartesianChart(
+                  title: ChartTitle(
+                      text: "Driver VD G",
+                      textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+                  primaryXAxis: CategoryAxis(),
+                  tooltipBehavior: TooltipBehavior(enable: true),
+                  series: <ChartSeries>[
+                    SplineSeries<graph_data, double>(
+                      enableTooltip: true,
+                      dataSource: AeskData.graphData_array,
+                      yValueMapper: (graph_data data, _) => data.driver_vd_g,
+                      xValueMapper: (graph_data data, _) => data.time / 1000,
+                      //name: widget._chartName,
+                      splineType: SplineType.monotonic,
+                    )
+                  ],
+                ),
+              ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 40, bottom: 40),
-            child: SfCartesianChart(
-              title: ChartTitle(
-                  text: widget._chartName,
-                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-              primaryXAxis: CategoryAxis(),
-              tooltipBehavior: TooltipBehavior(enable: true),
-              series: <ChartSeries>[
-                SplineSeries<graph_data, double>(
-                  enableTooltip: true,
-                  dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) =>
-                      data.driver_vq_g,
-                  xValueMapper: (graph_data data, _) => data.time / 1000,
-                  name: widget._chartName,
-                  splineType: SplineType.monotonic,
-                )
-              ],
+            Container(
+              padding: EdgeInsets.only(top: 40, bottom: 40),
+              child: Card(
+                child: SfCartesianChart(
+                  title: ChartTitle(
+                      text: "Driver VQ G",
+                      textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+                  primaryXAxis: CategoryAxis(),
+                  tooltipBehavior: TooltipBehavior(enable: true),
+                  series: <ChartSeries>[
+                    SplineSeries<graph_data, double>(
+                      enableTooltip: true,
+                      dataSource: AeskData.graphData_array,
+                      yValueMapper: (graph_data data, _) => data.driver_vq_g,
+                      xValueMapper: (graph_data data, _) => data.time / 1000,
+                      //name: widget._chartName,
+                      splineType: SplineType.monotonic,
+                    )
+                  ],
+                ),
+              ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 40, bottom: 40),
-            child: SfCartesianChart(
-              title: ChartTitle(
-                  text: widget._chartName,
-                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-              primaryXAxis: CategoryAxis(),
-              tooltipBehavior: TooltipBehavior(enable: true),
-              series: <ChartSeries>[
-                SplineSeries<graph_data, double>(
-                  enableTooltip: true,
-                  dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) =>
-                      data.bms_bat_cons_g,
-                  xValueMapper: (graph_data data, _) => data.time / 1000,
-                  name: widget._chartName,
-                  splineType: SplineType.monotonic,
-                )
-              ],
+            Container(
+              padding: EdgeInsets.only(top: 40, bottom: 40),
+              child: Card(
+                child: SfCartesianChart(
+                  title: ChartTitle(
+                      text: "BMS Bat Cons",
+                      textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+                  primaryXAxis: CategoryAxis(),
+                  tooltipBehavior: TooltipBehavior(enable: true),
+                  series: <ChartSeries>[
+                    SplineSeries<graph_data, double>(
+                      enableTooltip: true,
+                      dataSource: AeskData.graphData_array,
+                      yValueMapper: (graph_data data, _) => data.bms_bat_cons_g,
+                      xValueMapper: (graph_data data, _) => data.time / 1000,
+                      //name: widget._chartName,
+                      splineType: SplineType.monotonic,
+                    )
+                  ],
+                ),
+              ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 40, bottom: 40),
-            child: SfCartesianChart(
-              title: ChartTitle(
-                  text: widget._chartName,
-                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-              primaryXAxis: CategoryAxis(),
-              tooltipBehavior: TooltipBehavior(enable: true),
-              series: <ChartSeries>[
-                SplineSeries<graph_data, double>(
-                  enableTooltip: true,
-                  dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) =>
-                      data.bms_bat_current_g,
-                  xValueMapper: (graph_data data, _) => data.time / 1000,
-                  name: widget._chartName,
-                  splineType: SplineType.monotonic,
-                )
-              ],
+            Container(
+              padding: EdgeInsets.only(top: 40, bottom: 40),
+              child: Card(
+                child: SfCartesianChart(
+                  title: ChartTitle(
+                      text: "BMS Bat Current",
+                      textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+                  primaryXAxis: CategoryAxis(),
+                  tooltipBehavior: TooltipBehavior(enable: true),
+                  series: <ChartSeries>[
+                    SplineSeries<graph_data, double>(
+                      enableTooltip: true,
+                      dataSource: AeskData.graphData_array,
+                      yValueMapper: (graph_data data, _) =>
+                          data.bms_bat_current_g,
+                      xValueMapper: (graph_data data, _) => data.time / 1000,
+                      //name: widget._chartName,
+                      splineType: SplineType.monotonic,
+                    )
+                  ],
+                ),
+              ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 40, bottom: 40),
-            child: SfCartesianChart(
-              title: ChartTitle(
-                  text: widget._chartName,
-                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-              primaryXAxis: CategoryAxis(),
-              tooltipBehavior: TooltipBehavior(enable: true),
-              series: <ChartSeries>[
-                SplineSeries<graph_data, double>(
-                  enableTooltip: true,
-                  dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) =>
-                      data.bms_bat_volt_g,
-                  xValueMapper: (graph_data data, _) => data.time / 1000,
-                  name: widget._chartName,
-                  splineType: SplineType.monotonic,
-                )
-              ],
+            Container(
+              padding: EdgeInsets.only(top: 40, bottom: 40),
+              child: Card(
+                child: SfCartesianChart(
+                  title: ChartTitle(
+                      text: "BMS Bat Volt",
+                      textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+                  primaryXAxis: CategoryAxis(),
+                  tooltipBehavior: TooltipBehavior(enable: true),
+                  series: <ChartSeries>[
+                    SplineSeries<graph_data, double>(
+                      enableTooltip: true,
+                      dataSource: AeskData.graphData_array,
+                      yValueMapper: (graph_data data, _) => data.bms_bat_volt_g,
+                      xValueMapper: (graph_data data, _) => data.time / 1000,
+                      //name: widget._chartName,
+                      splineType: SplineType.monotonic,
+                    )
+                  ],
+                ),
+              ),
             ),
-          ),
-        ],
-      );
-    });
+          ],
+        );
+      },
+    );
   }
 }

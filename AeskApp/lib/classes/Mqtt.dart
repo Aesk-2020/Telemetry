@@ -98,6 +98,7 @@ class MqttAesk extends ChangeNotifier{
 
     final mqtt.MqttPublishMessage recMess = event[0].payload as mqtt.MqttPublishMessage;
     var message = recMess.payload.message.buffer.asByteData(0);
+    
     AeskData(message, Endian.little);
 
     notifyListeners();
