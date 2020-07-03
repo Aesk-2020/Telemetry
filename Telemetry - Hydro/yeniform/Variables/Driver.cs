@@ -15,6 +15,7 @@ namespace telemetry_hydro.Variables
 
         static public float id_f32; //bu 4 olacak
         static public float iq_f32;
+        static public float iArms_f32; //I could die in your iArms
         static public float vd_f32;
         static public float vq_f32;
 

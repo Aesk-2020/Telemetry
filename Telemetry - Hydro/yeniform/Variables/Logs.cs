@@ -70,7 +70,7 @@ namespace telemetry_hydro.Variables
 
         public void Writer()
         {
-            streamWriter.WriteLine(Timers.log_datas_time + VCU.log_datas + Driver.log_datas_driver + BMS.log_datas_bms + GpsTracker.log_gps_datas);
+            streamWriter.WriteLine(Timers.log_datas_time + VCU.log_datas + Driver.log_datas_driver + BMS.log_datas_bms + GpsTracker.log_gps_datas+EMS.log_datas_ems);
         }
 
         public void Reader()
@@ -145,6 +145,20 @@ namespace telemetry_hydro.Variables
             GpsTracker.gps_velocity_u8 = byte.Parse(old_datass[count++]);
             GpsTracker.gps_sattelite_number_u8 = byte.Parse(old_datass[count++]);
             GpsTracker.gps_efficiency_u8 = byte.Parse(old_datass[count++]);
+
+            EMS.bat_cons_f32 = float.Parse(old_datass[count++]);
+            EMS.fc_cons_f32 = float.Parse(old_datass[count++]);
+            EMS.fc_lt_cons_f32 = float.Parse(old_datass[count++]);
+            EMS.bat_cur_f32 = float.Parse(old_datass[count++]);
+            EMS.fc_cur_f32 = float.Parse(old_datass[count++]);
+            EMS.out_cur_f32 = float.Parse(old_datass[count++]);
+            EMS.bat_volt_f32 = float.Parse(old_datass[count++]);
+            EMS.fc_volt_f32 = float.Parse(old_datass[count++]);
+            EMS.out_volt_f32 = float.Parse(old_datass[count++]);
+            EMS.bat_soc_f32 = float.Parse(old_datass[count++]);
+            EMS.error_u8 = byte.Parse(old_datass[count++]);
+            EMS.penalty_s8 = (sbyte)byte.Parse(old_datass[count++]);
+
         }
     }
 }

@@ -91,7 +91,7 @@ namespace telemetry_hydro
             ThreadMethods.LabelBackColorDegis(motor_temp_error, !Driver.temp_error_u1 ? Color.Transparent : MACROS.errorColor);
             ThreadMethods.LabelBackColorDegis(id_error, !Driver.ID_error_u1 ? Color.Transparent : MACROS.errorColor);
 
-            /*ThreadMethods.PBoxBackColorDegis(bms_precharge_flag, BMS.precharge_flag_u1 ? MACROS.AeskBlue : Color.Transparent);
+            ThreadMethods.PBoxBackColorDegis(bms_precharge_flag, BMS.precharge_flag_u1 ? MACROS.AeskBlue : Color.Transparent);
             ThreadMethods.PBoxBackColorDegis(bms_discharge_flag, BMS.discharge_flag_u1 ? MACROS.AeskBlue : Color.Transparent);
             ThreadMethods.PBoxBackColorDegis(bms_dc_bus_ready_flag, BMS.dc_bus_ready_flag_u1 ? MACROS.AeskBlue : Color.Transparent);
             ThreadMethods.PBoxBackColorDegis(bms_high_volt_error, !BMS.high_voltage_error_u1 ? Color.Transparent : MACROS.errorColor);
@@ -99,23 +99,41 @@ namespace telemetry_hydro
             ThreadMethods.PBoxBackColorDegis(bms_temp_error, !BMS.bms_temp_error_u1 ? Color.Transparent : MACROS.errorColor);
             ThreadMethods.PBoxBackColorDegis(bms_comm_error, !BMS.comm_error_u1 ? Color.Transparent : MACROS.errorColor);
             ThreadMethods.PBoxBackColorDegis(bms_over_cur_error, !BMS.over_current_error_u1 ? Color.Transparent : MACROS.errorColor);
-            ThreadMethods.PBoxBackColorDegis(bms_fatal_error, !BMS.bms_fatal_error_u1 ? Color.Transparent : MACROS.errorColor);*/
+            ThreadMethods.PBoxBackColorDegis(bms_fatal_error, !BMS.bms_fatal_error_u1 ? Color.Transparent : MACROS.errorColor);
 
             #region bms_text_write
-            ThreadMethods.TextDegis(bms_bat_volt, BMS.bat_volt_f32.ToString());
+            ThreadMethods.TextDegis(bms_bat_voltage, BMS.bat_volt_f32.ToString());
             ThreadMethods.TextDegis(bms_bat_current, BMS.bat_current_f32.ToString());
             ThreadMethods.TextDegis(bms_bat_cons, BMS.bat_cons_f32.ToString());
             ThreadMethods.TextDegis(bms_soc, BMS.soc_f32.ToString());
             ThreadMethods.TextDegis(bms_worst_cell_address,BMS.worst_cell_address_u8.ToString());
-            ThreadMethods.TextDegis(bms_worst_cell_volt, BMS.worst_cell_voltage_f32.ToString());
-            //ThreadMethods.TextDegis(bms_temp, BMS.temp_u8.ToString());
+            ThreadMethods.TextDegis(bms_worst_cell_voltage, BMS.worst_cell_voltage_f32.ToString());
+            ThreadMethods.TextDegis(bms_temp, BMS.temp_u8.ToString());
             #endregion
+
+            #region ems_text_write
+            ThreadMethods.TextDegis(ems_bat_cons, EMS.bat_cons_f32.ToString());
+            ThreadMethods.TextDegis(ems_bat_current, EMS.bat_cur_f32.ToString());
+            ThreadMethods.TextDegis(ems_bat_volt, EMS.bat_volt_f32.ToString());
+            ThreadMethods.TextDegis(ems_soc, EMS.bat_soc_f32.ToString());
+            ThreadMethods.TextDegis(ems_fc_cons, EMS.fc_cons_f32.ToString());
+            ThreadMethods.TextDegis(ems_fc_current, EMS.fc_cur_f32.ToString());
+            ThreadMethods.TextDegis(ems_fc_voltage, EMS.fc_volt_f32.ToString());
+            ThreadMethods.TextDegis(ems_out_current, EMS.out_cur_f32.ToString());
+            ThreadMethods.TextDegis(ems_out_voltage, EMS.out_volt_f32.ToString());
+            ThreadMethods.TextDegis(ems_fc_lt_cons, EMS.fc_lt_cons_f32.ToString());
+            ThreadMethods.TextDegis(ems_penalty, EMS.penalty_s8.ToString());
+            #endregion
+
+            #region ems_error & wakeup_control
+
+            #endregion
+            ThreadMethods.PBoxBackColorDegis(ems_durum, EMS.wake_up_u1 ? MACROS.AeskBlue : Color.Transparent);
             #region driver_text_write
             ThreadMethods.TextDegis(gidilen_yol_driver, Driver.odometer_u32.ToString());
             ThreadMethods.LabelDegis(anlik_hiz, Driver.actual_velocity_u8.ToString());
             ThreadMethods.LabelDegis(anlik_hiz_gps, GpsTracker.gps_velocity_u8.ToString());
             ThreadMethods.TextDegis(set_hizz, VCU.set_velocity_u8.ToString());
-
             ThreadMethods.TextDegis(maks_hiz, Driver.actual_velocity_u8 > Convert.ToByte(maks_hiz.Text) ? Driver.actual_velocity_u8.ToString() : maks_hiz.Text);
             ThreadMethods.TextDegis(phase_a_cur, Driver.phase_a_current_f32.ToString());
             ThreadMethods.TextDegis(phase_b_cur, Driver.phase_b_current_f32.ToString());
@@ -124,9 +142,8 @@ namespace telemetry_hydro
             ThreadMethods.TextDegis(motor_temp, Driver.motor_temperature_u8.ToString());
             ThreadMethods.TextDegis(id, Driver.id_f32.ToString());
             ThreadMethods.TextDegis(iq, Driver.iq_f32.ToString());
-            ThreadMethods.TextDegis(vd, Driver.vd_f32.ToString());
-            ThreadMethods.TextDegis(vq, Driver.vq_f32.ToString());
             #endregion
+
             double angle = 0;
             if (!MACROS.mouse_mod)
             {

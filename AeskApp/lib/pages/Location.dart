@@ -46,7 +46,7 @@ class KonumState extends State<Konum> {
 
   void _setMarkerIcon() async {
     _markerIcon = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(), 'assets/images/driving_pin.png');
+        ImageConfiguration(), 'assets/images/driving_pin50.png');
   }
 
   /*void _toggleMapStyle() async {
@@ -69,9 +69,9 @@ class KonumState extends State<Konum> {
             return GoogleMap(
               mapType: MapType.satellite,
               markers: Set<Marker>.of(_markers.values),
-              scrollGesturesEnabled: false,
-              zoomControlsEnabled: false,
-              zoomGesturesEnabled: false,
+              //scrollGesturesEnabled: false,
+              //zoomControlsEnabled: false,
+              //zoomGesturesEnabled: false,
               //circles: _circles,
               initialCameraPosition: CameraPosition(
                 target: LatLng(40.7435979, 29.7832885),
@@ -95,7 +95,7 @@ class KonumState extends State<Konum> {
                   ),
                 );
                 setState(
-                      () {
+                  () {
                     _markers[isaretler] = isaret;
                   },
                 );
@@ -111,7 +111,7 @@ class KonumState extends State<Konum> {
               _showMapStyle = !_showMapStyle;
             },
             );
-            _toggleMapStyle();
+            //_toggleMapStyle();
           },
         ),*/
       ),
@@ -148,7 +148,7 @@ class KonumState extends State<Konum> {
     );
 
     setState(
-          () {
+      () {
         _markers[markerId] = marker;
       },
     );

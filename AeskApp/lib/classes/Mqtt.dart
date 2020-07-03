@@ -1,11 +1,15 @@
 import 'dart:typed_data';
-
 import 'package:aeskapp/classes/aeskData.dart';
 import 'package:mqtt_client/mqtt_client.dart' as mqtt;
 import 'package:flutter/foundation.dart';
 import 'dart:async';
+import 'dart:io' show Platform;
 
 ///bit işlemleri kütüğhaneleri byte array vs.
+
+var old_iteration_date;
+
+var uri = Platform.script;
 
 class MqttAesk extends ChangeNotifier{
 
@@ -13,8 +17,8 @@ class MqttAesk extends ChangeNotifier{
   static int port                = 1883;
   static String username         = 'digital';
   static String password           = 'aesk';
-  static String clientIdentifier = 'ff'; //cihaz isimlerine göre atama yap
-
+  static String clientIdentifier = uri.toString()+DateTime.now().toString(); //cihaz isimlerine göre atama ya
+  
   mqtt.MqttClient client;
   mqtt.MqttConnectionState connectionState;
 
@@ -23,7 +27,7 @@ class MqttAesk extends ChangeNotifier{
 
   Future<bool> connect() async {
 
-    client = mqtt.MqttClient(broker,"");
+    client = mqtt.MqttClient(broker,"40");
     client.port = port;
     client.logging(on: true);
     client.keepAlivePeriod = 30;
@@ -82,10 +86,24 @@ class MqttAesk extends ChangeNotifier{
 
   void _onMessage(List<mqtt.MqttReceivedMessage> event) {
 
+    old_iteration_date ??= DateTime.now();
+
+    var new_iteration_date = DateTime.now();
+
+    AeskData.ping = new_iteration_date.difference(old_iteration_date).inMilliseconds;
+    AeskData.x_time += AeskData.ping;
+
+    old_iteration_date = new_iteration_date;
+
+
     final mqtt.MqttPublishMessage recMess = event[0].payload as mqtt.MqttPublishMessage;
     var message = recMess.payload.message.buffer.asByteData(0);
+    
     AeskData(message, Endian.little);
+
     notifyListeners();
+
+
   }
 
   void subscribeToTopic(String topic) {

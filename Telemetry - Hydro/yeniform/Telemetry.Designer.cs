@@ -100,14 +100,12 @@
             this.label54 = new System.Windows.Forms.Label();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
-            this.label85 = new System.Windows.Forms.Label();
-            this.label87 = new System.Windows.Forms.Label();
+            this.motor_temp = new System.Windows.Forms.TextBox();
+            this.label96 = new System.Windows.Forms.Label();
             this.label90 = new System.Windows.Forms.Label();
             this.label88 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.TextBox();
-            this.vd = new System.Windows.Forms.TextBox();
             this.iq = new System.Windows.Forms.TextBox();
-            this.vq = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.phase_b_cur = new System.Windows.Forms.TextBox();
             this.label68 = new System.Windows.Forms.Label();
@@ -116,19 +114,66 @@
             this.label73 = new System.Windows.Forms.Label();
             this.dc_bus_cur = new System.Windows.Forms.TextBox();
             this.label80 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
             this.dc_bus_volt = new System.Windows.Forms.TextBox();
-            this.motor_temp = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
+            this.bms_dc_bus_ready_flag = new System.Windows.Forms.PictureBox();
+            this.bms_discharge_flag = new System.Windows.Forms.PictureBox();
+            this.bms_precharge_flag = new System.Windows.Forms.PictureBox();
+            this.label95 = new System.Windows.Forms.Label();
+            this.bms_fatal_error = new System.Windows.Forms.PictureBox();
+            this.label85 = new System.Windows.Forms.Label();
+            this.bms_over_cur_error = new System.Windows.Forms.PictureBox();
+            this.bms_comm_error = new System.Windows.Forms.PictureBox();
+            this.bms_temp_error = new System.Windows.Forms.PictureBox();
+            this.bms_low_volt_error = new System.Windows.Forms.PictureBox();
+            this.label86 = new System.Windows.Forms.Label();
+            this.label87 = new System.Windows.Forms.Label();
+            this.label89 = new System.Windows.Forms.Label();
+            this.label91 = new System.Windows.Forms.Label();
+            this.label92 = new System.Windows.Forms.Label();
+            this.bms_high_volt_error = new System.Windows.Forms.PictureBox();
+            this.label93 = new System.Windows.Forms.Label();
+            this.label94 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
+            this.bms_temp = new System.Windows.Forms.TextBox();
             this.bms_worst_cell_address = new System.Windows.Forms.TextBox();
-            this.bms_worst_cell_volt = new System.Windows.Forms.TextBox();
+            this.bms_worst_cell_voltage = new System.Windows.Forms.TextBox();
             this.bms_soc = new System.Windows.Forms.TextBox();
             this.bms_bat_cons = new System.Windows.Forms.TextBox();
             this.bms_bat_current = new System.Windows.Forms.TextBox();
-            this.bms_bat_volt = new System.Windows.Forms.TextBox();
+            this.bms_bat_voltage = new System.Windows.Forms.TextBox();
+            this.label77 = new System.Windows.Forms.Label();
+            this.label78 = new System.Windows.Forms.Label();
+            this.label79 = new System.Windows.Forms.Label();
+            this.label81 = new System.Windows.Forms.Label();
+            this.label82 = new System.Windows.Forms.Label();
+            this.label83 = new System.Windows.Forms.Label();
+            this.label84 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.ems_temp = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.ems_soc = new System.Windows.Forms.TextBox();
+            this.ems_penalty = new System.Windows.Forms.TextBox();
+            this.ems_fc_lt_cons = new System.Windows.Forms.TextBox();
+            this.ems_out_cons = new System.Windows.Forms.TextBox();
+            this.ems_fc_cons = new System.Windows.Forms.TextBox();
+            this.ems_bat_cons = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.ems_out_current = new System.Windows.Forms.TextBox();
+            this.ems_fc_current = new System.Windows.Forms.TextBox();
+            this.ems_bat_current = new System.Windows.Forms.TextBox();
+            this.ems_out_voltage = new System.Windows.Forms.TextBox();
+            this.ems_fc_voltage = new System.Windows.Forms.TextBox();
+            this.ems_bat_volt = new System.Windows.Forms.TextBox();
             this.label57 = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
@@ -149,18 +194,21 @@
             this.driver_ign_command = new System.Windows.Forms.TextBox();
             this.driver_brake_command = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox24 = new System.Windows.Forms.PictureBox();
-            this.pictureBox23 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.ems_durum = new System.Windows.Forms.PictureBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
             this.driver_durum = new System.Windows.Forms.PictureBox();
             this.bms_durum = new System.Windows.Forms.PictureBox();
-            this.label49 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
-            this.xbee_active = new System.Windows.Forms.PictureBox();
             this.gsm_durum = new System.Windows.Forms.PictureBox();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.pictureBox21 = new System.Windows.Forms.PictureBox();
+            this.xbee_active = new System.Windows.Forms.PictureBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.go_cells_button = new System.Windows.Forms.Button();
+            this.go_graphs_button = new System.Windows.Forms.Button();
             this.angle_gauge = new Guna.UI.WinForms.GunaCircleProgressBar();
             this.sektor = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -205,9 +253,6 @@
             this.gpshiz_gauge = new Guna.UI.WinForms.GunaGauge();
             this.label36 = new System.Windows.Forms.Label();
             this.yol_gps = new System.Windows.Forms.Label();
-            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.go_cells_button = new System.Windows.Forms.Button();
-            this.go_graphs_button = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.gmap = new GMap.NET.WindowsForms.GMapControl();
@@ -231,21 +276,8 @@
             this.anlik_hiz = new System.Windows.Forms.Label();
             this.anlikhiz_gauge = new Guna.UI.WinForms.GunaGauge();
             this.ana_sekme = new System.Windows.Forms.TabControl();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label29 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.gmap_sag.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -270,6 +302,18 @@
             this.tableLayoutPanel14.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel24.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_dc_bus_ready_flag)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_discharge_flag)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_precharge_flag)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_fatal_error)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_over_cur_error)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_comm_error)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_temp_error)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_low_volt_error)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_high_volt_error)).BeginInit();
+            this.tableLayoutPanel23.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
@@ -277,23 +321,20 @@
             this.tableLayoutPanel18.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ems_durum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.driver_durum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bms_durum)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xbee_active)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gsm_durum)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xbee_active)).BeginInit();
+            this.tableLayoutPanel12.SuspendLayout();
             this.angle_gauge.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
-            this.tableLayoutPanel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.ana_sekme.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // error_ready
@@ -374,7 +415,6 @@
             this.tabPage1.Controls.Add(this.gpshiz_gauge);
             this.tabPage1.Controls.Add(this.label36);
             this.tabPage1.Controls.Add(this.yol_gps);
-            this.tabPage1.Controls.Add(this.tableLayoutPanel12);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.gmap);
@@ -412,9 +452,9 @@
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(567, 48);
+            this.groupBox2.Location = new System.Drawing.Point(567, 30);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(467, 599);
+            this.groupBox2.Size = new System.Drawing.Size(467, 697);
             this.groupBox2.TabIndex = 50;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DRIVER";
@@ -425,7 +465,7 @@
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(132, 199);
+            this.textBox3.Location = new System.Drawing.Point(30, 297);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(78, 54);
@@ -444,7 +484,7 @@
             this.atilan_Tur.IdleThickness = 10;
             this.atilan_Tur.Image = null;
             this.atilan_Tur.ImageSize = new System.Drawing.Size(52, 52);
-            this.atilan_Tur.Location = new System.Drawing.Point(12, 170);
+            this.atilan_Tur.Location = new System.Drawing.Point(12, 178);
             this.atilan_Tur.Maximum = 30;
             this.atilan_Tur.Name = "atilan_Tur";
             this.atilan_Tur.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
@@ -480,7 +520,7 @@
             this.set_hiz_bar.IdleThickness = 10;
             this.set_hiz_bar.Image = null;
             this.set_hiz_bar.ImageSize = new System.Drawing.Size(52, 52);
-            this.set_hiz_bar.Location = new System.Drawing.Point(341, 170);
+            this.set_hiz_bar.Location = new System.Drawing.Point(338, 178);
             this.set_hiz_bar.Maximum = 65;
             this.set_hiz_bar.Name = "set_hiz_bar";
             this.set_hiz_bar.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
@@ -521,11 +561,11 @@
             this.tableLayoutPanel86.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.24221F));
             this.tableLayoutPanel86.Controls.Add(this.tableLayoutPanel87, 1, 0);
             this.tableLayoutPanel86.Controls.Add(this.tableLayoutPanel85, 0, 0);
-            this.tableLayoutPanel86.Location = new System.Drawing.Point(9, 287);
+            this.tableLayoutPanel86.Location = new System.Drawing.Point(9, 367);
             this.tableLayoutPanel86.Name = "tableLayoutPanel86";
             this.tableLayoutPanel86.RowCount = 1;
             this.tableLayoutPanel86.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel86.Size = new System.Drawing.Size(452, 306);
+            this.tableLayoutPanel86.Size = new System.Drawing.Size(452, 324);
             this.tableLayoutPanel86.TabIndex = 58;
             // 
             // tableLayoutPanel87
@@ -567,7 +607,7 @@
             this.tableLayoutPanel87.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel87.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel87.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel87.Size = new System.Drawing.Size(208, 300);
+            this.tableLayoutPanel87.Size = new System.Drawing.Size(208, 318);
             this.tableLayoutPanel87.TabIndex = 58;
             // 
             // kalan_yol_driver
@@ -576,7 +616,7 @@
             this.kalan_yol_driver.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.kalan_yol_driver.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kalan_yol_driver.ForeColor = System.Drawing.Color.White;
-            this.kalan_yol_driver.Location = new System.Drawing.Point(110, 256);
+            this.kalan_yol_driver.Location = new System.Drawing.Point(110, 274);
             this.kalan_yol_driver.Multiline = true;
             this.kalan_yol_driver.Name = "kalan_yol_driver";
             this.kalan_yol_driver.Size = new System.Drawing.Size(94, 40);
@@ -589,10 +629,10 @@
             this.gidilen_yol_driver.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gidilen_yol_driver.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gidilen_yol_driver.ForeColor = System.Drawing.Color.White;
-            this.gidilen_yol_driver.Location = new System.Drawing.Point(110, 214);
+            this.gidilen_yol_driver.Location = new System.Drawing.Point(110, 229);
             this.gidilen_yol_driver.Multiline = true;
             this.gidilen_yol_driver.Name = "gidilen_yol_driver";
-            this.gidilen_yol_driver.Size = new System.Drawing.Size(94, 35);
+            this.gidilen_yol_driver.Size = new System.Drawing.Size(94, 38);
             this.gidilen_yol_driver.TabIndex = 73;
             this.gidilen_yol_driver.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -602,10 +642,10 @@
             this.anlik_tur_suresi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.anlik_tur_suresi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.anlik_tur_suresi.ForeColor = System.Drawing.Color.White;
-            this.anlik_tur_suresi.Location = new System.Drawing.Point(110, 172);
+            this.anlik_tur_suresi.Location = new System.Drawing.Point(110, 184);
             this.anlik_tur_suresi.Multiline = true;
             this.anlik_tur_suresi.Name = "anlik_tur_suresi";
-            this.anlik_tur_suresi.Size = new System.Drawing.Size(94, 35);
+            this.anlik_tur_suresi.Size = new System.Drawing.Size(94, 38);
             this.anlik_tur_suresi.TabIndex = 72;
             this.anlik_tur_suresi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -615,10 +655,10 @@
             this.en_hizli_tur_timer.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.en_hizli_tur_timer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.en_hizli_tur_timer.ForeColor = System.Drawing.Color.White;
-            this.en_hizli_tur_timer.Location = new System.Drawing.Point(110, 130);
+            this.en_hizli_tur_timer.Location = new System.Drawing.Point(110, 139);
             this.en_hizli_tur_timer.Multiline = true;
             this.en_hizli_tur_timer.Name = "en_hizli_tur_timer";
-            this.en_hizli_tur_timer.Size = new System.Drawing.Size(94, 35);
+            this.en_hizli_tur_timer.Size = new System.Drawing.Size(94, 38);
             this.en_hizli_tur_timer.TabIndex = 71;
             this.en_hizli_tur_timer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -628,10 +668,10 @@
             this.önceki_tur_timer.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.önceki_tur_timer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.önceki_tur_timer.ForeColor = System.Drawing.Color.White;
-            this.önceki_tur_timer.Location = new System.Drawing.Point(110, 88);
+            this.önceki_tur_timer.Location = new System.Drawing.Point(110, 94);
             this.önceki_tur_timer.Multiline = true;
             this.önceki_tur_timer.Name = "önceki_tur_timer";
-            this.önceki_tur_timer.Size = new System.Drawing.Size(94, 35);
+            this.önceki_tur_timer.Size = new System.Drawing.Size(94, 38);
             this.önceki_tur_timer.TabIndex = 70;
             this.önceki_tur_timer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -641,10 +681,10 @@
             this.ort_hiz.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ort_hiz.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ort_hiz.ForeColor = System.Drawing.Color.White;
-            this.ort_hiz.Location = new System.Drawing.Point(110, 46);
+            this.ort_hiz.Location = new System.Drawing.Point(110, 49);
             this.ort_hiz.Multiline = true;
             this.ort_hiz.Name = "ort_hiz";
-            this.ort_hiz.Size = new System.Drawing.Size(94, 35);
+            this.ort_hiz.Size = new System.Drawing.Size(94, 38);
             this.ort_hiz.TabIndex = 69;
             this.ort_hiz.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -652,9 +692,9 @@
             // 
             this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox5.Image = global::telemetry_hydro.Properties.Resources.road;
-            this.pictureBox5.Location = new System.Drawing.Point(4, 214);
+            this.pictureBox5.Location = new System.Drawing.Point(4, 229);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(38, 35);
+            this.pictureBox5.Size = new System.Drawing.Size(38, 38);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 64;
             this.pictureBox5.TabStop = false;
@@ -665,7 +705,7 @@
             this.pictureBox4.Image = global::telemetry_hydro.Properties.Resources.speed_vector;
             this.pictureBox4.Location = new System.Drawing.Point(4, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(38, 35);
+            this.pictureBox4.Size = new System.Drawing.Size(38, 38);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 11;
             this.pictureBox4.TabStop = false;
@@ -678,7 +718,7 @@
             this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(49, 1);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(54, 41);
+            this.label15.Size = new System.Drawing.Size(54, 44);
             this.label15.TabIndex = 12;
             this.label15.Text = "Maks Hız";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -687,9 +727,9 @@
             // 
             this.pictureBox13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(4, 46);
+            this.pictureBox13.Location = new System.Drawing.Point(4, 49);
             this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(38, 35);
+            this.pictureBox13.Size = new System.Drawing.Size(38, 38);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox13.TabIndex = 19;
             this.pictureBox13.TabStop = false;
@@ -700,9 +740,9 @@
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(49, 43);
+            this.label17.Location = new System.Drawing.Point(49, 46);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(54, 41);
+            this.label17.Size = new System.Drawing.Size(54, 44);
             this.label17.TabIndex = 16;
             this.label17.Text = "Ort. Hız";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -711,9 +751,9 @@
             // 
             this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox7.Image = global::telemetry_hydro.Properties.Resources.czxcxz1;
-            this.pictureBox7.Location = new System.Drawing.Point(4, 88);
+            this.pictureBox7.Location = new System.Drawing.Point(4, 94);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(38, 35);
+            this.pictureBox7.Size = new System.Drawing.Size(38, 38);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 11;
             this.pictureBox7.TabStop = false;
@@ -724,9 +764,9 @@
             this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label23.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(49, 85);
+            this.label23.Location = new System.Drawing.Point(49, 91);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(54, 41);
+            this.label23.Size = new System.Drawing.Size(54, 44);
             this.label23.TabIndex = 9;
             this.label23.Text = "Önceki Tur\r\n";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -737,7 +777,7 @@
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label33.ForeColor = System.Drawing.Color.White;
-            this.label33.Location = new System.Drawing.Point(53, 259);
+            this.label33.Location = new System.Drawing.Point(53, 277);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(45, 34);
             this.label33.TabIndex = 63;
@@ -750,7 +790,7 @@
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label32.ForeColor = System.Drawing.Color.White;
-            this.label32.Location = new System.Drawing.Point(49, 214);
+            this.label32.Location = new System.Drawing.Point(49, 231);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(53, 34);
             this.label32.TabIndex = 62;
@@ -761,9 +801,9 @@
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Image = global::telemetry_hydro.Properties.Resources.checkered_flag_clip_art_9511_kopya;
-            this.pictureBox2.Location = new System.Drawing.Point(4, 130);
+            this.pictureBox2.Location = new System.Drawing.Point(4, 139);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(38, 35);
+            this.pictureBox2.Size = new System.Drawing.Size(38, 38);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
@@ -774,9 +814,9 @@
             this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label21.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(49, 127);
+            this.label21.Location = new System.Drawing.Point(49, 136);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(54, 41);
+            this.label21.Size = new System.Drawing.Size(54, 44);
             this.label21.TabIndex = 7;
             this.label21.Text = "En Hızlı Tur";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -785,9 +825,9 @@
             // 
             this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox3.Image = global::telemetry_hydro.Properties.Resources.dadadadda;
-            this.pictureBox3.Location = new System.Drawing.Point(4, 172);
+            this.pictureBox3.Location = new System.Drawing.Point(4, 184);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(38, 35);
+            this.pictureBox3.Size = new System.Drawing.Size(38, 38);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 10;
             this.pictureBox3.TabStop = false;
@@ -798,9 +838,9 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(49, 169);
+            this.label4.Location = new System.Drawing.Point(49, 181);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 41);
+            this.label4.Size = new System.Drawing.Size(54, 44);
             this.label4.TabIndex = 2;
             this.label4.Text = "Şimdiki Tur";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -809,7 +849,7 @@
             // 
             this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox6.Image = global::telemetry_hydro.Properties.Resources.road;
-            this.pictureBox6.Location = new System.Drawing.Point(4, 256);
+            this.pictureBox6.Location = new System.Drawing.Point(4, 274);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(38, 40);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -825,7 +865,7 @@
             this.maks_hiz.Location = new System.Drawing.Point(110, 4);
             this.maks_hiz.Multiline = true;
             this.maks_hiz.Name = "maks_hiz";
-            this.maks_hiz.Size = new System.Drawing.Size(94, 35);
+            this.maks_hiz.Size = new System.Drawing.Size(94, 38);
             this.maks_hiz.TabIndex = 68;
             this.maks_hiz.Text = "0";
             this.maks_hiz.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -843,7 +883,7 @@
             this.tableLayoutPanel85.RowCount = 2;
             this.tableLayoutPanel85.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58.86288F));
             this.tableLayoutPanel85.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.13712F));
-            this.tableLayoutPanel85.Size = new System.Drawing.Size(232, 300);
+            this.tableLayoutPanel85.Size = new System.Drawing.Size(232, 318);
             this.tableLayoutPanel85.TabIndex = 58;
             // 
             // tableLayoutPanel4
@@ -860,13 +900,13 @@
             this.tableLayoutPanel4.Controls.Add(this.gecen_sure, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.label39, 0, 2);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 179);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 190);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 3;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.44481F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.44482F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.11037F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(224, 117);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(224, 124);
             this.tableLayoutPanel4.TabIndex = 37;
             // 
             // ortalama_tur_suresi
@@ -876,10 +916,10 @@
             this.ortalama_tur_suresi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ortalama_tur_suresi.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ortalama_tur_suresi.ForeColor = System.Drawing.Color.White;
-            this.ortalama_tur_suresi.Location = new System.Drawing.Point(116, 82);
+            this.ortalama_tur_suresi.Location = new System.Drawing.Point(116, 86);
             this.ortalama_tur_suresi.Multiline = true;
             this.ortalama_tur_suresi.Name = "ortalama_tur_suresi";
-            this.ortalama_tur_suresi.Size = new System.Drawing.Size(102, 29);
+            this.ortalama_tur_suresi.Size = new System.Drawing.Size(102, 32);
             this.ortalama_tur_suresi.TabIndex = 13;
             this.ortalama_tur_suresi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -893,7 +933,7 @@
             this.kalan_sure.Location = new System.Drawing.Point(116, 6);
             this.kalan_sure.Multiline = true;
             this.kalan_sure.Name = "kalan_sure";
-            this.kalan_sure.Size = new System.Drawing.Size(102, 29);
+            this.kalan_sure.Size = new System.Drawing.Size(102, 31);
             this.kalan_sure.TabIndex = 9;
             this.kalan_sure.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -904,7 +944,7 @@
             this.label38.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label38.Location = new System.Drawing.Point(6, 3);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(101, 35);
+            this.label38.Size = new System.Drawing.Size(101, 37);
             this.label38.TabIndex = 0;
             this.label38.Text = "KALAN SÜRE";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -914,9 +954,9 @@
             this.label40.AutoSize = true;
             this.label40.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label40.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label40.Location = new System.Drawing.Point(6, 41);
+            this.label40.Location = new System.Drawing.Point(6, 43);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(101, 35);
+            this.label40.Size = new System.Drawing.Size(101, 37);
             this.label40.TabIndex = 7;
             this.label40.Text = "GEÇEN SÜRE";
             this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -928,10 +968,10 @@
             this.gecen_sure.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gecen_sure.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.gecen_sure.ForeColor = System.Drawing.Color.White;
-            this.gecen_sure.Location = new System.Drawing.Point(116, 44);
+            this.gecen_sure.Location = new System.Drawing.Point(116, 46);
             this.gecen_sure.Multiline = true;
             this.gecen_sure.Name = "gecen_sure";
-            this.gecen_sure.Size = new System.Drawing.Size(102, 29);
+            this.gecen_sure.Size = new System.Drawing.Size(102, 31);
             this.gecen_sure.TabIndex = 8;
             this.gecen_sure.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -940,9 +980,9 @@
             this.label39.AutoSize = true;
             this.label39.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label39.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label39.Location = new System.Drawing.Point(6, 79);
+            this.label39.Location = new System.Drawing.Point(6, 83);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(101, 35);
+            this.label39.Size = new System.Drawing.Size(101, 38);
             this.label39.TabIndex = 10;
             this.label39.Text = "ORT. TUR SÜRESİ";
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -960,7 +1000,7 @@
             this.tableLayoutPanel21.Name = "tableLayoutPanel21";
             this.tableLayoutPanel21.RowCount = 1;
             this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel21.Size = new System.Drawing.Size(224, 168);
+            this.tableLayoutPanel21.Size = new System.Drawing.Size(224, 179);
             this.tableLayoutPanel21.TabIndex = 1;
             // 
             // tableLayoutPanel22
@@ -987,7 +1027,7 @@
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.64246F));
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel22.Size = new System.Drawing.Size(65, 160);
+            this.tableLayoutPanel22.Size = new System.Drawing.Size(65, 171);
             this.tableLayoutPanel22.TabIndex = 41;
             // 
             // id_error
@@ -996,9 +1036,9 @@
             this.id_error.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.id_error.Dock = System.Windows.Forms.DockStyle.Fill;
             this.id_error.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.id_error.Location = new System.Drawing.Point(6, 131);
+            this.id_error.Location = new System.Drawing.Point(6, 141);
             this.id_error.Name = "id_error";
-            this.id_error.Size = new System.Drawing.Size(53, 26);
+            this.id_error.Size = new System.Drawing.Size(53, 27);
             this.id_error.TabIndex = 8;
             this.id_error.Text = " ";
             this.id_error.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1009,9 +1049,9 @@
             this.motor_temp_error.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.motor_temp_error.Dock = System.Windows.Forms.DockStyle.Fill;
             this.motor_temp_error.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.motor_temp_error.Location = new System.Drawing.Point(6, 107);
+            this.motor_temp_error.Location = new System.Drawing.Point(6, 115);
             this.motor_temp_error.Name = "motor_temp_error";
-            this.motor_temp_error.Size = new System.Drawing.Size(53, 21);
+            this.motor_temp_error.Size = new System.Drawing.Size(53, 23);
             this.motor_temp_error.TabIndex = 5;
             this.motor_temp_error.Text = " ";
             this.motor_temp_error.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1022,9 +1062,9 @@
             this.dc_bus_amper_error.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.dc_bus_amper_error.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dc_bus_amper_error.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dc_bus_amper_error.Location = new System.Drawing.Point(6, 81);
+            this.dc_bus_amper_error.Location = new System.Drawing.Point(6, 87);
             this.dc_bus_amper_error.Name = "dc_bus_amper_error";
-            this.dc_bus_amper_error.Size = new System.Drawing.Size(53, 23);
+            this.dc_bus_amper_error.Size = new System.Drawing.Size(53, 25);
             this.dc_bus_amper_error.TabIndex = 2;
             this.dc_bus_amper_error.Text = " ";
             // 
@@ -1036,7 +1076,7 @@
             this.zpc.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.zpc.Location = new System.Drawing.Point(6, 3);
             this.zpc.Name = "zpc";
-            this.zpc.Size = new System.Drawing.Size(53, 23);
+            this.zpc.Size = new System.Drawing.Size(53, 25);
             this.zpc.TabIndex = 2;
             // 
             // pwm_enabled
@@ -1045,9 +1085,9 @@
             this.pwm_enabled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.pwm_enabled.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pwm_enabled.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.pwm_enabled.Location = new System.Drawing.Point(6, 29);
+            this.pwm_enabled.Location = new System.Drawing.Point(6, 31);
             this.pwm_enabled.Name = "pwm_enabled";
-            this.pwm_enabled.Size = new System.Drawing.Size(53, 23);
+            this.pwm_enabled.Size = new System.Drawing.Size(53, 25);
             this.pwm_enabled.TabIndex = 5;
             this.pwm_enabled.Text = " ";
             this.pwm_enabled.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1058,9 +1098,9 @@
             this.dc_bus_voltage_error.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.dc_bus_voltage_error.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dc_bus_voltage_error.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dc_bus_voltage_error.Location = new System.Drawing.Point(6, 55);
+            this.dc_bus_voltage_error.Location = new System.Drawing.Point(6, 59);
             this.dc_bus_voltage_error.Name = "dc_bus_voltage_error";
-            this.dc_bus_voltage_error.Size = new System.Drawing.Size(53, 23);
+            this.dc_bus_voltage_error.Size = new System.Drawing.Size(53, 25);
             this.dc_bus_voltage_error.TabIndex = 8;
             this.dc_bus_voltage_error.Text = " ";
             this.dc_bus_voltage_error.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1087,7 +1127,7 @@
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(144, 160);
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(144, 171);
             this.tableLayoutPanel20.TabIndex = 39;
             // 
             // label61
@@ -1096,9 +1136,9 @@
             this.label61.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.label61.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label61.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label61.Location = new System.Drawing.Point(6, 133);
+            this.label61.Location = new System.Drawing.Point(6, 138);
             this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(132, 24);
+            this.label61.Size = new System.Drawing.Size(132, 30);
             this.label61.TabIndex = 17;
             this.label61.Text = "ID";
             this.label61.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1109,9 +1149,9 @@
             this.label60.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.label60.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label60.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label60.Location = new System.Drawing.Point(6, 107);
+            this.label60.Location = new System.Drawing.Point(6, 111);
             this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(132, 23);
+            this.label60.Size = new System.Drawing.Size(132, 24);
             this.label60.TabIndex = 16;
             this.label60.Text = "  MOTOR TEMP";
             this.label60.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1122,9 +1162,9 @@
             this.label48.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.label48.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label48.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label48.Location = new System.Drawing.Point(6, 81);
+            this.label48.Location = new System.Drawing.Point(6, 84);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(132, 23);
+            this.label48.Size = new System.Drawing.Size(132, 24);
             this.label48.TabIndex = 15;
             this.label48.Text = "DC_BUS_I";
             this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1135,9 +1175,9 @@
             this.label50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.label50.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label50.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label50.Location = new System.Drawing.Point(6, 55);
+            this.label50.Location = new System.Drawing.Point(6, 57);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(132, 23);
+            this.label50.Size = new System.Drawing.Size(132, 24);
             this.label50.TabIndex = 14;
             this.label50.Text = "DC_BUS_VOLT";
             this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1148,9 +1188,9 @@
             this.label52.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.label52.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label52.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label52.Location = new System.Drawing.Point(6, 29);
+            this.label52.Location = new System.Drawing.Point(6, 30);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(132, 23);
+            this.label52.Size = new System.Drawing.Size(132, 24);
             this.label52.TabIndex = 13;
             this.label52.Text = "PWM ENABLED";
             this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1163,7 +1203,7 @@
             this.label54.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label54.Location = new System.Drawing.Point(6, 3);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(132, 23);
+            this.label54.Size = new System.Drawing.Size(132, 24);
             this.label54.TabIndex = 12;
             this.label54.Text = "ZPC";
             this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1176,11 +1216,11 @@
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.86226F));
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel15, 1, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel14, 0, 0);
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(9, 20);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(9, 25);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.04546F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(452, 152);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(452, 117);
             this.tableLayoutPanel13.TabIndex = 0;
             // 
             // tableLayoutPanel15
@@ -1194,50 +1234,51 @@
             this.tableLayoutPanel15.ColumnCount = 2;
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel15.Controls.Add(this.label85, 0, 3);
-            this.tableLayoutPanel15.Controls.Add(this.label87, 0, 2);
+            this.tableLayoutPanel15.Controls.Add(this.textBox1, 1, 2);
+            this.tableLayoutPanel15.Controls.Add(this.label29, 0, 2);
             this.tableLayoutPanel15.Controls.Add(this.label90, 0, 0);
             this.tableLayoutPanel15.Controls.Add(this.label88, 0, 1);
             this.tableLayoutPanel15.Controls.Add(this.id, 1, 0);
-            this.tableLayoutPanel15.Controls.Add(this.vd, 1, 2);
             this.tableLayoutPanel15.Controls.Add(this.iq, 1, 1);
-            this.tableLayoutPanel15.Controls.Add(this.vq, 1, 3);
+            this.tableLayoutPanel15.Controls.Add(this.motor_temp, 1, 3);
+            this.tableLayoutPanel15.Controls.Add(this.label96, 0, 3);
             this.tableLayoutPanel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(67)))), ((int)(((byte)(65)))));
             this.tableLayoutPanel15.Location = new System.Drawing.Point(229, 3);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 4;
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(220, 146);
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(220, 111);
             this.tableLayoutPanel15.TabIndex = 51;
             // 
-            // label85
+            // motor_temp
             // 
-            this.label85.AutoSize = true;
-            this.label85.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label85.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label85.ForeColor = System.Drawing.Color.White;
-            this.label85.Location = new System.Drawing.Point(6, 108);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(131, 35);
-            this.label85.TabIndex = 3;
-            this.label85.Text = "Vq";
-            this.label85.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.motor_temp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.motor_temp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.motor_temp.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.motor_temp.ForeColor = System.Drawing.Color.White;
+            this.motor_temp.Location = new System.Drawing.Point(146, 87);
+            this.motor_temp.Multiline = true;
+            this.motor_temp.Name = "motor_temp";
+            this.motor_temp.Size = new System.Drawing.Size(68, 18);
+            this.motor_temp.TabIndex = 98;
+            this.motor_temp.Text = "NaN";
+            this.motor_temp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label87
+            // label96
             // 
-            this.label87.AutoSize = true;
-            this.label87.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label87.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label87.ForeColor = System.Drawing.Color.White;
-            this.label87.Location = new System.Drawing.Point(6, 73);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(131, 32);
-            this.label87.TabIndex = 0;
-            this.label87.Text = "Vd";
-            this.label87.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label96.AutoSize = true;
+            this.label96.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label96.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label96.ForeColor = System.Drawing.Color.White;
+            this.label96.Location = new System.Drawing.Point(6, 84);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(131, 24);
+            this.label96.TabIndex = 55;
+            this.label96.Text = "  MOTOR TEMP";
+            this.label96.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label90
             // 
@@ -1247,7 +1288,7 @@
             this.label90.ForeColor = System.Drawing.Color.White;
             this.label90.Location = new System.Drawing.Point(6, 3);
             this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(131, 32);
+            this.label90.Size = new System.Drawing.Size(131, 24);
             this.label90.TabIndex = 54;
             this.label90.Text = "Id";
             this.label90.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1258,9 +1299,9 @@
             this.label88.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label88.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label88.ForeColor = System.Drawing.Color.White;
-            this.label88.Location = new System.Drawing.Point(6, 38);
+            this.label88.Location = new System.Drawing.Point(6, 30);
             this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(131, 32);
+            this.label88.Size = new System.Drawing.Size(131, 24);
             this.label88.TabIndex = 3;
             this.label88.Text = "Iq";
             this.label88.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1276,58 +1317,25 @@
             this.id.Multiline = true;
             this.id.Name = "id";
             this.id.ReadOnly = true;
-            this.id.Size = new System.Drawing.Size(68, 26);
+            this.id.Size = new System.Drawing.Size(68, 18);
             this.id.TabIndex = 10;
             this.id.Text = "NaN";
             this.id.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // vd
-            // 
-            this.vd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.vd.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.vd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vd.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.vd.ForeColor = System.Drawing.Color.White;
-            this.vd.Location = new System.Drawing.Point(146, 76);
-            this.vd.Multiline = true;
-            this.vd.Name = "vd";
-            this.vd.ReadOnly = true;
-            this.vd.Size = new System.Drawing.Size(68, 26);
-            this.vd.TabIndex = 10;
-            this.vd.Text = "NaN";
-            this.vd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // iq
             // 
             this.iq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.iq.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.iq.Dock = System.Windows.Forms.DockStyle.Fill;
             this.iq.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.iq.ForeColor = System.Drawing.Color.White;
-            this.iq.Location = new System.Drawing.Point(146, 41);
+            this.iq.Location = new System.Drawing.Point(146, 33);
             this.iq.Multiline = true;
             this.iq.Name = "iq";
             this.iq.ReadOnly = true;
-            this.iq.Size = new System.Drawing.Size(68, 26);
+            this.iq.Size = new System.Drawing.Size(68, 18);
             this.iq.TabIndex = 11;
             this.iq.Text = "NaN";
             this.iq.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // vq
-            // 
-            this.vq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.vq.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.vq.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vq.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.vq.ForeColor = System.Drawing.Color.White;
-            this.vq.Location = new System.Drawing.Point(146, 111);
-            this.vq.Multiline = true;
-            this.vq.Name = "vq";
-            this.vq.ReadOnly = true;
-            this.vq.Size = new System.Drawing.Size(68, 29);
-            this.vq.TabIndex = 11;
-            this.vq.Text = "NaN";
-            this.vq.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel14
             // 
@@ -1347,20 +1355,17 @@
             this.tableLayoutPanel14.Controls.Add(this.label73, 0, 3);
             this.tableLayoutPanel14.Controls.Add(this.dc_bus_cur, 1, 2);
             this.tableLayoutPanel14.Controls.Add(this.label80, 0, 2);
-            this.tableLayoutPanel14.Controls.Add(this.label45, 0, 4);
             this.tableLayoutPanel14.Controls.Add(this.dc_bus_volt, 1, 3);
-            this.tableLayoutPanel14.Controls.Add(this.motor_temp, 1, 4);
             this.tableLayoutPanel14.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(67)))), ((int)(((byte)(65)))));
             this.tableLayoutPanel14.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
-            this.tableLayoutPanel14.RowCount = 5;
+            this.tableLayoutPanel14.RowCount = 4;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(220, 146);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(220, 111);
             this.tableLayoutPanel14.TabIndex = 51;
             // 
             // phase_b_cur
@@ -1370,11 +1375,11 @@
             this.phase_b_cur.Dock = System.Windows.Forms.DockStyle.Fill;
             this.phase_b_cur.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.phase_b_cur.ForeColor = System.Drawing.Color.White;
-            this.phase_b_cur.Location = new System.Drawing.Point(146, 34);
+            this.phase_b_cur.Location = new System.Drawing.Point(146, 33);
             this.phase_b_cur.Multiline = true;
             this.phase_b_cur.Name = "phase_b_cur";
             this.phase_b_cur.ReadOnly = true;
-            this.phase_b_cur.Size = new System.Drawing.Size(68, 19);
+            this.phase_b_cur.Size = new System.Drawing.Size(68, 18);
             this.phase_b_cur.TabIndex = 10;
             this.phase_b_cur.Text = "NaN";
             this.phase_b_cur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1385,9 +1390,9 @@
             this.label68.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label68.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label68.ForeColor = System.Drawing.Color.White;
-            this.label68.Location = new System.Drawing.Point(6, 31);
+            this.label68.Location = new System.Drawing.Point(6, 30);
             this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(131, 25);
+            this.label68.Size = new System.Drawing.Size(131, 24);
             this.label68.TabIndex = 3;
             this.label68.Text = "PHASE B CUR";
             this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1400,7 +1405,7 @@
             this.label71.ForeColor = System.Drawing.Color.White;
             this.label71.Location = new System.Drawing.Point(6, 3);
             this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(131, 25);
+            this.label71.Size = new System.Drawing.Size(131, 24);
             this.label71.TabIndex = 0;
             this.label71.Text = "PHASE A CUR";
             this.label71.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1416,7 +1421,7 @@
             this.phase_a_cur.Multiline = true;
             this.phase_a_cur.Name = "phase_a_cur";
             this.phase_a_cur.ReadOnly = true;
-            this.phase_a_cur.Size = new System.Drawing.Size(68, 19);
+            this.phase_a_cur.Size = new System.Drawing.Size(68, 18);
             this.phase_a_cur.TabIndex = 9;
             this.phase_a_cur.Text = "NaN";
             this.phase_a_cur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1427,9 +1432,9 @@
             this.label73.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label73.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label73.ForeColor = System.Drawing.Color.White;
-            this.label73.Location = new System.Drawing.Point(6, 87);
+            this.label73.Location = new System.Drawing.Point(6, 84);
             this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(131, 25);
+            this.label73.Size = new System.Drawing.Size(131, 24);
             this.label73.TabIndex = 8;
             this.label73.Text = "DC  BUS VOLT";
             this.label73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1441,11 +1446,11 @@
             this.dc_bus_cur.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dc_bus_cur.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dc_bus_cur.ForeColor = System.Drawing.Color.White;
-            this.dc_bus_cur.Location = new System.Drawing.Point(146, 62);
+            this.dc_bus_cur.Location = new System.Drawing.Point(146, 60);
             this.dc_bus_cur.Multiline = true;
             this.dc_bus_cur.Name = "dc_bus_cur";
             this.dc_bus_cur.ReadOnly = true;
-            this.dc_bus_cur.Size = new System.Drawing.Size(68, 19);
+            this.dc_bus_cur.Size = new System.Drawing.Size(68, 18);
             this.dc_bus_cur.TabIndex = 12;
             this.dc_bus_cur.Text = "NaN";
             this.dc_bus_cur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1456,25 +1461,12 @@
             this.label80.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label80.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label80.ForeColor = System.Drawing.Color.White;
-            this.label80.Location = new System.Drawing.Point(6, 59);
+            this.label80.Location = new System.Drawing.Point(6, 57);
             this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(131, 25);
+            this.label80.Size = new System.Drawing.Size(131, 24);
             this.label80.TabIndex = 8;
             this.label80.Text = "DC  BUS CUR";
             this.label80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label45.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label45.ForeColor = System.Drawing.Color.White;
-            this.label45.Location = new System.Drawing.Point(6, 115);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(131, 28);
-            this.label45.TabIndex = 13;
-            this.label45.Text = "  MOTOR TEMP";
-            this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dc_bus_volt
             // 
@@ -1483,29 +1475,14 @@
             this.dc_bus_volt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dc_bus_volt.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dc_bus_volt.ForeColor = System.Drawing.Color.White;
-            this.dc_bus_volt.Location = new System.Drawing.Point(146, 90);
+            this.dc_bus_volt.Location = new System.Drawing.Point(146, 87);
             this.dc_bus_volt.Multiline = true;
             this.dc_bus_volt.Name = "dc_bus_volt";
             this.dc_bus_volt.ReadOnly = true;
-            this.dc_bus_volt.Size = new System.Drawing.Size(68, 19);
+            this.dc_bus_volt.Size = new System.Drawing.Size(68, 18);
             this.dc_bus_volt.TabIndex = 13;
             this.dc_bus_volt.Text = "NaN";
             this.dc_bus_volt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // motor_temp
-            // 
-            this.motor_temp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.motor_temp.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.motor_temp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.motor_temp.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.motor_temp.ForeColor = System.Drawing.Color.White;
-            this.motor_temp.Location = new System.Drawing.Point(146, 118);
-            this.motor_temp.Multiline = true;
-            this.motor_temp.Name = "motor_temp";
-            this.motor_temp.Size = new System.Drawing.Size(68, 22);
-            this.motor_temp.TabIndex = 12;
-            this.motor_temp.Text = "NaN";
-            this.motor_temp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox2
             // 
@@ -1513,7 +1490,7 @@
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(279, 205);
+            this.textBox2.Location = new System.Drawing.Point(367, 300);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(66, 54);
@@ -1526,12 +1503,12 @@
             this.groupBox1.Controls.Add(this.tableLayoutPanel3);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Location = new System.Drawing.Point(49, 48);
+            this.groupBox1.Location = new System.Drawing.Point(49, 30);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(512, 344);
+            this.groupBox1.Size = new System.Drawing.Size(512, 496);
             this.groupBox1.TabIndex = 48;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "EMS";
+            this.groupBox1.Text = "EMS - BMS";
             // 
             // tableLayoutPanel3
             // 
@@ -1541,48 +1518,330 @@
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel24, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel23, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel7, 0, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(6, 22);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(500, 316);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 246F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(500, 468);
             this.tableLayoutPanel3.TabIndex = 50;
             // 
-            // tableLayoutPanel7
+            // tableLayoutPanel24
             // 
-            this.tableLayoutPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.tableLayoutPanel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tableLayoutPanel7.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
-            this.tableLayoutPanel7.ColumnCount = 2;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.53942F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.46058F));
-            this.tableLayoutPanel7.Controls.Add(this.bms_worst_cell_address, 1, 5);
-            this.tableLayoutPanel7.Controls.Add(this.bms_worst_cell_volt, 1, 4);
-            this.tableLayoutPanel7.Controls.Add(this.bms_soc, 1, 3);
-            this.tableLayoutPanel7.Controls.Add(this.bms_bat_cons, 1, 2);
-            this.tableLayoutPanel7.Controls.Add(this.bms_bat_current, 1, 1);
-            this.tableLayoutPanel7.Controls.Add(this.bms_bat_volt, 1, 0);
-            this.tableLayoutPanel7.Controls.Add(this.label57, 0, 1);
-            this.tableLayoutPanel7.Controls.Add(this.label59, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.label70, 0, 5);
-            this.tableLayoutPanel7.Controls.Add(this.label55, 0, 2);
-            this.tableLayoutPanel7.Controls.Add(this.label72, 0, 4);
-            this.tableLayoutPanel7.Controls.Add(this.label74, 0, 3);
-            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(45)))), ((int)(((byte)(29)))));
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 6;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(244, 310);
-            this.tableLayoutPanel7.TabIndex = 49;
+            this.tableLayoutPanel24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.tableLayoutPanel24.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
+            this.tableLayoutPanel24.ColumnCount = 2;
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.12448F));
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.87552F));
+            this.tableLayoutPanel24.Controls.Add(this.bms_dc_bus_ready_flag, 1, 8);
+            this.tableLayoutPanel24.Controls.Add(this.bms_discharge_flag, 1, 7);
+            this.tableLayoutPanel24.Controls.Add(this.bms_precharge_flag, 1, 6);
+            this.tableLayoutPanel24.Controls.Add(this.label95, 0, 8);
+            this.tableLayoutPanel24.Controls.Add(this.bms_fatal_error, 1, 5);
+            this.tableLayoutPanel24.Controls.Add(this.label85, 0, 5);
+            this.tableLayoutPanel24.Controls.Add(this.bms_over_cur_error, 1, 4);
+            this.tableLayoutPanel24.Controls.Add(this.bms_comm_error, 1, 3);
+            this.tableLayoutPanel24.Controls.Add(this.bms_temp_error, 1, 2);
+            this.tableLayoutPanel24.Controls.Add(this.bms_low_volt_error, 1, 1);
+            this.tableLayoutPanel24.Controls.Add(this.label86, 0, 4);
+            this.tableLayoutPanel24.Controls.Add(this.label87, 0, 3);
+            this.tableLayoutPanel24.Controls.Add(this.label89, 0, 2);
+            this.tableLayoutPanel24.Controls.Add(this.label91, 0, 1);
+            this.tableLayoutPanel24.Controls.Add(this.label92, 0, 0);
+            this.tableLayoutPanel24.Controls.Add(this.bms_high_volt_error, 1, 0);
+            this.tableLayoutPanel24.Controls.Add(this.label93, 0, 7);
+            this.tableLayoutPanel24.Controls.Add(this.label94, 0, 6);
+            this.tableLayoutPanel24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(166)))), ((int)(((byte)(181)))));
+            this.tableLayoutPanel24.Location = new System.Drawing.Point(253, 225);
+            this.tableLayoutPanel24.Name = "tableLayoutPanel24";
+            this.tableLayoutPanel24.RowCount = 9;
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel24.Size = new System.Drawing.Size(244, 240);
+            this.tableLayoutPanel24.TabIndex = 98;
+            // 
+            // bms_dc_bus_ready_flag
+            // 
+            this.bms_dc_bus_ready_flag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bms_dc_bus_ready_flag.Location = new System.Drawing.Point(173, 214);
+            this.bms_dc_bus_ready_flag.Name = "bms_dc_bus_ready_flag";
+            this.bms_dc_bus_ready_flag.Size = new System.Drawing.Size(65, 20);
+            this.bms_dc_bus_ready_flag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bms_dc_bus_ready_flag.TabIndex = 102;
+            this.bms_dc_bus_ready_flag.TabStop = false;
+            // 
+            // bms_discharge_flag
+            // 
+            this.bms_discharge_flag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bms_discharge_flag.Location = new System.Drawing.Point(173, 188);
+            this.bms_discharge_flag.Name = "bms_discharge_flag";
+            this.bms_discharge_flag.Size = new System.Drawing.Size(65, 17);
+            this.bms_discharge_flag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bms_discharge_flag.TabIndex = 102;
+            this.bms_discharge_flag.TabStop = false;
+            // 
+            // bms_precharge_flag
+            // 
+            this.bms_precharge_flag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bms_precharge_flag.Location = new System.Drawing.Point(173, 162);
+            this.bms_precharge_flag.Name = "bms_precharge_flag";
+            this.bms_precharge_flag.Size = new System.Drawing.Size(65, 17);
+            this.bms_precharge_flag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bms_precharge_flag.TabIndex = 102;
+            this.bms_precharge_flag.TabStop = false;
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label95.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label95.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label95.ForeColor = System.Drawing.Color.White;
+            this.label95.Location = new System.Drawing.Point(6, 211);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(158, 26);
+            this.label95.TabIndex = 100;
+            this.label95.Text = "DC BUS";
+            this.label95.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bms_fatal_error
+            // 
+            this.bms_fatal_error.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bms_fatal_error.Location = new System.Drawing.Point(173, 136);
+            this.bms_fatal_error.Name = "bms_fatal_error";
+            this.bms_fatal_error.Size = new System.Drawing.Size(65, 17);
+            this.bms_fatal_error.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bms_fatal_error.TabIndex = 97;
+            this.bms_fatal_error.TabStop = false;
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label85.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label85.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label85.ForeColor = System.Drawing.Color.White;
+            this.label85.Location = new System.Drawing.Point(6, 133);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(158, 23);
+            this.label85.TabIndex = 14;
+            this.label85.Text = "FATAL ERROR";
+            this.label85.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bms_over_cur_error
+            // 
+            this.bms_over_cur_error.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bms_over_cur_error.Location = new System.Drawing.Point(173, 110);
+            this.bms_over_cur_error.Name = "bms_over_cur_error";
+            this.bms_over_cur_error.Size = new System.Drawing.Size(65, 17);
+            this.bms_over_cur_error.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bms_over_cur_error.TabIndex = 13;
+            this.bms_over_cur_error.TabStop = false;
+            // 
+            // bms_comm_error
+            // 
+            this.bms_comm_error.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bms_comm_error.Location = new System.Drawing.Point(173, 84);
+            this.bms_comm_error.Name = "bms_comm_error";
+            this.bms_comm_error.Size = new System.Drawing.Size(65, 17);
+            this.bms_comm_error.TabIndex = 12;
+            this.bms_comm_error.TabStop = false;
+            // 
+            // bms_temp_error
+            // 
+            this.bms_temp_error.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bms_temp_error.Location = new System.Drawing.Point(173, 58);
+            this.bms_temp_error.Name = "bms_temp_error";
+            this.bms_temp_error.Size = new System.Drawing.Size(65, 17);
+            this.bms_temp_error.TabIndex = 11;
+            this.bms_temp_error.TabStop = false;
+            // 
+            // bms_low_volt_error
+            // 
+            this.bms_low_volt_error.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bms_low_volt_error.Location = new System.Drawing.Point(173, 32);
+            this.bms_low_volt_error.Name = "bms_low_volt_error";
+            this.bms_low_volt_error.Size = new System.Drawing.Size(65, 17);
+            this.bms_low_volt_error.TabIndex = 10;
+            this.bms_low_volt_error.TabStop = false;
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label86.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label86.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label86.ForeColor = System.Drawing.Color.White;
+            this.label86.Location = new System.Drawing.Point(6, 107);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(158, 23);
+            this.label86.TabIndex = 8;
+            this.label86.Text = "OVER CURRENT";
+            this.label86.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label87.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label87.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label87.ForeColor = System.Drawing.Color.White;
+            this.label87.Location = new System.Drawing.Point(6, 81);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(158, 23);
+            this.label87.TabIndex = 6;
+            this.label87.Text = "COMM";
+            this.label87.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label89.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label89.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label89.ForeColor = System.Drawing.Color.White;
+            this.label89.Location = new System.Drawing.Point(6, 55);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(158, 23);
+            this.label89.TabIndex = 4;
+            this.label89.Text = "TEMP ERROR";
+            this.label89.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label91.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label91.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label91.ForeColor = System.Drawing.Color.White;
+            this.label91.Location = new System.Drawing.Point(6, 29);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(158, 23);
+            this.label91.TabIndex = 2;
+            this.label91.Text = "LOW VOLT ERROR";
+            this.label91.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label92.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label92.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label92.ForeColor = System.Drawing.Color.White;
+            this.label92.Location = new System.Drawing.Point(6, 3);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(158, 23);
+            this.label92.TabIndex = 0;
+            this.label92.Text = "HIGH VOLT ERROR";
+            this.label92.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bms_high_volt_error
+            // 
+            this.bms_high_volt_error.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bms_high_volt_error.Location = new System.Drawing.Point(173, 6);
+            this.bms_high_volt_error.Name = "bms_high_volt_error";
+            this.bms_high_volt_error.Size = new System.Drawing.Size(65, 17);
+            this.bms_high_volt_error.TabIndex = 9;
+            this.bms_high_volt_error.TabStop = false;
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label93.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label93.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label93.ForeColor = System.Drawing.Color.White;
+            this.label93.Location = new System.Drawing.Point(6, 185);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(158, 23);
+            this.label93.TabIndex = 98;
+            this.label93.Text = "DISCHARGE";
+            this.label93.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label94.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label94.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label94.ForeColor = System.Drawing.Color.White;
+            this.label94.Location = new System.Drawing.Point(6, 159);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(158, 23);
+            this.label94.TabIndex = 99;
+            this.label94.Text = "PRECHARGE";
+            this.label94.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel23
+            // 
+            this.tableLayoutPanel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.tableLayoutPanel23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tableLayoutPanel23.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
+            this.tableLayoutPanel23.ColumnCount = 2;
+            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.12448F));
+            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.87552F));
+            this.tableLayoutPanel23.Controls.Add(this.bms_temp, 1, 6);
+            this.tableLayoutPanel23.Controls.Add(this.bms_worst_cell_address, 1, 5);
+            this.tableLayoutPanel23.Controls.Add(this.bms_worst_cell_voltage, 1, 4);
+            this.tableLayoutPanel23.Controls.Add(this.bms_soc, 1, 3);
+            this.tableLayoutPanel23.Controls.Add(this.bms_bat_cons, 1, 2);
+            this.tableLayoutPanel23.Controls.Add(this.bms_bat_current, 1, 1);
+            this.tableLayoutPanel23.Controls.Add(this.bms_bat_voltage, 1, 0);
+            this.tableLayoutPanel23.Controls.Add(this.label77, 0, 1);
+            this.tableLayoutPanel23.Controls.Add(this.label78, 0, 6);
+            this.tableLayoutPanel23.Controls.Add(this.label79, 0, 0);
+            this.tableLayoutPanel23.Controls.Add(this.label81, 0, 5);
+            this.tableLayoutPanel23.Controls.Add(this.label82, 0, 2);
+            this.tableLayoutPanel23.Controls.Add(this.label83, 0, 4);
+            this.tableLayoutPanel23.Controls.Add(this.label84, 0, 3);
+            this.tableLayoutPanel23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(45)))), ((int)(((byte)(29)))));
+            this.tableLayoutPanel23.Location = new System.Drawing.Point(3, 225);
+            this.tableLayoutPanel23.Name = "tableLayoutPanel23";
+            this.tableLayoutPanel23.RowCount = 7;
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel23.Size = new System.Drawing.Size(244, 240);
+            this.tableLayoutPanel23.TabIndex = 51;
+            // 
+            // bms_temp
+            // 
+            this.bms_temp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bms_temp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.bms_temp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bms_temp.ForeColor = System.Drawing.Color.White;
+            this.bms_temp.Location = new System.Drawing.Point(173, 204);
+            this.bms_temp.Multiline = true;
+            this.bms_temp.Name = "bms_temp";
+            this.bms_temp.Size = new System.Drawing.Size(65, 30);
+            this.bms_temp.TabIndex = 103;
+            this.bms_temp.Tag = "";
+            this.bms_temp.Text = "NaN";
+            this.bms_temp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // bms_worst_cell_address
             // 
@@ -1592,31 +1851,31 @@
             this.bms_worst_cell_address.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.bms_worst_cell_address.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bms_worst_cell_address.ForeColor = System.Drawing.Color.White;
-            this.bms_worst_cell_address.Location = new System.Drawing.Point(174, 261);
+            this.bms_worst_cell_address.Location = new System.Drawing.Point(173, 171);
             this.bms_worst_cell_address.Multiline = true;
             this.bms_worst_cell_address.Name = "bms_worst_cell_address";
-            this.bms_worst_cell_address.Size = new System.Drawing.Size(64, 43);
+            this.bms_worst_cell_address.Size = new System.Drawing.Size(65, 24);
             this.bms_worst_cell_address.TabIndex = 102;
             this.bms_worst_cell_address.Tag = "";
             this.bms_worst_cell_address.Text = "NaN";
             this.bms_worst_cell_address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // bms_worst_cell_volt
+            // bms_worst_cell_voltage
             // 
-            this.bms_worst_cell_volt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.bms_worst_cell_voltage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bms_worst_cell_volt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.bms_worst_cell_volt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bms_worst_cell_volt.ForeColor = System.Drawing.Color.White;
-            this.bms_worst_cell_volt.Location = new System.Drawing.Point(174, 210);
-            this.bms_worst_cell_volt.Multiline = true;
-            this.bms_worst_cell_volt.Name = "bms_worst_cell_volt";
-            this.bms_worst_cell_volt.Size = new System.Drawing.Size(64, 42);
-            this.bms_worst_cell_volt.TabIndex = 101;
-            this.bms_worst_cell_volt.Tag = "";
-            this.bms_worst_cell_volt.Text = "NaN";
-            this.bms_worst_cell_volt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.bms_worst_cell_voltage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.bms_worst_cell_voltage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bms_worst_cell_voltage.ForeColor = System.Drawing.Color.White;
+            this.bms_worst_cell_voltage.Location = new System.Drawing.Point(173, 138);
+            this.bms_worst_cell_voltage.Multiline = true;
+            this.bms_worst_cell_voltage.Name = "bms_worst_cell_voltage";
+            this.bms_worst_cell_voltage.Size = new System.Drawing.Size(65, 24);
+            this.bms_worst_cell_voltage.TabIndex = 101;
+            this.bms_worst_cell_voltage.Tag = "";
+            this.bms_worst_cell_voltage.Text = "NaN";
+            this.bms_worst_cell_voltage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // bms_soc
             // 
@@ -1626,10 +1885,10 @@
             this.bms_soc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.bms_soc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bms_soc.ForeColor = System.Drawing.Color.White;
-            this.bms_soc.Location = new System.Drawing.Point(174, 159);
+            this.bms_soc.Location = new System.Drawing.Point(173, 105);
             this.bms_soc.Multiline = true;
             this.bms_soc.Name = "bms_soc";
-            this.bms_soc.Size = new System.Drawing.Size(64, 42);
+            this.bms_soc.Size = new System.Drawing.Size(65, 24);
             this.bms_soc.TabIndex = 100;
             this.bms_soc.Tag = "";
             this.bms_soc.Text = "NaN";
@@ -1643,10 +1902,10 @@
             this.bms_bat_cons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.bms_bat_cons.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bms_bat_cons.ForeColor = System.Drawing.Color.White;
-            this.bms_bat_cons.Location = new System.Drawing.Point(174, 108);
+            this.bms_bat_cons.Location = new System.Drawing.Point(173, 72);
             this.bms_bat_cons.Multiline = true;
             this.bms_bat_cons.Name = "bms_bat_cons";
-            this.bms_bat_cons.Size = new System.Drawing.Size(64, 42);
+            this.bms_bat_cons.Size = new System.Drawing.Size(65, 24);
             this.bms_bat_cons.TabIndex = 99;
             this.bms_bat_cons.Tag = "";
             this.bms_bat_cons.Text = "NaN";
@@ -1660,31 +1919,513 @@
             this.bms_bat_current.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.bms_bat_current.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bms_bat_current.ForeColor = System.Drawing.Color.White;
-            this.bms_bat_current.Location = new System.Drawing.Point(174, 57);
+            this.bms_bat_current.Location = new System.Drawing.Point(173, 39);
             this.bms_bat_current.Multiline = true;
             this.bms_bat_current.Name = "bms_bat_current";
-            this.bms_bat_current.Size = new System.Drawing.Size(64, 42);
+            this.bms_bat_current.Size = new System.Drawing.Size(65, 24);
             this.bms_bat_current.TabIndex = 98;
             this.bms_bat_current.Tag = "";
             this.bms_bat_current.Text = "NaN";
             this.bms_bat_current.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // bms_bat_volt
+            // bms_bat_voltage
             // 
-            this.bms_bat_volt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.bms_bat_voltage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bms_bat_volt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.bms_bat_volt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bms_bat_volt.ForeColor = System.Drawing.Color.White;
-            this.bms_bat_volt.Location = new System.Drawing.Point(174, 6);
-            this.bms_bat_volt.Multiline = true;
-            this.bms_bat_volt.Name = "bms_bat_volt";
-            this.bms_bat_volt.Size = new System.Drawing.Size(64, 42);
-            this.bms_bat_volt.TabIndex = 97;
-            this.bms_bat_volt.Tag = "";
-            this.bms_bat_volt.Text = "NaN";
-            this.bms_bat_volt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.bms_bat_voltage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.bms_bat_voltage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bms_bat_voltage.ForeColor = System.Drawing.Color.White;
+            this.bms_bat_voltage.Location = new System.Drawing.Point(173, 6);
+            this.bms_bat_voltage.Multiline = true;
+            this.bms_bat_voltage.Name = "bms_bat_voltage";
+            this.bms_bat_voltage.Size = new System.Drawing.Size(65, 24);
+            this.bms_bat_voltage.TabIndex = 97;
+            this.bms_bat_voltage.Tag = "";
+            this.bms_bat_voltage.Text = "NaN";
+            this.bms_bat_voltage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label77.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label77.ForeColor = System.Drawing.Color.White;
+            this.label77.Location = new System.Drawing.Point(6, 36);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(158, 30);
+            this.label77.TabIndex = 3;
+            this.label77.Text = "BAT CUR";
+            this.label77.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label78.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label78.ForeColor = System.Drawing.Color.White;
+            this.label78.Location = new System.Drawing.Point(6, 201);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(158, 36);
+            this.label78.TabIndex = 9;
+            this.label78.Text = "MAX CELL TEMP";
+            this.label78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label79.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label79.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label79.ForeColor = System.Drawing.Color.White;
+            this.label79.Location = new System.Drawing.Point(6, 3);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(158, 30);
+            this.label79.TabIndex = 0;
+            this.label79.Text = "BAT VOLT";
+            this.label79.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label81.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label81.ForeColor = System.Drawing.Color.White;
+            this.label81.Location = new System.Drawing.Point(6, 168);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(158, 30);
+            this.label81.TabIndex = 6;
+            this.label81.Text = "WORST CELL ADDRESS";
+            this.label81.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label82
+            // 
+            this.label82.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label82.AutoSize = true;
+            this.label82.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label82.ForeColor = System.Drawing.Color.White;
+            this.label82.Location = new System.Drawing.Point(6, 69);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(158, 30);
+            this.label82.TabIndex = 6;
+            this.label82.Text = "BAT CONS";
+            this.label82.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label83.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label83.ForeColor = System.Drawing.Color.White;
+            this.label83.Location = new System.Drawing.Point(6, 135);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(158, 30);
+            this.label83.TabIndex = 3;
+            this.label83.Text = "WORST CELL VOLT";
+            this.label83.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label84.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label84.ForeColor = System.Drawing.Color.White;
+            this.label84.Location = new System.Drawing.Point(6, 102);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(158, 30);
+            this.label84.TabIndex = 0;
+            this.label84.Text = "SOC";
+            this.label84.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.53942F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.46058F));
+            this.tableLayoutPanel1.Controls.Add(this.ems_temp, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.label25, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.ems_soc, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.ems_penalty, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.ems_fc_lt_cons, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.ems_out_cons, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.ems_fc_cons, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.ems_bat_cons, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label16, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label22, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label24, 0, 3);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(45)))), ((int)(((byte)(29)))));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(244, 216);
+            this.tableLayoutPanel1.TabIndex = 50;
+            // 
+            // ems_temp
+            // 
+            this.ems_temp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ems_temp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.ems_temp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ems_temp.ForeColor = System.Drawing.Color.White;
+            this.ems_temp.Location = new System.Drawing.Point(174, 186);
+            this.ems_temp.Multiline = true;
+            this.ems_temp.Name = "ems_temp";
+            this.ems_temp.Size = new System.Drawing.Size(64, 24);
+            this.ems_temp.TabIndex = 103;
+            this.ems_temp.Tag = "";
+            this.ems_temp.Text = "NaN";
+            this.ems_temp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label25
+            // 
+            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label25.ForeColor = System.Drawing.Color.White;
+            this.label25.Location = new System.Drawing.Point(6, 183);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(159, 30);
+            this.label25.TabIndex = 103;
+            this.label25.Text = "TEMPRATURE";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ems_soc
+            // 
+            this.ems_soc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ems_soc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.ems_soc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ems_soc.ForeColor = System.Drawing.Color.White;
+            this.ems_soc.Location = new System.Drawing.Point(174, 156);
+            this.ems_soc.Multiline = true;
+            this.ems_soc.Name = "ems_soc";
+            this.ems_soc.Size = new System.Drawing.Size(64, 21);
+            this.ems_soc.TabIndex = 102;
+            this.ems_soc.Tag = "";
+            this.ems_soc.Text = "NaN";
+            this.ems_soc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ems_penalty
+            // 
+            this.ems_penalty.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ems_penalty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.ems_penalty.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ems_penalty.ForeColor = System.Drawing.Color.White;
+            this.ems_penalty.Location = new System.Drawing.Point(174, 126);
+            this.ems_penalty.Multiline = true;
+            this.ems_penalty.Name = "ems_penalty";
+            this.ems_penalty.Size = new System.Drawing.Size(64, 21);
+            this.ems_penalty.TabIndex = 101;
+            this.ems_penalty.Tag = "";
+            this.ems_penalty.Text = "NaN";
+            this.ems_penalty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ems_fc_lt_cons
+            // 
+            this.ems_fc_lt_cons.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ems_fc_lt_cons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.ems_fc_lt_cons.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ems_fc_lt_cons.ForeColor = System.Drawing.Color.White;
+            this.ems_fc_lt_cons.Location = new System.Drawing.Point(174, 96);
+            this.ems_fc_lt_cons.Multiline = true;
+            this.ems_fc_lt_cons.Name = "ems_fc_lt_cons";
+            this.ems_fc_lt_cons.Size = new System.Drawing.Size(64, 21);
+            this.ems_fc_lt_cons.TabIndex = 100;
+            this.ems_fc_lt_cons.Tag = "";
+            this.ems_fc_lt_cons.Text = "NaN";
+            this.ems_fc_lt_cons.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ems_out_cons
+            // 
+            this.ems_out_cons.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ems_out_cons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.ems_out_cons.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ems_out_cons.ForeColor = System.Drawing.Color.White;
+            this.ems_out_cons.Location = new System.Drawing.Point(174, 66);
+            this.ems_out_cons.Multiline = true;
+            this.ems_out_cons.Name = "ems_out_cons";
+            this.ems_out_cons.Size = new System.Drawing.Size(64, 21);
+            this.ems_out_cons.TabIndex = 99;
+            this.ems_out_cons.Tag = "";
+            this.ems_out_cons.Text = "NaN";
+            this.ems_out_cons.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ems_fc_cons
+            // 
+            this.ems_fc_cons.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ems_fc_cons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.ems_fc_cons.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ems_fc_cons.ForeColor = System.Drawing.Color.White;
+            this.ems_fc_cons.Location = new System.Drawing.Point(174, 36);
+            this.ems_fc_cons.Multiline = true;
+            this.ems_fc_cons.Name = "ems_fc_cons";
+            this.ems_fc_cons.Size = new System.Drawing.Size(64, 21);
+            this.ems_fc_cons.TabIndex = 98;
+            this.ems_fc_cons.Tag = "";
+            this.ems_fc_cons.Text = "NaN";
+            this.ems_fc_cons.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ems_bat_cons
+            // 
+            this.ems_bat_cons.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ems_bat_cons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.ems_bat_cons.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ems_bat_cons.ForeColor = System.Drawing.Color.White;
+            this.ems_bat_cons.Location = new System.Drawing.Point(174, 6);
+            this.ems_bat_cons.Multiline = true;
+            this.ems_bat_cons.Name = "ems_bat_cons";
+            this.ems_bat_cons.Size = new System.Drawing.Size(64, 21);
+            this.ems_bat_cons.TabIndex = 97;
+            this.ems_bat_cons.Tag = "";
+            this.ems_bat_cons.Text = "NaN";
+            this.ems_bat_cons.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(6, 33);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(159, 27);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "FC CONS";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(6, 3);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(159, 27);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "BAT CONS";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(6, 153);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(159, 27);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "BAT SOC";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(6, 63);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(159, 27);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "OUT CONS";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(6, 123);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(159, 27);
+            this.label22.TabIndex = 3;
+            this.label22.Text = "PENALTY";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(6, 93);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(159, 27);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "FC LT CONS";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.tableLayoutPanel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tableLayoutPanel7.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.53942F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.46058F));
+            this.tableLayoutPanel7.Controls.Add(this.ems_out_current, 1, 5);
+            this.tableLayoutPanel7.Controls.Add(this.ems_fc_current, 1, 4);
+            this.tableLayoutPanel7.Controls.Add(this.ems_bat_current, 1, 3);
+            this.tableLayoutPanel7.Controls.Add(this.ems_out_voltage, 1, 2);
+            this.tableLayoutPanel7.Controls.Add(this.ems_fc_voltage, 1, 1);
+            this.tableLayoutPanel7.Controls.Add(this.ems_bat_volt, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.label57, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.label59, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.label70, 0, 5);
+            this.tableLayoutPanel7.Controls.Add(this.label55, 0, 2);
+            this.tableLayoutPanel7.Controls.Add(this.label72, 0, 4);
+            this.tableLayoutPanel7.Controls.Add(this.label74, 0, 3);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(45)))), ((int)(((byte)(29)))));
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(253, 3);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 6;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(244, 216);
+            this.tableLayoutPanel7.TabIndex = 49;
+            // 
+            // ems_out_current
+            // 
+            this.ems_out_current.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ems_out_current.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.ems_out_current.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ems_out_current.ForeColor = System.Drawing.Color.White;
+            this.ems_out_current.Location = new System.Drawing.Point(174, 181);
+            this.ems_out_current.Multiline = true;
+            this.ems_out_current.Name = "ems_out_current";
+            this.ems_out_current.Size = new System.Drawing.Size(64, 29);
+            this.ems_out_current.TabIndex = 102;
+            this.ems_out_current.Tag = "";
+            this.ems_out_current.Text = "NaN";
+            this.ems_out_current.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ems_fc_current
+            // 
+            this.ems_fc_current.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ems_fc_current.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.ems_fc_current.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ems_fc_current.ForeColor = System.Drawing.Color.White;
+            this.ems_fc_current.Location = new System.Drawing.Point(174, 146);
+            this.ems_fc_current.Multiline = true;
+            this.ems_fc_current.Name = "ems_fc_current";
+            this.ems_fc_current.Size = new System.Drawing.Size(64, 26);
+            this.ems_fc_current.TabIndex = 101;
+            this.ems_fc_current.Tag = "";
+            this.ems_fc_current.Text = "NaN";
+            this.ems_fc_current.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ems_bat_current
+            // 
+            this.ems_bat_current.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ems_bat_current.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.ems_bat_current.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ems_bat_current.ForeColor = System.Drawing.Color.White;
+            this.ems_bat_current.Location = new System.Drawing.Point(174, 111);
+            this.ems_bat_current.Multiline = true;
+            this.ems_bat_current.Name = "ems_bat_current";
+            this.ems_bat_current.Size = new System.Drawing.Size(64, 26);
+            this.ems_bat_current.TabIndex = 100;
+            this.ems_bat_current.Tag = "";
+            this.ems_bat_current.Text = "NaN";
+            this.ems_bat_current.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ems_out_voltage
+            // 
+            this.ems_out_voltage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ems_out_voltage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.ems_out_voltage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ems_out_voltage.ForeColor = System.Drawing.Color.White;
+            this.ems_out_voltage.Location = new System.Drawing.Point(174, 76);
+            this.ems_out_voltage.Multiline = true;
+            this.ems_out_voltage.Name = "ems_out_voltage";
+            this.ems_out_voltage.Size = new System.Drawing.Size(64, 26);
+            this.ems_out_voltage.TabIndex = 99;
+            this.ems_out_voltage.Tag = "";
+            this.ems_out_voltage.Text = "NaN";
+            this.ems_out_voltage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ems_fc_voltage
+            // 
+            this.ems_fc_voltage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ems_fc_voltage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.ems_fc_voltage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ems_fc_voltage.ForeColor = System.Drawing.Color.White;
+            this.ems_fc_voltage.Location = new System.Drawing.Point(174, 41);
+            this.ems_fc_voltage.Multiline = true;
+            this.ems_fc_voltage.Name = "ems_fc_voltage";
+            this.ems_fc_voltage.Size = new System.Drawing.Size(64, 26);
+            this.ems_fc_voltage.TabIndex = 98;
+            this.ems_fc_voltage.Tag = "";
+            this.ems_fc_voltage.Text = "NaN";
+            this.ems_fc_voltage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ems_bat_volt
+            // 
+            this.ems_bat_volt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ems_bat_volt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.ems_bat_volt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ems_bat_volt.ForeColor = System.Drawing.Color.White;
+            this.ems_bat_volt.Location = new System.Drawing.Point(174, 6);
+            this.ems_bat_volt.Multiline = true;
+            this.ems_bat_volt.Name = "ems_bat_volt";
+            this.ems_bat_volt.Size = new System.Drawing.Size(64, 26);
+            this.ems_bat_volt.TabIndex = 97;
+            this.ems_bat_volt.Tag = "";
+            this.ems_bat_volt.Text = "NaN";
+            this.ems_bat_volt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label57
             // 
@@ -1692,9 +2433,9 @@
             this.label57.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label57.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label57.ForeColor = System.Drawing.Color.White;
-            this.label57.Location = new System.Drawing.Point(6, 54);
+            this.label57.Location = new System.Drawing.Point(6, 38);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(159, 48);
+            this.label57.Size = new System.Drawing.Size(159, 32);
             this.label57.TabIndex = 3;
             this.label57.Text = "FC VOLTAGE";
             this.label57.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1708,7 +2449,7 @@
             this.label59.ForeColor = System.Drawing.Color.White;
             this.label59.Location = new System.Drawing.Point(6, 3);
             this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(159, 48);
+            this.label59.Size = new System.Drawing.Size(159, 32);
             this.label59.TabIndex = 0;
             this.label59.Text = "BAT VOLTAGE";
             this.label59.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1719,9 +2460,9 @@
             this.label70.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label70.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label70.ForeColor = System.Drawing.Color.White;
-            this.label70.Location = new System.Drawing.Point(6, 258);
+            this.label70.Location = new System.Drawing.Point(6, 178);
             this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(159, 49);
+            this.label70.Size = new System.Drawing.Size(159, 35);
             this.label70.TabIndex = 6;
             this.label70.Text = "OUT CURRENT";
             this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1734,9 +2475,9 @@
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label55.ForeColor = System.Drawing.Color.White;
-            this.label55.Location = new System.Drawing.Point(6, 105);
+            this.label55.Location = new System.Drawing.Point(6, 73);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(159, 48);
+            this.label55.Size = new System.Drawing.Size(159, 32);
             this.label55.TabIndex = 6;
             this.label55.Text = "OUT VOLTAGE";
             this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1747,9 +2488,9 @@
             this.label72.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label72.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label72.ForeColor = System.Drawing.Color.White;
-            this.label72.Location = new System.Drawing.Point(6, 207);
+            this.label72.Location = new System.Drawing.Point(6, 143);
             this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(159, 48);
+            this.label72.Size = new System.Drawing.Size(159, 32);
             this.label72.TabIndex = 3;
             this.label72.Text = "FC CURRENT";
             this.label72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1760,9 +2501,9 @@
             this.label74.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label74.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label74.ForeColor = System.Drawing.Color.White;
-            this.label74.Location = new System.Drawing.Point(6, 156);
+            this.label74.Location = new System.Drawing.Point(6, 108);
             this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(159, 48);
+            this.label74.Size = new System.Drawing.Size(159, 32);
             this.label74.TabIndex = 0;
             this.label74.Text = "BAT CURRENT";
             this.label74.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1772,26 +2513,27 @@
             this.groupBox6.Controls.Add(this.tableLayoutPanel8);
             this.groupBox6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox6.ForeColor = System.Drawing.Color.White;
-            this.groupBox6.Location = new System.Drawing.Point(49, 457);
+            this.groupBox6.Location = new System.Drawing.Point(49, 532);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(512, 190);
+            this.groupBox6.Size = new System.Drawing.Size(512, 195);
             this.groupBox6.TabIndex = 36;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "DURUMLAR";
             // 
             // tableLayoutPanel8
             // 
-            this.tableLayoutPanel8.ColumnCount = 2;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.6996F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.3004F));
+            this.tableLayoutPanel8.ColumnCount = 3;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.01392F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.94234F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.24254F));
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel19, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel6, 0, 0);
-            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel12, 2, 0);
             this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 27);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(506, 160);
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(503, 161);
             this.tableLayoutPanel8.TabIndex = 59;
             // 
             // tableLayoutPanel19
@@ -1802,11 +2544,11 @@
             this.tableLayoutPanel19.Controls.Add(this.tableLayoutPanel18, 0, 0);
             this.tableLayoutPanel19.Controls.Add(this.tableLayoutPanel16, 1, 0);
             this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel19.Location = new System.Drawing.Point(213, 3);
+            this.tableLayoutPanel19.Location = new System.Drawing.Point(158, 3);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
             this.tableLayoutPanel19.RowCount = 1;
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel19.Size = new System.Drawing.Size(290, 154);
+            this.tableLayoutPanel19.Size = new System.Drawing.Size(209, 155);
             this.tableLayoutPanel19.TabIndex = 0;
             // 
             // tableLayoutPanel18
@@ -1828,7 +2570,7 @@
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel18.Size = new System.Drawing.Size(139, 148);
+            this.tableLayoutPanel18.Size = new System.Drawing.Size(98, 149);
             this.tableLayoutPanel18.TabIndex = 29;
             // 
             // driver_fwrv_status
@@ -1841,7 +2583,7 @@
             this.driver_fwrv_status.Location = new System.Drawing.Point(6, 120);
             this.driver_fwrv_status.Multiline = true;
             this.driver_fwrv_status.Name = "driver_fwrv_status";
-            this.driver_fwrv_status.Size = new System.Drawing.Size(127, 22);
+            this.driver_fwrv_status.Size = new System.Drawing.Size(86, 23);
             this.driver_fwrv_status.TabIndex = 3;
             this.driver_fwrv_status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1855,7 +2597,7 @@
             this.driver_brake_status.Location = new System.Drawing.Point(6, 91);
             this.driver_brake_status.Multiline = true;
             this.driver_brake_status.Name = "driver_brake_status";
-            this.driver_brake_status.Size = new System.Drawing.Size(127, 20);
+            this.driver_brake_status.Size = new System.Drawing.Size(86, 20);
             this.driver_brake_status.TabIndex = 2;
             this.driver_brake_status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1863,11 +2605,11 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(6, 3);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(127, 53);
+            this.label14.Size = new System.Drawing.Size(86, 53);
             this.label14.TabIndex = 0;
             this.label14.Text = "DRIVE STATUS";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1882,7 +2624,7 @@
             this.driver_ign_status.Location = new System.Drawing.Point(6, 62);
             this.driver_ign_status.Multiline = true;
             this.driver_ign_status.Name = "driver_ign_status";
-            this.driver_ign_status.Size = new System.Drawing.Size(127, 20);
+            this.driver_ign_status.Size = new System.Drawing.Size(86, 20);
             this.driver_ign_status.TabIndex = 1;
             this.driver_ign_status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1897,7 +2639,7 @@
             this.tableLayoutPanel16.Controls.Add(this.driver_ign_command, 0, 1);
             this.tableLayoutPanel16.Controls.Add(this.driver_brake_command, 0, 2);
             this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(148, 3);
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(107, 3);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 4;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
@@ -1905,7 +2647,7 @@
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(139, 148);
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(99, 149);
             this.tableLayoutPanel16.TabIndex = 30;
             // 
             // driver_fwrv_command
@@ -1918,7 +2660,7 @@
             this.driver_fwrv_command.Location = new System.Drawing.Point(6, 120);
             this.driver_fwrv_command.Multiline = true;
             this.driver_fwrv_command.Name = "driver_fwrv_command";
-            this.driver_fwrv_command.Size = new System.Drawing.Size(127, 22);
+            this.driver_fwrv_command.Size = new System.Drawing.Size(87, 23);
             this.driver_fwrv_command.TabIndex = 4;
             this.driver_fwrv_command.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1930,7 +2672,7 @@
             this.label46.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label46.Location = new System.Drawing.Point(6, 3);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(127, 53);
+            this.label46.Size = new System.Drawing.Size(87, 53);
             this.label46.TabIndex = 0;
             this.label46.Text = "DRIVE COMMAND";
             this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1945,7 +2687,7 @@
             this.driver_ign_command.Location = new System.Drawing.Point(6, 62);
             this.driver_ign_command.Multiline = true;
             this.driver_ign_command.Name = "driver_ign_command";
-            this.driver_ign_command.Size = new System.Drawing.Size(127, 20);
+            this.driver_ign_command.Size = new System.Drawing.Size(87, 20);
             this.driver_ign_command.TabIndex = 2;
             this.driver_ign_command.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1959,7 +2701,7 @@
             this.driver_brake_command.Location = new System.Drawing.Point(6, 91);
             this.driver_brake_command.Multiline = true;
             this.driver_brake_command.Name = "driver_brake_command";
-            this.driver_brake_command.Size = new System.Drawing.Size(127, 20);
+            this.driver_brake_command.Size = new System.Drawing.Size(87, 20);
             this.driver_brake_command.TabIndex = 3;
             this.driver_brake_command.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1967,61 +2709,82 @@
             // 
             this.tableLayoutPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.tableLayoutPanel6.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
-            this.tableLayoutPanel6.ColumnCount = 3;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.7482F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.2518F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
-            this.tableLayoutPanel6.Controls.Add(this.pictureBox24, 2, 0);
-            this.tableLayoutPanel6.Controls.Add(this.pictureBox23, 2, 1);
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.7047F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.2953F));
+            this.tableLayoutPanel6.Controls.Add(this.pictureBox8, 1, 5);
+            this.tableLayoutPanel6.Controls.Add(this.label27, 0, 5);
+            this.tableLayoutPanel6.Controls.Add(this.ems_durum, 1, 2);
+            this.tableLayoutPanel6.Controls.Add(this.label26, 0, 2);
             this.tableLayoutPanel6.Controls.Add(this.label53, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.label58, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.driver_durum, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.bms_durum, 1, 1);
-            this.tableLayoutPanel6.Controls.Add(this.label49, 0, 2);
-            this.tableLayoutPanel6.Controls.Add(this.label47, 0, 3);
-            this.tableLayoutPanel6.Controls.Add(this.xbee_active, 1, 2);
-            this.tableLayoutPanel6.Controls.Add(this.gsm_durum, 1, 3);
-            this.tableLayoutPanel6.Controls.Add(this.pictureBox20, 2, 2);
-            this.tableLayoutPanel6.Controls.Add(this.pictureBox21, 2, 3);
+            this.tableLayoutPanel6.Controls.Add(this.label47, 0, 4);
+            this.tableLayoutPanel6.Controls.Add(this.gsm_durum, 1, 4);
+            this.tableLayoutPanel6.Controls.Add(this.xbee_active, 1, 3);
+            this.tableLayoutPanel6.Controls.Add(this.label49, 0, 3);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(166)))), ((int)(((byte)(181)))));
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 4;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(204, 154);
+            this.tableLayoutPanel6.RowCount = 6;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(149, 155);
             this.tableLayoutPanel6.TabIndex = 34;
             // 
-            // pictureBox24
+            // pictureBox8
             // 
-            this.pictureBox24.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox24.Image = global::telemetry_hydro.Properties.Resources.cczzc;
-            this.pictureBox24.Location = new System.Drawing.Point(115, 6);
-            this.pictureBox24.Name = "pictureBox24";
-            this.pictureBox24.Size = new System.Drawing.Size(83, 28);
-            this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox24.TabIndex = 48;
-            this.pictureBox24.TabStop = false;
+            this.pictureBox8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox8.Location = new System.Drawing.Point(86, 131);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(57, 18);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 98;
+            this.pictureBox8.TabStop = false;
             // 
-            // pictureBox23
+            // label27
             // 
-            this.pictureBox23.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox23.Image = global::telemetry_hydro.Properties.Resources.YEDEK;
-            this.pictureBox23.Location = new System.Drawing.Point(115, 43);
-            this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(83, 28);
-            this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox23.TabIndex = 48;
-            this.pictureBox23.TabStop = false;
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label27.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label27.ForeColor = System.Drawing.Color.White;
+            this.label27.Location = new System.Drawing.Point(6, 128);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(71, 24);
+            this.label27.TabIndex = 99;
+            this.label27.Text = "SYSTEM";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ems_durum
+            // 
+            this.ems_durum.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ems_durum.Location = new System.Drawing.Point(86, 56);
+            this.ems_durum.Name = "ems_durum";
+            this.ems_durum.Size = new System.Drawing.Size(57, 16);
+            this.ems_durum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ems_durum.TabIndex = 98;
+            this.ems_durum.TabStop = false;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label26.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label26.ForeColor = System.Drawing.Color.White;
+            this.label26.Location = new System.Drawing.Point(6, 53);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(71, 22);
+            this.label26.TabIndex = 98;
+            this.label26.Text = "EMS";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label53
             // 
@@ -2030,9 +2793,9 @@
             this.label53.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label53.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label53.ForeColor = System.Drawing.Color.White;
-            this.label53.Location = new System.Drawing.Point(6, 40);
+            this.label53.Location = new System.Drawing.Point(6, 28);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(61, 34);
+            this.label53.Size = new System.Drawing.Size(71, 22);
             this.label53.TabIndex = 2;
             this.label53.Text = "BMS";
             this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2046,7 +2809,7 @@
             this.label58.ForeColor = System.Drawing.Color.White;
             this.label58.Location = new System.Drawing.Point(6, 3);
             this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(61, 34);
+            this.label58.Size = new System.Drawing.Size(71, 22);
             this.label58.TabIndex = 0;
             this.label58.Text = "DRIVER";
             this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2056,38 +2819,22 @@
             this.driver_durum.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.driver_durum.Location = new System.Drawing.Point(76, 6);
+            this.driver_durum.Location = new System.Drawing.Point(86, 6);
             this.driver_durum.Name = "driver_durum";
-            this.driver_durum.Size = new System.Drawing.Size(30, 28);
+            this.driver_durum.Size = new System.Drawing.Size(57, 16);
             this.driver_durum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.driver_durum.TabIndex = 9;
             this.driver_durum.TabStop = false;
             // 
             // bms_durum
             // 
-            this.bms_durum.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bms_durum.Location = new System.Drawing.Point(76, 43);
+            this.bms_durum.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bms_durum.Location = new System.Drawing.Point(86, 31);
             this.bms_durum.Name = "bms_durum";
-            this.bms_durum.Size = new System.Drawing.Size(30, 28);
+            this.bms_durum.Size = new System.Drawing.Size(57, 16);
             this.bms_durum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bms_durum.TabIndex = 10;
             this.bms_durum.TabStop = false;
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.label49.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label49.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label49.ForeColor = System.Drawing.Color.White;
-            this.label49.Location = new System.Drawing.Point(6, 77);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(61, 34);
-            this.label49.TabIndex = 6;
-            this.label49.Text = "XBEE";
-            this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label47
             // 
@@ -2096,59 +2843,94 @@
             this.label47.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label47.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label47.ForeColor = System.Drawing.Color.White;
-            this.label47.Location = new System.Drawing.Point(6, 114);
+            this.label47.Location = new System.Drawing.Point(6, 103);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(61, 37);
+            this.label47.Size = new System.Drawing.Size(71, 22);
             this.label47.TabIndex = 8;
             this.label47.Text = "GSM";
             this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // gsm_durum
+            // 
+            this.gsm_durum.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gsm_durum.Location = new System.Drawing.Point(86, 106);
+            this.gsm_durum.Name = "gsm_durum";
+            this.gsm_durum.Size = new System.Drawing.Size(57, 16);
+            this.gsm_durum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gsm_durum.TabIndex = 13;
+            this.gsm_durum.TabStop = false;
             // 
             // xbee_active
             // 
             this.xbee_active.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.xbee_active.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xbee_active.Location = new System.Drawing.Point(76, 80);
+            this.xbee_active.Location = new System.Drawing.Point(86, 81);
             this.xbee_active.Name = "xbee_active";
-            this.xbee_active.Size = new System.Drawing.Size(30, 28);
+            this.xbee_active.Size = new System.Drawing.Size(57, 16);
             this.xbee_active.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.xbee_active.TabIndex = 12;
             this.xbee_active.TabStop = false;
             // 
-            // gsm_durum
+            // label49
             // 
-            this.gsm_durum.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gsm_durum.Location = new System.Drawing.Point(76, 117);
-            this.gsm_durum.Name = "gsm_durum";
-            this.gsm_durum.Size = new System.Drawing.Size(30, 31);
-            this.gsm_durum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gsm_durum.TabIndex = 13;
-            this.gsm_durum.TabStop = false;
+            this.label49.AutoSize = true;
+            this.label49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.label49.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label49.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label49.ForeColor = System.Drawing.Color.White;
+            this.label49.Location = new System.Drawing.Point(6, 78);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(71, 22);
+            this.label49.TabIndex = 6;
+            this.label49.Text = "XBEE";
+            this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox20
+            // tableLayoutPanel12
             // 
-            this.pictureBox20.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox20.Image = global::telemetry_hydro.Properties.Resources.xbee_pro_63mw_kablo_anten_wire_antenna_seri_2b_zigbee_mesh_xbp24_bz7w_12942_87_B_kopya;
-            this.pictureBox20.Location = new System.Drawing.Point(115, 80);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(83, 28);
-            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox20.TabIndex = 48;
-            this.pictureBox20.TabStop = false;
+            this.tableLayoutPanel12.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel12.ColumnCount = 1;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel12.Controls.Add(this.go_cells_button, 0, 0);
+            this.tableLayoutPanel12.Controls.Add(this.go_graphs_button, 0, 1);
+            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(373, 3);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            this.tableLayoutPanel12.RowCount = 2;
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(127, 155);
+            this.tableLayoutPanel12.TabIndex = 61;
             // 
-            // pictureBox21
+            // go_cells_button
             // 
-            this.pictureBox21.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox21.Image = global::telemetry_hydro.Properties.Resources.aweqwewqe;
-            this.pictureBox21.Location = new System.Drawing.Point(115, 117);
-            this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(83, 31);
-            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox21.TabIndex = 49;
-            this.pictureBox21.TabStop = false;
+            this.go_cells_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.go_cells_button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.go_cells_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.go_cells_button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.go_cells_button.ForeColor = System.Drawing.Color.White;
+            this.go_cells_button.Location = new System.Drawing.Point(4, 4);
+            this.go_cells_button.Name = "go_cells_button";
+            this.go_cells_button.Size = new System.Drawing.Size(119, 70);
+            this.go_cells_button.TabIndex = 59;
+            this.go_cells_button.Text = "BMS CELLS";
+            this.go_cells_button.UseVisualStyleBackColor = false;
+            this.go_cells_button.Click += new System.EventHandler(this.go_cells_button_Click);
+            // 
+            // go_graphs_button
+            // 
+            this.go_graphs_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.go_graphs_button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.go_graphs_button.Enabled = false;
+            this.go_graphs_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.go_graphs_button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.go_graphs_button.ForeColor = System.Drawing.Color.White;
+            this.go_graphs_button.Location = new System.Drawing.Point(4, 81);
+            this.go_graphs_button.Name = "go_graphs_button";
+            this.go_graphs_button.Size = new System.Drawing.Size(119, 70);
+            this.go_graphs_button.TabIndex = 60;
+            this.go_graphs_button.Text = "GRAPHS";
+            this.go_graphs_button.UseVisualStyleBackColor = false;
+            this.go_graphs_button.Click += new System.EventHandler(this.go_graphs_button_Click);
             // 
             // angle_gauge
             // 
@@ -2614,7 +3396,7 @@
             // 
             // history_displayer
             // 
-            this.history_displayer.Location = new System.Drawing.Point(49, 656);
+            this.history_displayer.Location = new System.Drawing.Point(49, 730);
             this.history_displayer.Name = "history_displayer";
             this.history_displayer.Size = new System.Drawing.Size(985, 17);
             this.history_displayer.TabIndex = 80;
@@ -2770,52 +3552,6 @@
             this.yol_gps.Text = "GPS YOL";
             this.yol_gps.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tableLayoutPanel12
-            // 
-            this.tableLayoutPanel12.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel12.ColumnCount = 2;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.Controls.Add(this.go_cells_button, 0, 0);
-            this.tableLayoutPanel12.Controls.Add(this.go_graphs_button, 1, 0);
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(49, 401);
-            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
-            this.tableLayoutPanel12.RowCount = 1;
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(512, 50);
-            this.tableLayoutPanel12.TabIndex = 61;
-            // 
-            // go_cells_button
-            // 
-            this.go_cells_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.go_cells_button.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.go_cells_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.go_cells_button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.go_cells_button.ForeColor = System.Drawing.Color.White;
-            this.go_cells_button.Location = new System.Drawing.Point(4, 4);
-            this.go_cells_button.Name = "go_cells_button";
-            this.go_cells_button.Size = new System.Drawing.Size(248, 42);
-            this.go_cells_button.TabIndex = 59;
-            this.go_cells_button.Text = "BMS CELLS";
-            this.go_cells_button.UseVisualStyleBackColor = false;
-            this.go_cells_button.Click += new System.EventHandler(this.go_cells_button_Click);
-            // 
-            // go_graphs_button
-            // 
-            this.go_graphs_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.go_graphs_button.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.go_graphs_button.Enabled = false;
-            this.go_graphs_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.go_graphs_button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.go_graphs_button.ForeColor = System.Drawing.Color.White;
-            this.go_graphs_button.Location = new System.Drawing.Point(259, 4);
-            this.go_graphs_button.Name = "go_graphs_button";
-            this.go_graphs_button.Size = new System.Drawing.Size(249, 42);
-            this.go_graphs_button.TabIndex = 60;
-            this.go_graphs_button.Text = "GRAPHS";
-            this.go_graphs_button.UseVisualStyleBackColor = false;
-            this.go_graphs_button.Click += new System.EventHandler(this.go_graphs_button_Click);
-            // 
             // dataGridView1
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
@@ -2841,7 +3577,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Location = new System.Drawing.Point(49, 676);
+            this.dataGridView1.Location = new System.Drawing.Point(49, 750);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
@@ -2858,7 +3594,7 @@
             this.dataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.Size = new System.Drawing.Size(985, 299);
+            this.dataGridView1.Size = new System.Drawing.Size(985, 259);
             this.dataGridView1.TabIndex = 58;
             // 
             // label10
@@ -2895,7 +3631,7 @@
             this.gmap.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gmap.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gmap.ShowTileGridLines = false;
-            this.gmap.Size = new System.Drawing.Size(836, 716);
+            this.gmap.Size = new System.Drawing.Size(836, 748);
             this.gmap.TabIndex = 54;
             this.gmap.Zoom = 0D;
             this.gmap.MouseClick += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseClick);
@@ -3087,257 +3823,33 @@
             this.ana_sekme.Size = new System.Drawing.Size(1904, 1041);
             this.ana_sekme.TabIndex = 48;
             // 
-            // tableLayoutPanel1
+            // label29
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.53942F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.46058F));
-            this.tableLayoutPanel1.Controls.Add(this.textBox9, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label25, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.textBox4, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.textBox5, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.textBox6, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox7, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox8, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label16, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label22, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label24, 0, 3);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(45)))), ((int)(((byte)(29)))));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(253, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 7;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(244, 310);
-            this.tableLayoutPanel1.TabIndex = 50;
+            this.label29.AutoSize = true;
+            this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label29.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label29.ForeColor = System.Drawing.Color.White;
+            this.label29.Location = new System.Drawing.Point(6, 57);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(131, 24);
+            this.label29.TabIndex = 98;
+            this.label29.Text = "IArms";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox1
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(174, 221);
+            this.textBox1.Location = new System.Drawing.Point(146, 60);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(64, 34);
-            this.textBox1.TabIndex = 102;
-            this.textBox1.Tag = "";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(68, 18);
+            this.textBox1.TabIndex = 98;
             this.textBox1.Text = "NaN";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.ForeColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(174, 178);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(64, 34);
-            this.textBox4.TabIndex = 101;
-            this.textBox4.Tag = "";
-            this.textBox4.Text = "NaN";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.ForeColor = System.Drawing.Color.White;
-            this.textBox5.Location = new System.Drawing.Point(174, 135);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(64, 34);
-            this.textBox5.TabIndex = 100;
-            this.textBox5.Tag = "";
-            this.textBox5.Text = "NaN";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.ForeColor = System.Drawing.Color.White;
-            this.textBox6.Location = new System.Drawing.Point(174, 92);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(64, 34);
-            this.textBox6.TabIndex = 99;
-            this.textBox6.Tag = "";
-            this.textBox6.Text = "NaN";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.ForeColor = System.Drawing.Color.White;
-            this.textBox7.Location = new System.Drawing.Point(174, 49);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(64, 34);
-            this.textBox7.TabIndex = 98;
-            this.textBox7.Tag = "";
-            this.textBox7.Text = "NaN";
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.ForeColor = System.Drawing.Color.White;
-            this.textBox8.Location = new System.Drawing.Point(174, 6);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(64, 34);
-            this.textBox8.TabIndex = 97;
-            this.textBox8.Tag = "";
-            this.textBox8.Text = "NaN";
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(6, 46);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 40);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "FC CONS";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(6, 3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(159, 40);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "BAT CONS";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(6, 218);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(159, 40);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "BAT SOC";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label16
-            // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(6, 89);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(159, 40);
-            this.label16.TabIndex = 6;
-            this.label16.Text = "OUT CONS";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(6, 175);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(159, 40);
-            this.label22.TabIndex = 3;
-            this.label22.Text = "PENALTY";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(6, 132);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(159, 40);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "FC LT CONS";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label25
-            // 
-            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(6, 261);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(159, 46);
-            this.label25.TabIndex = 103;
-            this.label25.Text = "TEMPRATURE";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox9.ForeColor = System.Drawing.Color.White;
-            this.textBox9.Location = new System.Drawing.Point(174, 264);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(64, 40);
-            this.textBox9.TabIndex = 103;
-            this.textBox9.Tag = "";
-            this.textBox9.Text = "NaN";
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // telemetry
             // 
@@ -3386,6 +3898,21 @@
             this.tableLayoutPanel14.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel24.ResumeLayout(false);
+            this.tableLayoutPanel24.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_dc_bus_ready_flag)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_discharge_flag)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_precharge_flag)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_fatal_error)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_over_cur_error)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_comm_error)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_temp_error)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_low_volt_error)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bms_high_volt_error)).EndInit();
+            this.tableLayoutPanel23.ResumeLayout(false);
+            this.tableLayoutPanel23.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -3397,14 +3924,13 @@
             this.tableLayoutPanel16.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ems_durum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.driver_durum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bms_durum)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xbee_active)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gsm_durum)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xbee_active)).EndInit();
+            this.tableLayoutPanel12.ResumeLayout(false);
             this.angle_gauge.ResumeLayout(false);
             this.angle_gauge.PerformLayout();
             this.tableLayoutPanel11.ResumeLayout(false);
@@ -3413,13 +3939,10 @@
             this.tableLayoutPanel10.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
-            this.tableLayoutPanel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ana_sekme.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3490,14 +4013,10 @@
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
-        private System.Windows.Forms.Label label85;
-        private System.Windows.Forms.Label label87;
         private System.Windows.Forms.Label label90;
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.TextBox id;
-        private System.Windows.Forms.TextBox vd;
         private System.Windows.Forms.TextBox iq;
-        private System.Windows.Forms.TextBox vq;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.TextBox phase_b_cur;
         private System.Windows.Forms.Label label68;
@@ -3506,19 +4025,17 @@
         private System.Windows.Forms.Label label73;
         private System.Windows.Forms.TextBox dc_bus_cur;
         private System.Windows.Forms.Label label80;
-        private System.Windows.Forms.Label label45;
         private System.Windows.Forms.TextBox dc_bus_volt;
-        private System.Windows.Forms.TextBox motor_temp;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.TextBox bms_worst_cell_address;
-        private System.Windows.Forms.TextBox bms_worst_cell_volt;
-        private System.Windows.Forms.TextBox bms_soc;
-        private System.Windows.Forms.TextBox bms_bat_cons;
-        private System.Windows.Forms.TextBox bms_bat_current;
-        private System.Windows.Forms.TextBox bms_bat_volt;
+        private System.Windows.Forms.TextBox ems_out_current;
+        private System.Windows.Forms.TextBox ems_fc_current;
+        private System.Windows.Forms.TextBox ems_bat_current;
+        private System.Windows.Forms.TextBox ems_out_voltage;
+        private System.Windows.Forms.TextBox ems_fc_voltage;
+        private System.Windows.Forms.TextBox ems_bat_volt;
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Label label70;
@@ -3539,8 +4056,6 @@
         private System.Windows.Forms.TextBox driver_ign_command;
         private System.Windows.Forms.TextBox driver_brake_command;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.PictureBox pictureBox24;
-        private System.Windows.Forms.PictureBox pictureBox23;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.PictureBox driver_durum;
@@ -3549,8 +4064,6 @@
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.PictureBox xbee_active;
         private System.Windows.Forms.PictureBox gsm_durum;
-        private System.Windows.Forms.PictureBox pictureBox20;
-        private System.Windows.Forms.PictureBox pictureBox21;
         private Guna.UI.WinForms.GunaCircleProgressBar angle_gauge;
         private System.Windows.Forms.Label sektor;
         private System.Windows.Forms.Label label13;
@@ -3622,20 +4135,62 @@
         private System.Windows.Forms.TabControl ana_sekme;
         private System.Windows.Forms.TextBox gps_verim;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox ems_temp;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox ems_soc;
+        private System.Windows.Forms.TextBox ems_penalty;
+        private System.Windows.Forms.TextBox ems_fc_lt_cons;
+        private System.Windows.Forms.TextBox ems_out_cons;
+        private System.Windows.Forms.TextBox ems_fc_cons;
+        private System.Windows.Forms.TextBox ems_bat_cons;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.PictureBox ems_durum;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel23;
+        private System.Windows.Forms.TextBox bms_temp;
+        private System.Windows.Forms.TextBox bms_worst_cell_address;
+        private System.Windows.Forms.TextBox bms_worst_cell_voltage;
+        private System.Windows.Forms.TextBox bms_soc;
+        private System.Windows.Forms.TextBox bms_bat_cons;
+        private System.Windows.Forms.TextBox bms_bat_current;
+        private System.Windows.Forms.TextBox bms_bat_voltage;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.Label label81;
+        private System.Windows.Forms.Label label82;
+        private System.Windows.Forms.Label label83;
+        private System.Windows.Forms.Label label84;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.PictureBox bms_fatal_error;
+        private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.PictureBox bms_over_cur_error;
+        private System.Windows.Forms.PictureBox bms_comm_error;
+        private System.Windows.Forms.PictureBox bms_temp_error;
+        private System.Windows.Forms.PictureBox bms_low_volt_error;
+        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.Label label92;
+        private System.Windows.Forms.PictureBox bms_high_volt_error;
+        private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.Label label94;
+        private System.Windows.Forms.TextBox motor_temp;
+        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.PictureBox bms_dc_bus_ready_flag;
+        private System.Windows.Forms.PictureBox bms_discharge_flag;
+        private System.Windows.Forms.PictureBox bms_precharge_flag;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label29;
     }
 }
 
