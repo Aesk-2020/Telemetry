@@ -22,6 +22,7 @@ ThemeData LightTheme() {
       headline1: TextStyle(color: Colors.black,),
       headline2: TextStyle(color: Colors.amber,),
       headline3: TextStyle(color: aeskBlue,),
+      headline4: TextStyle(color: Colors.white70)
     ),
   );
 }
@@ -45,6 +46,7 @@ ThemeData DarkTheme() {
       headline1: TextStyle(color: Colors.white,),
       headline2: TextStyle(color: Colors.amber,),
       headline3: TextStyle(color: aeskBlue,),
+      headline4: TextStyle(color: aeskBlack)
     ),
   );
 }
