@@ -110,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Variables\BmsUI.cs" />
+    <Compile Include="Variables\EMS.cs" />
     <Compile Include="Variables\myDataGrid.cs" />
     <Compile Include="Variables\EncodePackMethods.cs" />
     <Compile Include="Variables\GMAPController.cs" />

@@ -4,11 +4,12 @@ import 'package:aeskapp/classes/drawer_list_class.dart';
 import 'package:flutter/material.dart';
 
 List<DrawerListClass> drawerList = [
-  DrawerListClass(image: "manzara.jpg", text: "AnaSayfa", destination: "/Home"),
-  DrawerListClass(image: "manzara.jpg", text: "Grafikler", destination: "/Graphs"),
-  DrawerListClass(image: "manzara.jpg", text: "BMS Verileri", destination: "/Bms"),
-  DrawerListClass(image: "manzara.jpg", text: "Custom", destination: "/Custom"),
-  DrawerListClass(image: "manzara.jpg", text: "Harita", destination: "/Location"),
+  DrawerListClass(image: "home-icon.png", text: "AnaSayfa", destination: "/Home"),
+  DrawerListClass(image: "mcu-icon.png", text: "MCU & VCU", destination: "/Vcu"),
+  DrawerListClass(image: "bms-icon.png", text: "BMS", destination: "/Bms"),
+  DrawerListClass(image: "map-icon.png", text: "Harita", destination: "/Location"),
+  DrawerListClass(image: "chart-icon.png", text: "Grafikler", destination: "/Graphs"),
+  DrawerListClass(image: "custom-icon.png", text: "Özelleştirme Ekranı", destination: "/Custom"),
 ];
 
 //********************************** Scaffold Widget ****************************************************//
@@ -16,6 +17,7 @@ Widget aeskScaffold({Widget myBody, BuildContext context}) {
   return Scaffold(
     backgroundColor: Theme.of(context).backgroundColor,
     body: myBody,
+    drawerEdgeDragWidth: 25,
     endDrawer: Drawer(
       child: Container(
         color: Colors.grey[800],
@@ -32,7 +34,7 @@ Widget aeskScaffold({Widget myBody, BuildContext context}) {
     ),
     drawer: Drawer(
       child: Container(
-        color: Colors.grey[800],
+        color: Theme.of(context).textTheme.headline4.color,
         height: 50,
         child: ListView(
           scrollDirection: Axis.vertical,
@@ -46,12 +48,12 @@ Widget aeskScaffold({Widget myBody, BuildContext context}) {
                   onPressed: () => Navigator.popAndPushNamed(context, "/Settings"),
                   alignment: Alignment.centerRight,
                 ),
-                leading: myText("AnaSayfa", 25, Theme.of(context).textSelectionColor, FontWeight.bold),
+                leading: myText("AeskApp", 25, Theme.of(context).textSelectionColor, FontWeight.bold),
               )]
               + drawerList.map((index) {
                 return ListTile(
-                  title: myText(index.text, 20, Colors.white, FontWeight.bold),
-                  leading: CircleAvatar(backgroundImage: AssetImage("assets/images/${index.image}"),),
+                  title: myText(index.text, 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                  leading: Image(image: AssetImage("assets/images/${index.image}",)),
                   onTap: () => Navigator.pushReplacementNamed(context, index.destination),
                 );
               }).toList(),

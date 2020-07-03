@@ -7,6 +7,10 @@ ThemeData LightTheme() {
   return ThemeData(
     backgroundColor: Colors.white70,
     buttonColor: aeskBlue,
+    cardColor: Colors.white70,
+    iconTheme: IconThemeData(
+      color: Colors.black,
+    ),
     appBarTheme: AppBarTheme(
       color: Colors.blueAccent,
       textTheme: TextTheme(
@@ -17,7 +21,8 @@ ThemeData LightTheme() {
     textTheme: TextTheme(
       headline1: TextStyle(color: Colors.black,),
       headline2: TextStyle(color: Colors.amber,),
-      headline3: TextStyle(color: Colors.white,),
+      headline3: TextStyle(color: aeskBlue,),
+      headline4: TextStyle(color: Colors.white70)
     ),
   );
 }
@@ -26,6 +31,10 @@ ThemeData DarkTheme() {
   return ThemeData(
     backgroundColor: aeskBlack,
     buttonColor: aeskBlue,
+    cardColor: Colors.black26,
+    iconTheme: IconThemeData(
+      color: Colors.white,
+    ),
     appBarTheme: AppBarTheme(
       color: Colors.grey,
       textTheme: TextTheme(
@@ -36,7 +45,8 @@ ThemeData DarkTheme() {
     textTheme: TextTheme(
       headline1: TextStyle(color: Colors.white,),
       headline2: TextStyle(color: Colors.amber,),
-      headline3: TextStyle(color: Colors.black,),
+      headline3: TextStyle(color: aeskBlue,),
+      headline4: TextStyle(color: aeskBlack)
     ),
   );
 }
