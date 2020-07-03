@@ -20,7 +20,10 @@ class Graphs extends StatelessWidget {
             Expanded(
               flex: 5,
               child: AeskChart("driverPhaseA"),
-            )
+            ),
+            Expanded(
+              child: AeskChart("driverPhaseB"),
+            ),
           ],
         ),
       ),

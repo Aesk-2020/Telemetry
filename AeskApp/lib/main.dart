@@ -3,6 +3,8 @@ import 'package:aeskapp/classes/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+
+
 import 'package:aeskapp/custom_widgets/front_inventory.dart';
 
 import 'package:aeskapp/pages/Custom.dart';
@@ -46,7 +48,7 @@ class MyApp extends StatelessWidget {
             darkTheme: DarkTheme(),
             themeMode: (myTheme.myTheme == DarkTheme()) ? ThemeMode.dark : ThemeMode.light,
 
-            initialRoute: "/Vcu",
+            initialRoute: "/Login",
             routes: {
               "/Login": (context) => Logging(),
               "/Home": (context) => Home(),
