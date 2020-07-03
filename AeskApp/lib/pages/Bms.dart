@@ -3,26 +3,17 @@ import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class Bms extends StatefulWidget {
-  @override
-  _BmsState createState() => _BmsState();
-}
-
-class _BmsState extends State<Bms> {
+class Bms extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: SingleChildScrollView(
-        child: Consumer<MqttAesk>(
-          builder: (context, _, child){
-            return Column(
-              children: <Widget>[
-
-              ],
-            );
-          }
+      child: aeskScaffold(
+        context: context,
+        myBody: Center(
+          child: myText("Batarya Yönetim Sistemi", 40, Theme.of(context).textTheme.headline3.color, FontWeight.bold),
         )
       ),
     );
   }
 }
+
