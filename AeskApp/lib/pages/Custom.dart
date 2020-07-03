@@ -15,11 +15,12 @@ class Custom extends StatefulWidget {
 
 class _CustomState extends State<Custom> {
   static List<String> currentContent = List.filled(8, null,growable: true);
+  static List<String> nameOfTiles = ["MCU/VCU","BMS","GPS"];
   static int contentCount = 1;
 
   Widget contentAdder(String content, int index) {
     switch (content) {
-      case "bms":
+      case "BMS":
         return Consumer<MqttAesk>(
           builder: (context, _, child){
             return Card(
@@ -32,6 +33,7 @@ class _CustomState extends State<Custom> {
                     onPressed: () {
                       setState(() {
                         currentContent.removeAt(index);
+                        nameOfTiles.add("BMS");
                         contentCount--;
                       });
                     },
@@ -42,7 +44,7 @@ class _CustomState extends State<Custom> {
           },
         );
         break;
-      case "vcuDriver":
+      case "MCU/VCU":
         return Stack(
           children: <Widget>[
             Vcu(),
@@ -55,6 +57,7 @@ class _CustomState extends State<Custom> {
                 onPressed: () {
                   setState(() {
                     currentContent.removeAt(index);
+                    nameOfTiles.add("MCU/VCU");
                     contentCount--;
                   });
                 },
@@ -63,7 +66,7 @@ class _CustomState extends State<Custom> {
           ],
         );
         break;
-      case "gps":
+      case "GPS":
         return Consumer<MqttAesk>(
           builder: (context, _, child){
             return Card(
@@ -76,6 +79,7 @@ class _CustomState extends State<Custom> {
                     onPressed: () {
                       setState(() {
                         currentContent.removeAt(index);
+                        nameOfTiles.add("GPS");
                         contentCount--;
                       });
                     },
@@ -95,35 +99,19 @@ class _CustomState extends State<Custom> {
   Widget modifiedExpansionTile(int index) {
     return ExpansionTile(
       title: Center(child: myText("     Ekle", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold)),
-      children: <Widget>[
-        FlatButton(
-          onPressed: () {
+      backgroundColor: Theme.of(context).backgroundColor,
+      children: nameOfTiles.map((tileName) {
+        return FlatButton(
+          child: myText(tileName, 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+          onPressed: (){
             setState(() {
-              currentContent.insert(index, "vcuDriver");
+              currentContent.insert(index, tileName);
+              nameOfTiles.remove(tileName);
               contentCount++;
             });
           },
-          child: myText("Driver", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-        ),
-        FlatButton(
-          onPressed: () {
-            setState(() {
-              currentContent.insert(index, "bms");
-              contentCount++;
-            });
-          },
-          child: myText("BMS", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-        ),
-        FlatButton(
-          onPressed: () {
-            setState(() {
-              currentContent.insert(index, "gps");
-              contentCount++;
-            });
-          },
-          child: myText("GPS", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-        ),
-      ],
+        );
+      }).toList(),
     );
   }
 
