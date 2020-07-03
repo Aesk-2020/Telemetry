@@ -46,11 +46,7 @@ class KonumState extends State<Konum> {
 
   void _setMarkerIcon() async {
     _markerIcon = await BitmapDescriptor.fromAssetImage(
-<<<<<<< HEAD
         ImageConfiguration(), 'assets/images/driving_pin.png');
-=======
-        ImageConfiguration(), 'assets/images/driving_pin50.png');
->>>>>>> emreurcu
   }
 
   /*void _toggleMapStyle() async {
@@ -99,11 +95,7 @@ class KonumState extends State<Konum> {
                   ),
                 );
                 setState(
-<<<<<<< HEAD
                       () {
-=======
-                  () {
->>>>>>> emreurcu
                     _markers[isaretler] = isaret;
                   },
                 );
@@ -119,11 +111,7 @@ class KonumState extends State<Konum> {
               _showMapStyle = !_showMapStyle;
             },
             );
-<<<<<<< HEAD
             _toggleMapStyle();
-=======
-            //_toggleMapStyle();
->>>>>>> emreurcu
           },
         ),*/
       ),
@@ -160,11 +148,7 @@ class KonumState extends State<Konum> {
     );
 
     setState(
-<<<<<<< HEAD
           () {
-=======
-      () {
->>>>>>> emreurcu
         _markers[markerId] = marker;
       },
     );

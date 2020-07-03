@@ -6,11 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:provider/provider.dart';
 
-<<<<<<< HEAD
 import 'package:aeskapp/pages/Vcu.dart';
 
-=======
->>>>>>> emreurcu
 class Custom extends StatefulWidget {
   @override
   _CustomState createState() => _CustomState();
@@ -45,7 +42,6 @@ class _CustomState extends State<Custom> {
           },
         );
         break;
-<<<<<<< HEAD
       case "vcuDriver":
         return Stack(
           children: <Widget>[
@@ -65,29 +61,6 @@ class _CustomState extends State<Custom> {
               ),
             )
           ],
-=======
-      case "driver":
-        return Consumer<MqttAesk>(
-           builder : (context, _, child){
-              return Card(
-                child: Column(
-                  children: <Widget>[
-                    myText("Driver verileri : ${AeskData.driver_phase_a_current_f32}", 20, Colors.black, FontWeight.bold),
-                    IconButton(
-                      icon: Icon(Icons.delete),
-                      alignment: Alignment.bottomRight,
-                      onPressed: () {
-                        setState(() {
-                          currentContent.removeAt(index);
-                          contentCount--;
-                        });
-                      },
-                    )
-                  ],
-                ),
-              );
-            }
->>>>>>> emreurcu
         );
         break;
       case "gps":
@@ -126,11 +99,7 @@ class _CustomState extends State<Custom> {
         FlatButton(
           onPressed: () {
             setState(() {
-<<<<<<< HEAD
               currentContent.insert(index, "vcuDriver");
-=======
-              currentContent.insert(index, "driver");
->>>>>>> emreurcu
               contentCount++;
             });
           },
@@ -163,10 +132,7 @@ class _CustomState extends State<Custom> {
     return aeskScaffold(
       context: context,
       myBody: CustomScrollView(
-<<<<<<< HEAD
 
-=======
->>>>>>> emreurcu
         slivers: <Widget>[
           SliverSafeArea(
             sliver: SliverList(
