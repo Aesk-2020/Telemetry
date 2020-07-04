@@ -177,7 +177,7 @@ var eys_error_uint8;
     bms_bms_error_u8 = message.getUint8(_startIndex);
     _startIndex++;
 
-    bms_dc_bus_state_u8 = message.getUint8(_startIndex)/10;
+    bms_dc_bus_state_u8 = message.getUint8(_startIndex);
     _startIndex++;
 
     bms_worst_cell_voltage_f32 = message.getUint16(_startIndex,myEndian);

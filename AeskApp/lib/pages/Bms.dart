@@ -100,7 +100,7 @@ class Bms extends StatelessWidget {
                               myText("    DC BUS DURUMU", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                               Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
                               myText("    PRECHARGCE", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                              SizedBox(height: 50,)
+                              SizedBox(height: 50,),
                             ],
                           ),
                         ),
