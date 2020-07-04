@@ -125,9 +125,9 @@ class _CustomState extends State<Custom> {
           SliverSafeArea(
             sliver: SliverList(
               delegate: SliverChildBuilderDelegate(
-                  (context, int index){
-                    return contentAdder(currentContent[index], index);
-                  },
+                    (context, int index){
+                  return contentAdder(currentContent[index], index);
+                },
                 childCount: contentCount,
               ),
             ),
