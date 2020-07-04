@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:aeskapp/classes/drawer_list_class.dart';
+import 'package:aeskapp/custom_widgets/front_inventory.dart';
 import 'package:flutter/material.dart';
 
 List<DrawerListClass> drawerList = [
@@ -50,11 +51,13 @@ Widget aeskScaffold({Widget myBody, BuildContext context}) {
                 ),
                 leading: myText("AeskApp", 25, Theme.of(context).textSelectionColor, FontWeight.bold),
               )]
-              + drawerList.map((index) {
+              + drawerList.map((element) {
                 return ListTile(
-                  title: myText(index.text, 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                  leading: Image(image: AssetImage("assets/images/${index.image}",)),
-                  onTap: () => Navigator.pushReplacementNamed(context, index.destination),
+                  title: myText(element.text, 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                  leading: Image(image: AssetImage("assets/images/${element.image}",)),
+                  onTap: () => (ModalRoute.of(context).settings.name == "/Home") ?Navigator.popAndPushNamed(context, element.destination) : Navigator.pushReplacementNamed(context, element.destination),
+                  enabled: (ModalRoute.of(context).settings.name == element.destination) ? false : true,
+                  trailing: (ModalRoute.of(context).settings.name == element.destination) ? Icon(Icons.arrow_back_ios,color: aeskBlue,): SizedBox(height: 0,),
                 );
               }).toList(),
         ),
