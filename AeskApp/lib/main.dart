@@ -3,8 +3,6 @@ import 'package:aeskapp/classes/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-
-
 import 'package:aeskapp/custom_widgets/front_inventory.dart';
 
 import 'package:aeskapp/pages/Custom.dart';
@@ -28,7 +26,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MultiProvider(

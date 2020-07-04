@@ -25,7 +25,7 @@ class MqttAesk extends ChangeNotifier{
 //kilit eleman
   StreamSubscription subscription;
 
-  Future<bool> connect() async {
+  Future connect() async {
 
     client = mqtt.MqttClient(broker,"40");
     client.port = port;

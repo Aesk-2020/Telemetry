@@ -15,7 +15,7 @@ class Custom extends StatefulWidget {
 
 class _CustomState extends State<Custom> {
   static List<String> currentContent = List.filled(8, null,growable: true);
-  static List<String> nameOfTiles = ["MCU/VCU","BMS","GPS"];
+  static List<String> nameOfTiles = ["MCU/VCU","BMS"];
   static int contentCount = 1;
 
   Widget contentAdder(String content, int index) {
@@ -64,30 +64,6 @@ class _CustomState extends State<Custom> {
               ),
             )
           ],
-        );
-        break;
-      case "GPS":
-        return Consumer<MqttAesk>(
-          builder: (context, _, child){
-            return Card(
-              child: Column(
-                children: <Widget>[
-                  myText("GPS verileri burada", 20, Colors.black, FontWeight.bold),
-                  IconButton(
-                    icon: Icon(Icons.delete),
-                    alignment: Alignment.bottomRight,
-                    onPressed: () {
-                      setState(() {
-                        currentContent.removeAt(index);
-                        nameOfTiles.add("GPS");
-                        contentCount--;
-                      });
-                    },
-                  )
-                ],
-              ),
-            );
-          },
         );
         break;
       default:

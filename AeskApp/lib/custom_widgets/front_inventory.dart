@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 Color aeskBlue = Color.fromRGBO(47, 136, 202, 1.0);
 Color aeskBlack = Color.fromRGBO(48, 51, 58, 1.0);
-
 ThemeData LightTheme() {
   return ThemeData(
     backgroundColor: Colors.white70,
@@ -22,7 +21,7 @@ ThemeData LightTheme() {
       headline1: TextStyle(color: Colors.black,),
       headline2: TextStyle(color: Colors.amber,),
       headline3: TextStyle(color: aeskBlue,),
-      headline4: TextStyle(color: Colors.white70)
+      headline4: TextStyle(color: Colors.white70),
     ),
   );
 }

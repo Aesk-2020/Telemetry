@@ -82,23 +82,6 @@ class KonumState extends State<Konum> {
                 _haritaHazirlayici.complete(controller);
                 //AeskData.gpsTracker_gps_latitude_f64 ??= 40.7435979;
                 //AeskData.gpsTracker_gps_longtitude_f64 ??= 29.7832885;
-                MarkerId isaretler = MarkerId('Merkez');
-                Marker isaret = Marker(
-                  markerId: MarkerId('baslangic'),
-                  position: LatLng(40.7435979, 29.7832885),
-                  infoWindow: InfoWindow(
-                    title: 'AESK',
-                    snippet: 'Alternatif Enerjili Sistemler Kulübü',
-                    onTap: () {
-                      //add();
-                    },
-                  ),
-                );
-                setState(
-                  () {
-                    _markers[isaretler] = isaret;
-                  },
-                );
               },
             );
           },

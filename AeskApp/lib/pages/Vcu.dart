@@ -50,7 +50,7 @@ Widget Vcu(){
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
-                          myText("MCU Komutları  ", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                          myText("Komutlar             ", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                           myText("Durum", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                         ],
                       ),
@@ -62,25 +62,26 @@ Widget Vcu(){
                         children: <TableRow>[
                           TableRow(
                             children: <Widget>[
-                              myText("ATEŞLEME", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                              myText("IGNITION", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                               myText(AeskData.drive_status_ignition_u1 ? "AKTİF":"İNAKTİF", 20, AeskData.drive_status_ignition_u1 ? Colors.green : Colors.red , FontWeight.bold)
                             ],
                           ),
                           TableRow(
                             children: <Widget>[
-                              myText("FRENLEME", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                              myText("BRAKE", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                               myText(AeskData.drive_status_ignition_u1 ? "AKTİF":"İNAKTİF", 20, AeskData.drive_status_ignition_u1 ? Colors.green : Colors.red, FontWeight.bold)
                             ],
                           ),
                           TableRow(
                             children: <Widget>[
-                              myText("YÖN", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                              myText(AeskData.drive_status_ignition_u1 ? "İLERİ":"GERİ", 20, Theme.of(context).textTheme.headline1.color, FontWeight.normal)
+                              myText("DIRECTION", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                              myText(AeskData.drive_status_ignition_u1 ? "İLERİ":"GERİ", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold)
                             ],
                           ),
                         ],
                       ),
                     ),
+
                     SizedBox(height: 15,),
                     myText("     Hatalar", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                     Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
