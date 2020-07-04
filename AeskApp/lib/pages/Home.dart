@@ -157,7 +157,7 @@ class DataBox extends StatelessWidget {
         child: Text(
           this.ad + " : " + this.veri,
           style: TextStyle(
-              color: Theme.of(context).textTheme.subtitle2.color,
+              color: Theme.of(context).textTheme.headline1.color,
               fontWeight: FontWeight.bold,
               fontSize: 15),
         ),
