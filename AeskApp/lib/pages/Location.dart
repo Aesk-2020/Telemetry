@@ -115,7 +115,7 @@ class KonumState extends State<Konum> {
     _markers[yeniId] = yeni;
   }
 
-/*_add() {
+  /*_add() {
     final String markerIdVal = 'marker_id_$counter';
     final MarkerId markerId = MarkerId(markerIdVal);
     counter++;
