@@ -119,6 +119,7 @@ class DataBox extends StatelessWidget {
       padding: EdgeInsets.all(0),
       height: 50,
       child: Card(
+        color: Theme.of(context).textTheme.headline3.color,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
@@ -128,7 +129,7 @@ class DataBox extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Text(this.ad + " : " + this.veri),
+                    Text(this.ad + " : " + this.veri, style: TextStyle(color: Theme.of(context).textTheme.headline1.color),),
                   ],
                 ),
               ),
