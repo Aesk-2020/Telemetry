@@ -49,7 +49,6 @@ class AeskData extends ChangeNotifier{
   static bool drive_status_brake_u1     = false; //1 on 0 off
   static bool drive_status_ignition_u1  = false; //1 on 0 off
   static var driver_driver_error_u8;
-  static List<bool> errors = List.generate(6, (index) => false);
   static bool driver_error_ZPC_u1             = false;
   static bool driver_error_PWM_u1             = false;
   static bool driver_error_DC_bara_u1         = false;
@@ -64,7 +63,6 @@ class AeskData extends ChangeNotifier{
   static var bms_bat_cons_f32;//10
   static var bms_soc_f32;//100
   static var bms_bms_error_u8;
-  static List<bool> bms_errors = List.generate(7, (index) => false);
   static bool bms_error_high_voltage_u1  = false;
   static bool bms_error_low_voltage_u1   = false;
   static bool bms_error_high_temp_u1     = false;
@@ -80,6 +78,7 @@ class AeskData extends ChangeNotifier{
   static var bms_worst_cell_voltage_f32;//10
   static var bms_worst_cell_address_u8;
   static var bms_temp_u8;
+  static var bms_power_f32;
   static var gpsTracker_gps_latitude_f64;  //1000000
   static var gpsTracker_gps_longtitude_f64;
   static var gpsTracker_gps_velocity_u8;
@@ -189,6 +188,8 @@ var eys_error_uint8;
     bms_temp_u8 = message.getUint8(_startIndex);
     _startIndex++;
 
+    bms_power_f32 = bms_bat_current_f32 * bms_bat_volt_f32;
+
     gpsTracker_gps_latitude_f64 = message.getUint32(_startIndex,myEndian)/1000000;
     _startIndex+=4;
 
@@ -218,39 +219,19 @@ var eys_error_uint8;
     driver_error_DC_bara_current_u1 = (((driver_driver_error_u8 >> 4) & 1) == 1) ? true : false;
     driver_error_WakeUp_u1          = (((driver_driver_error_u8 >> 5) & 1) == 1) ? true : false;
 
-    errors = [
-      driver_error_ZPC_u1,
-      driver_error_PWM_u1,
-      driver_error_DC_bara_u1,
-      driver_error_temprature_u1,
-      driver_error_DC_bara_current_u1,
-      driver_error_WakeUp_u1
-    ];
-
     bms_state_precharge_u1    = ((bms_dc_bus_state_u8 & 1) == 1) ? true : false;
     bms_state_discharge_u1    = (((bms_dc_bus_state_u8 >> 1) & 1) == 1) ? true : false;
     bms_state_dcbus_ready_u1  = (((bms_dc_bus_state_u8 >> 2) & 1) == 1) ? true : false;
     bms_state_charge_u1       = (((bms_dc_bus_state_u8 >> 3) & 1) == 1) ? true : false;
 
-    bms_error_high_voltage_u1   = ((driver_driver_error_u8 & 1) == 1) ? true : false;
-    bms_error_low_voltage_u1    = (((driver_driver_error_u8 >> 1) & 1) == 1) ? true : false;
-    bms_error_high_temp_u1      = (((driver_driver_error_u8 >> 2) & 1) == 1) ? true : false;
-    bms_error_communication_u1  = (((driver_driver_error_u8 >> 3) & 1) == 1) ? true : false;
-    bms_error_over_current_u1   = (((driver_driver_error_u8 >> 4) & 1) == 1) ? true : false;
-    bms_error_fatal_u1          = (((driver_driver_error_u8 >> 5) & 1) == 1) ? true : false;
-    bms_error_isolation_u1      = (((driver_driver_error_u8 >> 6) & 1) == 1) ? true : false;
+    bms_error_high_voltage_u1   = ((bms_bms_error_u8 & 1) == 1) ? true : false;
+    bms_error_low_voltage_u1    = (((bms_bms_error_u8 >> 1) & 1) == 1) ? true : false;
+    bms_error_high_temp_u1      = (((bms_bms_error_u8 >> 2) & 1) == 1) ? true : false;
+    bms_error_communication_u1  = (((bms_bms_error_u8 >> 3) & 1) == 1) ? true : false;
+    bms_error_over_current_u1   = (((bms_bms_error_u8 >> 4) & 1) == 1) ? true : false;
+    bms_error_fatal_u1          = (((bms_bms_error_u8 >> 5) & 1) == 1) ? true : false;
+    bms_error_isolation_u1      = (((bms_bms_error_u8 >> 6) & 1) == 1) ? true : false;
 
-    bms_errors = [
-      bms_error_high_voltage_u1,
-      bms_error_low_voltage_u1,
-      bms_error_high_temp_u1,
-      bms_error_communication_u1,
-      bms_error_over_current_u1,
-      bms_error_fatal_u1,
-      bms_error_isolation_u1
-    ];
-
-    print("asdasdasdasdasd ${drive_status_ignition_u1}");
     for(i=0;i<graphData_array.length-1;i++){
       graphData_array[i] = graphData_array[i+1];
     }
