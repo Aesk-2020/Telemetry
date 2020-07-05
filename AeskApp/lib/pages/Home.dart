@@ -1,6 +1,5 @@
 import 'package:aeskapp/classes/aeskData.dart';
 import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
-import 'package:aeskapp/custom_widgets/front_inventory.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -17,7 +16,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () {
-        showDialog(
+        return showDialog(
           context: context,
           child: CupertinoAlertDialog(
             //backgroundColor: Theme.of(context).backgroundColor,
