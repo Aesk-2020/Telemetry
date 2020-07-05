@@ -1,6 +1,7 @@
 import 'package:aeskapp/classes/aeskData.dart';
 import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
 import 'package:aeskapp/custom_widgets/front_inventory.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -18,37 +19,21 @@ class _HomeState extends State<Home> {
       onWillPop: () {
         showDialog(
           context: context,
-          child: AlertDialog(
-            backgroundColor: Theme.of(context).backgroundColor,
+          child: CupertinoAlertDialog(
+            //backgroundColor: Theme.of(context).backgroundColor,
+            content: Text(
+              "Çıkmak istediğinize emin misiniz?",
+              style: TextStyle(fontSize: 20, color: Colors.black),
+            ),
             actions: <Widget>[
-              myText("Çıkmak istediğinizden emin misiniz?", 25,
-                  Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  FlatButton(
-                    child: myText(
-                        "EVET",
-                        15,
-                        Theme.of(context).textTheme.headline1.color,
-                        FontWeight.bold),
-                    onPressed: () => SystemChannels.platform
-                        .invokeMethod('SystemNavigator.pop'),
-                    color: Theme.of(context).backgroundColor,
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  FlatButton(
-                    child: myText(
-                        "HAYIR",
-                        15,
-                        Theme.of(context).textTheme.headline1.color,
-                        FontWeight.bold),
-                    onPressed: () => Navigator.pop(context, false),
-                    color: aeskBlue,
-                  ),
-                ],
+              CupertinoDialogAction(
+                child: myText("HAYIR", 18, Colors.black, FontWeight.bold),
+                onPressed: () => Navigator.pop(context, false),
+              ),
+              CupertinoDialogAction(
+                child: myText("EVET", 18, Colors.black, FontWeight.bold),
+                onPressed: () =>
+                    SystemChannels.platform.invokeMethod('SystemNavigator.pop'),
               ),
             ],
           ),
@@ -68,6 +53,13 @@ class _HomeState extends State<Home> {
                       25,
                       Theme.of(context).textTheme.headline3.color,
                       FontWeight.bold),
+                  Divider(
+                    thickness: 5,
+                    height: 10,
+                    indent: 134,
+                    endIndent: 134,
+                    color: Theme.of(context).textTheme.headline3.color,
+                  ),
                   Row(
                     children: <Widget>[
                       Column(
