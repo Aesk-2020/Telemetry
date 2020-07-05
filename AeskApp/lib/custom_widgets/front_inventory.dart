@@ -13,7 +13,7 @@ ThemeData LightTheme() {
     appBarTheme: AppBarTheme(
       color: Colors.blueAccent,
       textTheme: TextTheme(
-        headline1: TextStyle(color: Colors.amber, fontFamily: "GOTHIC", fontSize: 25, fontWeight: FontWeight.bold,),
+        headline1: TextStyle(color: Colors.white, fontFamily: "GOTHIC", fontSize: 25, fontWeight: FontWeight.bold,),
       ),
     ),
     textSelectionColor: Colors.blue,

@@ -148,7 +148,7 @@ Widget Vcu(){
                         columnWidths: {
                           0 : FixedColumnWidth(90),
                           1 : FixedColumnWidth(50),
-                          2 : FixedColumnWidth(90),
+                          2 : FixedColumnWidth(78),
                           3 : FixedColumnWidth(50),
                         },
                         children: <TableRow>[
@@ -156,7 +156,7 @@ Widget Vcu(){
                             children: <Widget>[
                               myText("Phase A:", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                               myText(AeskData.driver_phase_a_current_f32.toString(), 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                              myText("Phase B:", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                              myText("Torque:", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                               myText(AeskData.driver_phase_b_current_f32.toString(), 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                             ]
                           ),

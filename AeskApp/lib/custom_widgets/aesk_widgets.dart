@@ -18,7 +18,7 @@ Widget aeskScaffold({Widget myBody, BuildContext context}) {
   return Scaffold(
     backgroundColor: Theme.of(context).backgroundColor,
     body: myBody,
-    drawerEdgeDragWidth: 25,
+    drawerEdgeDragWidth: 30,
     endDrawer: Drawer(
       child: Container(
         color: Colors.grey[800],

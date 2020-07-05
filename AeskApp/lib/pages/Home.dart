@@ -22,30 +22,18 @@ class _HomeState extends State<Home> {
           child: AlertDialog(
             backgroundColor: Theme.of(context).backgroundColor,
             actions: <Widget>[
-              myText("Çıkmak istediğinizden emin misiniz?", 25,
-                  Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+              myText("Çıkmak istediğinizden emin misiniz?", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   FlatButton(
-                    child: myText(
-                        "EVET",
-                        15,
-                        Theme.of(context).textTheme.headline1.color,
-                        FontWeight.bold),
-                    onPressed: () => SystemChannels.platform
-                        .invokeMethod('SystemNavigator.pop'),
+                    child: myText("EVET", 15, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                    onPressed: () => SystemChannels.platform.invokeMethod('SystemNavigator.pop'),
                     color: Theme.of(context).backgroundColor,
                   ),
-                  SizedBox(
-                    width: 20,
-                  ),
+                  SizedBox(width: 20,),
                   FlatButton(
-                    child: myText(
-                        "HAYIR",
-                        15,
-                        Theme.of(context).textTheme.headline1.color,
-                        FontWeight.bold),
+                    child: myText("HAYIR", 15, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                     onPressed: () => Navigator.pop(context, false),
                     color: aeskBlue,
                   ),
@@ -65,11 +53,7 @@ class _HomeState extends State<Home> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  myText(
-                      "\nANA SAYFA",
-                      25,
-                      Theme.of(context).textTheme.headline3.color,
-                      FontWeight.bold),
+                  myText("\nANA SAYFA", 25, Theme.of(context).textTheme.headline3.color, FontWeight.bold),
                   Row(
                     children: <Widget>[
                       Column(
@@ -110,7 +94,7 @@ class _HomeState extends State<Home> {
                                 AeskData.driver_phase_a_current_f32.toString(),
                           ),
                           DataBox(
-                            ad: "Phase B Current",
+                            ad: "Torque",
                             veri:
                                 AeskData.driver_phase_b_current_f32.toString(),
                           ),

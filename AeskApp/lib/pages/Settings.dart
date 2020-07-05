@@ -1,6 +1,7 @@
 import 'package:aeskapp/classes/theme.dart';
 import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
 import 'package:aeskapp/custom_widgets/front_inventory.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
@@ -9,13 +10,12 @@ class Settings extends StatefulWidget {
   @override
   _SettingsState createState() => _SettingsState();
 }
+
 bool isDarkMode = false;
+
 class _SettingsState extends State<Settings> {
-
-
   @override
   Widget build(BuildContext context) {
-
     MyThemeData myThemeData = Provider.of<MyThemeData>(context);
 
     return Scaffold(
@@ -28,34 +28,73 @@ class _SettingsState extends State<Settings> {
         backgroundColor: Theme.of(context).appBarTheme.color,
       ),
       body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            Container(
-              height: 55,
-              margin: EdgeInsets.all(10),
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Theme.of(context).appBarTheme.color,
-                borderRadius: BorderRadius.all(Radius.circular(50)),
-                border:Border.all(
-                  color: Theme.of(context).appBarTheme.color,
-                  width: 5,
-                )
-              ),
-              child: SwitchListTile(
-
-                title: Center(child: myText("Karanlık mod", 20, Theme.of(context).textTheme.headline1.color, FontWeight.normal)),
-                value: isDarkMode,
-                onChanged: (bool value){
-                    isDarkMode = value;
-                    myThemeData.setTheme((isDarkMode) ? DarkTheme() : LightTheme());
-                }
-              ),
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            height: 55,
+            margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+            alignment: Alignment.topLeft,
+            decoration: BoxDecoration(
+              color: Theme.of(context).cardColor,
+              borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
-            Container(
-
+            child: SwitchListTile(
+              title: myText("Karanlık mod", 20,
+                  Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+              value: isDarkMode,
+              contentPadding: EdgeInsets.fromLTRB(5, 0, 0, 20),
+              onChanged: (bool value) {
+                isDarkMode = value;
+                myThemeData.setTheme((isDarkMode) ? DarkTheme() : LightTheme());
+              },
+              subtitle: myText(isDarkMode ? "Açık" : "Kapalı", 15, Theme.of(context).textTheme.headline1.color, FontWeight.normal),
             ),
-          ],
+          ),
+          Container(
+            height: 55,
+            margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
+            alignment: Alignment.topLeft,
+            decoration: BoxDecoration(
+              color: Theme.of(context).cardColor,
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+            ),
+            child: ListTile(
+              title: myText("Hakkında", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+              onTap: () {
+                showDialog(
+                  context: context,
+                  child: AlertDialog(
+                    title: myText("Hakkında", 20, aeskBlue, FontWeight.bold),
+                    backgroundColor: Theme.of(context).backgroundColor,
+                    content: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        myText(
+                            "Bu uygulama Aesk Nesne Yönelim Ekibi tarafından geliştirilmiştir",
+                            20,
+                            Theme.of(context).textTheme.headline1.color,
+                            FontWeight.bold),
+                        SizedBox(height: 10,),
+                        Text(
+                          "Geliştiriciler:",
+                          style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              color: Theme.of(context).textTheme.headline1.color,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20),
+                        ),
+                        myText("Ahmet Furkan Ünlü", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                        myText("Emre Urcu", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                        myText("Yusuf Kemal Palacı", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                        myText("Yusuf Yıldız", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
