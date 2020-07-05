@@ -67,7 +67,7 @@ class _AeskChartState extends State<AeskChart> {
               child: Card(
                 child: SfCartesianChart(
                   title: ChartTitle(
-                      text: "driverPhaseB",
+                      text: "Torque",
                       textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
                   primaryXAxis: CategoryAxis(),
                   tooltipBehavior: TooltipBehavior(enable: true),

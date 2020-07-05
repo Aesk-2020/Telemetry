@@ -6,6 +6,7 @@ import 'package:flutter/painting.dart';
 import 'package:provider/provider.dart';
 
 import 'package:aeskapp/pages/Vcu.dart';
+import 'package:aeskapp/pages/Bms.dart';
 
 class Custom extends StatefulWidget {
   @override
@@ -20,27 +21,25 @@ class _CustomState extends State<Custom> {
   Widget contentAdder(String content, int index) {
     switch (content) {
       case "BMS":
-        return Consumer<MqttAesk>(
-          builder: (context, _, child){
-            return Card(
-              child: Column(
-                children: <Widget>[
-                  myText("Bms verileri burada", 20, Colors.black, FontWeight.bold),
-                  IconButton(
-                    icon: Icon(Icons.delete),
-                    alignment: Alignment.bottomRight,
-                    onPressed: () {
-                      setState(() {
-                        currentContent.removeAt(index);
-                        nameOfTiles.add("BMS");
-                        contentCount--;
-                      });
-                    },
-                  )
-                ],
+        return Stack(
+          children: <Widget>[
+            Bms(),
+            Positioned(
+              bottom: 25,
+              right: 185,
+              child: IconButton(
+                icon: Icon(Icons.delete),
+                alignment: Alignment.bottomRight,
+                onPressed: () {
+                  setState(() {
+                    currentContent.removeAt(index);
+                    nameOfTiles.add("BMS");
+                    contentCount--;
+                  });
+                },
               ),
-            );
-          },
+            )
+          ],
         );
         break;
       case "MCU/VCU":

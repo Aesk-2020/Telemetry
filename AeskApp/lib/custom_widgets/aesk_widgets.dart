@@ -55,7 +55,7 @@ Widget aeskScaffold({Widget myBody, BuildContext context}) {
                 return ListTile(
                   title: myText(element.text, 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                   leading: Image(image: AssetImage("assets/images/${element.image}",)),
-                  onTap: () => (ModalRoute.of(context).settings.name == "/Home") ?Navigator.popAndPushNamed(context, element.destination) : Navigator.pushReplacementNamed(context, element.destination),
+                  onTap: () => (ModalRoute.of(context).settings.name == "/Home") ? Navigator.popAndPushNamed(context, element.destination) : Navigator.pushReplacementNamed(context, element.destination),
                   enabled: (ModalRoute.of(context).settings.name == element.destination) ? false : true,
                   trailing: (ModalRoute.of(context).settings.name == element.destination) ? Icon(Icons.arrow_back_ios,color: aeskBlue,): SizedBox(height: 0,),
                 );

@@ -31,7 +31,7 @@ class _SettingsState extends State<Settings> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Container(
-            height: 55,
+            height: 65,
             margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
             alignment: Alignment.topLeft,
             decoration: BoxDecoration(
@@ -42,7 +42,7 @@ class _SettingsState extends State<Settings> {
               title: myText("Karanlık mod", 20,
                   Theme.of(context).textTheme.headline1.color, FontWeight.bold),
               value: isDarkMode,
-              contentPadding: EdgeInsets.fromLTRB(5, 0, 0, 20),
+              contentPadding: EdgeInsets.fromLTRB(17, 0, 0, 20),
               onChanged: (bool value) {
                 isDarkMode = value;
                 myThemeData.setTheme((isDarkMode) ? DarkTheme() : LightTheme());
@@ -70,7 +70,7 @@ class _SettingsState extends State<Settings> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         myText(
-                            "Bu uygulama Aesk Nesne Yönelim Ekibi tarafından geliştirilmiştir",
+                            "Bu uygulama AESK Nesne Yönelim Ekibi tarafından geliştirilmiştir",
                             20,
                             Theme.of(context).textTheme.headline1.color,
                             FontWeight.bold),

@@ -99,7 +99,7 @@ class _HomeState extends State<Home> {
                                 AeskData.driver_phase_a_current_f32.toString(),
                           ),
                           DataBox(
-                            ad: "Phase B Current",
+                            ad: "Torque",
                             veri:
                                 AeskData.driver_phase_b_current_f32.toString(),
                           ),
