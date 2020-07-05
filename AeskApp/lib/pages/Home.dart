@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:aeskapp/classes/Mqtt.dart';
+import 'dart:io';
 
 class Home extends StatefulWidget {
   @override
@@ -20,7 +21,6 @@ class _HomeState extends State<Home> {
           context: context,
           child: AlertDialog(
             backgroundColor: Theme.of(context).backgroundColor,
-
             actions: <Widget>[
               myText("Çıkmak istediğinizden emin misiniz?", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
               Row(
@@ -39,10 +39,10 @@ class _HomeState extends State<Home> {
                   ),
                 ],
               ),
-
             ],
           ),
         );
+        return;
       },
       child: aeskScaffold(
             context: context,
