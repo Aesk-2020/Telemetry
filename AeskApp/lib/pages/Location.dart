@@ -1,4 +1,4 @@
-import 'dart:async';
+///import 'dart:async';
 import 'dart:collection';
 import 'package:aeskapp/classes/Mqtt.dart';
 import 'package:aeskapp/classes/aeskData.dart';
@@ -14,23 +14,23 @@ class Konum extends StatefulWidget {
 }
 
 int counter = 1;
-bool _showMapStyle = false;
+//bool _showMapStyle = false;
 
 class KonumState extends State<Konum> {
-  Completer<GoogleMapController> _haritaHazirlayici = Completer();
+  //Completer<GoogleMapController> _haritaHazirlayici = Completer();
   Map<MarkerId, Marker> _markers = Map<MarkerId, Marker>();
-  Set<Circle> _circles = HashSet<Circle>();
+  //Set<Circle> _circles = HashSet<Circle>();
   BitmapDescriptor _markerIcon;
-  GoogleMapController _controller;
+  //GoogleMapController _controller;
 
   @override
   void initState() {
     super.initState();
     _setMarkerIcon();
-    _setCircles();
+    //_setCircles();
   }
 
-  void _setCircles() {
+  /*void _setCircles() {
     AeskData.gpsTracker_gps_latitude_f64 ??= 40.7435979;
     AeskData.gpsTracker_gps_longtitude_f64 ??= 29.7832885;
     _circles.add(
@@ -42,7 +42,7 @@ class KonumState extends State<Konum> {
           strokeWidth: 2,
           fillColor: Color.fromRGBO(102, 51, 153, .5)),
     );
-  }
+  }*/
 
   void _setMarkerIcon() async {
     _markerIcon = await BitmapDescriptor.fromAssetImage(
@@ -77,12 +77,12 @@ class KonumState extends State<Konum> {
                 target: LatLng(40.7435979, 29.7832885),
                 zoom: 16.3,
               ),
-              onMapCreated: (GoogleMapController controller) {
+              /*onMapCreated: (GoogleMapController controller) {
                 _controller = controller;
                 _haritaHazirlayici.complete(controller);
                 //AeskData.gpsTracker_gps_latitude_f64 ??= 40.7435979;
                 //AeskData.gpsTracker_gps_longtitude_f64 ??= 29.7832885;
-              },
+              },*/
             );
           },
         ),
@@ -115,7 +115,7 @@ class KonumState extends State<Konum> {
     _markers[yeniId] = yeni;
   }
 
-  _add() {
+  /*_add() {
     final String markerIdVal = 'marker_id_$counter';
     final MarkerId markerId = MarkerId(markerIdVal);
     counter++;
@@ -135,7 +135,7 @@ class KonumState extends State<Konum> {
         _markers[markerId] = marker;
       },
     );
-  }
+  }*/
 }
 
 /*class Utils {

@@ -1,7 +1,6 @@
 import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
 import 'package:aeskapp/custom_widgets/chart.dart';
 import 'package:flutter/material.dart';
-import 'package:aeskapp/custom_widgets/gauge.dart';
 
 class Graphs extends StatelessWidget {
   @override

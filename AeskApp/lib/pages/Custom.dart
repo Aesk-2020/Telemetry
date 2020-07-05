@@ -1,5 +1,4 @@
 import 'package:aeskapp/classes/Mqtt.dart';
-import 'package:aeskapp/classes/aeskData.dart';
 import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -101,9 +100,9 @@ class _CustomState extends State<Custom> {
           SliverSafeArea(
             sliver: SliverList(
               delegate: SliverChildBuilderDelegate(
-                  (context, int index){
-                    return contentAdder(currentContent[index], index);
-                  },
+                    (context, int index){
+                  return contentAdder(currentContent[index], index);
+                },
                 childCount: contentCount,
               ),
             ),
