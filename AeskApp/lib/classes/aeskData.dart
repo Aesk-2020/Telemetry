@@ -33,6 +33,7 @@ int i;
 
 class AeskData extends ChangeNotifier{
 
+  static var vcu_can_error_u8;
   static var vcu_wake_up_u8;
   static var vcu_drive_command_u8;
   static var vcu_set_velocity_u8;
@@ -42,8 +43,8 @@ class AeskData extends ChangeNotifier{
   static var driver_dc_bus_voltage_f32;//10
   static var driver_id_f32;//100
   static var driver_iq_f32;//100
-  static var driver_vd_f32;//100
-  static var driver_vq_f32;//100
+  static var driver_vd_f32;//100 iarms
+  static var driver_vq_f32;//100 torque?
   static var driver_drive_status_u8;
   static bool drive_status_direction_u1 = false; //1 forward 0 reverse
   static bool drive_status_brake_u1     = false; //1 on 0 off
@@ -84,7 +85,7 @@ class AeskData extends ChangeNotifier{
   static var gpsTracker_gps_velocity_u8;
   static var gpsTracker_gps_sattelite_number_u8;
   static var gpsTracker_gps_efficiency_u8;
-
+//bms cells eklenecek liste halinde
 
   static double x_time=0;
   static var ping = 0;
@@ -113,6 +114,10 @@ var eys_error_uint8;
   AeskData(ByteData message,Endian myEndian){
 
     int _startIndex =0;
+
+    vcu_can_error_u8 = message.getUint8(_startIndex);
+    _startIndex++;
+
     vcu_wake_up_u8 = message.getUint8(_startIndex);
     _startIndex++;
 
