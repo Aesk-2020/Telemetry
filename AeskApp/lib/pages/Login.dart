@@ -74,7 +74,7 @@ class _LoggingState extends State<Logging> {
                     child: SpinKitCircle(color: Theme.of(context).appBarTheme.color,),
                   );
                   dynamic state = await mqttAesk.connect()
-                      .timeout(Duration(seconds: 10), onTimeout: () => false);
+                      .timeout(Duration(seconds: 5), onTimeout: () => false);
                   if (state == true) {
                     mqttAesk.subscribeToTopic("/home/sensor");
                     Navigator.pushNamed(context, "/Home");

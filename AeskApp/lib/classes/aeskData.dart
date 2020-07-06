@@ -36,7 +36,7 @@ class AeskData extends ChangeNotifier{
   static var vcu_can_error_u8;
   static var vcu_wake_up_u8;
   static var vcu_drive_command_u8;
-  static var vcu_set_velocity_u8;
+  static var vcu_set_velocity_u8              = 0;
   static var driver_phase_a_current_f32;//100
   static var driver_phase_b_current_f32;//100
   static var driver_dc_bus_current_f32;//100
@@ -46,24 +46,29 @@ class AeskData extends ChangeNotifier{
   static var driver_vd_f32;//100 iarms
   static var driver_vq_f32;//100 torque?
   static var driver_drive_status_u8;
+
   static bool drive_status_direction_u1 = false; //1 forward 0 reverse
   static bool drive_status_brake_u1     = false; //1 on 0 off
   static bool drive_status_ignition_u1  = false; //1 on 0 off
+
   static var driver_driver_error_u8;
+
   static bool driver_error_ZPC_u1             = false;
   static bool driver_error_PWM_u1             = false;
   static bool driver_error_DC_bara_u1         = false;
   static bool driver_error_temprature_u1      = false;
   static bool driver_error_DC_bara_current_u1 = false;
   static bool driver_error_WakeUp_u1          = false;
+
   static var driver_odometer_u32;
   static var driver_motor_temperature_u8;
-  static var driver_actual_velocity_u8;
+  static var driver_actual_velocity_u8        = 0;
   static var bms_bat_volt_f32;//10
   static var bms_bat_current_f32;//100
   static var bms_bat_cons_f32;//10
   static var bms_soc_f32;//100
   static var bms_bms_error_u8;
+
   static bool bms_error_high_voltage_u1  = false;
   static bool bms_error_low_voltage_u1   = false;
   static bool bms_error_high_temp_u1     = false;
@@ -71,11 +76,14 @@ class AeskData extends ChangeNotifier{
   static bool bms_error_over_current_u1  = false;
   static bool bms_error_fatal_u1         = false;
   static bool bms_error_isolation_u1     = false;
+
   static var bms_dc_bus_state_u8;
+
   static bool bms_state_precharge_u1     = false;
   static bool bms_state_discharge_u1     = false;
   static bool bms_state_dcbus_ready_u1   = false;
   static bool bms_state_charge_u1        = false;
+
   static var bms_worst_cell_voltage_f32;//10
   static var bms_worst_cell_address_u8;
   static var bms_temp_u8;
