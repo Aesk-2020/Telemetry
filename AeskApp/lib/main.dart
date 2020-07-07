@@ -1,4 +1,3 @@
-import 'package:aeskapp/classes/aeskData.dart';
 import 'package:aeskapp/classes/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -51,7 +50,7 @@ class MyApp extends StatelessWidget {
               "/Custom": (context) => Custom(),
               "/Graphs": (context) => Graphs(),
               "/Loading": (context) => Loading(),
-              "/Bms": (context) => Bms(),
+              "/Bms": (context) => BmsPage(),
               "/Settings": (context) => Settings(),
               "/Location": (context) => Konum(),
               "/Vcu": (context) => VcuPage(),
