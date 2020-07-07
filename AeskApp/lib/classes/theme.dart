@@ -1,4 +1,3 @@
-import 'package:aeskapp/custom_widgets/front_inventory.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 

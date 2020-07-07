@@ -99,6 +99,8 @@ class AeskData extends ChangeNotifier{
   static var ping = 0;
 
   static List<graph_data> graphData_array = List.generate(100, (index) => graph_data(0,0,0,0,0,0,0,0,0,0,0), growable: false);
+  static Uint8List battery_cells = List.generate(28, (index) => 0);
+
 
 
 //EMS
@@ -121,10 +123,7 @@ var eys_error_uint8;
 //threadlamamız gerekecekse burayı threadlayacaz
   AeskData(ByteData message,Endian myEndian){
 
-    int _startIndex =0;
-
-    vcu_can_error_u8 = message.getUint8(_startIndex);
-    _startIndex++;
+    int _startIndex = 0;
 
     vcu_wake_up_u8 = message.getUint8(_startIndex);
     _startIndex++;
@@ -174,7 +173,7 @@ var eys_error_uint8;
     driver_actual_velocity_u8 = message.getUint8(_startIndex);
     _startIndex++;
 
-    bms_bat_volt_f32 = message.getUint16(_startIndex,myEndian)/10;
+    bms_bat_volt_f32 = message.getUint16(_startIndex,myEndian)/100;
     _startIndex+=2;
 
     bms_bat_current_f32 = message.getInt16(_startIndex,myEndian)/100;
@@ -183,7 +182,7 @@ var eys_error_uint8;
     bms_bat_cons_f32 = message.getUint16(_startIndex,myEndian)/10;
     _startIndex+=2;
 
-    bms_soc_f32 = message.getUint16(_startIndex,myEndian);
+    bms_soc_f32 = message.getUint16(_startIndex,myEndian)/100;
     _startIndex+=2;
 
     bms_bms_error_u8 = message.getUint8(_startIndex);
@@ -192,7 +191,7 @@ var eys_error_uint8;
     bms_dc_bus_state_u8 = message.getUint8(_startIndex);
     _startIndex++;
 
-    bms_worst_cell_voltage_f32 = message.getUint16(_startIndex,myEndian);
+    bms_worst_cell_voltage_f32 = message.getUint16(_startIndex,myEndian)/10;
     _startIndex+=2;
 
     bms_worst_cell_address_u8 = message.getUint8(_startIndex);
@@ -218,8 +217,18 @@ var eys_error_uint8;
     gpsTracker_gps_efficiency_u8 = message.getUint8(_startIndex);
     _startIndex++;
 
+    for(int i = 0; i<28; i++){
+      battery_cells[i] = message.getUint8(_startIndex);
+      _startIndex++;
+    }
+
+    vcu_can_error_u8 = message.getUint8(_startIndex);
+    _startIndex++;
+
     MQTT_counter_int32 = message.getInt32(_startIndex,myEndian);
     _startIndex+=4;
+
+
 
     drive_status_direction_u1 = ((driver_drive_status_u8 & 1) == 1) ? true : false;
     drive_status_brake_u1 = (((driver_drive_status_u8 >> 1) & 1) == 1) ? true : false;
@@ -249,16 +258,16 @@ var eys_error_uint8;
       graphData_array[i] = graphData_array[i+1];
     }
     graphData_array[graphData_array.length-1] = graph_data(driver_phase_a_current_f32,
-            driver_phase_b_current_f32,
-            driver_dc_bus_current_f32,
-            driver_id_f32,
-            driver_iq_f32,
-            driver_vd_f32,
-            driver_vq_f32,
-            bms_bat_volt_f32,
-            bms_bat_current_f32,
-            bms_bat_cons_f32,
-            x_time);
+        driver_phase_b_current_f32,
+        driver_dc_bus_current_f32,
+        driver_id_f32,
+        driver_iq_f32,
+        driver_vd_f32,
+        driver_vq_f32,
+        bms_bat_volt_f32,
+        bms_bat_current_f32,
+        bms_bat_cons_f32,
+        x_time);
     notifyListeners();
     for(i=0;i<graphData_array.length;i++){
       debugPrint(i.toString()+' '+graphData_array[i].driver_phase_a_current_g.toString());

@@ -43,23 +43,18 @@ class _HomeState extends State<Home> {
           context: context,
           myBody: Consumer<MqttAesk>(
             builder: (context, _, child) {
+              final scale = MediaQuery.of(context);
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   myText(
                       "\nANA SAYFA",
-                      25,
+                      scale.size.width/16.45714284,
                       Theme.of(context).textTheme.headline3.color,
                       FontWeight.bold),
-                  Divider(
-                    thickness: 5,
-                    height: 10,
-                    indent: 134,
-                    endIndent: 134,
-                    color: Theme.of(context).textTheme.headline3.color,
-                  ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -70,19 +65,23 @@ class _HomeState extends State<Home> {
                           ),
                           DataBox(
                             ad: "BAT VOLT",
-                            veri: AeskData.bms_bat_volt_f32.toString(),
+                            veri: AeskData.bms_bat_volt_f32.toStringAsFixed(2),
                           ),
                           DataBox(
                             ad: "BAT CUR",
-                            veri: AeskData.bms_bat_current_f32.toString(),
+                            veri: AeskData.bms_bat_current_f32.toStringAsFixed(2),
                           ),
                           DataBox(
                             ad: "BAT CONS",
-                            veri: AeskData.bms_bat_cons_f32.toString(),
+                            veri: AeskData.bms_bat_cons_f32.toStringAsFixed(2),
                           ),
                           DataBox(
                             ad: "SOC",
-                            veri: AeskData.bms_soc_f32.toString(),
+                            veri: AeskData.bms_soc_f32.toStringAsFixed(2),
+                          ),
+                          DataBox(
+                            ad: "Phase B",
+                            veri: AeskData.driver_phase_b_current_f32.toStringAsFixed(2),
                           ),
                         ],
                       ),
@@ -90,26 +89,32 @@ class _HomeState extends State<Home> {
                         children: <Widget>[
                           DataBox(
                             ad: "MOTOR TEMP",
-                            veri:
-                                AeskData.driver_motor_temperature_u8.toString(),
+                            veri: AeskData.driver_motor_temperature_u8
+                                .toStringAsFixed(2),
                           ),
                           DataBox(
                             ad: "Phase A Current",
-                            veri:
-                                AeskData.driver_phase_a_current_f32.toString(),
+                            veri: AeskData.driver_phase_a_current_f32
+                                .toStringAsFixed(2),
                           ),
                           DataBox(
                             ad: "Torque",
-                            veri:
-                                AeskData.driver_phase_b_current_f32.toString(),
+                            veri: AeskData.driver_vq_f32
+                                .toStringAsFixed(2),
                           ),
                           DataBox(
                             ad: "DC BUS CUR",
-                            veri: AeskData.driver_dc_bus_current_f32.toString(),
+                            veri:
+                            AeskData.driver_dc_bus_current_f32.toStringAsFixed(2),
                           ),
                           DataBox(
                             ad: "DC BUS VOLT",
-                            veri: AeskData.driver_dc_bus_voltage_f32.toString(),
+                            veri:
+                            AeskData.driver_dc_bus_voltage_f32.toStringAsFixed(2),
+                          ),
+                          DataBox(
+                            ad: "IArms",
+                            veri: AeskData.driver_vd_f32.toStringAsFixed(2),
                           ),
                         ],
                       ),
@@ -131,11 +136,12 @@ class DataBox extends StatelessWidget {
   final String veri;
 
   Widget build(BuildContext context) {
+    final scale = MediaQuery.of(context);
     return Container(
-      height: 50,
-      width: 180,
+      height: scale.size.height/13.6686,
+      width: scale.size.width/2.4935,
       alignment: Alignment.center,
-      margin: EdgeInsets.fromLTRB(14, 20, 10, 20),
+      margin: EdgeInsets.fromLTRB(10, 20, 10, 10),
       decoration: BoxDecoration(
         color: Theme.of(context).textTheme.subtitle1.color,
         borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -144,13 +150,15 @@ class DataBox extends StatelessWidget {
           width: 5,
         ),
       ),
-      child: Center(
-        child: Text(
-          this.ad + " : " + this.veri,
-          style: TextStyle(
-              color: Theme.of(context).textTheme.headline1.color,
-              fontWeight: FontWeight.bold,
-              fontSize: 15),
+      child: FittedBox(
+        child: Center(
+          child: Text(
+            this.ad + " : " + this.veri,
+            style: TextStyle(
+                color: Theme.of(context).textTheme.headline1.color,
+                fontWeight: FontWeight.bold,
+                fontSize: scale.size.width/29.387755),
+          ),
         ),
       ),
     );

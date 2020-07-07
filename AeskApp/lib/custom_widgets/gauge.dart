@@ -1,10 +1,6 @@
 import 'package:aeskapp/classes/Mqtt.dart';
 import 'package:aeskapp/classes/aeskData.dart';
 import 'package:aeskapp/custom_widgets/front_inventory.dart';
-import 'package:aeskapp/custom_widgets/front_inventory.dart';
-import 'package:aeskapp/custom_widgets/front_inventory.dart';
-import 'package:aeskapp/custom_widgets/front_inventory.dart';
-import 'package:aeskapp/custom_widgets/front_inventory.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 import 'package:provider/provider.dart';
@@ -13,7 +9,6 @@ class AeskGauge extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<MqttAesk>(
         builder:(context, _, child){
-          print("HIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ ${AeskData.driver_actual_velocity_u8}");
           return Container(
             child: SfRadialGauge(axes: <RadialAxis>[
               RadialAxis(

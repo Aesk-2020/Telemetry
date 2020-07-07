@@ -25,7 +25,7 @@ Widget ErrorHandler(int index){
       else if(AeskData.driver_error_DC_bara_current_u1 && index == 4)
         return myText("DC BARA CURRENT HATASI", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
       else if(AeskData.driver_error_WakeUp_u1 && index == 5)
-        return myText("WAKE UP HATASI", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
+        return myText("ID HATASI", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
       else
         return SizedBox(height: 0,);
     },
@@ -37,10 +37,11 @@ Widget Vcu(){
     child: SingleChildScrollView(
       child: Consumer<MqttAesk>(
         builder: (context, _, child){
+          final scale = MediaQuery.of(context);
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              myText("    MCU & VCU", 25, Theme.of(context).textTheme.headline3.color, FontWeight.bold),
+              myText("    MCU & VCU", scale.size.width/16.457142, Theme.of(context).textTheme.headline3.color, FontWeight.bold),
               Card(
                 margin: EdgeInsets.fromLTRB(20, 0, 20, 30),
                 child: Column(
@@ -57,8 +58,8 @@ Widget Vcu(){
                         children: <TableRow>[
                           TableRow(
                             children: <Widget>[
-                              myText("Komutlar", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                              myText("Durum", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                              myText("Komutlar", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                              myText("Durum", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                             ],
                           ),
                         ],
@@ -71,20 +72,20 @@ Widget Vcu(){
                         children: <TableRow>[
                           TableRow(
                             children: <Widget>[
-                              myText("IGNITION", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                              myText(AeskData.drive_status_ignition_u1 ? "AKTİF":"İNAKTİF", 20, AeskData.drive_status_ignition_u1 ? Colors.green : Colors.red , FontWeight.bold)
+                              myText("IGNITION", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                              myText(AeskData.drive_status_ignition_u1 ? "AKTİF":"İNAKTİF", scale.size.width/20.571428, AeskData.drive_status_ignition_u1 ? Colors.green : Colors.red , FontWeight.bold)
                             ],
                           ),
                           TableRow(
                             children: <Widget>[
-                              myText("BRAKE", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                              myText(AeskData.drive_status_ignition_u1 ? "AKTİF":"İNAKTİF", 20, AeskData.drive_status_ignition_u1 ? Colors.green : Colors.red, FontWeight.bold)
+                              myText("BRAKE", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                              myText(AeskData.drive_status_brake_u1 ? "AKTİF":"İNAKTİF", scale.size.width/20.571428, AeskData.drive_status_brake_u1 ? Colors.green : Colors.red, FontWeight.bold)
                             ],
                           ),
                           TableRow(
                             children: <Widget>[
-                              myText("DIRECTION", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                              myText(AeskData.drive_status_ignition_u1 ? "İLERİ":"GERİ", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold)
+                              myText("DIRECTION", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                              myText(AeskData.drive_status_direction_u1 ? "GERİ":"İLERİ", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold)
                             ],
                           ),
                         ],
@@ -92,7 +93,7 @@ Widget Vcu(){
                     ),
 
                     SizedBox(height: 15,),
-                    myText("     Hatalar", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                    myText("     Hatalar", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                     Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 25),
@@ -106,132 +107,154 @@ Widget Vcu(){
                           ErrorHandler(4),
                           ErrorHandler(5),
                           // altta gördüğünüz widget 2 tane ternary operator ve mytext widgetleri kullanıldığı için uzaya gidiyor
-                          (AeskData.driver_driver_error_u8 == null) ? myText("NO DATA", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold) : ((AeskData.driver_driver_error_u8 == 0) ? myText("HATA YOK!", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold) : SizedBox(height: 0,)),
+                          (AeskData.driver_driver_error_u8 == null) ? myText("NO DATA", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold) : ((AeskData.driver_driver_error_u8 == 0) ? myText("HATA YOK!", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold) : SizedBox(height: 0,)),
                         ]
                       ),
                     ),
                     SizedBox(height: 15,),
-                    Text("     MCU Akım ve Gerilim Seviyeleri",
-                      style: TextStyle(
-                        color: Theme.of(context).textTheme.headline1.color,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                      ),
-                      overflow: TextOverflow.fade,),
+                    Center(
+                      child: Text("MCU Akım ve Gerilim Seviyeleri",
+                        style: TextStyle(
+                          color: Theme.of(context).textTheme.headline1.color,
+                          fontWeight: FontWeight.bold,
+                          fontSize: scale.size.width/20.571428,
+                          fontFamily: "GOTHIC",
+                        ),
+                        overflow: TextOverflow.fade,),
+                    ),
                     Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
 
                     Container(
                       height: 50,
                       alignment: Alignment.center,
                       margin: EdgeInsets.fromLTRB(25, 0, 25, 5),
-                      padding: EdgeInsets.symmetric(horizontal: 60),
                       decoration: BoxDecoration(
-                        border: Border.all(width: 2,color: Theme.of(context).textTheme.headline1.color),
+                        border: Border.all(
+                            width: 2,
+                            color: Theme.of(context).textTheme.headline1.color),
                         borderRadius: BorderRadius.circular(3),
                       ),
-                      child: Table(
-                        columnWidths: {
-                          0 : FlexColumnWidth(0.5),
-                          1 : FlexColumnWidth(1.5),
-                          2 : FlexColumnWidth(0.5),
-                          3 : FlexColumnWidth(0.7),
-                        },
-                        children: <TableRow>[
-                          TableRow(
-                              children: <Widget>[
-                                myText("ID:", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                                myText(AeskData.driver_id_f32.toString(), 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                                myText("IQ:", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                                myText(AeskData.driver_iq_f32.toString(), 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                              ]
-                          ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.all(scale.size.width/41.142857),
+                            child: Text("ID:" + " " + AeskData.driver_id_f32.toStringAsFixed(2),style: TextStyle(fontWeight: FontWeight.bold,fontSize: scale.size.width/20.571428,color: Theme.of(context).textTheme.headline1.color,fontFamily: "GOTHIC",),textAlign: TextAlign.start,),),
+                          Container(
+                            margin: EdgeInsets.all(scale.size.width/41.142857),
+                            alignment: Alignment.center,
+                            child: Text("IQ:" + " " + AeskData.driver_iq_f32.toStringAsFixed(2), style: TextStyle(fontWeight: FontWeight.bold,fontSize: scale.size.width/20.571428,color: Theme.of(context).textTheme.headline1.color,fontFamily: "GOTHIC",),textAlign: TextAlign.center,),),
                         ],
                       ),
                     ),
-
                     Container(
                       height: 50,
                       alignment: Alignment.center,
                       margin: EdgeInsets.fromLTRB(25, 0, 25, 5),
-                      padding: EdgeInsets.symmetric(horizontal: 30),
                       decoration: BoxDecoration(
-                        border: Border.all(width: 2,color: Theme.of(context).textTheme.headline1.color),
+                        border: Border.all(
+                            width: 2,
+                            color: Theme.of(context).textTheme.headline1.color),
                         borderRadius: BorderRadius.circular(3),
                       ),
-                      child: Table(
-                        columnWidths: {
-                          0 : FlexColumnWidth(1),
-                          1 : FlexColumnWidth(1),
-                          2 : FlexColumnWidth(1.2),
-                          3 : FlexColumnWidth(0.5),
-                        },
-                        children: <TableRow>[
-                          TableRow(
-                              children: <Widget>[
-                                myText("IArms:", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                                myText(AeskData.driver_vd_f32.toString(), 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                                myText("Torque:", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                                myText(AeskData.driver_vq_f32.toString(), 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                              ]
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.all(scale.size.width/41.142857),
+                            child: myText(
+                                "IArms:" +" "+
+                                    AeskData.driver_vd_f32
+                                        .toStringAsFixed(2),
+                                scale.size.width/20.571428,
+                                Theme.of(context).textTheme.headline1.color,
+                                FontWeight.bold),
+                          ),
+                          Container(
+                            margin: EdgeInsets.all(scale.size.width/41.142857),
+                            child: myText(
+                                "Torque:" +" "+
+                                    AeskData.driver_vq_f32
+                                        .toStringAsFixed(2),
+                                scale.size.width/20.571428,
+                                Theme.of(context).textTheme.headline1.color,
+                                FontWeight.bold),
                           ),
                         ],
                       ),
                     ),
-
                     Container(
                       height: 50,
                       alignment: Alignment.center,
                       margin: EdgeInsets.fromLTRB(25, 0, 25, 5),
-                      padding: EdgeInsets.symmetric(horizontal: 20),
                       decoration: BoxDecoration(
-                        border: Border.all(width: 2,color: Theme.of(context).textTheme.headline1.color),
+                        border: Border.all(
+                            width: 2,
+                            color: Theme.of(context).textTheme.headline1.color),
                         borderRadius: BorderRadius.circular(3),
                       ),
-                      child: Table(
-                        columnWidths: {
-                          0 : FlexColumnWidth(2.1),
-                          1 : FlexColumnWidth(1.3),
-                          2 : FlexColumnWidth(2),
-                          3 : FlexColumnWidth(0.8),
-                        },
-                        children: <TableRow>[
-                          TableRow(
-                            children: <Widget>[
-                              myText("Phase A:", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                              myText(AeskData.driver_phase_a_current_f32.toString(), 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                              myText("Phase B:", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                              myText(AeskData.driver_phase_b_current_f32.toString(), 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                            ]
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            //margin: EdgeInsets.all(scale.size.width/41.142857),
+                            child: myText(
+                                "Phase A:" +
+                                    " " +
+                                    AeskData.driver_phase_a_current_f32
+                                        .toStringAsFixed(2)+"   ",
+                                scale.size.width/20.571428,
+                                Theme.of(context).textTheme.headline1.color,
+                                FontWeight.bold),
+                          ),
+                          Container(
+                            //margin: EdgeInsets.all(scale.size.width/41.142857),
+                            child: myText(
+                                "Phase B:" +
+                                    " " +
+                                    AeskData.driver_phase_b_current_f32
+                                        .toStringAsFixed(2),
+                                scale.size.width/20.571428,
+                                Theme.of(context).textTheme.headline1.color,
+                                FontWeight.bold),
                           ),
                         ],
                       ),
                     ),
-
                     Container(
                       height: 50,
                       alignment: Alignment.center,
                       margin: EdgeInsets.fromLTRB(25, 0, 25, 5),
-                      padding: EdgeInsets.symmetric(horizontal: 50),
                       decoration: BoxDecoration(
-                        border: Border.all(width: 2,color: Theme.of(context).textTheme.headline1.color),
+                        border: Border.all(
+                            width: 2,
+                            color: Theme.of(context).textTheme.headline1.color),
                         borderRadius: BorderRadius.circular(3),
                       ),
-                      child: Table(
-                        columnWidths: {
-                          0 : FlexColumnWidth(1.1),
-                          1 : FlexColumnWidth(1.5),
-                          2 : FlexColumnWidth(1.3),
-                          3 : FlexColumnWidth(1),
-                        },
-                        children: <TableRow>[
-                          TableRow(
-                              children: <Widget>[
-                                myText("IDC:", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                                myText(AeskData.driver_dc_bus_current_f32.toString(), 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                                myText("VDC:", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                                myText(AeskData.driver_dc_bus_voltage_f32.toString(), 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-
-                              ]
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.all(scale.size.width/41.142857),
+                            child: myText(
+                                "IDC:" +
+                                    " " +
+                                    AeskData.driver_dc_bus_current_f32
+                                        .toStringAsFixed(2),
+                                scale.size.width/20.571428,
+                                Theme.of(context).textTheme.headline1.color,
+                                FontWeight.bold),
+                          ),
+                          Container(
+                            margin: EdgeInsets.all(scale.size.width/41.142857),
+                            child: myText(
+                                "VDC:" +
+                                    " " +
+                                    AeskData.driver_dc_bus_voltage_f32
+                                        .toStringAsFixed(2),
+                                scale.size.width/20.571428,
+                                Theme.of(context).textTheme.headline1.color,
+                                FontWeight.bold),
                           ),
                         ],
                       ),
@@ -240,7 +263,39 @@ Widget Vcu(){
                     myText("     Diğer Veriler", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                     Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
                     Container(
-                      child: myText("Motor Sıcaklığı : ${AeskData.driver_motor_temperature_u8} °C", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                      child: myText(
+                          "Motor Sıcaklığı : " +AeskData.driver_motor_temperature_u8.toStringAsFixed(2)+ " °C",
+                          scale.size.width/20.571428,
+                          Theme.of(context).textTheme.headline1.color,
+                          FontWeight.bold),
+                      alignment: Alignment.center,
+                      height: 50,
+                      margin: EdgeInsets.fromLTRB(25, 0, 25, 5),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            width: 2,
+                            color: Theme.of(context).textTheme.headline1.color),
+                        borderRadius: BorderRadius.circular(3),
+                      ),
+                    ),
+                    Container(
+                      child: myText(
+                          "Anlık Hız : "+AeskData.driver_actual_velocity_u8.toStringAsFixed(2)+" km/h",
+                          scale.size.width/20.571428,
+                          Theme.of(context).textTheme.headline1.color,
+                          FontWeight.bold),
+                      alignment: Alignment.center,
+                      height: 50,
+                      margin: EdgeInsets.fromLTRB(25, 0, 25, 5),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            width: 2,
+                            color: Theme.of(context).textTheme.headline1.color),
+                        borderRadius: BorderRadius.circular(3),
+                      ),
+                    ),
+                    Container(
+                      child: myText("Set Hız: "+AeskData.vcu_set_velocity_u8.toStringAsFixed(2)+" km/h", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                       alignment: Alignment.center,
                       height: 50,
                       margin: EdgeInsets.fromLTRB(25, 0, 25, 5),
@@ -250,32 +305,18 @@ Widget Vcu(){
                       ),
                     ),
                     Container(
-                      child: myText("Anlık Hız: ${AeskData.driver_actual_velocity_u8} km/h", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                      child: myText(
+                          "Gidilen Mesafe : "+AeskData.driver_odometer_u32.toStringAsFixed(2),
+                          scale.size.width/20.571428,
+                          Theme.of(context).textTheme.headline1.color,
+                          FontWeight.bold),
                       alignment: Alignment.center,
                       height: 50,
                       margin: EdgeInsets.fromLTRB(25, 0, 25, 5),
                       decoration: BoxDecoration(
-                        border: Border.all(width: 2,color: Theme.of(context).textTheme.headline1.color),
-                        borderRadius: BorderRadius.circular(3),
-                      ),
-                    ),
-                    Container(
-                      child: myText("Hedef Hız: ${AeskData.vcu_set_velocity_u8} km/h", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                      alignment: Alignment.center,
-                      height: 50,
-                      margin: EdgeInsets.fromLTRB(25, 0, 25, 5),
-                      decoration: BoxDecoration(
-                        border: Border.all(width: 2,color: Theme.of(context).textTheme.headline1.color),
-                        borderRadius: BorderRadius.circular(3),
-                      ),
-                    ),
-                    Container(
-                      child: myText("Gidilen Mesafe : ${AeskData.driver_odometer_u32}", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                      alignment: Alignment.center,
-                      height: 50,
-                      margin: EdgeInsets.fromLTRB(25, 0, 25, 5),
-                      decoration: BoxDecoration(
-                        border: Border.all(width: 2,color: Theme.of(context).textTheme.headline1.color),
+                        border: Border.all(
+                            width: 2,
+                            color: Theme.of(context).textTheme.headline1.color),
                         borderRadius: BorderRadius.circular(3),
                       ),
                     ),
