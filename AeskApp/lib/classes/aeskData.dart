@@ -269,6 +269,7 @@ var eys_error_uint8;
         bms_bat_cons_f32,
         x_time);
     notifyListeners();
+
     for(i=0;i<graphData_array.length;i++){
       debugPrint(i.toString()+' '+graphData_array[i].driver_phase_a_current_g.toString());
     }

@@ -97,18 +97,95 @@ Widget Vcu(){
                     Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 25),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          ErrorHandler(0),
-                          ErrorHandler(1),
-                          ErrorHandler(2),
-                          ErrorHandler(3),
-                          ErrorHandler(4),
-                          ErrorHandler(5),
-                          // altta gördüğünüz widget 2 tane ternary operator ve mytext widgetleri kullanıldığı için uzaya gidiyor
-                          (AeskData.driver_driver_error_u8 == null) ? myText("NO DATA", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold) : ((AeskData.driver_driver_error_u8 == 0) ? myText("HATA YOK!", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold) : SizedBox(height: 0,)),
-                        ]
+                      child: Container(
+                        color: Theme.of(context).cardColor,
+                        child: Column(
+                          children: <Widget>[
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Container(
+                                  child: myText("ZPC", scale.size.width/25.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                                ),
+                                Container(
+                                  height: 25,
+                                  width: 60,
+                                  color: AeskData.driver_error_ZPC_u1 ? Colors.green : Colors.redAccent,
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 5,),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Container(
+                                  child: myText("PWM", scale.size.width/25.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                                ),
+                                Container(
+                                  height: 25,
+                                  width: 60,
+                                  color: AeskData.driver_error_PWM_u1 ? Colors.green : Colors.redAccent,
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 5,),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Container(
+                                  child: myText("DC BARA HATASI", scale.size.width/25.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                                ),
+                                Container(
+                                  height: 25,
+                                  width: 60,
+                                  color: AeskData.driver_error_DC_bara_u1 ? Colors.green : Colors.redAccent,
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 5,),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Container(
+                                  child: myText("TEMPERATURE HATASI", scale.size.width/25.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                                ),
+                                Container(
+                                  height: 25,
+                                  width: 60,
+                                  color: AeskData.driver_error_temprature_u1 ? Colors.green : Colors.redAccent,
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 5,),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Container(
+                                  child: myText("DC BARA CURRENT HATASI", scale.size.width/25.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                                ),
+                                Container(
+                                  height: 25,
+                                  width: 60,
+                                  color: AeskData.driver_error_DC_bara_current_u1 ? Colors.green : Colors.redAccent,
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 5,),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Container(
+                                  child: myText("ID HATASI", scale.size.width/25.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                                ),
+                                Container(
+                                  height: 25,
+                                  width: 60,
+                                  color: AeskData.driver_error_WakeUp_u1 ? Colors.green : Colors.redAccent,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(height: 15,),
@@ -123,7 +200,6 @@ Widget Vcu(){
                         overflow: TextOverflow.fade,),
                     ),
                     Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
-
                     Container(
                       height: 50,
                       alignment: Alignment.center,
