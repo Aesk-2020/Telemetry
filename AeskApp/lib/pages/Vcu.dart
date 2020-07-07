@@ -9,29 +9,6 @@ import 'package:provider/provider.dart';
 
 
 
-Widget ErrorHandler(int index){
-
-  return Consumer<MqttAesk>(
-    builder: (context, _, child){
-
-      if(AeskData.driver_error_ZPC_u1 && index == 0)
-        return myText("ZPC HATASI", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
-      else if(AeskData.driver_error_PWM_u1 && index == 1)
-        return myText("PWM HATASI", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
-      else if(AeskData.driver_error_DC_bara_u1 && index == 2)
-        return myText("DC BARA HATASI", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
-      else if(AeskData.driver_error_temprature_u1 && index == 3)
-        return myText("TEMPERATURE HATASI", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
-      else if(AeskData.driver_error_DC_bara_current_u1 && index == 4)
-        return myText("DC BARA CURRENT HATASI", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
-      else if(AeskData.driver_error_WakeUp_u1 && index == 5)
-        return myText("ID HATASI", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
-      else
-        return SizedBox(height: 0,);
-    },
-  );
-
-}
 Widget Vcu(){
   return SafeArea(
     child: SingleChildScrollView(
