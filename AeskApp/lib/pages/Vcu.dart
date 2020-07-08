@@ -72,99 +72,16 @@ Widget Vcu(){
                     SizedBox(height: 15,),
                     myText("     Hatalar", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                     Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 25),
-                      child: Container(
-                        color: Theme.of(context).cardColor,
-                        child: Column(
-                          children: <Widget>[
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                Container(
-                                  child: myText("ZPC", scale.size.width/25.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                                ),
-                                Container(
-                                  height: 25,
-                                  width: 60,
-                                  color: AeskData.driver_error_ZPC_u1 ? Colors.green : Colors.redAccent,
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 5,),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                Container(
-                                  child: myText("PWM", scale.size.width/25.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                                ),
-                                Container(
-                                  height: 25,
-                                  width: 60,
-                                  color: AeskData.driver_error_PWM_u1 ? Colors.green : Colors.redAccent,
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 5,),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                Container(
-                                  child: myText("DC BARA HATASI", scale.size.width/25.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                                ),
-                                Container(
-                                  height: 25,
-                                  width: 60,
-                                  color: AeskData.driver_error_DC_bara_u1 ? Colors.green : Colors.redAccent,
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 5,),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                Container(
-                                  child: myText("TEMPERATURE HATASI", scale.size.width/25.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                                ),
-                                Container(
-                                  height: 25,
-                                  width: 60,
-                                  color: AeskData.driver_error_temprature_u1 ? Colors.green : Colors.redAccent,
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 5,),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                Container(
-                                  child: myText("DC BARA CURRENT HATASI", scale.size.width/25.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                                ),
-                                Container(
-                                  height: 25,
-                                  width: 60,
-                                  color: AeskData.driver_error_DC_bara_current_u1 ? Colors.green : Colors.redAccent,
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 5,),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                Container(
-                                  child: myText("ID HATASI", scale.size.width/25.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                                ),
-                                Container(
-                                  height: 25,
-                                  width: 60,
-                                  color: AeskData.driver_error_WakeUp_u1 ? Colors.green : Colors.redAccent,
-                                ),
-                              ],
-                            ),
+                    Column(
+                      children: <Widget>[
+                        AeskConditionRow(" ZPC", AeskData.driver_error_ZPC_u1, context),
+                        AeskConditionRow(" PWM", AeskData.driver_error_PWM_u1, context),
+                        AeskConditionRow(" DC BARA", AeskData.driver_error_DC_bara_u1, context),
+                        AeskConditionRow(" TEMPERATURE ", AeskData.driver_error_temprature_u1, context),
+                        AeskConditionRow(" DC BARA CURRENT", AeskData.driver_error_DC_bara_current_u1, context),
+                        AeskConditionRow(" ID", AeskData.driver_error_WakeUp_u1, context),
                           ],
                         ),
-                      ),
-                    ),
                     SizedBox(height: 15,),
                     Center(
                       child: Text("MCU Akım ve Gerilim Seviyeleri",
