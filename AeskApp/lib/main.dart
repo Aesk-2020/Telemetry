@@ -15,6 +15,7 @@ import 'package:aeskapp/classes/Mqtt.dart';
 import 'package:syncfusion_flutter_core/core.dart';
 import 'package:aeskapp/pages/Location.dart';
 import 'package:aeskapp/pages/Vcu.dart';
+import 'package:aeskapp/pages/Cells.dart';
 
 void main() {
   SyncfusionLicense.registerLicense(
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
               "/Settings": (context) => Settings(),
               "/Location": (context) => Konum(),
               "/Vcu": (context) => VcuPage(),
+              "/Cells": (context) => Cells(),
             },
           );
         },

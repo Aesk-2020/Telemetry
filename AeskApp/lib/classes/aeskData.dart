@@ -99,7 +99,7 @@ class AeskData extends ChangeNotifier{
   static var ping = 0;
 
   static List<graph_data> graphData_array = List.generate(100, (index) => graph_data(0,0,0,0,0,0,0,0,0,0,0), growable: false);
-  static Uint8List battery_cells = List.generate(28, (index) => 0);
+  static List<int> battery_cells = List.generate(28, (index) => 0);
 
 
 

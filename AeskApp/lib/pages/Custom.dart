@@ -19,6 +19,7 @@ class _CustomState extends State<Custom> {
   static int contentCount = 1;
 
   Widget contentAdder(String content, int index) {
+    final scale = MediaQuery.of(context);
     switch (content) {
       case "BMS":
         return Stack(
@@ -26,10 +27,9 @@ class _CustomState extends State<Custom> {
             Bms(),
             Positioned(
               bottom: 25,
-              right: 185,
+              left: scale.size.width/2.22,
               child: IconButton(
                 icon: Icon(Icons.delete),
-                alignment: Alignment.bottomRight,
                 onPressed: () {
                   setState(() {
                     currentContent.removeAt(index);
@@ -48,10 +48,9 @@ class _CustomState extends State<Custom> {
             Vcu(),
             Positioned(
               bottom: 25,
-              right: 185,
+              right: scale.size.width/2.22,
               child: IconButton(
                 icon: Icon(Icons.delete),
-                alignment: Alignment.bottomRight,
                 onPressed: () {
                   setState(() {
                     currentContent.removeAt(index);
