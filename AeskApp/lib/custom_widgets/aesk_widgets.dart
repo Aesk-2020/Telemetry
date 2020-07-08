@@ -8,6 +8,7 @@ List<DrawerListClass> drawerList = [
   DrawerListClass(image: "home-icon.png", text: "AnaSayfa", destination: "/Home"),
   DrawerListClass(image: "mcu-icon.png", text: "MCU & VCU", destination: "/Vcu"),
   DrawerListClass(image: "bms-icon.png", text: "BMS", destination: "/Bms"),
+  DrawerListClass(image: "custom-icon.png", text: "Batarya Hücreleri", destination: "/Cells"),
   DrawerListClass(image: "map-icon.png", text: "Harita", destination: "/Location"),
   DrawerListClass(image: "chart-icon.png", text: "Grafikler", destination: "/Graphs"),
   DrawerListClass(image: "custom-icon.png", text: "Özelleştirme Ekranı", destination: "/Custom"),
@@ -87,6 +88,20 @@ Widget MyContainer({List<Widget> arrayOfWidgets, EdgeInsets myMargin, EdgeInsets
     color: myColor,
     child: Column(
       children: arrayOfWidgets,
+    ),
+  );
+}
+//**************************************** Row Widget for Errors & States *************************************//
+Widget AeskConditionRow(String text, bool condition, BuildContext context) {
+  return Padding(
+    padding: EdgeInsets.fromLTRB(25, 0, 25, 0),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        myText(text, 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+        Icon(Icons.lens, size: 20, color: (condition ? Colors.lightGreen : Colors.red),)
+      ],
     ),
   );
 }

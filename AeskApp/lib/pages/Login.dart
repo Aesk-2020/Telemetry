@@ -76,7 +76,7 @@ class _LoggingState extends State<Logging> {
                   dynamic state = await mqttAesk.connect()
                       .timeout(Duration(seconds: 5), onTimeout: () => false);
                   if (state == true) {
-                    mqttAesk.subscribeToTopic("LYRADATA");
+                    mqttAesk.subscribeToTopic("LYRADATA"); //TEST İÇİN DEĞİŞMİŞ OLABİLİR DÜZELTİRSİNİZ
                     Navigator.pushNamed(context, "/Home");
                   } else {
                     Navigator.pushReplacementNamed(context, "/Login");

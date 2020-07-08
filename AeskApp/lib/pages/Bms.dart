@@ -53,40 +53,26 @@ Widget Bms(){
                         ),
                         myText("    Hatalar", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                         Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 25),
-                          child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                ErrorHandlers(0),
-                                ErrorHandlers(1),
-                                ErrorHandlers(2),
-                                ErrorHandlers(3),
-                                ErrorHandlers(4),
-                                ErrorHandlers(5),
-                                ErrorHandlers(6),
-                                // altta gördüğünüz widget 2 tane ternary operator ve mytext widgetleri kullanıldığı için uzaya gidiyor
-                                (AeskData.bms_bms_error_u8 == null) ? myText("NO DATA", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold) : ((AeskData.bms_bms_error_u8 == 0) ? myText("HATA YOK!", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold) : SizedBox(height: 0,)),
-                              ]
-                          ),
+                        Column(
+                          children: <Widget>[
+                            AeskConditionRow("YÜKSEK GERİLİM HATASI", AeskData.bms_error_high_voltage_u1, context),
+                            AeskConditionRow("DÜŞÜK GERİLİM HATASI", AeskData.bms_error_low_voltage_u1, context),
+                            AeskConditionRow("YÜKSEK SICAKLIK HATASI", AeskData.bms_error_high_temp_u1, context),
+                            AeskConditionRow("AŞIRI AKIM HATASI", AeskData.bms_error_over_current_u1, context),
+                            AeskConditionRow("ISOLATION HATASI", AeskData.bms_error_isolation_u1, context),
+                            AeskConditionRow("ÖLÜMCÜL HATA", AeskData.bms_error_fatal_u1, context),
+                          ],
                         ),
                         SizedBox(height: 15,),
                         myText("    DC BUS DURUMU", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                         Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 25),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              StateDecider(0),
-                              StateDecider(1),
-                              StateDecider(2),
-                              StateDecider(3),
-                              // altta gördüğünüz widget 2 tane ternary operator ve mytext widgetleri kullanıldığı için uzaya gidiyor
-                              (AeskData.bms_dc_bus_state_u8 == null) ? myText("NO DATA", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold) : SizedBox(height: 20,),
-
-                            ],
-                          ),
+                        Column(
+                          children: <Widget>[
+                            AeskConditionRow("PRECHARGE", AeskData.bms_state_precharge_u1, context),
+                            AeskConditionRow("DISCHARGE", AeskData.bms_state_discharge_u1, context),
+                            AeskConditionRow("CHARGE", AeskData.bms_state_charge_u1, context),
+                            AeskConditionRow("DC BUS HAZIR", AeskData.bms_state_dcbus_ready_u1, context),
+                          ],
                         ),
                         SizedBox(height: 15,)
                       ],
@@ -98,54 +84,6 @@ Widget Bms(){
         )
     ),
   );
-}
-
-
-
-Widget ErrorHandlers(int index){
-
-  return Consumer<MqttAesk>(
-    builder: (context, _, child){
-
-      if(AeskData.bms_error_high_voltage_u1 && index == 0)
-        return myText("YÜKSEK GERİLİM HATASI", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
-      else if(AeskData.bms_error_low_voltage_u1 && index == 1)
-        return myText("DÜŞÜK GERİLİM HATASI", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
-      else if(AeskData.bms_error_high_temp_u1 && index == 2)
-        return myText("YÜKSEK SICAKLIK HATASI", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
-      else if(AeskData.bms_error_communication_u1 && index == 3)
-        return myText("HABERLEŞME HATASI", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
-      else if(AeskData.bms_error_over_current_u1 && index == 4)
-        return myText("AŞIRI AKIM HATASI", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
-      else if(AeskData.bms_error_fatal_u1 && index == 5)
-        return myText("ÖLÜMCÜL HATA", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
-      else if(AeskData.bms_error_isolation_u1 && index == 6)
-        return myText("İZOLASYON HATASI", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
-      else
-        return SizedBox(height: 0,);
-    },
-  );
-
-}
-
-Widget StateDecider(int index){
-
-  return Consumer<MqttAesk>(
-    builder: (context, _, child){
-
-      if(AeskData.bms_state_precharge_u1 && index == 0)
-        return myText("PRECHARGE", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
-      else if(AeskData.bms_state_discharge_u1 && index == 1)
-        return myText("DISCHARGE", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
-      else if(AeskData.bms_state_dcbus_ready_u1 && index == 2)
-        return myText("DC BUS HAZIR", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
-      else if(AeskData.bms_state_charge_u1 && index == 3)
-        return myText("CHARGE", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
-      else
-        return SizedBox(height: 0,);
-    },
-  );
-
 }
 
 class BmsPage extends StatelessWidget {

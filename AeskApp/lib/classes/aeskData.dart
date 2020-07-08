@@ -217,13 +217,14 @@ var eys_error_uint8;
     gpsTracker_gps_efficiency_u8 = message.getUint8(_startIndex);
     _startIndex++;
 
-    for(int i = 0; i<28; i++){
+    /*for(int i = 0; i<28; i++){
       battery_cells[i] = message.getUint8(_startIndex);
       _startIndex++;
-    }
+    }*/
 
     vcu_can_error_u8 = message.getUint8(_startIndex);
     _startIndex++;
+    print(vcu_can_error_u8);
 
     MQTT_counter_int32 = message.getInt32(_startIndex,myEndian);
     _startIndex+=4;
