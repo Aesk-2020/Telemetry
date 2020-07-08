@@ -55,12 +55,12 @@ Widget Bms(){
                         Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
                         Column(
                           children: <Widget>[
-                            AeskConditionRow("YÜKSEK GERİLİM HATASI", AeskData.bms_error_high_voltage_u1, context),
-                            AeskConditionRow("DÜŞÜK GERİLİM HATASI", AeskData.bms_error_low_voltage_u1, context),
-                            AeskConditionRow("YÜKSEK SICAKLIK HATASI", AeskData.bms_error_high_temp_u1, context),
-                            AeskConditionRow("AŞIRI AKIM HATASI", AeskData.bms_error_over_current_u1, context),
-                            AeskConditionRow("ISOLATION HATASI", AeskData.bms_error_isolation_u1, context),
-                            AeskConditionRow("ÖLÜMCÜL HATA", AeskData.bms_error_fatal_u1, context),
+                            AeskConditionRow("HIGH VOLTAGE", AeskData.bms_error_high_voltage_u1, context),
+                            AeskConditionRow("LOW VOLTAGE", AeskData.bms_error_low_voltage_u1, context),
+                            AeskConditionRow("HIGH TEMPRATURE", AeskData.bms_error_high_temp_u1, context),
+                            AeskConditionRow("OVER CURRENT", AeskData.bms_error_over_current_u1, context),
+                            AeskConditionRow("ISOLATION", AeskData.bms_error_isolation_u1, context),
+                            AeskConditionRow("FATAL", AeskData.bms_error_fatal_u1, context),
                           ],
                         ),
                         SizedBox(height: 15,),
@@ -71,7 +71,7 @@ Widget Bms(){
                             AeskConditionRow("PRECHARGE", AeskData.bms_state_precharge_u1, context),
                             AeskConditionRow("DISCHARGE", AeskData.bms_state_discharge_u1, context),
                             AeskConditionRow("CHARGE", AeskData.bms_state_charge_u1, context),
-                            AeskConditionRow("DC BUS HAZIR", AeskData.bms_state_dcbus_ready_u1, context),
+                            AeskConditionRow("DC BUS READY", AeskData.bms_state_dcbus_ready_u1, context),
                           ],
                         ),
                         SizedBox(height: 15,)
