@@ -74,7 +74,7 @@ Widget Bms(){
                             AeskConditionRow("DC BUS READY", AeskData.bms_state_dcbus_ready_u1, context),
                           ],
                         ),
-                        SizedBox(height: 15,)
+                        SizedBox(height: 30,)
                       ],
                     ),
                   ),

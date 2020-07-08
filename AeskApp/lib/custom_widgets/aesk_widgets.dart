@@ -91,6 +91,7 @@ Widget MyContainer({List<Widget> arrayOfWidgets, EdgeInsets myMargin, EdgeInsets
     ),
   );
 }
+
 //**************************************** Row Widget for Errors & States *************************************//
 Widget AeskConditionRow(String text, bool condition, BuildContext context) {
   return Padding(
@@ -103,5 +104,19 @@ Widget AeskConditionRow(String text, bool condition, BuildContext context) {
         Icon(Icons.lens, size: 20, color: (condition ? Colors.lightGreen : Colors.red),)
       ],
     ),
+  );
+}
+
+Widget CellsRow(String text1,String text2,String text3,String text4,String text5,String text6,String text7, BuildContext context) {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: <Widget>[
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+
+        ],
+      ),
+    ],
   );
 }

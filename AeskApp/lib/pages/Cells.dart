@@ -12,25 +12,7 @@ class Cells extends StatelessWidget {
     return SafeArea(
       child: aeskScaffold(
         myBody: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  myText("HATA", 20, aeskBlue, FontWeight.bold),
-                  Icon(Icons.lens,color: Colors.red[800],size: 20,)
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  myText("HATA", 20, aeskBlue, FontWeight.bold),
-                  Icon(Icons.lens,color: Colors.green[800],size: 20,)
-                ],
-              )
-            ],
-          ),
+          child: CellsRow("Cell-1", "Cell-5", "Cell-9", "Cell-13","Cell-17","Cell-21","Cell-25",context),
         ),
         context: context
       ),
