@@ -8,7 +8,7 @@ List<DrawerListClass> drawerList = [
   DrawerListClass(image: "home-icon.png", text: "AnaSayfa", destination: "/Home"),
   DrawerListClass(image: "mcu-icon.png", text: "MCU & VCU", destination: "/Vcu"),
   DrawerListClass(image: "bms-icon.png", text: "BMS", destination: "/Bms"),
-  DrawerListClass(image: "custom-icon.png", text: "Batarya Hücreleri", destination: "/Cells"),
+  DrawerListClass(image: "cells-icon.png", text: "Batarya Hücreleri", destination: "/Cells"),
   DrawerListClass(image: "map-icon.png", text: "Harita", destination: "/Location"),
   DrawerListClass(image: "chart-icon.png", text: "Grafikler", destination: "/Graphs"),
   DrawerListClass(image: "custom-icon.png", text: "Özelleştirme Ekranı", destination: "/Custom"),
@@ -91,8 +91,9 @@ Widget MyContainer({List<Widget> arrayOfWidgets, EdgeInsets myMargin, EdgeInsets
     ),
   );
 }
+
 //**************************************** Row Widget for Errors & States *************************************//
-Widget AeskConditionRow(String text, bool condition, BuildContext context) {
+Widget AeskErrorCheck(String text, bool condition, BuildContext context) {
   return Padding(
     padding: EdgeInsets.fromLTRB(25, 0, 25, 0),
     child: Row(
@@ -100,7 +101,35 @@ Widget AeskConditionRow(String text, bool condition, BuildContext context) {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         myText(text, 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-        Icon(Icons.lens, size: 20, color: (condition ? Colors.lightGreen : Colors.red),)
+        Icon(Icons.lens, size: 20, color: (condition ? Colors.red : Colors.green),)
+      ],
+    ),
+  );
+}
+Widget AeskConditionCheck(String text, bool condition, BuildContext context) {
+  return Padding(
+    padding: EdgeInsets.fromLTRB(25, 0, 25, 0),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        myText(text, 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+        Icon(Icons.lens, size: 20, color: (condition ? Colors.green : Colors.transparent),)
+      ],
+    ),
+  );
+}
+
+Widget CellWidget(String text, String data, BuildContext context) {
+  return Container(
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Container(
+          child: myText(text, 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+          decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Theme.of(context).textTheme.headline1.color,style: BorderStyle.solid,width: 2))),
+        ),
+        myText(data + " mV", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold)
       ],
     ),
   );
