@@ -93,7 +93,7 @@ Widget MyContainer({List<Widget> arrayOfWidgets, EdgeInsets myMargin, EdgeInsets
 }
 
 //**************************************** Row Widget for Errors & States *************************************//
-Widget AeskConditionRow(String text, bool condition, BuildContext context) {
+Widget AeskErrorCheck(String text, bool condition, BuildContext context) {
   return Padding(
     padding: EdgeInsets.fromLTRB(25, 0, 25, 0),
     child: Row(
@@ -101,13 +101,26 @@ Widget AeskConditionRow(String text, bool condition, BuildContext context) {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         myText(text, 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-        Icon(Icons.lens, size: 20, color: (condition ? Colors.lightGreen : Colors.red),)
+        Icon(Icons.lens, size: 20, color: (condition ? Colors.red : Colors.green),)
+      ],
+    ),
+  );
+}
+Widget AeskConditionCheck(String text, bool condition, BuildContext context) {
+  return Padding(
+    padding: EdgeInsets.fromLTRB(25, 0, 25, 0),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        myText(text, 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+        Icon(Icons.lens, size: 20, color: (condition ? Colors.green : Colors.transparent),)
       ],
     ),
   );
 }
 
-Widget CellsRow(String text, String data, BuildContext context) {
+Widget CellWidget(String text, String data, BuildContext context) {
   return Container(
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -116,7 +129,7 @@ Widget CellsRow(String text, String data, BuildContext context) {
           child: myText(text, 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
           decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Theme.of(context).textTheme.headline1.color,style: BorderStyle.solid,width: 2))),
         ),
-        myText(data, 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold)
+        myText(data + " mV", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold)
       ],
     ),
   );
