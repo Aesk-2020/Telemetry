@@ -72,6 +72,7 @@ class _LoggingState extends State<Logging> {
                   showDialog(
                     context: context,
                     child: SpinKitCircle(color: Theme.of(context).appBarTheme.color,),
+                    barrierDismissible: false,
                   );
                   dynamic state = await mqttAesk.connect()
                       .timeout(Duration(seconds: 5), onTimeout: () => false);
