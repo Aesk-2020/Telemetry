@@ -3,7 +3,7 @@ import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
 import 'package:aeskapp/custom_widgets/front_inventory.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:aeskapp/classes/SharedPreferences.dart';
 import 'package:provider/provider.dart';
 
 class Settings extends StatefulWidget {
@@ -41,13 +41,14 @@ class _SettingsState extends State<Settings> {
             child: SwitchListTile(
               title: myText("Karanlık mod", 20,
                   Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-              value: isDarkMode,
+              value: MyThemeData.myTheme,
               contentPadding: EdgeInsets.fromLTRB(17, 0, 0, 20),
-              onChanged: (bool value) {
+              onChanged: (bool value) async{
                 isDarkMode = value;
-                myThemeData.setTheme((isDarkMode) ? DarkTheme() : LightTheme());
+                myThemeData.setTheme(isDarkMode);
+                SharedPrefs.setThemePref(value);
               },
-              subtitle: myText(isDarkMode ? "Açık" : "Kapalı", 15, Theme.of(context).textTheme.headline1.color, FontWeight.normal),
+              subtitle: myText(MyThemeData.myTheme ? "Açık" : "Kapalı", 15, Theme.of(context).textTheme.headline1.color, FontWeight.normal),
             ),
           ),
           Container(

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:async';
 
 String ip;
@@ -37,7 +38,7 @@ class _LoggingState extends State<Logging> {
                 enableInteractiveSelection: false,
                 decoration: InputDecoration(
                   hintText: "IP Adresi",
-                  icon: Icon(Icons.assignment_ind)
+                  icon: Icon(Icons.assignment_ind,color: Theme.of(context).appBarTheme.color)
                 ),
                 onChanged: (String value) {
                   ip = value;
@@ -56,7 +57,8 @@ class _LoggingState extends State<Logging> {
                 enableInteractiveSelection: false,
                 decoration: InputDecoration(
                   hintText: "Şifre",
-                  icon: Icon(Icons.lock),
+                  hoverColor: Colors.white,
+                  icon: Icon(Icons.lock,color: Theme.of(context).appBarTheme.color),
                 ),
                 onChanged: (String value) {
                   password = value;

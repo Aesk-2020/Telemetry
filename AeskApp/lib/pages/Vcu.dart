@@ -74,12 +74,12 @@ Widget Vcu(){
                     Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
                     Column(
                       children: <Widget>[
-                        AeskConditionRow(" ZPC", AeskData.driver_error_ZPC_u1, context),
-                        AeskConditionRow(" PWM", AeskData.driver_error_PWM_u1, context),
-                        AeskConditionRow(" DC BARA", !AeskData.driver_error_DC_bara_u1, context),
-                        AeskConditionRow(" TEMPERATURE ", !AeskData.driver_error_temprature_u1, context),
-                        AeskConditionRow(" DC BARA CURRENT", !AeskData.driver_error_DC_bara_current_u1, context),
-                        AeskConditionRow(" ID", !AeskData.driver_error_WakeUp_u1, context),
+                        AeskErrorCheck(" ZPC", !AeskData.driver_error_ZPC_u1, context),
+                        AeskErrorCheck(" PWM", !AeskData.driver_error_PWM_u1, context),
+                        AeskErrorCheck(" DC BARA", AeskData.driver_error_DC_bara_u1, context),
+                        AeskErrorCheck(" TEMPERATURE ", AeskData.driver_error_temprature_u1, context),
+                        AeskErrorCheck(" DC BARA CURRENT", AeskData.driver_error_DC_bara_current_u1, context),
+                        AeskErrorCheck(" TORQUE LIMIT", AeskData.driver_error_WakeUp_u1, context),
                           ],
                         ),
                     SizedBox(height: 15,),

@@ -1,8 +1,11 @@
 import 'package:aeskapp/classes/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'classes/SharedPreferences.dart';
 
 import 'package:aeskapp/custom_widgets/front_inventory.dart';
+import 'package:aeskapp/classes/Mqtt.dart';
+
 import 'package:aeskapp/pages/Custom.dart';
 import 'package:aeskapp/pages/General.dart';
 import 'package:aeskapp/pages/Loading.dart';
@@ -11,14 +14,14 @@ import 'package:aeskapp/pages/Home.dart';
 import 'package:aeskapp/pages/Login.dart';
 import 'package:aeskapp/pages/Bms.dart';
 import 'package:aeskapp/pages/Settings.dart';
-import 'package:aeskapp/classes/Mqtt.dart';
-import 'package:syncfusion_flutter_core/core.dart';
 import 'package:aeskapp/pages/Location.dart';
 import 'package:aeskapp/pages/Vcu.dart';
 import 'package:aeskapp/pages/Cells.dart';
 
-void main() {
-  SyncfusionLicense.registerLicense(
+import 'package:syncfusion_flutter_core/core.dart';
+
+void main(){
+  SyncfusionLicense.registerLicense (
       "NT8mJyc2IWhia31ifWN9Z2FoYmF8YGJ8ampqanNiYmlmamlmanMDHmgqJiAmNTg2PjI/IzI/MjA6EyoyMj06fTA8Pg==");
   return runApp(MyApp());
 }
@@ -26,6 +29,8 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SharedPrefs.getThemePref().then((value) => MyThemeData.myTheme = value);
+
     return MultiProvider(
       //Burda Tedarikçi ekliyoruz böylece istediğimiz sınıftaki değişikliği anında tespit edebiliriz
       providers: [
@@ -37,11 +42,11 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: Consumer<MyThemeData>(     //Burda tedarikçiden gelen bilgiyi kullanacak widget bulunmakta
-        builder: (context, myTheme, child) {   /// builderda [MyThemeData] tipinde [context] içinde(sanırım) myTheme objesi oluşturuluyor
+        builder: (context, _, child) {   /// builderda [MyThemeData] tipinde [context] içinde(sanırım) myTheme objesi oluşturuluyor
           return MaterialApp(
             theme: LightTheme(),
             darkTheme: DarkTheme(),
-            themeMode: (myTheme.myTheme == DarkTheme()) ? ThemeMode.dark : ThemeMode.light,
+            themeMode: (MyThemeData.myTheme) ? ThemeMode.dark : ThemeMode.light,
 
             initialRoute: "/Login",
             routes: {
