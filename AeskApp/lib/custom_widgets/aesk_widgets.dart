@@ -8,7 +8,7 @@ List<DrawerListClass> drawerList = [
   DrawerListClass(image: "home-icon.png", text: "AnaSayfa", destination: "/Home"),
   DrawerListClass(image: "mcu-icon.png", text: "MCU & VCU", destination: "/Vcu"),
   DrawerListClass(image: "bms-icon.png", text: "BMS", destination: "/Bms"),
-  DrawerListClass(image: "custom-icon.png", text: "Batarya Hücreleri", destination: "/Cells"),
+  DrawerListClass(image: "cells-icon.png", text: "Batarya Hücreleri", destination: "/Cells"),
   DrawerListClass(image: "map-icon.png", text: "Harita", destination: "/Location"),
   DrawerListClass(image: "chart-icon.png", text: "Grafikler", destination: "/Graphs"),
   DrawerListClass(image: "custom-icon.png", text: "Özelleştirme Ekranı", destination: "/Custom"),
@@ -107,16 +107,17 @@ Widget AeskConditionRow(String text, bool condition, BuildContext context) {
   );
 }
 
-Widget CellsRow(String text1,String text2,String text3,String text4,String text5,String text6,String text7, BuildContext context) {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    children: <Widget>[
-      Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-
-        ],
-      ),
-    ],
+Widget CellsRow(String text, String data, BuildContext context) {
+  return Container(
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Container(
+          child: myText(text, 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+          decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Theme.of(context).textTheme.headline1.color,style: BorderStyle.solid,width: 2))),
+        ),
+        myText(data, 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold)
+      ],
+    ),
   );
 }

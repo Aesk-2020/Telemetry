@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
               "/Settings": (context) => Settings(),
               "/Location": (context) => Konum(),
               "/Vcu": (context) => VcuPage(),
-              "/Cells": (context) => Cells(),
+              "/Cells": (context) => CellsPage(),
             },
           );
         },
