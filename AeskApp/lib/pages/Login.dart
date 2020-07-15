@@ -76,8 +76,13 @@ class _LoggingState extends State<Logging> {
                     child: SpinKitCircle(color: Theme.of(context).appBarTheme.color,),
                     barrierDismissible: false,
                   );
-                  dynamic state = await mqttAesk.connect()
-                      .timeout(Duration(seconds: 5), onTimeout: () => false);
+                  dynamic state;
+                  try{
+                     state = await mqttAesk.connect().timeout(Duration(seconds: 5));
+                  }catch(e){
+                    state = false;
+                  }
+                  print(state);
                   if (state == true) {
                     mqttAesk.subscribeToTopic("LYRADATA"); //TEST İÇİN DEĞİŞMİŞ OLABİLİR DÜZELTİRSİNİZ
                     Navigator.pushNamed(context, "/Home");
