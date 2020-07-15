@@ -25,12 +25,15 @@ void main(){
       "NT8mJyc2IWhia31ifWN9Z2FoYmF8YGJ8ampqanNiYmlmamlmanMDHmgqJiAmNTg2PjI/IzI/MjA6EyoyMj06fTA8Pg==");
   return runApp(MyApp());
 }
+void loadPrefs() async{
+  await SharedPrefs.getThemePref().then((value) => MyThemeData.myTheme = value);
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    SharedPrefs.getThemePref().then((value) => MyThemeData.myTheme = value);
-
+    loadPrefs();
+    print(MyThemeData.myTheme);
     return MultiProvider(
       //Burda Tedarikçi ekliyoruz böylece istediğimiz sınıftaki değişikliği anında tespit edebiliriz
       providers: [
