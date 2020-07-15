@@ -93,7 +93,7 @@ Widget MyContainer({List<Widget> arrayOfWidgets, EdgeInsets myMargin, EdgeInsets
 }
 //**************************************** Row Widget for Errors & States *************************************//
 Widget AeskConditionRow(String text, bool condition, BuildContext context) {
-  return Padding(
+  return Container(
     padding: EdgeInsets.fromLTRB(25, 0, 25, 0),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
