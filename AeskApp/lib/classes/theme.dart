@@ -3,12 +3,10 @@ import 'package:flutter/material.dart';
 
 
 class MyThemeData extends ChangeNotifier{
-  ThemeData _myTheme;
+  static bool myTheme = false; // 1 ise darkTheme 0 lightTheme
 
-  ThemeData get myTheme => _myTheme;
-
-  void setTheme(ThemeData newTheme){
-    _myTheme = newTheme;
+  void setTheme(bool newTheme){
+    myTheme = newTheme;
     notifyListeners();
   }
 }
