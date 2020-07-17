@@ -11,13 +11,13 @@ class Settings extends StatefulWidget {
   _SettingsState createState() => _SettingsState();
 }
 
-bool isDarkMode = false;
+bool isDarkMode;
 
 class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     MyThemeData myThemeData = Provider.of<MyThemeData>(context);
-
+    //isDarkMode ??= false;
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(

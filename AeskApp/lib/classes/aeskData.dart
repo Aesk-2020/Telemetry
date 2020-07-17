@@ -128,8 +128,8 @@ var eys_error_uint8;
     vcu_wake_up_u8 = message.getUint8(_startIndex);
     _startIndex++;
 
-    vcu_drive_command_u8 = message.getUint8(_startIndex);
-    _startIndex++;
+    /*vcu_drive_command_u8 = message.getUint8(_startIndex);
+    _startIndex++;*/
 
     vcu_set_velocity_u8 = message.getUint8(_startIndex);
     _startIndex++;
