@@ -120,16 +120,16 @@ Widget AeskConditionCheck(String text, bool condition, BuildContext context) {
   );
 }
 
-Widget CellWidget(String text, String data, BuildContext context) {
+Widget CellWidget(String text, String data, BuildContext context, Color color) {
   return Container(
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Container(
-          child: myText(text, 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-          decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Theme.of(context).textTheme.headline1.color,style: BorderStyle.solid,width: 2))),
+          child: myText(text, 20, color, FontWeight.bold),
+          decoration: BoxDecoration(border: Border(bottom: BorderSide(color: color,style: BorderStyle.solid,width: 2))),
         ),
-        myText(data + " mV", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold)
+        myText(data + " mV", 20, color, FontWeight.bold)
       ],
     ),
   );

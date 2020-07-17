@@ -1,5 +1,5 @@
 import 'dart:typed_data';
-
+import 'dart:math';
 import 'package:flutter/foundation.dart';
 
 class graph_data{
@@ -83,9 +83,10 @@ class AeskData extends ChangeNotifier{
   static bool bms_state_discharge_u1     = false;
   static bool bms_state_dcbus_ready_u1   = false;
   static bool bms_state_charge_u1        = false;
+  static var  bms_min_finder             = 0;
 
-  static var bms_worst_cell_voltage_f32;//10
-  static var bms_worst_cell_address_u8;
+  static double bms_worst_cell_voltage_f32 = 0;//10
+  static var bms_worst_cell_address_u8 = 0;
   static var bms_temp_u8;
   static var bms_power_f32;
   static var gpsTracker_gps_latitude_f64;  //1000000
@@ -191,7 +192,7 @@ var eys_error_uint8;
     bms_dc_bus_state_u8 = message.getUint8(_startIndex);
     _startIndex++;
 
-    bms_worst_cell_voltage_f32 = message.getUint16(_startIndex,myEndian)/10;
+    bms_worst_cell_voltage_f32 = message.getUint16(_startIndex,myEndian) / 10;
     _startIndex+=2;
 
     bms_worst_cell_address_u8 = message.getUint8(_startIndex);
@@ -218,7 +219,8 @@ var eys_error_uint8;
     _startIndex++;
 
     for(int i = 0; i<28; i++){
-      battery_cells[i] = message.getUint8(_startIndex);
+      battery_cells[i] = message.getUint8(_startIndex) + bms_worst_cell_voltage_f32.toInt();
+      bms_min_finder = battery_cells[i] < battery_cells[bms_min_finder] ? i : bms_min_finder;
       _startIndex++;
     }
 
