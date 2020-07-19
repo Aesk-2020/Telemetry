@@ -17,7 +17,7 @@ class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     MyThemeData myThemeData = Provider.of<MyThemeData>(context);
-    //isDarkMode ??= false;
+    isDarkMode ??= false;
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
