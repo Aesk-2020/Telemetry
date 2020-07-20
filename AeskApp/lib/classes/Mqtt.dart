@@ -112,7 +112,7 @@ class MqttAesk extends ChangeNotifier {
 
   void subscribeToTopic(String topic) {
     if (connectionState == mqtt.MqttConnectionState.connected) {
-      client.subscribe(topic, mqtt.MqttQos.exactlyOnce);
+      client.subscribe(topic, mqtt.MqttQos.atMostOnce);
     }
     notifyListeners();
   }
