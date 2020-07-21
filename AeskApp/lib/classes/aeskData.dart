@@ -123,13 +123,8 @@ class AeskData extends ChangeNotifier{
 
   static List<graph_data> graphData_array = List.generate(100, (index) => graph_data(0,0,0,0,0,0,0,0,0,0,0), growable: false);
   static List<int> battery_cells = List.generate(28, (index) => 0);
+  static int cellCount = 28;
 
-
-
-//EMS
-/*
-
-*/
   static var MQTT_counter_int32;
 //threadlamamız gerekecekse burayı threadlayacaz
   AeskData(ByteData message,Endian myEndian){
@@ -228,7 +223,9 @@ class AeskData extends ChangeNotifier{
     gpsTracker_gps_efficiency_u8 = message.getUint8(_startIndex);
     _startIndex++;
 
-    for(int i = 0; i<28; i++){
+    cellCount = MqttAesk.isLyra ? 28 : 16;
+
+    for(int i = 0; i < cellCount; i++){
       battery_cells[i] = message.getUint8(_startIndex) + bms_worst_cell_voltage_f32.toInt();
       bms_min_finder = battery_cells[i] < battery_cells[bms_min_finder] ? i : bms_min_finder;
       _startIndex++;

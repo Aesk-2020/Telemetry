@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:aeskapp/classes/theme.dart';
+import 'package:aeskapp/pages/CellsHydro.dart';
 import 'package:aeskapp/pages/Ems.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -67,6 +68,7 @@ class MyApp extends StatelessWidget {
               "/Location": (context) => Konum(),
               "/Vcu": (context) => VcuPage(),
               "/Cells": (context) => CellsPage(),
+              "/CellsHydro": (context) => CellsPageHydro(),
               "/Ems": (context) => EmsPage(),
             },
           );
