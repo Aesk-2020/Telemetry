@@ -28,6 +28,7 @@ List<DrawerListClass> drawerList = MqttAesk.isLyra ? drawerListLyra : drawerList
 
 //********************************** Scaffold Widget ****************************************************//
 Widget aeskScaffold({Widget myBody, BuildContext context}) {
+
   return Scaffold(
     backgroundColor: Theme.of(context).backgroundColor,
     body: myBody,

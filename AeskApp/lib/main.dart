@@ -37,7 +37,6 @@ Future<Void> loadPrefs() async{
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    print(MyThemeData.myTheme);
     return MultiProvider(
       //Burda Tedarikçi ekliyoruz böylece istediğimiz sınıftaki değişikliği anında tespit edebiliriz
       providers: [
