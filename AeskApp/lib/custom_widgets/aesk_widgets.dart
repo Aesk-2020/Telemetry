@@ -1,10 +1,11 @@
 import 'dart:ui';
 
+import 'package:aeskapp/classes/Mqtt.dart';
 import 'package:aeskapp/classes/drawer_list_class.dart';
 import 'package:aeskapp/custom_widgets/front_inventory.dart';
 import 'package:flutter/material.dart';
 
-List<DrawerListClass> drawerList = [
+List<DrawerListClass> drawerListLyra = [
   DrawerListClass(image: "home-icon.png", text: "AnaSayfa", destination: "/Home"),
   DrawerListClass(image: "mcu-icon.png", text: "MCU & VCU", destination: "/Vcu"),
   DrawerListClass(image: "bms-icon.png", text: "BMS", destination: "/Bms"),
@@ -13,9 +14,21 @@ List<DrawerListClass> drawerList = [
   DrawerListClass(image: "chart-icon.png", text: "Grafikler", destination: "/Graphs"),
   DrawerListClass(image: "custom-icon.png", text: "Özelleştirme Ekranı", destination: "/Custom"),
 ];
+List<DrawerListClass> drawerListHydra = [
+  DrawerListClass(image: "home-icon.png", text: "AnaSayfa", destination: "/Home"),
+  DrawerListClass(image: "mcu-icon.png", text: "MCU & VCU", destination: "/Vcu"),
+  DrawerListClass(image: "bms-icon.png", text: "BMS", destination: "/Bms"),
+  DrawerListClass(image: "ems-icon.png", text: "EMS", destination: "/Ems"),
+  DrawerListClass(image: "cells-icon.png", text: "Batarya Hücreleri", destination: "/CellsHydro"),
+  DrawerListClass(image: "map-icon.png", text: "Harita", destination: "/Location"),
+  DrawerListClass(image: "chart-icon.png", text: "Grafikler", destination: "/Graphs"),
+  DrawerListClass(image: "custom-icon.png", text: "Özelleştirme Ekranı", destination: "/Custom"),
+];
+List<DrawerListClass> drawerList = MqttAesk.isLyra ? drawerListLyra : drawerListHydra;
 
 //********************************** Scaffold Widget ****************************************************//
 Widget aeskScaffold({Widget myBody, BuildContext context}) {
+
   return Scaffold(
     backgroundColor: Theme.of(context).backgroundColor,
     body: myBody,
@@ -76,7 +89,8 @@ Widget myText(String input, double mySize, Color myColor,
         fontFamily: "GOTHIC",
         fontSize: mySize,
         color: myColor,
-        fontWeight: weight),
+        fontWeight: weight
+    ),
   );
 }
 

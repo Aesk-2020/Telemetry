@@ -7,6 +7,7 @@ ThemeData LightTheme() {
     backgroundColor: Colors.white70,
     buttonColor: aeskBlue,
     cardColor: Colors.white70,
+    hintColor: Colors.black45,
     iconTheme: IconThemeData(
       color: Colors.black,
     ),
@@ -32,6 +33,7 @@ ThemeData DarkTheme() {
     backgroundColor: aeskBlack,
     buttonColor: aeskBlue,
     cardColor: Colors.black26,
+    hintColor: Colors.grey,
     iconTheme: IconThemeData(
       color: Colors.white,
     ),

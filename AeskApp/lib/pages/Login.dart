@@ -1,4 +1,5 @@
 import 'package:aeskapp/classes/Mqtt.dart';
+import 'package:aeskapp/classes/aeskData.dart';
 import 'package:flutter/material.dart';
 import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -8,6 +9,7 @@ import 'dart:async';
 
 String ip;
 String password;
+bool checkbox = null; // true ise LYRA, false ise hydra
 
 class Logging extends StatefulWidget {
   @override
@@ -30,8 +32,9 @@ class _LoggingState extends State<Logging> {
             SizedBox(height: 20,),
             //IP textfield
             Container(
-              width: 170,
+              width: 350,
               child: TextField(
+
                 style: TextStyle(
                   color: Theme.of(context).appBarTheme.color,
                 ),
@@ -48,7 +51,7 @@ class _LoggingState extends State<Logging> {
             SizedBox(height: 5,),
             //Şifre textfield
             Container(
-              width: 170,
+              width: 350,
               child: TextField(
                 style: TextStyle(
                   color: Theme.of(context).appBarTheme.color,
@@ -66,11 +69,46 @@ class _LoggingState extends State<Logging> {
               ),
             ),
 
+            //Araç tipi seçin bölgesi
+            SizedBox(height: 15,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  width: 170,
+                  child: CheckboxListTile(
+                    title: myText("LYRA", 20, Theme.of(context).appBarTheme.color, FontWeight.bold),
+                    value: checkbox == null ? false : checkbox,
+                    controlAffinity: ListTileControlAffinity.leading,
+                    onChanged: (value) {
+                      setState(() {
+                        if(checkbox == null || checkbox == false) checkbox = true;
+                      });
+                    },
+                  ),
+                ),
+                Container(
+                  width: 170,
+                  child: CheckboxListTile(
+                    title: myText("HYDRA", 20, Theme.of(context).appBarTheme.color, FontWeight.bold),
+                    value: checkbox == null ? false : !checkbox,
+                    controlAffinity: ListTileControlAffinity.leading,
+                    onChanged: (value) {
+                      setState(() {
+                        if(checkbox == null || checkbox == true) checkbox = false;
+                      });
+                    },
+                  ),
+                ),
+              ],
+
+            ),
             //Giriş butonu
             SizedBox(height: 15,),
             RaisedButton(
+              padding: EdgeInsets.symmetric(horizontal: 40),
               onPressed: () async {
-                if (ip == "1" && password == MqttAesk.password) {
+                if (ip == "1" && password == MqttAesk.password && checkbox != null) {
                   showDialog(
                     context: context,
                     child: SpinKitCircle(color: Theme.of(context).appBarTheme.color,),
@@ -84,7 +122,8 @@ class _LoggingState extends State<Logging> {
                   }
                   print(state);
                   if (state == true) {
-                    mqttAesk.subscribeToTopic("LYRADATA"); //TEST İÇİN DEĞİŞMİŞ OLABİLİR DÜZELTİRSİNİZ
+                    MqttAesk.isLyra = checkbox;
+                    checkbox ? mqttAesk.subscribeToTopic("LYRADATA") : mqttAesk.subscribeToTopic("HYDRADATA");
                     Navigator.pushNamed(context, "/Home");
                   } else {
                     Navigator.pushReplacementNamed(context, "/Login");
@@ -97,12 +136,21 @@ class _LoggingState extends State<Logging> {
                       ),
                     );
                   }
-                } else {
+                } else if(checkbox != null) {
                   showDialog(
                     context: context,
                     child: AlertDialog(
                       title: myText("HATA", 30, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                       content: myText("Girdiğiniz kullanıcı adı ile parola eşleşmedi!", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                      backgroundColor: Theme.of(context).backgroundColor,
+                    ),
+                  );
+                }else{
+                  showDialog(
+                    context: context,
+                    child: AlertDialog(
+                      title: myText("HATA", 30, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                      content: myText("Lütfen bir araç tipi seçiniz.", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                       backgroundColor: Theme.of(context).backgroundColor,
                     ),
                   );

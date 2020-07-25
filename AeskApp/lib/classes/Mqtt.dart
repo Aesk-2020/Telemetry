@@ -15,6 +15,7 @@ class MqttAesk extends ChangeNotifier {
   static String password = 'aesk';
   static String clientIdentifier =
       DateTime.now().toString(); //cihaz isimlerine göre atama ya
+  static bool isLyra;
 
   mqtt.MqttClient client;
   mqtt.MqttConnectionState connectionState;

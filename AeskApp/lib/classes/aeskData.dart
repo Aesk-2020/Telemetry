@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 import 'dart:math';
+import 'package:aeskapp/classes/Mqtt.dart';
 import 'package:flutter/foundation.dart';
 
 class graph_data{
@@ -94,32 +95,36 @@ class AeskData extends ChangeNotifier{
   static var gpsTracker_gps_velocity_u8;
   static var gpsTracker_gps_sattelite_number_u8;
   static var gpsTracker_gps_efficiency_u8;
-//bms cells eklenecek liste halinde
+
+  static var eys_bat_current_int16 = 0;//10
+  static var eys_fc_current_int16 = 0;//10
+  static var eys_out_current_int16 = 0;//10
+  static var eys_bat_volt_uint16 = 0;//10
+  static var eys_fc_volt_uint16 = 0;//10
+  static var eys_out_volt_uint16 = 0;//10
+  static var eys_bat_cons_uint16 = 0;//10
+  static var eys_fc_cons_uint16 = 0;//10
+  static var eys_fc_lt_cons_uint16 = 0;//10
+  static var eys_out_cons_uint16 = 0;//10
+  static var eys_penalty_int8 = 0;//10
+  static var eys_bat_soc_uint16 = 0;//100
+  static var eys_temp_uint8 = 0;
+  static var eys_error_uint8 = 0;
+  static bool eys_bat_cur_error_u1 = false;
+  static bool eys_fc_cur_error_u1 = false;
+  static bool eys_out_cur_error_u1 = false;
+  static bool eys_bat_volt_error_u1 = false;
+  static bool eys_fc_volt_error_u1 = false;
+  static bool eys_out_volt_error_u1 = false;
+  static double eys_sharing_ratio = 0.0;
 
   static double x_time=0;
   static var ping = 0;
 
   static List<graph_data> graphData_array = List.generate(100, (index) => graph_data(0,0,0,0,0,0,0,0,0,0,0), growable: false);
   static List<int> battery_cells = List.generate(28, (index) => 0);
+  static int cellCount = 28;
 
-
-
-//EMS
-/*
-var eys_bat_current_int16;//10
-var eys_fc_current_int16;//10
-var eys_out_current_int16;//10
-var eys_bat_volt_uint16;//10
-var eys_out_volt_uint16;//10
-var eys_bat_cons_uint16;//10
-var eys_fc_cons_uint16;//10
-var eys_fc_lt_cons_uint16;//10
-var eys_out_cons_uint16;//10
-var eys_penalty_int8;//10
-var eys_bat_soc_uint16;//100
-var eys_temp_uint8;
-var eys_error_uint8;
-*/
   static var MQTT_counter_int32;
 //threadlamamız gerekecekse burayı threadlayacaz
   AeskData(ByteData message,Endian myEndian){
@@ -218,10 +223,64 @@ var eys_error_uint8;
     gpsTracker_gps_efficiency_u8 = message.getUint8(_startIndex);
     _startIndex++;
 
-    for(int i = 0; i<28; i++){
+    cellCount = MqttAesk.isLyra ? 28 : 16;
+
+    for(int i = 0; i < cellCount; i++){
       battery_cells[i] = message.getUint8(_startIndex) + bms_worst_cell_voltage_f32.toInt();
       bms_min_finder = battery_cells[i] < battery_cells[bms_min_finder] ? i : bms_min_finder;
       _startIndex++;
+    }
+    if(MqttAesk.isLyra == false) {
+      eys_bat_cons_uint16 = message.getUint16(_startIndex);
+      _startIndex += 2;
+
+      eys_fc_cons_uint16 = message.getUint16(_startIndex);
+      _startIndex += 2;
+
+      eys_fc_lt_cons_uint16 = message.getUint16(_startIndex);
+      _startIndex += 2;
+
+      eys_out_cons_uint16 = message.getUint16(_startIndex);
+      _startIndex += 2;
+
+      eys_bat_current_int16 = message.getInt16(_startIndex);
+      _startIndex += 2;
+
+      eys_fc_current_int16 = message.getInt16(_startIndex);
+      _startIndex += 2;
+
+      eys_out_current_int16 = message.getInt16(_startIndex);
+      _startIndex += 2;
+
+      eys_bat_volt_uint16 = message.getUint16(_startIndex);
+      _startIndex += 2;
+
+      eys_fc_volt_uint16 = message.getUint16(_startIndex);
+      _startIndex += 2;
+
+      eys_out_volt_uint16 = message.getUint16(_startIndex);
+      _startIndex += 2;
+
+      eys_penalty_int8 = message.getInt8(_startIndex);
+      _startIndex++;
+
+      eys_bat_soc_uint16 = message.getUint16(_startIndex);
+      _startIndex += 2;
+
+      eys_temp_uint8 = message.getUint8(_startIndex);
+      _startIndex++;
+
+      eys_error_uint8 = message.getUint8(_startIndex);
+      _startIndex++;
+
+      eys_sharing_ratio = eys_bat_cons_uint16 / (eys_bat_cons_uint16 + (eys_fc_lt_cons_uint16 * 3));
+
+      eys_bat_cur_error_u1 = ((eys_error_uint8 & 1) == 1) ? true : false;
+      eys_fc_cur_error_u1 = (((eys_error_uint8 >> 1) & 1) == 1) ? true : false;
+      eys_out_cur_error_u1 = (((eys_error_uint8 >> 2) & 1) == 1) ? true : false;
+      eys_bat_volt_error_u1 = (((eys_error_uint8 >> 3) & 1) == 1) ? true : false;
+      eys_fc_volt_error_u1 = (((eys_error_uint8 >> 4) & 1) == 1) ? true : false;
+      eys_out_volt_error_u1 = (((eys_error_uint8 >> 5) & 1) == 1) ? true : false;
     }
 
     vcu_can_error_u8 = message.getUint8(_startIndex);

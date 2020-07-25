@@ -1,4 +1,8 @@
+import 'dart:ffi';
+
 import 'package:aeskapp/classes/theme.dart';
+import 'package:aeskapp/pages/CellsHydro.dart';
+import 'package:aeskapp/pages/Ems.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'classes/SharedPreferences.dart';
@@ -20,20 +24,20 @@ import 'package:aeskapp/pages/Cells.dart';
 
 import 'package:syncfusion_flutter_core/core.dart';
 
-void main(){
+void main() async{
   SyncfusionLicense.registerLicense (
       "NT8mJyc2IWhia31ifWN9Z2FoYmF8YGJ8ampqanNiYmlmamlmanMDHmgqJiAmNTg2PjI/IzI/MjA6EyoyMj06fTA8Pg==");
+  WidgetsFlutterBinding.ensureInitialized(); // main içindeyken zaman alan yükleme veya başlatma işlemlerinden önce bu fonksiyonun çağırılması gerek
+  await loadPrefs();
   return runApp(MyApp());
 }
-void loadPrefs() async{
+Future<Void> loadPrefs() async{
   await SharedPrefs.getThemePref().then((value) => MyThemeData.myTheme = value);
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    loadPrefs();
-    print(MyThemeData.myTheme);
     return MultiProvider(
       //Burda Tedarikçi ekliyoruz böylece istediğimiz sınıftaki değişikliği anında tespit edebiliriz
       providers: [
@@ -64,6 +68,8 @@ class MyApp extends StatelessWidget {
               "/Location": (context) => Konum(),
               "/Vcu": (context) => VcuPage(),
               "/Cells": (context) => CellsPage(),
+              "/CellsHydro": (context) => CellsPageHydro(),
+              "/Ems": (context) => EmsPage(),
             },
           );
         },
