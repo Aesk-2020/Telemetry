@@ -14,6 +14,27 @@ class graph_data{
   var bms_bat_volt_g;
   var bms_bat_current_g;
   var bms_bat_cons_g;
+  var eys_bat_current_g;//10
+  var eys_fc_current_g;//10
+  var eys_out_current_g;//10
+  var eys_bat_volt_g;//10
+  var eys_fc_volt_g;//10
+  var eys_out_volt_g;//10
+  var eys_bat_cons_g;//10
+  var eys_fc_cons_g;//10
+  var eys_fc_lt_cons_g;//10
+  var eys_out_cons_g;//10
+  var eys_penalty_g;//10
+  var eys_bat_soc_g;//100
+  var eys_temp_g;
+  var eys_error_g;
+  //bool eys_bat_cur_error_g;
+  //bool eys_fc_cur_error_g;
+  //bool eys_out_cur_error_g;
+  //bool eys_bat_volt_error_g;
+  //bool eys_fc_volt_error_g;
+  //bool eys_out_volt_error_g;
+  double eys_sharing_ratio;
   double time;
   graph_data(this.driver_phase_a_current_g,
       this.driver_phase_b_current_g,
@@ -25,7 +46,27 @@ class graph_data{
       this.bms_bat_volt_g,
       this.bms_bat_current_g,
       this.bms_bat_cons_g,
-      this.time
+      this.time,
+      this.eys_bat_current_g,
+      this.eys_fc_current_g,
+      this.eys_out_current_g,
+      this.eys_bat_volt_g,
+      this.eys_fc_volt_g,
+      this.eys_out_volt_g,
+      this.eys_bat_cons_g,
+      this.eys_fc_cons_g,
+      this.eys_fc_lt_cons_g,
+      this.eys_out_cons_g,
+      this.eys_penalty_g,
+      this.eys_bat_soc_g,
+      this.eys_temp_g,
+      //this.eys_bat_cur_error_g,
+      //this.eys_fc_cur_error_g,
+      //this.eys_out_cur_error_g,
+      //this.eys_bat_volt_error_g,
+      //this.eys_fc_volt_error_g,
+      //this.eys_out_volt_error_g,
+      this.eys_sharing_ratio,
       );
 }
 
@@ -121,7 +162,7 @@ class AeskData extends ChangeNotifier{
   static double x_time=0;
   static var ping = 0;
 
-  static List<graph_data> graphData_array = List.generate(100, (index) => graph_data(0,0,0,0,0,0,0,0,0,0,0), growable: false);
+  static List<graph_data> graphData_array = List.generate(100, (index) => graph_data(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0), growable: false);
   static List<int> battery_cells = List.generate(28, (index) => 0);
   static int cellCount = 28;
 
@@ -328,7 +369,21 @@ class AeskData extends ChangeNotifier{
         bms_bat_volt_f32,
         bms_bat_current_f32,
         bms_bat_cons_f32,
-        x_time);
+        x_time,
+        eys_bat_cons_uint16,
+        eys_fc_cons_uint16,
+        eys_fc_lt_cons_uint16,
+        eys_out_cons_uint16,
+        eys_bat_current_int16,
+        eys_fc_current_int16,
+        eys_out_current_int16,
+        eys_bat_volt_uint16,
+        eys_fc_volt_uint16,
+        eys_out_volt_uint16,
+        eys_penalty_int8,
+        eys_bat_soc_uint16,
+        eys_temp_uint8,
+        eys_sharing_ratio);
     notifyListeners();
 
     for(i=0;i<graphData_array.length;i++){

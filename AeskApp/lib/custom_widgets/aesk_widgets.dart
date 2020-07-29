@@ -15,13 +15,13 @@ List<DrawerListClass> drawerListLyra = [
   DrawerListClass(image: "custom-icon.png", text: "Özelleştirme Ekranı", destination: "/Custom"),
 ];
 List<DrawerListClass> drawerListHydra = [
-  DrawerListClass(image: "home-icon.png", text: "AnaSayfa", destination: "/Home"),
+  DrawerListClass(image: "home-icon.png", text: "AnaSayfa", destination: "/HomeHydro"),
   DrawerListClass(image: "mcu-icon.png", text: "MCU & VCU", destination: "/Vcu"),
   DrawerListClass(image: "bms-icon.png", text: "BMS", destination: "/Bms"),
   DrawerListClass(image: "ems-icon.png", text: "EMS", destination: "/Ems"),
   DrawerListClass(image: "cells-icon.png", text: "Batarya Hücreleri", destination: "/CellsHydro"),
   DrawerListClass(image: "map-icon.png", text: "Harita", destination: "/Location"),
-  DrawerListClass(image: "chart-icon.png", text: "Grafikler", destination: "/Graphs"),
+  DrawerListClass(image: "chart-icon.png", text: "Grafikler", destination: "/GraphsHydro"),
   DrawerListClass(image: "custom-icon.png", text: "Özelleştirme Ekranı", destination: "/Custom"),
 ];
 List<DrawerListClass> drawerList = MqttAesk.isLyra ? drawerListLyra : drawerListHydra;
