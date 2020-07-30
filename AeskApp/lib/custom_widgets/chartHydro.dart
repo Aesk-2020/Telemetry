@@ -571,28 +571,6 @@ class _AeskChartState extends State<AeskChartHydro> {
                 ),
               ),
             ),
-            Container(
-              padding: EdgeInsets.only(top: 10, bottom: 10),
-              child: Card(
-                child: SfCartesianChart(
-                  title: ChartTitle(
-                      text: "BMS Bat Volt",
-                      textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-                  primaryXAxis: CategoryAxis(),
-                  tooltipBehavior: TooltipBehavior(enable: true),
-                  series: <ChartSeries>[
-                    SplineSeries<graph_data, double>(
-                      enableTooltip: true,
-                      dataSource: AeskData.graphData_array,
-                      yValueMapper: (graph_data data, _) => data.bms_bat_volt_g,
-                      xValueMapper: (graph_data data, _) => data.time / 1000,
-                      //name: widget._chartName,
-                      splineType: SplineType.monotonic,
-                    )
-                  ],
-                ),
-              ),
-            ),
           ],
         );
       },
