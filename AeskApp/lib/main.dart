@@ -3,12 +3,13 @@ import 'dart:ffi';
 import 'package:aeskapp/classes/theme.dart';
 import 'package:aeskapp/pages/CellsHydro.dart';
 import 'package:aeskapp/pages/Ems.dart';
+import 'package:aeskapp/pages/GraphsHydro.dart';
+import 'package:aeskapp/pages/HomeHydro.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'classes/SharedPreferences.dart';
 import 'package:aeskapp/custom_widgets/front_inventory.dart';
 import 'package:aeskapp/classes/Mqtt.dart';
-
 import 'package:aeskapp/pages/Custom.dart';
 import 'package:aeskapp/pages/General.dart';
 import 'package:aeskapp/pages/Loading.dart';
@@ -58,9 +59,11 @@ class MyApp extends StatelessWidget {
             routes: {
               "/Login": (context) => Logging(),
               "/Home": (context) => Home(),
+              "/HomeHydro": (context) => HomeHydro(),
               "/General": (context) => General(),
               "/Custom": (context) => Custom(),
               "/Graphs": (context) => Graphs(),
+              "/GraphsHydro": (context) => GraphsHydro(),
               "/Loading": (context) => Loading(),
               "/Bms": (context) => BmsPage(),
               "/Settings": (context) => Settings(),
