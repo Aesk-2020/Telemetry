@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 using MqttPublissssh.Variables;
@@ -22,32 +23,28 @@ namespace MqttPublissssh
 
         private void console_Load(object sender, EventArgs e)
         {
+
             Macros.consoleFront = ConsoleWrite;
+            Control.CheckForIllegalCrossThreadCalls = false;
+            richTextBox1.Text = "This console only works with Send Manuelly option.\n";
 
         }
 
-        int x = 0;
+
         private void ConsoleWrite()
         {
-            x++;
-            if (x == 15)
-            {
-
-                richTextBox1.Text = " ";
-                x = 0;
-
-            }
-
-
-            foreach(byte x in Macros.array_of_x)
+            foreach (byte x in Macros.array_of_x)
             {
                 richTextBox1.Text += Convert.ToString(x, 2).PadLeft(8, '0') + " ";
-
-
             }
             richTextBox1.Text += "\n----------------------------------------------------------------------";
             richTextBox1.Text += "\n";
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = "";
         }
     }
 }
