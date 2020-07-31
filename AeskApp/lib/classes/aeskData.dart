@@ -272,40 +272,40 @@ class AeskData extends ChangeNotifier{
       _startIndex++;
     }
     if(MqttAesk.isLyra == false) {
-      eys_bat_cons_uint16 = message.getUint16(_startIndex) / 10;
+      eys_bat_cons_uint16 = message.getUint16(_startIndex,myEndian) / 10;
       _startIndex += 2;
 
-      eys_fc_cons_uint16 = message.getUint16(_startIndex) / 10;
+      eys_fc_cons_uint16 = message.getUint16(_startIndex,myEndian) / 10;
       _startIndex += 2;
 
-      eys_fc_lt_cons_uint16 = message.getUint16(_startIndex) / 10;
+      eys_fc_lt_cons_uint16 = message.getUint16(_startIndex,myEndian) / 10;
       _startIndex += 2;
 
-      eys_out_cons_uint16 = message.getUint16(_startIndex) / 10;
+      eys_out_cons_uint16 = message.getUint16(_startIndex,myEndian) / 10;
       _startIndex += 2;
 
-      eys_bat_current_int16 = message.getInt16(_startIndex) / 10;
+      eys_bat_current_int16 = message.getInt16(_startIndex,myEndian) / 10;
       _startIndex += 2;
 
-      eys_fc_current_int16 = message.getInt16(_startIndex) / 10;
+      eys_fc_current_int16 = message.getInt16(_startIndex,myEndian) / 10;
       _startIndex += 2;
 
-      eys_out_current_int16 = message.getInt16(_startIndex) / 10;
+      eys_out_current_int16 = message.getInt16(_startIndex,myEndian) / 10;
       _startIndex += 2;
 
-      eys_bat_volt_uint16 = message.getUint16(_startIndex) / 10;
+      eys_bat_volt_uint16 = message.getUint16(_startIndex,myEndian) / 10;
       _startIndex += 2;
 
-      eys_fc_volt_uint16 = message.getUint16(_startIndex) / 10;
+      eys_fc_volt_uint16 = message.getUint16(_startIndex,myEndian) / 10;
       _startIndex += 2;
 
-      eys_out_volt_uint16 = message.getUint16(_startIndex) / 10;
+      eys_out_volt_uint16 = message.getUint16(_startIndex,myEndian) / 10;
       _startIndex += 2;
 
       eys_penalty_int8 = message.getInt8(_startIndex);
       _startIndex++;
 
-      eys_bat_soc_uint16 = message.getUint16(_startIndex) / 100;
+      eys_bat_soc_uint16 = message.getUint16(_startIndex,myEndian) / 100;
       _startIndex += 2;
 
       eys_temp_uint8 = message.getUint8(_startIndex);
