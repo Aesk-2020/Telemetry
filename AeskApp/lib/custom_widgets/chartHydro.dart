@@ -513,7 +513,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
   }
   Widget modifiedExpansionTile(int index) {
     return ExpansionTile(
-      title: Center(child: myText("     Grafikler", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold)),
+      title: Center(child: myText("    Grafikler", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold)),
       backgroundColor: Theme.of(context).backgroundColor,
       children: graphList.map((tileName) {
         if(tileName == "") return SizedBox(height: 0,);
@@ -868,22 +868,25 @@ Widget eysBatCons(){
       return Container(
         padding: EdgeInsets.only(top: 10, bottom: 10),
         child: Card(
-          child: SfCartesianChart(
-            title: ChartTitle(
-                text: "EYS Bat Cons",
-                textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-            primaryXAxis: CategoryAxis(),
-            tooltipBehavior: TooltipBehavior(enable: true),
-            series: <ChartSeries>[
-              SplineSeries<graph_data, double>(
-                enableTooltip: true,
-                dataSource: AeskData.graphData_array,
-                yValueMapper: (graph_data data, _) => data.eys_bat_cons_g,
-                xValueMapper: (graph_data data, _) => data.time / 1000,
-                //name: widget._chartName,
-                splineType: SplineType.monotonic,
-              )
-            ],
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 25),
+            child: SfCartesianChart(
+              title: ChartTitle(
+                  text: "EYS Bat Cons",
+                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+              primaryXAxis: CategoryAxis(),
+              tooltipBehavior: TooltipBehavior(enable: true),
+              series: <ChartSeries>[
+                SplineSeries<graph_data, double>(
+                  enableTooltip: true,
+                  dataSource: AeskData.graphData_array,
+                  yValueMapper: (graph_data data, _) => data.eys_bat_cons_g,
+                  xValueMapper: (graph_data data, _) => data.time / 1000,
+                  //name: widget._chartName,
+                  splineType: SplineType.monotonic,
+                )
+              ],
+            ),
           ),
         ),
       );
@@ -896,22 +899,25 @@ Widget eysBatCur(){
       return Container(
         padding: EdgeInsets.only(top: 10, bottom: 10),
         child: Card(
-          child: SfCartesianChart(
-            title: ChartTitle(
-                text: "EYS Bat Cur",
-                textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-            primaryXAxis: CategoryAxis(),
-            tooltipBehavior: TooltipBehavior(enable: true),
-            series: <ChartSeries>[
-              SplineSeries<graph_data, double>(
-                enableTooltip: true,
-                dataSource: AeskData.graphData_array,
-                yValueMapper: (graph_data data, _) => data.eys_bat_current_g,
-                xValueMapper: (graph_data data, _) => data.time / 1000,
-                //name: widget._chartName,
-                splineType: SplineType.monotonic,
-              )
-            ],
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 25),
+            child: SfCartesianChart(
+              title: ChartTitle(
+                  text: "EYS Bat Cur",
+                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+              primaryXAxis: CategoryAxis(),
+              tooltipBehavior: TooltipBehavior(enable: true),
+              series: <ChartSeries>[
+                SplineSeries<graph_data, double>(
+                  enableTooltip: true,
+                  dataSource: AeskData.graphData_array,
+                  yValueMapper: (graph_data data, _) => data.eys_bat_current_g,
+                  xValueMapper: (graph_data data, _) => data.time / 1000,
+                  //name: widget._chartName,
+                  splineType: SplineType.monotonic,
+                )
+              ],
+            ),
           ),
         ),
       );
@@ -924,22 +930,25 @@ Widget eysBatSoc(){
       return Container(
         padding: EdgeInsets.only(top: 10, bottom: 10),
         child: Card(
-          child: SfCartesianChart(
-            title: ChartTitle(
-                text: "EYS Bat Soc",
-                textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-            primaryXAxis: CategoryAxis(),
-            tooltipBehavior: TooltipBehavior(enable: true),
-            series: <ChartSeries>[
-              SplineSeries<graph_data, double>(
-                enableTooltip: true,
-                dataSource: AeskData.graphData_array,
-                yValueMapper: (graph_data data, _) => data.eys_bat_soc_g,
-                xValueMapper: (graph_data data, _) => data.time / 1000,
-                //name: widget._chartName,
-                splineType: SplineType.monotonic,
-              )
-            ],
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 25),
+            child: SfCartesianChart(
+              title: ChartTitle(
+                  text: "EYS Bat Soc",
+                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+              primaryXAxis: CategoryAxis(),
+              tooltipBehavior: TooltipBehavior(enable: true),
+              series: <ChartSeries>[
+                SplineSeries<graph_data, double>(
+                  enableTooltip: true,
+                  dataSource: AeskData.graphData_array,
+                  yValueMapper: (graph_data data, _) => data.eys_bat_soc_g,
+                  xValueMapper: (graph_data data, _) => data.time / 1000,
+                  //name: widget._chartName,
+                  splineType: SplineType.monotonic,
+                )
+              ],
+            ),
           ),
         ),
       );
@@ -951,22 +960,25 @@ Widget eysBatSoc(){
       return Container(
         padding: EdgeInsets.only(top: 10, bottom: 10),
         child: Card(
-          child: SfCartesianChart(
-            title: ChartTitle(
-                text: "EYS Bat Volt",
-                textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-            primaryXAxis: CategoryAxis(),
-            tooltipBehavior: TooltipBehavior(enable: true),
-            series: <ChartSeries>[
-              SplineSeries<graph_data, double>(
-                enableTooltip: true,
-                dataSource: AeskData.graphData_array,
-                yValueMapper: (graph_data data, _) => data.eys_bat_volt_g,
-                xValueMapper: (graph_data data, _) => data.time / 1000,
-                //name: widget._chartName,
-                splineType: SplineType.monotonic,
-              )
-            ],
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 25),
+            child: SfCartesianChart(
+              title: ChartTitle(
+                  text: "EYS Bat Volt",
+                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+              primaryXAxis: CategoryAxis(),
+              tooltipBehavior: TooltipBehavior(enable: true),
+              series: <ChartSeries>[
+                SplineSeries<graph_data, double>(
+                  enableTooltip: true,
+                  dataSource: AeskData.graphData_array,
+                  yValueMapper: (graph_data data, _) => data.eys_bat_volt_g,
+                  xValueMapper: (graph_data data, _) => data.time / 1000,
+                  //name: widget._chartName,
+                  splineType: SplineType.monotonic,
+                )
+              ],
+            ),
           ),
         ),
       );
@@ -978,22 +990,25 @@ Widget eysBatSoc(){
       return Container(
         padding: EdgeInsets.only(top: 10, bottom: 10),
         child: Card(
-          child: SfCartesianChart(
-            title: ChartTitle(
-                text: "EYS FC Cons",
-                textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-            primaryXAxis: CategoryAxis(),
-            tooltipBehavior: TooltipBehavior(enable: true),
-            series: <ChartSeries>[
-              SplineSeries<graph_data, double>(
-                enableTooltip: true,
-                dataSource: AeskData.graphData_array,
-                yValueMapper: (graph_data data, _) => data.eys_fc_cons_g,
-                xValueMapper: (graph_data data, _) => data.time / 1000,
-                //name: widget._chartName,
-                splineType: SplineType.monotonic,
-              )
-            ],
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 25),
+            child: SfCartesianChart(
+              title: ChartTitle(
+                  text: "EYS FC Cons",
+                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+              primaryXAxis: CategoryAxis(),
+              tooltipBehavior: TooltipBehavior(enable: true),
+              series: <ChartSeries>[
+                SplineSeries<graph_data, double>(
+                  enableTooltip: true,
+                  dataSource: AeskData.graphData_array,
+                  yValueMapper: (graph_data data, _) => data.eys_fc_cons_g,
+                  xValueMapper: (graph_data data, _) => data.time / 1000,
+                  //name: widget._chartName,
+                  splineType: SplineType.monotonic,
+                )
+              ],
+            ),
           ),
         ),
       );
@@ -1005,22 +1020,25 @@ Widget eysBatSoc(){
       return Container(
         padding: EdgeInsets.only(top: 10, bottom: 10),
         child: Card(
-          child: SfCartesianChart(
-            title: ChartTitle(
-                text: "EYS FC Cur",
-                textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-            primaryXAxis: CategoryAxis(),
-            tooltipBehavior: TooltipBehavior(enable: true),
-            series: <ChartSeries>[
-              SplineSeries<graph_data, double>(
-                enableTooltip: true,
-                dataSource: AeskData.graphData_array,
-                yValueMapper: (graph_data data, _) => data.eys_fc_current_g,
-                xValueMapper: (graph_data data, _) => data.time / 1000,
-                //name: widget._chartName,
-                splineType: SplineType.monotonic,
-              )
-            ],
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 25),
+            child: SfCartesianChart(
+              title: ChartTitle(
+                  text: "EYS FC Cur",
+                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+              primaryXAxis: CategoryAxis(),
+              tooltipBehavior: TooltipBehavior(enable: true),
+              series: <ChartSeries>[
+                SplineSeries<graph_data, double>(
+                  enableTooltip: true,
+                  dataSource: AeskData.graphData_array,
+                  yValueMapper: (graph_data data, _) => data.eys_fc_current_g,
+                  xValueMapper: (graph_data data, _) => data.time / 1000,
+                  //name: widget._chartName,
+                  splineType: SplineType.monotonic,
+                )
+              ],
+            ),
           ),
         ),
       );
@@ -1032,22 +1050,25 @@ Widget eysBatSoc(){
       return Container(
         padding: EdgeInsets.only(top: 10, bottom: 10),
         child: Card(
-          child: SfCartesianChart(
-            title: ChartTitle(
-                text: "EYS FC LT Cons",
-                textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-            primaryXAxis: CategoryAxis(),
-            tooltipBehavior: TooltipBehavior(enable: true),
-            series: <ChartSeries>[
-              SplineSeries<graph_data, double>(
-                enableTooltip: true,
-                dataSource: AeskData.graphData_array,
-                yValueMapper: (graph_data data, _) => data.eys_fc_lt_cons_g,
-                xValueMapper: (graph_data data, _) => data.time / 1000,
-                //name: widget._chartName,
-                splineType: SplineType.monotonic,
-              )
-            ],
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 25),
+            child: SfCartesianChart(
+              title: ChartTitle(
+                  text: "EYS FC LT Cons",
+                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+              primaryXAxis: CategoryAxis(),
+              tooltipBehavior: TooltipBehavior(enable: true),
+              series: <ChartSeries>[
+                SplineSeries<graph_data, double>(
+                  enableTooltip: true,
+                  dataSource: AeskData.graphData_array,
+                  yValueMapper: (graph_data data, _) => data.eys_fc_lt_cons_g,
+                  xValueMapper: (graph_data data, _) => data.time / 1000,
+                  //name: widget._chartName,
+                  splineType: SplineType.monotonic,
+                )
+              ],
+            ),
           ),
         ),
       );
@@ -1059,22 +1080,25 @@ Widget eysBatSoc(){
       return Container(
         padding: EdgeInsets.only(top: 10, bottom: 10),
         child: Card(
-          child: SfCartesianChart(
-            title: ChartTitle(
-                text: "EYS FC Volt",
-                textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-            primaryXAxis: CategoryAxis(),
-            tooltipBehavior: TooltipBehavior(enable: true),
-            series: <ChartSeries>[
-              SplineSeries<graph_data, double>(
-                enableTooltip: true,
-                dataSource: AeskData.graphData_array,
-                yValueMapper: (graph_data data, _) => data.eys_fc_volt_g,
-                xValueMapper: (graph_data data, _) => data.time / 1000,
-                //name: widget._chartName,
-                splineType: SplineType.monotonic,
-              )
-            ],
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 25),
+            child: SfCartesianChart(
+              title: ChartTitle(
+                  text: "EYS FC Volt",
+                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+              primaryXAxis: CategoryAxis(),
+              tooltipBehavior: TooltipBehavior(enable: true),
+              series: <ChartSeries>[
+                SplineSeries<graph_data, double>(
+                  enableTooltip: true,
+                  dataSource: AeskData.graphData_array,
+                  yValueMapper: (graph_data data, _) => data.eys_fc_volt_g,
+                  xValueMapper: (graph_data data, _) => data.time / 1000,
+                  //name: widget._chartName,
+                  splineType: SplineType.monotonic,
+                )
+              ],
+            ),
           ),
         ),
       );
@@ -1087,22 +1111,25 @@ Widget eysOutCons(){
       return Container(
         padding: EdgeInsets.only(top: 10, bottom: 10),
         child: Card(
-          child: SfCartesianChart(
-            title: ChartTitle(
-                text: "EYS Out Cons",
-                textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-            primaryXAxis: CategoryAxis(),
-            tooltipBehavior: TooltipBehavior(enable: true),
-            series: <ChartSeries>[
-              SplineSeries<graph_data, double>(
-                enableTooltip: true,
-                dataSource: AeskData.graphData_array,
-                yValueMapper: (graph_data data, _) => data.eys_out_cons_g,
-                xValueMapper: (graph_data data, _) => data.time / 1000,
-                //name: widget._chartName,
-                splineType: SplineType.monotonic,
-              )
-            ],
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 25),
+            child: SfCartesianChart(
+              title: ChartTitle(
+                  text: "EYS Out Cons",
+                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+              primaryXAxis: CategoryAxis(),
+              tooltipBehavior: TooltipBehavior(enable: true),
+              series: <ChartSeries>[
+                SplineSeries<graph_data, double>(
+                  enableTooltip: true,
+                  dataSource: AeskData.graphData_array,
+                  yValueMapper: (graph_data data, _) => data.eys_out_cons_g,
+                  xValueMapper: (graph_data data, _) => data.time / 1000,
+                  //name: widget._chartName,
+                  splineType: SplineType.monotonic,
+                )
+              ],
+            ),
           ),
         ),
       );
@@ -1115,22 +1142,25 @@ Widget eysOutCur(){
       return Container(
         padding: EdgeInsets.only(top: 10, bottom: 10),
         child: Card(
-          child: SfCartesianChart(
-            title: ChartTitle(
-                text: "EYS Out Cur",
-                textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-            primaryXAxis: CategoryAxis(),
-            tooltipBehavior: TooltipBehavior(enable: true),
-            series: <ChartSeries>[
-              SplineSeries<graph_data, double>(
-                enableTooltip: true,
-                dataSource: AeskData.graphData_array,
-                yValueMapper: (graph_data data, _) => data.eys_out_current_g,
-                xValueMapper: (graph_data data, _) => data.time / 1000,
-                //name: widget._chartName,
-                splineType: SplineType.monotonic,
-              )
-            ],
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 25),
+            child: SfCartesianChart(
+              title: ChartTitle(
+                  text: "EYS Out Cur",
+                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+              primaryXAxis: CategoryAxis(),
+              tooltipBehavior: TooltipBehavior(enable: true),
+              series: <ChartSeries>[
+                SplineSeries<graph_data, double>(
+                  enableTooltip: true,
+                  dataSource: AeskData.graphData_array,
+                  yValueMapper: (graph_data data, _) => data.eys_out_current_g,
+                  xValueMapper: (graph_data data, _) => data.time / 1000,
+                  //name: widget._chartName,
+                  splineType: SplineType.monotonic,
+                )
+              ],
+            ),
           ),
         ),
       );
@@ -1143,22 +1173,25 @@ Widget eysOutVolt(){
       return Container(
         padding: EdgeInsets.only(top: 10, bottom: 10),
         child: Card(
-          child: SfCartesianChart(
-            title: ChartTitle(
-                text: "EYS Out Volt",
-                textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-            primaryXAxis: CategoryAxis(),
-            tooltipBehavior: TooltipBehavior(enable: true),
-            series: <ChartSeries>[
-              SplineSeries<graph_data, double>(
-                enableTooltip: true,
-                dataSource: AeskData.graphData_array,
-                yValueMapper: (graph_data data, _) => data.eys_out_volt_g,
-                xValueMapper: (graph_data data, _) => data.time / 1000,
-                //name: widget._chartName,
-                splineType: SplineType.monotonic,
-              )
-            ],
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 25),
+            child: SfCartesianChart(
+              title: ChartTitle(
+                  text: "EYS Out Volt",
+                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+              primaryXAxis: CategoryAxis(),
+              tooltipBehavior: TooltipBehavior(enable: true),
+              series: <ChartSeries>[
+                SplineSeries<graph_data, double>(
+                  enableTooltip: true,
+                  dataSource: AeskData.graphData_array,
+                  yValueMapper: (graph_data data, _) => data.eys_out_volt_g,
+                  xValueMapper: (graph_data data, _) => data.time / 1000,
+                  //name: widget._chartName,
+                  splineType: SplineType.monotonic,
+                )
+              ],
+            ),
           ),
         ),
       );
@@ -1171,22 +1204,25 @@ Widget eysPenalty(){
       return Container(
         padding: EdgeInsets.only(top: 10, bottom: 10),
         child: Card(
-          child: SfCartesianChart(
-            title: ChartTitle(
-                text: "EYS Penalty",
-                textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-            primaryXAxis: CategoryAxis(),
-            tooltipBehavior: TooltipBehavior(enable: true),
-            series: <ChartSeries>[
-              SplineSeries<graph_data, double>(
-                enableTooltip: true,
-                dataSource: AeskData.graphData_array,
-                yValueMapper: (graph_data data, _) => data.eys_penalty_g,
-                xValueMapper: (graph_data data, _) => data.time / 1000,
-                //name: widget._chartName,
-                splineType: SplineType.monotonic,
-              )
-            ],
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 25),
+            child: SfCartesianChart(
+              title: ChartTitle(
+                  text: "EYS Penalty",
+                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+              primaryXAxis: CategoryAxis(),
+              tooltipBehavior: TooltipBehavior(enable: true),
+              series: <ChartSeries>[
+                SplineSeries<graph_data, double>(
+                  enableTooltip: true,
+                  dataSource: AeskData.graphData_array,
+                  yValueMapper: (graph_data data, _) => data.eys_penalty_g,
+                  xValueMapper: (graph_data data, _) => data.time / 1000,
+                  //name: widget._chartName,
+                  splineType: SplineType.monotonic,
+                )
+              ],
+            ),
           ),
         ),
       );
@@ -1199,22 +1235,25 @@ Widget eysSharingRatio(){
       return Container(
         padding: EdgeInsets.only(top: 10, bottom: 10),
         child: Card(
-          child: SfCartesianChart(
-            title: ChartTitle(
-                text: "EYS Sharing Ratio",
-                textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-            primaryXAxis: CategoryAxis(),
-            tooltipBehavior: TooltipBehavior(enable: true),
-            series: <ChartSeries>[
-              SplineSeries<graph_data, double>(
-                enableTooltip: true,
-                dataSource: AeskData.graphData_array,
-                yValueMapper: (graph_data data, _) => data.eys_sharing_ratio,
-                xValueMapper: (graph_data data, _) => data.time / 1000,
-                //name: widget._chartName,
-                splineType: SplineType.monotonic,
-              )
-            ],
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 25),
+            child: SfCartesianChart(
+              title: ChartTitle(
+                  text: "EYS Sharing Ratio",
+                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+              primaryXAxis: CategoryAxis(),
+              tooltipBehavior: TooltipBehavior(enable: true),
+              series: <ChartSeries>[
+                SplineSeries<graph_data, double>(
+                  enableTooltip: true,
+                  dataSource: AeskData.graphData_array,
+                  yValueMapper: (graph_data data, _) => data.eys_sharing_ratio,
+                  xValueMapper: (graph_data data, _) => data.time / 1000,
+                  //name: widget._chartName,
+                  splineType: SplineType.monotonic,
+                )
+              ],
+            ),
           ),
         ),
       );
@@ -1227,22 +1266,25 @@ Widget eysTemp(){
       return Container(
         padding: EdgeInsets.only(top: 10, bottom: 10),
         child: Card(
-          child: SfCartesianChart(
-            title: ChartTitle(
-                text: "EYS Temp",
-                textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-            primaryXAxis: CategoryAxis(),
-            tooltipBehavior: TooltipBehavior(enable: true),
-            series: <ChartSeries>[
-              SplineSeries<graph_data, double>(
-                enableTooltip: true,
-                dataSource: AeskData.graphData_array,
-                yValueMapper: (graph_data data, _) => data.eys_temp_g,
-                xValueMapper: (graph_data data, _) => data.time / 1000,
-                //name: widget._chartName,
-                splineType: SplineType.monotonic,
-              )
-            ],
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 25),
+            child: SfCartesianChart(
+              title: ChartTitle(
+                  text: "EYS Temp",
+                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
+              primaryXAxis: CategoryAxis(),
+              tooltipBehavior: TooltipBehavior(enable: true),
+              series: <ChartSeries>[
+                SplineSeries<graph_data, double>(
+                  enableTooltip: true,
+                  dataSource: AeskData.graphData_array,
+                  yValueMapper: (graph_data data, _) => data.eys_temp_g,
+                  xValueMapper: (graph_data data, _) => data.time / 1000,
+                  //name: widget._chartName,
+                  splineType: SplineType.monotonic,
+                )
+              ],
+            ),
           ),
         ),
       );

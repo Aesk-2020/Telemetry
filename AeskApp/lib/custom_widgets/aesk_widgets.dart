@@ -33,20 +33,6 @@ Widget aeskScaffold({Widget myBody, BuildContext context}) {
     backgroundColor: Theme.of(context).backgroundColor,
     body: myBody,
     drawerEdgeDragWidth: 70,
-    endDrawer: Drawer(
-      child: Container(
-        color: Colors.grey[800],
-        child: ListView(
-          children: <Widget>[
-            ListTile(
-                title: Text(
-                  "Sağ çekmece",
-                  style: Theme.of(context).textTheme.headline2,
-                )),
-          ],
-        ),
-      ),
-    ),
     drawer: Drawer(
       child: Container(
         color: Theme.of(context).textTheme.headline4.color,
