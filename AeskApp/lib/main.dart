@@ -11,8 +11,6 @@ import 'classes/SharedPreferences.dart';
 import 'package:aeskapp/custom_widgets/front_inventory.dart';
 import 'package:aeskapp/classes/Mqtt.dart';
 import 'package:aeskapp/pages/Custom.dart';
-import 'package:aeskapp/pages/General.dart';
-import 'package:aeskapp/pages/Loading.dart';
 import 'package:aeskapp/pages/Graphs.dart';
 import 'package:aeskapp/pages/Home.dart';
 import 'package:aeskapp/pages/Login.dart';
@@ -60,11 +58,9 @@ class MyApp extends StatelessWidget {
               "/Login": (context) => Logging(),
               "/Home": (context) => Home(),
               "/HomeHydro": (context) => HomeHydro(),
-              "/General": (context) => General(),
               "/Custom": (context) => Custom(),
               "/Graphs": (context) => Graphs(),
               "/GraphsHydro": (context) => GraphsHydro(),
-              "/Loading": (context) => Loading(),
               "/Bms": (context) => BmsPage(),
               "/Settings": (context) => Settings(),
               "/Location": (context) => Konum(),

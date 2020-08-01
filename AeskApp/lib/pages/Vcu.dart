@@ -1,7 +1,6 @@
 import 'package:aeskapp/classes/Mqtt.dart';
 import 'package:aeskapp/classes/aeskData.dart';
 import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
-import 'package:aeskapp/custom_widgets/front_inventory.dart';
 import 'package:aeskapp/custom_widgets/gauge.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
