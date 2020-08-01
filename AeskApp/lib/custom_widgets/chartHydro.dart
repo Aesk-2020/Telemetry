@@ -476,7 +476,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(22,"eysSharingRatio");
+                    graphList.add("eysSharingRatio");
                   });
                 },
               ),
@@ -496,7 +496,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(23,"eysTemp");
+                    graphList.add("eysTemp");
                   });
                 },
               ),
