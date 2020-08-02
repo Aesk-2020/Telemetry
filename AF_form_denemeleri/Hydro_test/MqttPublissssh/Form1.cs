@@ -223,11 +223,10 @@ namespace MqttPublissssh
 
 
             //fronttan bi kere çek sonra hepsine ata 
-            for (int i = 0; i < 16; i++)
+            for (int i = 0; i < BMS.bms_cells.Length; i++)
             {
-                Macros.array_of_x[ref_index] = 0;
+                Macros.array_of_x[ref_index] = (BMS.bms_cells[i]);
                 ref_index++;
-
             }
 
             BitConverter.GetBytes((UInt16)(EMS.bat_cons_f32 * 10)).CopyTo(Macros.array_of_x, ref_index);
@@ -273,11 +272,7 @@ namespace MqttPublissssh
             Macros.array_of_x[ref_index] = (EMS.error_u8);
             ref_index++;
 
-            for (int i = 0; i < BMS.bms_cells.Length; i++)
-            {
-                Macros.array_of_x[ref_index] = (BMS.bms_cells[i]);
-                ref_index++;
-            }
+       
 
             Macros.array_of_x[ref_index] = (VCU.can_error_u8);
             ref_index++;
@@ -409,13 +404,31 @@ namespace MqttPublissssh
         //bms
         private void button6_Click(object sender, EventArgs e)
         {
-           BMS.bat_volt_f32 = float.Parse(textBox28.Text);
-           BMS.bat_current_f32 = float.Parse(textBox29.Text);
-           BMS.bat_cons_f32 = float.Parse(textBox30.Text);
-           BMS.soc_f32 = float.Parse(textBox31.Text);
-           BMS.worst_cell_voltage_f32 = float.Parse(textBox32.Text);
-           BMS.worst_cell_address_u8 = (byte)Convert.ToByte(textBox33.Text);
-           BMS.temp_u8 = (byte)Convert.ToByte(textBox34.Text);
+            BMS.bat_volt_f32 = float.Parse(textBox28.Text);
+            BMS.bat_current_f32 = float.Parse(textBox29.Text);
+            BMS.bat_cons_f32 = float.Parse(textBox30.Text);
+            BMS.soc_f32 = float.Parse(textBox31.Text);
+            BMS.worst_cell_voltage_f32 = float.Parse(textBox32.Text);
+            BMS.worst_cell_address_u8 = (byte)Convert.ToByte(textBox33.Text);
+            BMS.temp_u8 = (byte)Convert.ToByte(textBox34.Text);
+
+            BMS.bms_cells[0] = (byte)Convert.ToByte(textBox35.Text);
+            BMS.bms_cells[1] = (byte)Convert.ToByte(textBox36.Text);
+            BMS.bms_cells[2] = (byte)Convert.ToByte(textBox37.Text);
+            BMS.bms_cells[3] = (byte)Convert.ToByte(textBox38.Text);
+            BMS.bms_cells[4] = (byte)Convert.ToByte(textBox39.Text);
+            BMS.bms_cells[5] = (byte)Convert.ToByte(textBox40.Text);
+            BMS.bms_cells[6] = (byte)Convert.ToByte(textBox41.Text);
+            BMS.bms_cells[7] = (byte)Convert.ToByte(textBox42.Text);
+            BMS.bms_cells[8] = (byte)Convert.ToByte(textBox43.Text);
+            BMS.bms_cells[9] = (byte)Convert.ToByte(textBox44.Text);
+            BMS.bms_cells[10] = (byte)Convert.ToByte(textBox45.Text);
+            BMS.bms_cells[11] = (byte)Convert.ToByte(textBox46.Text);
+            BMS.bms_cells[12] = (byte)Convert.ToByte(textBox47.Text);
+            BMS.bms_cells[13] = (byte)Convert.ToByte(textBox48.Text);
+            BMS.bms_cells[14] = (byte)Convert.ToByte(textBox49.Text);
+            BMS.bms_cells[15] = (byte)Convert.ToByte(textBox50.Text);
+
 
         }
 
@@ -445,6 +458,24 @@ namespace MqttPublissssh
             BMS.worst_cell_voltage_f32 = float.Parse(textBox32.Text);
             BMS.worst_cell_address_u8 = (byte)Convert.ToByte(textBox33.Text);
             BMS.temp_u8 = (byte)Convert.ToByte(textBox34.Text);
+
+            BMS.bms_cells[0] = (byte)Convert.ToByte(textBox35.Text);
+            BMS.bms_cells[1] = (byte)Convert.ToByte(textBox36.Text);
+            BMS.bms_cells[2] = (byte)Convert.ToByte(textBox37.Text);
+            BMS.bms_cells[3] = (byte)Convert.ToByte(textBox38.Text);
+            BMS.bms_cells[4] = (byte)Convert.ToByte(textBox39.Text);
+            BMS.bms_cells[5] = (byte)Convert.ToByte(textBox40.Text);
+            BMS.bms_cells[6] = (byte)Convert.ToByte(textBox41.Text);
+            BMS.bms_cells[7] = (byte)Convert.ToByte(textBox42.Text);
+            BMS.bms_cells[8] = (byte)Convert.ToByte(textBox43.Text);
+            BMS.bms_cells[9] = (byte)Convert.ToByte(textBox44.Text);
+            BMS.bms_cells[10] = (byte)Convert.ToByte(textBox45.Text);
+            BMS.bms_cells[11] = (byte)Convert.ToByte(textBox46.Text);
+            BMS.bms_cells[12] = (byte)Convert.ToByte(textBox47.Text);
+            BMS.bms_cells[13] = (byte)Convert.ToByte(textBox48.Text);
+            BMS.bms_cells[14] = (byte)Convert.ToByte(textBox49.Text);
+            BMS.bms_cells[15] = (byte)Convert.ToByte(textBox50.Text);
+
 
             EMS.bat_cons_f32 = float.Parse(textBox16.Text);
             EMS.fc_cons_f32 = float.Parse(textBox17.Text);
