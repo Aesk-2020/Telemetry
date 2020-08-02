@@ -273,7 +273,11 @@ namespace MqttPublissssh
             Macros.array_of_x[ref_index] = (EMS.error_u8);
             ref_index++;
 
-
+            for (int i = 0; i < BMS.bms_cells.Length; i++)
+            {
+                Macros.array_of_x[ref_index] = (BMS.bms_cells[i]);
+                ref_index++;
+            }
 
             Macros.array_of_x[ref_index] = (VCU.can_error_u8);
             ref_index++;

@@ -18,7 +18,7 @@ namespace MqttPublissssh.Variables
         public static byte worst_cell_address_u8;
         public static byte temp_u8;
 
-        public static float[] bms_cells = new float[84];
+        public static byte[] bms_cells = new byte[16];
 
 
     }
