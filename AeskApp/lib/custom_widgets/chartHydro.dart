@@ -14,7 +14,6 @@ class AeskChartHydro extends StatefulWidget {
   @override
   _AeskChartHydroState createState() => _AeskChartHydroState();
 }
-
 class _AeskChartHydroState extends State<AeskChartHydro> {
   double currentTime = 0;
   dynamic data;
@@ -35,8 +34,10 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 icon: Icon(Icons.delete),
                 onPressed: () {
                   setState(() {
+                    print(currentgraph);
                     currentgraph.removeAt(index);
-                    graphList.insert(0,"driverPhaseA");
+                    print(currentgraph);
+                    graphList.add("driverPhaseA");
                   });
                 },
               ),
@@ -56,7 +57,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(1,"driverPhaseB");
+                    graphList.add("driverPhaseB");
                   });
                 },
               ),
@@ -76,7 +77,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(2,"dcBusCur");
+                    graphList.add("dcBusCur");
                   });
                 },
               ),
@@ -96,7 +97,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(3,"driverIdG");
+                    graphList.add("driverIdG");
                   });
                 },
               ),
@@ -116,7 +117,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(4,"driverIdQ");
+                    graphList.add("driverIdQ");
                   });
                 },
               ),
@@ -136,7 +137,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(5,"driverVdG");
+                    graphList.add("driverVdG");
                   });
                 },
               ),
@@ -156,7 +157,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(6,"driverVqG");
+                    graphList.add("driverVqG");
                   });
                 },
               ),
@@ -176,7 +177,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(7,"bmsBatCons");
+                    graphList.add("bmsBatCons");
                   });
                 },
               ),
@@ -196,7 +197,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(8,"bmsBatCur");
+                    graphList.add("bmsBatCur");
                   });
                 },
               ),
@@ -216,7 +217,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(9,"bmsBatVolt");
+                    graphList.add("bmsBatVolt");
                   });
                 },
               ),
@@ -236,7 +237,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(10,"eysBatCons");
+                    graphList.add("eysBatCons");
                   });
                 },
               ),
@@ -256,7 +257,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(11,"eysBatCur");
+                    graphList.add("eysBatCur");
                   });
                 },
               ),
@@ -276,7 +277,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(12,"eysBatSoc");
+                    graphList.add("eysBatSoc");
                   });
                 },
               ),
@@ -296,7 +297,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(13,"eysBatVolt");
+                    graphList.add("eysBatVolt");
                   });
                 },
               ),
@@ -316,7 +317,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(14,"eysFcCons");
+                    graphList.add("eysFcCons");
                   });
                 },
               ),
@@ -336,7 +337,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(15,"eysFcCur");
+                    graphList.add("eysFcCur");
                   });
                 },
               ),
@@ -356,7 +357,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(16,"eysFcLtCons");
+                    graphList.add("eysFcLtCons");
                   });
                 },
               ),
@@ -376,7 +377,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(17,"eysFcVolt");
+                    graphList.add("eysFcVolt");
                   });
                 },
               ),
@@ -396,7 +397,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(18,"eysOutCons");
+                    graphList.add("eysOutCons");
                   });
                 },
               ),
@@ -416,7 +417,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(19,"eysOutCur");
+                    graphList.add("eysOutCur");
                   });
                 },
               ),
@@ -436,7 +437,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(20,"eysOutVolt");
+                    graphList.add("eysOutVolt");
                   });
                 },
               ),
@@ -456,7 +457,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(21,"eysPenalty");
+                    graphList.add("eysPenalty");
                   });
                 },
               ),
@@ -504,8 +505,11 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
           ],
         );
         break;
-      default:
-        return modifiedExpansionTile(index);
+      case "list":
+        return (graphList.length == 0 ? SizedBox(height: 0,) : modifiedExpansionTile(currentgraph.length));
+        break;
+      default :
+        return SizedBox(height: 0,);
         break;
     }
 
@@ -513,13 +517,23 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
   }
   Widget modifiedExpansionTile(int index) {
     return ExpansionTile(
-      title: Center(child: myText("    Grafikler", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold)),
+      title: myText("Grafikler", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+      leading: Icon(Icons.graphic_eq),
       backgroundColor: Theme.of(context).backgroundColor,
       children: graphList.map((tileName) {
-        if(tileName == "") return SizedBox(height: 0,);
-        return FlatButton(
-          child: myText(tileName, 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-          onPressed: (){
+        return GestureDetector(
+          child: Container(
+            alignment: Alignment.centerLeft,
+            padding: EdgeInsets.fromLTRB(15, 5, 5, 5),
+            child: Row(
+              children: <Widget>[
+                Icon(Icons.add),
+                SizedBox(width: 15,),
+                myText(tileName, 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+              ],
+            ),
+          ),
+          onTap: (){
             setState(() {
               currentgraph.insert(index, tileName);
               graphList.remove(tileName);
@@ -528,6 +542,12 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
         );
       }).toList(),
     );
+  }
+
+  @override
+  void initState() {
+    currentgraph[0] = "list";
+    super.initState();
   }
   @override
   Widget build(BuildContext context) {

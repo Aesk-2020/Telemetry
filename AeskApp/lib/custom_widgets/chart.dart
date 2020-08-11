@@ -43,7 +43,7 @@ class _AeskChartState extends State<AeskChart> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(0,"driverPhaseA");
+                    graphList.add("driverPhaseA");
                   });
                 },
               ),
@@ -63,7 +63,7 @@ class _AeskChartState extends State<AeskChart> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(1,"driverPhaseB");
+                    graphList.add("driverPhaseB");
                   });
                 },
               ),
@@ -83,7 +83,7 @@ class _AeskChartState extends State<AeskChart> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(2,"dcBusCur");
+                    graphList.add("dcBusCur");
                   });
                 },
               ),
@@ -103,7 +103,7 @@ class _AeskChartState extends State<AeskChart> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(3,"driverIdG");
+                    graphList.add("driverIdG");
                   });
                 },
               ),
@@ -123,7 +123,7 @@ class _AeskChartState extends State<AeskChart> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(4,"driverIdQ");
+                    graphList.add("driverIdQ");
                   });
                 },
               ),
@@ -143,7 +143,7 @@ class _AeskChartState extends State<AeskChart> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(5,"driverVdG");
+                    graphList.add("driverVdG");
                   });
                 },
               ),
@@ -163,7 +163,7 @@ class _AeskChartState extends State<AeskChart> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(6,"driverVqG");
+                    graphList.add("driverVqG");
                   });
                 },
               ),
@@ -183,7 +183,7 @@ class _AeskChartState extends State<AeskChart> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(7,"bmsBatCons");
+                    graphList.add("bmsBatCons");
                   });
                 },
               ),
@@ -203,7 +203,7 @@ class _AeskChartState extends State<AeskChart> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(8,"bmsBatCur");
+                    graphList.add("bmsBatCur");
                   });
                 },
               ),
@@ -223,7 +223,7 @@ class _AeskChartState extends State<AeskChart> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.insert(9,"bmsBatVolt");
+                    graphList.add("bmsBatVolt");
                   });
                 },
               ),
@@ -231,8 +231,11 @@ class _AeskChartState extends State<AeskChart> {
           ],
         );
         break;
+      case "list":
+        return (graphList.length == 0 ? SizedBox(height: 0,) : modifiedExpansionTile(currentgraph.length));
+        break;
       default:
-        return modifiedExpansionTile(index);
+        return SizedBox(height: 0);
         break;
     }
 
@@ -240,13 +243,23 @@ class _AeskChartState extends State<AeskChart> {
   }
   Widget modifiedExpansionTile(int index) {
     return ExpansionTile(
-      title: Center(child: myText("     Grafikler", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold)),
+      title: myText("Grafikler", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
       backgroundColor: Theme.of(context).backgroundColor,
+      leading: Icon(Icons.graphic_eq),
       children: graphList.map((tileName) {
-        if(tileName == "") return SizedBox(height: 0,);
-        return FlatButton(
-          child: myText(tileName, 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-          onPressed: (){
+        return GestureDetector(
+          child: Container(
+            alignment: Alignment.centerLeft,
+            padding: EdgeInsets.fromLTRB(15, 5, 5, 5),
+            child: Row(
+              children: <Widget>[
+                Icon(Icons.add),
+                SizedBox(width: 15,),
+                myText(tileName, 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+              ],
+            ),
+          ),
+          onTap: (){
             setState(() {
               currentgraph.insert(index, tileName);
               graphList.remove(tileName);
@@ -255,6 +268,22 @@ class _AeskChartState extends State<AeskChart> {
         );
       }).toList(),
     );
+  }
+/*
+FlatButton(
+          child: myText(tileName, 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+          onPressed: (){
+            setState(() {
+              currentgraph.insert(index, tileName);
+              graphList.remove(tileName);
+            });
+          },
+        )
+*/
+  @override
+  void initState() {
+    currentgraph[0] = "list";
+    super.initState();
   }
   @override
   Widget build(BuildContext context) {
