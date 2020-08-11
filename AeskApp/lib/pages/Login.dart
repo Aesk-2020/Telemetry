@@ -1,10 +1,8 @@
 import 'package:aeskapp/classes/Mqtt.dart';
-import 'package:aeskapp/classes/aeskData.dart';
 import 'package:flutter/material.dart';
 import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:async';
 
 String ip;
@@ -124,7 +122,7 @@ class _LoggingState extends State<Logging> {
                   if (state == true) {
                     MqttAesk.isLyra = checkbox;
                     checkbox ? mqttAesk.subscribeToTopic("LYRADATA") : mqttAesk.subscribeToTopic("HYDRADATA");
-                    Navigator.pushNamed(context, "/Home");
+                    Navigator.pushNamed(context, checkbox ? "/Home" : "/HomeHydro");
                   } else {
                     Navigator.pushReplacementNamed(context, "/Login");
                     showDialog(

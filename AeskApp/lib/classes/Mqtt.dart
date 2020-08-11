@@ -9,7 +9,7 @@ import 'dart:async';
 var old_iteration_date;
 
 class MqttAesk extends ChangeNotifier {
-  static String broker = '157.230.29.63';
+  static String broker = '46.102.106.183';
   static int port = 1883;
   static String username = 'digital';
   static String password = 'aesk';
@@ -113,7 +113,7 @@ class MqttAesk extends ChangeNotifier {
 
   void subscribeToTopic(String topic) {
     if (connectionState == mqtt.MqttConnectionState.connected) {
-      client.subscribe(topic, mqtt.MqttQos.exactlyOnce);
+      client.subscribe(topic, mqtt.MqttQos.atMostOnce);
     }
     notifyListeners();
   }

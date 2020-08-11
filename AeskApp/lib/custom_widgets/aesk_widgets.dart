@@ -15,13 +15,13 @@ List<DrawerListClass> drawerListLyra = [
   DrawerListClass(image: "custom-icon.png", text: "Özelleştirme Ekranı", destination: "/Custom"),
 ];
 List<DrawerListClass> drawerListHydra = [
-  DrawerListClass(image: "home-icon.png", text: "AnaSayfa", destination: "/Home"),
+  DrawerListClass(image: "home-icon.png", text: "AnaSayfa", destination: "/HomeHydro"),
   DrawerListClass(image: "mcu-icon.png", text: "MCU & VCU", destination: "/Vcu"),
   DrawerListClass(image: "bms-icon.png", text: "BMS", destination: "/Bms"),
   DrawerListClass(image: "ems-icon.png", text: "EMS", destination: "/Ems"),
   DrawerListClass(image: "cells-icon.png", text: "Batarya Hücreleri", destination: "/CellsHydro"),
   DrawerListClass(image: "map-icon.png", text: "Harita", destination: "/Location"),
-  DrawerListClass(image: "chart-icon.png", text: "Grafikler", destination: "/Graphs"),
+  DrawerListClass(image: "chart-icon.png", text: "Grafikler", destination: "/GraphsHydro"),
   DrawerListClass(image: "custom-icon.png", text: "Özelleştirme Ekranı", destination: "/Custom"),
 ];
 List<DrawerListClass> drawerList = MqttAesk.isLyra ? drawerListLyra : drawerListHydra;
@@ -33,20 +33,6 @@ Widget aeskScaffold({Widget myBody, BuildContext context}) {
     backgroundColor: Theme.of(context).backgroundColor,
     body: myBody,
     drawerEdgeDragWidth: 70,
-    endDrawer: Drawer(
-      child: Container(
-        color: Colors.grey[800],
-        child: ListView(
-          children: <Widget>[
-            ListTile(
-                title: Text(
-              "Sağ çekmece",
-              style: Theme.of(context).textTheme.headline2,
-            )),
-          ],
-        ),
-      ),
-    ),
     drawer: Drawer(
       child: Container(
         color: Theme.of(context).textTheme.headline4.color,
@@ -54,17 +40,17 @@ Widget aeskScaffold({Widget myBody, BuildContext context}) {
         child: ListView(
           scrollDirection: Axis.vertical,
           children: [ListTile(
-                title: IconButton(
-                  icon: Icon(
-                    Icons.settings,
-                    textDirection: TextDirection.rtl,
-                    color: Theme.of(context).buttonColor,
-                  ),
-                  onPressed: () => Navigator.popAndPushNamed(context, "/Settings"),
-                  alignment: Alignment.centerRight,
-                ),
-                leading: myText("AeskApp", 25, Theme.of(context).textSelectionColor, FontWeight.bold),
-              )]
+            title: IconButton(
+              icon: Icon(
+                Icons.settings,
+                textDirection: TextDirection.rtl,
+                color: Theme.of(context).buttonColor,
+              ),
+              onPressed: () => Navigator.popAndPushNamed(context, "/Settings"),
+              alignment: Alignment.centerRight,
+            ),
+            leading: myText("AeskApp", 25, Theme.of(context).textSelectionColor, FontWeight.bold),
+          )]
               + drawerList.map((element) {
                 return ListTile(
                   title: myText(element.text, 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),

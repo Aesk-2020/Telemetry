@@ -16,9 +16,10 @@ class Custom extends StatefulWidget {
 }
 
 class _CustomState extends State<Custom> {
-  static List<String> currentContent = List.filled(8, null,growable: true);
-  static List<String> nameOfTiles = ["MCU/VCU","BMS",!MqttAesk.isLyra ? "EMS" : ""];
-  static int contentCount = 1;
+  static List<String> currentContent = List.filled(1, null,growable: true);
+  static List<String> nameOfTilesLyra = ["MCU/VCU","BMS"];
+  static List<String> nameOfTilesHydra = ["MCU/VCU","BMS","EMS"];
+  static List<String> nameOfTiles = MqttAesk.isLyra ? nameOfTilesLyra : nameOfTilesHydra;
 
   Widget contentAdder(String content, int index) {
     final scale = MediaQuery.of(context);
@@ -36,7 +37,6 @@ class _CustomState extends State<Custom> {
                   setState(() {
                     currentContent.removeAt(index);
                     nameOfTiles.add("BMS");
-                    contentCount--;
                   });
                 },
               ),
@@ -57,7 +57,6 @@ class _CustomState extends State<Custom> {
                   setState(() {
                     currentContent.removeAt(index);
                     nameOfTiles.add("MCU/VCU");
-                    contentCount--;
                   });
                 },
               ),
@@ -79,7 +78,6 @@ class _CustomState extends State<Custom> {
                     setState(() {
                       currentContent.removeAt(index);
                       nameOfTiles.add("EMS");
-                      contentCount--;
                     });
                   },
                 ),
@@ -87,34 +85,51 @@ class _CustomState extends State<Custom> {
             ],
           );
         break;
+      case "list":
+        return (nameOfTiles.length == 0 ? SizedBox(height: 0,) : modifiedExpansionTile(currentContent.length));
+        break;
       default:
-        return modifiedExpansionTile(index);
+        return SizedBox(height: 0,);
         break;
     }
   }
 
   Widget modifiedExpansionTile(int index) {
     return ExpansionTile(
-      title: Center(child: myText("     Ekle", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold)),
+      title: myText("Ekle", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+      leading: Icon(Icons.graphic_eq),
       backgroundColor: Theme.of(context).backgroundColor,
       children: nameOfTiles.map((tileName) {
-        if(tileName == "") return SizedBox(height: 0,);
-        return FlatButton(
-          child: myText(tileName, 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-          onPressed: (){
+        return GestureDetector(
+          child: Container(
+            alignment: Alignment.centerLeft,
+            padding: EdgeInsets.fromLTRB(15, 5, 5, 5),
+            child: Row(
+              children: <Widget>[
+                Icon(Icons.add),
+                SizedBox(width: 15,),
+                myText(tileName, 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+              ],
+            ),
+          ),
+          onTap: (){
             setState(() {
               currentContent.insert(index, tileName);
               nameOfTiles.remove(tileName);
-              contentCount++;
             });
           },
         );
       }).toList(),
     );
   }
-
+@override
+  void initState() {
+    currentContent[0] = "list";
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
+    print(nameOfTiles);
     return aeskScaffold(
       context: context,
       myBody: CustomScrollView(
@@ -126,7 +141,7 @@ class _CustomState extends State<Custom> {
                     (context, int index){
                   return contentAdder(currentContent[index], index);
                 },
-                childCount: contentCount,
+                childCount: currentContent.length,
               ),
             ),
           ),
