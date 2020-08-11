@@ -24,7 +24,7 @@ import 'package:syncfusion_flutter_core/core.dart';
 
 void main() async{
   SyncfusionLicense.registerLicense (
-      "NT8mJyc2IWhia31ifWN9Z2FoYmF8YGJ8ampqanNiYmlmamlmanMDHmgqJiAmNTg2PjI/IzI/MjA6EyoyMj06fTA8Pg==");
+      "NT8mJyc2IWhia31hfWN9Z2doYmF8YGJ8ampqanNiYmlmamlmanMDHmgqJiAmNTg2PjI/IzI/MjA6EyoyMj06fTA8Pg==");
   WidgetsFlutterBinding.ensureInitialized(); // main içindeyken zaman alan yükleme veya başlatma işlemlerinden önce bu fonksiyonun çağırılması gerek
   await loadPrefs();
   return runApp(MyApp());

@@ -33,6 +33,7 @@ Widget Ems() {
                         myText("    Akım:      ${AeskData.eys_bat_current_int16} A", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                         myText("    Tüketim:   ${AeskData.eys_bat_cons_uint16} Wh", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                         myText("    SoC:       ${AeskData.eys_bat_soc_uint16} %", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                        myText("    Sıcaklık:  ${AeskData.eys_temp_uint8} °C", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                         SizedBox(height: 15,),
 
                         myText("    Fuel Cell", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
