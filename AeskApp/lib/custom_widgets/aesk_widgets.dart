@@ -24,11 +24,11 @@ List<DrawerListClass> drawerListHydra = [
   DrawerListClass(image: "chart-icon.png", text: "Grafikler", destination: "/GraphsHydro"),
   DrawerListClass(image: "custom-icon.png", text: "Özelleştirme Ekranı", destination: "/Custom"),
 ];
-List<DrawerListClass> drawerList = MqttAesk.isLyra ? drawerListLyra : drawerListHydra;
+
 
 //********************************** Scaffold Widget ****************************************************//
 Widget aeskScaffold({Widget myBody, BuildContext context}) {
-
+  List<DrawerListClass> drawerList = MqttAesk.isLyra ? drawerListLyra : drawerListHydra;
   return Scaffold(
     backgroundColor: Theme.of(context).backgroundColor,
     body: myBody,
