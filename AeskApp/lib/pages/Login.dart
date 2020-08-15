@@ -38,8 +38,8 @@ class _LoggingState extends State<Logging> {
                 ),
                 enableInteractiveSelection: false,
                 decoration: InputDecoration(
-                  hintText: "IP Adresi",
-                  icon: Icon(Icons.assignment_ind,color: Theme.of(context).appBarTheme.color)
+                    hintText: "IP Adresi",
+                    icon: Icon(Icons.assignment_ind,color: Theme.of(context).appBarTheme.color)
                 ),
                 onChanged: (String value) {
                   ip = value;
@@ -114,7 +114,7 @@ class _LoggingState extends State<Logging> {
                   );
                   dynamic state;
                   try{
-                     state = await mqttAesk.connect().timeout(Duration(seconds: 5));
+                    state = await mqttAesk.connect().timeout(Duration(seconds: 5));
                   }catch(e){
                     state = false;
                   }
@@ -134,7 +134,7 @@ class _LoggingState extends State<Logging> {
                       ),
                     );
                   }
-                } else if(checkbox != null) {
+                } else if(checkbox != null && (ip !=1 || password != MqttAesk.password)) {
                   showDialog(
                     context: context,
                     child: AlertDialog(

@@ -113,7 +113,7 @@ class _HomeState extends State<HomeHydro> {
                                       .toStringAsFixed(2),
                                 ),
                                 DataBox(
-                                  ad: "EYS EYS OUT VOLT",
+                                  ad: "EYS OUT VOLT",
                                   veri: AeskData.eys_out_volt_uint16
                                       .toStringAsFixed(2),
                                 ),
