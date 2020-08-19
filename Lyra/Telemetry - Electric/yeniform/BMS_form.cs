@@ -226,7 +226,6 @@ namespace yeniform
                                         DisplayTemprature();
                                         break;
                                     case 3:
-                                        DisplayGeneralState();
                                         break;
                                     default:
                                         break;
@@ -355,10 +354,6 @@ namespace yeniform
             cell27_temp.Text = BMS.temp7_u8.ToString();
             cell28_temp.Text = BMS.temp7_u8.ToString();
             karbon_ayak_izi.Text = (((BMS.bat_cons_f32 / 1000) * 0.283)).ToString("0.00");
-
-        }
-        private void DisplayGeneralState()
-        {
 
         }
 
