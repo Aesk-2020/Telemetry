@@ -108,24 +108,28 @@ class _HomeState extends State<HomeHydro> {
                                       .toStringAsFixed(2),
                                 ),
                                 DataBox(
-                                  ad: "EYS SOC",
-                                  veri: AeskData.eys_bat_soc_uint16
-                                      .toStringAsFixed(2),
-                                ),
-                                DataBox(
                                   ad: "EYS OUT VOLT",
                                   veri: AeskData.eys_out_volt_uint16
                                       .toStringAsFixed(2),
                                 ),
                                 DataBox(
                                   ad: "EYS TEMP",
-                                  veri:
-                                      AeskData.eys_temp_uint8.toStringAsFixed(2),
+                                  veri: AeskData.eys_temp_uint8
+                                      .toStringAsFixed(2),
                                 ),
                                 DataBox(
                                   ad: "EYS SHARING RATIO",
                                   veri: AeskData.eys_sharing_ratio
                                       .toStringAsFixed(2),
+                                ),
+                                Container(
+                                  height: scale.size.height / 13.6686,
+                                  width: scale.size.width / 2.4935,
+                                  alignment: Alignment.center,
+                                  margin: EdgeInsets.fromLTRB(10, 20, 10, 10),
+                                  child: FittedBox(
+                                    child: Center(),
+                                  ),
                                 ),
                               ],
                             ),
@@ -143,7 +147,8 @@ class _HomeState extends State<HomeHydro> {
                                 ),
                                 DataBox(
                                   ad: "Torque",
-                                  veri: AeskData.driver_vq_f32.toStringAsFixed(2),
+                                  veri:
+                                      AeskData.driver_vq_f32.toStringAsFixed(2),
                                 ),
                                 DataBox(
                                   ad: "DC BUS CUR",
@@ -157,7 +162,8 @@ class _HomeState extends State<HomeHydro> {
                                 ),
                                 DataBox(
                                   ad: "IArms",
-                                  veri: AeskData.driver_vd_f32.toStringAsFixed(2),
+                                  veri:
+                                      AeskData.driver_vd_f32.toStringAsFixed(2),
                                 ),
                                 DataBox(
                                   ad: "EYS FC CONS",

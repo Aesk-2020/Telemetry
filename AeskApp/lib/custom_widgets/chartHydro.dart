@@ -18,7 +18,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
   double currentTime = 0;
   dynamic data;
   static List<String> currentgraph = List.filled(1, null,growable: true);
-  static List<String> graphList = ["driverPhaseA","driverPhaseB","dcBusCur","driverIdG","driverIdQ","driverVdG","driverVqG","bmsBatCons","bmsBatCur","bmsBatVolt","eysBatCons","eysBatCur","eysBatSoc","eysBatVolt","eysFcCons","eysFcCur","eysFcLtCons","eysFcVolt","eysOutCons","eysOutCur","eysOutVolt","eysPenalty","eysSharingRatio","eysTemp"];
+  static List<String> graphList = ["driverPhaseA","driverPhaseB","dcBusCur","driverIdG","driverIdQ","driverVdG","driverVqG","bmsBatCons","bmsBatCur","bmsBatVolt","eysBatCons","eysBatCur","eysBatVolt","eysFcCons","eysFcCur","eysFcLtCons","eysFcVolt","eysOutCons","eysOutCur","eysOutVolt","eysPenalty","eysSharingRatio","eysTemp"];
 
   Widget graphAdder(String content, int index){
     final scale = MediaQuery.of(context);
@@ -258,26 +258,6 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                   setState(() {
                     currentgraph.removeAt(index);
                     graphList.add("eysBatCur");
-                  });
-                },
-              ),
-            )
-          ],
-        );
-        break;
-      case "eysBatSoc":
-        return Stack(
-          children: <Widget>[
-            eysBatSoc(),
-            Positioned(
-              bottom: 5,
-              left: scale.size.width/2.22,
-              child: IconButton(
-                icon: Icon(Icons.delete),
-                onPressed: () {
-                  setState(() {
-                    currentgraph.removeAt(index);
-                    graphList.add("eysBatSoc");
                   });
                 },
               ),
@@ -944,37 +924,7 @@ Widget eysBatCur(){
     },
   );
 }
-Widget eysBatSoc(){
-  return Consumer<MqttAesk>(
-    builder: (context, _, child){
-      return Container(
-        padding: EdgeInsets.only(top: 10, bottom: 10),
-        child: Card(
-          child: Padding(
-            padding: const EdgeInsets.only(bottom: 25),
-            child: SfCartesianChart(
-              title: ChartTitle(
-                  text: "EYS Bat Soc",
-                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-              primaryXAxis: CategoryAxis(),
-              tooltipBehavior: TooltipBehavior(enable: true),
-              series: <ChartSeries>[
-                SplineSeries<graph_data, double>(
-                  enableTooltip: true,
-                  dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.eys_bat_soc_g,
-                  xValueMapper: (graph_data data, _) => data.time / 1000,
-                  //name: widget._chartName,
-                  splineType: SplineType.monotonic,
-                )
-              ],
-            ),
-          ),
-        ),
-      );
-    },
-  );
-}Widget eysBatVolt(){
+Widget eysBatVolt(){
   return Consumer<MqttAesk>(
     builder: (context, _, child){
       return Container(
