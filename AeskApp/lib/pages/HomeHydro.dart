@@ -333,7 +333,7 @@
                                   ),
                                   DataBox(
                                     ad: "EYS SHARING RATIO",
-                                    veri: AeskData.eys_sharing_ratio
+                                    veri: AeskData.eys_sharing_ratio_uint16
                                         .toStringAsFixed(2),
                                   ),
                                   Container(

@@ -377,7 +377,7 @@ class AeskData extends ChangeNotifier{
         eys_fc_lt_cons_uint16,
         eys_out_cons_uint16,
         eys_penalty_int8,
-        eys_sharing_ratio,
+        eys_sharing_ratio_uint16,
         eys_temp_uint8
         );
     notifyListeners();
