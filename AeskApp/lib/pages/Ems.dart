@@ -32,7 +32,7 @@ Widget Ems() {
                         myText("    Gerilim:   ${AeskData.eys_bat_volt_int16} V", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                         myText("    Akım:      ${AeskData.eys_bat_current_int16} A", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                         myText("    Tüketim:   ${AeskData.eys_bat_cons_uint16} Wh", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                        myText("    Sharing Ratio:       ${AeskData.eys_sharing_ratio} %", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                        myText("    Sharing Ratio:       ${AeskData.eys_sharing_ratio_uint16} %", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                         myText("    Sıcaklık:  ${AeskData.eys_temp_uint8} °C", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                         SizedBox(height: 15,),
 

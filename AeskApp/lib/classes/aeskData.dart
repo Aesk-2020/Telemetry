@@ -155,7 +155,6 @@ class AeskData extends ChangeNotifier{
   static bool eys_bat_volt_error_u1 = false;
   static bool eys_fc_volt_error_u1 = false;
   static bool eys_out_volt_error_u1 = false;
-  static double eys_sharing_ratio = 0.0;
 
   static double x_time=0;
   static var ping = 0;
@@ -303,7 +302,7 @@ class AeskData extends ChangeNotifier{
       eys_penalty_int8 = message.getInt8(_startIndex);
       _startIndex++;
 
-      eys_sharing_ratio_uint16 = message.getFloat32(_startIndex,myEndian) / 1000;
+      eys_sharing_ratio_uint16 = message.getUint16(_startIndex,myEndian) / 1000;
       _startIndex += 2;
 
       eys_temp_uint8 = message.getUint8(_startIndex);
