@@ -141,8 +141,8 @@ class _SettingsState extends State<Settings> {
                       if (checkbox == null || checkbox == false){
                         checkbox = true;
                         MqttAesk.isLyra = checkbox;
-                        mqttAesk.subscribeToTopic("LYRADATA");
                         mqttAesk.unsubscribeFromTopic("HYDRADATA");
+                        mqttAesk.subscribeToTopic("LYRADATA");
                         Navigator.pushNamed(context, "/Home");
                       }
                     });
@@ -161,8 +161,8 @@ class _SettingsState extends State<Settings> {
                       if (checkbox == null || checkbox == true){
                         checkbox = false;
                         MqttAesk.isLyra = checkbox;
-                        mqttAesk.subscribeToTopic("HYDRADATA");
                         mqttAesk.unsubscribeFromTopic("LYRADATA");
+                        mqttAesk.subscribeToTopic("HYDRADATA");
                         Navigator.pushNamed(context, "/HomeHydro");
                       }
                     });

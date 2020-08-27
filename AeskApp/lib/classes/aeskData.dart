@@ -138,9 +138,9 @@ class AeskData extends ChangeNotifier{
   static var eys_bat_current_int16 = 0.0;//10
   static var eys_fc_current_int16 = 0.0;//10
   static var eys_out_current_int16 = 0.0;//10
-  static var eys_bat_volt_uint16 = 0.0;//10
-  static var eys_fc_volt_uint16 = 0.0;//10
-  static var eys_out_volt_uint16 = 0.0;//10
+  static var eys_bat_volt_int16 = 0.0;//10
+  static var eys_fc_volt_int16 = 0.0;//10
+  static var eys_out_volt_int16 = 0.0;//10
   static var eys_bat_cons_uint16 = 0.0;//10
   static var eys_fc_cons_uint16 = 0.0;//10
   static var eys_fc_lt_cons_uint16 = 0.0;//10
@@ -291,19 +291,19 @@ class AeskData extends ChangeNotifier{
       eys_out_current_int16 = message.getInt16(_startIndex,myEndian) / 10;
       _startIndex += 2;
 
-      eys_bat_volt_uint16 = message.getUint16(_startIndex,myEndian) / 10;
+      eys_bat_volt_int16 = message.getInt16(_startIndex,myEndian) / 10;
       _startIndex += 2;
 
-      eys_fc_volt_uint16 = message.getUint16(_startIndex,myEndian) / 10;
+      eys_fc_volt_int16 = message.getInt16(_startIndex,myEndian) / 10;
       _startIndex += 2;
 
-      eys_out_volt_uint16 = message.getUint16(_startIndex,myEndian) / 10;
+      eys_out_volt_int16 = message.getInt16(_startIndex,myEndian) / 10;
       _startIndex += 2;
 
       eys_penalty_int8 = message.getInt8(_startIndex);
       _startIndex++;
 
-      eys_sharing_ratio_uint16 = message.getUint16(_startIndex,myEndian) / 1000;
+      eys_sharing_ratio_uint16 = message.getFloat32(_startIndex,myEndian) / 1000;
       _startIndex += 2;
 
       eys_temp_uint8 = message.getUint8(_startIndex);
@@ -370,9 +370,9 @@ class AeskData extends ChangeNotifier{
         eys_bat_current_int16,
         eys_fc_current_int16,
         eys_out_current_int16,
-        eys_bat_volt_uint16,
-        eys_fc_volt_uint16,
-        eys_out_volt_uint16,
+        eys_bat_volt_int16,
+        eys_fc_volt_int16,
+        eys_out_volt_int16,
         eys_bat_cons_uint16,
         eys_fc_cons_uint16,
         eys_fc_lt_cons_uint16,

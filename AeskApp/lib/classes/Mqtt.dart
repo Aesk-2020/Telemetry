@@ -29,15 +29,6 @@ class MqttAesk extends ChangeNotifier {
     client.logging(on: true);
     client.keepAlivePeriod = 30;
     client.onDisconnected = _onDisconnected;
-    AeskData.bms_bat_current_f32 = AeskData.bms_bat_volt_f32 =
-        AeskData.bms_dc_bus_state_u8 = AeskData.bms_soc_f32 = AeskData
-            .driver_actual_velocity_u8 = AeskData.driver_dc_bus_current_f32 = 0;
-    AeskData.driver_dc_bus_voltage_f32 = AeskData.driver_id_f32 =
-        AeskData.driver_iq_f32 = AeskData.driver_motor_temperature_u8 = AeskData
-            .driver_odometer_u32 = AeskData.driver_phase_a_current_f32 = 0;
-    AeskData.driver_phase_b_current_f32 = AeskData.driver_vd_f32 =
-        AeskData.driver_vq_f32 = AeskData.bms_bat_cons_f32 =
-            AeskData.bms_temp_u8 = AeskData.bms_power_f32 = 0;
 
     //arastiracaz
     final mqtt.MqttConnectMessage connMess = mqtt.MqttConnectMessage()
@@ -93,7 +84,6 @@ class MqttAesk extends ChangeNotifier {
 
   void _onMessage(List<mqtt.MqttReceivedMessage> event) {
     old_iteration_date ??= DateTime.now();
-
     var new_iteration_date = DateTime.now();
 
     AeskData.ping =
@@ -105,9 +95,7 @@ class MqttAesk extends ChangeNotifier {
     final mqtt.MqttPublishMessage recMess =
         event[0].payload as mqtt.MqttPublishMessage;
     var message = recMess.payload.message.buffer.asByteData(0);
-
     AeskData(message, Endian.little);
-
     notifyListeners();
   }
 
