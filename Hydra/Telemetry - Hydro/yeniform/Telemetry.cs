@@ -111,7 +111,7 @@ namespace telemetry_hydro
             ThreadMethods.TextDegis(bms_worst_cell_address,BMS.worst_cell_address_u8.ToString());
             ThreadMethods.TextDegis(bms_worst_cell_voltage, BMS.worst_cell_voltage_f32.ToString());
             ThreadMethods.TextDegis(bms_temp, BMS.temp_u8.ToString());
-            ThreadMethods.TextDegis(power_text, ((int)(BMS.bat_volt_f32 * BMS.bat_current_f32)).ToString());
+            ThreadMethods.TextDegis(power_text, ((int)(EMS.bat_volt_f32 * EMS.bat_cur_f32)).ToString());
             #endregion
 
             #region ems_text_write
