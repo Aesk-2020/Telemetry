@@ -63,6 +63,7 @@ TIM_HandleTypeDef htim6;
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
 UART_HandleTypeDef huart3;
+DMA_HandleTypeDef hdma_usart2_rx;
 
 /* USER CODE BEGIN PV */
 int SetTime = 0;
@@ -191,7 +192,7 @@ int main(void)
   //////////////////////////
     HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
     HAL_UART_Receive_IT(&huart3, &xbee_data.receiveData, 1);
-    HAL_UART_Receive_IT(&huart2, &gps_data.uartReceiveData_u8, 1);
+    HAL_UART_Receive_DMA(&huart2, &gps_data.uartReceiveData_u8, 1);
     HAL_TIM_Base_Start_IT(&htim6); 
 	  lyradata.can_error.can_error_u8 = 7; // every can control bit initialize 1
   /* USER CODE END 2 */
@@ -335,14 +336,14 @@ static void MX_CAN1_Init(void)
 
   /* USER CODE END CAN1_Init 1 */
   hcan1.Instance = CAN1;
-  hcan1.Init.Prescaler = 25;
+  hcan1.Init.Prescaler = 20;
   hcan1.Init.Mode = CAN_MODE_NORMAL;
   hcan1.Init.SyncJumpWidth = CAN_SJW_1TQ;
-  hcan1.Init.TimeSeg1 = CAN_BS1_6TQ;
+  hcan1.Init.TimeSeg1 = CAN_BS1_8TQ;
   hcan1.Init.TimeSeg2 = CAN_BS2_1TQ;
   hcan1.Init.TimeTriggeredMode = DISABLE;
   hcan1.Init.AutoBusOff = ENABLE;
-  hcan1.Init.AutoWakeUp = ENABLE;
+  hcan1.Init.AutoWakeUp = DISABLE;
   hcan1.Init.AutoRetransmission = DISABLE;
   hcan1.Init.ReceiveFifoLocked = DISABLE;
   hcan1.Init.TransmitFifoPriority = DISABLE;
@@ -372,10 +373,10 @@ static void MX_CAN2_Init(void)
 
   /* USER CODE END CAN2_Init 1 */
   hcan2.Instance = CAN2;
-  hcan2.Init.Prescaler = 25;
+  hcan2.Init.Prescaler = 20;
   hcan2.Init.Mode = CAN_MODE_NORMAL;
   hcan2.Init.SyncJumpWidth = CAN_SJW_1TQ;
-  hcan2.Init.TimeSeg1 = CAN_BS1_6TQ;
+  hcan2.Init.TimeSeg1 = CAN_BS1_8TQ;
   hcan2.Init.TimeSeg2 = CAN_BS2_1TQ;
   hcan2.Init.TimeTriggeredMode = DISABLE;
   hcan2.Init.AutoBusOff = ENABLE;
@@ -509,7 +510,7 @@ static void MX_USART1_UART_Init(void)
 
   /* USER CODE END USART1_Init 1 */
   huart1.Instance = USART1;
-  huart1.Init.BaudRate = 115200;
+  huart1.Init.BaudRate = 57600;
   huart1.Init.WordLength = UART_WORDLENGTH_8B;
   huart1.Init.StopBits = UART_STOPBITS_1;
   huart1.Init.Parity = UART_PARITY_NONE;
@@ -600,8 +601,12 @@ static void MX_DMA_Init(void)
 
   /* DMA controller clock enable */
   __HAL_RCC_DMA2_CLK_ENABLE();
+  __HAL_RCC_DMA1_CLK_ENABLE();
 
   /* DMA interrupt init */
+  /* DMA1_Stream5_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream5_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream5_IRQn);
   /* DMA2_Stream3_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream3_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream3_IRQn);
@@ -715,7 +720,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 			static uint8_t cifsr_control = 0;
 
 			gsm_data.gsmreceivebuffer[gsm_data.gsmreceivebuffer_index++] = gsm_data.receivegsmdata;
-			if((strstr((const char *)gsm_data.gsmreceivebuffer, gsm_data.at_response) != NULL))
+			if(strstr((const char *)gsm_data.gsmreceivebuffer, gsm_data.at_response) != NULL)
 			{
 				gsm_data.gsm_state_current_index = gsm_data.gsm_state_next_index;
 				memset(gsm_data.gsmreceivebuffer, 0, sizeof(gsm_data.gsmreceivebuffer));
@@ -761,7 +766,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		if(huart == &huart2)
 		{
 			GPS_Control(&gps_data);
-			HAL_UART_Receive_IT(&huart2, &gps_data.uartReceiveData_u8, 1);
+			HAL_UART_Receive_DMA(&huart2, &gps_data.uartReceiveData_u8, 1);
 		}
 
 		if(huart == &huart3)
@@ -898,7 +903,7 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 			connectData.cleansession = SendMQTTConnectPack;
 			gsm_data->len =  MQTTSerialize_connect((unsigned char *)gsm_data->gsmconnectpackage, (int)sizeof(gsm_data->gsmconnectpackage),&connectData);
 			sprintf(atcommand,(const char*)"AT+CIPSEND=%d\r\n", gsm_data->len);
-			SendATCommand(gsm_data, atcommand, "\r\n>");
+			SendATCommand(gsm_data, atcommand, ">");
 			gsm_data->gsm_state_next_index = SendMQTTConnectPack;
 			gsm_data->gsm_state_current_index = EmptyState;
 			break;
@@ -906,8 +911,8 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 
 		case SendMQTTConnectPack :
 		{
-			gsm_data->at_response = "SEND OK\r\n";
 			HAL_UART_Transmit(gsm_data->gsm_uart, (uint8_t *)gsm_data->gsmconnectpackage, gsm_data->len, HAL_DELAY);
+			gsm_data->at_response = "SEND OK\r\n";
 			gsm_data->gsm_state_next_index = CreateMQTTPublishPack;
 			gsm_data->gsm_state_current_index = CreateMQTTPublishPack;
 			break;
@@ -922,7 +927,7 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 		  createMQTTPackage(&lyradata, &gps_data, gsm_data->MQTTPackage, &index);
 		  gsm_data->mqtt_len = MQTTSerialize_publish(gsm_data->gsmpublishpackage, (int)sizeof(gsm_data->gsmpublishpackage), 0, 0, 0, 0, topicString, gsm_data->MQTTPackage, index);
 			sprintf(atcommand,(const char*)"AT+CIPSEND=%d\r\n", gsm_data->mqtt_len);
-			SendATCommand(gsm_data, atcommand, "\r\n>");
+			SendATCommand(gsm_data, atcommand, "\r\n");
 			gsm_data->gsm_state_next_index = SendMQTTPublishPack;
 			gsm_data->gsm_state_current_index = EmptyState;
 			break;
@@ -930,9 +935,9 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 		
 		case SendMQTTPublishPack :
 		{
-
 			HAL_UART_Transmit(gsm_data->gsm_uart, (uint8_t *)gsm_data->gsmpublishpackage, gsm_data->mqtt_len, HAL_DELAY);
-			gsm_data->gsm_state_current_index = CreateMQTTPublishPack;
+			//gsm_data->at_response = "SEND OK";
+			gsm_data->gsm_state_current_index = CreateMQTTPublishPack ;
 			gsm_data->gsm_state_next_index = CreateMQTTPublishPack;
 			break;
 		}
@@ -1057,7 +1062,7 @@ void createMQTTPackage(LyraDatas *lyradata, GPS_Handle*gps_data, uint8_t* packBu
 	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_temps.temp_6_u8), packBuf, index);
 	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_temps.temp_7_u8), packBuf, index);
 	
-	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_1_u8), packBuf, index);
+	/*AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_1_u8), packBuf, index);
 	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_2_u8), packBuf, index);
 	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_3_u8), packBuf, index);
 	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_4_u8), packBuf, index);
@@ -1084,7 +1089,7 @@ void createMQTTPackage(LyraDatas *lyradata, GPS_Handle*gps_data, uint8_t* packBu
 	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_25_u8), packBuf, index);
 	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_26_u8), packBuf, index);
 	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_27_u8), packBuf, index);
-	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_28_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_28_u8), packBuf, index);*/
 }
 
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
