@@ -55,14 +55,15 @@ CAN_HandleTypeDef hcan2;
 RTC_HandleTypeDef hrtc;
 
 SD_HandleTypeDef hsd;
-DMA_HandleTypeDef hdma_sdio_tx;
 DMA_HandleTypeDef hdma_sdio_rx;
+DMA_HandleTypeDef hdma_sdio_tx;
 
 TIM_HandleTypeDef htim6;
 
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
 UART_HandleTypeDef huart3;
+DMA_HandleTypeDef hdma_usart2_rx;
 
 /* USER CODE BEGIN PV */
 int SetTime = 0;
@@ -156,13 +157,13 @@ int main(void)
    MX_RTC_Init();
    RTC_Set_Time_Date();
 
-   if(f_mount(&sd_card_data.myFATAFS,(TCHAR const *)SDPath, 1) == FR_OK)
+ /*  if(f_mount(&sd_card_data.myFATAFS,(TCHAR const *)SDPath, 1) == FR_OK)
    {
 	   HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 	   HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
 	   vars_to_str(sd_card_data.path, "%d_%d_%d_%d_%d_%d_(%d).txt", sDate.Date, sDate.Month, sDate.Year, sTime.Hours, sTime.Minutes, sTime.Seconds, sd_card_data.logger_u32);
 	   sd_card_data.state = SD_Card_Detect;
-   }
+   }*/
 
    if((GSM_STATUS_GPIO_Port->IDR & GSM_STATUS_Pin) == (uint32_t)GPIO_PIN_RESET)
    {
@@ -193,7 +194,7 @@ int main(void)
   //////////////////////////
     HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
     HAL_UART_Receive_IT(&huart3, &xbee_data.receiveData, 1);
-    HAL_UART_Receive_IT(&huart2, &gps_data.uartReceiveData_u8, 1);
+    HAL_UART_Receive_DMA(&huart2, &gps_data.uartReceiveData_u8, 1);
     HAL_TIM_Base_Start_IT(&htim6); 
 	  hydradata.can_error.can_error_u8 = 7; // every can control bit initialize 1
   /* USER CODE END 2 */
@@ -231,19 +232,19 @@ int main(void)
 
 			  HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 			  HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
-			  vars_to_str((char *)sd_card_data.transmitBuf, "%d$%d$%d$%.2f$%.2f$%.2f$%.1f$%.2f$%.2f$%.2f$%.2f$%d$%d$%d$%d$%d$%.1f$%.2f$%.1f$%.2f$%d$%d$%.1f$%d$%d$%.6f$%.6f$%d$%d$%d$%d$%d$%d$%.2f$%.2f$%.2f$%.2f$%.2f$%.2f$%.2f$%.2f$%d$%.2f$%.2f$%.1f$%d$%d$%.2f$%.2f\n",
+			  vars_to_str((char *)sd_card_data.transmitBuf, "%d$%d$%.2f$%.2f$%.2f$%.2f$%.2f$%.2f$%d$%d$%d$%d$%.1f$%.2f$%.1f$%.2f$%d$%d$%.6f$%.6f$%.2f$%.2f$%.2f$%.2f$%.2f$%.2f$%.2f$%d$%.2f$%.2f$%.1f$%d$%.2f$%.2f\n",
 				 					 	 	 	 	 	 	 	 	 	 	 hydradata.vcu_data.wake_up_union.wake_up_u8, hydradata.vcu_data.set_velocity_u8,
-																			 hydradata.can_error.can_error_u8, hydradata.driver_data.Phase_A_Current_f32, hydradata.driver_data.Phase_B_Current_f32, hydradata.driver_data.Dc_Bus_Current_f32,
-																			 hydradata.driver_data.Dc_Bus_voltage_f32, hydradata.driver_data.Id_f32, hydradata.driver_data.Iq_f32, hydradata.driver_data.IArms_f32, hydradata.driver_data.Torque_f32,
+																			 hydradata.driver_data.Phase_A_Current_f32, hydradata.driver_data.Phase_B_Current_f32,
+																			 hydradata.driver_data.Id_f32, hydradata.driver_data.Iq_f32, hydradata.driver_data.IArms_f32, hydradata.driver_data.Torque_f32,
 																			 hydradata.driver_data.drive_status_union.drive_status_u8, hydradata.driver_data.driver_error_union.driver_error_u8, hydradata.driver_data.Odometer_u32,
-																			 hydradata.driver_data.Motor_Temperature_u8, hydradata.driver_data.actual_velocity_u8, hydradata.bms_data.Bat_Voltage_f32,
+																			 hydradata.driver_data.actual_velocity_u8, hydradata.bms_data.Bat_Voltage_f32,
 																			 hydradata.bms_data.Bat_Current_f32, hydradata.bms_data.Bat_Cons_f32, hydradata.bms_data.Soc_f32, hydradata.bms_data.bms_error.bms_error_u8,
-																			 hydradata.bms_data.dc_bus_state.dc_bus_state_u8, hydradata.bms_data.Worst_Cell_Voltage_f32, hydradata.bms_data.Worst_Cell_Address_u8,
-																			 hydradata.bms_data.Temperature_u8, gps_data.latitude_f32, gps_data.longtitude_f32, gps_data.speed_u8, gps_data.satellite_number_u8, gps_data.gpsEfficiency_u8,
-																			 gps_data.gps_errorhandler.trueData_u32, gps_data.gps_errorhandler.checksumError_u32, gps_data.gps_errorhandler.validDataError_u32,
-																			 hydradata.ems_data.bat_cons_f32,hydradata.ems_data.bat_current_f32, hydradata.ems_data.bat_soc__f32, hydradata.ems_data.bat_voltage_f32, hydradata.ems_data.fc_cons_f32,
+																			 hydradata.bms_data.dc_bus_state.dc_bus_state_u8,
+																			 gps_data.latitude_f32, gps_data.longtitude_f32,
+																			 hydradata.ems_data.bat_cons_f32,hydradata.ems_data.bat_current_f32, hydradata.ems_data.bat_soc__f32, hydradata.ems_data.fc_cons_f32,
 																			 hydradata.ems_data.fc_cons_lt_f32, hydradata.ems_data.fc_current_f32,  hydradata.ems_data.fc_voltage_f32, hydradata.ems_data.general_error_handler_u8, hydradata.ems_data.out_cons_f32,
-				                               hydradata.ems_data.out_current_f32,hydradata.ems_data.out_voltage_f32, hydradata.ems_data.penalty_s8, hydradata.ems_data.temperature_u8, hydradata.ems_data.FC_I_share, hydradata.ems_data.FC_I_Sp);
+				                               hydradata.ems_data.out_current_f32,hydradata.ems_data.out_voltage_f32, hydradata.ems_data.penalty_s8, hydradata.ems_data.FC_I_share, hydradata.ems_data.FC_I_Sp);
+				
 			  vars_to_str((char *)sd_card_data.total_log, "%d:%d:%d$", sTime.Hours, sTime.Minutes, sTime.Seconds);
 			  strcat(sd_card_data.total_log, (const char*)sd_card_data.transmitBuf);
 			  sd_card_data.result = f_open(&sd_card_data.myFile, sd_card_data.path, FA_WRITE | FA_OPEN_APPEND | FA_OPEN_EXISTING | FA_OPEN_ALWAYS);
@@ -515,7 +516,7 @@ static void MX_USART1_UART_Init(void)
 
   /* USER CODE END USART1_Init 1 */
   huart1.Instance = USART1;
-  huart1.Init.BaudRate = 115200;
+  huart1.Init.BaudRate = 57600;
   huart1.Init.WordLength = UART_WORDLENGTH_8B;
   huart1.Init.StopBits = UART_STOPBITS_1;
   huart1.Init.Parity = UART_PARITY_NONE;
@@ -605,9 +606,13 @@ static void MX_DMA_Init(void)
 {
 
   /* DMA controller clock enable */
+  __HAL_RCC_DMA1_CLK_ENABLE();
   __HAL_RCC_DMA2_CLK_ENABLE();
 
   /* DMA interrupt init */
+  /* DMA1_Stream5_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream5_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream5_IRQn);
   /* DMA2_Stream3_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream3_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream3_IRQn);
@@ -716,10 +721,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-	switch((uint32_t)huart->Instance)
-	{
 
-		case (uint32_t)USART1:
+		if(huart == &huart1)
 		{
 			static uint8_t cifsr_control = 0;
 
@@ -765,17 +768,15 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 				gsm_data.gsmreceivebuffer_index = 0;
 			}
 			HAL_UART_Receive_IT(gsm_data.gsm_uart, &gsm_data.receivegsmdata, 1);
-			break;
 		}
 
-		case (uint32_t)USART2 :
+		if(huart == &huart2)
 		{
 			GPS_Control(&gps_data);
-			HAL_UART_Receive_IT(&huart2, &gps_data.uartReceiveData_u8, 1);
-			break;
+			HAL_UART_Receive_DMA(&huart2, &gps_data.uartReceiveData_u8, 1);
 		}
 
-		case (uint32_t)USART3 :
+		if(huart == &huart3)
 		{
 			switch(xbee_data.states)
 			{
@@ -827,10 +828,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 				}
 			}
 			HAL_UART_Receive_IT(&huart3, &xbee_data.receiveData, 1);
-			break;
 		}
 	}
-}
 
 void Gsm_Calibration(Gsm_Datas* gsm_data)
 {
@@ -1084,6 +1083,13 @@ void createMQTTPackage(HydraDatas *hydradata, GPS_Handle*gps_data, uint8_t* pack
 	AESK_UINT8toUINT8CODE(&(hydradata->can_error.can_error_u8), packBuf, index);
 	gsm_data.MQTT_Counter++;
 	AESK_UINT32toUINT8_LE(&gsm_data.MQTT_Counter, packBuf, index);
+	AESK_UINT8toUINT8CODE(&(hydradata->bms_data.bms_temp.temp_1_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(hydradata->bms_data.bms_temp.temp_2_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(hydradata->bms_data.bms_temp.temp_3_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(hydradata->bms_data.bms_temp.temp_4_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(hydradata->bms_data.bms_temp.temp_5_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(hydradata->bms_data.bms_temp.temp_6_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(hydradata->bms_data.bms_temp.temp_7_u8), packBuf, index);
 }
 
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
@@ -1134,10 +1140,10 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 			case BMS_MEASUREMENTS :
 			{
 				uint16_t bms_measurement_index = 0;
-					AESK_UINT16toFLOAT_LE(&hydradata.bms_data.Bat_Voltage_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &bms_measurement_index);
-					AESK_INT16toFLOAT_LE(&hydradata.bms_data.Bat_Current_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &bms_measurement_index);
-					AESK_UINT16toFLOAT_LE(&hydradata.bms_data.Bat_Cons_f32, aesk_can.receivedData, FLOAT_CONVERTER_1, &bms_measurement_index);
-					AESK_UINT16toFLOAT_LE(&hydradata.bms_data.Soc_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &bms_measurement_index);
+				AESK_UINT16toFLOAT_LE(&hydradata.bms_data.Bat_Voltage_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &bms_measurement_index);
+				AESK_INT16toFLOAT_LE(&hydradata.bms_data.Bat_Current_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &bms_measurement_index);
+				AESK_UINT16toFLOAT_LE(&hydradata.bms_data.Bat_Cons_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &bms_measurement_index);
+				AESK_UINT16toFLOAT_LE(&hydradata.bms_data.Soc_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &bms_measurement_index);
 				break;
 			}
 	
@@ -1180,6 +1186,19 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 				break;
 			}
 			
+			case BMS_TEMPS : 
+			{
+				uint16_t bms_temps_index = 0;
+				AESK_UINT8toUINT8ENCODE(&hydradata.bms_data.bms_temp.temp_1_u8,  aesk_can.receivedData, &bms_temps_index);
+				AESK_UINT8toUINT8ENCODE(&hydradata.bms_data.bms_temp.temp_2_u8, aesk_can.receivedData, &bms_temps_index);
+				AESK_UINT8toUINT8ENCODE(&hydradata.bms_data.bms_temp.temp_3_u8, aesk_can.receivedData, &bms_temps_index);
+				AESK_UINT8toUINT8ENCODE(&hydradata.bms_data.bms_temp.temp_4_u8, aesk_can.receivedData, &bms_temps_index);
+				AESK_UINT8toUINT8ENCODE(&hydradata.bms_data.bms_temp.temp_5_u8, aesk_can.receivedData, &bms_temps_index);
+				AESK_UINT8toUINT8ENCODE(&hydradata.bms_data.bms_temp.temp_6_u8, aesk_can.receivedData, &bms_temps_index);
+				AESK_UINT8toUINT8ENCODE(&hydradata.bms_data.bms_temp.temp_7_u8, aesk_can.receivedData, &bms_temps_index);				
+				break;
+			}
+			
 			case EMS_CURRENT : 
 			{
 				uint16_t ems_current_index = 0;
@@ -1203,10 +1222,10 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 			case EMS_CONSUMPTION : 
 			{
 				uint16_t ems_consumption_index = 0;
-				AESK_INT16toFLOAT_LE(&hydradata.ems_data.bat_cons_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &ems_consumption_index);
-				AESK_INT16toFLOAT_LE(&hydradata.ems_data.fc_cons_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &ems_consumption_index);
-				AESK_INT16toFLOAT_LE(&hydradata.ems_data.fc_cons_lt_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &ems_consumption_index);
-				AESK_INT16toFLOAT_LE(&hydradata.ems_data.out_cons_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &ems_consumption_index);	
+				AESK_UINT16toFLOAT_LE(&hydradata.ems_data.bat_cons_f32, aesk_can.receivedData, FLOAT_CONVERTER_1, &ems_consumption_index);
+				AESK_UINT16toFLOAT_LE(&hydradata.ems_data.fc_cons_f32, aesk_can.receivedData, FLOAT_CONVERTER_1, &ems_consumption_index);
+				AESK_UINT16toFLOAT_LE(&hydradata.ems_data.fc_cons_lt_f32, aesk_can.receivedData, FLOAT_CONVERTER_1, &ems_consumption_index);
+				AESK_UINT16toFLOAT_LE(&hydradata.ems_data.out_cons_f32, aesk_can.receivedData, FLOAT_CONVERTER_1, &ems_consumption_index);	
 				hydradata.ems_can_ID_3_counter++;
 				break;
 			}
@@ -1278,7 +1297,7 @@ void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan)
 				uint16_t bms_measurement_index = 0;
 				AESK_UINT16toFLOAT_LE(&hydradata.bms_data.Bat_Voltage_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &bms_measurement_index);
 				AESK_INT16toFLOAT_LE(&hydradata.bms_data.Bat_Current_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &bms_measurement_index);
-				AESK_UINT16toFLOAT_LE(&hydradata.bms_data.Bat_Cons_f32, aesk_can.receivedData, FLOAT_CONVERTER_1, &bms_measurement_index);
+				AESK_UINT16toFLOAT_LE(&hydradata.bms_data.Bat_Cons_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &bms_measurement_index);
 				AESK_UINT16toFLOAT_LE(&hydradata.bms_data.Soc_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &bms_measurement_index);
 				hydradata.bms_can_ID_1_counter++;
 				break;
@@ -1326,6 +1345,19 @@ void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan)
 				break;
 			}
 			
+			case BMS_TEMPS : 
+			{
+				uint16_t bms_temps_index = 0;
+				AESK_UINT8toUINT8ENCODE(&hydradata.bms_data.bms_temp.temp_1_u8,  aesk_can.receivedData, &bms_temps_index);
+				AESK_UINT8toUINT8ENCODE(&hydradata.bms_data.bms_temp.temp_2_u8, aesk_can.receivedData, &bms_temps_index);
+				AESK_UINT8toUINT8ENCODE(&hydradata.bms_data.bms_temp.temp_3_u8, aesk_can.receivedData, &bms_temps_index);
+				AESK_UINT8toUINT8ENCODE(&hydradata.bms_data.bms_temp.temp_4_u8, aesk_can.receivedData, &bms_temps_index);
+				AESK_UINT8toUINT8ENCODE(&hydradata.bms_data.bms_temp.temp_5_u8, aesk_can.receivedData, &bms_temps_index);
+				AESK_UINT8toUINT8ENCODE(&hydradata.bms_data.bms_temp.temp_6_u8, aesk_can.receivedData, &bms_temps_index);
+				AESK_UINT8toUINT8ENCODE(&hydradata.bms_data.bms_temp.temp_7_u8, aesk_can.receivedData, &bms_temps_index);				
+				break;
+			}
+			
 			case EMS_CURRENT : 
 			{
 				uint16_t ems_current_index = 0;
@@ -1351,10 +1383,10 @@ void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan)
 			case EMS_CONSUMPTION : 
 			{
 				uint16_t ems_consumption_index = 0;
-				AESK_INT16toFLOAT_LE(&hydradata.ems_data.bat_cons_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &ems_consumption_index);
-				AESK_INT16toFLOAT_LE(&hydradata.ems_data.fc_cons_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &ems_consumption_index);
-				AESK_INT16toFLOAT_LE(&hydradata.ems_data.fc_cons_lt_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &ems_consumption_index);
-				AESK_INT16toFLOAT_LE(&hydradata.ems_data.out_cons_f32, aesk_can.receivedData, FLOAT_CONVERTER_2, &ems_consumption_index);	
+				AESK_UINT16toFLOAT_LE(&hydradata.ems_data.bat_cons_f32, aesk_can.receivedData, FLOAT_CONVERTER_1, &ems_consumption_index);
+				AESK_UINT16toFLOAT_LE(&hydradata.ems_data.fc_cons_f32, aesk_can.receivedData, FLOAT_CONVERTER_1, &ems_consumption_index);
+				AESK_UINT16toFLOAT_LE(&hydradata.ems_data.fc_cons_lt_f32, aesk_can.receivedData, FLOAT_CONVERTER_1, &ems_consumption_index);
+				AESK_UINT16toFLOAT_LE(&hydradata.ems_data.out_cons_f32, aesk_can.receivedData, FLOAT_CONVERTER_1, &ems_consumption_index);	
 				
 				hydradata.ems_can_ID_3_counter++;
 				break;

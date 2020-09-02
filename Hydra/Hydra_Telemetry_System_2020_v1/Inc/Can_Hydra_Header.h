@@ -20,8 +20,7 @@
 #define BMS_STATE_DATA						0x1555BBB1
 #define BMS_CELLS_1								0x1555BBB2
 #define BMS_CELLS_2								0x1555BBB3
-#define BMS_CELLS_3								0x1555BBB4
-#define BMS_CELLS_4								0x1555BBB5
+#define BMS_TEMPS									0x1555BBB4
 
 typedef union
 {
@@ -153,6 +152,21 @@ typedef struct
 
 typedef struct
 {
+	uint8_t temp_1_u8;
+	uint8_t temp_2_u8;
+	uint8_t temp_3_u8;
+	uint8_t temp_4_u8;
+	uint8_t temp_5_u8;
+	uint8_t temp_6_u8;
+	uint8_t temp_7_u8;
+	uint8_t cell_1_2_offset_u8;
+	uint8_t cell_3_4_offset_u8;
+	uint8_t cell_5_6_offset_u8;
+	uint8_t cell_7_offset_u8;
+}Bms_Temps;
+
+typedef struct
+{
 	float    Bat_Voltage_f32;
 	float    Bat_Current_f32;
 	float    Bat_Cons_f32;
@@ -163,6 +177,7 @@ typedef struct
 	Bms_Cells	bms_cells;
 	Bms_State_Union bms_error;
 	Dc_Bus_State_union dc_bus_state;
+	Bms_Temps bms_temp;
 }Bms_Datas;
 
 typedef union

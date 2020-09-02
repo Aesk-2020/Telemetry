@@ -181,6 +181,13 @@ namespace telemetry_hydro.Variables
             EMS.error_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
             VCU.can_error_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
             MQTT_counter_int32 = EncodePackMethods.DataConverterS32(receiveBuffer, ref startIndex);
+            BMS.bms_temp[0] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
+            BMS.bms_temp[1] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
+            BMS.bms_temp[2] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
+            BMS.bms_temp[3] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
+            BMS.bms_temp[4] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
+            BMS.bms_temp[5] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
+            BMS.bms_temp[6] = receiveBuffer[startIndex];
             LogEvent();
         }
     }

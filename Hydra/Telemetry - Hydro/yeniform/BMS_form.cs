@@ -256,26 +256,30 @@ namespace telemetry_hydro
         }
         private void DisplayTemprature()
         {
-            int counter = 0;
-            for (int i = 0; i < 7; i++)
-            {
-                for (int j = 0; j < 4; j++)
-                {
-                    bmsUI.cells_temprature[counter] = Convert.ToUInt16(bmsUI.captured_data[i]);
-                    counter++;
-                }
-            }
+            cell1_temp.Text = BMS.bms_temp[0].ToString();
+            cell2_temp.Text = BMS.bms_temp[0].ToString();
+            cell3_temp.Text = BMS.bms_temp[1].ToString();
+            cell4_temp.Text = BMS.bms_temp[1].ToString();
+            cell5_temp.Text = BMS.bms_temp[2].ToString();
+            cell6_temp.Text = BMS.bms_temp[2].ToString();
+            cell7_temp.Text = BMS.bms_temp[3].ToString();
+            cell8_temp.Text = BMS.bms_temp[3].ToString();
+            cell9_temp.Text = BMS.bms_temp[4].ToString();
+            cell10_temp.Text = BMS.bms_temp[4].ToString();
+            cell11_temp.Text = BMS.bms_temp[5].ToString();
+            cell12_temp.Text = BMS.bms_temp[5].ToString();
+            cell13_temp.Text = BMS.bms_temp[5].ToString();
+            cell14_temp.Text = BMS.bms_temp[6].ToString();
+            cell15_temp.Text = BMS.bms_temp[6].ToString();
+            cell16_temp.Text = BMS.bms_temp[6].ToString();
 
-            for (int i = 0; i < bmsUI.tempLabelsArray.Length; i++)
-            {
-                bmsUI.tempLabelsArray[i].Text = Convert.ToString(bmsUI.cells_temprature[i]);
-            }
 
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
             DisplayVoltage();
+            DisplayTemprature();
         }
     }
 }

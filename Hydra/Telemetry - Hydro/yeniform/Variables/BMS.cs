@@ -21,6 +21,7 @@ namespace telemetry_hydro.Variables
         public static byte temp_u8;
 
         public static float[] bms_cells = new float[84];
+        public static byte[] bms_temp = new byte[7];
         public static bool precharge_flag_u1 => Convert.ToBoolean(dc_bus_state_u8 & 0b00000001);
         public static bool discharge_flag_u1 => Convert.ToBoolean(dc_bus_state_u8 >> 1 & 0b00000001);
         public static bool dc_bus_ready_flag_u1 => Convert.ToBoolean(dc_bus_state_u8 >> 2 & 0b00000001);

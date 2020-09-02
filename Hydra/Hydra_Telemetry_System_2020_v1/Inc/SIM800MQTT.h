@@ -128,7 +128,7 @@ typedef struct
 	char * gsmsendbuffer;
 	unsigned char gsmconnectpackage[64];
 	unsigned char gsmpublishpackage[255];
-	uint8_t MQTTPackage[100];
+	uint8_t MQTTPackage[200];
 	int len;
 	int mqtt_len;
 	UART_HandleTypeDef *gsm_uart;
