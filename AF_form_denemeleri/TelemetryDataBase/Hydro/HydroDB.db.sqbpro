@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:\Users\90555\Desktop\TelemetryDataBase\HydroDB.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="12753"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="0" parent="0"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,15:mainsqlite_sequence"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">CREATE TABLE &quot;HydroIterations&quot; (
+	&quot;ID&quot;  INTEGER NOT NULL UNIQUE,
+	&quot;MQTT_counter_uint32&quot;	BINARY(4) NOT NULL,
+	&quot;VCU_wake_up_u8&quot;	BINARY(1)  NOT NULL,
+	&quot;VCU_set_velocity_u8&quot;	BINARY(1)  NOT NULL,
+	&quot;VCU_drive_command_u8&quot;	BINARY(1)  NOT NULL,
+	&quot;VCU_can_error_u8&quot;	BINARY(1)  NOT NULL,
+	
+	&quot;Driver_phase_a_current_f32_s16_2&quot;	BINARY(2) NOT NULL,
+	&quot;Driver_phase_b_current_f32_s16_2&quot;	BINARY(2) NOT NULL,
+	&quot;Driver_dc_bus_current_f32_s16_2&quot;	BINARY(2) NOT NULL,
+	&quot;Driver_dc_bus_voltage_f32_s16_1&quot;	BINARY(2) NOT NULL,
+	&quot;Driver_id_f32_s16_2&quot;	BINARY(2) NOT NULL,
+	&quot;Driver_iq_f32_s16_2&quot;	BINARY(2) NOT NULL,
+	&quot;Driver_phase_a_rms_f32_s16_2&quot;	BINARY(2) NOT NULL,
+	&quot;Driver_torque_f32_s16_2&quot;	BINARY(2) NOT NULL,
+	&quot;Driver_drive_status_u8&quot;	BINARY(1)  NOT NULL,
+	&quot;Driver_driver_error_u8&quot;	BINARY(1) NOT NULL,
+	&quot;Driver_odometer_u32&quot;	BINARY(4) NOT NULL,
+	&quot;Driver_motor_temperature_u8&quot;	BINARY(1) NOT NULL,
+	&quot;Driver_actual_velocity_u8&quot;	BINARY(1)  NOT NULL,
+	
+	&quot;BMS_bat_volt_f32_u16_2&quot;	BINARY(2) NOT NULL,
+	&quot;BMS_bat_voltage_f32_s16_2&quot;	BINARY(2) NOT NULL,
+	&quot;BMS_bat_cons_f32_u32_1&quot;	BINARY(4) NOT NULL,
+	&quot;BMS_soc_f32_u16_2&quot;	BINARY(2) NOT NULL,
+	&quot;BMS_error_u8&quot;	BINARY(1)  NOT NULL,
+	&quot;BMS_dc_bus_state_u8&quot;	BINARY(1) NOT NULL,
+	&quot;BMS_worst_cell_voltage_f32_u16_1&quot;	BINARY(2) NOT NULL,
+	&quot;BMS_worst_cell_address_u8&quot;	BINARY(1)  NOT NULL,
+	&quot;BMS_temp_u8&quot;	BINARY(1)  NOT NULL,
+	
+	&quot;GPS_latitude_f64_u32_6&quot;	BINARY(4) NOT NULL,
+	&quot;GPS_longtitude_f64_u32_6&quot;	BINARY(4) NOT NULL,
+	&quot;GPS_velocity_u8&quot;	BINARY(1) NOT NULL,
+	&quot;GPS_satellite_number_u8&quot;	BINARY(1)  NOT NULL,
+	&quot;GPS_efficiency_u8&quot;	BINARY(1)  NOT NULL,
+	
+	&quot;BMS_cells_f32_pu8&quot;	BINARY(16) NOT NULL,
+	
+	&quot;EMS_bat_cons_f32_s16_1&quot;	BINARY(2) NOT NULL,
+	&quot;EMS_fc_cons_f32_s16_1&quot;	BINARY(2) NOT NULL,
+	&quot;EMS_fc_lt_cons_f32_s16_1&quot;	BINARY(2) NOT NULL,
+	&quot;EMS_out_cons_f32_s16_1&quot;	BINARY(2) NOT NULL,
+	&quot;EMS_bat_cur_f32_s16_1&quot;	BINARY(2) NOT NULL,
+	&quot;EMS_fc_cur_f32_s16_1&quot;	BINARY(2) NOT NULL,
+	&quot;EMS_out_cur_f32_s16_1&quot;	BINARY(2) NOT NULL,
+	&quot;EMS_bat_volt_f32_s16_1&quot;	BINARY(2) NOT NULL,
+	&quot;EMS_fc_volt_f32_s16_1&quot;	BINARY(2) NOT NULL,
+	&quot;EMS_out_volt_f32_s16_1&quot;	BINARY(2) NOT NULL,
+	&quot;EMS_penalty_s8&quot;	BINARY(1)  NOT NULL,
+	&quot;EMS_bat_soc_f32_u16_3&quot;	BINARY(2) NOT NULL,
+	&quot;EMS_temperature_u8&quot;	BINARY(1)  NOT NULL,
+	&quot;EMS_error_u8&quot;	BINARY(1)  NOT NULL,
+
+	&quot;BMS_temp_array_u8&quot;	BINARY(7)  NOT NULL,
+
+	PRIMARY KEY(&quot;ID&quot; AUTOINCREMENT)
+);
+</sql><current_tab id="0"/></tab_sql></sqlb_project>

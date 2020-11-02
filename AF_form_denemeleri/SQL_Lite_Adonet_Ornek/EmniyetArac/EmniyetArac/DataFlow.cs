@@ -10,7 +10,7 @@ namespace EmniyetArac
     public static class DataFlow
     {
 
-        static SQLiteConnection _connection = new SQLiteConnection("Data source =.\\MainDB.db; Version=3;");
+        static SQLiteConnection _connection = new SQLiteConnection("Data source =.\\MainDB.db; Version=3;Connection Timeout=30;Connection Lifetime=0;Min Pool Size=0;Max Pool Size=100;Pooling=true;");
 
 
         public static void OpenConnection()
