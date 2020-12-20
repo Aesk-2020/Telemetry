@@ -3,16 +3,17 @@ import 'package:aeskapp/classes/aeskData.dart';
 import 'package:mqtt_client/mqtt_client.dart' as mqtt;
 import 'package:flutter/foundation.dart';
 import 'dart:async';
+import 'package:aeskapp/pages/Login.dart' as login;
 
 ///bit işlemleri kütüğhaneleri byte array vs.
 
 var old_iteration_date;
 
 class MqttAesk extends ChangeNotifier {
-  static String broker = '46.102.106.183';
+  static String broker = login.selectedItem.toString();
   static int port = 1883;
-  static String username = 'digital';
-  static String password = 'aesk';
+  //static String username = 'digital';
+  //static String password = 'aesk';
   static String clientIdentifier =
       DateTime.now().toString(); //cihaz isimlerine göre atama ya
   static bool isLyra;
@@ -42,7 +43,7 @@ class MqttAesk extends ChangeNotifier {
 
     //baglanilan yer burasi
     try {
-      await client.connect(username, password);
+      //await client.connect(username, password);
     } catch (e) {
       print(e);
       disconnect();

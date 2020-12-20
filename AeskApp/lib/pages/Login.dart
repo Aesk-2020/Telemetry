@@ -9,12 +9,50 @@ String ip;
 String password;
 bool checkbox = null; // true ise LYRA, false ise hydra
 
+List<DropdownMenuItem<ListItem>> dropdownMenuItems;
+ListItem selectedItem;
+
 class Logging extends StatefulWidget {
   @override
   _LoggingState createState() => _LoggingState();
 }
 
+class ListItem {
+  int value;
+  String name;
+
+  ListItem(this.value, this.name);
+}
+
 class _LoggingState extends State<Logging> {
+
+  List<ListItem> dropdownItems = [
+    ListItem(1, "mqtt.omerfurkandemircioglu.com.tr"),
+    ListItem(2, "mqtt.omerustun.com.tr"),
+    ListItem(3, "broker.mqttdashboard.com")
+  ];
+
+
+
+  List<DropdownMenuItem<ListItem>> buildDropDownMenuItems(List listItems) {
+    List<DropdownMenuItem<ListItem>> items = List();
+    for (ListItem listItem in listItems) {
+      items.add(
+        DropdownMenuItem(
+          child: Text(listItem.name),
+          value: listItem,
+        ),
+      );
+    }
+    return items;
+  }
+
+  void initState() {
+    super.initState();
+    dropdownMenuItems = buildDropDownMenuItems(dropdownItems);
+    selectedItem = dropdownMenuItems[0].value;
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -29,7 +67,7 @@ class _LoggingState extends State<Logging> {
             myText("AESKAPP", 35, Theme.of(context).appBarTheme.color, FontWeight.bold),
             SizedBox(height: 20,),
             //IP textfield
-            Container(
+            /*Container(
               width: 350,
               child: TextField(
 
@@ -64,6 +102,24 @@ class _LoggingState extends State<Logging> {
                 onChanged: (String value) {
                   password = value;
                 },
+              ),
+            ),
+*/
+            Container(
+              padding: const EdgeInsets.only(left: 10.0,right: 10.0),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  color: Theme.of(context).backgroundColor,
+                  border: Border.all()),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton(
+                    value: selectedItem,
+                    items: dropdownMenuItems,
+                    onChanged: (value) {
+                      setState(() {
+                        selectedItem = value;
+                      });
+                    }),
               ),
             ),
 
@@ -106,7 +162,7 @@ class _LoggingState extends State<Logging> {
             RaisedButton(
               padding: EdgeInsets.symmetric(horizontal: 40),
               onPressed: () async {
-                if (ip == "1" && password == MqttAesk.password && checkbox != null) {
+                /*if (ip == "1" && password == MqttAesk.password && checkbox != null) {
                   showDialog(
                     context: context,
                     child: SpinKitCircle(color: Theme.of(context).appBarTheme.color,),
@@ -152,7 +208,10 @@ class _LoggingState extends State<Logging> {
                       backgroundColor: Theme.of(context).backgroundColor,
                     ),
                   );
-                }
+                }*/
+                MqttAesk.isLyra = checkbox;
+                checkbox ? mqttAesk.subscribeToTopic("LYRADATA") : mqttAesk.subscribeToTopic("HYDRADATA");
+                Navigator.pushNamed(context, checkbox ? "/Home" : "/HomeHydro");
               },
               child: myText("Giriş", 20, Colors.white, FontWeight.normal),
             ),
