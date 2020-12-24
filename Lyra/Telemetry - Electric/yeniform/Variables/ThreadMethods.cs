@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace yeniform.Variables
+namespace Telemetri.Variables
 {
     static class ThreadMethods
     {

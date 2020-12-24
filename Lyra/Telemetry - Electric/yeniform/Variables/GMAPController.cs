@@ -9,7 +9,7 @@ using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms.Markers;
 using System.Windows.Forms;
 using System.Drawing;
-namespace yeniform.Variables
+namespace Telemetri.Variables
 {
     public delegate double GMAPDelegate(double latitude, double longtitude);
     public delegate void GMAPDeleteOverlay();

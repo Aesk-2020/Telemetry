@@ -15,10 +15,10 @@ using System.IO;
 using System.Threading;
 using System.Net;
 
-using yeniform.Variables;
+using Telemetri.Variables;
 using System.Windows.Forms.DataVisualization.Charting;
 
-namespace yeniform
+namespace Telemetri
 {
     public partial class graph_form :Form
     {

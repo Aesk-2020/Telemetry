@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using Timer = System.Windows.Forms.Timer;
 
-namespace yeniform.Variables
+namespace Telemetri.Variables
 {
     public class Timers
     {

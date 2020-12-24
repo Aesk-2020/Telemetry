@@ -8,8 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using yeniform.Variables;
-namespace yeniform
+using Telemetri.Variables;
+namespace Telemetri
 {
     public partial class BMS_form : Form
     {

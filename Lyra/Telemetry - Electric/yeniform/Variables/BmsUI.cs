@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace yeniform.Variables
+namespace Telemetri.Variables
 {
     class BmsUI
     {

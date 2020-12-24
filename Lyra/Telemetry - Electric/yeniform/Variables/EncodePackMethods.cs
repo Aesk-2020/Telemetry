@@ -1,7 +1,7 @@
 ﻿using System;
 using UINT8 = System.Byte;
 using INT8 = System.Byte;
-namespace yeniform.Variables
+namespace Telemetri.Variables
 {
     
     static class EncodePackMethods
