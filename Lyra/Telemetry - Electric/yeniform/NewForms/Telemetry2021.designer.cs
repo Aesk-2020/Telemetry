@@ -1,4 +1,4 @@
-﻿namespace PlayerUI
+﻿namespace Telemetri.NewForms
 {
     partial class Telemetry2021
     {
@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Telemetry2021));
             this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -48,12 +51,22 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.gunaCircleProgressBar1 = new Guna.UI.WinForms.GunaCircleProgressBar();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.atilan_Tur = new Guna.UI.WinForms.GunaCircleProgressBar();
+            this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.hedef_hiz = new System.Windows.Forms.Label();
+            this.hedefhiz_gauge = new Guna.UI.WinForms.GunaGauge();
             this.label9 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.anlik_hiz_gps = new System.Windows.Forms.Label();
@@ -62,20 +75,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.anlik_hiz = new System.Windows.Forms.Label();
             this.anlikhiz_gauge = new Guna.UI.WinForms.GunaGauge();
-            this.atilan_Tur = new Guna.UI.WinForms.GunaCircleProgressBar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.gunaCircleProgressBar1 = new Guna.UI.WinForms.GunaCircleProgressBar();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.hedefhiz_gauge = new Guna.UI.WinForms.GunaGauge();
             this.panelSideMenu.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel4.SuspendLayout();
@@ -89,10 +91,8 @@
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelChildForm.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            this.atilan_Tur.SuspendLayout();
             this.gunaCircleProgressBar1.SuspendLayout();
+            this.atilan_Tur.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSideMenu
@@ -109,15 +109,53 @@
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(250, 620);
-            this.panelSideMenu.TabIndex = 0;
+            this.panelSideMenu.Size = new System.Drawing.Size(250, 661);
+            this.panelSideMenu.TabIndex = 1;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.button5);
+            this.panel6.Controls.Add(this.pictureBox7);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 300);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(250, 52);
+            this.panel6.TabIndex = 15;
+            // 
+            // button5
+            // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button5.ForeColor = System.Drawing.Color.Silver;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(52, 0);
+            this.button5.Name = "button5";
+            this.button5.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.button5.Size = new System.Drawing.Size(198, 52);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "Help";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox7.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(52, 52);
+            this.pictureBox7.TabIndex = 0;
+            this.pictureBox7.TabStop = false;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.button4);
             this.panel5.Controls.Add(this.pictureBox6);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 568);
+            this.panel5.Location = new System.Drawing.Point(0, 609);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(250, 52);
             this.panel5.TabIndex = 14;
@@ -292,6 +330,7 @@
             this.btnHelp.Text = "Home";
             this.btnHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // pictureBox2
             // 
@@ -350,46 +389,153 @@
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(250, 0);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(838, 620);
-            this.panelChildForm.TabIndex = 2;
+            this.panelChildForm.Size = new System.Drawing.Size(934, 661);
+            this.panelChildForm.TabIndex = 3;
             // 
-            // panel6
+            // label7
             // 
-            this.panel6.Controls.Add(this.button5);
-            this.panel6.Controls.Add(this.pictureBox7);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 300);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(250, 52);
-            this.panel6.TabIndex = 15;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(230, 285);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(110, 30);
+            this.label7.TabIndex = 109;
+            this.label7.Text = "Butonlar";
             // 
-            // button5
+            // textBox3
             // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button5.ForeColor = System.Drawing.Color.Silver;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(52, 0);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(198, 52);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Help";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = true;
+            this.textBox3.Location = new System.Drawing.Point(205, 330);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(158, 228);
+            this.textBox3.TabIndex = 108;
+            this.textBox3.Text = "Seriport\r\nquectel mqtt\r\nkayıt aç simülasyon vs\r\nyarışı başlat\r\nhaberleşme modunu " +
+    "seç\r\n";
             // 
-            // pictureBox7
+            // textBox2
             // 
-            this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox7.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(52, 52);
-            this.pictureBox7.TabIndex = 0;
-            this.pictureBox7.TabStop = false;
+            this.textBox2.Location = new System.Drawing.Point(423, 330);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(158, 228);
+            this.textBox2.TabIndex = 107;
+            this.textBox2.Text = "eklemeli çıkarmalı olacak";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(633, 330);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(158, 228);
+            this.textBox1.TabIndex = 106;
+            this.textBox1.Text = "Quectel\r\nNRF\r\nNextion\r\nBMS\r\nDriver\r\nDC Bus\r\nCAN\r\n";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(672, 285);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 30);
+            this.label6.TabIndex = 105;
+            this.label6.Text = "State";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(463, 285);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 30);
+            this.label5.TabIndex = 104;
+            this.label5.Text = "Errors";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(651, 131);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 21);
+            this.label4.TabIndex = 103;
+            this.label4.Text = "Set Velocity";
+            // 
+            // gunaCircleProgressBar1
+            // 
+            this.gunaCircleProgressBar1.AnimationSpeed = 0.6F;
+            this.gunaCircleProgressBar1.BaseColor = System.Drawing.Color.Transparent;
+            this.gunaCircleProgressBar1.Controls.Add(this.label3);
+            this.gunaCircleProgressBar1.ForeColor = System.Drawing.Color.White;
+            this.gunaCircleProgressBar1.IdleColor = System.Drawing.Color.Gainsboro;
+            this.gunaCircleProgressBar1.IdleOffset = 10;
+            this.gunaCircleProgressBar1.IdleThickness = 10;
+            this.gunaCircleProgressBar1.Image = null;
+            this.gunaCircleProgressBar1.ImageSize = new System.Drawing.Size(52, 52);
+            this.gunaCircleProgressBar1.Location = new System.Drawing.Point(655, 152);
+            this.gunaCircleProgressBar1.Maximum = 30;
+            this.gunaCircleProgressBar1.Name = "gunaCircleProgressBar1";
+            this.gunaCircleProgressBar1.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.gunaCircleProgressBar1.ProgressMinColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.gunaCircleProgressBar1.ProgressOffset = 10;
+            this.gunaCircleProgressBar1.ProgressThickness = 10;
+            this.gunaCircleProgressBar1.Size = new System.Drawing.Size(100, 100);
+            this.gunaCircleProgressBar1.TabIndex = 102;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(33, 28);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 39);
+            this.label3.TabIndex = 101;
+            this.label3.Text = "0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(482, 127);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 21);
+            this.label2.TabIndex = 101;
+            this.label2.Text = "Laps";
+            // 
+            // atilan_Tur
+            // 
+            this.atilan_Tur.AnimationSpeed = 0.6F;
+            this.atilan_Tur.BaseColor = System.Drawing.Color.Transparent;
+            this.atilan_Tur.Controls.Add(this.label1);
+            this.atilan_Tur.ForeColor = System.Drawing.Color.White;
+            this.atilan_Tur.IdleColor = System.Drawing.Color.Gainsboro;
+            this.atilan_Tur.IdleOffset = 10;
+            this.atilan_Tur.IdleThickness = 10;
+            this.atilan_Tur.Image = null;
+            this.atilan_Tur.ImageSize = new System.Drawing.Size(52, 52);
+            this.atilan_Tur.Location = new System.Drawing.Point(456, 148);
+            this.atilan_Tur.Maximum = 30;
+            this.atilan_Tur.Name = "atilan_Tur";
+            this.atilan_Tur.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.atilan_Tur.ProgressMinColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.atilan_Tur.ProgressOffset = 10;
+            this.atilan_Tur.ProgressThickness = 10;
+            this.atilan_Tur.Size = new System.Drawing.Size(100, 100);
+            this.atilan_Tur.TabIndex = 100;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(33, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 39);
+            this.label1.TabIndex = 101;
+            this.label1.Text = "0";
             // 
             // label11
             // 
@@ -423,6 +569,23 @@
             this.hedef_hiz.Size = new System.Drawing.Size(49, 32);
             this.hedef_hiz.TabIndex = 91;
             this.hedef_hiz.Text = "30";
+            // 
+            // hedefhiz_gauge
+            // 
+            this.hedefhiz_gauge.BackThickness = 20;
+            this.hedefhiz_gauge.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.hedefhiz_gauge.ForeColor = System.Drawing.Color.White;
+            this.hedefhiz_gauge.IdleColor = System.Drawing.Color.Gainsboro;
+            this.hedefhiz_gauge.Location = new System.Drawing.Point(224, 32);
+            this.hedefhiz_gauge.Margin = new System.Windows.Forms.Padding(6);
+            this.hedefhiz_gauge.MaximumColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.hedefhiz_gauge.MinimumColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.hedefhiz_gauge.Name = "hedefhiz_gauge";
+            this.hedefhiz_gauge.ShowText = false;
+            this.hedefhiz_gauge.Size = new System.Drawing.Size(164, 67);
+            this.hedefhiz_gauge.TabIndex = 93;
+            this.hedefhiz_gauge.Thickness = 20;
+            this.hedefhiz_gauge.Value = 50;
             // 
             // label9
             // 
@@ -524,183 +687,19 @@
             this.anlikhiz_gauge.Thickness = 20;
             this.anlikhiz_gauge.Value = 50;
             // 
-            // atilan_Tur
-            // 
-            this.atilan_Tur.AnimationSpeed = 0.6F;
-            this.atilan_Tur.BaseColor = System.Drawing.Color.Transparent;
-            this.atilan_Tur.Controls.Add(this.label1);
-            this.atilan_Tur.ForeColor = System.Drawing.Color.White;
-            this.atilan_Tur.IdleColor = System.Drawing.Color.Gainsboro;
-            this.atilan_Tur.IdleOffset = 10;
-            this.atilan_Tur.IdleThickness = 10;
-            this.atilan_Tur.Image = null;
-            this.atilan_Tur.ImageSize = new System.Drawing.Size(52, 52);
-            this.atilan_Tur.Location = new System.Drawing.Point(456, 148);
-            this.atilan_Tur.Maximum = 30;
-            this.atilan_Tur.Name = "atilan_Tur";
-            this.atilan_Tur.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.atilan_Tur.ProgressMinColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.atilan_Tur.ProgressOffset = 10;
-            this.atilan_Tur.ProgressThickness = 10;
-            this.atilan_Tur.Size = new System.Drawing.Size(100, 100);
-            this.atilan_Tur.TabIndex = 100;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(33, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 39);
-            this.label1.TabIndex = 101;
-            this.label1.Text = "0";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(482, 127);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 21);
-            this.label2.TabIndex = 101;
-            this.label2.Text = "Laps";
-            // 
-            // gunaCircleProgressBar1
-            // 
-            this.gunaCircleProgressBar1.AnimationSpeed = 0.6F;
-            this.gunaCircleProgressBar1.BaseColor = System.Drawing.Color.Transparent;
-            this.gunaCircleProgressBar1.Controls.Add(this.label3);
-            this.gunaCircleProgressBar1.ForeColor = System.Drawing.Color.White;
-            this.gunaCircleProgressBar1.IdleColor = System.Drawing.Color.Gainsboro;
-            this.gunaCircleProgressBar1.IdleOffset = 10;
-            this.gunaCircleProgressBar1.IdleThickness = 10;
-            this.gunaCircleProgressBar1.Image = null;
-            this.gunaCircleProgressBar1.ImageSize = new System.Drawing.Size(52, 52);
-            this.gunaCircleProgressBar1.Location = new System.Drawing.Point(655, 152);
-            this.gunaCircleProgressBar1.Maximum = 30;
-            this.gunaCircleProgressBar1.Name = "gunaCircleProgressBar1";
-            this.gunaCircleProgressBar1.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.gunaCircleProgressBar1.ProgressMinColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.gunaCircleProgressBar1.ProgressOffset = 10;
-            this.gunaCircleProgressBar1.ProgressThickness = 10;
-            this.gunaCircleProgressBar1.Size = new System.Drawing.Size(100, 100);
-            this.gunaCircleProgressBar1.TabIndex = 102;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(33, 28);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 39);
-            this.label3.TabIndex = 101;
-            this.label3.Text = "0";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(651, 131);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 21);
-            this.label4.TabIndex = 103;
-            this.label4.Text = "Set Velocity";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(463, 285);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 30);
-            this.label5.TabIndex = 104;
-            this.label5.Text = "Errors";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(672, 285);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 30);
-            this.label6.TabIndex = 105;
-            this.label6.Text = "State";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(633, 330);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(158, 228);
-            this.textBox1.TabIndex = 106;
-            this.textBox1.Text = "Quectel\r\nNRF\r\nNextion\r\nBMS\r\nDriver\r\nDC Bus\r\nCAN\r\n";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(423, 330);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(158, 228);
-            this.textBox2.TabIndex = 107;
-            this.textBox2.Text = "eklemeli çıkarmalı olacak";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(205, 330);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(158, 228);
-            this.textBox3.TabIndex = 108;
-            this.textBox3.Text = "Seriport\r\nquectel mqtt\r\nkayıt aç simülasyon vs\r\nyarışı başlat\r\nhaberleşme modunu " +
-    "seç\r\n";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(230, 285);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 30);
-            this.label7.TabIndex = 109;
-            this.label7.Text = "Butonlar";
-            // 
-            // hedefhiz_gauge
-            // 
-            this.hedefhiz_gauge.BackThickness = 20;
-            this.hedefhiz_gauge.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.hedefhiz_gauge.ForeColor = System.Drawing.Color.White;
-            this.hedefhiz_gauge.IdleColor = System.Drawing.Color.Gainsboro;
-            this.hedefhiz_gauge.Location = new System.Drawing.Point(224, 32);
-            this.hedefhiz_gauge.Margin = new System.Windows.Forms.Padding(6);
-            this.hedefhiz_gauge.MaximumColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.hedefhiz_gauge.MinimumColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.hedefhiz_gauge.Name = "hedefhiz_gauge";
-            this.hedefhiz_gauge.ShowText = false;
-            this.hedefhiz_gauge.Size = new System.Drawing.Size(164, 67);
-            this.hedefhiz_gauge.TabIndex = 93;
-            this.hedefhiz_gauge.Thickness = 20;
-            this.hedefhiz_gauge.Value = 50;
-            // 
             // Telemetry2021
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1088, 620);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panelSideMenu);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "Telemetry2021";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Form1";
             this.panelSideMenu.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -715,12 +714,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelChildForm.ResumeLayout(false);
             this.panelChildForm.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            this.atilan_Tur.ResumeLayout(false);
-            this.atilan_Tur.PerformLayout();
             this.gunaCircleProgressBar1.ResumeLayout(false);
             this.gunaCircleProgressBar1.PerformLayout();
+            this.atilan_Tur.ResumeLayout(false);
+            this.atilan_Tur.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -728,11 +725,12 @@
         #endregion
 
         private System.Windows.Forms.Panel panelSideMenu;
-        private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panelChildForm;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.PictureBox pictureBox5;
@@ -742,16 +740,28 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnHelp;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panelLogo;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panelChildForm;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private Guna.UI.WinForms.GunaCircleProgressBar gunaCircleProgressBar1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI.WinForms.GunaCircleProgressBar atilan_Tur;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label hedef_hiz;
+        private Guna.UI.WinForms.GunaGauge hedefhiz_gauge;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label28;
         public System.Windows.Forms.Label anlik_hiz_gps;
@@ -760,19 +770,5 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label anlik_hiz;
         private Guna.UI.WinForms.GunaGauge anlikhiz_gauge;
-        private System.Windows.Forms.Label label2;
-        private Guna.UI.WinForms.GunaCircleProgressBar atilan_Tur;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private Guna.UI.WinForms.GunaCircleProgressBar gunaCircleProgressBar1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
-        private Guna.UI.WinForms.GunaGauge hedefhiz_gauge;
     }
 }
-

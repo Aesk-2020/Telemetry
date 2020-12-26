@@ -5,9 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PlayerUI
+namespace Telemetri.Variables
 {
-
     /*
      * openChildForm fonkisyonu açılacak olan formu ve formun açılacağı paneli parametre olarak alır
      * kullanmak için gerekli yerde fonksiyonun içine bu parametreleri giriniz
