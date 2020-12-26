@@ -40,13 +40,13 @@
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnBMS = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnMap = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnHelp = new System.Windows.Forms.Button();
+            this.btnHome = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -228,7 +228,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.btnBMS);
             this.panel3.Controls.Add(this.pictureBox4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 196);
@@ -236,24 +236,25 @@
             this.panel3.Size = new System.Drawing.Size(250, 52);
             this.panel3.TabIndex = 12;
             // 
-            // button2
+            // btnBMS
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button2.ForeColor = System.Drawing.Color.Silver;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(52, 0);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(198, 52);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "BMS";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnBMS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBMS.FlatAppearance.BorderSize = 0;
+            this.btnBMS.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btnBMS.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btnBMS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBMS.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnBMS.ForeColor = System.Drawing.Color.Silver;
+            this.btnBMS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBMS.Location = new System.Drawing.Point(52, 0);
+            this.btnBMS.Name = "btnBMS";
+            this.btnBMS.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnBMS.Size = new System.Drawing.Size(198, 52);
+            this.btnBMS.TabIndex = 9;
+            this.btnBMS.Text = "BMS";
+            this.btnBMS.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBMS.UseVisualStyleBackColor = true;
+            this.btnBMS.Click += new System.EventHandler(this.btnBMS_Click);
             // 
             // pictureBox4
             // 
@@ -266,7 +267,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btnMap);
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 144);
@@ -274,24 +275,25 @@
             this.panel2.Size = new System.Drawing.Size(250, 52);
             this.panel2.TabIndex = 11;
             // 
-            // button1
+            // btnMap
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.ForeColor = System.Drawing.Color.Silver;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(52, 0);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(198, 52);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Map";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnMap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMap.FlatAppearance.BorderSize = 0;
+            this.btnMap.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btnMap.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btnMap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMap.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnMap.ForeColor = System.Drawing.Color.Silver;
+            this.btnMap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMap.Location = new System.Drawing.Point(52, 0);
+            this.btnMap.Name = "btnMap";
+            this.btnMap.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnMap.Size = new System.Drawing.Size(198, 52);
+            this.btnMap.TabIndex = 9;
+            this.btnMap.Text = "Map";
+            this.btnMap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMap.UseVisualStyleBackColor = true;
+            this.btnMap.Click += new System.EventHandler(this.btnMap_Click);
             // 
             // pictureBox3
             // 
@@ -299,12 +301,13 @@
             this.pictureBox3.Location = new System.Drawing.Point(0, 0);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(52, 52);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnHelp);
+            this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 92);
@@ -312,32 +315,34 @@
             this.panel1.Size = new System.Drawing.Size(250, 52);
             this.panel1.TabIndex = 10;
             // 
-            // btnHelp
+            // btnHome
             // 
-            this.btnHelp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHelp.FlatAppearance.BorderSize = 0;
-            this.btnHelp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btnHelp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHelp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnHelp.ForeColor = System.Drawing.Color.Silver;
-            this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelp.Location = new System.Drawing.Point(52, 0);
-            this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnHelp.Size = new System.Drawing.Size(198, 52);
-            this.btnHelp.TabIndex = 9;
-            this.btnHelp.Text = "Home";
-            this.btnHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelp.UseVisualStyleBackColor = true;
-            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            this.btnHome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnHome.ForeColor = System.Drawing.Color.Silver;
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.Location = new System.Drawing.Point(52, 0);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnHome.Size = new System.Drawing.Size(198, 52);
+            this.btnHome.TabIndex = 9;
+            this.btnHome.Text = "Home";
+            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(52, 52);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
@@ -735,13 +740,13 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnBMS;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnMap;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnHelp;
+        private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.PictureBox pictureBox1;

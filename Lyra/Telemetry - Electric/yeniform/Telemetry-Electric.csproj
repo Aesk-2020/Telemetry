@@ -172,6 +172,9 @@
     <Compile Include="Variables\ThreadMethods.cs" />
     <Compile Include="Variables\Timers.cs" />
     <Compile Include="Variables\VCU.cs" />
+    <EmbeddedResource Include="NewForms\BMS.resx">
+      <DependentUpon>BMS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewForms\Telemetry2021.resx">
       <DependentUpon>Telemetry2021.cs</DependentUpon>
     </EmbeddedResource>

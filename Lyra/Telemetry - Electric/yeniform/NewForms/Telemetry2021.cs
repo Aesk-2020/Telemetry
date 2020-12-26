@@ -18,15 +18,19 @@ namespace Telemetri.NewForms
         {
             InitializeComponent();
         }
-
-        private void btnHelp_Click(object sender, EventArgs e)
+        private void btnHome_Click(object sender, EventArgs e)
         {
             if (FormManagement.activeForm != null) FormManagement.activeForm.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnMap_Click(object sender, EventArgs e)
         {
             FormManagement.openChildForm(new Harita(), panelChildForm);
+        }
+
+        private void btnBMS_Click(object sender, EventArgs e)
+        {
+            FormManagement.openChildForm(new BMS(), panelChildForm);
         }
     }
 }

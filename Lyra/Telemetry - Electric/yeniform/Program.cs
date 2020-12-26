@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telemetri.NewForms;
+
 
 namespace Telemetri
 {
@@ -16,7 +18,7 @@ namespace Telemetri
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new telemetry());
+            Application.Run(new Telemetry2021());
         }
     }
 }
