@@ -18,6 +18,7 @@ namespace Telemetri.NewForms
         {
             InitializeComponent();
         }
+
         private void btnHome_Click(object sender, EventArgs e)
         {
             if (FormManagement.activeForm != null) FormManagement.activeForm.Close();
@@ -26,11 +27,18 @@ namespace Telemetri.NewForms
         private void btnMap_Click(object sender, EventArgs e)
         {
             FormManagement.openChildForm(new Harita(), panelChildForm);
+            btnMap.ImageAlign = ContentAlignment.MiddleRight;
         }
 
-        private void btnBMS_Click(object sender, EventArgs e)
+        private void btnBattery_Click(object sender, EventArgs e)
         {
             FormManagement.openChildForm(new BMS(), panelChildForm);
         }
+
+        private void btnMotorDriver_Click(object sender, EventArgs e)
+        {
+            FormManagement.openChildForm(new MotorDriver(), panelChildForm);
+        }
+
     }
 }

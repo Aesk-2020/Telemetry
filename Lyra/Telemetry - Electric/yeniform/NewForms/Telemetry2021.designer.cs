@@ -30,24 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Telemetry2021));
             this.panelSideMenu = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnBMS = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnMap = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
@@ -75,19 +57,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.anlik_hiz = new System.Windows.Forms.Label();
             this.anlikhiz_gauge = new Guna.UI.WinForms.GunaGauge();
+            this.btnHome = new FontAwesome.Sharp.IconButton();
+            this.btnMap = new FontAwesome.Sharp.IconButton();
+            this.btnBattery = new FontAwesome.Sharp.IconButton();
+            this.btnMotorDriver = new FontAwesome.Sharp.IconButton();
+            this.ıconButton5 = new FontAwesome.Sharp.IconButton();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelChildForm.SuspendLayout();
@@ -99,252 +75,19 @@
             // 
             this.panelSideMenu.AutoScroll = true;
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.panelSideMenu.Controls.Add(this.panel6);
-            this.panelSideMenu.Controls.Add(this.panel5);
-            this.panelSideMenu.Controls.Add(this.panel4);
-            this.panelSideMenu.Controls.Add(this.panel3);
-            this.panelSideMenu.Controls.Add(this.panel2);
-            this.panelSideMenu.Controls.Add(this.panel1);
+            this.panelSideMenu.Controls.Add(this.button1);
+            this.panelSideMenu.Controls.Add(this.ıconButton5);
+            this.panelSideMenu.Controls.Add(this.btnMotorDriver);
+            this.panelSideMenu.Controls.Add(this.btnBattery);
+            this.panelSideMenu.Controls.Add(this.btnMap);
+            this.panelSideMenu.Controls.Add(this.btnHome);
             this.panelSideMenu.Controls.Add(this.panelLogo);
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelSideMenu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(250, 661);
             this.panelSideMenu.TabIndex = 1;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.button5);
-            this.panel6.Controls.Add(this.pictureBox7);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 300);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(250, 52);
-            this.panel6.TabIndex = 15;
-            // 
-            // button5
-            // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button5.ForeColor = System.Drawing.Color.Silver;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(52, 0);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(198, 52);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Help";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox7.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(52, 52);
-            this.pictureBox7.TabIndex = 0;
-            this.pictureBox7.TabStop = false;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.button4);
-            this.panel5.Controls.Add(this.pictureBox6);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 609);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(250, 52);
-            this.panel5.TabIndex = 14;
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button4.ForeColor = System.Drawing.Color.Silver;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(52, 0);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(198, 52);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Exit";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox6.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(52, 52);
-            this.pictureBox6.TabIndex = 0;
-            this.pictureBox6.TabStop = false;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.button3);
-            this.panel4.Controls.Add(this.pictureBox5);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 248);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(250, 52);
-            this.panel4.TabIndex = 13;
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button3.ForeColor = System.Drawing.Color.Silver;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(52, 0);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(198, 52);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Motor Driver";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(52, 52);
-            this.pictureBox5.TabIndex = 0;
-            this.pictureBox5.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnBMS);
-            this.panel3.Controls.Add(this.pictureBox4);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 196);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(250, 52);
-            this.panel3.TabIndex = 12;
-            // 
-            // btnBMS
-            // 
-            this.btnBMS.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBMS.FlatAppearance.BorderSize = 0;
-            this.btnBMS.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btnBMS.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.btnBMS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBMS.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnBMS.ForeColor = System.Drawing.Color.Silver;
-            this.btnBMS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBMS.Location = new System.Drawing.Point(52, 0);
-            this.btnBMS.Name = "btnBMS";
-            this.btnBMS.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnBMS.Size = new System.Drawing.Size(198, 52);
-            this.btnBMS.TabIndex = 9;
-            this.btnBMS.Text = "BMS";
-            this.btnBMS.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBMS.UseVisualStyleBackColor = true;
-            this.btnBMS.Click += new System.EventHandler(this.btnBMS_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(52, 52);
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnMap);
-            this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 144);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(250, 52);
-            this.panel2.TabIndex = 11;
-            // 
-            // btnMap
-            // 
-            this.btnMap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnMap.FlatAppearance.BorderSize = 0;
-            this.btnMap.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btnMap.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.btnMap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMap.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnMap.ForeColor = System.Drawing.Color.Silver;
-            this.btnMap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMap.Location = new System.Drawing.Point(52, 0);
-            this.btnMap.Name = "btnMap";
-            this.btnMap.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnMap.Size = new System.Drawing.Size(198, 52);
-            this.btnMap.TabIndex = 9;
-            this.btnMap.Text = "Map";
-            this.btnMap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMap.UseVisualStyleBackColor = true;
-            this.btnMap.Click += new System.EventHandler(this.btnMap_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(52, 52);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnHome);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 92);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 52);
-            this.panel1.TabIndex = 10;
-            // 
-            // btnHome
-            // 
-            this.btnHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHome.FlatAppearance.BorderSize = 0;
-            this.btnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnHome.ForeColor = System.Drawing.Color.Silver;
-            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(52, 0);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnHome.Size = new System.Drawing.Size(198, 52);
-            this.btnHome.TabIndex = 9;
-            this.btnHome.Text = "Home";
-            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.UseVisualStyleBackColor = true;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(52, 52);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
             // 
             // panelLogo
             // 
@@ -692,6 +435,133 @@
             this.anlikhiz_gauge.Thickness = 20;
             this.anlikhiz_gauge.Value = 50;
             // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnHome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.btnHome.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.btnHome.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.btnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.Location = new System.Drawing.Point(0, 92);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(250, 48);
+            this.btnHome.TabIndex = 1;
+            this.btnHome.Text = "Home";
+            this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // btnMap
+            // 
+            this.btnMap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnMap.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMap.FlatAppearance.BorderSize = 0;
+            this.btnMap.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.btnMap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMap.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnMap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.btnMap.IconChar = FontAwesome.Sharp.IconChar.MapMarkedAlt;
+            this.btnMap.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.btnMap.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMap.Location = new System.Drawing.Point(0, 140);
+            this.btnMap.Name = "btnMap";
+            this.btnMap.Size = new System.Drawing.Size(250, 48);
+            this.btnMap.TabIndex = 2;
+            this.btnMap.Text = "Map";
+            this.btnMap.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMap.UseVisualStyleBackColor = false;
+            this.btnMap.Click += new System.EventHandler(this.btnMap_Click);
+            // 
+            // btnBattery
+            // 
+            this.btnBattery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnBattery.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBattery.FlatAppearance.BorderSize = 0;
+            this.btnBattery.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.btnBattery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBattery.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnBattery.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.btnBattery.IconChar = FontAwesome.Sharp.IconChar.CarBattery;
+            this.btnBattery.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.btnBattery.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBattery.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBattery.Location = new System.Drawing.Point(0, 188);
+            this.btnBattery.Name = "btnBattery";
+            this.btnBattery.Size = new System.Drawing.Size(250, 48);
+            this.btnBattery.TabIndex = 3;
+            this.btnBattery.Text = "Battery";
+            this.btnBattery.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBattery.UseVisualStyleBackColor = false;
+            this.btnBattery.Click += new System.EventHandler(this.btnBattery_Click);
+            // 
+            // btnMotorDriver
+            // 
+            this.btnMotorDriver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnMotorDriver.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMotorDriver.FlatAppearance.BorderSize = 0;
+            this.btnMotorDriver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.btnMotorDriver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMotorDriver.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnMotorDriver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.btnMotorDriver.IconChar = FontAwesome.Sharp.IconChar.Microchip;
+            this.btnMotorDriver.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.btnMotorDriver.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMotorDriver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMotorDriver.Location = new System.Drawing.Point(0, 236);
+            this.btnMotorDriver.Name = "btnMotorDriver";
+            this.btnMotorDriver.Size = new System.Drawing.Size(250, 48);
+            this.btnMotorDriver.TabIndex = 4;
+            this.btnMotorDriver.Text = "Motor Driver";
+            this.btnMotorDriver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMotorDriver.UseVisualStyleBackColor = false;
+            this.btnMotorDriver.Click += new System.EventHandler(this.btnMotorDriver_Click);
+            // 
+            // ıconButton5
+            // 
+            this.ıconButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.ıconButton5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ıconButton5.FlatAppearance.BorderSize = 0;
+            this.ıconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ıconButton5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ıconButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.ıconButton5.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.ıconButton5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.ıconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ıconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ıconButton5.Location = new System.Drawing.Point(0, 613);
+            this.ıconButton5.Name = "ıconButton5";
+            this.ıconButton5.Size = new System.Drawing.Size(250, 48);
+            this.ıconButton5.TabIndex = 5;
+            this.ıconButton5.Text = "Exit";
+            this.ıconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ıconButton5.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 284);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(250, 50);
+            this.button1.TabIndex = 6;
+            this.button1.Text = " Ayarlar";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // Telemetry2021
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -700,21 +570,10 @@
             this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panelSideMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Telemetry2021";
-            this.Text = "Form1";
+            this.Text = "AESK Telemetry 2021";
             this.panelSideMenu.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelChildForm.ResumeLayout(false);
@@ -730,24 +589,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panelSideMenu;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnBMS;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnMap;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelChildForm;
@@ -775,5 +616,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label anlik_hiz;
         private Guna.UI.WinForms.GunaGauge anlikhiz_gauge;
+        private FontAwesome.Sharp.IconButton ıconButton5;
+        private FontAwesome.Sharp.IconButton btnMotorDriver;
+        private FontAwesome.Sharp.IconButton btnBattery;
+        private FontAwesome.Sharp.IconButton btnMap;
+        private FontAwesome.Sharp.IconButton btnHome;
+        private System.Windows.Forms.Button button1;
     }
 }
