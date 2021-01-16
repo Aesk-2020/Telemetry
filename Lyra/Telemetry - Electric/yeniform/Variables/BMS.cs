@@ -2,7 +2,7 @@
 using System.IO.Ports;
 using System.Windows.Forms;
 
-namespace yeniform.Variables
+namespace Telemetri.Variables
 {
     public class BMS
     {

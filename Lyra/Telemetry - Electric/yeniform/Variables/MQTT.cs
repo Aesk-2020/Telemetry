@@ -2,7 +2,7 @@
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
 using System.Windows.Forms;
-namespace yeniform.Variables
+namespace Telemetri.Variables
 {
     public delegate void LogDelegate();
     public class MQTT : SerialPortCOMRF

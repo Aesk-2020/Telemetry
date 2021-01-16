@@ -2,7 +2,7 @@
 using System.Drawing;
 using uPLibrary.Networking.M2Mqtt;
 
-namespace yeniform.Variables
+namespace Telemetri.Variables
 {
     public struct MACROS
     {

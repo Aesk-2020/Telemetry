@@ -1,10 +1,15 @@
-﻿using GMap.NET;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using GMap.NET;
 using GMap.NET.WindowsForms;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms.Markers;
 using System.Windows.Forms;
-
-namespace yeniform.Variables
+using System.Drawing;
+namespace Telemetri.Variables
 {
     public delegate double GMAPDelegate(double latitude, double longtitude);
     public delegate void GMAPDeleteOverlay();
