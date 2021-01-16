@@ -155,6 +155,8 @@ int main(void)
 	 aesk_can.hcan = hcan1;
    MX_RTC_Init();
    RTC_Set_Time_Date();
+	 
+	 //*********SD KART****************//
    if(f_mount(&sd_card_data.myFATAFS,(TCHAR const *)SDPath, 1) == FR_OK)
    {
 	   HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
@@ -162,7 +164,8 @@ int main(void)
 	   vars_to_str(sd_card_data.path, "%d_%d_%d_%d_%d_%d_(%d).txt", sDate.Date, sDate.Month, sDate.Year, sTime.Hours, sTime.Minutes, sTime.Seconds, sd_card_data.logger_u32);
 	   sd_card_data.state = SD_Card_Detect;
    }
-
+	 //*********SD KART****************//
+	 
    if((GSM_STATUS_GPIO_Port->IDR & GSM_STATUS_Pin) == (uint32_t)GPIO_PIN_RESET)
    {
 			GSM_ON_OFF_GPIO_Port->BSRR = GSM_ON_OFF_Pin;
@@ -223,6 +226,7 @@ int main(void)
 			time_task.Time_Task.Task_500_ms = FALSE;
 		}
 
+		//*********SD KART****************//
 	  if(time_task.Time_Task.Task_50_ms == TRUE)
 	  {
 		  if(sd_card_data.state == SD_Card_Detect)
@@ -262,6 +266,8 @@ int main(void)
 			}
 	 		time_task.Time_Task.Task_50_ms = FALSE;
 		}
+		//*********SD KART****************//
+		
   }
   /* USER CODE END 3 */
 }
