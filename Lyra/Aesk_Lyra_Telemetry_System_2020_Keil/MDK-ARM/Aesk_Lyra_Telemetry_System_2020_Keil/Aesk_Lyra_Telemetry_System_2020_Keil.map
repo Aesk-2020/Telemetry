@@ -2565,7 +2565,7 @@ Image Symbol Table
     Tbl                                      0x08008ec6   Data         256  ccsbcs.o(.constdata)
     cvt1                                     0x08008fc6   Data         498  ccsbcs.o(.constdata)
     cvt2                                     0x080091b8   Data         188  ccsbcs.o(.constdata)
-    .conststring                             0x08009274   Section      541  main.o(.conststring)
+    .conststring                             0x08009274   Section      543  main.o(.conststring)
     .data                                    0x20000000   Section      164  main.o(.data)
     cifsr_control                            0x20000000   Data           1  main.o(.data)
     task_counter_50_ms                       0x2000000c   Data           4  main.o(.data)
@@ -3438,8 +3438,8 @@ Memory Map of the image
     0x08008e14   0x08008e14   0x00000008   Data   RO         4784    .constdata          system_stm32f4xx.o
     0x08008e1c   0x08008e1c   0x000000aa   Data   RO         4937    .constdata          ff.o
     0x08008ec6   0x08008ec6   0x000003ae   Data   RO         5304    .constdata          ccsbcs.o
-    0x08009274   0x08009274   0x0000021d   Data   RO          607    .conststring        main.o
-    0x08009491   0x08009491   0x00000003   PAD
+    0x08009274   0x08009274   0x0000021f   Data   RO          607    .conststring        main.o
+    0x08009493   0x08009493   0x00000001   PAD
     0x08009494   0x08009494   0x00000020   Data   RO         5700    Region$$Table       anon$$obj.o
 
 
@@ -3481,7 +3481,7 @@ Image component sizes
         32         10          0          5          0       1672   fatfs.o
       5760        104        170          8        544      44973   ff.o
         70          6          0          0         12       1787   ff_gen_drv.o
-      8278        632        541        164      11624      32564   main.o
+      8278        632        543        164      11624      32564   main.o
        192         14         20          1          0       4624   sd_diskio.o
        824         24          0          0          0      12348   sim800mqtt.o
         36          8        452          0       1024        888   startup_stm32f412rx.o
@@ -3506,7 +3506,7 @@ Image component sizes
     ----------------------------------------------------------------------
      31308       1586       2192        200      13204     986957   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        78          0          3          2          0          0   (incl. Padding)
+        78          0          1          2          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
