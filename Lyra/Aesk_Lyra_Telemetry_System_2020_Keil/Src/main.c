@@ -155,7 +155,7 @@ int main(void)
 	 aesk_can.hcan = hcan1;
    MX_RTC_Init();
    RTC_Set_Time_Date();
-	 char * SDHeader = "Time\twake_up\tset_velocity\tcan_error\tPhase_A_Current\tPhase_B_Current\tPhase_B_Current\tDc_Bus_Current\tDc_Bus_voltage\tId\tIq\tIArms\tTorque\tdrive_status\tdriver_error\tOdometer\tMotor_Temperature\tactual_velocity\tBat_Voltage\tBat_Current\tBat_Cons\tSoc\tbms_error\tdc_bus_state\tWorst_Cell_Voltage\tWorst_Cell_Address\tTemperature\tlatitude\tlongtitude\tspeed_u8\tsatellite_number\tgpsEfficiency\ttrueData\tchecksumError\tvalidDataError\n";
+	 char * SDHeader = "Time\twake_up\tset_velocity\tcan_error\tPhase_A_Current\tPhase_B_Current\tDc_Bus_Current\tDc_Bus_voltage\tId\tIq\tIArms\tTorque\tdrive_status\tdriver_error\tOdometer\tMotor_Temperature\tactual_velocity\tBat_Voltage\tBat_Current\tBat_Cons\tSoc\tbms_error\tdc_bus_state\tWorst_Cell_Voltage\tWorst_Cell_Address\tTemperature\tlatitude\tlongtitude\tspeed_u8\tsatellite_number\tgpsEfficiency\ttrueData\tchecksumError\tvalidDataError\n";
 	 
 	 //*********SD KART****************//
    if(f_mount(&sd_card_data.myFATAFS,(TCHAR const *)SDPath, 1) == FR_OK)
@@ -892,7 +892,7 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 
 		case StartTCPConnect :
 		{
-			SendATCommand(gsm_data, "AT+CIPSTART=\"TCP\",\"46.102.106.183\",\"1883\"\r\n", "CONNECT OK\r\n");
+			SendATCommand(gsm_data, "AT+CIPSTART=\"TCP\",\"broker.mqttdashboard.com\",\"1883\"\r\n", "CONNECT OK\r\n");
 			gsm_data->gsm_state_next_index = CreateMQTTConnectPack;
 			gsm_data->gsm_state_current_index = EmptyState;
 			break;
