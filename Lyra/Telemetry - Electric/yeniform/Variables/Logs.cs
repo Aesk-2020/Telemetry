@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
-namespace yeniform.Variables
+namespace Telemetri.Variables
 {
     public class Logs
     {

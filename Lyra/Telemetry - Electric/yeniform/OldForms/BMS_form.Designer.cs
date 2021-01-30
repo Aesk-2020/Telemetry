@@ -1,4 +1,4 @@
-﻿namespace yeniform
+﻿namespace Telemetri
 {
     partial class BMS_form
     {
@@ -746,7 +746,7 @@
             // 
             this.flower_box.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.flower_box.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.flower_box.Image = global::yeniform.Properties.Resources.YEDEK1;
+            this.flower_box.Image = global::Telemetri.Properties.Resources.YEDEK1;
             this.flower_box.Location = new System.Drawing.Point(81, 107);
             this.flower_box.Name = "flower_box";
             this.flower_box.Size = new System.Drawing.Size(105, 254);

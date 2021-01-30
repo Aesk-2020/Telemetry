@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace yeniform.Variables
+namespace Telemetri.Variables
 {
     public struct SectorAndTourDatas
     {

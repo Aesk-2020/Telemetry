@@ -2,8 +2,8 @@
 using System.Drawing;
 using System.IO.Ports;
 using System.Windows.Forms;
-using yeniform.Variables;
-namespace yeniform
+using Telemetri.Variables;
+namespace Telemetri
 {
     public partial class BMS_form : Form
     {

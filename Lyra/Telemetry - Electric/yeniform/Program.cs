@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telemetri.NewForms;
 
-namespace yeniform
+
+namespace Telemetri
 {
     static class Program
     {

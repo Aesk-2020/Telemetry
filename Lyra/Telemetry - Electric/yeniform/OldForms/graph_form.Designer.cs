@@ -1,4 +1,4 @@
-﻿namespace yeniform
+﻿namespace Telemetri
 {
     partial class graph_form
     {

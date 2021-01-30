@@ -1,6 +1,6 @@
 aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: ..\Src\SIM800MQTT.c
 aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: ../Inc/SIM800MQTT.h
-aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: ../Inc/main.h
 aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: ../Inc/stm32f4xx_hal_conf.h
@@ -16,7 +16,7 @@ aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: ../Drivers/CMSIS/Include/mpu_
 aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h
 aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
@@ -38,5 +38,5 @@ aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: ../Drivers/STM32F4xx_HAL_Driv
 aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: ../Inc/StackTrace.h
-aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+aesk_lyra_telemetry_system_2020_keil\sim800mqtt.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

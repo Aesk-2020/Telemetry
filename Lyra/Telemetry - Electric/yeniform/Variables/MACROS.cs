@@ -2,12 +2,12 @@
 using System.Drawing;
 using uPLibrary.Networking.M2Mqtt;
 
-namespace yeniform.Variables
+namespace Telemetri.Variables
 {
     public struct MACROS
     {
         public const double C_RADIUS_EARTH_KM = 6371100;
-        public const string aesk_IP = "46.102.106.183";
+        public const string aesk_IP = "broker.mqttdashboard.com";
         public const string MQTT_username = "digital";
         public const string MQTT_password = "aesk";
         public const string MQTT_topic = "LYRADATA";

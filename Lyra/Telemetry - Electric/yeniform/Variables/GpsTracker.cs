@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace yeniform.Variables
+namespace Telemetri.Variables
 {
     public class GpsTracker
     {

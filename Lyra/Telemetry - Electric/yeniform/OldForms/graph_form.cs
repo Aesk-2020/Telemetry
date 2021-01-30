@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Threading;
 
-using yeniform.Variables;
+using Telemetri.Variables;
 using System.Windows.Forms.DataVisualization.Charting;
 
-namespace yeniform
+namespace Telemetri
 {
     public partial class graph_form :Form
     {

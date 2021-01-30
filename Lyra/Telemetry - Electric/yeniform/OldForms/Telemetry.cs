@@ -4,10 +4,10 @@ using System.Linq;
 using System.Windows.Forms;
 using System.IO.Ports;
 using GMap.NET;
-using yeniform.Variables;
+using Telemetri.Variables;
 using System.Threading;
 
-namespace yeniform
+namespace Telemetri
 {
     public partial class telemetry : Form
     {
