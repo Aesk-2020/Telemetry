@@ -63,7 +63,7 @@ namespace Telemetri.Variables
 
             catch
             {
-                MessageBox.Show("Bağlantı açılamadı!");
+                MessageBox.Show("Lütfen port bir seçiniz.");
             }
         }
 

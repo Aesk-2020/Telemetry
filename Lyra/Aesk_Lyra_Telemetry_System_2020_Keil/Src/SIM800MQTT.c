@@ -7,8 +7,9 @@
 #include "SIM800MQTT.h"
 #include "StackTrace.h"
 #include "string.h"
-
-
+#include "AESK_Data_Pack_lib.h"
+#include "AESK_Gps_lib.h"
+#include "Can_Lyra_Header.h"
 
 void SendATCommand(Gsm_Datas* gsm_data, char * command, char* response)
 {
@@ -244,4 +245,119 @@ int MQTTSerialize_publish(unsigned char* buf, int buflen, unsigned char dup, int
 exit:
 	FUNC_EXIT_RC(rc);
 	return rc;
+}
+
+void createMQTTPackage(Gsm_Datas* gsm_data,LyraDatas *lyradata, GPS_Handle*gps_data, uint8_t* packBuf, uint16_t *index)
+{
+	AESK_UINT8toUINT8CODE(&lyradata->vcu_data.wake_up_union.wake_up_u8, packBuf, index);
+	AESK_UINT8toUINT8CODE(&lyradata->vcu_data.set_velocity_u8, packBuf, index);
+	int16_t phase_a_current_s16 = (int16_t)(lyradata->driver_data.Phase_A_Current_f32 * FLOAT_CONVERTER_2);
+	int16_t phase_b_current_s16 = (int16_t)(lyradata->driver_data.Phase_B_Current_f32 * FLOAT_CONVERTER_2);
+	uint16_t dc_bus_voltage_u16 = (uint16_t)(lyradata->driver_data.Dc_Bus_voltage_f32 * FLOAT_CONVERTER_1);
+	int16_t dc_bus_current_s16 = (int16_t)(lyradata->driver_data.Dc_Bus_Current_f32 * FLOAT_CONVERTER_2);
+	int16_t id_f32 = (int16_t)(lyradata->driver_data.Id_f32 * FLOAT_CONVERTER_2);
+	int16_t iq_f32 = (int16_t)(lyradata->driver_data.Iq_f32 * FLOAT_CONVERTER_2);
+	int16_t IArms_f32 = (int16_t)(lyradata->driver_data.IArms_f32 * FLOAT_CONVERTER_2);
+	int16_t IBrms_f32 = (int16_t)(lyradata->driver_data.Torque_f32 * FLOAT_CONVERTER_2);
+	AESK_INT16toUINT8_LE(&phase_a_current_s16, packBuf, index);
+	AESK_INT16toUINT8_LE(&phase_b_current_s16, packBuf, index);
+	AESK_INT16toUINT8_LE(&dc_bus_current_s16, packBuf, index);
+	AESK_UINT16toUINT8_LE(&dc_bus_voltage_u16, packBuf, index);
+	AESK_INT16toUINT8_LE(&id_f32, packBuf, index);
+	AESK_INT16toUINT8_LE(&iq_f32, packBuf, index);
+	AESK_INT16toUINT8_LE(&IArms_f32, packBuf, index);
+	AESK_INT16toUINT8_LE(&IBrms_f32, packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->driver_data.drive_status_union.drive_status_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->driver_data.driver_error_union.driver_error_u8), packBuf, index);
+	AESK_UINT32toUINT8_LE(&(lyradata->driver_data.Odometer_u32), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->driver_data.Motor_Temperature_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->driver_data.actual_velocity_u8), packBuf, index);
+	uint16_t bat_volt_u16 = (uint16_t)(lyradata->bms_data.Bat_Voltage_f32 * FLOAT_CONVERTER_2);
+	int16_t  bat_cur_s16 = (int16_t)(lyradata->bms_data.Bat_Current_f32 * FLOAT_CONVERTER_2);
+	uint16_t bat_cons_u16 = (uint16_t)(lyradata->bms_data.Bat_Cons_f32 * FLOAT_CONVERTER_1);
+	uint16_t soc_u16 = (uint16_t)(lyradata->bms_data.Soc_f32 * FLOAT_CONVERTER_2);
+	uint16_t worst_cell_voltage_u16 = (uint16_t)(lyradata->bms_data.Worst_Cell_Voltage_f32 * FLOAT_CONVERTER_1);
+	AESK_UINT16toUINT8_LE(&bat_volt_u16, packBuf, index);
+	AESK_INT16toUINT8_LE(&bat_cur_s16, packBuf, index);
+	AESK_UINT16toUINT8_LE(&bat_cons_u16, packBuf, index);
+	AESK_UINT16toUINT8_LE(&soc_u16, packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_error.bms_error_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.dc_bus_state.dc_bus_state_u8), packBuf, index);
+	AESK_UINT16toUINT8_LE(&worst_cell_voltage_u16, packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.Worst_Cell_Address_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.Temperature_u8), packBuf, index);
+	uint32_t latitude_u32 = gps_data->latitude_f32 * GPS_CONVERTER;
+	uint32_t longtitude_u32 = gps_data->longtitude_f32 * GPS_CONVERTER;
+	AESK_UINT32toUINT8_LE(&(latitude_u32), packBuf, index);
+	AESK_UINT32toUINT8_LE(&(longtitude_u32), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(gps_data->speed_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(gps_data->satellite_number_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(gps_data->gpsEfficiency_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_1_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_2_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_3_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_4_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_5_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_6_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_7_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_8_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_9_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_10_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_11_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_12_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_13_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_14_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_15_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_16_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_17_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_18_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_19_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_20_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_21_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_22_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_23_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_24_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_25_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_26_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_27_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_cells.Cell_28_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->can_error.can_error_u8), packBuf, index);
+	gsm_data->MQTT_Counter++;
+	AESK_UINT32toUINT8_LE(&(gsm_data->MQTT_Counter), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_temps.temp_1_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_temps.temp_2_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_temps.temp_3_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_temps.temp_4_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_temps.temp_5_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_temps.temp_6_u8), packBuf, index);
+	AESK_UINT8toUINT8CODE(&(lyradata->bms_data.bms_temps.temp_7_u8), packBuf, index);
+	
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_1_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_2_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_3_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_4_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_5_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_6_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_7_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_8_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_9_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_10_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_11_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_12_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_13_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_14_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_15_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_16_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_17_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_18_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_19_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_20_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_21_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_22_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_23_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_24_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_25_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_26_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_27_u8), packBuf, index);
+	AESK_INT8toUINT8CODE(&(lyradata->bms_data.bms_soc.offset_SoC_28_u8), packBuf, index);
 }

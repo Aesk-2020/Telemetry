@@ -222,6 +222,8 @@ namespace Telemetri
             if (code == 0x00)
             {
                 //Connected
+                bağlanToolStripMenuItem.Enabled = false;
+                bağlantıyıKesToolStripMenuItem.Enabled = true;
                 gsm_durum.BackColor = MACROS.AeskBlue;
                 if (!myDisplayThread.IsAlive)
                 {
@@ -240,7 +242,8 @@ namespace Telemetri
             mqtt.disConnectMQTT();
             gsm_durum.BackColor = Color.Transparent;
             MACROS.newDataCome = false;
-
+            bağlantıyıKesToolStripMenuItem.Enabled = false;
+            bağlanToolStripMenuItem.Enabled = true;
             //event kapama
         }
 
@@ -255,6 +258,11 @@ namespace Telemetri
             if (!serialPort1.IsOpen)
             {
                 serialportRF.ConnectSerialPort(serialportRF.portname);
+                if(serialPort1.IsOpen == true) 
+                {
+                    bağlanToolStripMenuItem1.Enabled = false;
+                    bağlantıyıKesToolStripMenuItem1.Enabled = true;
+                }
                 xbee_active.BackColor = MACROS.AeskBlue;
             }
 
@@ -269,6 +277,8 @@ namespace Telemetri
             if (serialPort1.IsOpen)
             {
                 serialportRF.DisconnectSerialPort(serialportRF.portname);
+                bağlanToolStripMenuItem1.Enabled = true;
+                bağlantıyıKesToolStripMenuItem1.Enabled = false;
             }
             MACROS.newDataCome = false;
         }
@@ -470,25 +480,7 @@ namespace Telemetri
 
         private void telemetry_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (myDisplayThread.IsAlive)
-            {
-                myDisplayThread.Abort();
-            }
-            if (myTimeTickThread.IsAlive)
-            {
-                myTimeTickThread.Abort();
-            }
-
-            if (MACROS.client.IsConnected)
-            {
-                mqtt.disConnectMQTT();
-            }
-
-            if (serialPort1.IsOpen)
-            {
-                serialportRF.DisconnectSerialPort(serialportRF.portname);
-            }
-
+          
         }
 
         private void kayıtAçToolStripMenuItem_Click(object sender, EventArgs e)
