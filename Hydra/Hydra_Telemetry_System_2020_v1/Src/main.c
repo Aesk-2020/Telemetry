@@ -164,6 +164,23 @@ int main(void)
 	   vars_to_str(sd_card_data.path, "%d_%d_%d_%d_%d_%d_(%d).txt", sDate.Date, sDate.Month, sDate.Year, sTime.Hours, sTime.Minutes, sTime.Seconds, sd_card_data.logger_u32);
 	   sd_card_data.state = SD_Card_Detect;
    }*/
+	 
+	 
+	 char * SDHeader = "Time\twake_up\tset_velocity\tcan_error\tPhase_A_Current\tPhase_B_Current\tId\tIq\tIArms\tTorque\tdrive_status\tdriver_error\tOdometer\tactual_velocity\tBat_Voltage\tBat_Current\tBat_Cons\tSoc\tbms_error\tdc_bus_state\tlatitude\tlongtitude\tems_bat_cons\tems_bat_cur\tems_bat_soc\tems_fc_cons\tems_fc_cons_lt\tems_fc_cur\tems_fc_volt\tems_error\tems_out_cons\tems_out_cur\tems_out_volt\tems_penalty\tems_fc_i_share\tems_fc_i_sp\n";
+	 
+   if(f_mount(&sd_card_data.myFATAFS,(TCHAR const *)SDPath, 1) == FR_OK)
+   {
+	   HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+	   HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
+	   vars_to_str(sd_card_data.path, "%d_%d_%d_%d_%d_%d_(%d).txt", sDate.Date, sDate.Month, sDate.Year, sTime.Hours, sTime.Minutes, sTime.Seconds, sd_card_data.logger_u32);
+		 
+		 f_open(&sd_card_data.myFile, sd_card_data.path, FA_WRITE | FA_OPEN_APPEND | FA_OPEN_EXISTING | FA_OPEN_ALWAYS);
+		 f_write(&sd_card_data.myFile, SDHeader, strlen(SDHeader), (void*)&sd_card_data.writtenbyte);
+	   f_close(&sd_card_data.myFile);
+		 
+		 sd_card_data.state = SD_Card_Detect;
+   }
+	 
 
    if((GSM_STATUS_GPIO_Port->IDR & GSM_STATUS_Pin) == (uint32_t)GPIO_PIN_RESET)
    {
@@ -232,7 +249,7 @@ int main(void)
 
 			  HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 			  HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
-			  vars_to_str((char *)sd_card_data.transmitBuf, "%d$%d$%.2f$%.2f$%.2f$%.2f$%.2f$%.2f$%d$%d$%d$%d$%.1f$%.2f$%.1f$%.2f$%d$%d$%.6f$%.6f$%.2f$%.2f$%.2f$%.2f$%.2f$%.2f$%.2f$%d$%.2f$%.2f$%.1f$%d$%.2f$%.2f\n",
+			  vars_to_str((char *)sd_card_data.transmitBuf, "%d\t%d\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%d\t%d\t%d\t%d\t%.1f\t%.2f\t%.1f\t%.2f\t%d\t%d\t%.6f\t%.6f\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%d\t%.2f\t%.2f\t%.1f\t%d\t%.2f\t%.2f\n",
 				 					 	 	 	 	 	 	 	 	 	 	 hydradata.vcu_data.wake_up_union.wake_up_u8, hydradata.vcu_data.set_velocity_u8,
 																			 hydradata.driver_data.Phase_A_Current_f32, hydradata.driver_data.Phase_B_Current_f32,
 																			 hydradata.driver_data.Id_f32, hydradata.driver_data.Iq_f32, hydradata.driver_data.IArms_f32, hydradata.driver_data.Torque_f32,
@@ -245,7 +262,7 @@ int main(void)
 																			 hydradata.ems_data.fc_cons_lt_f32, hydradata.ems_data.fc_current_f32,  hydradata.ems_data.fc_voltage_f32, hydradata.ems_data.general_error_handler_u8, hydradata.ems_data.out_cons_f32,
 				                               hydradata.ems_data.out_current_f32,hydradata.ems_data.out_voltage_f32, hydradata.ems_data.penalty_s8, hydradata.ems_data.FC_I_share, hydradata.ems_data.FC_I_Sp);
 				
-			  vars_to_str((char *)sd_card_data.total_log, "%d:%d:%d$", sTime.Hours, sTime.Minutes, sTime.Seconds);
+			  vars_to_str((char *)sd_card_data.total_log, "%d:%d:%d\t", sTime.Hours, sTime.Minutes, sTime.Seconds);
 			  strcat(sd_card_data.total_log, (const char*)sd_card_data.transmitBuf);
 			  sd_card_data.result = f_open(&sd_card_data.myFile, sd_card_data.path, FA_WRITE | FA_OPEN_APPEND | FA_OPEN_EXISTING | FA_OPEN_ALWAYS);
 			  f_write(&sd_card_data.myFile, sd_card_data.total_log, strlen(sd_card_data.total_log), (void*)&sd_card_data.writtenbyte);
@@ -256,14 +273,7 @@ int main(void)
 
 			  else
 			  {
-				  if(f_mount(&sd_card_data.myFATAFS,(TCHAR const *)SDPath, 1) == FR_OK)
-				  {
-					  sd_card_data.logger_u32++;
-					  HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
-					  HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
-					  vars_to_str(sd_card_data.path, "%d_%d_%d_(%d).txt", sDate.Date, sDate.Month, sDate.Year, sd_card_data.logger_u32);
-					  sd_card_data.state = SD_Card_Detect;
-				  }
+				  f_mount(&sd_card_data.myFATAFS,(TCHAR const *)SDPath, 1);
 			  }
 			}
 	 		time_task.Time_Task.Task_50_ms = FALSE;
@@ -894,7 +904,7 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 
 		case StartTCPConnect :
 		{
-			SendATCommand(gsm_data, "AT+CIPSTART=\"TCP\",\"46.102.106.183\",\"1883\"\r\n", "CONNECT OK\r\n");
+			SendATCommand(gsm_data, "AT+CIPSTART=\"TCP\",\"broker.mqttdashboard.com\",\"1883\"\r\n", "CONNECT OK\r\n");
 			gsm_data->gsm_state_next_index = CreateMQTTConnectPack;
 			gsm_data->gsm_state_current_index = EmptyState;
 			break;
