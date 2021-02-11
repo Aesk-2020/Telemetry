@@ -1,4 +1,4 @@
---cpu=Cortex-M4.fp
+--cpu=Cortex-M4.fp.sp
 "hydra_telemetry_system_2020_v1\startup_stm32f412rx.o"
 "hydra_telemetry_system_2020_v1\aesk_can_library.o"
 "hydra_telemetry_system_2020_v1\aesk_data_pack_lib.o"

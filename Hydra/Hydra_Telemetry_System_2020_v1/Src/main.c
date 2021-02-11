@@ -166,7 +166,7 @@ int main(void)
    }*/
 	 
 	 
-	 char * SDHeader = "Time\twake_up\tset_velocity\tcan_error\tPhase_A_Current\tPhase_B_Current\tId\tIq\tIArms\tTorque\tdrive_status\tdriver_error\tOdometer\tactual_velocity\tBat_Voltage\tBat_Current\tBat_Cons\tSoc\tbms_error\tdc_bus_state\tlatitude\tlongtitude\tems_bat_cons\tems_bat_cur\tems_bat_soc\tems_fc_cons\tems_fc_cons_lt\tems_fc_cur\tems_fc_volt\tems_error\tems_out_cons\tems_out_cur\tems_out_volt\tems_penalty\tems_fc_i_share\tems_fc_i_sp\n";
+	 char * SDHeader = "Time\twake_up\tset_velocity\tPhase_A_Current\tPhase_B_Current\tId\tIq\tIArms\tTorque\tdrive_status\tdriver_error\tOdometer\tactual_velocity\tBat_Voltage\tBat_Current\tBat_Cons\tSoc\tbms_error\tdc_bus_state\tlatitude\tlongtitude\tems_bat_cons\tems_bat_cur\tems_bat_soc\tems_fc_cons\tems_fc_cons_lt\tems_fc_cur\tems_fc_volt\tems_error\tems_out_cons\tems_out_cur\tems_out_volt\tems_penalty\tems_fc_i_share\tems_fc_i_sp\n";
 	 
    if(f_mount(&sd_card_data.myFATAFS,(TCHAR const *)SDPath, 1) == FR_OK)
    {
@@ -292,11 +292,11 @@ void SystemClock_Config(void)
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
   RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
 
-  /** Configure the main internal regulator output voltage 
+  /** Configure the main internal regulator output voltage
   */
   __HAL_RCC_PWR_CLK_ENABLE();
   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
-  /** Initializes the CPU, AHB and APB busses clocks 
+  /** Initializes the CPU, AHB and APB busses clocks
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE|RCC_OSCILLATORTYPE_LSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
@@ -312,7 +312,7 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  /** Initializes the CPU, AHB and APB busses clocks 
+  /** Initializes the CPU, AHB and APB busses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
@@ -425,7 +425,7 @@ static void MX_RTC_Init(void)
   /* USER CODE BEGIN RTC_Init 1 */
 
   /* USER CODE END RTC_Init 1 */
-  /** Initialize RTC Only 
+  /** Initialize RTC Only
   */
   hrtc.Instance = RTC;
   hrtc.Init.HourFormat = RTC_HOURFORMAT_24;
@@ -526,7 +526,7 @@ static void MX_USART1_UART_Init(void)
 
   /* USER CODE END USART1_Init 1 */
   huart1.Instance = USART1;
-  huart1.Init.BaudRate = 57600;
+  huart1.Init.BaudRate = 115200;
   huart1.Init.WordLength = UART_WORDLENGTH_8B;
   huart1.Init.StopBits = UART_STOPBITS_1;
   huart1.Init.Parity = UART_PARITY_NONE;
@@ -609,10 +609,10 @@ static void MX_USART3_UART_Init(void)
 
 }
 
-/** 
+/**
   * Enable DMA controller clock
   */
-static void MX_DMA_Init(void) 
+static void MX_DMA_Init(void)
 {
 
   /* DMA controller clock enable */
@@ -1642,7 +1642,7 @@ void Error_Handler(void)
   * @retval None
   */
 void assert_failed(uint8_t *file, uint32_t line)
-{ 
+{
   /* USER CODE BEGIN 6 */
   /* User can add his own implementation to report the file name and line number,
      tex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
