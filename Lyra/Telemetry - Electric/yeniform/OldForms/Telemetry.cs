@@ -470,25 +470,7 @@ namespace Telemetri
 
         private void telemetry_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (myDisplayThread.IsAlive)
-            {
-                myDisplayThread.Abort();
-            }
-            if (myTimeTickThread.IsAlive)
-            {
-                myTimeTickThread.Abort();
-            }
-
-            if (MACROS.client.IsConnected)
-            {
-                mqtt.disConnectMQTT();
-            }
-
-            if (serialPort1.IsOpen)
-            {
-                serialportRF.DisconnectSerialPort(serialportRF.portname);
-            }
-
+            
         }
 
         private void kayıtAçToolStripMenuItem_Click(object sender, EventArgs e)
