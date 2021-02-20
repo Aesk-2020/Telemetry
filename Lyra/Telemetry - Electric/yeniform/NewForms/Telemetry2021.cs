@@ -26,7 +26,7 @@ namespace Telemetri.NewForms
 
         private void btnMap_Click(object sender, EventArgs e)
         {
-            FormManagement.openChildForm(new Harita(), panelChildForm);
+            FormManagement.openChildForm(new Map(), panelChildForm);
             btnMap.ImageAlign = ContentAlignment.MiddleRight;
         }
 

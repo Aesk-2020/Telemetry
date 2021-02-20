@@ -121,11 +121,11 @@
     <Compile Include="NewForms\Telemetry2021.Designer.cs">
       <DependentUpon>Telemetry2021.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewForms\Harita.cs">
+    <Compile Include="NewForms\Map.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewForms\Harita.Designer.cs">
-      <DependentUpon>Harita.cs</DependentUpon>
+    <Compile Include="NewForms\Map.Designer.cs">
+      <DependentUpon>Map.cs</DependentUpon>
     </Compile>
     <Compile Include="NewForms\Help.cs">
       <SubType>Form</SubType>
@@ -181,8 +181,8 @@
     <EmbeddedResource Include="NewForms\Telemetry2021.resx">
       <DependentUpon>Telemetry2021.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewForms\Harita.resx">
-      <DependentUpon>Harita.cs</DependentUpon>
+    <EmbeddedResource Include="NewForms\Map.resx">
+      <DependentUpon>Map.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewForms\MotorDriver.resx">
       <DependentUpon>MotorDriver.cs</DependentUpon>

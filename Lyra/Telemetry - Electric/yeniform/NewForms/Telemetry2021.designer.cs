@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Telemetry2021));
             this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.ıconButton5 = new FontAwesome.Sharp.IconButton();
+            this.btnMotorDriver = new FontAwesome.Sharp.IconButton();
+            this.btnBattery = new FontAwesome.Sharp.IconButton();
+            this.btnMap = new FontAwesome.Sharp.IconButton();
+            this.btnHome = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
@@ -40,35 +46,20 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.gunaCircleProgressBar1 = new Guna.UI.WinForms.GunaCircleProgressBar();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.atilan_Tur = new Guna.UI.WinForms.GunaCircleProgressBar();
-            this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.hedef_hiz = new System.Windows.Forms.Label();
-            this.hedefhiz_gauge = new Guna.UI.WinForms.GunaGauge();
             this.label9 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.anlik_hiz_gps = new System.Windows.Forms.Label();
-            this.gpshiz_gauge = new Guna.UI.WinForms.GunaGauge();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.anlik_hiz = new System.Windows.Forms.Label();
-            this.anlikhiz_gauge = new Guna.UI.WinForms.GunaGauge();
-            this.btnHome = new FontAwesome.Sharp.IconButton();
-            this.btnMap = new FontAwesome.Sharp.IconButton();
-            this.btnBattery = new FontAwesome.Sharp.IconButton();
-            this.btnMotorDriver = new FontAwesome.Sharp.IconButton();
-            this.ıconButton5 = new FontAwesome.Sharp.IconButton();
-            this.button1 = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelChildForm.SuspendLayout();
-            this.gunaCircleProgressBar1.SuspendLayout();
-            this.atilan_Tur.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSideMenu
@@ -88,6 +79,133 @@
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(250, 661);
             this.panelSideMenu.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 284);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(250, 50);
+            this.button1.TabIndex = 6;
+            this.button1.Text = " Ayarlar";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // ıconButton5
+            // 
+            this.ıconButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.ıconButton5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ıconButton5.FlatAppearance.BorderSize = 0;
+            this.ıconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ıconButton5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ıconButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.ıconButton5.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.ıconButton5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.ıconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ıconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ıconButton5.Location = new System.Drawing.Point(0, 613);
+            this.ıconButton5.Name = "ıconButton5";
+            this.ıconButton5.Size = new System.Drawing.Size(250, 48);
+            this.ıconButton5.TabIndex = 5;
+            this.ıconButton5.Text = "Exit";
+            this.ıconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ıconButton5.UseVisualStyleBackColor = false;
+            // 
+            // btnMotorDriver
+            // 
+            this.btnMotorDriver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnMotorDriver.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMotorDriver.FlatAppearance.BorderSize = 0;
+            this.btnMotorDriver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.btnMotorDriver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMotorDriver.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnMotorDriver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.btnMotorDriver.IconChar = FontAwesome.Sharp.IconChar.Microchip;
+            this.btnMotorDriver.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.btnMotorDriver.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMotorDriver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMotorDriver.Location = new System.Drawing.Point(0, 236);
+            this.btnMotorDriver.Name = "btnMotorDriver";
+            this.btnMotorDriver.Size = new System.Drawing.Size(250, 48);
+            this.btnMotorDriver.TabIndex = 4;
+            this.btnMotorDriver.Text = "Motor Driver";
+            this.btnMotorDriver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMotorDriver.UseVisualStyleBackColor = false;
+            this.btnMotorDriver.Click += new System.EventHandler(this.btnMotorDriver_Click);
+            // 
+            // btnBattery
+            // 
+            this.btnBattery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnBattery.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBattery.FlatAppearance.BorderSize = 0;
+            this.btnBattery.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.btnBattery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBattery.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnBattery.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.btnBattery.IconChar = FontAwesome.Sharp.IconChar.CarBattery;
+            this.btnBattery.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.btnBattery.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBattery.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBattery.Location = new System.Drawing.Point(0, 188);
+            this.btnBattery.Name = "btnBattery";
+            this.btnBattery.Size = new System.Drawing.Size(250, 48);
+            this.btnBattery.TabIndex = 3;
+            this.btnBattery.Text = "Battery";
+            this.btnBattery.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBattery.UseVisualStyleBackColor = false;
+            this.btnBattery.Click += new System.EventHandler(this.btnBattery_Click);
+            // 
+            // btnMap
+            // 
+            this.btnMap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnMap.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMap.FlatAppearance.BorderSize = 0;
+            this.btnMap.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.btnMap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMap.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnMap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.btnMap.IconChar = FontAwesome.Sharp.IconChar.MapMarkedAlt;
+            this.btnMap.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.btnMap.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMap.Location = new System.Drawing.Point(0, 140);
+            this.btnMap.Name = "btnMap";
+            this.btnMap.Size = new System.Drawing.Size(250, 48);
+            this.btnMap.TabIndex = 2;
+            this.btnMap.Text = "Map";
+            this.btnMap.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMap.UseVisualStyleBackColor = false;
+            this.btnMap.Click += new System.EventHandler(this.btnMap_Click);
+            // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnHome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.btnHome.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.btnHome.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.btnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.Location = new System.Drawing.Point(0, 92);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(250, 48);
+            this.btnHome.TabIndex = 1;
+            this.btnHome.Text = "Home";
+            this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // panelLogo
             // 
@@ -119,21 +237,16 @@
             this.panelChildForm.Controls.Add(this.label6);
             this.panelChildForm.Controls.Add(this.label5);
             this.panelChildForm.Controls.Add(this.label4);
-            this.panelChildForm.Controls.Add(this.gunaCircleProgressBar1);
             this.panelChildForm.Controls.Add(this.label2);
-            this.panelChildForm.Controls.Add(this.atilan_Tur);
             this.panelChildForm.Controls.Add(this.label11);
             this.panelChildForm.Controls.Add(this.label12);
             this.panelChildForm.Controls.Add(this.hedef_hiz);
-            this.panelChildForm.Controls.Add(this.hedefhiz_gauge);
             this.panelChildForm.Controls.Add(this.label9);
             this.panelChildForm.Controls.Add(this.label28);
             this.panelChildForm.Controls.Add(this.anlik_hiz_gps);
-            this.panelChildForm.Controls.Add(this.gpshiz_gauge);
             this.panelChildForm.Controls.Add(this.label10);
             this.panelChildForm.Controls.Add(this.label8);
             this.panelChildForm.Controls.Add(this.anlik_hiz);
-            this.panelChildForm.Controls.Add(this.anlikhiz_gauge);
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(250, 0);
             this.panelChildForm.Name = "panelChildForm";
@@ -212,37 +325,6 @@
             this.label4.TabIndex = 103;
             this.label4.Text = "Set Velocity";
             // 
-            // gunaCircleProgressBar1
-            // 
-            this.gunaCircleProgressBar1.AnimationSpeed = 0.6F;
-            this.gunaCircleProgressBar1.BaseColor = System.Drawing.Color.Transparent;
-            this.gunaCircleProgressBar1.Controls.Add(this.label3);
-            this.gunaCircleProgressBar1.ForeColor = System.Drawing.Color.White;
-            this.gunaCircleProgressBar1.IdleColor = System.Drawing.Color.Gainsboro;
-            this.gunaCircleProgressBar1.IdleOffset = 10;
-            this.gunaCircleProgressBar1.IdleThickness = 10;
-            this.gunaCircleProgressBar1.Image = null;
-            this.gunaCircleProgressBar1.ImageSize = new System.Drawing.Size(52, 52);
-            this.gunaCircleProgressBar1.Location = new System.Drawing.Point(655, 152);
-            this.gunaCircleProgressBar1.Maximum = 30;
-            this.gunaCircleProgressBar1.Name = "gunaCircleProgressBar1";
-            this.gunaCircleProgressBar1.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.gunaCircleProgressBar1.ProgressMinColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.gunaCircleProgressBar1.ProgressOffset = 10;
-            this.gunaCircleProgressBar1.ProgressThickness = 10;
-            this.gunaCircleProgressBar1.Size = new System.Drawing.Size(100, 100);
-            this.gunaCircleProgressBar1.TabIndex = 102;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(33, 28);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 39);
-            this.label3.TabIndex = 101;
-            this.label3.Text = "0";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -253,37 +335,6 @@
             this.label2.Size = new System.Drawing.Size(45, 21);
             this.label2.TabIndex = 101;
             this.label2.Text = "Laps";
-            // 
-            // atilan_Tur
-            // 
-            this.atilan_Tur.AnimationSpeed = 0.6F;
-            this.atilan_Tur.BaseColor = System.Drawing.Color.Transparent;
-            this.atilan_Tur.Controls.Add(this.label1);
-            this.atilan_Tur.ForeColor = System.Drawing.Color.White;
-            this.atilan_Tur.IdleColor = System.Drawing.Color.Gainsboro;
-            this.atilan_Tur.IdleOffset = 10;
-            this.atilan_Tur.IdleThickness = 10;
-            this.atilan_Tur.Image = null;
-            this.atilan_Tur.ImageSize = new System.Drawing.Size(52, 52);
-            this.atilan_Tur.Location = new System.Drawing.Point(456, 148);
-            this.atilan_Tur.Maximum = 30;
-            this.atilan_Tur.Name = "atilan_Tur";
-            this.atilan_Tur.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.atilan_Tur.ProgressMinColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.atilan_Tur.ProgressOffset = 10;
-            this.atilan_Tur.ProgressThickness = 10;
-            this.atilan_Tur.Size = new System.Drawing.Size(100, 100);
-            this.atilan_Tur.TabIndex = 100;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(33, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 39);
-            this.label1.TabIndex = 101;
-            this.label1.Text = "0";
             // 
             // label11
             // 
@@ -318,23 +369,6 @@
             this.hedef_hiz.TabIndex = 91;
             this.hedef_hiz.Text = "30";
             // 
-            // hedefhiz_gauge
-            // 
-            this.hedefhiz_gauge.BackThickness = 20;
-            this.hedefhiz_gauge.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.hedefhiz_gauge.ForeColor = System.Drawing.Color.White;
-            this.hedefhiz_gauge.IdleColor = System.Drawing.Color.Gainsboro;
-            this.hedefhiz_gauge.Location = new System.Drawing.Point(224, 32);
-            this.hedefhiz_gauge.Margin = new System.Windows.Forms.Padding(6);
-            this.hedefhiz_gauge.MaximumColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.hedefhiz_gauge.MinimumColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.hedefhiz_gauge.Name = "hedefhiz_gauge";
-            this.hedefhiz_gauge.ShowText = false;
-            this.hedefhiz_gauge.Size = new System.Drawing.Size(164, 67);
-            this.hedefhiz_gauge.TabIndex = 93;
-            this.hedefhiz_gauge.Thickness = 20;
-            this.hedefhiz_gauge.Value = 50;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -367,23 +401,6 @@
             this.anlik_hiz_gps.Size = new System.Drawing.Size(49, 32);
             this.anlik_hiz_gps.TabIndex = 86;
             this.anlik_hiz_gps.Text = "30";
-            // 
-            // gpshiz_gauge
-            // 
-            this.gpshiz_gauge.BackThickness = 20;
-            this.gpshiz_gauge.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.gpshiz_gauge.ForeColor = System.Drawing.Color.White;
-            this.gpshiz_gauge.IdleColor = System.Drawing.Color.Gainsboro;
-            this.gpshiz_gauge.Location = new System.Drawing.Point(423, 32);
-            this.gpshiz_gauge.Margin = new System.Windows.Forms.Padding(6);
-            this.gpshiz_gauge.MaximumColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.gpshiz_gauge.MinimumColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.gpshiz_gauge.Name = "gpshiz_gauge";
-            this.gpshiz_gauge.ShowText = false;
-            this.gpshiz_gauge.Size = new System.Drawing.Size(164, 67);
-            this.gpshiz_gauge.TabIndex = 88;
-            this.gpshiz_gauge.Thickness = 20;
-            this.gpshiz_gauge.Value = 50;
             // 
             // label10
             // 
@@ -418,150 +435,6 @@
             this.anlik_hiz.TabIndex = 80;
             this.anlik_hiz.Text = "30";
             // 
-            // anlikhiz_gauge
-            // 
-            this.anlikhiz_gauge.BackThickness = 20;
-            this.anlikhiz_gauge.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.anlikhiz_gauge.ForeColor = System.Drawing.Color.White;
-            this.anlikhiz_gauge.IdleColor = System.Drawing.Color.Gainsboro;
-            this.anlikhiz_gauge.Location = new System.Drawing.Point(627, 32);
-            this.anlikhiz_gauge.Margin = new System.Windows.Forms.Padding(6);
-            this.anlikhiz_gauge.MaximumColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.anlikhiz_gauge.MinimumColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.anlikhiz_gauge.Name = "anlikhiz_gauge";
-            this.anlikhiz_gauge.ShowText = false;
-            this.anlikhiz_gauge.Size = new System.Drawing.Size(164, 67);
-            this.anlikhiz_gauge.TabIndex = 82;
-            this.anlikhiz_gauge.Thickness = 20;
-            this.anlikhiz_gauge.Value = 50;
-            // 
-            // btnHome
-            // 
-            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.btnHome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHome.FlatAppearance.BorderSize = 0;
-            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.btnHome.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.btnHome.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.btnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(0, 92);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(250, 48);
-            this.btnHome.TabIndex = 1;
-            this.btnHome.Text = "Home";
-            this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // btnMap
-            // 
-            this.btnMap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.btnMap.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMap.FlatAppearance.BorderSize = 0;
-            this.btnMap.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.btnMap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMap.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnMap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.btnMap.IconChar = FontAwesome.Sharp.IconChar.MapMarkedAlt;
-            this.btnMap.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.btnMap.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMap.Location = new System.Drawing.Point(0, 140);
-            this.btnMap.Name = "btnMap";
-            this.btnMap.Size = new System.Drawing.Size(250, 48);
-            this.btnMap.TabIndex = 2;
-            this.btnMap.Text = "Map";
-            this.btnMap.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMap.UseVisualStyleBackColor = false;
-            this.btnMap.Click += new System.EventHandler(this.btnMap_Click);
-            // 
-            // btnBattery
-            // 
-            this.btnBattery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.btnBattery.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBattery.FlatAppearance.BorderSize = 0;
-            this.btnBattery.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.btnBattery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBattery.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnBattery.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.btnBattery.IconChar = FontAwesome.Sharp.IconChar.CarBattery;
-            this.btnBattery.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.btnBattery.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBattery.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBattery.Location = new System.Drawing.Point(0, 188);
-            this.btnBattery.Name = "btnBattery";
-            this.btnBattery.Size = new System.Drawing.Size(250, 48);
-            this.btnBattery.TabIndex = 3;
-            this.btnBattery.Text = "Battery";
-            this.btnBattery.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBattery.UseVisualStyleBackColor = false;
-            this.btnBattery.Click += new System.EventHandler(this.btnBattery_Click);
-            // 
-            // btnMotorDriver
-            // 
-            this.btnMotorDriver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.btnMotorDriver.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMotorDriver.FlatAppearance.BorderSize = 0;
-            this.btnMotorDriver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.btnMotorDriver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMotorDriver.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnMotorDriver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.btnMotorDriver.IconChar = FontAwesome.Sharp.IconChar.Microchip;
-            this.btnMotorDriver.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.btnMotorDriver.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMotorDriver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMotorDriver.Location = new System.Drawing.Point(0, 236);
-            this.btnMotorDriver.Name = "btnMotorDriver";
-            this.btnMotorDriver.Size = new System.Drawing.Size(250, 48);
-            this.btnMotorDriver.TabIndex = 4;
-            this.btnMotorDriver.Text = "Motor Driver";
-            this.btnMotorDriver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMotorDriver.UseVisualStyleBackColor = false;
-            this.btnMotorDriver.Click += new System.EventHandler(this.btnMotorDriver_Click);
-            // 
-            // ıconButton5
-            // 
-            this.ıconButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.ıconButton5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ıconButton5.FlatAppearance.BorderSize = 0;
-            this.ıconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ıconButton5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ıconButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.ıconButton5.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.ıconButton5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.ıconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ıconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ıconButton5.Location = new System.Drawing.Point(0, 613);
-            this.ıconButton5.Name = "ıconButton5";
-            this.ıconButton5.Size = new System.Drawing.Size(250, 48);
-            this.ıconButton5.TabIndex = 5;
-            this.ıconButton5.Text = "Exit";
-            this.ıconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ıconButton5.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 284);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(250, 50);
-            this.button1.TabIndex = 6;
-            this.button1.Text = " Ayarlar";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // Telemetry2021
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -578,10 +451,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelChildForm.ResumeLayout(false);
             this.panelChildForm.PerformLayout();
-            this.gunaCircleProgressBar1.ResumeLayout(false);
-            this.gunaCircleProgressBar1.PerformLayout();
-            this.atilan_Tur.ResumeLayout(false);
-            this.atilan_Tur.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -599,23 +468,16 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private Guna.UI.WinForms.GunaCircleProgressBar gunaCircleProgressBar1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private Guna.UI.WinForms.GunaCircleProgressBar atilan_Tur;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label hedef_hiz;
-        private Guna.UI.WinForms.GunaGauge hedefhiz_gauge;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label28;
         public System.Windows.Forms.Label anlik_hiz_gps;
-        private Guna.UI.WinForms.GunaGauge gpshiz_gauge;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label anlik_hiz;
-        private Guna.UI.WinForms.GunaGauge anlikhiz_gauge;
         private FontAwesome.Sharp.IconButton ıconButton5;
         private FontAwesome.Sharp.IconButton btnMotorDriver;
         private FontAwesome.Sharp.IconButton btnBattery;

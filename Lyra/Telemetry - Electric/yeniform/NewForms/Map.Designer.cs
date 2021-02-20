@@ -1,6 +1,6 @@
 ﻿namespace Telemetri.NewForms
 {
-    partial class Harita
+    partial class Map
     {
         /// <summary>
         /// Required designer variable.
@@ -47,7 +47,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.label1);
             this.Name = "Harita";
             this.Text = "Harita";
