@@ -139,6 +139,16 @@
     <Compile Include="NewForms\MotorDriver.Designer.cs">
       <DependentUpon>MotorDriver.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewVars\BMS.cs" />
+    <Compile Include="NewVars\DATA.cs" />
+    <Compile Include="NewVars\DataFlow.cs" />
+    <Compile Include="NewVars\deneme.cs" />
+    <Compile Include="NewVars\Driver.cs" />
+    <Compile Include="NewVars\GPS.cs" />
+    <Compile Include="NewVars\MACROS.cs" />
+    <Compile Include="NewVars\MAP.cs" />
+    <Compile Include="NewVars\MQTT.cs" />
+    <Compile Include="NewVars\VCU.cs" />
     <Compile Include="Variables\BmsUI.cs" />
     <Compile Include="Variables\FormManagement.cs" />
     <Compile Include="Variables\myDataGrid.cs" />
