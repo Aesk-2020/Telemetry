@@ -503,15 +503,6 @@ namespace telemetry_hydro
         
         private void telemetry_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(myDisplayThread.IsAlive)
-            {
-                myDisplayThread.Abort();
-            }
-           if(myTimeTickThread.IsAlive)
-            {
-                myTimeTickThread.Abort();
-            }
-            
             if (MACROS.client.IsConnected)
             {
                 mqtt.disConnectMQTT();
