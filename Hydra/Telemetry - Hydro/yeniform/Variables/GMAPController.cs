@@ -27,12 +27,12 @@ namespace telemetry_hydro.Variables
         {
             _gmap = gmap_;
             gmap_.ShowCenter = false;
-            gmap_.SetPositionByKeywords("Korfez Yaris Pisti,Turkey");
+            gmap_.Position = new GMap.NET.PointLatLng(MACROS.centerLat, MACROS.centerLong);
             gmap_.DragButton = MouseButtons.Middle;
             gmap_.MapProvider = GMapProviders.BingSatelliteMap;
             gmap_.MaxZoom = 150;
             gmap_.MinZoom = 5;
-            gmap_.Zoom = 17;
+            gmap_.Zoom = 15.8;
             
         }
 

@@ -465,7 +465,7 @@
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.89109F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.39604F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.71287F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 193F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 195F));
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel19, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel5, 3, 0);
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel6, 0, 0);
@@ -483,7 +483,7 @@
             this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel19.Controls.Add(this.tableLayoutPanel12, 0, 0);
             this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel19.Location = new System.Drawing.Point(143, 3);
+            this.tableLayoutPanel19.Location = new System.Drawing.Point(142, 3);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
             this.tableLayoutPanel19.RowCount = 1;
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -593,7 +593,7 @@
             this.tableLayoutPanel5.Controls.Add(this.label93, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.bms_precharge_flag, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.label95, 0, 2);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(393, 3);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(391, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 3;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.01205F));
@@ -816,14 +816,14 @@
             this.tableLayoutPanel18.Controls.Add(this.driver_brake_status, 0, 2);
             this.tableLayoutPanel18.Controls.Add(this.driver_ign_status, 0, 1);
             this.tableLayoutPanel18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(67)))), ((int)(((byte)(65)))));
-            this.tableLayoutPanel18.Location = new System.Drawing.Point(281, 3);
+            this.tableLayoutPanel18.Location = new System.Drawing.Point(280, 3);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
             this.tableLayoutPanel18.RowCount = 4;
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.76923F));
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.93162F));
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.93162F));
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.93162F));
-            this.tableLayoutPanel18.Size = new System.Drawing.Size(106, 120);
+            this.tableLayoutPanel18.Size = new System.Drawing.Size(105, 120);
             this.tableLayoutPanel18.TabIndex = 29;
             // 
             // label14
@@ -834,7 +834,7 @@
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(6, 3);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(94, 31);
+            this.label14.Size = new System.Drawing.Size(93, 31);
             this.label14.TabIndex = 0;
             this.label14.Text = "DRIVE STATUS";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -849,7 +849,7 @@
             this.driver_fwrv_status.Location = new System.Drawing.Point(6, 94);
             this.driver_fwrv_status.Multiline = true;
             this.driver_fwrv_status.Name = "driver_fwrv_status";
-            this.driver_fwrv_status.Size = new System.Drawing.Size(94, 20);
+            this.driver_fwrv_status.Size = new System.Drawing.Size(93, 20);
             this.driver_fwrv_status.TabIndex = 3;
             this.driver_fwrv_status.Text = "BRAKE OFF";
             this.driver_fwrv_status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -864,7 +864,7 @@
             this.driver_brake_status.Location = new System.Drawing.Point(6, 67);
             this.driver_brake_status.Multiline = true;
             this.driver_brake_status.Name = "driver_brake_status";
-            this.driver_brake_status.Size = new System.Drawing.Size(94, 18);
+            this.driver_brake_status.Size = new System.Drawing.Size(93, 18);
             this.driver_brake_status.TabIndex = 2;
             this.driver_brake_status.Text = "FORWARD";
             this.driver_brake_status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -879,7 +879,7 @@
             this.driver_ign_status.Location = new System.Drawing.Point(6, 40);
             this.driver_ign_status.Multiline = true;
             this.driver_ign_status.Name = "driver_ign_status";
-            this.driver_ign_status.Size = new System.Drawing.Size(94, 18);
+            this.driver_ign_status.Size = new System.Drawing.Size(93, 18);
             this.driver_ign_status.TabIndex = 1;
             this.driver_ign_status.Text = "IGN OFF";
             this.driver_ign_status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2886,7 +2886,7 @@
             this.tableLayoutPanel7.ColumnCount = 3;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.64865F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.35135F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
             this.tableLayoutPanel7.Controls.Add(this.ems_out_current, 1, 5);
             this.tableLayoutPanel7.Controls.Add(this.ems_fc_current, 1, 4);
             this.tableLayoutPanel7.Controls.Add(this.ems_bat_current, 1, 3);
@@ -2926,10 +2926,10 @@
             this.ems_out_current.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.ems_out_current.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ems_out_current.ForeColor = System.Drawing.Color.White;
-            this.ems_out_current.Location = new System.Drawing.Point(132, 186);
+            this.ems_out_current.Location = new System.Drawing.Point(129, 186);
             this.ems_out_current.Multiline = true;
             this.ems_out_current.Name = "ems_out_current";
-            this.ems_out_current.Size = new System.Drawing.Size(50, 29);
+            this.ems_out_current.Size = new System.Drawing.Size(49, 29);
             this.ems_out_current.TabIndex = 102;
             this.ems_out_current.Tag = "";
             this.ems_out_current.Text = "NaN";
@@ -2943,10 +2943,10 @@
             this.ems_fc_current.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.ems_fc_current.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ems_fc_current.ForeColor = System.Drawing.Color.White;
-            this.ems_fc_current.Location = new System.Drawing.Point(132, 150);
+            this.ems_fc_current.Location = new System.Drawing.Point(129, 150);
             this.ems_fc_current.Multiline = true;
             this.ems_fc_current.Name = "ems_fc_current";
-            this.ems_fc_current.Size = new System.Drawing.Size(50, 27);
+            this.ems_fc_current.Size = new System.Drawing.Size(49, 27);
             this.ems_fc_current.TabIndex = 101;
             this.ems_fc_current.Tag = "";
             this.ems_fc_current.Text = "NaN";
@@ -2960,10 +2960,10 @@
             this.ems_bat_current.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.ems_bat_current.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ems_bat_current.ForeColor = System.Drawing.Color.White;
-            this.ems_bat_current.Location = new System.Drawing.Point(132, 114);
+            this.ems_bat_current.Location = new System.Drawing.Point(129, 114);
             this.ems_bat_current.Multiline = true;
             this.ems_bat_current.Name = "ems_bat_current";
-            this.ems_bat_current.Size = new System.Drawing.Size(50, 27);
+            this.ems_bat_current.Size = new System.Drawing.Size(49, 27);
             this.ems_bat_current.TabIndex = 100;
             this.ems_bat_current.Tag = "";
             this.ems_bat_current.Text = "NaN";
@@ -2977,10 +2977,10 @@
             this.ems_out_voltage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.ems_out_voltage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ems_out_voltage.ForeColor = System.Drawing.Color.White;
-            this.ems_out_voltage.Location = new System.Drawing.Point(132, 78);
+            this.ems_out_voltage.Location = new System.Drawing.Point(129, 78);
             this.ems_out_voltage.Multiline = true;
             this.ems_out_voltage.Name = "ems_out_voltage";
-            this.ems_out_voltage.Size = new System.Drawing.Size(50, 27);
+            this.ems_out_voltage.Size = new System.Drawing.Size(49, 27);
             this.ems_out_voltage.TabIndex = 99;
             this.ems_out_voltage.Tag = "";
             this.ems_out_voltage.Text = "NaN";
@@ -2994,10 +2994,10 @@
             this.ems_fc_voltage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.ems_fc_voltage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ems_fc_voltage.ForeColor = System.Drawing.Color.White;
-            this.ems_fc_voltage.Location = new System.Drawing.Point(132, 42);
+            this.ems_fc_voltage.Location = new System.Drawing.Point(129, 42);
             this.ems_fc_voltage.Multiline = true;
             this.ems_fc_voltage.Name = "ems_fc_voltage";
-            this.ems_fc_voltage.Size = new System.Drawing.Size(50, 27);
+            this.ems_fc_voltage.Size = new System.Drawing.Size(49, 27);
             this.ems_fc_voltage.TabIndex = 98;
             this.ems_fc_voltage.Tag = "";
             this.ems_fc_voltage.Text = "NaN";
@@ -3011,10 +3011,10 @@
             this.ems_bat_volt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.ems_bat_volt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ems_bat_volt.ForeColor = System.Drawing.Color.White;
-            this.ems_bat_volt.Location = new System.Drawing.Point(132, 6);
+            this.ems_bat_volt.Location = new System.Drawing.Point(129, 6);
             this.ems_bat_volt.Multiline = true;
             this.ems_bat_volt.Name = "ems_bat_volt";
-            this.ems_bat_volt.Size = new System.Drawing.Size(50, 27);
+            this.ems_bat_volt.Size = new System.Drawing.Size(49, 27);
             this.ems_bat_volt.TabIndex = 97;
             this.ems_bat_volt.Tag = "";
             this.ems_bat_volt.Text = "NaN";
@@ -3028,7 +3028,7 @@
             this.label57.ForeColor = System.Drawing.Color.White;
             this.label57.Location = new System.Drawing.Point(6, 39);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(117, 33);
+            this.label57.Size = new System.Drawing.Size(114, 33);
             this.label57.TabIndex = 3;
             this.label57.Text = "FC VOLTAGE";
             this.label57.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3042,7 +3042,7 @@
             this.label59.ForeColor = System.Drawing.Color.White;
             this.label59.Location = new System.Drawing.Point(6, 3);
             this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(117, 33);
+            this.label59.Size = new System.Drawing.Size(114, 33);
             this.label59.TabIndex = 0;
             this.label59.Text = "BAT VOLTAGE";
             this.label59.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3055,7 +3055,7 @@
             this.label70.ForeColor = System.Drawing.Color.White;
             this.label70.Location = new System.Drawing.Point(6, 183);
             this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(117, 35);
+            this.label70.Size = new System.Drawing.Size(114, 35);
             this.label70.TabIndex = 6;
             this.label70.Text = "OUT CURRENT";
             this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3070,7 +3070,7 @@
             this.label55.ForeColor = System.Drawing.Color.White;
             this.label55.Location = new System.Drawing.Point(6, 75);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(117, 33);
+            this.label55.Size = new System.Drawing.Size(114, 33);
             this.label55.TabIndex = 6;
             this.label55.Text = "OUT VOLTAGE";
             this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3083,7 +3083,7 @@
             this.label72.ForeColor = System.Drawing.Color.White;
             this.label72.Location = new System.Drawing.Point(6, 147);
             this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(117, 33);
+            this.label72.Size = new System.Drawing.Size(114, 33);
             this.label72.TabIndex = 3;
             this.label72.Text = "FC CURRENT";
             this.label72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3096,7 +3096,7 @@
             this.label74.ForeColor = System.Drawing.Color.White;
             this.label74.Location = new System.Drawing.Point(6, 111);
             this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(117, 33);
+            this.label74.Size = new System.Drawing.Size(114, 33);
             this.label74.TabIndex = 0;
             this.label74.Text = "BAT CURRENT";
             this.label74.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3104,54 +3104,54 @@
             // ems_bat_volt_error
             // 
             this.ems_bat_volt_error.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ems_bat_volt_error.Location = new System.Drawing.Point(191, 6);
+            this.ems_bat_volt_error.Location = new System.Drawing.Point(187, 6);
             this.ems_bat_volt_error.Name = "ems_bat_volt_error";
-            this.ems_bat_volt_error.Size = new System.Drawing.Size(105, 27);
+            this.ems_bat_volt_error.Size = new System.Drawing.Size(109, 27);
             this.ems_bat_volt_error.TabIndex = 103;
             this.ems_bat_volt_error.TabStop = false;
             // 
             // ems_fc_voltage_error
             // 
             this.ems_fc_voltage_error.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ems_fc_voltage_error.Location = new System.Drawing.Point(191, 42);
+            this.ems_fc_voltage_error.Location = new System.Drawing.Point(187, 42);
             this.ems_fc_voltage_error.Name = "ems_fc_voltage_error";
-            this.ems_fc_voltage_error.Size = new System.Drawing.Size(105, 27);
+            this.ems_fc_voltage_error.Size = new System.Drawing.Size(109, 27);
             this.ems_fc_voltage_error.TabIndex = 104;
             this.ems_fc_voltage_error.TabStop = false;
             // 
             // ems_out_voltage_error
             // 
             this.ems_out_voltage_error.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ems_out_voltage_error.Location = new System.Drawing.Point(191, 78);
+            this.ems_out_voltage_error.Location = new System.Drawing.Point(187, 78);
             this.ems_out_voltage_error.Name = "ems_out_voltage_error";
-            this.ems_out_voltage_error.Size = new System.Drawing.Size(105, 27);
+            this.ems_out_voltage_error.Size = new System.Drawing.Size(109, 27);
             this.ems_out_voltage_error.TabIndex = 105;
             this.ems_out_voltage_error.TabStop = false;
             // 
             // ems_bat_current_error
             // 
             this.ems_bat_current_error.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ems_bat_current_error.Location = new System.Drawing.Point(191, 114);
+            this.ems_bat_current_error.Location = new System.Drawing.Point(187, 114);
             this.ems_bat_current_error.Name = "ems_bat_current_error";
-            this.ems_bat_current_error.Size = new System.Drawing.Size(105, 27);
+            this.ems_bat_current_error.Size = new System.Drawing.Size(109, 27);
             this.ems_bat_current_error.TabIndex = 106;
             this.ems_bat_current_error.TabStop = false;
             // 
             // ems_fc_current_error
             // 
             this.ems_fc_current_error.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ems_fc_current_error.Location = new System.Drawing.Point(191, 150);
+            this.ems_fc_current_error.Location = new System.Drawing.Point(187, 150);
             this.ems_fc_current_error.Name = "ems_fc_current_error";
-            this.ems_fc_current_error.Size = new System.Drawing.Size(105, 27);
+            this.ems_fc_current_error.Size = new System.Drawing.Size(109, 27);
             this.ems_fc_current_error.TabIndex = 107;
             this.ems_fc_current_error.TabStop = false;
             // 
             // out_current_error
             // 
             this.out_current_error.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.out_current_error.Location = new System.Drawing.Point(191, 186);
+            this.out_current_error.Location = new System.Drawing.Point(187, 186);
             this.out_current_error.Name = "out_current_error";
-            this.out_current_error.Size = new System.Drawing.Size(105, 29);
+            this.out_current_error.Size = new System.Drawing.Size(109, 29);
             this.out_current_error.TabIndex = 108;
             this.out_current_error.TabStop = false;
             // 
