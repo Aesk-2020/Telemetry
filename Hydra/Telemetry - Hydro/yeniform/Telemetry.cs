@@ -19,6 +19,7 @@ namespace telemetry_hydro
         myDataGrid myDataGrid = new myDataGrid("HYDRA");
         Thread myTimeTickThread;
         Thread myDisplayThread;
+        public bool raceFlag = false;
         
         public telemetry()
         {
@@ -27,7 +28,6 @@ namespace telemetry_hydro
             myDataGrid.InitDataGrid(dataGridView1);
             InitBars();
             myDisplayThread = new Thread(displayMyAllData) { IsBackground = true, Priority = ThreadPriority.Normal };
-            myTimeTickThread = new Thread(calculateRaceTimeOperations) { IsBackground = true, Priority = ThreadPriority.Highest };
             history_displayer.ValueChanged -= history_displayer_ValueChanged;
             mqtt.LogEvent += logDatas;
             serialportRF.LogRFEvent += logDatas;
@@ -182,7 +182,7 @@ namespace telemetry_hydro
 
         private void calculateRaceTimeOperations()
         {
-            while (true)
+            while (raceFlag == true)
             {
                 ThreadMethods.TextDegis(gecen_sure, Timers.Gecen_süre.ToString(MACROS.TimeStringFormat));
                 ThreadMethods.TextDegis(kalan_sure, Timers.Kalan_süre.ToString(MACROS.TimeStringFormat));
@@ -333,9 +333,11 @@ namespace telemetry_hydro
 
         private void başlatToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            raceFlag = true;
             mylogs = new Logs(false);
             timer = new Timers();
 
+            myTimeTickThread = new Thread(calculateRaceTimeOperations) { IsBackground = true, Priority = ThreadPriority.Highest };
             myTimeTickThread.Start();
             SectorAndTourDatas.sector1_sure.Start();
             MACROS.race_start_flag = true;
@@ -347,10 +349,11 @@ namespace telemetry_hydro
 
         private void bitirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(myTimeTickThread.IsAlive)
+            raceFlag = false;
+            /*if(myTimeTickThread.IsAlive)
             {
                 myTimeTickThread.Abort();
-            }
+            }*/
             MACROS.race_start_flag = false;
         }
 
