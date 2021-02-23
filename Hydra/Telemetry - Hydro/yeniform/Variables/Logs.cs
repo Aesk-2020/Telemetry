@@ -168,11 +168,8 @@ namespace telemetry_hydro.Variables
             Timers.Gecen_süre = TimeSpan.Parse(old_datass[count++]);
             VCU.wake_up_u8 = Byte.Parse(old_datass[count++]);
             VCU.set_velocity_u8 = Byte.Parse(old_datass[count++]);
-            VCU.can_error_u8 = Byte.Parse(old_datass[count++]);
             Driver.phase_a_current_f32 = float.Parse(old_datass[count++].Replace('.', ','));
             Driver.phase_b_current_f32 = float.Parse(old_datass[count++].Replace('.', ','));
-            //Driver.dc_bus_current_f32 = float.Parse(old_datass[count++].Replace('.', ','));
-           // Driver.dc_bus_voltage_f32 = float.Parse(old_datass[count++].Replace('.', ','));
             Driver.id_f32 = float.Parse(old_datass[count++].Replace('.', ','));
             Driver.iq_f32 = float.Parse(old_datass[count++].Replace('.', ','));
             Driver.phase_a_rms_f32 = float.Parse(old_datass[count++].Replace('.', ','));
@@ -180,7 +177,6 @@ namespace telemetry_hydro.Variables
             Driver.drive_status_u8 = byte.Parse(old_datass[count++]);
             Driver.driver_error_u8 = byte.Parse(old_datass[count++]);
             Driver.odometer_u32 = UInt32.Parse(old_datass[count++]);
-            //Driver.motor_temperature_u8 = byte.Parse(old_datass[count++]);
             Driver.actual_velocity_u8 = byte.Parse(old_datass[count++]);
             BMS.bat_volt_f32 = float.Parse(old_datass[count++].Replace('.', ','));
             BMS.bat_current_f32 = float.Parse(old_datass[count++].Replace('.', ','));
@@ -188,22 +184,11 @@ namespace telemetry_hydro.Variables
             BMS.soc_f32 = float.Parse(old_datass[count++].Replace('.', ','));
             BMS.bms_error_u8 = byte.Parse(old_datass[count++]);
             BMS.dc_bus_state_u8 = byte.Parse(old_datass[count++]);
-            //BMS.worst_cell_voltage_f32 = float.Parse(old_datass[count++].Replace('.', ','));
-            //BMS.worst_cell_address_u8 = byte.Parse(old_datass[count++]);
-            //BMS.temp_u8 = byte.Parse(old_datass[count++]);
             GpsTracker.gps_latitude_f64 = float.Parse(old_datass[count++].Replace('.', ','));
             GpsTracker.gps_longtitude_f64 = float.Parse(old_datass[count++].Replace('.', ','));
-           // GpsTracker.gps_velocity_u8 = byte.Parse(old_datass[count++]);
-           // GpsTracker.gps_sattelite_number_u8 = byte.Parse(old_datass[count++]);
-           // GpsTracker.gps_efficiency_u8 = byte.Parse(old_datass[count++]);
-            count++;//  for true data
-            count++;//  for checkSumError
-            //count++;//  for validDataError
-
             EMS.bat_cons_f32 = float.Parse(old_datass[count++].Replace('.', ','));
             EMS.bat_cur_f32 = float.Parse(old_datass[count++].Replace('.', ','));
             EMS.bat_soc_f32 = float.Parse(old_datass[count++].Replace('.', ','));
-            EMS.bat_volt_f32 = float.Parse(old_datass[count++].Replace('.', ','));
             EMS.fc_cons_f32 = float.Parse(old_datass[count++].Replace('.', ','));
             EMS.fc_lt_cons_f32 = float.Parse(old_datass[count++].Replace('.', ','));
             EMS.fc_cur_f32 = float.Parse(old_datass[count++].Replace('.', ','));
@@ -213,7 +198,6 @@ namespace telemetry_hydro.Variables
             EMS.out_cur_f32 = float.Parse(old_datass[count++].Replace('.', ','));
             EMS.out_volt_f32 = float.Parse(old_datass[count++].Replace('.', ','));
             EMS.penalty_s8 = sbyte.Parse(old_datass[count++]);
-            //EMS.temperature_u8 = Byte.Parse(old_datass[count++]);
 
         }
     }

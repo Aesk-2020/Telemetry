@@ -551,7 +551,7 @@ namespace telemetry_hydro
                 }
             }
 
-            string[] old_datass = mylogs.read_string[mylogs.read_string.Keys.ElementAt(history_displayer.Value)].Split('$');
+            string[] old_datass = mylogs.read_string[mylogs.read_string.Keys.ElementAt(history_displayer.Value)].Split('\t');
             if (MACROS.IsSd == false)
             {
                 mylogs.ReadArayüz(old_datass);
