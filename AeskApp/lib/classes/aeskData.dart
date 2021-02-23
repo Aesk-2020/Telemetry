@@ -261,7 +261,7 @@ class AeskData extends ChangeNotifier{
     gpsTracker_gps_efficiency_u8 = message.getUint8(_startIndex);
     _startIndex++;
 
-    /*
+
     cellCount = MqttAesk.isLyra ? 28 : 16;
 
     for(int i = 0; i < cellCount; i++){
@@ -269,7 +269,7 @@ class AeskData extends ChangeNotifier{
       bms_min_finder = battery_cells[i] < battery_cells[bms_min_finder] ? i : bms_min_finder;
       _startIndex++;
     }
-    */
+
 
     if(MqttAesk.isLyra == false) {
       eys_bat_cons_uint16 = message.getUint16(_startIndex,myEndian) / 10;
