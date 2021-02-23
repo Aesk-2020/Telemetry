@@ -79,7 +79,6 @@ Sd_Card_Datas sd_card_data;
 GPS_Handle gps_data;
 RTC_TimeTypeDef rtctime;
 RTC_DateTypeDef rtcdate;
-
 RTC_TimeTypeDef sTime;
 RTC_DateTypeDef sDate;
 
@@ -239,7 +238,7 @@ int main(void)
 		  {
 			  HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 			  HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
-			  vars_to_str((char *)sd_card_data.transmitBuf, "%d\t%d\t%d\t%.2f\t%.2f\t%.2f\t%.1f\t%.2f\t%.2f\t%.2f\t%.2f\t%d\t%d\t%d\t%d\t%d\t%.1f\t%.2f\t%.1f\t%.2f\t%d\t%d\t%.1f\t%d\t%d\t%.6f\t%.6f%d\t%d\t%d\t%d\t%d\t%d\n",
+			  vars_to_str((char *)sd_card_data.transmitBuf, "%d\t%d\t%d\t%.2f\t%.2f\t%.2f\t%.1f\t%.2f\t%.2f\t%.2f\t%.2f\t%d\t%d\t%d\t%d\t%d\t%.1f\t%.2f\t%.1f\t%.2f\t%d\t%d\t%.1f\t%d\t%d\t%.6f\t%.6f%d\t%d\t%d\t%d\t%d\t%d\t%d\n",
 				 					 	 	 	 	 	 	 	 	 	 	 lyradata.vcu_data.wake_up_union.wake_up_u8, lyradata.vcu_data.set_velocity_u8,
 																			 lyradata.can_error.can_error_u8, lyradata.driver_data.Phase_A_Current_f32, lyradata.driver_data.Phase_B_Current_f32, lyradata.driver_data.Dc_Bus_Current_f32,
 																			 lyradata.driver_data.Dc_Bus_voltage_f32, lyradata.driver_data.Id_f32, lyradata.driver_data.Iq_f32, lyradata.driver_data.IArms_f32, lyradata.driver_data.Torque_f32,
@@ -248,7 +247,7 @@ int main(void)
 																			 lyradata.bms_data.Bat_Current_f32, lyradata.bms_data.Bat_Cons_f32, lyradata.bms_data.Soc_f32, lyradata.bms_data.bms_error.bms_error_u8,
 																			 lyradata.bms_data.dc_bus_state.dc_bus_state_u8, lyradata.bms_data.Worst_Cell_Voltage_f32, lyradata.bms_data.Worst_Cell_Address_u8,
 																			 lyradata.bms_data.Temperature_u8, gps_data.latitude_f32, gps_data.longtitude_f32, gps_data.speed_u8, gps_data.satellite_number_u8, gps_data.gpsEfficiency_u8,
-																			 gps_data.gps_errorhandler.trueData_u32, gps_data.gps_errorhandler.checksumError_u32, gps_data.gps_errorhandler.validDataError_u32);
+																			 gps_data.gps_errorhandler.trueData_u32, gps_data.gps_errorhandler.checksumError_u32, gps_data.gps_errorhandler.validDataError_u32, gsm_data.gsm_state_current_index);
 			  vars_to_str((char *)sd_card_data.total_log, "%d:%d:%d\t", sTime.Hours, sTime.Minutes, sTime.Seconds);
 			  strcat(sd_card_data.total_log, (const char*)sd_card_data.transmitBuf);
 			  sd_card_data.result = f_open(&sd_card_data.myFile, sd_card_data.path, FA_WRITE | FA_OPEN_APPEND | FA_OPEN_EXISTING | FA_OPEN_ALWAYS);
@@ -720,6 +719,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
+	//HATA LOGLARI BURADA ALINACAK
 		if(huart == &huart1)
 		{
 			static uint8_t cifsr_control = 0;
@@ -942,7 +942,7 @@ void Gsm_Calibration(Gsm_Datas* gsm_data)
 		{
 			HAL_UART_Transmit(gsm_data->gsm_uart, (uint8_t *)gsm_data->gsmpublishpackage, gsm_data->mqtt_len, HAL_DELAY);
 			//gsm_data->at_response = "SEND OK";
-			gsm_data->gsm_state_current_index = CreateMQTTPublishPack ;
+			gsm_data->gsm_state_current_index = CreateMQTTPublishPack;
 			gsm_data->gsm_state_next_index = CreateMQTTPublishPack;
 			break;
 		}

@@ -27,7 +27,7 @@ typedef union
 		uint16_t Task_100_ms	: 1;
 		uint16_t Task_170_ms	: 1;
 		uint16_t Task_150_ms 	: 1;
-		uint16_t Task_200_ms   	: 1;
+		uint16_t Task_200_ms  : 1;
 		uint16_t Task_250_ms	: 1;
 		uint16_t Task_300_ms	: 1;
 		uint16_t Task_500_ms	: 1;

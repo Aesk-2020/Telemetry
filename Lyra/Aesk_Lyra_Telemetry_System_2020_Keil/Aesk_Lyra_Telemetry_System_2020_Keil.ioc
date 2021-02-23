@@ -225,6 +225,7 @@ ProjectManager.PreviousToolchain=SW4STM32
 ProjectManager.ProjectBuild=false
 ProjectManager.ProjectFileName=Aesk_Lyra_Telemetry_System_2020_Keil.ioc
 ProjectManager.ProjectName=Aesk_Lyra_Telemetry_System_2020_Keil
+ProjectManager.RegisterCallBack=
 ProjectManager.StackSize=0x400
 ProjectManager.TargetToolchain=MDK-ARM V5.27
 ProjectManager.ToolChainLocation=
