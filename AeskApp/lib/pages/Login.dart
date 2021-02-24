@@ -25,14 +25,11 @@ class ListItem {
 }
 
 class _LoggingState extends State<Logging> {
-
   List<ListItem> dropdownItems = [
     ListItem(1, "mqtt.omerfurkandemircioglu.com.tr"),
     ListItem(2, "mqtt.omerustun.com.tr"),
     ListItem(3, "broker.mqttdashboard.com")
   ];
-
-
 
   List<DropdownMenuItem<ListItem>> buildDropDownMenuItems(List listItems) {
     List<DropdownMenuItem<ListItem>> items = List();
@@ -52,7 +49,6 @@ class _LoggingState extends State<Logging> {
     dropdownMenuItems = buildDropDownMenuItems(dropdownItems);
     selectedItem = dropdownMenuItems[0].value;
   }
-
   @override
   Widget build(BuildContext context) {
 
@@ -67,44 +63,6 @@ class _LoggingState extends State<Logging> {
             myText("AESKAPP", 35, Theme.of(context).appBarTheme.color, FontWeight.bold),
             SizedBox(height: 20,),
             //IP textfield
-            /*Container(
-              width: 350,
-              child: TextField(
-
-                style: TextStyle(
-                  color: Theme.of(context).appBarTheme.color,
-                ),
-                enableInteractiveSelection: false,
-                decoration: InputDecoration(
-                    hintText: "IP Adresi",
-                    icon: Icon(Icons.assignment_ind,color: Theme.of(context).appBarTheme.color)
-                ),
-                onChanged: (String value) {
-                  ip = value;
-                },
-              ),
-            ),
-            SizedBox(height: 5,),
-            //Şifre textfield
-            Container(
-              width: 350,
-              child: TextField(
-                style: TextStyle(
-                  color: Theme.of(context).appBarTheme.color,
-                ),
-                obscureText: true,
-                enableInteractiveSelection: false,
-                decoration: InputDecoration(
-                  hintText: "Şifre",
-                  hoverColor: Colors.white,
-                  icon: Icon(Icons.lock,color: Theme.of(context).appBarTheme.color),
-                ),
-                onChanged: (String value) {
-                  password = value;
-                },
-              ),
-            ),
-*/
             Container(
               padding: const EdgeInsets.only(left: 10.0,right: 10.0),
               decoration: BoxDecoration(
@@ -162,7 +120,7 @@ class _LoggingState extends State<Logging> {
             RaisedButton(
               padding: EdgeInsets.symmetric(horizontal: 40),
               onPressed: () async {
-                /*if (ip == "1" && password == MqttAesk.password && checkbox != null) {
+                if (checkbox != null) {
                   showDialog(
                     context: context,
                     child: SpinKitCircle(color: Theme.of(context).appBarTheme.color,),
@@ -190,15 +148,6 @@ class _LoggingState extends State<Logging> {
                       ),
                     );
                   }
-                } else if(checkbox != null && (ip !=1 || password != MqttAesk.password)) {
-                  showDialog(
-                    context: context,
-                    child: AlertDialog(
-                      title: myText("HATA", 30, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                      content: myText("Girdiğiniz kullanıcı adı ile parola eşleşmedi!", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                      backgroundColor: Theme.of(context).backgroundColor,
-                    ),
-                  );
                 }else{
                   showDialog(
                     context: context,
@@ -208,10 +157,7 @@ class _LoggingState extends State<Logging> {
                       backgroundColor: Theme.of(context).backgroundColor,
                     ),
                   );
-                }*/
-                MqttAesk.isLyra = checkbox;
-                checkbox ? mqttAesk.subscribeToTopic("LYRADATA") : mqttAesk.subscribeToTopic("HYDRADATA");
-                Navigator.pushNamed(context, checkbox ? "/Home" : "/HomeHydro");
+                }
               },
               child: myText("Giriş", 20, Colors.white, FontWeight.normal),
             ),
