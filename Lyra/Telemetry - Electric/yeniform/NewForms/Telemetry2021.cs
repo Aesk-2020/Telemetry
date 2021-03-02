@@ -39,6 +39,5 @@ namespace Telemetri.NewForms
         {
             FormManagement.openChildForm(new MotorDriver(), panelChildForm);
         }
-
     }
 }
