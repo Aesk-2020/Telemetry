@@ -16,5 +16,11 @@ namespace Telemetri.NewForms
         {
             InitializeComponent();
         }
+
+        private void MotorDriver_Load(object sender, EventArgs e)
+        {
+            mcuChart.Series[0].Points.AddXY(5, 5);
+            mcuChart.Series[1].Points.AddXY(5, 5);
+        }
     }
 }
