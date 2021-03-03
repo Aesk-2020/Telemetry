@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO.Ports;
 using Telemetri.Variables;
 using Telemetri.NewForms;
 
@@ -27,7 +28,6 @@ namespace Telemetri.NewForms
         private void btnMap_Click(object sender, EventArgs e)
         {
             FormManagement.openChildForm(new Map(), panelChildForm);
-            btnMap.ImageAlign = ContentAlignment.MiddleRight;
         }
 
         private void btnBattery_Click(object sender, EventArgs e)
@@ -38,6 +38,17 @@ namespace Telemetri.NewForms
         private void btnMotorDriver_Click(object sender, EventArgs e)
         {
             FormManagement.openChildForm(new MotorDriver(), panelChildForm);
+        }
+
+        private void panelChildForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Telemetry2021_Load(object sender, EventArgs e)
+        {
+            string[] ports = SerialPort.GetPortNames();
+            listBox1.Items.AddRange(ports);
         }
     }
 }
