@@ -39,9 +39,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/FatFs/src/diskio.h \
  ../Middlewares/Third_Party/FatFs/src/ff.h ../FATFS/Target/sd_diskio.h \
  ../Core/Inc/SIM800MQTT.h ../Core/Inc/main.h \
- ../Core/Inc/AESK_CAN_Library.h ../Core/Inc/AESK_Gps_lib.h \
- ../Core/Inc/TelemetryGlobalvar.h ../Core/Inc/Can_Hydra_Header.h \
- ../Core/Inc/AESK_Data_Pack_lib.h
+ ../Core/Inc/AESK_CAN_Library.h ../Core/Inc/AESK_Ring_Buffer.h \
+ ../Core/Inc/AESK_Gps_lib.h ../Core/Inc/TelemetryGlobalvar.h \
+ ../Core/Inc/Can_Hydra_Header.h ../Core/Inc/AESK_Data_Pack_lib.h \
+ ../Core/Inc/AESK_GL.h ../Core/Inc/AESK_CAN_Library.h \
+ ../Core/Inc/AESK_comm_pro.h
 
 ../Core/Inc/main.h:
 
@@ -135,6 +137,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Core/Inc/AESK_CAN_Library.h:
 
+../Core/Inc/AESK_Ring_Buffer.h:
+
 ../Core/Inc/AESK_Gps_lib.h:
 
 ../Core/Inc/TelemetryGlobalvar.h:
@@ -142,3 +146,9 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/Can_Hydra_Header.h:
 
 ../Core/Inc/AESK_Data_Pack_lib.h:
+
+../Core/Inc/AESK_GL.h:
+
+../Core/Inc/AESK_CAN_Library.h:
+
+../Core/Inc/AESK_comm_pro.h:

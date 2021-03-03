@@ -32,7 +32,8 @@ Core/Src/AESK_CAN_Library.o: ../Core/Src/AESK_CAN_Library.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_sdmmc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+ ../Core/Inc/AESK_Ring_Buffer.h
 
 ../Core/Inc/AESK_CAN_Library.h:
 
@@ -103,3 +104,5 @@ Core/Src/AESK_CAN_Library.o: ../Core/Src/AESK_CAN_Library.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
+
+../Core/Inc/AESK_Ring_Buffer.h:

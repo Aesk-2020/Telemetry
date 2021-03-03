@@ -9,19 +9,23 @@
 #define CAN_LYRA_HEADER_H_
 #include "main.h"
 #define DRIVER_CUR_VOLT						0x1555DDD0
-#define DRIVER_ID_IQ_VD_VQ				0x1555DDD1
+#define DRIVER_ID_IQ_VD_VQ					0x1555DDD1
 #define	DRIVER_STATE_AREA					0x1555DDD2
 #define WAKE_UP_COMMANDS					0x15550000
-#define EMS_CURRENT            		0x1555EEE0
-#define EMS_VOLTAGE								0x1555EEE1
+#define EMS_CURRENT            				0x1555EEE0
+#define EMS_VOLTAGE							0x1555EEE1
 #define EMS_CONSUMPTION						0x1555EEE2
 #define EMS_STATE_DATA						0x1555EEE3
 #define BMS_MEASUREMENTS					0x1555BBB0
 #define BMS_STATE_DATA						0x1555BBB1
-#define BMS_CELLS_1								0x1555BBB2
-#define BMS_CELLS_2								0x1555BBB3
-#define BMS_CELLS_3								0x1555BBB4
-#define BMS_CELLS_4								0x1555BBB5
+#define BMS_CELLS_1							0x1555BBB2
+#define BMS_CELLS_2							0x1555BBB3
+#define BMS_CELLS_3							0x1555BBB4
+#define BMS_CELLS_4							0x1555BBB5
+#define BMS_SOC_1							0x1555BBB6
+#define BMS_SOC_2							0x1555BBB7
+#define BMS_SOC_3							0x1555BBB8
+#define BMS_SOC_4							0x1555BBB9
 
 typedef union
 {
@@ -149,7 +153,63 @@ typedef struct
 	uint8_t Cell_14_u8;
 	uint8_t Cell_15_u8;
 	uint8_t Cell_16_u8;
+	uint8_t Cell_17_u8;
+	uint8_t Cell_18_u8;
+	uint8_t Cell_19_u8;
+	uint8_t Cell_20_u8;
+	uint8_t Cell_21_u8;
+	uint8_t Cell_22_u8;
+	uint8_t Cell_23_u8;
+	uint8_t Cell_24_u8;
+	uint8_t Cell_25_u8;
+	uint8_t Cell_26_u8;
+	uint8_t Cell_27_u8;
+	uint8_t Cell_28_u8;
 }Bms_Cells;
+
+typedef struct
+{
+	int8_t offset_SoC_1_u8;
+	int8_t offset_SoC_2_u8;
+	int8_t offset_SoC_3_u8;
+	int8_t offset_SoC_4_u8;
+	int8_t offset_SoC_5_u8;
+	int8_t offset_SoC_6_u8;
+	int8_t offset_SoC_7_u8;
+	int8_t offset_SoC_8_u8;
+	int8_t offset_SoC_9_u8;
+	int8_t offset_SoC_10_u8;
+	int8_t offset_SoC_11_u8;
+	int8_t offset_SoC_12_u8;
+	int8_t offset_SoC_13_u8;
+	int8_t offset_SoC_14_u8;
+	int8_t offset_SoC_15_u8;
+	int8_t offset_SoC_16_u8;
+	int8_t offset_SoC_17_u8;
+	int8_t offset_SoC_18_u8;
+	int8_t offset_SoC_19_u8;
+	int8_t offset_SoC_20_u8;
+	int8_t offset_SoC_21_u8;
+	int8_t offset_SoC_22_u8;
+	int8_t offset_SoC_23_u8;
+	int8_t offset_SoC_24_u8;
+	int8_t offset_SoC_25_u8;
+	int8_t offset_SoC_26_u8;
+	int8_t offset_SoC_27_u8;
+	int8_t offset_SoC_28_u8;
+}Bms_SocS;
+
+typedef struct
+{
+	uint8_t temp_1_u8;
+	uint8_t temp_2_u8;
+	uint8_t temp_3_u8;
+	uint8_t temp_4_u8;
+	uint8_t temp_5_u8;
+	uint8_t temp_6_u8;
+	uint8_t temp_7_u8;
+
+}Bms_Temps;
 
 typedef struct
 {
@@ -160,9 +220,11 @@ typedef struct
 	float    Worst_Cell_Voltage_f32;
 	uint8_t  Worst_Cell_Address_u8;
 	uint8_t  Temperature_u8;
+	Bms_Temps bms_temps;
 	Bms_Cells	bms_cells;
 	Bms_State_Union bms_error;
 	Dc_Bus_State_union dc_bus_state;
+	Bms_SocS bms_soc;
 }Bms_Datas;
 
 typedef union
@@ -172,7 +234,6 @@ typedef union
 		uint8_t vcu_can_error 		 : 1;
 		uint8_t bms_can_error 		 : 1;
 		uint8_t driver_can_error   : 1;
-		uint8_t ems_can_error			 : 1;
 		uint8_t Reserved       		 : 5;
 	}can_error_state;
 	uint8_t can_error_u8;
@@ -180,36 +241,16 @@ typedef union
 
 typedef struct
 {
-	float bat_current_f32;
-	float fc_current_f32;
-	float out_current_f32;
-	float bat_voltage_f32;
-	float fc_voltage_f32;
-	float out_voltage_f32;
-	float bat_cons_f32;
-	float fc_cons_f32;
-	float fc_cons_lt_f32;
-	float out_cons_f32;
-	int8_t penalty_s8;
-	float bat_soc__f32;
-	uint8_t temperature_u8;
-	uint8_t general_error_handler_u8;
-}Ems_Datas;
-typedef struct
-{
 	Bms_Datas 	 bms_data;
 	VCU_Datas 	 vcu_data;
 	Driver_Datas driver_data;
-	Ems_Datas 	 ems_data;
 	uint32_t vcu_can_ID_1_counter;
 	uint32_t bms_can_ID_1_counter;
 	uint32_t bms_can_ID_2_counter;
 	uint32_t bms_can_ID_3_counter;
 	uint32_t bms_can_ID_4_counter;
-	uint32_t ems_can_ID_1_counter;
-	uint32_t ems_can_ID_2_counter;
-	uint32_t ems_can_ID_3_counter;
-	uint32_t ems_can_ID_4_counter;
+	uint32_t bms_can_ID_5_counter;
+	uint32_t bms_can_ID_6_counter;
 	uint32_t driver_can_ID_1_counter;
 	uint32_t driver_can_ID_2_counter;
 	uint32_t driver_can_ID_3_counter;

@@ -11,32 +11,38 @@
  extern "C" {
 #endif
 #include "main.h"
+#include "AESK_Ring_Buffer.h"
 #define CAN_IDE_32				0x04
 
 
  typedef enum
  {
+	 CAN_BUFFER_MOD = -1,
 	 CAN_Error = 0,
 	 CAN_OK = 1,
 	 CAN_TransmitError = 2,
 	 CAN_ReceiveError = 3,
 	 CAN_WRONG_ID = 4
+
  }CAN_ErrorState;
  typedef struct {
-	 CAN_HandleTypeDef hcan;
-	 CAN_TxHeaderTypeDef txMsg;
-	 CAN_RxHeaderTypeDef rxMsg;
-	 CAN_FilterTypeDef sConfig;
-	 uint32_t pTxMailbox;
-	 uint8_t receivedData[8];
- }AESK_CAN_Struct;
+ 	 CAN_HandleTypeDef* hcan;
+ 	 CAN_TxHeaderTypeDef txMsg;
+ 	 CAN_RxHeaderTypeDef rxMsg;
+ 	 CAN_FilterTypeDef sConfig;
+ 	 uint32_t pTxMailbox;
+ 	 uint8_t receivedData[8];
+ 	 uint8_t rx_buf[255];
+    uint8_t* rx_ptr;
+  }AESK_CAN_Struct;
 
 
 
 
 
+ CAN_ErrorState AESK_CAN_Send_RingBuffer(AESK_CAN_Struct *can_struct, AESK_Ring_Buffer* ring_buf, uint32_t address);
 
- CAN_ErrorState AESK_CAN_Init(AESK_CAN_Struct *can_struct, uint32_t activateInterrupt);
+ CAN_ErrorState AESK_CAN_Init( AESK_CAN_Struct *can_struct, uint32_t activateInterrupt);
 
  CAN_ErrorState AESK_CAN_ExtIDListFilterConfiguration(AESK_CAN_Struct *can_struct, uint32_t filterAddress,
  									   uint32_t FIFOSelect, uint32_t filterBank);

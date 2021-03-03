@@ -32,6 +32,9 @@
 #include "Can_Hydra_Header.h"
 #include "AESK_Data_Pack_lib.h"
 #include "stdarg.h"
+#include "AESK_GL.h"
+
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -153,7 +156,12 @@ int main(void)
   MX_FATFS_Init();
   /* USER CODE BEGIN 2 */
    gsm_data.gsm_uart = &huart1;
-	 aesk_can.hcan = hcan1;
+   aesk_gl.aesk_can_1.hcan = &hcan1;
+
+   AESK_Compro_Init(&compro_set_can_rx, Hydromobile, TELEMETRI, VCU, &Solver);
+   AESK_GL_Init(&aesk_gl);
+   AESK_CAN_Init(&aesk_gl.aesk_can_1,CAN_IT_RX_FIFO0_MSG_PENDING | CAN_IT_TX_MAILBOX_EMPTY );
+
    MX_RTC_Init();
    RTC_Set_Time_Date();
 
@@ -840,7 +848,11 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 			HAL_UART_Receive_IT(&huart3, &xbee_data.receiveData, 1);
 		}
 	}
-
+void Solver(const Aesk_Compro_Pack * pack)
+{
+	uint8_t * temp;
+	temp = pack;
+}
 void Gsm_Calibration(Gsm_Datas* gsm_data)
 {
 	switch(gsm_data->gsm_state_current_index)
@@ -1102,7 +1114,7 @@ void createMQTTPackage(HydraDatas *hydradata, GPS_Handle*gps_data, uint8_t* pack
 	AESK_UINT8toUINT8CODE(&(hydradata->bms_data.bms_temp.temp_7_u8), packBuf, index);
 }
 
-void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
+/*void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
 		AESK_CAN_ReadExtIDMessage(&aesk_can, CAN_RX_FIFO1);
 		switch(aesk_can.rxMsg.ExtId)
@@ -1414,7 +1426,7 @@ void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan)
 			}
 		}
 }
-
+*/
 
 void RTC_Set_Time_Date()
 {
