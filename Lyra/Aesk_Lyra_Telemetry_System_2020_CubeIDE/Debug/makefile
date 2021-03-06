@@ -13,7 +13,6 @@ RM := rm -rf
 -include FATFS/Target/subdir.mk
 -include FATFS/App/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
--include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
 -include subdir.mk
 -include objects.mk
@@ -58,8 +57,8 @@ all: main-build
 main-build: Aesk_Lyra_Telemetry_System_2020_CubeIDE.elf secondary-outputs
 
 # Tool invocations
-Aesk_Lyra_Telemetry_System_2020_CubeIDE.elf: $(OBJS) $(USER_OBJS) D:\Desktop\aesk\test\Aesk_Lyra_Telemetry_System_2020_CubeIDE\STM32F412RETX_FLASH.ld
-	arm-none-eabi-gcc -o "Aesk_Lyra_Telemetry_System_2020_CubeIDE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Desktop\aesk\test\Aesk_Lyra_Telemetry_System_2020_CubeIDE\STM32F412RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Aesk_Lyra_Telemetry_System_2020_CubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Aesk_Lyra_Telemetry_System_2020_CubeIDE.elf: $(OBJS) $(USER_OBJS) fail-specified-linker-script-missing
+	arm-none-eabi-gcc -o "Aesk_Lyra_Telemetry_System_2020_CubeIDE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 --specs=nosys.specs -Wl,-Map="Aesk_Lyra_Telemetry_System_2020_CubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
