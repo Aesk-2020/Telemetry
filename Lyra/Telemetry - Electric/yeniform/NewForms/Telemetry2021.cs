@@ -50,5 +50,10 @@ namespace Telemetri.NewForms
             string[] ports = SerialPort.GetPortNames();
             listBox1.Items.AddRange(ports);
         }
+
+        private void mqttButton_Click(object sender, EventArgs e)
+        {
+            FormManagement.openChildForm(new MQTTdeneme(), panelChildForm);
+        }
     }
 }

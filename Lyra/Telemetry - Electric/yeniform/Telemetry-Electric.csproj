@@ -115,6 +115,12 @@
     <Compile Include="NewForms\BMS.Designer.cs">
       <DependentUpon>BMS.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewForms\MQTTdeneme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewForms\MQTTdeneme.Designer.cs">
+      <DependentUpon>MQTTdeneme.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewForms\Telemetry2021.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,12 @@
     <Compile Include="Variables\VCU.cs" />
     <EmbeddedResource Include="NewForms\BMS.resx">
       <DependentUpon>BMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForms\Help.resx">
+      <DependentUpon>Help.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForms\MQTTdeneme.resx">
+      <DependentUpon>MQTTdeneme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewForms\Telemetry2021.resx">
       <DependentUpon>Telemetry2021.cs</DependentUpon>
