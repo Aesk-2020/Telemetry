@@ -90,6 +90,7 @@
             this.startLogButton = new FontAwesome.Sharp.IconButton();
             this.errorBox = new System.Windows.Forms.GroupBox();
             this.stateBox = new System.Windows.Forms.GroupBox();
+            this.ıconButton8 = new FontAwesome.Sharp.IconButton();
             this.panelSideMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -115,6 +116,7 @@
             // 
             this.panelSideMenu.AutoScroll = true;
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panelSideMenu.Controls.Add(this.ıconButton8);
             this.panelSideMenu.Controls.Add(this.mqttButton);
             this.panelSideMenu.Controls.Add(this.button1);
             this.panelSideMenu.Controls.Add(this.ıconButton5);
@@ -721,7 +723,7 @@
             this.tableLayoutPanel87.ColumnCount = 3;
             this.tableLayoutPanel87.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.50265F));
             this.tableLayoutPanel87.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.49735F));
-            this.tableLayoutPanel87.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 157F));
+            this.tableLayoutPanel87.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
             this.tableLayoutPanel87.Controls.Add(this.pictureBox5, 0, 5);
             this.tableLayoutPanel87.Controls.Add(this.pictureBox4, 0, 0);
             this.tableLayoutPanel87.Controls.Add(this.label16, 1, 0);
@@ -756,7 +758,7 @@
             this.pictureBox5.Image = global::Telemetri.Properties.Resources.road;
             this.pictureBox5.Location = new System.Drawing.Point(4, 159);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(77, 24);
+            this.pictureBox5.Size = new System.Drawing.Size(76, 24);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 64;
             this.pictureBox5.TabStop = false;
@@ -767,7 +769,7 @@
             this.pictureBox4.Image = global::Telemetri.Properties.Resources.speed_vector;
             this.pictureBox4.Location = new System.Drawing.Point(4, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(77, 24);
+            this.pictureBox4.Size = new System.Drawing.Size(76, 24);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 11;
             this.pictureBox4.TabStop = false;
@@ -778,9 +780,9 @@
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(88, 1);
+            this.label16.Location = new System.Drawing.Point(87, 1);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(94, 30);
+            this.label16.Size = new System.Drawing.Size(93, 30);
             this.label16.TabIndex = 12;
             this.label16.Text = "MAX SPEED";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -791,7 +793,7 @@
             this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
             this.pictureBox13.Location = new System.Drawing.Point(4, 35);
             this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(77, 24);
+            this.pictureBox13.Size = new System.Drawing.Size(76, 24);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox13.TabIndex = 19;
             this.pictureBox13.TabStop = false;
@@ -802,9 +804,9 @@
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(88, 32);
+            this.label17.Location = new System.Drawing.Point(87, 32);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(94, 30);
+            this.label17.Size = new System.Drawing.Size(93, 30);
             this.label17.TabIndex = 16;
             this.label17.Text = "AVG. SPEED";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -815,7 +817,7 @@
             this.pictureBox7.Image = global::Telemetri.Properties.Resources.czxcxz1;
             this.pictureBox7.Location = new System.Drawing.Point(4, 66);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(77, 24);
+            this.pictureBox7.Size = new System.Drawing.Size(76, 24);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 11;
             this.pictureBox7.TabStop = false;
@@ -826,9 +828,9 @@
             this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label23.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(88, 63);
+            this.label23.Location = new System.Drawing.Point(87, 63);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(94, 30);
+            this.label23.Size = new System.Drawing.Size(93, 30);
             this.label23.TabIndex = 9;
             this.label23.Text = "LAST LAP";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -839,7 +841,7 @@
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label33.ForeColor = System.Drawing.Color.White;
-            this.label33.Location = new System.Drawing.Point(100, 197);
+            this.label33.Location = new System.Drawing.Point(98, 197);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(70, 17);
             this.label33.TabIndex = 63;
@@ -852,7 +854,7 @@
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label32.ForeColor = System.Drawing.Color.White;
-            this.label32.Location = new System.Drawing.Point(117, 162);
+            this.label32.Location = new System.Drawing.Point(115, 162);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(36, 17);
             this.label32.TabIndex = 62;
@@ -865,7 +867,7 @@
             this.pictureBox2.Image = global::Telemetri.Properties.Resources.checkered_flag_clip_art_9511_kopya;
             this.pictureBox2.Location = new System.Drawing.Point(4, 97);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(77, 24);
+            this.pictureBox2.Size = new System.Drawing.Size(76, 24);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
@@ -876,9 +878,9 @@
             this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label21.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(88, 94);
+            this.label21.Location = new System.Drawing.Point(87, 94);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(94, 30);
+            this.label21.Size = new System.Drawing.Size(93, 30);
             this.label21.TabIndex = 7;
             this.label21.Text = "FASTEST LAP";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -889,7 +891,7 @@
             this.pictureBox3.Image = global::Telemetri.Properties.Resources.dadadadda;
             this.pictureBox3.Location = new System.Drawing.Point(4, 128);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(77, 24);
+            this.pictureBox3.Size = new System.Drawing.Size(76, 24);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 10;
             this.pictureBox3.TabStop = false;
@@ -900,9 +902,9 @@
             this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label18.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(88, 125);
+            this.label18.Location = new System.Drawing.Point(87, 125);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(94, 30);
+            this.label18.Size = new System.Drawing.Size(93, 30);
             this.label18.TabIndex = 2;
             this.label18.Text = "THIS LAP";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -913,7 +915,7 @@
             this.pictureBox6.Image = global::Telemetri.Properties.Resources.road;
             this.pictureBox6.Location = new System.Drawing.Point(4, 190);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(77, 31);
+            this.pictureBox6.Size = new System.Drawing.Size(76, 31);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 65;
             this.pictureBox6.TabStop = false;
@@ -990,6 +992,27 @@
             this.stateBox.TabIndex = 106;
             this.stateBox.TabStop = false;
             this.stateBox.Text = "Drive Status";
+            // 
+            // ıconButton8
+            // 
+            this.ıconButton8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.ıconButton8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ıconButton8.FlatAppearance.BorderSize = 0;
+            this.ıconButton8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.ıconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ıconButton8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ıconButton8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.ıconButton8.IconChar = FontAwesome.Sharp.IconChar.PlayCircle;
+            this.ıconButton8.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.ıconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ıconButton8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ıconButton8.Location = new System.Drawing.Point(0, 382);
+            this.ıconButton8.Name = "ıconButton8";
+            this.ıconButton8.Size = new System.Drawing.Size(250, 48);
+            this.ıconButton8.TabIndex = 8;
+            this.ıconButton8.Text = "Log Player";
+            this.ıconButton8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ıconButton8.UseVisualStyleBackColor = false;
             // 
             // Telemetry2021
             // 
@@ -1097,5 +1120,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.PictureBox pictureBox6;
         private FontAwesome.Sharp.IconButton mqttButton;
+        private FontAwesome.Sharp.IconButton ıconButton8;
     }
 }

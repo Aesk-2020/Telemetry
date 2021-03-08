@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telemetri.Variables;
+using uPLibrary.Networking.M2Mqtt;
+using uPLibrary.Networking.M2Mqtt.Messages;
 
 namespace Telemetri.NewForms
 {
@@ -18,20 +20,66 @@ namespace Telemetri.NewForms
             InitializeComponent();
         }
 
-        MQTT mqtt = new MQTT(MACROS.MQTT_username, MACROS.MQTT_password, MACROS.MQTT_topic);
+        static MqttClient Client;
         bool connectedFlag = false;
+        byte wakeupc;
+        byte drivecom;
+        byte setvelo;
 
+        private void MQTTdeneme_Load(object sender, EventArgs e)
+        {
+            Client = new MqttClient(MACROS.aesk_IP);
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            byte code = mqtt.ConnectRequestMQTT();
+            byte code = Client.Connect("1883", MACROS.MQTT_username, MACROS.MQTT_password);
             if (code == 0x00)
             {
                 //Connected
                 connectedFlag = true;
+                panel2.BackColor = Color.LimeGreen;
+                Client.MqttMsgPublishReceived += Client_MqttMsgPublishReceived;
+                try
+                {
+                    Client.Subscribe(new string[] { "DENEMASYON2" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
+                }
+                catch (Exception ed)
+                {
+                    MessageBox.Show(ed.Message);
+                }
             }
             else
             {
-                
+                panel2.BackColor = Color.DarkRed;
+            }
+        }
+
+        private void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
+        {
+            //MESAJ GELDİ HOCAM
+            //GELEN MESAJ 3 BYTE
+            wakeupc = Convert.ToByte(e.Message[0]);
+            drivecom = Convert.ToByte(e.Message[1]);
+            setvelo = Convert.ToByte(e.Message[2]);
+
+            wakeupLabel.Text = wakeupc.ToString();
+            drivecomLabel.Text = drivecom.ToString();
+            setveloLabel.Text = setvelo.ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(connectedFlag == true)
+            {
+                try
+                {
+                    Client.Publish("DENEMASYON", new byte[] { 172 }, MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, false);
+                }
+                catch (Exception ert)
+                {
+                    MessageBox.Show(ert.Message);
+                    throw;
+                }
             }
         }
     }
