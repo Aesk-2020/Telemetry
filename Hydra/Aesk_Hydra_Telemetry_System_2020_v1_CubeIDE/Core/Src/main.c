@@ -71,6 +71,8 @@ DMA_HandleTypeDef hdma_usart2_rx;
 /* USER CODE BEGIN PV */
 int SetTime = 0;
 int SetDate = 0;
+float mydeg;
+uint32_t degCount = 0;
 AESK_CAN_Struct aesk_can;
 Time_Task_union time_task;
 Xbee_Datas xbee_data;
@@ -80,6 +82,10 @@ MQTTString topicString = MQTTString_initializer;
 HydraDatas hydradata;
 Sd_Card_Datas sd_card_data;
 GPS_Handle gps_data;
+
+//asdsad
+uint8_t mydizi[5];
+//asdsad
 
 RTC_TimeTypeDef rtctime;
 RTC_DateTypeDef rtcdate;
@@ -109,6 +115,7 @@ void vars_to_str(char *buffer, const char *format, ...);
 uint16_t aeskCRCCalculator(uint8_t * frame, size_t framesize);
 void createXBEEPackage(HydraDatas *hydradata, GPS_Handle*gps_data, uint8_t* packBuf, uint16_t *index);
 void Can_Error_Control(void);
+void GoToSleepMode(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -165,6 +172,11 @@ int main(void)
    MX_RTC_Init();
    RTC_Set_Time_Date();
 
+   mydizi[0] = 97;
+   mydizi[1] = 97;
+   mydizi[2] = 97;
+   mydizi[3] = 97;
+   mydizi[4] = 97;
  /*  if(f_mount(&sd_card_data.myFATAFS,(TCHAR const *)SDPath, 1) == FR_OK)
    {
 	   HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
@@ -182,7 +194,7 @@ int main(void)
 	   HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
 	   vars_to_str(sd_card_data.path, "%d_%d_%d_%d_%d_%d_(%d).txt", sDate.Date, sDate.Month, sDate.Year, sTime.Hours, sTime.Minutes, sTime.Seconds, sd_card_data.logger_u32);
 		 
-		 f_open(&sd_card_data.myFile, sd_card_data.path, FA_WRITE | FA_OPEN_APPEND | FA_OPEN_EXISTING | FA_OPEN_ALWAYS);
+		 f_open(&sd_card_data.myFile, "den.txt", FA_WRITE | FA_OPEN_APPEND | FA_OPEN_EXISTING | FA_OPEN_ALWAYS);
 		 f_write(&sd_card_data.myFile, SDHeader, strlen(SDHeader), (void*)&sd_card_data.writtenbyte);
 	   f_close(&sd_card_data.myFile);
 		 
@@ -202,11 +214,12 @@ int main(void)
 			HAL_UART_Transmit(gsm_data.gsm_uart, (uint8_t*)RESET_AT_COMMAND, (uint16_t)strlen(RESET_AT_COMMAND), HAL_DELAY);
    }
 
+
    while((GSM_STATUS_GPIO_Port->IDR & GSM_STATUS_Pin) == (uint32_t)GPIO_PIN_RESET)
    {
 	   ;
    }
-	
+
 
 	 
 		AESK_CAN_ExtIDMaskFilterConfiguration(&aesk_can, 0, 0, CAN_RX_FIFO0, 0);
@@ -222,6 +235,10 @@ int main(void)
     HAL_UART_Receive_DMA(&huart2, &gps_data.uartReceiveData_u8, 1);
     HAL_TIM_Base_Start_IT(&htim6); 
 	  hydradata.can_error.can_error_u8 = 7; // every can control bit initialize 1
+
+	  CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
+	    DWT->CYCCNT = 0;
+	    DWT->CTRL = DWT_CTRL_CYCCNTENA_Msk;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -272,8 +289,8 @@ int main(void)
 				
 			  vars_to_str((char *)sd_card_data.total_log, "%d:%d:%d\t", sTime.Hours, sTime.Minutes, sTime.Seconds);
 			  strcat(sd_card_data.total_log, (const char*)sd_card_data.transmitBuf);
-			  sd_card_data.result = f_open(&sd_card_data.myFile, sd_card_data.path, FA_WRITE | FA_OPEN_APPEND | FA_OPEN_EXISTING | FA_OPEN_ALWAYS);
-			  f_write(&sd_card_data.myFile, sd_card_data.total_log, strlen(sd_card_data.total_log), (void*)&sd_card_data.writtenbyte);
+			  sd_card_data.result = f_open(&sd_card_data.myFile, "den.txt", FA_WRITE | FA_OPEN_APPEND | FA_OPEN_EXISTING | FA_OPEN_ALWAYS);
+			  f_write(&sd_card_data.myFile, mydizi, 5, (void*)&sd_card_data.writtenbyte);
 			  if((sd_card_data.writtenbyte != 0) && (sd_card_data.result == FR_OK))
 			  {
 				  f_close(&sd_card_data.myFile);
@@ -286,6 +303,7 @@ int main(void)
 			}
 	 		time_task.Time_Task.Task_50_ms = FALSE;
 		}
+
   }
   /* USER CODE END 3 */
 }
@@ -712,6 +730,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	task_counter_50_ms++;
 	task_counter_500_ms++;
 	task_counter_5_sn++;
+	degCount++;
+
 	if(task_counter_50_ms == 50)
 	{
 		time_task.Time_Task.Task_50_ms = TRUE;

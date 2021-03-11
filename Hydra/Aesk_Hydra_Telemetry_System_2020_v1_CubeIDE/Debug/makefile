@@ -59,7 +59,7 @@ main-build: Hydra_Telemetry_System_2020_v1_CubeIDE.elf secondary-outputs
 
 # Tool invocations
 Hydra_Telemetry_System_2020_v1_CubeIDE.elf: $(OBJS) $(USER_OBJS) C:\Users\JosephStar\Documents\GitHub\Telemetry\Hydra\Aesk_Hydra_Telemetry_System_2020_v1_CubeIDE\STM32F412RETX_FLASH.ld
-	arm-none-eabi-gcc -o "Hydra_Telemetry_System_2020_v1_CubeIDE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\JosephStar\Documents\GitHub\Telemetry\Hydra\Aesk_Hydra_Telemetry_System_2020_v1_CubeIDE\STM32F412RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Hydra_Telemetry_System_2020_v1_CubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+	arm-none-eabi-gcc -o "Hydra_Telemetry_System_2020_v1_CubeIDE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\JosephStar\Documents\GitHub\Telemetry\Hydra\Aesk_Hydra_Telemetry_System_2020_v1_CubeIDE\STM32F412RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Hydra_Telemetry_System_2020_v1_CubeIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F412Rx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;               ../Drivers/STM32F4xx_HAL_Driver/Inc;               ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;               ../Middlewares/Third_Party/FatFs/src;               ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;               ../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Inc;                ../Drivers/STM32F4xx_HAL_Driver/Inc;                ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;                ../Middlewares/Third_Party/FatFs/src;                ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;                ../Drivers/CMSIS/Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -619,11 +619,6 @@
     <Layers>
       <Layer>
         <LayName>&lt;Project Info&gt;</LayName>
-        <LayDesc></LayDesc>
-        <LayUrl></LayUrl>
-        <LayKeys></LayKeys>
-        <LayCat></LayCat>
-        <LayLic></LayLic>
         <LayTarg>0</LayTarg>
         <LayPrjMark>1</LayPrjMark>
       </Layer>
