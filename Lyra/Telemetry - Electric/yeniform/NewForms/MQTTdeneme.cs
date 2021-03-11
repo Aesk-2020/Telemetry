@@ -28,11 +28,11 @@ namespace Telemetri.NewForms
 
         private void MQTTdeneme_Load(object sender, EventArgs e)
         {
-            Client = new MqttClient(MACROS.aesk_IP);
+            Client = new MqttClient("test.mosquitto.org");
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            byte code = Client.Connect("1883", MACROS.MQTT_username, MACROS.MQTT_password);
+            byte code = Client.Connect(Guid.NewGuid().ToString(), MACROS.MQTT_username, MACROS.MQTT_password);
             if (code == 0x00)
             {
                 //Connected
@@ -41,7 +41,7 @@ namespace Telemetri.NewForms
                 Client.MqttMsgPublishReceived += Client_MqttMsgPublishReceived;
                 try
                 {
-                    Client.Subscribe(new string[] { "DENEMASYON2" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
+                    Client.Subscribe(new string[] { "vehicle_to_interface" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
                 }
                 catch (Exception ed)
                 {
@@ -73,7 +73,7 @@ namespace Telemetri.NewForms
             {
                 try
                 {
-                    Client.Publish("DENEMASYON", new byte[] { 172 }, MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, false);
+                    Client.Publish("interface_to_vehicle", new byte[] { 172 }, MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, false);
                 }
                 catch (Exception ert)
                 {

@@ -1,5 +1,0 @@
-AESK_comm_pro.c:10:6:AESK_Compro_Init	24	static
-AESK_comm_pro.c:22:10:AESK_calcCRC16	24	static
-AESK_comm_pro.c:36:6:AESK_Compro_Create	24	static
-AESK_comm_pro.c:66:6:AESK_Compro_Send_Ring_Buf	272	static
-AESK_comm_pro.c:81:6:AESK_Compro_Unpack	32	static
