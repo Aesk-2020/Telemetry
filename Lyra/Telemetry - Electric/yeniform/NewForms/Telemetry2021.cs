@@ -15,6 +15,8 @@ namespace Telemetri.NewForms
 {
     public partial class Telemetry2021 : Form
     {
+        MQTT mqttObj = new MQTT("LYRADATA"); //LYRADATA topic'ine bağlanacak MQTT nesnesini oluştur.
+
         public Telemetry2021()
         {
             InitializeComponent();
@@ -48,12 +50,32 @@ namespace Telemetri.NewForms
         private void Telemetry2021_Load(object sender, EventArgs e)
         {
             string[] ports = SerialPort.GetPortNames();
-            listBox1.Items.AddRange(ports);
+            portsListBox.Items.AddRange(ports);
         }
 
         private void mqttButton_Click(object sender, EventArgs e)
         {
             FormManagement.openChildForm(new MQTTdeneme(), panelChildForm);
         }
+
+        private void portsListBox_Click(object sender, EventArgs e)
+        {
+            string[] ports = SerialPort.GetPortNames();
+            portsListBox.Items.AddRange(ports);
+        }
+        private void mqttConnectBtn_Click(object sender, EventArgs e)
+        {
+            mqttObj.ConnectSubscribe();
+            mqttDisconnectBtn.Enabled = true;
+            mqttConnectBtn.Enabled = false;
+        }
+        private void mqttDisconnectBtn_Click(object sender, EventArgs e)
+        {
+            mqttObj.Disconnect();
+            mqttConnectBtn.Enabled = true;
+            mqttDisconnectBtn.Enabled = false;
+        }
+
+
     }
 }

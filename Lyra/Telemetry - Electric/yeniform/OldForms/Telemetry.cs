@@ -218,7 +218,7 @@ namespace Telemetri
                 serialportRF.DisconnectSerialPort(serialportRF.portname);
                 xbee_active.BackColor = Color.Transparent;
             }
-            byte code = mqtt.ConnectRequestMQTT();
+            byte code = mqtt.MQTTsubscribe();
             if (code == 0x00)
             {
                 //Connected
@@ -334,7 +334,6 @@ namespace Telemetri
 
         private void AngleControl(double angle)
         {
-
             if ((angle > MACROS.S1_Start || angle < MACROS.S1_Stop))
             {
                 if (MACROS.sector_4to_1)

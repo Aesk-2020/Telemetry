@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Telemetry2021));
             this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.ıconButton8 = new FontAwesome.Sharp.IconButton();
             this.mqttButton = new FontAwesome.Sharp.IconButton();
             this.button1 = new System.Windows.Forms.Button();
             this.ıconButton5 = new FontAwesome.Sharp.IconButton();
@@ -62,13 +63,13 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.ıconButton7 = new FontAwesome.Sharp.IconButton();
-            this.ıconButton6 = new FontAwesome.Sharp.IconButton();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.portDisconnectBtn = new FontAwesome.Sharp.IconButton();
+            this.portConnectBtn = new FontAwesome.Sharp.IconButton();
+            this.portsListBox = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.ıconButton3 = new FontAwesome.Sharp.IconButton();
-            this.ıconButton4 = new FontAwesome.Sharp.IconButton();
-            this.ıconButton1 = new FontAwesome.Sharp.IconButton();
+            this.openGUILogBtn = new FontAwesome.Sharp.IconButton();
+            this.openSDLogBtn = new FontAwesome.Sharp.IconButton();
+            this.mqttDisconnectBtn = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel87 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -85,12 +86,11 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label18 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.ıconButton2 = new FontAwesome.Sharp.IconButton();
-            this.stopLogButton = new FontAwesome.Sharp.IconButton();
-            this.startLogButton = new FontAwesome.Sharp.IconButton();
+            this.mqttConnectBtn = new FontAwesome.Sharp.IconButton();
+            this.stopLogBtn = new FontAwesome.Sharp.IconButton();
+            this.startLogBtn = new FontAwesome.Sharp.IconButton();
             this.errorBox = new System.Windows.Forms.GroupBox();
             this.stateBox = new System.Windows.Forms.GroupBox();
-            this.ıconButton8 = new FontAwesome.Sharp.IconButton();
             this.panelSideMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -131,6 +131,27 @@
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(250, 661);
             this.panelSideMenu.TabIndex = 1;
+            // 
+            // ıconButton8
+            // 
+            this.ıconButton8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.ıconButton8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ıconButton8.FlatAppearance.BorderSize = 0;
+            this.ıconButton8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.ıconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ıconButton8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ıconButton8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.ıconButton8.IconChar = FontAwesome.Sharp.IconChar.PlayCircle;
+            this.ıconButton8.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.ıconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ıconButton8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ıconButton8.Location = new System.Drawing.Point(0, 382);
+            this.ıconButton8.Name = "ıconButton8";
+            this.ıconButton8.Size = new System.Drawing.Size(250, 48);
+            this.ıconButton8.TabIndex = 8;
+            this.ıconButton8.Text = "Log Player";
+            this.ıconButton8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ıconButton8.UseVisualStyleBackColor = false;
             // 
             // mqttButton
             // 
@@ -305,17 +326,17 @@
             // 
             this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.panelChildForm.Controls.Add(this.groupBox2);
-            this.panelChildForm.Controls.Add(this.ıconButton7);
-            this.panelChildForm.Controls.Add(this.ıconButton6);
-            this.panelChildForm.Controls.Add(this.listBox1);
+            this.panelChildForm.Controls.Add(this.portDisconnectBtn);
+            this.panelChildForm.Controls.Add(this.portConnectBtn);
+            this.panelChildForm.Controls.Add(this.portsListBox);
             this.panelChildForm.Controls.Add(this.label5);
-            this.panelChildForm.Controls.Add(this.ıconButton3);
-            this.panelChildForm.Controls.Add(this.ıconButton4);
-            this.panelChildForm.Controls.Add(this.ıconButton1);
+            this.panelChildForm.Controls.Add(this.openGUILogBtn);
+            this.panelChildForm.Controls.Add(this.openSDLogBtn);
+            this.panelChildForm.Controls.Add(this.mqttDisconnectBtn);
             this.panelChildForm.Controls.Add(this.groupBox1);
-            this.panelChildForm.Controls.Add(this.ıconButton2);
-            this.panelChildForm.Controls.Add(this.stopLogButton);
-            this.panelChildForm.Controls.Add(this.startLogButton);
+            this.panelChildForm.Controls.Add(this.mqttConnectBtn);
+            this.panelChildForm.Controls.Add(this.stopLogBtn);
+            this.panelChildForm.Controls.Add(this.startLogBtn);
             this.panelChildForm.Controls.Add(this.errorBox);
             this.panelChildForm.Controls.Add(this.stateBox);
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -596,114 +617,116 @@
             this.label13.TabIndex = 107;
             this.label13.Text = "Laps Remaining";
             // 
-            // ıconButton7
+            // portDisconnectBtn
             // 
-            this.ıconButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ıconButton7.FlatAppearance.BorderSize = 0;
-            this.ıconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ıconButton7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ıconButton7.ForeColor = System.Drawing.SystemColors.Window;
-            this.ıconButton7.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.ıconButton7.IconColor = System.Drawing.Color.Black;
-            this.ıconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ıconButton7.Location = new System.Drawing.Point(702, 619);
-            this.ıconButton7.Name = "ıconButton7";
-            this.ıconButton7.Size = new System.Drawing.Size(120, 23);
-            this.ıconButton7.TabIndex = 120;
-            this.ıconButton7.Text = "Port Disconnect";
-            this.ıconButton7.UseVisualStyleBackColor = false;
+            this.portDisconnectBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.portDisconnectBtn.FlatAppearance.BorderSize = 0;
+            this.portDisconnectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.portDisconnectBtn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.portDisconnectBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.portDisconnectBtn.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.portDisconnectBtn.IconColor = System.Drawing.Color.Black;
+            this.portDisconnectBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.portDisconnectBtn.Location = new System.Drawing.Point(534, 618);
+            this.portDisconnectBtn.Name = "portDisconnectBtn";
+            this.portDisconnectBtn.Size = new System.Drawing.Size(120, 23);
+            this.portDisconnectBtn.TabIndex = 120;
+            this.portDisconnectBtn.Text = "Port Disconnect";
+            this.portDisconnectBtn.UseVisualStyleBackColor = false;
             // 
-            // ıconButton6
+            // portConnectBtn
             // 
-            this.ıconButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ıconButton6.FlatAppearance.BorderSize = 0;
-            this.ıconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ıconButton6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ıconButton6.ForeColor = System.Drawing.SystemColors.Window;
-            this.ıconButton6.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.ıconButton6.IconColor = System.Drawing.Color.Black;
-            this.ıconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ıconButton6.Location = new System.Drawing.Point(702, 591);
-            this.ıconButton6.Name = "ıconButton6";
-            this.ıconButton6.Size = new System.Drawing.Size(120, 23);
-            this.ıconButton6.TabIndex = 119;
-            this.ıconButton6.Text = "Port Connect";
-            this.ıconButton6.UseVisualStyleBackColor = false;
+            this.portConnectBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.portConnectBtn.FlatAppearance.BorderSize = 0;
+            this.portConnectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.portConnectBtn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.portConnectBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.portConnectBtn.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.portConnectBtn.IconColor = System.Drawing.Color.Black;
+            this.portConnectBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.portConnectBtn.Location = new System.Drawing.Point(534, 590);
+            this.portConnectBtn.Name = "portConnectBtn";
+            this.portConnectBtn.Size = new System.Drawing.Size(120, 23);
+            this.portConnectBtn.TabIndex = 119;
+            this.portConnectBtn.Text = "Port Connect";
+            this.portConnectBtn.UseVisualStyleBackColor = false;
             // 
-            // listBox1
+            // portsListBox
             // 
-            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.listBox1.ForeColor = System.Drawing.Color.White;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 17;
-            this.listBox1.Location = new System.Drawing.Point(828, 591);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(69, 53);
-            this.listBox1.TabIndex = 118;
+            this.portsListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.portsListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.portsListBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.portsListBox.ForeColor = System.Drawing.Color.White;
+            this.portsListBox.FormattingEnabled = true;
+            this.portsListBox.ItemHeight = 17;
+            this.portsListBox.Location = new System.Drawing.Point(660, 590);
+            this.portsListBox.Name = "portsListBox";
+            this.portsListBox.Size = new System.Drawing.Size(69, 53);
+            this.portsListBox.TabIndex = 118;
+            this.portsListBox.Click += new System.EventHandler(this.portsListBox_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(200, 604);
+            this.label5.Location = new System.Drawing.Point(68, 603);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(134, 23);
             this.label5.TabIndex = 117;
             this.label5.Text = "Control Panel";
             // 
-            // ıconButton3
+            // openGUILogBtn
             // 
-            this.ıconButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ıconButton3.FlatAppearance.BorderSize = 0;
-            this.ıconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ıconButton3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ıconButton3.ForeColor = System.Drawing.SystemColors.Window;
-            this.ıconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.ıconButton3.IconColor = System.Drawing.Color.Black;
-            this.ıconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ıconButton3.Location = new System.Drawing.Point(437, 620);
-            this.ıconButton3.Name = "ıconButton3";
-            this.ıconButton3.Size = new System.Drawing.Size(99, 23);
-            this.ıconButton3.TabIndex = 116;
-            this.ıconButton3.Text = "Open GUI Log";
-            this.ıconButton3.UseVisualStyleBackColor = false;
+            this.openGUILogBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.openGUILogBtn.FlatAppearance.BorderSize = 0;
+            this.openGUILogBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.openGUILogBtn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.openGUILogBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.openGUILogBtn.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.openGUILogBtn.IconColor = System.Drawing.Color.Black;
+            this.openGUILogBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.openGUILogBtn.Location = new System.Drawing.Point(305, 619);
+            this.openGUILogBtn.Name = "openGUILogBtn";
+            this.openGUILogBtn.Size = new System.Drawing.Size(99, 23);
+            this.openGUILogBtn.TabIndex = 116;
+            this.openGUILogBtn.Text = "Open GUI Log";
+            this.openGUILogBtn.UseVisualStyleBackColor = false;
             // 
-            // ıconButton4
+            // openSDLogBtn
             // 
-            this.ıconButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ıconButton4.FlatAppearance.BorderSize = 0;
-            this.ıconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ıconButton4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ıconButton4.ForeColor = System.Drawing.SystemColors.Window;
-            this.ıconButton4.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.ıconButton4.IconColor = System.Drawing.Color.Black;
-            this.ıconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ıconButton4.Location = new System.Drawing.Point(437, 591);
-            this.ıconButton4.Name = "ıconButton4";
-            this.ıconButton4.Size = new System.Drawing.Size(99, 23);
-            this.ıconButton4.TabIndex = 115;
-            this.ıconButton4.Text = "Open SD Log";
-            this.ıconButton4.UseVisualStyleBackColor = false;
+            this.openSDLogBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.openSDLogBtn.FlatAppearance.BorderSize = 0;
+            this.openSDLogBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.openSDLogBtn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.openSDLogBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.openSDLogBtn.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.openSDLogBtn.IconColor = System.Drawing.Color.Black;
+            this.openSDLogBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.openSDLogBtn.Location = new System.Drawing.Point(305, 590);
+            this.openSDLogBtn.Name = "openSDLogBtn";
+            this.openSDLogBtn.Size = new System.Drawing.Size(99, 23);
+            this.openSDLogBtn.TabIndex = 115;
+            this.openSDLogBtn.Text = "Open SD Log";
+            this.openSDLogBtn.UseVisualStyleBackColor = false;
             // 
-            // ıconButton1
+            // mqttDisconnectBtn
             // 
-            this.ıconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ıconButton1.FlatAppearance.BorderSize = 0;
-            this.ıconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ıconButton1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ıconButton1.ForeColor = System.Drawing.SystemColors.Window;
-            this.ıconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.ıconButton1.IconColor = System.Drawing.Color.Black;
-            this.ıconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ıconButton1.Location = new System.Drawing.Point(540, 620);
-            this.ıconButton1.Name = "ıconButton1";
-            this.ıconButton1.Size = new System.Drawing.Size(120, 23);
-            this.ıconButton1.TabIndex = 114;
-            this.ıconButton1.Text = "GSM Disconnect";
-            this.ıconButton1.UseVisualStyleBackColor = false;
+            this.mqttDisconnectBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.mqttDisconnectBtn.FlatAppearance.BorderSize = 0;
+            this.mqttDisconnectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mqttDisconnectBtn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.mqttDisconnectBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.mqttDisconnectBtn.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.mqttDisconnectBtn.IconColor = System.Drawing.Color.Black;
+            this.mqttDisconnectBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.mqttDisconnectBtn.Location = new System.Drawing.Point(408, 619);
+            this.mqttDisconnectBtn.Name = "mqttDisconnectBtn";
+            this.mqttDisconnectBtn.Size = new System.Drawing.Size(120, 23);
+            this.mqttDisconnectBtn.TabIndex = 114;
+            this.mqttDisconnectBtn.Text = "MQTT Disconnect";
+            this.mqttDisconnectBtn.UseVisualStyleBackColor = false;
+            this.mqttDisconnectBtn.Click += new System.EventHandler(this.mqttDisconnectBtn_Click);
             // 
             // groupBox1
             // 
@@ -719,11 +742,10 @@
             // 
             // tableLayoutPanel87
             // 
-            this.tableLayoutPanel87.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel87.ColumnCount = 3;
             this.tableLayoutPanel87.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.50265F));
             this.tableLayoutPanel87.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.49735F));
-            this.tableLayoutPanel87.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
+            this.tableLayoutPanel87.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 161F));
             this.tableLayoutPanel87.Controls.Add(this.pictureBox5, 0, 5);
             this.tableLayoutPanel87.Controls.Add(this.pictureBox4, 0, 0);
             this.tableLayoutPanel87.Controls.Add(this.label16, 1, 0);
@@ -756,9 +778,9 @@
             // 
             this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox5.Image = global::Telemetri.Properties.Resources.road;
-            this.pictureBox5.Location = new System.Drawing.Point(4, 159);
+            this.pictureBox5.Location = new System.Drawing.Point(3, 163);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(76, 24);
+            this.pictureBox5.Size = new System.Drawing.Size(77, 26);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 64;
             this.pictureBox5.TabStop = false;
@@ -767,9 +789,9 @@
             // 
             this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox4.Image = global::Telemetri.Properties.Resources.speed_vector;
-            this.pictureBox4.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox4.Location = new System.Drawing.Point(3, 3);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(76, 24);
+            this.pictureBox4.Size = new System.Drawing.Size(77, 26);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 11;
             this.pictureBox4.TabStop = false;
@@ -780,9 +802,9 @@
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(87, 1);
+            this.label16.Location = new System.Drawing.Point(86, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(93, 30);
+            this.label16.Size = new System.Drawing.Size(94, 32);
             this.label16.TabIndex = 12;
             this.label16.Text = "MAX SPEED";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -791,9 +813,9 @@
             // 
             this.pictureBox13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(4, 35);
+            this.pictureBox13.Location = new System.Drawing.Point(3, 35);
             this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(76, 24);
+            this.pictureBox13.Size = new System.Drawing.Size(77, 26);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox13.TabIndex = 19;
             this.pictureBox13.TabStop = false;
@@ -804,9 +826,9 @@
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(87, 32);
+            this.label17.Location = new System.Drawing.Point(86, 32);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(93, 30);
+            this.label17.Size = new System.Drawing.Size(94, 32);
             this.label17.TabIndex = 16;
             this.label17.Text = "AVG. SPEED";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -815,9 +837,9 @@
             // 
             this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox7.Image = global::Telemetri.Properties.Resources.czxcxz1;
-            this.pictureBox7.Location = new System.Drawing.Point(4, 66);
+            this.pictureBox7.Location = new System.Drawing.Point(3, 67);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(76, 24);
+            this.pictureBox7.Size = new System.Drawing.Size(77, 26);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 11;
             this.pictureBox7.TabStop = false;
@@ -828,9 +850,9 @@
             this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label23.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(87, 63);
+            this.label23.Location = new System.Drawing.Point(86, 64);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(93, 30);
+            this.label23.Size = new System.Drawing.Size(94, 32);
             this.label23.TabIndex = 9;
             this.label23.Text = "LAST LAP";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -841,7 +863,7 @@
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label33.ForeColor = System.Drawing.Color.White;
-            this.label33.Location = new System.Drawing.Point(98, 197);
+            this.label33.Location = new System.Drawing.Point(98, 200);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(70, 17);
             this.label33.TabIndex = 63;
@@ -854,7 +876,7 @@
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label32.ForeColor = System.Drawing.Color.White;
-            this.label32.Location = new System.Drawing.Point(115, 162);
+            this.label32.Location = new System.Drawing.Point(115, 167);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(36, 17);
             this.label32.TabIndex = 62;
@@ -865,9 +887,9 @@
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Image = global::Telemetri.Properties.Resources.checkered_flag_clip_art_9511_kopya;
-            this.pictureBox2.Location = new System.Drawing.Point(4, 97);
+            this.pictureBox2.Location = new System.Drawing.Point(3, 99);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(76, 24);
+            this.pictureBox2.Size = new System.Drawing.Size(77, 26);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
@@ -878,9 +900,9 @@
             this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label21.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(87, 94);
+            this.label21.Location = new System.Drawing.Point(86, 96);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(93, 30);
+            this.label21.Size = new System.Drawing.Size(94, 32);
             this.label21.TabIndex = 7;
             this.label21.Text = "FASTEST LAP";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -889,9 +911,9 @@
             // 
             this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox3.Image = global::Telemetri.Properties.Resources.dadadadda;
-            this.pictureBox3.Location = new System.Drawing.Point(4, 128);
+            this.pictureBox3.Location = new System.Drawing.Point(3, 131);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(76, 24);
+            this.pictureBox3.Size = new System.Drawing.Size(77, 26);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 10;
             this.pictureBox3.TabStop = false;
@@ -902,9 +924,9 @@
             this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label18.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(87, 125);
+            this.label18.Location = new System.Drawing.Point(86, 128);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(93, 30);
+            this.label18.Size = new System.Drawing.Size(94, 32);
             this.label18.TabIndex = 2;
             this.label18.Text = "THIS LAP";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -913,63 +935,64 @@
             // 
             this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox6.Image = global::Telemetri.Properties.Resources.road;
-            this.pictureBox6.Location = new System.Drawing.Point(4, 190);
+            this.pictureBox6.Location = new System.Drawing.Point(3, 195);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(76, 31);
+            this.pictureBox6.Size = new System.Drawing.Size(77, 27);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 65;
             this.pictureBox6.TabStop = false;
             // 
-            // ıconButton2
+            // mqttConnectBtn
             // 
-            this.ıconButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ıconButton2.FlatAppearance.BorderSize = 0;
-            this.ıconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ıconButton2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ıconButton2.ForeColor = System.Drawing.SystemColors.Window;
-            this.ıconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.ıconButton2.IconColor = System.Drawing.Color.Black;
-            this.ıconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ıconButton2.Location = new System.Drawing.Point(540, 591);
-            this.ıconButton2.Name = "ıconButton2";
-            this.ıconButton2.Size = new System.Drawing.Size(120, 23);
-            this.ıconButton2.TabIndex = 110;
-            this.ıconButton2.Text = "GSM Connect";
-            this.ıconButton2.UseVisualStyleBackColor = false;
+            this.mqttConnectBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.mqttConnectBtn.FlatAppearance.BorderSize = 0;
+            this.mqttConnectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mqttConnectBtn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.mqttConnectBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.mqttConnectBtn.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.mqttConnectBtn.IconColor = System.Drawing.Color.Black;
+            this.mqttConnectBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.mqttConnectBtn.Location = new System.Drawing.Point(408, 590);
+            this.mqttConnectBtn.Name = "mqttConnectBtn";
+            this.mqttConnectBtn.Size = new System.Drawing.Size(120, 23);
+            this.mqttConnectBtn.TabIndex = 110;
+            this.mqttConnectBtn.Text = "MQTT Connect";
+            this.mqttConnectBtn.UseVisualStyleBackColor = false;
+            this.mqttConnectBtn.Click += new System.EventHandler(this.mqttConnectBtn_Click);
             // 
-            // stopLogButton
+            // stopLogBtn
             // 
-            this.stopLogButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.stopLogButton.FlatAppearance.BorderSize = 0;
-            this.stopLogButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stopLogButton.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.stopLogButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.stopLogButton.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.stopLogButton.IconColor = System.Drawing.Color.Black;
-            this.stopLogButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.stopLogButton.Location = new System.Drawing.Point(339, 620);
-            this.stopLogButton.Name = "stopLogButton";
-            this.stopLogButton.Size = new System.Drawing.Size(92, 23);
-            this.stopLogButton.TabIndex = 109;
-            this.stopLogButton.Text = "Stop Logging";
-            this.stopLogButton.UseVisualStyleBackColor = false;
+            this.stopLogBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.stopLogBtn.FlatAppearance.BorderSize = 0;
+            this.stopLogBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stopLogBtn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.stopLogBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.stopLogBtn.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.stopLogBtn.IconColor = System.Drawing.Color.Black;
+            this.stopLogBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.stopLogBtn.Location = new System.Drawing.Point(207, 619);
+            this.stopLogBtn.Name = "stopLogBtn";
+            this.stopLogBtn.Size = new System.Drawing.Size(92, 23);
+            this.stopLogBtn.TabIndex = 109;
+            this.stopLogBtn.Text = "Stop Logging";
+            this.stopLogBtn.UseVisualStyleBackColor = false;
             // 
-            // startLogButton
+            // startLogBtn
             // 
-            this.startLogButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.startLogButton.FlatAppearance.BorderSize = 0;
-            this.startLogButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startLogButton.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.startLogButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.startLogButton.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.startLogButton.IconColor = System.Drawing.Color.Black;
-            this.startLogButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.startLogButton.Location = new System.Drawing.Point(339, 591);
-            this.startLogButton.Name = "startLogButton";
-            this.startLogButton.Size = new System.Drawing.Size(92, 23);
-            this.startLogButton.TabIndex = 108;
-            this.startLogButton.Text = "Start Logging";
-            this.startLogButton.UseVisualStyleBackColor = false;
+            this.startLogBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.startLogBtn.FlatAppearance.BorderSize = 0;
+            this.startLogBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startLogBtn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.startLogBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.startLogBtn.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.startLogBtn.IconColor = System.Drawing.Color.Black;
+            this.startLogBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.startLogBtn.Location = new System.Drawing.Point(207, 590);
+            this.startLogBtn.Name = "startLogBtn";
+            this.startLogBtn.Size = new System.Drawing.Size(92, 23);
+            this.startLogBtn.TabIndex = 108;
+            this.startLogBtn.Text = "Start Logging";
+            this.startLogBtn.UseVisualStyleBackColor = false;
             // 
             // errorBox
             // 
@@ -992,27 +1015,6 @@
             this.stateBox.TabIndex = 106;
             this.stateBox.TabStop = false;
             this.stateBox.Text = "Drive Status";
-            // 
-            // ıconButton8
-            // 
-            this.ıconButton8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.ıconButton8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ıconButton8.FlatAppearance.BorderSize = 0;
-            this.ıconButton8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.ıconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ıconButton8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ıconButton8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.ıconButton8.IconChar = FontAwesome.Sharp.IconChar.PlayCircle;
-            this.ıconButton8.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.ıconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ıconButton8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ıconButton8.Location = new System.Drawing.Point(0, 382);
-            this.ıconButton8.Name = "ıconButton8";
-            this.ıconButton8.Size = new System.Drawing.Size(250, 48);
-            this.ıconButton8.TabIndex = 8;
-            this.ıconButton8.Text = "Log Player";
-            this.ıconButton8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ıconButton8.UseVisualStyleBackColor = false;
             // 
             // Telemetry2021
             // 
@@ -1069,19 +1071,19 @@
         private FontAwesome.Sharp.IconButton btnMap;
         private FontAwesome.Sharp.IconButton btnHome;
         private System.Windows.Forms.Button button1;
-        private FontAwesome.Sharp.IconButton ıconButton2;
-        private FontAwesome.Sharp.IconButton stopLogButton;
-        private FontAwesome.Sharp.IconButton startLogButton;
+        private FontAwesome.Sharp.IconButton mqttConnectBtn;
+        private FontAwesome.Sharp.IconButton stopLogBtn;
+        private FontAwesome.Sharp.IconButton startLogBtn;
         private System.Windows.Forms.GroupBox errorBox;
         private System.Windows.Forms.GroupBox stateBox;
         private System.Windows.Forms.GroupBox groupBox1;
-        private FontAwesome.Sharp.IconButton ıconButton1;
-        private FontAwesome.Sharp.IconButton ıconButton3;
-        private FontAwesome.Sharp.IconButton ıconButton4;
+        private FontAwesome.Sharp.IconButton mqttDisconnectBtn;
+        private FontAwesome.Sharp.IconButton openGUILogBtn;
+        private FontAwesome.Sharp.IconButton openSDLogBtn;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ListBox listBox1;
-        private FontAwesome.Sharp.IconButton ıconButton7;
-        private FontAwesome.Sharp.IconButton ıconButton6;
+        private System.Windows.Forms.ListBox portsListBox;
+        private FontAwesome.Sharp.IconButton portDisconnectBtn;
+        private FontAwesome.Sharp.IconButton portConnectBtn;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
