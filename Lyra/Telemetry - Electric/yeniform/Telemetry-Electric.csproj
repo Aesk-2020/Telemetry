@@ -115,6 +115,12 @@
     <Compile Include="NewForms\BMS.Designer.cs">
       <DependentUpon>BMS.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewForms\Cells.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewForms\Cells.Designer.cs">
+      <DependentUpon>Cells.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewForms\MQTTdeneme.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     <Compile Include="Variables\VCU.cs" />
     <EmbeddedResource Include="NewForms\BMS.resx">
       <DependentUpon>BMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForms\Cells.resx">
+      <DependentUpon>Cells.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewForms\Help.resx">
       <DependentUpon>Help.cs</DependentUpon>

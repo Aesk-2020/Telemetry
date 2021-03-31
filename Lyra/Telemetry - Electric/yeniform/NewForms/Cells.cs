@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Telemetri.NewForms
 {
-    public partial class BMS : Form
+    public partial class Cells : Form
     {
-        public BMS()
+        public Cells()
         {
             InitializeComponent();
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BMS_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
