@@ -41,23 +41,25 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
-            this.portDisconnectBtn = new FontAwesome.Sharp.IconButton();
-            this.portsListBox = new System.Windows.Forms.ListBox();
-            this.openGUILogBtn = new FontAwesome.Sharp.IconButton();
-            this.openSDLogBtn = new FontAwesome.Sharp.IconButton();
-            this.mqttDisconnectBtn = new FontAwesome.Sharp.IconButton();
-            this.mqttConnectBtn = new FontAwesome.Sharp.IconButton();
-            this.stopLogBtn = new FontAwesome.Sharp.IconButton();
-            this.startLogBtn = new FontAwesome.Sharp.IconButton();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.ıconButton2 = new FontAwesome.Sharp.IconButton();
+            this.ıconButton1 = new FontAwesome.Sharp.IconButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ıconButton3 = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.portConnectBtn = new FontAwesome.Sharp.IconButton();
-            this.startBtn = new FontAwesome.Sharp.IconButton();
-            this.finishBtn = new FontAwesome.Sharp.IconButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panelSideMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelChildForm.SuspendLayout();
+            this.tableLayoutPanel15.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -79,7 +81,7 @@
             this.panelSideMenu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(250, 661);
+            this.panelSideMenu.Size = new System.Drawing.Size(250, 761);
             this.panelSideMenu.TabIndex = 1;
             // 
             // logplyrButton
@@ -156,7 +158,7 @@
             this.exitBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
             this.exitBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.exitBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exitBtn.Location = new System.Drawing.Point(0, 613);
+            this.exitBtn.Location = new System.Drawing.Point(0, 713);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(250, 48);
             this.exitBtn.TabIndex = 5;
@@ -276,260 +278,229 @@
             // panelChildForm
             // 
             this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.panelChildForm.Controls.Add(this.tableLayoutPanel2);
+            this.panelChildForm.Controls.Add(this.tableLayoutPanel1);
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(250, 0);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(934, 661);
+            this.panelChildForm.Size = new System.Drawing.Size(934, 761);
             this.panelChildForm.TabIndex = 3;
             this.panelChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChildForm_Paint);
             // 
-            // portDisconnectBtn
+            // tableLayoutPanel15
             // 
-            this.portDisconnectBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.portDisconnectBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.portDisconnectBtn.FlatAppearance.BorderSize = 0;
-            this.portDisconnectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.portDisconnectBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.portDisconnectBtn.ForeColor = System.Drawing.SystemColors.Window;
-            this.portDisconnectBtn.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.portDisconnectBtn.IconColor = System.Drawing.Color.Black;
-            this.portDisconnectBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.portDisconnectBtn.Location = new System.Drawing.Point(632, 46);
-            this.portDisconnectBtn.Name = "portDisconnectBtn";
-            this.portDisconnectBtn.Size = new System.Drawing.Size(150, 36);
-            this.portDisconnectBtn.TabIndex = 120;
-            this.portDisconnectBtn.Text = "Port Disconnect";
-            this.portDisconnectBtn.UseVisualStyleBackColor = false;
+            this.tableLayoutPanel15.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel15.ColumnCount = 1;
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel15.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel3, 0, 1);
+            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            this.tableLayoutPanel15.RowCount = 2;
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.42424F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.57576F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(238, 94);
+            this.tableLayoutPanel15.TabIndex = 143;
             // 
-            // portsListBox
+            // label1
             // 
-            this.portsListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.portsListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.portsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.portsListBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.portsListBox.ForeColor = System.Drawing.Color.White;
-            this.portsListBox.FormattingEnabled = true;
-            this.portsListBox.ItemHeight = 17;
-            this.portsListBox.Location = new System.Drawing.Point(795, 3);
-            this.portsListBox.Name = "portsListBox";
-            this.portsListBox.Size = new System.Drawing.Size(118, 86);
-            this.portsListBox.TabIndex = 118;
-            this.portsListBox.Click += new System.EventHandler(this.portsListBox_Click);
-            this.portsListBox.SelectedIndexChanged += new System.EventHandler(this.portsListBox_SelectedIndexChanged);
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(4, 1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(230, 38);
+            this.label1.TabIndex = 126;
+            this.label1.Text = "Lap Counter";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // openGUILogBtn
+            // tableLayoutPanel3
             // 
-            this.openGUILogBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.openGUILogBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.openGUILogBtn.FlatAppearance.BorderSize = 0;
-            this.openGUILogBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.openGUILogBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.openGUILogBtn.ForeColor = System.Drawing.SystemColors.Window;
-            this.openGUILogBtn.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.openGUILogBtn.IconColor = System.Drawing.Color.Black;
-            this.openGUILogBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.openGUILogBtn.Location = new System.Drawing.Point(318, 46);
-            this.openGUILogBtn.Name = "openGUILogBtn";
-            this.openGUILogBtn.Size = new System.Drawing.Size(150, 36);
-            this.openGUILogBtn.TabIndex = 116;
-            this.openGUILogBtn.Text = "Open GUI Log";
-            this.openGUILogBtn.UseVisualStyleBackColor = false;
+            this.tableLayoutPanel3.ColumnCount = 4;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.43234F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.79208F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.44224F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.0033F));
+            this.tableLayoutPanel3.Controls.Add(this.ıconButton2, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.ıconButton1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label2, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.ıconButton3, 2, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 43);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(230, 47);
+            this.tableLayoutPanel3.TabIndex = 132;
             // 
-            // openSDLogBtn
+            // ıconButton2
             // 
-            this.openSDLogBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.openSDLogBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.openSDLogBtn.FlatAppearance.BorderSize = 0;
-            this.openSDLogBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.openSDLogBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.openSDLogBtn.ForeColor = System.Drawing.SystemColors.Window;
-            this.openSDLogBtn.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.openSDLogBtn.IconColor = System.Drawing.Color.Black;
-            this.openSDLogBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.openSDLogBtn.Location = new System.Drawing.Point(318, 4);
-            this.openSDLogBtn.Name = "openSDLogBtn";
-            this.openSDLogBtn.Size = new System.Drawing.Size(150, 35);
-            this.openSDLogBtn.TabIndex = 115;
-            this.openSDLogBtn.Text = "Open SD Log";
-            this.openSDLogBtn.UseVisualStyleBackColor = false;
+            this.ıconButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.ıconButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ıconButton2.BackgroundImage")));
+            this.ıconButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ıconButton2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ıconButton2.FlatAppearance.BorderSize = 0;
+            this.ıconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ıconButton2.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ıconButton2.ForeColor = System.Drawing.SystemColors.Window;
+            this.ıconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.ıconButton2.IconColor = System.Drawing.Color.Black;
+            this.ıconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ıconButton2.Location = new System.Drawing.Point(57, 3);
+            this.ıconButton2.Name = "ıconButton2";
+            this.ıconButton2.Size = new System.Drawing.Size(41, 41);
+            this.ıconButton2.TabIndex = 128;
+            this.ıconButton2.UseVisualStyleBackColor = false;
             // 
-            // mqttDisconnectBtn
+            // ıconButton1
             // 
-            this.mqttDisconnectBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.mqttDisconnectBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mqttDisconnectBtn.FlatAppearance.BorderSize = 0;
-            this.mqttDisconnectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.mqttDisconnectBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.mqttDisconnectBtn.ForeColor = System.Drawing.SystemColors.Window;
-            this.mqttDisconnectBtn.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.mqttDisconnectBtn.IconColor = System.Drawing.Color.Black;
-            this.mqttDisconnectBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.mqttDisconnectBtn.Location = new System.Drawing.Point(475, 46);
-            this.mqttDisconnectBtn.Name = "mqttDisconnectBtn";
-            this.mqttDisconnectBtn.Size = new System.Drawing.Size(150, 36);
-            this.mqttDisconnectBtn.TabIndex = 114;
-            this.mqttDisconnectBtn.Text = "MQTT Disconnect";
-            this.mqttDisconnectBtn.UseVisualStyleBackColor = false;
-            this.mqttDisconnectBtn.Click += new System.EventHandler(this.mqttDisconnectBtn_Click);
+            this.ıconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.ıconButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ıconButton1.BackgroundImage")));
+            this.ıconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ıconButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ıconButton1.FlatAppearance.BorderSize = 0;
+            this.ıconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ıconButton1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ıconButton1.ForeColor = System.Drawing.SystemColors.Window;
+            this.ıconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.ıconButton1.IconColor = System.Drawing.Color.Black;
+            this.ıconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ıconButton1.Location = new System.Drawing.Point(3, 3);
+            this.ıconButton1.Name = "ıconButton1";
+            this.ıconButton1.Size = new System.Drawing.Size(48, 41);
+            this.ıconButton1.TabIndex = 127;
+            this.ıconButton1.UseVisualStyleBackColor = false;
             // 
-            // mqttConnectBtn
+            // label2
             // 
-            this.mqttConnectBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.mqttConnectBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mqttConnectBtn.FlatAppearance.BorderSize = 0;
-            this.mqttConnectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.mqttConnectBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.mqttConnectBtn.ForeColor = System.Drawing.SystemColors.Window;
-            this.mqttConnectBtn.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.mqttConnectBtn.IconColor = System.Drawing.Color.Black;
-            this.mqttConnectBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.mqttConnectBtn.Location = new System.Drawing.Point(475, 4);
-            this.mqttConnectBtn.Name = "mqttConnectBtn";
-            this.mqttConnectBtn.Size = new System.Drawing.Size(150, 35);
-            this.mqttConnectBtn.TabIndex = 110;
-            this.mqttConnectBtn.Text = "MQTT Connect";
-            this.mqttConnectBtn.UseVisualStyleBackColor = false;
-            this.mqttConnectBtn.Click += new System.EventHandler(this.mqttConnectBtn_Click);
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Ink Free", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.label2.Location = new System.Drawing.Point(155, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 47);
+            this.label2.TabIndex = 130;
+            this.label2.Text = "12";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // stopLogBtn
+            // ıconButton3
             // 
-            this.stopLogBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.stopLogBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stopLogBtn.FlatAppearance.BorderSize = 0;
-            this.stopLogBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stopLogBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.stopLogBtn.ForeColor = System.Drawing.SystemColors.Window;
-            this.stopLogBtn.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.stopLogBtn.IconColor = System.Drawing.Color.Black;
-            this.stopLogBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.stopLogBtn.Location = new System.Drawing.Point(161, 46);
-            this.stopLogBtn.Name = "stopLogBtn";
-            this.stopLogBtn.Size = new System.Drawing.Size(150, 36);
-            this.stopLogBtn.TabIndex = 109;
-            this.stopLogBtn.Text = "Stop Logging";
-            this.stopLogBtn.UseVisualStyleBackColor = false;
-            // 
-            // startLogBtn
-            // 
-            this.startLogBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.startLogBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.startLogBtn.FlatAppearance.BorderSize = 0;
-            this.startLogBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startLogBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.startLogBtn.ForeColor = System.Drawing.SystemColors.Window;
-            this.startLogBtn.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.startLogBtn.IconColor = System.Drawing.Color.Black;
-            this.startLogBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.startLogBtn.Location = new System.Drawing.Point(161, 4);
-            this.startLogBtn.Name = "startLogBtn";
-            this.startLogBtn.Size = new System.Drawing.Size(150, 35);
-            this.startLogBtn.TabIndex = 108;
-            this.startLogBtn.Text = "Start Logging";
-            this.startLogBtn.UseVisualStyleBackColor = false;
+            this.ıconButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.ıconButton3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ıconButton3.BackgroundImage")));
+            this.ıconButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ıconButton3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ıconButton3.FlatAppearance.BorderSize = 0;
+            this.ıconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ıconButton3.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ıconButton3.ForeColor = System.Drawing.SystemColors.Window;
+            this.ıconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.ıconButton3.IconColor = System.Drawing.Color.Black;
+            this.ıconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ıconButton3.Location = new System.Drawing.Point(104, 3);
+            this.ıconButton3.Name = "ıconButton3";
+            this.ıconButton3.Size = new System.Drawing.Size(45, 41);
+            this.ıconButton3.TabIndex = 129;
+            this.ıconButton3.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.finishBtn, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.startBtn, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.portConnectBtn, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.portDisconnectBtn, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.mqttDisconnectBtn, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.mqttConnectBtn, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.openGUILogBtn, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.openSDLogBtn, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.stopLogBtn, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.startLogBtn, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.1242F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.8758F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel15, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 661);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(786, 86);
-            this.tableLayoutPanel1.TabIndex = 121;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(934, 100);
+            this.tableLayoutPanel1.TabIndex = 144;
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.5F));
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.portsListBox, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 12);
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.textBox1, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label4, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.textBox3, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(247, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(916, 92);
-            this.tableLayoutPanel2.TabIndex = 122;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(684, 94);
+            this.tableLayoutPanel2.TabIndex = 145;
             // 
-            // portConnectBtn
+            // label3
             // 
-            this.portConnectBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.portConnectBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.portConnectBtn.FlatAppearance.BorderSize = 0;
-            this.portConnectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.portConnectBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.portConnectBtn.ForeColor = System.Drawing.SystemColors.Window;
-            this.portConnectBtn.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.portConnectBtn.IconColor = System.Drawing.Color.Black;
-            this.portConnectBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.portConnectBtn.Location = new System.Drawing.Point(632, 4);
-            this.portConnectBtn.Name = "portConnectBtn";
-            this.portConnectBtn.Size = new System.Drawing.Size(150, 35);
-            this.portConnectBtn.TabIndex = 119;
-            this.portConnectBtn.Text = "Port Connect";
-            this.portConnectBtn.UseVisualStyleBackColor = false;
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(4, 1);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(334, 45);
+            this.label3.TabIndex = 127;
+            this.label3.Text = "Active Channel";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // startBtn
+            // textBox3
             // 
-            this.startBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.startBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.startBtn.FlatAppearance.BorderSize = 0;
-            this.startBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.startBtn.ForeColor = System.Drawing.SystemColors.Window;
-            this.startBtn.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.startBtn.IconColor = System.Drawing.Color.Black;
-            this.startBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.startBtn.Location = new System.Drawing.Point(4, 4);
-            this.startBtn.Name = "startBtn";
-            this.startBtn.Size = new System.Drawing.Size(150, 35);
-            this.startBtn.TabIndex = 121;
-            this.startBtn.Text = "Start";
-            this.startBtn.UseVisualStyleBackColor = false;
+            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox3.ForeColor = System.Drawing.Color.White;
+            this.textBox3.Location = new System.Drawing.Point(4, 50);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(334, 40);
+            this.textBox3.TabIndex = 137;
+            this.textBox3.Text = "RF";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // finishBtn
+            // label4
             // 
-            this.finishBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.finishBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.finishBtn.FlatAppearance.BorderSize = 0;
-            this.finishBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.finishBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.finishBtn.ForeColor = System.Drawing.SystemColors.Window;
-            this.finishBtn.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.finishBtn.IconColor = System.Drawing.Color.Black;
-            this.finishBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.finishBtn.Location = new System.Drawing.Point(4, 46);
-            this.finishBtn.Name = "finishBtn";
-            this.finishBtn.Size = new System.Drawing.Size(150, 36);
-            this.finishBtn.TabIndex = 122;
-            this.finishBtn.Text = "Finish";
-            this.finishBtn.UseVisualStyleBackColor = false;
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(345, 1);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(335, 45);
+            this.label4.TabIndex = 146;
+            this.label4.Text = "MQTT Ping";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(345, 50);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(335, 40);
+            this.textBox1.TabIndex = 147;
+            this.textBox1.Text = "107";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Telemetry2021
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panelSideMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -540,8 +511,13 @@
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelChildForm.ResumeLayout(false);
+            this.tableLayoutPanel15.ResumeLayout(false);
+            this.tableLayoutPanel15.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -558,20 +534,20 @@
         private FontAwesome.Sharp.IconButton mapButton;
         private FontAwesome.Sharp.IconButton homeButton;
         private System.Windows.Forms.Button settingsButton;
-        private FontAwesome.Sharp.IconButton mqttConnectBtn;
-        private FontAwesome.Sharp.IconButton stopLogBtn;
-        private FontAwesome.Sharp.IconButton startLogBtn;
-        private FontAwesome.Sharp.IconButton mqttDisconnectBtn;
-        private FontAwesome.Sharp.IconButton openGUILogBtn;
-        private FontAwesome.Sharp.IconButton openSDLogBtn;
-        private System.Windows.Forms.ListBox portsListBox;
-        private FontAwesome.Sharp.IconButton portDisconnectBtn;
         private FontAwesome.Sharp.IconButton mqttButton;
         private FontAwesome.Sharp.IconButton logplyrButton;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private FontAwesome.Sharp.IconButton finishBtn;
-        private FontAwesome.Sharp.IconButton startBtn;
-        private FontAwesome.Sharp.IconButton portConnectBtn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private FontAwesome.Sharp.IconButton ıconButton2;
+        private FontAwesome.Sharp.IconButton ıconButton1;
+        private System.Windows.Forms.Label label2;
+        private FontAwesome.Sharp.IconButton ıconButton3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }

@@ -15,16 +15,16 @@ namespace Telemetri.NewForms
 {
     public partial class Telemetry2021 : Form
     {
-        MQTT mqttObj = new MQTT("LYRADATA"); //LYRADATA topic'ine bağlanacak MQTT nesnesini oluştur.
 
         public Telemetry2021()
         {
             InitializeComponent();
+            FormManagement.openChildForm(new Anasayfa(), panelChildForm);
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            if (FormManagement.activeForm != null) FormManagement.activeForm.Close();
+            FormManagement.openChildForm(new Anasayfa(), panelChildForm);
         }
 
         private void btnMap_Click(object sender, EventArgs e)
@@ -49,8 +49,6 @@ namespace Telemetri.NewForms
 
         private void Telemetry2021_Load(object sender, EventArgs e)
         {
-            string[] ports = SerialPort.GetPortNames();
-            portsListBox.Items.AddRange(ports);
         }
 
         private void mqttButton_Click(object sender, EventArgs e)
@@ -58,29 +56,7 @@ namespace Telemetri.NewForms
             FormManagement.openChildForm(new MQTTdeneme(), panelChildForm);
         }
 
-        private void portsListBox_Click(object sender, EventArgs e)
-        {
-            string[] ports = SerialPort.GetPortNames();
-            portsListBox.Items.AddRange(ports);
-        }
-        private void mqttConnectBtn_Click(object sender, EventArgs e)
-        {
-            mqttObj.ConnectSubscribe();
-            mqttDisconnectBtn.Enabled = true;
-            mqttConnectBtn.Enabled = false;
-        }
-        private void mqttDisconnectBtn_Click(object sender, EventArgs e)
-        {
-            mqttObj.Disconnect();
-            mqttConnectBtn.Enabled = true;
-            mqttDisconnectBtn.Enabled = false;
-        }
-
-        private void portsListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void exitBtn_Click(object sender, EventArgs e)
         {
             Telemetry2021.ActiveForm.Close();
