@@ -169,6 +169,7 @@
             chartArea1.BorderColor = System.Drawing.Color.White;
             chartArea1.Name = "ChartArea1";
             this.mcuChart.ChartAreas.Add(chartArea1);
+            this.mcuChart.Dock = System.Windows.Forms.DockStyle.Bottom;
             legend1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             legend1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             legend1.ForeColor = System.Drawing.Color.White;
@@ -179,7 +180,7 @@
             legend1.TitleForeColor = System.Drawing.Color.White;
             legend1.TitleSeparatorColor = System.Drawing.Color.White;
             this.mcuChart.Legends.Add(legend1);
-            this.mcuChart.Location = new System.Drawing.Point(12, 347);
+            this.mcuChart.Location = new System.Drawing.Point(0, 359);
             this.mcuChart.Name = "mcuChart";
             this.mcuChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series1.ChartArea = "ChartArea1";
@@ -194,7 +195,7 @@
             series2.Name = "ID";
             this.mcuChart.Series.Add(series1);
             this.mcuChart.Series.Add(series2);
-            this.mcuChart.Size = new System.Drawing.Size(890, 262);
+            this.mcuChart.Size = new System.Drawing.Size(914, 262);
             this.mcuChart.TabIndex = 8;
             this.mcuChart.Text = "chart1";
             // 

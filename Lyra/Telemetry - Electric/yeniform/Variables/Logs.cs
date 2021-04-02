@@ -70,7 +70,8 @@ namespace Telemetri.Variables
 
         public void Writer()
         {
-            streamWriter.WriteLine(Timers.log_datas_time + VCU.log_datas + Driver.log_datas_driver + BMS.log_datas_bms + GpsTracker.log_gps_datas);
+            //Timers sınıfına hiç gerek yok bunun yerine gerçek zamanı loglarız
+            streamWriter.WriteLine(VCU.log_datas + Driver.log_datas_driver + BMS.log_datas_bms + GpsTracker.log_gps_datas);
         }
 
         public void Reader()
@@ -104,17 +105,8 @@ namespace Telemetri.Variables
 
         public void ReadArayüz(string []old_datass)
         {
-            int count = 2;
-            Timers.Gecen_süre = TimeSpan.Parse(old_datass[count++]);
-            Timers.Kalan_süre = TimeSpan.Parse(old_datass[count++]);
-            anlik_tur_sure = old_datass[count++];
-            en_hizli_tur_sure = old_datass[count++];
-            ortalama_tur_sure = old_datass[count++];
-            onceki_tur_sure = old_datass[count++];
-            sector_1_sure = old_datass[count++];
-            sector_2_sure = old_datass[count++];
-            sector_3_sure = old_datass[count++];
-            sector_4_sure = old_datass[count++];
+            int count = 0;
+            //BİR ŞEY PATLARSA BURAYA BAK
             VCU.wake_up_u8 = Byte.Parse(old_datass[count++]);
             VCU.drive_commands_u8 = Byte.Parse(old_datass[count++]);
             VCU.set_velocity_u8 = Byte.Parse(old_datass[count++]);

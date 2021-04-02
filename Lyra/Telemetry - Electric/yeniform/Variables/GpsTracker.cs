@@ -31,7 +31,7 @@ namespace Telemetri.Variables
             _FirststopLongtitude = startLineLong;
         }
 
-        public double ComputeBearing(double car_current_lat, double car_current_long)
+        public double ComputeBearing(double car_current_lat, double car_current_long) //PATLAK
         {
             var φ1 = _startLatitude; //latitude 1
             var λ1 = _startLongtitude; //longitude 1

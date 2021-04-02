@@ -2,6 +2,8 @@
 
 namespace Telemetri.Variables
 {
+
+    //BENCE GEREKSİZ(PALACI) ÇÜNKÜ YARIŞTA SADECE BİR KEZ KULLANILIYOR VE İŞİ BİTİYOR
     public struct SectorAndTourDatas
     {
         public static Stopwatch sector1_sure = new Stopwatch();

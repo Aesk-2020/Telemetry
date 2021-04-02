@@ -345,9 +345,9 @@
             // 
             this.error_ready.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("error_ready.ImageStream")));
             this.error_ready.TransparentColor = System.Drawing.Color.Transparent;
-            this.error_ready.Images.SetKeyName(0, "cooltext347148855345307.png");
-            this.error_ready.Images.SetKeyName(1, "cooltext347148907798044.png");
-            this.error_ready.Images.SetKeyName(2, "asdasdasdsad.png");
+            this.error_ready.Images.SetKeyName(0, "");
+            this.error_ready.Images.SetKeyName(1, "");
+            this.error_ready.Images.SetKeyName(2, "");
             // 
             // gmap_sag
             // 
@@ -525,8 +525,8 @@
             this.tableLayoutPanel24.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
             this.tableLayoutPanel24.ColumnCount = 3;
             this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
-            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 117F));
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82F));
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
             this.tableLayoutPanel24.Controls.Add(this.label66, 0, 0);
             this.tableLayoutPanel24.Controls.Add(this.power_text, 0, 1);
             this.tableLayoutPanel24.Controls.Add(this.label67, 1, 0);
@@ -550,7 +550,7 @@
             this.label66.ForeColor = System.Drawing.Color.White;
             this.label66.Location = new System.Drawing.Point(6, 3);
             this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(82, 49);
+            this.label66.Size = new System.Drawing.Size(83, 49);
             this.label66.TabIndex = 0;
             this.label66.Text = "POWER";
             this.label66.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -565,7 +565,7 @@
             this.power_text.Location = new System.Drawing.Point(6, 58);
             this.power_text.Multiline = true;
             this.power_text.Name = "power_text";
-            this.power_text.Size = new System.Drawing.Size(82, 52);
+            this.power_text.Size = new System.Drawing.Size(83, 52);
             this.power_text.TabIndex = 1;
             this.power_text.Text = "NaN";
             this.power_text.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -576,9 +576,9 @@
             this.label67.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label67.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label67.ForeColor = System.Drawing.Color.White;
-            this.label67.Location = new System.Drawing.Point(97, 3);
+            this.label67.Location = new System.Drawing.Point(98, 3);
             this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(89, 49);
+            this.label67.Size = new System.Drawing.Size(76, 49);
             this.label67.TabIndex = 2;
             this.label67.Text = "SCORE";
             this.label67.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -590,10 +590,10 @@
             this.score_txt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.score_txt.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.score_txt.ForeColor = System.Drawing.Color.White;
-            this.score_txt.Location = new System.Drawing.Point(97, 58);
+            this.score_txt.Location = new System.Drawing.Point(98, 58);
             this.score_txt.Multiline = true;
             this.score_txt.Name = "score_txt";
-            this.score_txt.Size = new System.Drawing.Size(89, 52);
+            this.score_txt.Size = new System.Drawing.Size(76, 52);
             this.score_txt.TabIndex = 3;
             this.score_txt.Text = "NaN";
             this.score_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -604,9 +604,9 @@
             this.label69.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label69.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label69.ForeColor = System.Drawing.Color.White;
-            this.label69.Location = new System.Drawing.Point(195, 3);
+            this.label69.Location = new System.Drawing.Point(183, 3);
             this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(111, 49);
+            this.label69.Size = new System.Drawing.Size(123, 49);
             this.label69.TabIndex = 4;
             this.label69.Text = "Lap Est";
             this.label69.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -618,10 +618,10 @@
             this.lap_est_txt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lap_est_txt.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lap_est_txt.ForeColor = System.Drawing.Color.White;
-            this.lap_est_txt.Location = new System.Drawing.Point(195, 58);
+            this.lap_est_txt.Location = new System.Drawing.Point(183, 58);
             this.lap_est_txt.Multiline = true;
             this.lap_est_txt.Name = "lap_est_txt";
-            this.lap_est_txt.Size = new System.Drawing.Size(111, 52);
+            this.lap_est_txt.Size = new System.Drawing.Size(123, 52);
             this.lap_est_txt.TabIndex = 5;
             this.lap_est_txt.Text = "NaN";
             this.lap_est_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -897,7 +897,7 @@
             this.tableLayoutPanel87.ColumnCount = 3;
             this.tableLayoutPanel87.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.03704F));
             this.tableLayoutPanel87.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.96296F));
-            this.tableLayoutPanel87.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 144F));
+            this.tableLayoutPanel87.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 152F));
             this.tableLayoutPanel87.Controls.Add(this.kalan_yol_driver, 2, 6);
             this.tableLayoutPanel87.Controls.Add(this.gidilen_yol_driver, 2, 5);
             this.tableLayoutPanel87.Controls.Add(this.anlik_tur_suresi, 2, 4);
@@ -939,10 +939,10 @@
             this.kalan_yol_driver.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.kalan_yol_driver.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kalan_yol_driver.ForeColor = System.Drawing.Color.White;
-            this.kalan_yol_driver.Location = new System.Drawing.Point(97, 256);
+            this.kalan_yol_driver.Location = new System.Drawing.Point(89, 256);
             this.kalan_yol_driver.Multiline = true;
             this.kalan_yol_driver.Name = "kalan_yol_driver";
-            this.kalan_yol_driver.Size = new System.Drawing.Size(139, 36);
+            this.kalan_yol_driver.Size = new System.Drawing.Size(147, 36);
             this.kalan_yol_driver.TabIndex = 74;
             this.kalan_yol_driver.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -952,10 +952,10 @@
             this.gidilen_yol_driver.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gidilen_yol_driver.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gidilen_yol_driver.ForeColor = System.Drawing.Color.White;
-            this.gidilen_yol_driver.Location = new System.Drawing.Point(97, 214);
+            this.gidilen_yol_driver.Location = new System.Drawing.Point(89, 214);
             this.gidilen_yol_driver.Multiline = true;
             this.gidilen_yol_driver.Name = "gidilen_yol_driver";
-            this.gidilen_yol_driver.Size = new System.Drawing.Size(139, 35);
+            this.gidilen_yol_driver.Size = new System.Drawing.Size(147, 35);
             this.gidilen_yol_driver.TabIndex = 73;
             this.gidilen_yol_driver.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -965,10 +965,10 @@
             this.anlik_tur_suresi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.anlik_tur_suresi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.anlik_tur_suresi.ForeColor = System.Drawing.Color.White;
-            this.anlik_tur_suresi.Location = new System.Drawing.Point(97, 172);
+            this.anlik_tur_suresi.Location = new System.Drawing.Point(89, 172);
             this.anlik_tur_suresi.Multiline = true;
             this.anlik_tur_suresi.Name = "anlik_tur_suresi";
-            this.anlik_tur_suresi.Size = new System.Drawing.Size(139, 35);
+            this.anlik_tur_suresi.Size = new System.Drawing.Size(147, 35);
             this.anlik_tur_suresi.TabIndex = 72;
             this.anlik_tur_suresi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -978,10 +978,10 @@
             this.en_hizli_tur_timer.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.en_hizli_tur_timer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.en_hizli_tur_timer.ForeColor = System.Drawing.Color.White;
-            this.en_hizli_tur_timer.Location = new System.Drawing.Point(97, 130);
+            this.en_hizli_tur_timer.Location = new System.Drawing.Point(89, 130);
             this.en_hizli_tur_timer.Multiline = true;
             this.en_hizli_tur_timer.Name = "en_hizli_tur_timer";
-            this.en_hizli_tur_timer.Size = new System.Drawing.Size(139, 35);
+            this.en_hizli_tur_timer.Size = new System.Drawing.Size(147, 35);
             this.en_hizli_tur_timer.TabIndex = 71;
             this.en_hizli_tur_timer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -991,10 +991,10 @@
             this.önceki_tur_timer.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.önceki_tur_timer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.önceki_tur_timer.ForeColor = System.Drawing.Color.White;
-            this.önceki_tur_timer.Location = new System.Drawing.Point(97, 88);
+            this.önceki_tur_timer.Location = new System.Drawing.Point(89, 88);
             this.önceki_tur_timer.Multiline = true;
             this.önceki_tur_timer.Name = "önceki_tur_timer";
-            this.önceki_tur_timer.Size = new System.Drawing.Size(139, 35);
+            this.önceki_tur_timer.Size = new System.Drawing.Size(147, 35);
             this.önceki_tur_timer.TabIndex = 70;
             this.önceki_tur_timer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1004,10 +1004,10 @@
             this.ort_hiz.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ort_hiz.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ort_hiz.ForeColor = System.Drawing.Color.White;
-            this.ort_hiz.Location = new System.Drawing.Point(97, 46);
+            this.ort_hiz.Location = new System.Drawing.Point(89, 46);
             this.ort_hiz.Multiline = true;
             this.ort_hiz.Name = "ort_hiz";
-            this.ort_hiz.Size = new System.Drawing.Size(139, 35);
+            this.ort_hiz.Size = new System.Drawing.Size(147, 35);
             this.ort_hiz.TabIndex = 69;
             this.ort_hiz.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1017,7 +1017,7 @@
             this.pictureBox5.Image = global::Telemetri.Properties.Resources.road;
             this.pictureBox5.Location = new System.Drawing.Point(4, 214);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(28, 35);
+            this.pictureBox5.Size = new System.Drawing.Size(25, 35);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 64;
             this.pictureBox5.TabStop = false;
@@ -1028,7 +1028,7 @@
             this.pictureBox4.Image = global::Telemetri.Properties.Resources.speed_vector;
             this.pictureBox4.Location = new System.Drawing.Point(4, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(28, 35);
+            this.pictureBox4.Size = new System.Drawing.Size(25, 35);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 11;
             this.pictureBox4.TabStop = false;
@@ -1039,9 +1039,9 @@
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(39, 1);
+            this.label15.Location = new System.Drawing.Point(36, 1);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(51, 41);
+            this.label15.Size = new System.Drawing.Size(46, 41);
             this.label15.TabIndex = 12;
             this.label15.Text = "MAX SPEED";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1052,7 +1052,7 @@
             this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
             this.pictureBox13.Location = new System.Drawing.Point(4, 46);
             this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(28, 35);
+            this.pictureBox13.Size = new System.Drawing.Size(25, 35);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox13.TabIndex = 19;
             this.pictureBox13.TabStop = false;
@@ -1063,9 +1063,9 @@
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(39, 43);
+            this.label17.Location = new System.Drawing.Point(36, 43);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(51, 41);
+            this.label17.Size = new System.Drawing.Size(46, 41);
             this.label17.TabIndex = 16;
             this.label17.Text = "AVG. SPEED";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1076,7 +1076,7 @@
             this.pictureBox7.Image = global::Telemetri.Properties.Resources.czxcxz1;
             this.pictureBox7.Location = new System.Drawing.Point(4, 88);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(28, 35);
+            this.pictureBox7.Size = new System.Drawing.Size(25, 35);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 11;
             this.pictureBox7.TabStop = false;
@@ -1087,9 +1087,9 @@
             this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label23.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(39, 85);
+            this.label23.Location = new System.Drawing.Point(36, 85);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(51, 41);
+            this.label23.Size = new System.Drawing.Size(46, 41);
             this.label23.TabIndex = 9;
             this.label23.Text = "LAST LAP";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1100,7 +1100,7 @@
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label33.ForeColor = System.Drawing.Color.White;
-            this.label33.Location = new System.Drawing.Point(45, 257);
+            this.label33.Location = new System.Drawing.Point(40, 257);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(38, 34);
             this.label33.TabIndex = 63;
@@ -1113,7 +1113,7 @@
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label32.ForeColor = System.Drawing.Color.White;
-            this.label32.Location = new System.Drawing.Point(46, 223);
+            this.label32.Location = new System.Drawing.Point(41, 223);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(36, 17);
             this.label32.TabIndex = 62;
@@ -1126,7 +1126,7 @@
             this.pictureBox2.Image = global::Telemetri.Properties.Resources.checkered_flag_clip_art_9511_kopya;
             this.pictureBox2.Location = new System.Drawing.Point(4, 130);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(28, 35);
+            this.pictureBox2.Size = new System.Drawing.Size(25, 35);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
@@ -1137,9 +1137,9 @@
             this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label21.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(39, 127);
+            this.label21.Location = new System.Drawing.Point(36, 127);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(51, 41);
+            this.label21.Size = new System.Drawing.Size(46, 41);
             this.label21.TabIndex = 7;
             this.label21.Text = "FASTEST LAP";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1150,7 +1150,7 @@
             this.pictureBox3.Image = global::Telemetri.Properties.Resources.dadadadda;
             this.pictureBox3.Location = new System.Drawing.Point(4, 172);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(28, 35);
+            this.pictureBox3.Size = new System.Drawing.Size(25, 35);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 10;
             this.pictureBox3.TabStop = false;
@@ -1161,9 +1161,9 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(39, 169);
+            this.label4.Location = new System.Drawing.Point(36, 169);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 41);
+            this.label4.Size = new System.Drawing.Size(46, 41);
             this.label4.TabIndex = 2;
             this.label4.Text = "THIS LAP";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1174,7 +1174,7 @@
             this.pictureBox6.Image = global::Telemetri.Properties.Resources.road;
             this.pictureBox6.Location = new System.Drawing.Point(4, 256);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(28, 36);
+            this.pictureBox6.Size = new System.Drawing.Size(25, 36);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 65;
             this.pictureBox6.TabStop = false;
@@ -1185,10 +1185,10 @@
             this.maks_hiz.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.maks_hiz.Dock = System.Windows.Forms.DockStyle.Fill;
             this.maks_hiz.ForeColor = System.Drawing.Color.White;
-            this.maks_hiz.Location = new System.Drawing.Point(97, 4);
+            this.maks_hiz.Location = new System.Drawing.Point(89, 4);
             this.maks_hiz.Multiline = true;
             this.maks_hiz.Name = "maks_hiz";
-            this.maks_hiz.Size = new System.Drawing.Size(139, 35);
+            this.maks_hiz.Size = new System.Drawing.Size(147, 35);
             this.maks_hiz.TabIndex = 68;
             this.maks_hiz.Text = "0";
             this.maks_hiz.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3463,7 +3463,7 @@
             // 
             this.başlatToolStripMenuItem.Name = "başlatToolStripMenuItem";
             this.başlatToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.başlatToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.başlatToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.başlatToolStripMenuItem.Text = "Start";
             this.başlatToolStripMenuItem.Click += new System.EventHandler(this.başlatToolStripMenuItem_Click);
             // 
@@ -3471,7 +3471,7 @@
             // 
             this.bitirToolStripMenuItem.Name = "bitirToolStripMenuItem";
             this.bitirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.bitirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bitirToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.bitirToolStripMenuItem.Text = "Finish";
             this.bitirToolStripMenuItem.Click += new System.EventHandler(this.bitirToolStripMenuItem_Click);
             // 
@@ -3489,7 +3489,7 @@
             // 
             this.bağlanToolStripMenuItem.Name = "bağlanToolStripMenuItem";
             this.bağlanToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.G)));
-            this.bağlanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bağlanToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.bağlanToolStripMenuItem.Text = "Connect";
             this.bağlanToolStripMenuItem.Click += new System.EventHandler(this.bağlanToolStripMenuItem_Click);
             // 
@@ -3497,7 +3497,7 @@
             // 
             this.bağlantıyıKesToolStripMenuItem.Name = "bağlantıyıKesToolStripMenuItem";
             this.bağlantıyıKesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.bağlantıyıKesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bağlantıyıKesToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.bağlantıyıKesToolStripMenuItem.Text = "Disconnect";
             this.bağlantıyıKesToolStripMenuItem.Click += new System.EventHandler(this.bağlantıyıKesToolStripMenuItem_Click);
             // 
@@ -3515,7 +3515,7 @@
             // portToolStripMenuItem
             // 
             this.portToolStripMenuItem.Name = "portToolStripMenuItem";
-            this.portToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.portToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.portToolStripMenuItem.Text = "Port";
             this.portToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.portToolStripMenuItem_DropDownItemClicked);
             this.portToolStripMenuItem.MouseHover += new System.EventHandler(this.portToolStripMenuItem_MouseHover);
@@ -3524,7 +3524,7 @@
             // 
             this.bağlanToolStripMenuItem1.Name = "bağlanToolStripMenuItem1";
             this.bağlanToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.bağlanToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.bağlanToolStripMenuItem1.Size = new System.Drawing.Size(174, 22);
             this.bağlanToolStripMenuItem1.Text = "Connect";
             this.bağlanToolStripMenuItem1.Click += new System.EventHandler(this.bağlanToolStripMenuItem1_Click);
             // 
@@ -3532,14 +3532,14 @@
             // 
             this.bağlantıyıKesToolStripMenuItem1.Name = "bağlantıyıKesToolStripMenuItem1";
             this.bağlantıyıKesToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.bağlantıyıKesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.bağlantıyıKesToolStripMenuItem1.Size = new System.Drawing.Size(174, 22);
             this.bağlantıyıKesToolStripMenuItem1.Text = "Disconnect";
             this.bağlantıyıKesToolStripMenuItem1.Click += new System.EventHandler(this.bağlantıyıKesToolStripMenuItem1_Click);
             // 
             // gsmResetleToolStripMenuItem
             // 
             this.gsmResetleToolStripMenuItem.Name = "gsmResetleToolStripMenuItem";
-            this.gsmResetleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gsmResetleToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.gsmResetleToolStripMenuItem.Text = "Gsm Reset";
             this.gsmResetleToolStripMenuItem.Click += new System.EventHandler(this.gsmResetleToolStripMenuItem_Click);
             // 
@@ -3782,12 +3782,9 @@
         private System.Windows.Forms.TextBox lap_est_txt;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
-        private System.Windows.Forms.PictureBox vcu_can_control;
-        private System.Windows.Forms.PictureBox driver_can_control;
         private System.Windows.Forms.Label label62;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.PictureBox bms_can_control;
         private System.Windows.Forms.TextBox gidilen_yol_gps;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel26;
@@ -3806,20 +3803,13 @@
         private System.Windows.Forms.TextBox en_hizli_tur_timer;
         private System.Windows.Forms.TextBox önceki_tur_timer;
         private System.Windows.Forms.TextBox ort_hiz;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.TextBox maks_hiz;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel85;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
@@ -3887,40 +3877,25 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.PictureBox bms_discharge_flag;
-        private System.Windows.Forms.PictureBox bms_precharge_flag;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.PictureBox bms_dc_bus_ready_flag;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.PictureBox bms_fatal_error;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.PictureBox bms_over_cur_error;
-        private System.Windows.Forms.PictureBox bms_comm_error;
-        private System.Windows.Forms.PictureBox bms_temp_error;
-        private System.Windows.Forms.PictureBox bms_low_volt_error;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.PictureBox bms_high_volt_error;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox nextion_durum;
-        private System.Windows.Forms.PictureBox system_durum;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.PictureBox driver_durum;
-        private System.Windows.Forms.PictureBox bms_durum;
         private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.PictureBox gsm_durum;
-        private System.Windows.Forms.PictureBox xbee_active;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
@@ -3992,7 +3967,6 @@
         private System.Windows.Forms.ToolStripMenuItem sDKayıtAçToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem turAtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eklentilerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bMSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem grafiklerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hakkındaToolStripMenuItem;
         private System.Windows.Forms.Label label8;
@@ -4000,6 +3974,32 @@
         private Guna.UI.WinForms.GunaGauge anlikhiz_gauge;
         private System.Windows.Forms.TabControl ana_sekme;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
+        private System.Windows.Forms.PictureBox vcu_can_control;
+        private System.Windows.Forms.PictureBox driver_can_control;
+        private System.Windows.Forms.PictureBox bms_can_control;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox bms_discharge_flag;
+        private System.Windows.Forms.PictureBox bms_precharge_flag;
+        private System.Windows.Forms.PictureBox bms_dc_bus_ready_flag;
+        private System.Windows.Forms.PictureBox bms_fatal_error;
+        private System.Windows.Forms.PictureBox bms_over_cur_error;
+        private System.Windows.Forms.PictureBox bms_comm_error;
+        private System.Windows.Forms.PictureBox bms_temp_error;
+        private System.Windows.Forms.PictureBox bms_low_volt_error;
+        private System.Windows.Forms.PictureBox bms_high_volt_error;
+        private System.Windows.Forms.PictureBox system_durum;
+        private System.Windows.Forms.PictureBox driver_durum;
+        private System.Windows.Forms.PictureBox bms_durum;
+        private System.Windows.Forms.PictureBox nextion_durum;
+        private System.Windows.Forms.PictureBox gsm_durum;
+        private System.Windows.Forms.PictureBox xbee_active;
+        private System.Windows.Forms.ToolStripMenuItem bMSToolStripMenuItem;
     }
 }
 

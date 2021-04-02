@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using System.Drawing;
 namespace Telemetri.Variables
 {
+
+    //GÖZDEN GEÇİRİLMESİ GEREKİYOR, BU İŞLE AF VE BİR YENİ İLGİLENECEK
     public delegate double GMAPDelegate(double latitude, double longtitude);
     public delegate void GMAPDeleteOverlay();
     public class GMAPController : GpsTracker

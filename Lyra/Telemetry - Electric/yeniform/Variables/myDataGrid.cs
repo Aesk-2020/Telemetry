@@ -3,6 +3,8 @@ using System.Windows.Forms;
 
 namespace Telemetri.Variables
 {
+    //REVİZE EDİLDİKTEN SONRA YENİ ARAYÜZDE KULLANILABİLİR
+
     public class myDataGrid
     {
         private string _carName;

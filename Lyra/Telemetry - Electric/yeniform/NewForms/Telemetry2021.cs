@@ -76,6 +76,14 @@ namespace Telemetri.NewForms
             mqttDisconnectBtn.Enabled = false;
         }
 
+        private void portsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            Telemetry2021.ActiveForm.Close();
+        }
     }
 }
