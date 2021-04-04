@@ -18,7 +18,7 @@ namespace Telemetri
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new telemetry());
+            Application.Run(new Telemetry2021());
         }
     }
 }

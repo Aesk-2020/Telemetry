@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Telemetri.NewForms
 {
-    public partial class Harita : Form
+    public partial class Map : Form
     {
-        public Harita()
+        public Map()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

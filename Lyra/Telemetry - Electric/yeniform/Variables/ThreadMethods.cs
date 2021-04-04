@@ -4,6 +4,7 @@ using System.Windows.Forms;
 
 namespace Telemetri.Variables
 {
+    //İsimleri değişebilir
     static class ThreadMethods
     {
         public static void TextDegis(TextBox mytext, string value)

@@ -18,7 +18,7 @@ namespace Telemetri.Variables
        public static bool vcu_can_control_u1 => Convert.ToBoolean((can_error_u8 & 0b00000001));
        public static bool bms_can_control_u1 => Convert.ToBoolean((can_error_u8 >> 1 & 0b00000001));
        public static bool driver_can_control_u1 => Convert.ToBoolean((can_error_u8 >> 2 & 0b00000001)); 
-       public static string log_datas => wake_up_u8.ToString() + '$' + drive_commands_u8.ToString() + '$' + set_velocity_u8.ToString() + '$' + can_error_u8.ToString() + '$';
+       public static string log_data => wake_up_u8.ToString() + '\t' + drive_commands_u8.ToString() + '\t' + set_velocity_u8.ToString() + '\t' + can_error_u8.ToString() + '\t';
 
     }
 }

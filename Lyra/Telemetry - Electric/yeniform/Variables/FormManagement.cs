@@ -14,6 +14,7 @@ namespace Telemetri.Variables
      * anasayfaya dönme bölümünde activeForm'un null olup olmadığını kontrol edin
     */
 
+    //BURAYA YAZICAN
     public class FormManagement
     {
 

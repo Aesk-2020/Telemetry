@@ -16,39 +16,39 @@ namespace Telemetri.Variables
         public string sector_3_sure;
         public string sector_4_sure;
 
-        public uint sector_1_ortalama_hiz_vcu => (uint)((double)(SectorAndTourDatas.gidilen_yol_vcu_sector_1_u32 / TimeSpan.Parse(sector_1_sure).TotalSeconds) * MACROS.mstokmh);
-        public uint sector_2_ortalama_hiz_vcu => (uint)((double)(SectorAndTourDatas.gidilen_yol_vcu_sector_2_u32 / TimeSpan.Parse(sector_2_sure).TotalSeconds) * MACROS.mstokmh);
-        public uint sector_3_ortalama_hiz_vcu => (uint)((double)(SectorAndTourDatas.gidilen_yol_vcu_sector_3_u32 / TimeSpan.Parse(sector_3_sure).TotalSeconds) * MACROS.mstokmh);
-        public uint sector_4_ortalama_hiz_vcu => (uint)((double)(SectorAndTourDatas.gidilen_yol_vcu_sector_4_u32 / TimeSpan.Parse(sector_4_sure).TotalSeconds) * MACROS.mstokmh);
-        public uint sector_T_ortalama_hiz_vcu => (uint)((double)(SectorAndTourDatas.gidilen_yol_vcu_sector_T_u32 / TimeSpan.Parse(anlik_tur_sure).TotalSeconds) * MACROS.mstokmh);
+        public uint sector_1_ortalama_hiz_vcu => (uint)((double)(SectorAndTourdata.gidilen_yol_vcu_sector_1_u32 / TimeSpan.Parse(sector_1_sure).TotalSeconds) * MACROS.mstokmh);
+        public uint sector_2_ortalama_hiz_vcu => (uint)((double)(SectorAndTourdata.gidilen_yol_vcu_sector_2_u32 / TimeSpan.Parse(sector_2_sure).TotalSeconds) * MACROS.mstokmh);
+        public uint sector_3_ortalama_hiz_vcu => (uint)((double)(SectorAndTourdata.gidilen_yol_vcu_sector_3_u32 / TimeSpan.Parse(sector_3_sure).TotalSeconds) * MACROS.mstokmh);
+        public uint sector_4_ortalama_hiz_vcu => (uint)((double)(SectorAndTourdata.gidilen_yol_vcu_sector_4_u32 / TimeSpan.Parse(sector_4_sure).TotalSeconds) * MACROS.mstokmh);
+        public uint sector_T_ortalama_hiz_vcu => (uint)((double)(SectorAndTourdata.gidilen_yol_vcu_sector_T_u32 / TimeSpan.Parse(anlik_tur_sure).TotalSeconds) * MACROS.mstokmh);
 
-        public uint sector_1_ortalama_hiz_gps => (uint)((double)(SectorAndTourDatas.gidilen_yol_gps_sector_1_u32 /  TimeSpan.Parse(sector_1_sure).TotalSeconds) * MACROS.mstokmh);
-        public uint sector_2_ortalama_hiz_gps => (uint)((double)(SectorAndTourDatas.gidilen_yol_gps_sector_2_u32 /  TimeSpan.Parse(sector_2_sure).TotalSeconds) * MACROS.mstokmh);
-        public uint sector_3_ortalama_hiz_gps => (uint)((double)(SectorAndTourDatas.gidilen_yol_gps_sector_3_u32 / TimeSpan.Parse(sector_3_sure).TotalSeconds) * MACROS.mstokmh);
-        public uint sector_4_ortalama_hiz_gps => (uint)((double)(SectorAndTourDatas.gidilen_yol_gps_sector_4_u32 / TimeSpan.Parse(sector_4_sure).TotalSeconds) * MACROS.mstokmh);
-        public uint sector_T_ortalama_hiz_gps => (uint)((double)(SectorAndTourDatas.gidilen_yol_gps_sector_T_u32 / TimeSpan.Parse(anlik_tur_sure).TotalSeconds) * MACROS.mstokmh);
+        public uint sector_1_ortalama_hiz_gps => (uint)((double)(SectorAndTourdata.gidilen_yol_gps_sector_1_u32 /  TimeSpan.Parse(sector_1_sure).TotalSeconds) * MACROS.mstokmh);
+        public uint sector_2_ortalama_hiz_gps => (uint)((double)(SectorAndTourdata.gidilen_yol_gps_sector_2_u32 /  TimeSpan.Parse(sector_2_sure).TotalSeconds) * MACROS.mstokmh);
+        public uint sector_3_ortalama_hiz_gps => (uint)((double)(SectorAndTourdata.gidilen_yol_gps_sector_3_u32 / TimeSpan.Parse(sector_3_sure).TotalSeconds) * MACROS.mstokmh);
+        public uint sector_4_ortalama_hiz_gps => (uint)((double)(SectorAndTourdata.gidilen_yol_gps_sector_4_u32 / TimeSpan.Parse(sector_4_sure).TotalSeconds) * MACROS.mstokmh);
+        public uint sector_T_ortalama_hiz_gps => (uint)((double)(SectorAndTourdata.gidilen_yol_gps_sector_T_u32 / TimeSpan.Parse(anlik_tur_sure).TotalSeconds) * MACROS.mstokmh);
         public string en_hizli_tur_sure;                         
         public string ortalama_tur_sure;
         public string onceki_tur_sure;
 
-        public object[] HturAtDatas => new object[8] {Timers.currentTour, "ST", anlik_tur_sure, SectorAndTourDatas.gidilen_yol_vcu_sector_T_u32, 
-                                   SectorAndTourDatas.gidilen_yol_gps_sector_T_u32, sector_T_ortalama_hiz_vcu, sector_T_ortalama_hiz_gps, SectorAndTourDatas.consumption_sector_T_f32};
+        public object[] HturAtdata => new object[8] {Timers.currentTour, "ST", anlik_tur_sure, SectorAndTourdata.gidilen_yol_vcu_sector_T_u32, 
+                                   SectorAndTourdata.gidilen_yol_gps_sector_T_u32, sector_T_ortalama_hiz_vcu, sector_T_ortalama_hiz_gps, SectorAndTourdata.consumption_sector_T_f32};
 
-        public object[] Hsector1Datas => new object[8] {Timers.currentTour, "S1", sector_1_sure,
-                                           SectorAndTourDatas.gidilen_yol_vcu_sector_1_u32, SectorAndTourDatas.gidilen_yol_gps_sector_1_u32,
-                                           sector_1_ortalama_hiz_vcu, sector_1_ortalama_hiz_gps, SectorAndTourDatas.consumption_sector_1_f32};
+        public object[] Hsector1data => new object[8] {Timers.currentTour, "S1", sector_1_sure,
+                                           SectorAndTourdata.gidilen_yol_vcu_sector_1_u32, SectorAndTourdata.gidilen_yol_gps_sector_1_u32,
+                                           sector_1_ortalama_hiz_vcu, sector_1_ortalama_hiz_gps, SectorAndTourdata.consumption_sector_1_f32};
 
-        public object[] Hsector2Datas => new object[8] {Timers.currentTour, "S2", sector_2_sure,
-                                           SectorAndTourDatas.gidilen_yol_vcu_sector_2_u32, SectorAndTourDatas.gidilen_yol_gps_sector_2_u32,
-                                           sector_2_ortalama_hiz_vcu, sector_2_ortalama_hiz_gps, SectorAndTourDatas.consumption_sector_2_f32};
+        public object[] Hsector2data => new object[8] {Timers.currentTour, "S2", sector_2_sure,
+                                           SectorAndTourdata.gidilen_yol_vcu_sector_2_u32, SectorAndTourdata.gidilen_yol_gps_sector_2_u32,
+                                           sector_2_ortalama_hiz_vcu, sector_2_ortalama_hiz_gps, SectorAndTourdata.consumption_sector_2_f32};
 
-        public object[] Hsector3Datas => new object[8] {Timers.currentTour, "S3", sector_3_sure,
-                                           SectorAndTourDatas.gidilen_yol_vcu_sector_3_u32, SectorAndTourDatas.gidilen_yol_gps_sector_3_u32,
-                                           sector_3_ortalama_hiz_vcu, sector_3_ortalama_hiz_gps, SectorAndTourDatas.consumption_sector_3_f32};
+        public object[] Hsector3data => new object[8] {Timers.currentTour, "S3", sector_3_sure,
+                                           SectorAndTourdata.gidilen_yol_vcu_sector_3_u32, SectorAndTourdata.gidilen_yol_gps_sector_3_u32,
+                                           sector_3_ortalama_hiz_vcu, sector_3_ortalama_hiz_gps, SectorAndTourdata.consumption_sector_3_f32};
 
-        public object[] Hsector4Datas => new object[8] {Timers.currentTour, "S4", sector_4_sure,
-                                           SectorAndTourDatas.gidilen_yol_vcu_sector_4_u32, SectorAndTourDatas.gidilen_yol_gps_sector_4_u32,
-                                           sector_4_ortalama_hiz_vcu, sector_4_ortalama_hiz_gps, SectorAndTourDatas.consumption_sector_4_f32};
+        public object[] Hsector4data => new object[8] {Timers.currentTour, "S4", sector_4_sure,
+                                           SectorAndTourdata.gidilen_yol_vcu_sector_4_u32, SectorAndTourdata.gidilen_yol_gps_sector_4_u32,
+                                           sector_4_ortalama_hiz_vcu, sector_4_ortalama_hiz_gps, SectorAndTourdata.consumption_sector_4_f32};
 
         public static bool _IsLog;
         public int dataCounter = 0;
@@ -70,7 +70,8 @@ namespace Telemetri.Variables
 
         public void Writer()
         {
-            streamWriter.WriteLine(Timers.log_datas_time + VCU.log_datas + Driver.log_datas_driver + BMS.log_datas_bms + GpsTracker.log_gps_datas);
+            //Timers sınıfına hiç gerek yok bunun yerine gerçek zamanı loglarız
+            streamWriter.WriteLine(VCU.log_data + Driver.log_data_driver + BMS.log_data_bms + GpsTracker.log_gps_data);
         }
 
         public void Reader()
@@ -102,86 +103,77 @@ namespace Telemetri.Variables
             }
         }
 
-        public void ReadArayüz(string []old_datass)
-        {
-            int count = 2;
-            Timers.Gecen_süre = TimeSpan.Parse(old_datass[count++]);
-            Timers.Kalan_süre = TimeSpan.Parse(old_datass[count++]);
-            anlik_tur_sure = old_datass[count++];
-            en_hizli_tur_sure = old_datass[count++];
-            ortalama_tur_sure = old_datass[count++];
-            onceki_tur_sure = old_datass[count++];
-            sector_1_sure = old_datass[count++];
-            sector_2_sure = old_datass[count++];
-            sector_3_sure = old_datass[count++];
-            sector_4_sure = old_datass[count++];
-            VCU.wake_up_u8 = Byte.Parse(old_datass[count++]);
-            VCU.drive_commands_u8 = Byte.Parse(old_datass[count++]);
-            VCU.set_velocity_u8 = Byte.Parse(old_datass[count++]);
-            VCU.can_error_u8 = Byte.Parse(old_datass[count++]);
-            Driver.phase_a_current_f32 = float.Parse(old_datass[count++]);
-            Driver.phase_b_current_f32 = float.Parse(old_datass[count++]);
-            Driver.dc_bus_current_f32 = float.Parse(old_datass[count++]);
-            Driver.dc_bus_voltage_f32 = float.Parse(old_datass[count++]);
-            Driver.id_f32 = float.Parse(old_datass[count++]);
-            Driver.iq_f32 = float.Parse(old_datass[count++]);
-            Driver.IArms_f32 = float.Parse(old_datass[count++]);
-            Driver.Torque_f32 = float.Parse(old_datass[count++]);
-            Driver.drive_status_u8 = byte.Parse(old_datass[count++]);
-            Driver.driver_error_u8 = byte.Parse(old_datass[count++]);
-            Driver.odometer_u32 = UInt32.Parse(old_datass[count++]);
-            Driver.motor_temperature_u8 = byte.Parse(old_datass[count++]);
-            Driver.actual_velocity_u8 = byte.Parse(old_datass[count++]);
-            BMS.bat_volt_f32 = float.Parse(old_datass[count++]);
-            BMS.bat_current_f32 = float.Parse(old_datass[count++]);
-            BMS.bat_cons_f32 = float.Parse(old_datass[count++]);
-            BMS.soc_f32 = float.Parse(old_datass[count++]);
-            BMS.bms_error_u8 = byte.Parse(old_datass[count++]);
-            BMS.dc_bus_state_u8 = byte.Parse(old_datass[count++]);
-            BMS.worst_cell_voltage_f32 = float.Parse(old_datass[count++]);
-            BMS.worst_cell_address_u8 = byte.Parse(old_datass[count++]);
-            BMS.temp_u8 = byte.Parse(old_datass[count++]);
-            GpsTracker.gps_latitude_f64 = float.Parse(old_datass[count++]);
-            GpsTracker.gps_longtitude_f64 = float.Parse(old_datass[count++]);
-            GpsTracker.gps_velocity_u8 = byte.Parse(old_datass[count++]);
-            GpsTracker.gps_sattelite_number_u8 = byte.Parse(old_datass[count++]);
-            GpsTracker.gps_efficiency_u8 = byte.Parse(old_datass[count++]);
-        }
-
-        public void readSdCard(string[] old_datass)
+        public void ReadArayüz(string []old_datas)
         {
             int count = 0;
-            Timers.Gecen_süre = TimeSpan.Parse(old_datass[count++]);
-            VCU.wake_up_u8 = Byte.Parse(old_datass[count++]);
-            VCU.set_velocity_u8 = Byte.Parse(old_datass[count++]);
-            VCU.can_error_u8 = Byte.Parse(old_datass[count++]);
-            Driver.phase_a_current_f32 = float.Parse(old_datass[count++].Replace('.', ','));
-            Driver.phase_b_current_f32 = float.Parse(old_datass[count++].Replace('.', ','));
-            Driver.dc_bus_current_f32 = float.Parse(old_datass[count++].Replace('.', ','));
-            Driver.dc_bus_voltage_f32 = float.Parse(old_datass[count++].Replace('.', ','));
-            Driver.id_f32 = float.Parse(old_datass[count++].Replace('.', ','));
-            Driver.iq_f32 = float.Parse(old_datass[count++].Replace('.', ','));
-            Driver.IArms_f32 = float.Parse(old_datass[count++].Replace('.', ','));
-            Driver.Torque_f32 = float.Parse(old_datass[count++].Replace('.', ','));
-            Driver.drive_status_u8 = byte.Parse(old_datass[count++]);
-            Driver.driver_error_u8 = byte.Parse(old_datass[count++]);
-            Driver.odometer_u32 = UInt32.Parse(old_datass[count++]);
-            Driver.motor_temperature_u8 = byte.Parse(old_datass[count++]);
-            Driver.actual_velocity_u8 = byte.Parse(old_datass[count++]);
-            BMS.bat_volt_f32 = float.Parse(old_datass[count++].Replace('.', ','));
-            BMS.bat_current_f32 = float.Parse(old_datass[count++].Replace('.', ','));
-            BMS.bat_cons_f32 = float.Parse(old_datass[count++].Replace('.', ','));
-            BMS.soc_f32 = float.Parse(old_datass[count++].Replace('.', ','));
-            BMS.bms_error_u8 = byte.Parse(old_datass[count++]);
-            BMS.dc_bus_state_u8 = byte.Parse(old_datass[count++]);
-            BMS.worst_cell_voltage_f32 = float.Parse(old_datass[count++].Replace('.', ','));
-            BMS.worst_cell_address_u8 = byte.Parse(old_datass[count++]);
-            BMS.temp_u8 = byte.Parse(old_datass[count++]);
-            GpsTracker.gps_latitude_f64 = float.Parse(old_datass[count++].Replace('.', ','));
-            GpsTracker.gps_longtitude_f64 = float.Parse(old_datass[count++].Replace('.', ','));
-            GpsTracker.gps_velocity_u8 = byte.Parse(old_datass[count++]);
-            GpsTracker.gps_sattelite_number_u8 = byte.Parse(old_datass[count++]);
-            GpsTracker.gps_efficiency_u8 = byte.Parse(old_datass[count++]);
+            //BİR ŞEY PATLARSA BURAYA BAK
+            VCU.wake_up_u8 = Byte.Parse(old_datas[count++]);
+            VCU.drive_commands_u8 = Byte.Parse(old_datas[count++]);
+            VCU.set_velocity_u8 = Byte.Parse(old_datas[count++]);
+            VCU.can_error_u8 = Byte.Parse(old_datas[count++]);
+            Driver.phase_a_current_f32 = float.Parse(old_datas[count++]);
+            Driver.phase_b_current_f32 = float.Parse(old_datas[count++]);
+            Driver.dc_bus_current_f32 = float.Parse(old_datas[count++]);
+            Driver.dc_bus_voltage_f32 = float.Parse(old_datas[count++]);
+            Driver.id_f32 = float.Parse(old_datas[count++]);
+            Driver.iq_f32 = float.Parse(old_datas[count++]);
+            Driver.IArms_f32 = float.Parse(old_datas[count++]);
+            Driver.Torque_f32 = float.Parse(old_datas[count++]);
+            Driver.drive_status_u8 = byte.Parse(old_datas[count++]);
+            Driver.driver_error_u8 = byte.Parse(old_datas[count++]);
+            Driver.odometer_u32 = UInt32.Parse(old_datas[count++]);
+            Driver.motor_temperature_u8 = byte.Parse(old_datas[count++]);
+            Driver.actual_velocity_u8 = byte.Parse(old_datas[count++]);
+            BMS.bat_volt_f32 = float.Parse(old_datas[count++]);
+            BMS.bat_current_f32 = float.Parse(old_datas[count++]);
+            BMS.bat_cons_f32 = float.Parse(old_datas[count++]);
+            BMS.soc_f32 = float.Parse(old_datas[count++]);
+            BMS.bms_error_u8 = byte.Parse(old_datas[count++]);
+            BMS.dc_bus_state_u8 = byte.Parse(old_datas[count++]);
+            BMS.worst_cell_voltage_f32 = float.Parse(old_datas[count++]);
+            BMS.worst_cell_address_u8 = byte.Parse(old_datas[count++]);
+            BMS.temp_u8 = byte.Parse(old_datas[count++]);
+            GpsTracker.gps_latitude_f64 = float.Parse(old_datas[count++]);
+            GpsTracker.gps_longtitude_f64 = float.Parse(old_datas[count++]);
+            GpsTracker.gps_velocity_u8 = byte.Parse(old_datas[count++]);
+            GpsTracker.gps_sattelite_number_u8 = byte.Parse(old_datas[count++]);
+            GpsTracker.gps_efficiency_u8 = byte.Parse(old_datas[count++]);
+        }
+
+        public void readSdCard(string[] old_datas)
+        {
+            int count = 0;
+            Timers.Gecen_süre = TimeSpan.Parse(old_datas[count++]);
+            VCU.wake_up_u8 = Byte.Parse(old_datas[count++]);
+            VCU.set_velocity_u8 = Byte.Parse(old_datas[count++]);
+            VCU.can_error_u8 = Byte.Parse(old_datas[count++]);
+            Driver.phase_a_current_f32 = float.Parse(old_datas[count++].Replace('.', ','));
+            Driver.phase_b_current_f32 = float.Parse(old_datas[count++].Replace('.', ','));
+            Driver.dc_bus_current_f32 = float.Parse(old_datas[count++].Replace('.', ','));
+            Driver.dc_bus_voltage_f32 = float.Parse(old_datas[count++].Replace('.', ','));
+            Driver.id_f32 = float.Parse(old_datas[count++].Replace('.', ','));
+            Driver.iq_f32 = float.Parse(old_datas[count++].Replace('.', ','));
+            Driver.IArms_f32 = float.Parse(old_datas[count++].Replace('.', ','));
+            Driver.Torque_f32 = float.Parse(old_datas[count++].Replace('.', ','));
+            Driver.drive_status_u8 = byte.Parse(old_datas[count++]);
+            Driver.driver_error_u8 = byte.Parse(old_datas[count++]);
+            Driver.odometer_u32 = UInt32.Parse(old_datas[count++]);
+            Driver.motor_temperature_u8 = byte.Parse(old_datas[count++]);
+            Driver.actual_velocity_u8 = byte.Parse(old_datas[count++]);
+            BMS.bat_volt_f32 = float.Parse(old_datas[count++].Replace('.', ','));
+            BMS.bat_current_f32 = float.Parse(old_datas[count++].Replace('.', ','));
+            BMS.bat_cons_f32 = float.Parse(old_datas[count++].Replace('.', ','));
+            BMS.soc_f32 = float.Parse(old_datas[count++].Replace('.', ','));
+            BMS.bms_error_u8 = byte.Parse(old_datas[count++]);
+            BMS.dc_bus_state_u8 = byte.Parse(old_datas[count++]);
+            BMS.worst_cell_voltage_f32 = float.Parse(old_datas[count++].Replace('.', ','));
+            BMS.worst_cell_address_u8 = byte.Parse(old_datas[count++]);
+            BMS.temp_u8 = byte.Parse(old_datas[count++]);
+            GpsTracker.gps_latitude_f64 = float.Parse(old_datas[count++].Replace('.', ','));
+            GpsTracker.gps_longtitude_f64 = float.Parse(old_datas[count++].Replace('.', ','));
+            GpsTracker.gps_velocity_u8 = byte.Parse(old_datas[count++]);
+            GpsTracker.gps_sattelite_number_u8 = byte.Parse(old_datas[count++]);
+            GpsTracker.gps_efficiency_u8 = byte.Parse(old_datas[count++]);
         }
     }
 }

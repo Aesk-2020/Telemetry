@@ -1,6 +1,6 @@
 hydra_telemetry_system_2020_v1\sim800mqtt.o: ..\Src\SIM800MQTT.c
 hydra_telemetry_system_2020_v1\sim800mqtt.o: ../Inc/SIM800MQTT.h
-hydra_telemetry_system_2020_v1\sim800mqtt.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+hydra_telemetry_system_2020_v1\sim800mqtt.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 hydra_telemetry_system_2020_v1\sim800mqtt.o: ../Inc/main.h
 hydra_telemetry_system_2020_v1\sim800mqtt.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 hydra_telemetry_system_2020_v1\sim800mqtt.o: ../Inc/stm32f4xx_hal_conf.h
@@ -16,7 +16,7 @@ hydra_telemetry_system_2020_v1\sim800mqtt.o: ../Drivers/CMSIS/Include/mpu_armv7.
 hydra_telemetry_system_2020_v1\sim800mqtt.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 hydra_telemetry_system_2020_v1\sim800mqtt.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 hydra_telemetry_system_2020_v1\sim800mqtt.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-hydra_telemetry_system_2020_v1\sim800mqtt.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+hydra_telemetry_system_2020_v1\sim800mqtt.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 hydra_telemetry_system_2020_v1\sim800mqtt.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 hydra_telemetry_system_2020_v1\sim800mqtt.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h
 hydra_telemetry_system_2020_v1\sim800mqtt.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
@@ -38,5 +38,5 @@ hydra_telemetry_system_2020_v1\sim800mqtt.o: ../Drivers/STM32F4xx_HAL_Driver/Inc
 hydra_telemetry_system_2020_v1\sim800mqtt.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 hydra_telemetry_system_2020_v1\sim800mqtt.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 hydra_telemetry_system_2020_v1\sim800mqtt.o: ../Inc/StackTrace.h
-hydra_telemetry_system_2020_v1\sim800mqtt.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-hydra_telemetry_system_2020_v1\sim800mqtt.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+hydra_telemetry_system_2020_v1\sim800mqtt.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+hydra_telemetry_system_2020_v1\sim800mqtt.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

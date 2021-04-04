@@ -41,10 +41,10 @@ namespace Telemetri.Variables
         public static bool over_current_error_u1 => Convert.ToBoolean((bms_error_u8 >> 4 & 0b00000001));
         public static bool bms_fatal_error_u1 => Convert.ToBoolean((bms_error_u8 >> 5 & 0b00000001));
 
-        public static string log_datas_bms => bat_volt_f32.ToString() + '$' + bat_current_f32.ToString() + '$' + bat_cons_f32.ToString()
-                                              + '$' + soc_f32.ToString() + '$' + bms_error_u8.ToString() + '$' + dc_bus_state_u8.ToString()
-                                              + '$' + worst_cell_voltage_f32.ToString() + '$' + worst_cell_address_u8.ToString()
-                                              + '$' + temp_u8.ToString() + '$';
+        public static string log_data_bms => bat_volt_f32.ToString() + '\t' + bat_current_f32.ToString() + '\t' + bat_cons_f32.ToString()
+                                              + '\t' + soc_f32.ToString() + '\t' + bms_error_u8.ToString() + '\t' + dc_bus_state_u8.ToString()
+                                              + '\t' + worst_cell_voltage_f32.ToString() + '\t' + worst_cell_address_u8.ToString()
+                                              + '\t' + temp_u8.ToString() + '\t';
     
         private enum receiveDataStates
         {

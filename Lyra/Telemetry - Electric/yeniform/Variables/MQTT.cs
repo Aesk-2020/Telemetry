@@ -12,19 +12,26 @@ namespace Telemetri.Variables
         public double MQTT_Efficiency;
         public DateTime old_time;
         double totalTime = 0;
+        bool connected_flag = false;
         public int MQTT_counter_int32;
         public int error_counter = 0;
         public double mqtt_refresh_time;
         int mqtt_counter_old = 0;
-        string _username;
-        string _password;
+        string _username = "aesk";
+        string _password = "1234";
         string _topic;
         private MqttClient _client;
+        private MqttClient _client1 = new MqttClient("broker.mqttdashboard.com");
         public MQTT(string username, string password, string topic)
         {
 
             _username = username;
             _password = password;
+            _topic = topic;
+        }
+
+        public MQTT(string topic)
+        {
             _topic = topic;
         }
 
@@ -38,14 +45,62 @@ namespace Telemetri.Variables
             _client = Client;
         }
 
-        public byte ConnectRequestMQTT()
+        public void Init()
+        {
+            
+        }
+
+        public bool ConnectSubscribe()
+        {
+            if(connected_flag == false)
+            {
+                byte code = _client1.Connect(Guid.NewGuid().ToString(), _username, _password);
+                if (code == 0x00)
+                {
+                    try
+                    {
+                        _client1.Subscribe(new string[] { _topic }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
+                        _client1.MqttMsgPublishReceived += Client_MqttMsgPublishReceived;
+                        connected_flag = true;
+                    }
+                    catch (Exception exce)
+                    {
+                        MessageBox.Show(exce.Message);
+                    }
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show($"Sunucuya bağlanılamadı. Hata kodu: {code}");
+                    //MessageBox.Show("Sunucuya bağlanılamadı. Hata kodu: {0}", code.ToString("X"));
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Zaten bağlısınız");
+                return true;
+            }
+        }
+
+        public void Disconnect()
+        {
+            if(connected_flag == true)
+            {
+                _client1.Disconnect();
+                _client1.MqttMsgPublishReceived -= Client_MqttMsgPublishReceived;
+                connected_flag = false;
+            }
+            else
+            {
+                MessageBox.Show("Zaten bağlı değilsiniz");
+            }
+        }
+
+        public byte MQTTsubscribe() //ESKİ KOD
         {
              byte code = _client.Connect(Guid.NewGuid().ToString(), _username, _password);
             _client.MqttMsgPublishReceived += Client_MqttMsgPublishReceived;
-
-            //SERVERDEN YANIT BAGLANDI BAGLANILAMADI
-   
-            //SERVER BIZI KABUL ETTI MI
             try
             {
                 _client.Subscribe(new string[] { _topic }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
@@ -58,10 +113,10 @@ namespace Telemetri.Variables
             }
 
             old_time = DateTime.Now;
-            return code;        
+            return code; 
         }
 
-        void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
+        void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e) //ESKİ KOD
         {
             mqtt_counter_old = MQTT_counter_int32;
             if (mqtt_total_counter == 0)
@@ -79,13 +134,13 @@ namespace Telemetri.Variables
             old_time = current_time;
         }
 
-        public void disConnectMQTT()
+        public void disConnectMQTT() //ESKİ KOD
         {
             _client.Disconnect();
             _client.MqttMsgPublishReceived -= Client_MqttMsgPublishReceived;
         }
 
-        int find_error(int old_d, int new_d)
+        int find_error(int old_d, int new_d) //ESKİ KOD
         {
 
             int x = new_d - old_d;
@@ -101,7 +156,7 @@ namespace Telemetri.Variables
 
         }
 
-        void dataConvertMQTT(byte[] receiveBuffer)
+        void dataConvertMQTT(byte[] receiveBuffer) //ESKİ KOD
         {
             int startIndex = 0;
             VCU.wake_up_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);

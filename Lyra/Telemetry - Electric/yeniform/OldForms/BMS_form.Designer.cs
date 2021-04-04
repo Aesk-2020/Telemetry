@@ -573,11 +573,12 @@
             // 
             // logo_box
             // 
+            this.logo_box.Dock = System.Windows.Forms.DockStyle.Fill;
             this.logo_box.Image = ((System.Drawing.Image)(resources.GetObject("logo_box.Image")));
             this.logo_box.Location = new System.Drawing.Point(3, 3);
             this.logo_box.Name = "logo_box";
-            this.logo_box.Size = new System.Drawing.Size(171, 28);
-            this.logo_box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logo_box.Size = new System.Drawing.Size(262, 154);
+            this.logo_box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.logo_box.TabIndex = 6;
             this.logo_box.TabStop = false;
             // 
@@ -744,12 +745,12 @@
             // 
             // flower_box
             // 
-            this.flower_box.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.flower_box.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.flower_box.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flower_box.Image = global::Telemetri.Properties.Resources.YEDEK1;
-            this.flower_box.Location = new System.Drawing.Point(81, 107);
+            this.flower_box.Location = new System.Drawing.Point(4, 107);
             this.flower_box.Name = "flower_box";
-            this.flower_box.Size = new System.Drawing.Size(105, 254);
+            this.flower_box.Size = new System.Drawing.Size(260, 254);
             this.flower_box.TabIndex = 10;
             this.flower_box.TabStop = false;
             // 

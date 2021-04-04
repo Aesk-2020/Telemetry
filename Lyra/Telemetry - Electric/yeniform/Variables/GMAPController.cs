@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using System.Drawing;
 namespace Telemetri.Variables
 {
+
+    //GÖZDEN GEÇİRİLMESİ GEREKİYOR, BU İŞLE AF VE BİR YENİ İLGİLENECEK
     public delegate double GMAPDelegate(double latitude, double longtitude);
     public delegate void GMAPDeleteOverlay();
     public class GMAPController : GpsTracker
@@ -27,12 +29,12 @@ namespace Telemetri.Variables
         {
             _gmap = gmap_;
             gmap_.ShowCenter = false;
-            gmap_.SetPositionByKeywords("Korfez Yaris Pisti,Turkey");
+            gmap_.Position = new GMap.NET.PointLatLng(MACROS.centerLat, MACROS.centerLong);
             gmap_.DragButton = MouseButtons.Middle;
             gmap_.MapProvider = GMapProviders.BingSatelliteMap;
             gmap_.MaxZoom = 150;
             gmap_.MinZoom = 5;
-            gmap_.Zoom = 17;
+            gmap_.Zoom = 15.8;
             
         }
 
@@ -53,7 +55,7 @@ namespace Telemetri.Variables
              markers.Markers.Add(marker);
             _gmap.Overlays.Add(markers);
 
-            if (MACROS.race_start_flag && !MACROS.show_old_datas)
+            if (MACROS.race_start_flag && !MACROS.show_old_data)
             {
                 new_angle = ComputeBearing(latitude, longtitude);
                 total_angle += (new_angle - old_angle);

@@ -669,14 +669,15 @@ ARM Macro Assembler    Page 11
   432 0000001C                 END
               00000000 
               00000000 
-Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
-erwork --depend=hydra_telemetry_system_2020_v1\startup_stm32f412rx.d -ohydra_te
-lemetry_system_2020_v1\startup_stm32f412rx.o -I.\RTE\_Hydra_Telemetry_System_20
-20_v1 -IC:\Users\yemrelaydin\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core
-\Include -IC:\Users\yemrelaydin\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14
-.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__MICROLIB SETA 1" --
-predefine="__UVISION_VERSION SETA 527" --predefine="_RTE_ SETA 1" --predefine="
-STM32F412Rx SETA 1" --list=startup_stm32f412rx.lst startup_stm32f412rx.s
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --apcs=
+interwork --depend=hydra_telemetry_system_2020_v1\startup_stm32f412rx.d -ohydra
+_telemetry_system_2020_v1\startup_stm32f412rx.o -I.\RTE\_Hydra_Telemetry_System
+_2020_v1 -IC:\Users\JosephStar\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Co
+re\Include -IC:\Users\JosephStar\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.1
+5.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__MICROLIB SETA 1" -
+-predefine="__UVISION_VERSION SETA 532" --predefine="_RTE_ SETA 1" --predefine=
+"STM32F412Rx SETA 1" --predefine="_RTE_ SETA 1" --list=startup_stm32f412rx.lst 
+startup_stm32f412rx.s
 
 
 

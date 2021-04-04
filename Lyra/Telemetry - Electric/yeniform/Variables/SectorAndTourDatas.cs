@@ -2,7 +2,9 @@
 
 namespace Telemetri.Variables
 {
-    public struct SectorAndTourDatas
+
+    //BENCE GEREKSİZ(PALACI) ÇÜNKÜ YARIŞTA SADECE BİR KEZ KULLANILIYOR VE İŞİ BİTİYOR
+    public struct SectorAndTourdata
     {
         public static Stopwatch sector1_sure = new Stopwatch();
         public static Stopwatch sector2_sure = new Stopwatch();
@@ -42,21 +44,21 @@ namespace Telemetri.Variables
         public static uint sector_4_ortalama_hiz_vcu => (uint)((double)(gidilen_yol_vcu_sector_4_u32 / sector4_sure.Elapsed.TotalSeconds) * MACROS.mstokmh);
         public static uint sector_T_ortalama_hiz_vcu => (uint)((double)(gidilen_yol_vcu_sector_T_u32 / Timers.Anlik_tur_süresi.Elapsed.TotalSeconds) * MACROS.mstokmh);
 
-        public static object[] turAtDatas => new object[8] {Timers.currentTour, sector_name, Timers.Anlik_tur_süresi.Elapsed.ToString(MACROS.TimeStringFormat), SectorAndTourDatas.gidilen_yol_vcu_sector_T_u32,
-                                   SectorAndTourDatas.gidilen_yol_gps_sector_T_u32, SectorAndTourDatas.sector_T_ortalama_hiz_vcu, SectorAndTourDatas.sector_T_ortalama_hiz_gps, consumption_sector_T_f32};
-        public static object[] sector1Datas => new object[8] {Timers.currentTour, sector_name, SectorAndTourDatas.sector1_sure.Elapsed.ToString(MACROS.TimeStringFormat),
-                                           SectorAndTourDatas.gidilen_yol_vcu_sector_1_u32, SectorAndTourDatas.gidilen_yol_gps_sector_1_u32,
-                                           SectorAndTourDatas.sector_1_ortalama_hiz_vcu, SectorAndTourDatas.sector_1_ortalama_hiz_gps, consumption_sector_1_f32};
-        public static object[] sector2Datas => new object[8] {Timers.currentTour, sector_name, SectorAndTourDatas.sector2_sure.Elapsed.ToString(MACROS.TimeStringFormat),
-                                           SectorAndTourDatas.gidilen_yol_vcu_sector_2_u32, SectorAndTourDatas.gidilen_yol_gps_sector_2_u32,
-                                           SectorAndTourDatas.sector_2_ortalama_hiz_vcu, SectorAndTourDatas.sector_2_ortalama_hiz_gps, consumption_sector_2_f32};
-        public static object[] sector3Datas => new object[8] {Timers.currentTour, sector_name, SectorAndTourDatas.sector3_sure.Elapsed.ToString(MACROS.TimeStringFormat),
-                                           SectorAndTourDatas.gidilen_yol_vcu_sector_3_u32, SectorAndTourDatas.gidilen_yol_gps_sector_3_u32,
-                                           SectorAndTourDatas.sector_3_ortalama_hiz_vcu, SectorAndTourDatas.sector_3_ortalama_hiz_gps, consumption_sector_3_f32};
+        public static object[] turAtdata => new object[8] {Timers.currentTour, sector_name, Timers.Anlik_tur_süresi.Elapsed.ToString(MACROS.TimeStringFormat), SectorAndTourdata.gidilen_yol_vcu_sector_T_u32,
+                                   SectorAndTourdata.gidilen_yol_gps_sector_T_u32, SectorAndTourdata.sector_T_ortalama_hiz_vcu, SectorAndTourdata.sector_T_ortalama_hiz_gps, consumption_sector_T_f32};
+        public static object[] sector1data => new object[8] {Timers.currentTour, sector_name, SectorAndTourdata.sector1_sure.Elapsed.ToString(MACROS.TimeStringFormat),
+                                           SectorAndTourdata.gidilen_yol_vcu_sector_1_u32, SectorAndTourdata.gidilen_yol_gps_sector_1_u32,
+                                           SectorAndTourdata.sector_1_ortalama_hiz_vcu, SectorAndTourdata.sector_1_ortalama_hiz_gps, consumption_sector_1_f32};
+        public static object[] sector2data => new object[8] {Timers.currentTour, sector_name, SectorAndTourdata.sector2_sure.Elapsed.ToString(MACROS.TimeStringFormat),
+                                           SectorAndTourdata.gidilen_yol_vcu_sector_2_u32, SectorAndTourdata.gidilen_yol_gps_sector_2_u32,
+                                           SectorAndTourdata.sector_2_ortalama_hiz_vcu, SectorAndTourdata.sector_2_ortalama_hiz_gps, consumption_sector_2_f32};
+        public static object[] sector3data => new object[8] {Timers.currentTour, sector_name, SectorAndTourdata.sector3_sure.Elapsed.ToString(MACROS.TimeStringFormat),
+                                           SectorAndTourdata.gidilen_yol_vcu_sector_3_u32, SectorAndTourdata.gidilen_yol_gps_sector_3_u32,
+                                           SectorAndTourdata.sector_3_ortalama_hiz_vcu, SectorAndTourdata.sector_3_ortalama_hiz_gps, consumption_sector_3_f32};
 
-        public static object[] sector4Datas => new object[8] {Timers.currentTour, sector_name, SectorAndTourDatas.sector4_sure.Elapsed.ToString(MACROS.TimeStringFormat),
-                                           SectorAndTourDatas.gidilen_yol_vcu_sector_4_u32, SectorAndTourDatas.gidilen_yol_gps_sector_4_u32,
-                                           SectorAndTourDatas.sector_4_ortalama_hiz_vcu, SectorAndTourDatas.sector_4_ortalama_hiz_gps, consumption_sector_4_f32};
+        public static object[] sector4data => new object[8] {Timers.currentTour, sector_name, SectorAndTourdata.sector4_sure.Elapsed.ToString(MACROS.TimeStringFormat),
+                                           SectorAndTourdata.gidilen_yol_vcu_sector_4_u32, SectorAndTourdata.gidilen_yol_gps_sector_4_u32,
+                                           SectorAndTourdata.sector_4_ortalama_hiz_vcu, SectorAndTourdata.sector_4_ortalama_hiz_gps, consumption_sector_4_f32};
     }
 };
             

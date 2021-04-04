@@ -11,10 +11,12 @@ namespace Telemetri.Variables
         public const string MQTT_username = "digital";
         public const string MQTT_password = "aesk";
         public const string MQTT_topic = "LYRADATA";
-        public const double centerLat = 40.743778;
-        public const double centerLong = 29.783807;
-        public const double startLineLat = 40.744392;
-        public const double startLineLong = 29.786054;
+        //40.95767341297037, 29.410455013620723
+        public const double centerLat = 40.957673;
+        public const double centerLong = 29.410455;
+        //40.95187517899788, 29.40317203853778
+        public const double startLineLat = 40.951875;
+        public const double startLineLong = 29.403172;
         public const uint RFBufferLength = 55;
         public const byte RFBufferHeader = 0x69;
         public static Color AeskBlue = Color.FromArgb(47, 136, 202);
@@ -35,7 +37,7 @@ namespace Telemetri.Variables
         public static string TimeStringFormat = @"hh\:mm\:ss";
         public static double total_Tur = 30;
         public static int maks_set_hiz = 65;
-        public static bool show_old_datas;
+        public static bool show_old_data;
         public static bool hold_my_history;
         public static bool newDataCome = false;
         public static bool IsSd = false;

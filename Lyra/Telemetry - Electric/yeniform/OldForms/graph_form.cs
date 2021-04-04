@@ -24,13 +24,13 @@ namespace Telemetri
             graph_thread.Start();
         }
 
-        public void drawDatas(Chart myChart, object mySecond, object myData, int i)
+        public void drawdata(Chart myChart, object mySecond, object myData, int i)
         {
             if(myChart.InvokeRequired)
             {
                 MethodInvoker del = delegate
                 {
-                    drawDatas(myChart, mySecond, myData, i);
+                    drawdata(myChart, mySecond, myData, i);
                 };
                 myChart.Invoke(del);
                 return;
@@ -62,49 +62,49 @@ namespace Telemetri
                 {
                     string total_sec = Timers.Gecen_süre.ToString(MACROS.TimeStringFormat);
 
-                    drawDatas(chart_0, total_sec, Driver.phase_a_current_f32, Graph_dic["DriverPhaseA"]);
-                    drawDatas(chart_0, total_sec, Driver.phase_b_current_f32, Graph_dic["DriverPhaseB"]);
-                    drawDatas(chart_0, total_sec, Driver.dc_bus_current_f32, Graph_dic["DriverDCBusCurrent"]);
-                    drawDatas(chart_0, total_sec, Driver.id_f32, Graph_dic["DriverID"]);
-                    drawDatas(chart_0, total_sec, Driver.iq_f32, Graph_dic["DriverIQ"]);
-                    drawDatas(chart_0, total_sec, Driver.IArms_f32, Graph_dic["DriverVD"]);
-                    drawDatas(chart_0, total_sec, Driver.Torque_f32, Graph_dic["DriverVQ"]);
-                    drawDatas(chart_0, total_sec, BMS.bat_volt_f32, Graph_dic["BMSBatVoltage"]);
-                    drawDatas(chart_0, total_sec, BMS.bat_current_f32, Graph_dic["BMSBatCurrent"]);
-                    drawDatas(chart_0, total_sec, BMS.power_emitted, Graph_dic["BMSPower"]);
+                    drawdata(chart_0, total_sec, Driver.phase_a_current_f32, Graph_dic["DriverPhaseA"]);
+                    drawdata(chart_0, total_sec, Driver.phase_b_current_f32, Graph_dic["DriverPhaseB"]);
+                    drawdata(chart_0, total_sec, Driver.dc_bus_current_f32, Graph_dic["DriverDCBusCurrent"]);
+                    drawdata(chart_0, total_sec, Driver.id_f32, Graph_dic["DriverID"]);
+                    drawdata(chart_0, total_sec, Driver.iq_f32, Graph_dic["DriverIQ"]);
+                    drawdata(chart_0, total_sec, Driver.IArms_f32, Graph_dic["DriverVD"]);
+                    drawdata(chart_0, total_sec, Driver.Torque_f32, Graph_dic["DriverVQ"]);
+                    drawdata(chart_0, total_sec, BMS.bat_volt_f32, Graph_dic["BMSBatVoltage"]);
+                    drawdata(chart_0, total_sec, BMS.bat_current_f32, Graph_dic["BMSBatCurrent"]);
+                    drawdata(chart_0, total_sec, BMS.power_emitted, Graph_dic["BMSPower"]);
 
-                    drawDatas(chart_1, total_sec, Driver.phase_a_current_f32, Graph_dic["DriverPhaseA"]);
-                    drawDatas(chart_1, total_sec, Driver.phase_b_current_f32, Graph_dic["DriverPhaseB"]);
-                    drawDatas(chart_1, total_sec, Driver.dc_bus_current_f32, Graph_dic["DriverDCBusCurrent"]);
-                    drawDatas(chart_1, total_sec, Driver.id_f32, Graph_dic["DriverID"]);
-                    drawDatas(chart_1, total_sec, Driver.iq_f32, Graph_dic["DriverIQ"]);
-                    drawDatas(chart_1, total_sec, Driver.IArms_f32, Graph_dic["DriverVD"]);
-                    drawDatas(chart_1, total_sec, Driver.Torque_f32, Graph_dic["DriverVQ"]);
-                    drawDatas(chart_1, total_sec, BMS.bat_volt_f32, Graph_dic["BMSBatVoltage"]);
-                    drawDatas(chart_1, total_sec, BMS.bat_current_f32, Graph_dic["BMSBatCurrent"]);
-                    drawDatas(chart_1, total_sec, BMS.power_emitted, Graph_dic["BMSPower"]);
+                    drawdata(chart_1, total_sec, Driver.phase_a_current_f32, Graph_dic["DriverPhaseA"]);
+                    drawdata(chart_1, total_sec, Driver.phase_b_current_f32, Graph_dic["DriverPhaseB"]);
+                    drawdata(chart_1, total_sec, Driver.dc_bus_current_f32, Graph_dic["DriverDCBusCurrent"]);
+                    drawdata(chart_1, total_sec, Driver.id_f32, Graph_dic["DriverID"]);
+                    drawdata(chart_1, total_sec, Driver.iq_f32, Graph_dic["DriverIQ"]);
+                    drawdata(chart_1, total_sec, Driver.IArms_f32, Graph_dic["DriverVD"]);
+                    drawdata(chart_1, total_sec, Driver.Torque_f32, Graph_dic["DriverVQ"]);
+                    drawdata(chart_1, total_sec, BMS.bat_volt_f32, Graph_dic["BMSBatVoltage"]);
+                    drawdata(chart_1, total_sec, BMS.bat_current_f32, Graph_dic["BMSBatCurrent"]);
+                    drawdata(chart_1, total_sec, BMS.power_emitted, Graph_dic["BMSPower"]);
 
-                    drawDatas(chart_2, total_sec, Driver.phase_a_current_f32, Graph_dic["DriverPhaseA"]);
-                    drawDatas(chart_2, total_sec, Driver.phase_b_current_f32, Graph_dic["DriverPhaseB"]);
-                    drawDatas(chart_2, total_sec, Driver.dc_bus_current_f32, Graph_dic["DriverDCBusCurrent"]);
-                    drawDatas(chart_2, total_sec, Driver.id_f32, Graph_dic["DriverID"]);
-                    drawDatas(chart_2, total_sec, Driver.iq_f32, Graph_dic["DriverIQ"]);
-                    drawDatas(chart_2, total_sec, Driver.IArms_f32, Graph_dic["DriverVD"]);
-                    drawDatas(chart_2, total_sec, Driver.Torque_f32, Graph_dic["DriverVQ"]);
-                    drawDatas(chart_2, total_sec, BMS.bat_volt_f32, Graph_dic["BMSBatVoltage"]);
-                    drawDatas(chart_2, total_sec, BMS.bat_current_f32, Graph_dic["BMSBatCurrent"]);
-                    drawDatas(chart_2, total_sec, BMS.power_emitted, Graph_dic["BMSPower"]);
+                    drawdata(chart_2, total_sec, Driver.phase_a_current_f32, Graph_dic["DriverPhaseA"]);
+                    drawdata(chart_2, total_sec, Driver.phase_b_current_f32, Graph_dic["DriverPhaseB"]);
+                    drawdata(chart_2, total_sec, Driver.dc_bus_current_f32, Graph_dic["DriverDCBusCurrent"]);
+                    drawdata(chart_2, total_sec, Driver.id_f32, Graph_dic["DriverID"]);
+                    drawdata(chart_2, total_sec, Driver.iq_f32, Graph_dic["DriverIQ"]);
+                    drawdata(chart_2, total_sec, Driver.IArms_f32, Graph_dic["DriverVD"]);
+                    drawdata(chart_2, total_sec, Driver.Torque_f32, Graph_dic["DriverVQ"]);
+                    drawdata(chart_2, total_sec, BMS.bat_volt_f32, Graph_dic["BMSBatVoltage"]);
+                    drawdata(chart_2, total_sec, BMS.bat_current_f32, Graph_dic["BMSBatCurrent"]);
+                    drawdata(chart_2, total_sec, BMS.power_emitted, Graph_dic["BMSPower"]);
 
-                    drawDatas(chart_3, total_sec, Driver.phase_a_current_f32, Graph_dic["DriverPhaseA"]);
-                    drawDatas(chart_3, total_sec, Driver.phase_b_current_f32, Graph_dic["DriverPhaseB"]);
-                    drawDatas(chart_3, total_sec, Driver.dc_bus_current_f32, Graph_dic["DriverDCBusCurrent"]);
-                    drawDatas(chart_3, total_sec, Driver.id_f32, Graph_dic["DriverID"]);
-                    drawDatas(chart_3, total_sec, Driver.iq_f32, Graph_dic["DriverIQ"]);
-                    drawDatas(chart_3, total_sec, Driver.IArms_f32, Graph_dic["DriverVD"]);
-                    drawDatas(chart_3, total_sec, Driver.Torque_f32, Graph_dic["DriverVQ"]);
-                    drawDatas(chart_3, total_sec, BMS.bat_volt_f32, Graph_dic["BMSBatVoltage"]);
-                    drawDatas(chart_3, total_sec, BMS.bat_current_f32, Graph_dic["BMSBatCurrent"]);
-                    drawDatas(chart_0, total_sec, BMS.power_emitted, Graph_dic["BMSPower"]);
+                    drawdata(chart_3, total_sec, Driver.phase_a_current_f32, Graph_dic["DriverPhaseA"]);
+                    drawdata(chart_3, total_sec, Driver.phase_b_current_f32, Graph_dic["DriverPhaseB"]);
+                    drawdata(chart_3, total_sec, Driver.dc_bus_current_f32, Graph_dic["DriverDCBusCurrent"]);
+                    drawdata(chart_3, total_sec, Driver.id_f32, Graph_dic["DriverID"]);
+                    drawdata(chart_3, total_sec, Driver.iq_f32, Graph_dic["DriverIQ"]);
+                    drawdata(chart_3, total_sec, Driver.IArms_f32, Graph_dic["DriverVD"]);
+                    drawdata(chart_3, total_sec, Driver.Torque_f32, Graph_dic["DriverVQ"]);
+                    drawdata(chart_3, total_sec, BMS.bat_volt_f32, Graph_dic["BMSBatVoltage"]);
+                    drawdata(chart_3, total_sec, BMS.bat_current_f32, Graph_dic["BMSBatCurrent"]);
+                    drawdata(chart_0, total_sec, BMS.power_emitted, Graph_dic["BMSPower"]);
 
                     Thread.Sleep(500);
                 }

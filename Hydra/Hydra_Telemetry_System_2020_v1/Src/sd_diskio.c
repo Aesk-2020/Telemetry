@@ -18,7 +18,7 @@
   */
 /* USER CODE END Header */
 
-/* Note: code generation based on sd_diskio_template_bspv1.c v2.1.4 
+/* Note: code generation based on sd_diskio_template_bspv1.c v2.1.4
    as "Use dma template" is disabled. */
 
 /* USER CODE BEGIN firstSection */
@@ -45,7 +45,7 @@
 /*
  * Depending on the use case, the SD card initialization could be done at the
  * application level: if it is the case define the flag below to disable
- * the BSP_SD_Init() call in the SD_Initialize() and add a call to 
+ * the BSP_SD_Init() call in the SD_Initialize() and add a call to
  * BSP_SD_Init() elsewhere in the application.
  */
 /* USER CODE BEGIN disableSDInit */
@@ -107,7 +107,7 @@ static DSTATUS SD_CheckStatus(BYTE lun)
   */
 DSTATUS SD_initialize(BYTE lun)
 {
-Stat = STA_NOINIT;  
+Stat = STA_NOINIT;
 
 #if !defined(DISABLE_SD_INIT)
 
@@ -144,15 +144,23 @@ DSTATUS SD_status(BYTE lun)
   * @param  count: Number of sectors to read (1..128)
   * @retval DRESULT: Operation result
   */
-              
+
 DRESULT SD_read(BYTE lun, BYTE *buff, DWORD sector, UINT count)
 {
-	if (BSP_SD_ReadBlocks_DMA((uint32_t*) buff, (uint32_t) (sector),
-	count) != MSD_OK)
-	{
-	return RES_ERROR;
-	}
-	return RES_OK;
+  DRESULT res = RES_ERROR;
+
+  if(BSP_SD_ReadBlocks((uint32_t*)buff,
+                       (uint32_t) (sector),
+                       count, SD_TIMEOUT) == MSD_OK)
+  {
+    /* wait until the read operation is finished */
+    while(BSP_SD_GetCardState()!= MSD_OK)
+    {
+    }
+    res = RES_OK;
+  }
+
+  return res;
 }
 
 /* USER CODE BEGIN beforeWriteSection */
@@ -167,15 +175,23 @@ DRESULT SD_read(BYTE lun, BYTE *buff, DWORD sector, UINT count)
   * @retval DRESULT: Operation result
   */
 #if _USE_WRITE == 1
-              
+
 DRESULT SD_write(BYTE lun, const BYTE *buff, DWORD sector, UINT count)
 {
-	if (BSP_SD_WriteBlocks_DMA((uint32_t*) buff, (uint32_t) (sector),
-	count) != MSD_OK)
-	{
-	return RES_ERROR;
-	}
-	return RES_OK;
+  DRESULT res = RES_ERROR;
+
+  if(BSP_SD_WriteBlocks((uint32_t*)buff,
+                        (uint32_t)(sector),
+                        count, SD_TIMEOUT) == MSD_OK)
+  {
+	/* wait until the Write operation is finished */
+    while(BSP_SD_GetCardState() != MSD_OK)
+    {
+    }
+    res = RES_OK;
+  }
+
+  return res;
 }
 #endif /* _USE_WRITE == 1 */
 
@@ -237,7 +253,7 @@ DRESULT SD_ioctl(BYTE lun, BYTE cmd, void *buff)
 /* can be used to modify previous code / undefine following code / add new code */
 /* USER CODE END afterIoctlSection */
 
-/* USER CODE BEGIN lastSection */ 
+/* USER CODE BEGIN lastSection */
 /* can be used to modify / undefine previous code or add new code */
 /* USER CODE END lastSection */
 

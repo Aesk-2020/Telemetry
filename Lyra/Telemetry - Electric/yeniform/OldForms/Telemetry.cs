@@ -29,8 +29,8 @@ namespace Telemetri
             InitBars();
             myDisplayThread = new Thread(displayMyAllData) { IsBackground = true, Priority = ThreadPriority.Normal };
             history_displayer.ValueChanged -= history_displayer_ValueChanged;
-            mqtt.LogEvent += logDatas;
-            serialportRF.LogRFEvent += logDatas;
+            mqtt.LogEvent += logdata;
+            serialportRF.LogRFEvent += logdata;
         }
 
         private void InitBars()
@@ -48,7 +48,7 @@ namespace Telemetri
             gmap.MouseClick -= new MouseEventHandler(gMapControl1_MouseClick);
         }
 
-        private void logDatas()
+        private void logdata()
         {
             if (MACROS.race_start_flag)
             {
@@ -218,12 +218,10 @@ namespace Telemetri
                 serialportRF.DisconnectSerialPort(serialportRF.portname);
                 xbee_active.BackColor = Color.Transparent;
             }
-            byte code = mqtt.ConnectRequestMQTT();
+            byte code = mqtt.MQTTsubscribe();
             if (code == 0x00)
             {
                 //Connected
-                bağlanToolStripMenuItem.Enabled = false;
-                bağlantıyıKesToolStripMenuItem.Enabled = true;
                 gsm_durum.BackColor = MACROS.AeskBlue;
                 if (!myDisplayThread.IsAlive)
                 {
@@ -242,8 +240,7 @@ namespace Telemetri
             mqtt.disConnectMQTT();
             gsm_durum.BackColor = Color.Transparent;
             MACROS.newDataCome = false;
-            bağlantıyıKesToolStripMenuItem.Enabled = false;
-            bağlanToolStripMenuItem.Enabled = true;
+
             //event kapama
         }
 
@@ -258,11 +255,6 @@ namespace Telemetri
             if (!serialPort1.IsOpen)
             {
                 serialportRF.ConnectSerialPort(serialportRF.portname);
-                if(serialPort1.IsOpen == true) 
-                {
-                    bağlanToolStripMenuItem1.Enabled = false;
-                    bağlantıyıKesToolStripMenuItem1.Enabled = true;
-                }
                 xbee_active.BackColor = MACROS.AeskBlue;
             }
 
@@ -277,8 +269,6 @@ namespace Telemetri
             if (serialPort1.IsOpen)
             {
                 serialportRF.DisconnectSerialPort(serialportRF.portname);
-                bağlanToolStripMenuItem1.Enabled = true;
-                bağlantıyıKesToolStripMenuItem1.Enabled = false;
             }
             MACROS.newDataCome = false;
         }
@@ -325,11 +315,11 @@ namespace Telemetri
 
             myTimeTickThread = new Thread(calculateRaceTimeOperations) { IsBackground = true, Priority = ThreadPriority.Highest };
             myTimeTickThread.Start();
-            SectorAndTourDatas.sector1_sure.Start();
+            SectorAndTourdata.sector1_sure.Start();
             MACROS.race_start_flag = true;
-            SectorAndTourDatas.gidilen_yol_gps_sector_T_u32 = myGmap.odometer_gps;
-            SectorAndTourDatas.gidilen_yol_vcu_sector_T_u32 = Driver.odometer_u32;
-            SectorAndTourDatas.consumption_sector_T_f32 = BMS.bat_cons_f32;
+            SectorAndTourdata.gidilen_yol_gps_sector_T_u32 = myGmap.odometer_gps;
+            SectorAndTourdata.gidilen_yol_vcu_sector_T_u32 = Driver.odometer_u32;
+            SectorAndTourdata.consumption_sector_T_f32 = BMS.bat_cons_f32;
         }
 
         private void bitirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -344,38 +334,37 @@ namespace Telemetri
 
         private void AngleControl(double angle)
         {
-
             if ((angle > MACROS.S1_Start || angle < MACROS.S1_Stop))
             {
                 if (MACROS.sector_4to_1)
                 {
-                    SectorAndTourDatas.gidilen_yol_gps_sector_4_u32 = myGmap.odometer_gps - SectorAndTourDatas.gidilen_yol_gps_sector_4_u32;
-                    SectorAndTourDatas.consumption_sector_4_f32 = BMS.bat_cons_f32 - SectorAndTourDatas.consumption_sector_4_f32;
-                    SectorAndTourDatas.gidilen_yol_vcu_sector_4_u32 = Driver.odometer_u32 - SectorAndTourDatas.gidilen_yol_vcu_sector_4_u32;
+                    SectorAndTourdata.gidilen_yol_gps_sector_4_u32 = myGmap.odometer_gps - SectorAndTourdata.gidilen_yol_gps_sector_4_u32;
+                    SectorAndTourdata.consumption_sector_4_f32 = BMS.bat_cons_f32 - SectorAndTourdata.consumption_sector_4_f32;
+                    SectorAndTourdata.gidilen_yol_vcu_sector_4_u32 = Driver.odometer_u32 - SectorAndTourdata.gidilen_yol_vcu_sector_4_u32;
 
                     if (Logs._IsLog)
                     {
-                        myDataGrid.addGrid(mylogs.Hsector4Datas);
+                        myDataGrid.addGrid(mylogs.Hsector4data);
                     }
                     else
                     {
-                        myDataGrid.addGrid(SectorAndTourDatas.sector4Datas);
+                        myDataGrid.addGrid(SectorAndTourdata.sector4data);
                     }
-                    SectorAndTourDatas.sector4_sure.Reset();
+                    SectorAndTourdata.sector4_sure.Reset();
                     MACROS.sector_4to_1 = false;
                 }
 
                 if (MACROS.sector_flag[0] == false && MACROS.race_start_flag)
                 {
-                    if (!SectorAndTourDatas.sector1_sure.IsRunning)
+                    if (!SectorAndTourdata.sector1_sure.IsRunning)
                     {
-                        SectorAndTourDatas.sector1_sure.Start();
+                        SectorAndTourdata.sector1_sure.Start();
                     }
-                    SectorAndTourDatas.gidilen_yol_gps_sector_1_u32 = myGmap.odometer_gps;
-                    SectorAndTourDatas.consumption_sector_1_f32 = BMS.bat_cons_f32;
-                    SectorAndTourDatas.gidilen_yol_vcu_sector_1_u32 = Driver.odometer_u32;
-                    SectorAndTourDatas.sector_name = "S1";
-                    ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name);
+                    SectorAndTourdata.gidilen_yol_gps_sector_1_u32 = myGmap.odometer_gps;
+                    SectorAndTourdata.consumption_sector_1_f32 = BMS.bat_cons_f32;
+                    SectorAndTourdata.gidilen_yol_vcu_sector_1_u32 = Driver.odometer_u32;
+                    SectorAndTourdata.sector_name = "S1";
+                    ThreadMethods.LabelDegis(sektor, SectorAndTourdata.sector_name);
                     MACROS.sector_flag[0] = true;
                 }
 
@@ -391,29 +380,29 @@ namespace Telemetri
             {
                 if (MACROS.sector_flag[1] == false)
                 {
-                    SectorAndTourDatas.sector2_sure.Start();
-                    SectorAndTourDatas.gidilen_yol_gps_sector_1_u32 = myGmap.odometer_gps - SectorAndTourDatas.gidilen_yol_gps_sector_1_u32;
-                    SectorAndTourDatas.consumption_sector_1_f32 = BMS.bat_cons_f32 - SectorAndTourDatas.consumption_sector_1_f32;
-                    SectorAndTourDatas.gidilen_yol_vcu_sector_1_u32 = Driver.odometer_u32 - SectorAndTourDatas.gidilen_yol_vcu_sector_1_u32;
+                    SectorAndTourdata.sector2_sure.Start();
+                    SectorAndTourdata.gidilen_yol_gps_sector_1_u32 = myGmap.odometer_gps - SectorAndTourdata.gidilen_yol_gps_sector_1_u32;
+                    SectorAndTourdata.consumption_sector_1_f32 = BMS.bat_cons_f32 - SectorAndTourdata.consumption_sector_1_f32;
+                    SectorAndTourdata.gidilen_yol_vcu_sector_1_u32 = Driver.odometer_u32 - SectorAndTourdata.gidilen_yol_vcu_sector_1_u32;
 
-                    SectorAndTourDatas.gidilen_yol_gps_sector_2_u32 = myGmap.odometer_gps;
-                    SectorAndTourDatas.consumption_sector_2_f32 = BMS.bat_cons_f32;
-                    SectorAndTourDatas.gidilen_yol_vcu_sector_2_u32 = Driver.odometer_u32;
+                    SectorAndTourdata.gidilen_yol_gps_sector_2_u32 = myGmap.odometer_gps;
+                    SectorAndTourdata.consumption_sector_2_f32 = BMS.bat_cons_f32;
+                    SectorAndTourdata.gidilen_yol_vcu_sector_2_u32 = Driver.odometer_u32;
 
-                    SectorAndTourDatas.sector_name = "S1";
+                    SectorAndTourdata.sector_name = "S1";
 
                     if (Logs._IsLog)
                     {
-                        myDataGrid.addGrid(mylogs.Hsector1Datas);
+                        myDataGrid.addGrid(mylogs.Hsector1data);
                     }
                     else
                     {
-                        myDataGrid.addGrid(SectorAndTourDatas.sector1Datas);
+                        myDataGrid.addGrid(SectorAndTourdata.sector1data);
                     }
 
-                    SectorAndTourDatas.sector1_sure.Reset();
-                    SectorAndTourDatas.sector_name = "S2";
-                    ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name);
+                    SectorAndTourdata.sector1_sure.Reset();
+                    SectorAndTourdata.sector_name = "S2";
+                    ThreadMethods.LabelDegis(sektor, SectorAndTourdata.sector_name);
                     MACROS.sector_flag[0] = false;
                     MACROS.sector_flag[1] = true;
                 }
@@ -423,26 +412,26 @@ namespace Telemetri
             {
                 if (MACROS.sector_flag[2] == false)
                 {
-                    SectorAndTourDatas.sector3_sure.Start();
-                    SectorAndTourDatas.gidilen_yol_gps_sector_2_u32 = myGmap.odometer_gps - SectorAndTourDatas.gidilen_yol_gps_sector_2_u32;
-                    SectorAndTourDatas.consumption_sector_2_f32 = BMS.bat_cons_f32 - SectorAndTourDatas.consumption_sector_2_f32;
-                    SectorAndTourDatas.gidilen_yol_vcu_sector_2_u32 = Driver.odometer_u32 - SectorAndTourDatas.gidilen_yol_vcu_sector_2_u32;
+                    SectorAndTourdata.sector3_sure.Start();
+                    SectorAndTourdata.gidilen_yol_gps_sector_2_u32 = myGmap.odometer_gps - SectorAndTourdata.gidilen_yol_gps_sector_2_u32;
+                    SectorAndTourdata.consumption_sector_2_f32 = BMS.bat_cons_f32 - SectorAndTourdata.consumption_sector_2_f32;
+                    SectorAndTourdata.gidilen_yol_vcu_sector_2_u32 = Driver.odometer_u32 - SectorAndTourdata.gidilen_yol_vcu_sector_2_u32;
 
-                    SectorAndTourDatas.gidilen_yol_gps_sector_3_u32 = myGmap.odometer_gps;
-                    SectorAndTourDatas.consumption_sector_3_f32 = BMS.bat_cons_f32;
-                    SectorAndTourDatas.gidilen_yol_vcu_sector_3_u32 = Driver.odometer_u32;
+                    SectorAndTourdata.gidilen_yol_gps_sector_3_u32 = myGmap.odometer_gps;
+                    SectorAndTourdata.consumption_sector_3_f32 = BMS.bat_cons_f32;
+                    SectorAndTourdata.gidilen_yol_vcu_sector_3_u32 = Driver.odometer_u32;
 
                     if (Logs._IsLog)
                     {
-                        myDataGrid.addGrid(mylogs.Hsector2Datas);
+                        myDataGrid.addGrid(mylogs.Hsector2data);
                     }
                     else
                     {
-                        myDataGrid.addGrid(SectorAndTourDatas.sector2Datas);
+                        myDataGrid.addGrid(SectorAndTourdata.sector2data);
                     }
-                    SectorAndTourDatas.sector2_sure.Reset();
-                    SectorAndTourDatas.sector_name = "S3";
-                    ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name);
+                    SectorAndTourdata.sector2_sure.Reset();
+                    SectorAndTourdata.sector_name = "S3";
+                    ThreadMethods.LabelDegis(sektor, SectorAndTourdata.sector_name);
                     MACROS.sector_flag[2] = true;
                     MACROS.sector_flag[1] = false;
                 }
@@ -452,25 +441,25 @@ namespace Telemetri
             {
                 if (MACROS.sector_flag[3] == false)
                 {
-                    SectorAndTourDatas.sector4_sure.Start();
-                    SectorAndTourDatas.gidilen_yol_gps_sector_3_u32 = myGmap.odometer_gps - SectorAndTourDatas.gidilen_yol_gps_sector_3_u32;
-                    SectorAndTourDatas.consumption_sector_3_f32 = BMS.bat_cons_f32 - SectorAndTourDatas.consumption_sector_3_f32;
-                    SectorAndTourDatas.gidilen_yol_vcu_sector_3_u32 = Driver.odometer_u32 - SectorAndTourDatas.gidilen_yol_vcu_sector_3_u32;
+                    SectorAndTourdata.sector4_sure.Start();
+                    SectorAndTourdata.gidilen_yol_gps_sector_3_u32 = myGmap.odometer_gps - SectorAndTourdata.gidilen_yol_gps_sector_3_u32;
+                    SectorAndTourdata.consumption_sector_3_f32 = BMS.bat_cons_f32 - SectorAndTourdata.consumption_sector_3_f32;
+                    SectorAndTourdata.gidilen_yol_vcu_sector_3_u32 = Driver.odometer_u32 - SectorAndTourdata.gidilen_yol_vcu_sector_3_u32;
 
-                    SectorAndTourDatas.gidilen_yol_gps_sector_4_u32 = myGmap.odometer_gps;
-                    SectorAndTourDatas.consumption_sector_4_f32 = BMS.bat_cons_f32;
-                    SectorAndTourDatas.gidilen_yol_vcu_sector_4_u32 = Driver.odometer_u32;
+                    SectorAndTourdata.gidilen_yol_gps_sector_4_u32 = myGmap.odometer_gps;
+                    SectorAndTourdata.consumption_sector_4_f32 = BMS.bat_cons_f32;
+                    SectorAndTourdata.gidilen_yol_vcu_sector_4_u32 = Driver.odometer_u32;
                     if (Logs._IsLog)
                     {
-                        myDataGrid.addGrid(mylogs.Hsector3Datas);
+                        myDataGrid.addGrid(mylogs.Hsector3data);
                     }
                     else
                     {
-                        myDataGrid.addGrid(SectorAndTourDatas.sector3Datas);
+                        myDataGrid.addGrid(SectorAndTourdata.sector3data);
                     }
-                    SectorAndTourDatas.sector3_sure.Reset();
-                    SectorAndTourDatas.sector_name = "S4";
-                    ThreadMethods.LabelDegis(sektor, SectorAndTourDatas.sector_name);
+                    SectorAndTourdata.sector3_sure.Reset();
+                    SectorAndTourdata.sector_name = "S4";
+                    ThreadMethods.LabelDegis(sektor, SectorAndTourdata.sector_name);
                     MACROS.sector_flag[3] = true;
                     MACROS.sector_flag[2] = false;
                     MACROS.sector_4to_1 = true;
@@ -480,7 +469,7 @@ namespace Telemetri
 
         private void telemetry_FormClosing(object sender, FormClosingEventArgs e)
         {
-          
+            
         }
 
         private void kayıtAçToolStripMenuItem_Click(object sender, EventArgs e)
@@ -499,10 +488,10 @@ namespace Telemetri
 
             if (mylogs.history_counter > history_displayer.Value)
             {
-                if (!MACROS.hold_my_history && !MACROS.show_old_datas)
+                if (!MACROS.hold_my_history && !MACROS.show_old_data)
                 {
                     mylogs.hold_history_shower = mylogs.history_counter;
-                    MACROS.show_old_datas = true;
+                    MACROS.show_old_data = true;
                     MACROS.hold_my_history = true;
                     myGmap.OverlayDelete();
                 }
@@ -510,7 +499,7 @@ namespace Telemetri
 
             else
             {
-                MACROS.show_old_datas = false;
+                MACROS.show_old_data = false;
                 if (MACROS.hold_my_history)
                 {
                     MACROS.hold_my_history = false;
@@ -519,10 +508,10 @@ namespace Telemetri
                 }
             }
 
-            string[] old_datass = mylogs.read_string[mylogs.read_string.Keys.ElementAt(history_displayer.Value)].Split('$');
+            string[] old_datas = mylogs.read_string[mylogs.read_string.Keys.ElementAt(history_displayer.Value)].Split('\t');
             if (MACROS.IsSd == false)
             {
-                mylogs.ReadArayüz(old_datass);
+                mylogs.ReadArayüz(old_datas);
                 displayAllData();
                 ThreadMethods.TextDegis(gecen_sure, Timers.Gecen_süre.ToString(MACROS.TimeStringFormat));
                 ThreadMethods.TextDegis(kalan_sure, Timers.Kalan_süre.ToString(MACROS.TimeStringFormat));
@@ -534,7 +523,7 @@ namespace Telemetri
             else
             {
                 gecen_sure.Text = Timers.Gecen_süre.ToString();
-                mylogs.readSdCard(old_datass);
+                mylogs.readSdCard(old_datas);
                 displayAllData();
             }
             mylogs.history_counter = history_displayer.Value;
@@ -542,13 +531,13 @@ namespace Telemetri
 
         private void TurAt()
         {
-            SectorAndTourDatas.gidilen_yol_gps_sector_T_u32 = myGmap.odometer_gps - SectorAndTourDatas.gidilen_yol_gps_sector_T_u32;
-            SectorAndTourDatas.gidilen_yol_vcu_sector_T_u32 = Driver.odometer_u32 - SectorAndTourDatas.gidilen_yol_vcu_sector_T_u32;
-            SectorAndTourDatas.consumption_sector_T_f32 = BMS.bat_cons_f32 - SectorAndTourDatas.consumption_sector_T_f32;
+            SectorAndTourdata.gidilen_yol_gps_sector_T_u32 = myGmap.odometer_gps - SectorAndTourdata.gidilen_yol_gps_sector_T_u32;
+            SectorAndTourdata.gidilen_yol_vcu_sector_T_u32 = Driver.odometer_u32 - SectorAndTourdata.gidilen_yol_vcu_sector_T_u32;
+            SectorAndTourdata.consumption_sector_T_f32 = BMS.bat_cons_f32 - SectorAndTourdata.consumption_sector_T_f32;
 
             if (Logs._IsLog)
             {
-                myDataGrid.addGrid(mylogs.HturAtDatas);
+                myDataGrid.addGrid(mylogs.HturAtdata);
                 ThreadMethods.TextDegis(ortalama_tur_suresi, mylogs.ortalama_tur_sure);
                 Timers.currentTour++;
             }
@@ -562,15 +551,15 @@ namespace Telemetri
                     ThreadMethods.TextDegis(en_hizli_tur_timer, Timers.Anlik_tur_süresi.Elapsed.ToString(MACROS.TimeStringFormat));
                     Timers.en_hizli_tur_suresi = new TimeSpan(Timers.Anlik_tur_süresi.Elapsed.Hours, Timers.Anlik_tur_süresi.Elapsed.Minutes, Timers.Anlik_tur_süresi.Elapsed.Seconds);
                 }
-                SectorAndTourDatas.sector_name = "ST";
-                myDataGrid.addGrid(SectorAndTourDatas.turAtDatas);
+                SectorAndTourdata.sector_name = "ST";
+                myDataGrid.addGrid(SectorAndTourdata.turAtdata);
                 timer.TurAt();
             }
 
 
-            SectorAndTourDatas.gidilen_yol_gps_sector_T_u32 = myGmap.odometer_gps;
-            SectorAndTourDatas.gidilen_yol_vcu_sector_T_u32 = Driver.odometer_u32;
-            SectorAndTourDatas.consumption_sector_T_f32 = BMS.bat_cons_f32;
+            SectorAndTourdata.gidilen_yol_gps_sector_T_u32 = myGmap.odometer_gps;
+            SectorAndTourdata.gidilen_yol_vcu_sector_T_u32 = Driver.odometer_u32;
+            SectorAndTourdata.consumption_sector_T_f32 = BMS.bat_cons_f32;
             int tour_est = (int)((MACROS.total_battery_capacity - BMS.bat_cons_f32) / (BMS.bat_cons_f32 / (float)Timers.currentTour));
             ThreadMethods.TextDegis(lap_est_txt, Convert.ToString(tour_est));
             myGmap.OverlayDelete();

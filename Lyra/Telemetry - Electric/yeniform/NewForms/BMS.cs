@@ -16,5 +16,15 @@ namespace Telemetri.NewForms
         {
             InitializeComponent();
         }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BMS_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
