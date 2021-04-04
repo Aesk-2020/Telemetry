@@ -61,5 +61,10 @@ namespace Telemetri.NewForms
         {
             Telemetry2021.ActiveForm.Close();
         }
+
+        private void logplyrButton_Click(object sender, EventArgs e)
+        {
+            FormManagement.openChildForm(new LogPlayer(), panelChildForm);
+        }
     }
 }

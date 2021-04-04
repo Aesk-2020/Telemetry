@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telemetri.Variables;
 
 namespace Telemetri.NewForms
 {
@@ -15,6 +16,14 @@ namespace Telemetri.NewForms
         public LogPlayer()
         {
             InitializeComponent();
+        }
+
+        LogSystem logSystem = new LogSystem();
+        List<string> deneme = new List<string>();
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            deneme = logSystem.ReadByteLog("aesk\n");
         }
     }
 }

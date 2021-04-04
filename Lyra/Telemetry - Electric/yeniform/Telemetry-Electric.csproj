@@ -165,6 +165,7 @@
     </Compile>
     <Compile Include="Variables\BmsUI.cs" />
     <Compile Include="Variables\FormManagement.cs" />
+    <Compile Include="Variables\LogSystem.cs" />
     <Compile Include="Variables\myDataGrid.cs" />
     <Compile Include="Variables\EncodePackMethods.cs" />
     <Compile Include="Variables\GMAPController.cs" />

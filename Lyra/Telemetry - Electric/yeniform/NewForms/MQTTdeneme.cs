@@ -28,7 +28,7 @@ namespace Telemetri.NewForms
 
         private void MQTTdeneme_Load(object sender, EventArgs e)
         {
-            Client = new MqttClient("test.mosquitto.org");
+            Client = new MqttClient("broker.mqttdashboard.com");
         }
         private void button1_Click(object sender, EventArgs e)
         {
