@@ -289,11 +289,12 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.1242F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.8758F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 314F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel15, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 661);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -312,14 +313,13 @@
             this.tableLayoutPanel2.Controls.Add(this.mqttPingLabel, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label4, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(247, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(622, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(684, 94);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(309, 94);
             this.tableLayoutPanel2.TabIndex = 145;
             // 
             // activeChannelLabel
@@ -332,7 +332,7 @@
             this.activeChannelLabel.Location = new System.Drawing.Point(4, 50);
             this.activeChannelLabel.Multiline = true;
             this.activeChannelLabel.Name = "activeChannelLabel";
-            this.activeChannelLabel.Size = new System.Drawing.Size(334, 40);
+            this.activeChannelLabel.Size = new System.Drawing.Size(147, 40);
             this.activeChannelLabel.TabIndex = 149;
             this.activeChannelLabel.Text = "RF";
             this.activeChannelLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -344,10 +344,10 @@
             this.mqttPingLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mqttPingLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mqttPingLabel.ForeColor = System.Drawing.Color.White;
-            this.mqttPingLabel.Location = new System.Drawing.Point(345, 50);
+            this.mqttPingLabel.Location = new System.Drawing.Point(158, 50);
             this.mqttPingLabel.Multiline = true;
             this.mqttPingLabel.Name = "mqttPingLabel";
-            this.mqttPingLabel.Size = new System.Drawing.Size(335, 40);
+            this.mqttPingLabel.Size = new System.Drawing.Size(147, 40);
             this.mqttPingLabel.TabIndex = 148;
             this.mqttPingLabel.Text = "97";
             this.mqttPingLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -358,9 +358,9 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(345, 1);
+            this.label4.Location = new System.Drawing.Point(158, 1);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(335, 45);
+            this.label4.Size = new System.Drawing.Size(147, 45);
             this.label4.TabIndex = 146;
             this.label4.Text = "MQTT Ping";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -373,7 +373,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(4, 1);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(334, 45);
+            this.label3.Size = new System.Drawing.Size(147, 45);
             this.label3.TabIndex = 127;
             this.label3.Text = "Active Channel";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -391,7 +391,7 @@
             this.tableLayoutPanel15.RowCount = 2;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.42424F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.57576F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(238, 94);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(155, 94);
             this.tableLayoutPanel15.TabIndex = 143;
             // 
             // label1
@@ -402,7 +402,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(4, 1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(230, 38);
+            this.label1.Size = new System.Drawing.Size(147, 38);
             this.label1.TabIndex = 126;
             this.label1.Text = "Lap Counter";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -423,7 +423,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(230, 47);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(147, 47);
             this.tableLayoutPanel3.TabIndex = 132;
             // 
             // lapMinusBtn
@@ -439,9 +439,9 @@
             this.lapMinusBtn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.lapMinusBtn.IconColor = System.Drawing.Color.Black;
             this.lapMinusBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.lapMinusBtn.Location = new System.Drawing.Point(57, 3);
+            this.lapMinusBtn.Location = new System.Drawing.Point(37, 3);
             this.lapMinusBtn.Name = "lapMinusBtn";
-            this.lapMinusBtn.Size = new System.Drawing.Size(41, 41);
+            this.lapMinusBtn.Size = new System.Drawing.Size(24, 41);
             this.lapMinusBtn.TabIndex = 128;
             this.lapMinusBtn.UseVisualStyleBackColor = false;
             this.lapMinusBtn.Click += new System.EventHandler(this.lapMinusBtn_Click);
@@ -461,7 +461,7 @@
             this.lapPlusBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.lapPlusBtn.Location = new System.Drawing.Point(3, 3);
             this.lapPlusBtn.Name = "lapPlusBtn";
-            this.lapPlusBtn.Size = new System.Drawing.Size(48, 41);
+            this.lapPlusBtn.Size = new System.Drawing.Size(28, 41);
             this.lapPlusBtn.TabIndex = 127;
             this.lapPlusBtn.UseVisualStyleBackColor = false;
             this.lapPlusBtn.Click += new System.EventHandler(this.lapPlusBtn_Click);
@@ -472,9 +472,9 @@
             this.lapCntLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lapCntLabel.Font = new System.Drawing.Font("Ink Free", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lapCntLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.lapCntLabel.Location = new System.Drawing.Point(155, 0);
+            this.lapCntLabel.Location = new System.Drawing.Point(100, 0);
             this.lapCntLabel.Name = "lapCntLabel";
-            this.lapCntLabel.Size = new System.Drawing.Size(72, 47);
+            this.lapCntLabel.Size = new System.Drawing.Size(44, 47);
             this.lapCntLabel.TabIndex = 130;
             this.lapCntLabel.Text = "0";
             this.lapCntLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -492,9 +492,9 @@
             this.LapResetBtn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.LapResetBtn.IconColor = System.Drawing.Color.Black;
             this.LapResetBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.LapResetBtn.Location = new System.Drawing.Point(104, 3);
+            this.LapResetBtn.Location = new System.Drawing.Point(67, 3);
             this.LapResetBtn.Name = "LapResetBtn";
-            this.LapResetBtn.Size = new System.Drawing.Size(45, 41);
+            this.LapResetBtn.Size = new System.Drawing.Size(27, 41);
             this.LapResetBtn.TabIndex = 129;
             this.LapResetBtn.UseVisualStyleBackColor = false;
             this.LapResetBtn.Click += new System.EventHandler(this.LapResetBtn_Click);
