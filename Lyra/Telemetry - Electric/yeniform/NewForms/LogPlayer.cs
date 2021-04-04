@@ -18,12 +18,11 @@ namespace Telemetri.NewForms
             InitializeComponent();
         }
 
-        LogSystem logSystem = new LogSystem();
         List<string> deneme = new List<string>();
 
         private void button1_Click(object sender, EventArgs e)
         {
-            deneme = logSystem.ReadByteLog("aesk\n");
+            deneme = LogSystem.ReadByteLog("aesk\n");
         }
     }
 }

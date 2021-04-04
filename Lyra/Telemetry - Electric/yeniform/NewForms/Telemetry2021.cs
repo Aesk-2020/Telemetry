@@ -15,7 +15,6 @@ namespace Telemetri.NewForms
 {
     public partial class Telemetry2021 : Form
     {
-
         public Telemetry2021()
         {
             InitializeComponent();
@@ -66,5 +65,7 @@ namespace Telemetri.NewForms
         {
             FormManagement.openChildForm(new LogPlayer(), panelChildForm);
         }
+
+       
     }
 }

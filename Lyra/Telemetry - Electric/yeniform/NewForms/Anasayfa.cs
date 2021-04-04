@@ -24,6 +24,7 @@ namespace Telemetri.NewForms
         {
             string[] ports = SerialPort.GetPortNames();
             portsListBox.Items.AddRange(ports);
+            LogSystem.isFirst = true;
         }/*
         private void portsListBox_Click(object sender, EventArgs e)
         {
@@ -60,6 +61,31 @@ namespace Telemetri.NewForms
             mqttObj.Disconnect();
             mqttConnectBtn.Enabled = true;
             mqttDisconnectBtn.Enabled = false;
+        }
+
+        private void startLogBtn_Click(object sender, EventArgs e)
+        {
+            if(LogSystem.StartLog(logTimer) == true)
+            {
+                startLogBtn.Enabled = false;
+                stopLogBtn.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Uzantı seçilemedi.");
+            }
+        }
+
+        private void logTimer_Tick(object sender, EventArgs e)
+        {
+            LogSystem.WriteStringLog();
+        }
+
+        private void stopLogBtn_Click(object sender, EventArgs e)
+        {
+            LogSystem.StopLog(logTimer);
+            startLogBtn.Enabled = true;
+            stopLogBtn.Enabled = false;
         }
     }
 }

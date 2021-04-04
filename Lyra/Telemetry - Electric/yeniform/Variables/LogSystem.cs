@@ -10,13 +10,19 @@ using Telemetri.Variables;
 
 namespace Telemetri.Variables
 {
-    public class LogSystem
+    public static class LogSystem
     {
-        public string writePath { get; set; }
+        public static string writePath { get; set; }
+
+        private static SaveFileDialog _savefile;
+        private static StreamWriter _sw;
+
+        public static bool isFirst { get; set; }
+
 
         //Kullanıcının seçtiği dosyayı okuyup her bir satırı string olarak list tipindeki değişkene atar.
         //Okuma işlemi tamamlanınca bu listeyi döndürür.
-        public List<string> ReadStringLog()
+        public static List<string> ReadStringLog()
         {
             List<string> readData = new List<string>();
             OpenFileDialog file = new OpenFileDialog();
@@ -46,7 +52,7 @@ namespace Telemetri.Variables
             }
         }
 
-        public List<string> ReadByteLog(string splitter)
+        public static List<string> ReadByteLog(string splitter)
         {
             List<string> lineList = new List<string>();
             OpenFileDialog file = new OpenFileDialog();
@@ -89,7 +95,7 @@ namespace Telemetri.Variables
             }
             return lineList;
         }
-        public void ParseStringData(List<string> dataList)
+        public static void ParseStringData(List<string> dataList)
         {
             int count = 0;
             //BİR ŞEY PATLARSA BURAYA BAK
@@ -124,6 +130,53 @@ namespace Telemetri.Variables
             GpsTracker.gps_velocity_u8 = byte.Parse(dataList[count++]);
             GpsTracker.gps_sattelite_number_u8 = byte.Parse(dataList[count++]);
             GpsTracker.gps_efficiency_u8 = byte.Parse(dataList[count++]);
+        }
+        public static void WriteStringLog()
+        {
+            _sw.WriteLine(VCU.log_datas + Driver.log_datas_driver + BMS.log_datas_bms + GpsTracker.log_gps_datas);
+            _sw.Flush();
+        }
+        public static bool StartLog(Timer logTimer)
+        {
+            _savefile = new SaveFileDialog();
+            
+            if(isFirst)
+            {
+                _savefile.FileName = DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + ".txt";
+                if (_savefile.ShowDialog() == DialogResult.OK)
+                {
+                    
+                    writePath = Path.GetDirectoryName(_savefile.FileName);
+                    _sw = new StreamWriter(@_savefile.FileName, append: false);
+                    _sw.WriteLine("Tarih");
+                    
+                    logTimer.Start();
+                    isFirst = false;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                
+                _savefile.FileName = DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + ".txt";
+                string temp = writePath + "\\" + _savefile.FileName;
+                _sw = new StreamWriter(@temp, append: false);
+                _sw.WriteLine("Tarih");
+                
+                logTimer.Start();
+                return true;
+            }
+           
+        }
+
+        public static void StopLog(Timer timer)
+        {
+            timer.Stop();
+            _sw.Close();
         }
 
     }
