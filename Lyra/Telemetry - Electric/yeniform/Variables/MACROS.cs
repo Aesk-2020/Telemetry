@@ -37,7 +37,7 @@ namespace Telemetri.Variables
         public static string TimeStringFormat = @"hh\:mm\:ss";
         public static double total_Tur = 30;
         public static int maks_set_hiz = 65;
-        public static bool show_old_datas;
+        public static bool show_old_data;
         public static bool hold_my_history;
         public static bool newDataCome = false;
         public static bool IsSd = false;

@@ -290,7 +290,7 @@
         AABJRU5ErkJggg==
 </value>
   </data>
-  <data name="ıconButton2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="lapMinusBtn.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAw9JREFUaEPt
         mUto1FAYhccHPnEhuhAEcaEo1MncMitRtAsXou6k4AsUHwiigqLiCx1BmmRGFLsRdKELN3bngAoqVGyp
@@ -309,7 +309,7 @@
         kXaumgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="ıconButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="lapPlusBtn.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAA2pJREFUaEPt
         mUtoFEEQhtcHvsCD6EEQxIMSIe7MhD2Jojl4EPUmAV+g+EAQHyi+FV1F0j2boJiLoAc9eDE3Ayo+IGJC
@@ -329,7 +329,7 @@
         7sDd4akfxxW3oIc7CsmvquovuTXVNKmUSv0BmAjM6YGEOzAAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="ıconButton3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="LapResetBtn.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAABBdJREFUaEPt
         WTtoFUEUff6w0MIPFuKnslCS7G4MKoiihd9KgkQLESttbAQLCxFTmOxuAv4Vg4JFECQaW7GQCMGYnX0o

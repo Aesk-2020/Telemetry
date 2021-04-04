@@ -55,19 +55,19 @@ namespace Telemetri.Variables
             }
         }
 
-        public void addGrid(object[] datas)
+        public void addGrid(object[] data)
         {
             if (_d1.InvokeRequired)
             {
                 MethodInvoker del = delegate
                 {
-                    addGrid(datas);
+                    addGrid(data);
                 };
                 _d1.Invoke(del);
                 return;
             }
             
-            _d1.Rows.Add(datas);
+            _d1.Rows.Add(data);
             
         }
 

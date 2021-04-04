@@ -47,28 +47,28 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.actVelocityLabel = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.setVelocityLabel = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.batConsLabel = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.batCurLabel = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.socLabel = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.driveStatusLabel = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.errorsLabel = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.startTimeLabel = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -166,6 +166,7 @@
             // 
             this.finishBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.finishBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.finishBtn.Enabled = false;
             this.finishBtn.FlatAppearance.BorderSize = 0;
             this.finishBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.finishBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -221,6 +222,7 @@
             // 
             this.portDisconnectBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.portDisconnectBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.portDisconnectBtn.Enabled = false;
             this.portDisconnectBtn.FlatAppearance.BorderSize = 0;
             this.portDisconnectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.portDisconnectBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -239,6 +241,7 @@
             // 
             this.mqttDisconnectBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.mqttDisconnectBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mqttDisconnectBtn.Enabled = false;
             this.mqttDisconnectBtn.FlatAppearance.BorderSize = 0;
             this.mqttDisconnectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.mqttDisconnectBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -333,6 +336,7 @@
             // 
             this.startLogBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.startLogBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.startLogBtn.Enabled = false;
             this.startLogBtn.FlatAppearance.BorderSize = 0;
             this.startLogBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.startLogBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -383,7 +387,7 @@
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.textBox2, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.actVelocityLabel, 0, 1);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(142, 4);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -406,27 +410,28 @@
             this.label4.Text = "Act Velocity";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox2
+            // actVelocityLabel
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(3, 55);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(126, 36);
-            this.textBox2.TabIndex = 135;
-            this.textBox2.Text = "17 km/h";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.actVelocityLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.actVelocityLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.actVelocityLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.actVelocityLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.actVelocityLabel.ForeColor = System.Drawing.Color.White;
+            this.actVelocityLabel.Location = new System.Drawing.Point(3, 55);
+            this.actVelocityLabel.Multiline = true;
+            this.actVelocityLabel.Name = "actVelocityLabel";
+            this.actVelocityLabel.ReadOnly = true;
+            this.actVelocityLabel.Size = new System.Drawing.Size(126, 36);
+            this.actVelocityLabel.TabIndex = 135;
+            this.actVelocityLabel.Text = "17 km/h";
+            this.actVelocityLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.textBox1, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.setVelocityLabel, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(4, 4);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -436,20 +441,21 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(131, 94);
             this.tableLayoutPanel5.TabIndex = 135;
             // 
-            // textBox1
+            // setVelocityLabel
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(3, 55);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 36);
-            this.textBox1.TabIndex = 135;
-            this.textBox1.Text = "24 km/h";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.setVelocityLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.setVelocityLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.setVelocityLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.setVelocityLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.setVelocityLabel.ForeColor = System.Drawing.Color.White;
+            this.setVelocityLabel.Location = new System.Drawing.Point(3, 55);
+            this.setVelocityLabel.Multiline = true;
+            this.setVelocityLabel.Name = "setVelocityLabel";
+            this.setVelocityLabel.ReadOnly = true;
+            this.setVelocityLabel.Size = new System.Drawing.Size(125, 36);
+            this.setVelocityLabel.TabIndex = 135;
+            this.setVelocityLabel.Text = "24 km/h";
+            this.setVelocityLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel8
             // 
@@ -474,7 +480,7 @@
             this.tableLayoutPanel11.ColumnCount = 1;
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel11.Controls.Add(this.label8, 0, 0);
-            this.tableLayoutPanel11.Controls.Add(this.textBox6, 0, 1);
+            this.tableLayoutPanel11.Controls.Add(this.batConsLabel, 0, 1);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel11.Location = new System.Drawing.Point(418, 4);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
@@ -497,27 +503,28 @@
             this.label8.Text = "Consumption";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox6
+            // batConsLabel
             // 
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox6.ForeColor = System.Drawing.Color.White;
-            this.textBox6.Location = new System.Drawing.Point(3, 55);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(196, 36);
-            this.textBox6.TabIndex = 135;
-            this.textBox6.Text = "639Wh";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.batConsLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.batConsLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.batConsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.batConsLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.batConsLabel.ForeColor = System.Drawing.Color.White;
+            this.batConsLabel.Location = new System.Drawing.Point(3, 55);
+            this.batConsLabel.Multiline = true;
+            this.batConsLabel.Name = "batConsLabel";
+            this.batConsLabel.ReadOnly = true;
+            this.batConsLabel.Size = new System.Drawing.Size(196, 36);
+            this.batConsLabel.TabIndex = 135;
+            this.batConsLabel.Text = "639Wh";
+            this.batConsLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel10
             // 
             this.tableLayoutPanel10.ColumnCount = 1;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.Controls.Add(this.label7, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.textBox5, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(this.batCurLabel, 0, 1);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(211, 4);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
@@ -540,27 +547,28 @@
             this.label7.Text = "Battery Current";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox5
+            // batCurLabel
             // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox5.ForeColor = System.Drawing.Color.White;
-            this.textBox5.Location = new System.Drawing.Point(3, 55);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(194, 36);
-            this.textBox5.TabIndex = 135;
-            this.textBox5.Text = "5.00A";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.batCurLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.batCurLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.batCurLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.batCurLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.batCurLabel.ForeColor = System.Drawing.Color.White;
+            this.batCurLabel.Location = new System.Drawing.Point(3, 55);
+            this.batCurLabel.Multiline = true;
+            this.batCurLabel.Name = "batCurLabel";
+            this.batCurLabel.ReadOnly = true;
+            this.batCurLabel.Size = new System.Drawing.Size(194, 36);
+            this.batCurLabel.TabIndex = 135;
+            this.batCurLabel.Text = "5.00A";
+            this.batCurLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel9
             // 
             this.tableLayoutPanel9.ColumnCount = 1;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.Controls.Add(this.label6, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.textBox4, 0, 1);
+            this.tableLayoutPanel9.Controls.Add(this.socLabel, 0, 1);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(4, 4);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
@@ -583,20 +591,21 @@
             this.label6.Text = "State of Charge";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox4
+            // socLabel
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox4.ForeColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(3, 55);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(194, 36);
-            this.textBox4.TabIndex = 135;
-            this.textBox4.Text = "%67.74";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.socLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.socLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.socLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.socLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.socLabel.ForeColor = System.Drawing.Color.White;
+            this.socLabel.Location = new System.Drawing.Point(3, 55);
+            this.socLabel.Multiline = true;
+            this.socLabel.Name = "socLabel";
+            this.socLabel.ReadOnly = true;
+            this.socLabel.Size = new System.Drawing.Size(194, 36);
+            this.socLabel.TabIndex = 135;
+            this.socLabel.Text = "%67.74";
+            this.socLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel12
             // 
@@ -619,7 +628,7 @@
             this.tableLayoutPanel14.ColumnCount = 1;
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel14.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel14.Controls.Add(this.textBox8, 0, 1);
+            this.tableLayoutPanel14.Controls.Add(this.driveStatusLabel, 0, 1);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel14.Location = new System.Drawing.Point(315, 4);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
@@ -642,27 +651,28 @@
             this.label2.Text = "Drive Status";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox8
+            // driveStatusLabel
             // 
-            this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox8.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox8.ForeColor = System.Drawing.Color.White;
-            this.textBox8.Location = new System.Drawing.Point(3, 55);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(299, 36);
-            this.textBox8.TabIndex = 135;
-            this.textBox8.Text = "IGNITION ON";
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.driveStatusLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.driveStatusLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.driveStatusLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.driveStatusLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.driveStatusLabel.ForeColor = System.Drawing.Color.White;
+            this.driveStatusLabel.Location = new System.Drawing.Point(3, 55);
+            this.driveStatusLabel.Multiline = true;
+            this.driveStatusLabel.Name = "driveStatusLabel";
+            this.driveStatusLabel.ReadOnly = true;
+            this.driveStatusLabel.Size = new System.Drawing.Size(299, 36);
+            this.driveStatusLabel.TabIndex = 135;
+            this.driveStatusLabel.Text = "IGNITION ON";
+            this.driveStatusLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel13
             // 
             this.tableLayoutPanel13.ColumnCount = 1;
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel13.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel13.Controls.Add(this.textBox7, 0, 1);
+            this.tableLayoutPanel13.Controls.Add(this.errorsLabel, 0, 1);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel13.Location = new System.Drawing.Point(4, 4);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
@@ -685,26 +695,27 @@
             this.label1.Text = "Errors";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox7
+            // errorsLabel
             // 
-            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox7.ForeColor = System.Drawing.Color.White;
-            this.textBox7.Location = new System.Drawing.Point(3, 55);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(298, 36);
-            this.textBox7.TabIndex = 135;
-            this.textBox7.Text = "HIGH VOLTAGE";
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.errorsLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.errorsLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.errorsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.errorsLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.errorsLabel.ForeColor = System.Drawing.Color.White;
+            this.errorsLabel.Location = new System.Drawing.Point(3, 55);
+            this.errorsLabel.Multiline = true;
+            this.errorsLabel.Name = "errorsLabel";
+            this.errorsLabel.ReadOnly = true;
+            this.errorsLabel.Size = new System.Drawing.Size(298, 36);
+            this.errorsLabel.TabIndex = 135;
+            this.errorsLabel.Text = "HIGH VOLTAGE";
+            this.errorsLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel7
             // 
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Controls.Add(this.textBox3, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.startTimeLabel, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 0);
@@ -715,20 +726,21 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(276, 100);
             this.tableLayoutPanel7.TabIndex = 139;
             // 
-            // textBox3
+            // startTimeLabel
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(3, 47);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(270, 50);
-            this.textBox3.TabIndex = 136;
-            this.textBox3.Text = "13.57.04";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.startTimeLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.startTimeLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.startTimeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.startTimeLabel.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.startTimeLabel.ForeColor = System.Drawing.Color.White;
+            this.startTimeLabel.Location = new System.Drawing.Point(3, 47);
+            this.startTimeLabel.Multiline = true;
+            this.startTimeLabel.Name = "startTimeLabel";
+            this.startTimeLabel.ReadOnly = true;
+            this.startTimeLabel.Size = new System.Drawing.Size(270, 50);
+            this.startTimeLabel.TabIndex = 136;
+            this.startTimeLabel.Text = "13.57.04";
+            this.startTimeLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -832,34 +844,34 @@
         private System.Windows.Forms.ListBox portsListBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox setVelocityLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox actVelocityLabel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox startTimeLabel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox driveStatusLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox errorsLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox batConsLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox batCurLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox socLabel;
         public System.Windows.Forms.Timer logTimer;
     }
 }

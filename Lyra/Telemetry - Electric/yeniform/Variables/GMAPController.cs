@@ -55,7 +55,7 @@ namespace Telemetri.Variables
              markers.Markers.Add(marker);
             _gmap.Overlays.Add(markers);
 
-            if (MACROS.race_start_flag && !MACROS.show_old_datas)
+            if (MACROS.race_start_flag && !MACROS.show_old_data)
             {
                 new_angle = ComputeBearing(latitude, longtitude);
                 total_angle += (new_angle - old_angle);

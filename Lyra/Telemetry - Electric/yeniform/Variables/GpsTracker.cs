@@ -10,7 +10,7 @@ namespace Telemetri.Variables
         public static byte gps_velocity_u8 { get; set; }
         public static byte gps_sattelite_number_u8 { get; set; }
         public static byte gps_efficiency_u8 { get; set; }
-        public static string log_gps_datas => gps_latitude_f64.ToString() + '$' + gps_longtitude_f64.ToString() + '$' +
+        public static string log_gps_data => gps_latitude_f64.ToString() + '$' + gps_longtitude_f64.ToString() + '$' +
                                               gps_velocity_u8.ToString() + '$' + gps_sattelite_number_u8.ToString() + '$' +
                                               gps_efficiency_u8.ToString();
         public uint odometer_gps;

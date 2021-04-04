@@ -51,9 +51,13 @@ namespace Telemetri.NewForms
 
         private void mqttConnectBtn_Click(object sender, EventArgs e)
         {
-            mqttObj.ConnectSubscribe();
-            mqttDisconnectBtn.Enabled = true;
-            mqttConnectBtn.Enabled = false;
+            if(mqttObj.ConnectSubscribe())
+            {
+                mqttDisconnectBtn.Enabled = true;
+                mqttConnectBtn.Enabled = false;
+                startLogBtn.Enabled = true;
+                portConnectBtn.Enabled = false;
+            }
         }
 
         private void mqttDisconnectBtn_Click(object sender, EventArgs e)
@@ -61,6 +65,8 @@ namespace Telemetri.NewForms
             mqttObj.Disconnect();
             mqttConnectBtn.Enabled = true;
             mqttDisconnectBtn.Enabled = false;
+            startLogBtn.Enabled = false;
+            portConnectBtn.Enabled = true;
         }
 
         private void startLogBtn_Click(object sender, EventArgs e)

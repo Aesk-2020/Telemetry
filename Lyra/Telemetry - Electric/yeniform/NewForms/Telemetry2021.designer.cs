@@ -43,17 +43,17 @@
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.activeChannelLabel = new System.Windows.Forms.TextBox();
+            this.mqttPingLabel = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.ıconButton2 = new FontAwesome.Sharp.IconButton();
-            this.ıconButton1 = new FontAwesome.Sharp.IconButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.ıconButton3 = new FontAwesome.Sharp.IconButton();
+            this.lapMinusBtn = new FontAwesome.Sharp.IconButton();
+            this.lapPlusBtn = new FontAwesome.Sharp.IconButton();
+            this.lapCntLabel = new System.Windows.Forms.Label();
+            this.LapResetBtn = new FontAwesome.Sharp.IconButton();
             this.panelSideMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -308,9 +308,9 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.textBox1, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.activeChannelLabel, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.mqttPingLabel, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label4, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.textBox3, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(247, 3);
@@ -322,20 +322,35 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(684, 94);
             this.tableLayoutPanel2.TabIndex = 145;
             // 
-            // textBox1
+            // activeChannelLabel
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(345, 50);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(335, 40);
-            this.textBox1.TabIndex = 147;
-            this.textBox1.Text = "107";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.activeChannelLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.activeChannelLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.activeChannelLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.activeChannelLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.activeChannelLabel.ForeColor = System.Drawing.Color.White;
+            this.activeChannelLabel.Location = new System.Drawing.Point(4, 50);
+            this.activeChannelLabel.Multiline = true;
+            this.activeChannelLabel.Name = "activeChannelLabel";
+            this.activeChannelLabel.Size = new System.Drawing.Size(334, 40);
+            this.activeChannelLabel.TabIndex = 149;
+            this.activeChannelLabel.Text = "RF";
+            this.activeChannelLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // mqttPingLabel
+            // 
+            this.mqttPingLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.mqttPingLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mqttPingLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mqttPingLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.mqttPingLabel.ForeColor = System.Drawing.Color.White;
+            this.mqttPingLabel.Location = new System.Drawing.Point(345, 50);
+            this.mqttPingLabel.Multiline = true;
+            this.mqttPingLabel.Name = "mqttPingLabel";
+            this.mqttPingLabel.Size = new System.Drawing.Size(335, 40);
+            this.mqttPingLabel.TabIndex = 148;
+            this.mqttPingLabel.Text = "97";
+            this.mqttPingLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -349,21 +364,6 @@
             this.label4.TabIndex = 146;
             this.label4.Text = "MQTT Ping";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(4, 50);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(334, 40);
-            this.textBox3.TabIndex = 137;
-            this.textBox3.Text = "RF";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -414,10 +414,10 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.79208F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.44224F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.0033F));
-            this.tableLayoutPanel3.Controls.Add(this.ıconButton2, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.ıconButton1, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label2, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.ıconButton3, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lapMinusBtn, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lapPlusBtn, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lapCntLabel, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.LapResetBtn, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 43);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -426,75 +426,78 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(230, 47);
             this.tableLayoutPanel3.TabIndex = 132;
             // 
-            // ıconButton2
+            // lapMinusBtn
             // 
-            this.ıconButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.ıconButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ıconButton2.BackgroundImage")));
-            this.ıconButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ıconButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ıconButton2.FlatAppearance.BorderSize = 0;
-            this.ıconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ıconButton2.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ıconButton2.ForeColor = System.Drawing.SystemColors.Window;
-            this.ıconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.ıconButton2.IconColor = System.Drawing.Color.Black;
-            this.ıconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ıconButton2.Location = new System.Drawing.Point(57, 3);
-            this.ıconButton2.Name = "ıconButton2";
-            this.ıconButton2.Size = new System.Drawing.Size(41, 41);
-            this.ıconButton2.TabIndex = 128;
-            this.ıconButton2.UseVisualStyleBackColor = false;
+            this.lapMinusBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.lapMinusBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lapMinusBtn.BackgroundImage")));
+            this.lapMinusBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.lapMinusBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lapMinusBtn.FlatAppearance.BorderSize = 0;
+            this.lapMinusBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lapMinusBtn.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lapMinusBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.lapMinusBtn.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.lapMinusBtn.IconColor = System.Drawing.Color.Black;
+            this.lapMinusBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.lapMinusBtn.Location = new System.Drawing.Point(57, 3);
+            this.lapMinusBtn.Name = "lapMinusBtn";
+            this.lapMinusBtn.Size = new System.Drawing.Size(41, 41);
+            this.lapMinusBtn.TabIndex = 128;
+            this.lapMinusBtn.UseVisualStyleBackColor = false;
+            this.lapMinusBtn.Click += new System.EventHandler(this.lapMinusBtn_Click);
             // 
-            // ıconButton1
+            // lapPlusBtn
             // 
-            this.ıconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.ıconButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ıconButton1.BackgroundImage")));
-            this.ıconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ıconButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ıconButton1.FlatAppearance.BorderSize = 0;
-            this.ıconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ıconButton1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ıconButton1.ForeColor = System.Drawing.SystemColors.Window;
-            this.ıconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.ıconButton1.IconColor = System.Drawing.Color.Black;
-            this.ıconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ıconButton1.Location = new System.Drawing.Point(3, 3);
-            this.ıconButton1.Name = "ıconButton1";
-            this.ıconButton1.Size = new System.Drawing.Size(48, 41);
-            this.ıconButton1.TabIndex = 127;
-            this.ıconButton1.UseVisualStyleBackColor = false;
+            this.lapPlusBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.lapPlusBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lapPlusBtn.BackgroundImage")));
+            this.lapPlusBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.lapPlusBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lapPlusBtn.FlatAppearance.BorderSize = 0;
+            this.lapPlusBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lapPlusBtn.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lapPlusBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.lapPlusBtn.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.lapPlusBtn.IconColor = System.Drawing.Color.Black;
+            this.lapPlusBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.lapPlusBtn.Location = new System.Drawing.Point(3, 3);
+            this.lapPlusBtn.Name = "lapPlusBtn";
+            this.lapPlusBtn.Size = new System.Drawing.Size(48, 41);
+            this.lapPlusBtn.TabIndex = 127;
+            this.lapPlusBtn.UseVisualStyleBackColor = false;
+            this.lapPlusBtn.Click += new System.EventHandler(this.lapPlusBtn_Click);
             // 
-            // label2
+            // lapCntLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Ink Free", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.label2.Location = new System.Drawing.Point(155, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 47);
-            this.label2.TabIndex = 130;
-            this.label2.Text = "12";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lapCntLabel.AutoSize = true;
+            this.lapCntLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lapCntLabel.Font = new System.Drawing.Font("Ink Free", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lapCntLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.lapCntLabel.Location = new System.Drawing.Point(155, 0);
+            this.lapCntLabel.Name = "lapCntLabel";
+            this.lapCntLabel.Size = new System.Drawing.Size(72, 47);
+            this.lapCntLabel.TabIndex = 130;
+            this.lapCntLabel.Text = "0";
+            this.lapCntLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ıconButton3
+            // LapResetBtn
             // 
-            this.ıconButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.ıconButton3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ıconButton3.BackgroundImage")));
-            this.ıconButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ıconButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ıconButton3.FlatAppearance.BorderSize = 0;
-            this.ıconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ıconButton3.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ıconButton3.ForeColor = System.Drawing.SystemColors.Window;
-            this.ıconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.ıconButton3.IconColor = System.Drawing.Color.Black;
-            this.ıconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ıconButton3.Location = new System.Drawing.Point(104, 3);
-            this.ıconButton3.Name = "ıconButton3";
-            this.ıconButton3.Size = new System.Drawing.Size(45, 41);
-            this.ıconButton3.TabIndex = 129;
-            this.ıconButton3.UseVisualStyleBackColor = false;
+            this.LapResetBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.LapResetBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LapResetBtn.BackgroundImage")));
+            this.LapResetBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.LapResetBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LapResetBtn.FlatAppearance.BorderSize = 0;
+            this.LapResetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LapResetBtn.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LapResetBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.LapResetBtn.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.LapResetBtn.IconColor = System.Drawing.Color.Black;
+            this.LapResetBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.LapResetBtn.Location = new System.Drawing.Point(104, 3);
+            this.LapResetBtn.Name = "LapResetBtn";
+            this.LapResetBtn.Size = new System.Drawing.Size(45, 41);
+            this.LapResetBtn.TabIndex = 129;
+            this.LapResetBtn.UseVisualStyleBackColor = false;
+            this.LapResetBtn.Click += new System.EventHandler(this.LapResetBtn_Click);
             // 
             // Telemetry2021
             // 
@@ -543,12 +546,12 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private FontAwesome.Sharp.IconButton ıconButton2;
-        private FontAwesome.Sharp.IconButton ıconButton1;
-        private System.Windows.Forms.Label label2;
-        private FontAwesome.Sharp.IconButton ıconButton3;
-        private System.Windows.Forms.TextBox textBox1;
+        private FontAwesome.Sharp.IconButton lapMinusBtn;
+        private FontAwesome.Sharp.IconButton lapPlusBtn;
+        private System.Windows.Forms.Label lapCntLabel;
+        private FontAwesome.Sharp.IconButton LapResetBtn;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox activeChannelLabel;
+        private System.Windows.Forms.TextBox mqttPingLabel;
     }
 }

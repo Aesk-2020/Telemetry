@@ -66,6 +66,19 @@ namespace Telemetri.NewForms
             FormManagement.openChildForm(new LogPlayer(), panelChildForm);
         }
 
-       
+        private void lapPlusBtn_Click(object sender, EventArgs e)
+        {
+            lapCntLabel.Text = (Convert.ToDecimal(lapCntLabel.Text) + 1).ToString();
+        }
+
+        private void lapMinusBtn_Click(object sender, EventArgs e)
+        {
+            if(lapCntLabel.Text != "0") lapCntLabel.Text = (Convert.ToDecimal(lapCntLabel.Text) - 1).ToString();
+        }
+
+        private void LapResetBtn_Click(object sender, EventArgs e)
+        {
+            lapCntLabel.Text = "0";
+        }
     }
 }

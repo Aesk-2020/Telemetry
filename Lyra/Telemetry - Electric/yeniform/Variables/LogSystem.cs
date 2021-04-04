@@ -133,7 +133,7 @@ namespace Telemetri.Variables
         }
         public static void WriteStringLog()
         {
-            _sw.WriteLine(VCU.log_datas + Driver.log_datas_driver + BMS.log_datas_bms + GpsTracker.log_gps_datas);
+            _sw.WriteLine(VCU.log_data + Driver.log_data_driver + BMS.log_data_bms + GpsTracker.log_gps_data);
             _sw.Flush();
         }
         public static bool StartLog(Timer logTimer)
