@@ -17,8 +17,11 @@ namespace Telemetri.Variables
         private static SaveFileDialog _savefile;
         private static StreamWriter _sw;
 
+        public static List<string> lineList = new List<string>();
         public static bool isFirst { get; set; }
+        public static bool isLogSolved = false;
 
+        public static Timer logPlayTimer = new Timer();
 
         //Kullanıcının seçtiği dosyayı okuyup her bir satırı string olarak list tipindeki değişkene atar.
         //Okuma işlemi tamamlanınca bu listeyi döndürür.
@@ -54,7 +57,7 @@ namespace Telemetri.Variables
 
         public static List<string> ReadByteLog(string splitter)
         {
-            List<string> lineList = new List<string>();
+            logPlayTimer.Interval = 100;
             OpenFileDialog file = new OpenFileDialog();
             file.ShowDialog();
             string path = file.FileName.ToString();
@@ -73,6 +76,7 @@ namespace Telemetri.Variables
                 var totalMatch = Regex.Matches(readData, splitter).Count;
                 if (totalMatch != 0)
                 {
+                    lineList.Clear();
                     for (int i = 0; i < totalMatch; i++)
                     {
                         indexOfNextSplitter = readData.IndexOf(splitter, linecounter);
@@ -84,6 +88,7 @@ namespace Telemetri.Variables
                         lineList.Add(readData.Substring(linecounter, indexOfSplitter));
                         linecounter = indexOfSplitter + splitLength;
                     }
+                    isLogSolved = true;
                     MessageBox.Show("Log başarıyla açıldı!");
                     linecounter = 0;
                 }
@@ -95,41 +100,46 @@ namespace Telemetri.Variables
             }
             return lineList;
         }
-        public static void ParseStringData(List<string> dataList)
+
+        private static int myindex = 0;
+        public static void ParseStringData(string hamlog)
         {
-            int count = 0;
-            //BİR ŞEY PATLARSA BURAYA BAK
-            VCU.wake_up_u8 = Byte.Parse(dataList[count++]);
-            VCU.drive_commands_u8 = Byte.Parse(dataList[count++]);
-            VCU.set_velocity_u8 = Byte.Parse(dataList[count++]);
-            VCU.can_error_u8 = Byte.Parse(dataList[count++]);
-            Driver.phase_a_current_f32 = float.Parse(dataList[count++]);
-            Driver.phase_b_current_f32 = float.Parse(dataList[count++]);
-            Driver.dc_bus_current_f32 = float.Parse(dataList[count++]);
-            Driver.dc_bus_voltage_f32 = float.Parse(dataList[count++]);
-            Driver.id_f32 = float.Parse(dataList[count++]);
-            Driver.iq_f32 = float.Parse(dataList[count++]);
-            Driver.IArms_f32 = float.Parse(dataList[count++]);
-            Driver.Torque_f32 = float.Parse(dataList[count++]);
-            Driver.drive_status_u8 = byte.Parse(dataList[count++]);
-            Driver.driver_error_u8 = byte.Parse(dataList[count++]);
-            Driver.odometer_u32 = UInt32.Parse(dataList[count++]);
-            Driver.motor_temperature_u8 = byte.Parse(dataList[count++]);
-            Driver.actual_velocity_u8 = byte.Parse(dataList[count++]);
-            BMS.bat_volt_f32 = float.Parse(dataList[count++]);
-            BMS.bat_current_f32 = float.Parse(dataList[count++]);
-            BMS.bat_cons_f32 = float.Parse(dataList[count++]);
-            BMS.soc_f32 = float.Parse(dataList[count++]);
-            BMS.bms_error_u8 = byte.Parse(dataList[count++]);
-            BMS.dc_bus_state_u8 = byte.Parse(dataList[count++]);
-            BMS.worst_cell_voltage_f32 = float.Parse(dataList[count++]);
-            BMS.worst_cell_address_u8 = byte.Parse(dataList[count++]);
-            BMS.temp_u8 = byte.Parse(dataList[count++]);
-            GpsTracker.gps_latitude_f64 = float.Parse(dataList[count++]);
-            GpsTracker.gps_longtitude_f64 = float.Parse(dataList[count++]);
-            GpsTracker.gps_velocity_u8 = byte.Parse(dataList[count++]);
-            GpsTracker.gps_sattelite_number_u8 = byte.Parse(dataList[count++]);
-            GpsTracker.gps_efficiency_u8 = byte.Parse(dataList[count++]);
+            myindex = 0;
+            byte[] logBytes = Encoding.UTF8.GetBytes(hamlog);
+
+            VCU.wake_up_u8                              = logBytes[myindex++];
+            VCU.drive_commands_u8                       = logBytes[myindex++];
+            VCU.set_velocity_u8                         = logBytes[myindex++];
+            VCU.can_error_u8                            = logBytes[myindex++];
+            Driver.phase_a_current_f32                  = BitConverter.ToInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_2; myindex += 2;
+            Driver.phase_b_current_f32                  = BitConverter.ToInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_2; myindex += 2;
+            Driver.dc_bus_current_f32                   = BitConverter.ToInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_2; myindex += 2;
+            Driver.dc_bus_voltage_f32                   = BitConverter.ToUInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_1; myindex += 2;
+            Driver.id_f32                               = BitConverter.ToInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_2; myindex += 2;
+            Driver.iq_f32                               = BitConverter.ToInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_2; myindex += 2;
+            Driver.IArms_f32                            = BitConverter.ToInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_2; myindex += 2;
+            Driver.Torque_f32                           = BitConverter.ToInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_2; myindex += 2;
+            Driver.drive_status_u8                      = logBytes[myindex++];
+            Driver.driver_error_u8                      = logBytes[myindex++];
+            Driver.odometer_u32                         = BitConverter.ToUInt32(logBytes, myindex)                          ; myindex += 4;
+            Driver.motor_temperature_u8                 = logBytes[myindex++];
+            Driver.actual_velocity_u8                   = logBytes[myindex++];
+            BMS.bat_volt_f32                            = BitConverter.ToUInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_2; myindex += 2;
+            BMS.bat_current_f32                         = BitConverter.ToInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_2; myindex += 2;
+            BMS.bat_cons_f32                            = BitConverter.ToUInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_1; myindex += 2;
+            BMS.soc_f32                                 = BitConverter.ToUInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_2; myindex += 2;
+            BMS.bms_error_u8                            = logBytes[myindex++];
+            BMS.dc_bus_state_u8                         = logBytes[myindex++];
+            BMS.worst_cell_voltage_f32                  = BitConverter.ToUInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_1; myindex += 2;
+            BMS.worst_cell_address_u8                   = logBytes[myindex++];
+            BMS.temp_u8                                 = logBytes[myindex++];
+            GpsTracker.gps_latitude_f64                 = BitConverter.ToUInt32(logBytes, myindex) / MACROS.GPS_DIVIDER; myindex += 4;
+            GpsTracker.gps_longtitude_f64               = BitConverter.ToUInt32(logBytes, myindex) / MACROS.GPS_DIVIDER; myindex += 4;
+            GpsTracker.gps_velocity_u8                  = logBytes[myindex++];
+            GpsTracker.gps_sattelite_number_u8          = logBytes[myindex++];
+            GpsTracker.gps_efficiency_u8                = logBytes[myindex++];
+
+            //ARAYÜZ VERİLERİNİ GÜNCELLEME EVENTI
         }
         public static void WriteStringLog()
         {

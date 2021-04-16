@@ -311,6 +311,7 @@
             this.openSDLogBtn.TabIndex = 115;
             this.openSDLogBtn.Text = "Open SD Log";
             this.openSDLogBtn.UseVisualStyleBackColor = false;
+            this.openSDLogBtn.Click += new System.EventHandler(this.openSDLogBtn_Click);
             // 
             // stopLogBtn
             // 

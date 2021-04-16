@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Telemetry2021));
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.logplyrButton = new FontAwesome.Sharp.IconButton();
@@ -42,7 +43,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.activeChannelLabel = new System.Windows.Forms.TextBox();
             this.mqttPingLabel = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,14 +55,26 @@
             this.lapPlusBtn = new FontAwesome.Sharp.IconButton();
             this.lapCntLabel = new System.Windows.Forms.Label();
             this.LapResetBtn = new FontAwesome.Sharp.IconButton();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.logPlayerStick = new XComponent.SliderBar.MACTrackBar();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.logResetBtn = new System.Windows.Forms.Button();
+            this.log10secForwBtn = new System.Windows.Forms.Button();
+            this.logSpeedUpBtn = new System.Windows.Forms.Button();
+            this.logPlayBtn = new System.Windows.Forms.Button();
+            this.logSpeedDownBtn = new System.Windows.Forms.Button();
+            this.log10secRewBtn = new System.Windows.Forms.Button();
+            this.pauseResume = new System.Windows.Forms.ImageList(this.components);
             this.panelSideMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelChildForm.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSideMenu
@@ -289,11 +302,13 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.1242F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.8758F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.25806F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.74194F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 313F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel15, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 661);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -302,25 +317,25 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(934, 100);
             this.tableLayoutPanel1.TabIndex = 144;
             // 
-            // tableLayoutPanel2
+            // tableLayoutPanel4
             // 
-            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.activeChannelLabel, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.mqttPingLabel, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label4, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(247, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(684, 94);
-            this.tableLayoutPanel2.TabIndex = 145;
+            this.tableLayoutPanel4.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.activeChannelLabel, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.mqttPingLabel, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label4, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(623, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(308, 94);
+            this.tableLayoutPanel4.TabIndex = 146;
             // 
             // activeChannelLabel
             // 
@@ -332,7 +347,7 @@
             this.activeChannelLabel.Location = new System.Drawing.Point(4, 50);
             this.activeChannelLabel.Multiline = true;
             this.activeChannelLabel.Name = "activeChannelLabel";
-            this.activeChannelLabel.Size = new System.Drawing.Size(334, 40);
+            this.activeChannelLabel.Size = new System.Drawing.Size(146, 40);
             this.activeChannelLabel.TabIndex = 149;
             this.activeChannelLabel.Text = "RF";
             this.activeChannelLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -344,10 +359,10 @@
             this.mqttPingLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mqttPingLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mqttPingLabel.ForeColor = System.Drawing.Color.White;
-            this.mqttPingLabel.Location = new System.Drawing.Point(345, 50);
+            this.mqttPingLabel.Location = new System.Drawing.Point(157, 50);
             this.mqttPingLabel.Multiline = true;
             this.mqttPingLabel.Name = "mqttPingLabel";
-            this.mqttPingLabel.Size = new System.Drawing.Size(335, 40);
+            this.mqttPingLabel.Size = new System.Drawing.Size(147, 40);
             this.mqttPingLabel.TabIndex = 148;
             this.mqttPingLabel.Text = "97";
             this.mqttPingLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -358,9 +373,9 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(345, 1);
+            this.label4.Location = new System.Drawing.Point(157, 1);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(335, 45);
+            this.label4.Size = new System.Drawing.Size(147, 45);
             this.label4.TabIndex = 146;
             this.label4.Text = "MQTT Ping";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -373,9 +388,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(4, 1);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(334, 45);
+            this.label3.Size = new System.Drawing.Size(146, 45);
             this.label3.TabIndex = 127;
-            this.label3.Text = "Active Channel";
+            this.label3.Text = "Channel";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel15
@@ -391,7 +406,7 @@
             this.tableLayoutPanel15.RowCount = 2;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.42424F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.57576F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(238, 94);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(225, 94);
             this.tableLayoutPanel15.TabIndex = 143;
             // 
             // label1
@@ -402,7 +417,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(4, 1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(230, 38);
+            this.label1.Size = new System.Drawing.Size(217, 38);
             this.label1.TabIndex = 126;
             this.label1.Text = "Lap Counter";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -423,7 +438,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(230, 47);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(217, 47);
             this.tableLayoutPanel3.TabIndex = 132;
             // 
             // lapMinusBtn
@@ -439,9 +454,9 @@
             this.lapMinusBtn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.lapMinusBtn.IconColor = System.Drawing.Color.Black;
             this.lapMinusBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.lapMinusBtn.Location = new System.Drawing.Point(57, 3);
+            this.lapMinusBtn.Location = new System.Drawing.Point(54, 3);
             this.lapMinusBtn.Name = "lapMinusBtn";
-            this.lapMinusBtn.Size = new System.Drawing.Size(41, 41);
+            this.lapMinusBtn.Size = new System.Drawing.Size(39, 41);
             this.lapMinusBtn.TabIndex = 128;
             this.lapMinusBtn.UseVisualStyleBackColor = false;
             this.lapMinusBtn.Click += new System.EventHandler(this.lapMinusBtn_Click);
@@ -461,7 +476,7 @@
             this.lapPlusBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.lapPlusBtn.Location = new System.Drawing.Point(3, 3);
             this.lapPlusBtn.Name = "lapPlusBtn";
-            this.lapPlusBtn.Size = new System.Drawing.Size(48, 41);
+            this.lapPlusBtn.Size = new System.Drawing.Size(45, 41);
             this.lapPlusBtn.TabIndex = 127;
             this.lapPlusBtn.UseVisualStyleBackColor = false;
             this.lapPlusBtn.Click += new System.EventHandler(this.lapPlusBtn_Click);
@@ -472,9 +487,9 @@
             this.lapCntLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lapCntLabel.Font = new System.Drawing.Font("Ink Free", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lapCntLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.lapCntLabel.Location = new System.Drawing.Point(155, 0);
+            this.lapCntLabel.Location = new System.Drawing.Point(147, 0);
             this.lapCntLabel.Name = "lapCntLabel";
-            this.lapCntLabel.Size = new System.Drawing.Size(72, 47);
+            this.lapCntLabel.Size = new System.Drawing.Size(67, 47);
             this.lapCntLabel.TabIndex = 130;
             this.lapCntLabel.Text = "0";
             this.lapCntLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -492,12 +507,159 @@
             this.LapResetBtn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.LapResetBtn.IconColor = System.Drawing.Color.Black;
             this.LapResetBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.LapResetBtn.Location = new System.Drawing.Point(104, 3);
+            this.LapResetBtn.Location = new System.Drawing.Point(99, 3);
             this.LapResetBtn.Name = "LapResetBtn";
-            this.LapResetBtn.Size = new System.Drawing.Size(45, 41);
+            this.LapResetBtn.Size = new System.Drawing.Size(42, 41);
             this.LapResetBtn.TabIndex = 129;
             this.LapResetBtn.UseVisualStyleBackColor = false;
             this.LapResetBtn.Click += new System.EventHandler(this.LapResetBtn_Click);
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.logPlayerStick, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 0, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(234, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.3617F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.6383F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(383, 94);
+            this.tableLayoutPanel2.TabIndex = 144;
+            // 
+            // logPlayerStick
+            // 
+            this.logPlayerStick.BackColor = System.Drawing.Color.Transparent;
+            this.logPlayerStick.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.logPlayerStick.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.logPlayerStick.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logPlayerStick.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(125)))), ((int)(((byte)(123)))));
+            this.logPlayerStick.IndentHeight = 6;
+            this.logPlayerStick.Location = new System.Drawing.Point(4, 4);
+            this.logPlayerStick.Maximum = 205;
+            this.logPlayerStick.Minimum = 0;
+            this.logPlayerStick.Name = "logPlayerStick";
+            this.logPlayerStick.Size = new System.Drawing.Size(375, 28);
+            this.logPlayerStick.TabIndex = 145;
+            this.logPlayerStick.TextTickStyle = System.Windows.Forms.TickStyle.None;
+            this.logPlayerStick.TickColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(146)))), ((int)(((byte)(148)))));
+            this.logPlayerStick.TickHeight = 4;
+            this.logPlayerStick.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.logPlayerStick.TrackerColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.logPlayerStick.TrackerSize = new System.Drawing.Size(16, 16);
+            this.logPlayerStick.TrackLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.logPlayerStick.TrackLineHeight = 3;
+            this.logPlayerStick.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.logPlayerStick.Value = 0;
+            this.logPlayerStick.ValueChanged += new XComponent.SliderBar.ValueChangedHandler(this.logPlayerStick_ValueChanged);
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 6;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.12904F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.12903F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.35484F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.12903F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.12903F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.12903F));
+            this.tableLayoutPanel5.Controls.Add(this.logResetBtn, 5, 0);
+            this.tableLayoutPanel5.Controls.Add(this.log10secForwBtn, 4, 0);
+            this.tableLayoutPanel5.Controls.Add(this.logSpeedUpBtn, 3, 0);
+            this.tableLayoutPanel5.Controls.Add(this.logPlayBtn, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.logSpeedDownBtn, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.log10secRewBtn, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(4, 40);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(375, 50);
+            this.tableLayoutPanel5.TabIndex = 146;
+            // 
+            // logResetBtn
+            // 
+            this.logResetBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.logResetBtn.FlatAppearance.BorderSize = 0;
+            this.logResetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logResetBtn.Image = ((System.Drawing.Image)(resources.GetObject("logResetBtn.Image")));
+            this.logResetBtn.Location = new System.Drawing.Point(315, 3);
+            this.logResetBtn.Name = "logResetBtn";
+            this.logResetBtn.Size = new System.Drawing.Size(57, 44);
+            this.logResetBtn.TabIndex = 5;
+            this.logResetBtn.UseVisualStyleBackColor = true;
+            // 
+            // log10secForwBtn
+            // 
+            this.log10secForwBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.log10secForwBtn.FlatAppearance.BorderSize = 0;
+            this.log10secForwBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.log10secForwBtn.Image = ((System.Drawing.Image)(resources.GetObject("log10secForwBtn.Image")));
+            this.log10secForwBtn.Location = new System.Drawing.Point(255, 3);
+            this.log10secForwBtn.Name = "log10secForwBtn";
+            this.log10secForwBtn.Size = new System.Drawing.Size(54, 44);
+            this.log10secForwBtn.TabIndex = 4;
+            this.log10secForwBtn.UseVisualStyleBackColor = true;
+            this.log10secForwBtn.Click += new System.EventHandler(this.log10secForwBtn_Click);
+            // 
+            // logSpeedUpBtn
+            // 
+            this.logSpeedUpBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.logSpeedUpBtn.FlatAppearance.BorderSize = 0;
+            this.logSpeedUpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logSpeedUpBtn.Image = ((System.Drawing.Image)(resources.GetObject("logSpeedUpBtn.Image")));
+            this.logSpeedUpBtn.Location = new System.Drawing.Point(195, 3);
+            this.logSpeedUpBtn.Name = "logSpeedUpBtn";
+            this.logSpeedUpBtn.Size = new System.Drawing.Size(54, 44);
+            this.logSpeedUpBtn.TabIndex = 3;
+            this.logSpeedUpBtn.UseVisualStyleBackColor = true;
+            // 
+            // logPlayBtn
+            // 
+            this.logPlayBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.logPlayBtn.FlatAppearance.BorderSize = 0;
+            this.logPlayBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logPlayBtn.Image = ((System.Drawing.Image)(resources.GetObject("logPlayBtn.Image")));
+            this.logPlayBtn.Location = new System.Drawing.Point(123, 3);
+            this.logPlayBtn.Name = "logPlayBtn";
+            this.logPlayBtn.Size = new System.Drawing.Size(66, 44);
+            this.logPlayBtn.TabIndex = 2;
+            this.logPlayBtn.UseVisualStyleBackColor = true;
+            this.logPlayBtn.Click += new System.EventHandler(this.logPlayBtn_Click);
+            // 
+            // logSpeedDownBtn
+            // 
+            this.logSpeedDownBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.logSpeedDownBtn.FlatAppearance.BorderSize = 0;
+            this.logSpeedDownBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logSpeedDownBtn.Image = ((System.Drawing.Image)(resources.GetObject("logSpeedDownBtn.Image")));
+            this.logSpeedDownBtn.Location = new System.Drawing.Point(63, 3);
+            this.logSpeedDownBtn.Name = "logSpeedDownBtn";
+            this.logSpeedDownBtn.Size = new System.Drawing.Size(54, 44);
+            this.logSpeedDownBtn.TabIndex = 1;
+            this.logSpeedDownBtn.UseVisualStyleBackColor = true;
+            // 
+            // log10secRewBtn
+            // 
+            this.log10secRewBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.log10secRewBtn.FlatAppearance.BorderSize = 0;
+            this.log10secRewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.log10secRewBtn.Image = ((System.Drawing.Image)(resources.GetObject("log10secRewBtn.Image")));
+            this.log10secRewBtn.Location = new System.Drawing.Point(3, 3);
+            this.log10secRewBtn.Name = "log10secRewBtn";
+            this.log10secRewBtn.Size = new System.Drawing.Size(54, 44);
+            this.log10secRewBtn.TabIndex = 0;
+            this.log10secRewBtn.UseVisualStyleBackColor = true;
+            this.log10secRewBtn.Click += new System.EventHandler(this.log10secRewBtn_Click);
+            // 
+            // pauseResume
+            // 
+            this.pauseResume.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("pauseResume.ImageStream")));
+            this.pauseResume.TransparentColor = System.Drawing.Color.Transparent;
+            this.pauseResume.Images.SetKeyName(0, "icons8_pause_button_50px.png");
+            this.pauseResume.Images.SetKeyName(1, "icons8_play_button_circled_50px_1.png");
             // 
             // Telemetry2021
             // 
@@ -516,12 +678,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelChildForm.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel15.ResumeLayout(false);
             this.tableLayoutPanel15.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -540,8 +704,6 @@
         private System.Windows.Forms.Button settingsButton;
         private FontAwesome.Sharp.IconButton mqttButton;
         private FontAwesome.Sharp.IconButton logplyrButton;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
         private System.Windows.Forms.Label label1;
@@ -550,8 +712,20 @@
         private FontAwesome.Sharp.IconButton lapPlusBtn;
         private System.Windows.Forms.Label lapCntLabel;
         private FontAwesome.Sharp.IconButton LapResetBtn;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Button logResetBtn;
+        private System.Windows.Forms.Button log10secForwBtn;
+        private System.Windows.Forms.Button logSpeedUpBtn;
+        private System.Windows.Forms.Button logPlayBtn;
+        private System.Windows.Forms.Button logSpeedDownBtn;
+        private System.Windows.Forms.Button log10secRewBtn;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TextBox activeChannelLabel;
         private System.Windows.Forms.TextBox mqttPingLabel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.ImageList pauseResume;
+        public XComponent.SliderBar.MACTrackBar logPlayerStick;
     }
 }

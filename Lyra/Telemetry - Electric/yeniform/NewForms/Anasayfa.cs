@@ -15,6 +15,9 @@ namespace Telemetri.NewForms
     public partial class Anasayfa : Form
     {
         MQTT mqttObj = new MQTT("LYRADATA"); //LYRADATA topic'ine bağlanacak MQTT nesnesini oluştur.
+        string splitter = "aesk\n";
+        List<string> lineList;
+
         public Anasayfa()
         {
             InitializeComponent();
@@ -93,5 +96,11 @@ namespace Telemetri.NewForms
             startLogBtn.Enabled = true;
             stopLogBtn.Enabled = false;
         }
+
+        private void openSDLogBtn_Click(object sender, EventArgs e)
+        {
+            lineList = LogSystem.ReadByteLog(splitter);
+        }
+
     }
 }
