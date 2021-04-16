@@ -28,29 +28,18 @@ namespace Telemetri.NewForms
 
         private void MQTTdeneme_Load(object sender, EventArgs e)
         {
-            Client = new MqttClient("broker.mqttdashboard.com");
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            byte code = Client.Connect(Guid.NewGuid().ToString(), MACROS.MQTT_username, MACROS.MQTT_password);
-            if (code == 0x00)
+            try
             {
-                //Connected
-                connectedFlag = true;
-                panel2.BackColor = Color.LimeGreen;
-                Client.MqttMsgPublishReceived += Client_MqttMsgPublishReceived;
-                try
-                {
-                    Client.Subscribe(new string[] { "vehicle_to_interface" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
-                }
-                catch (Exception ed)
-                {
-                    MessageBox.Show(ed.Message);
-                }
+                Client = new MqttClient("broker.mqttdashboard.com");
+                backgroundWorker1.RunWorkerAsync();
             }
-            else
+            catch (Exception es)
             {
-                panel2.BackColor = Color.DarkRed;
+                MessageBox.Show(es.Message);
             }
         }
 
@@ -80,6 +69,30 @@ namespace Telemetri.NewForms
                     MessageBox.Show(ert.Message);
                     throw;
                 }
+            }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            byte code = Client.Connect(Guid.NewGuid().ToString(), MACROS.MQTT_username, MACROS.MQTT_password);
+            if (code == 0x00)
+            {
+                //Connected
+                connectedFlag = true;
+                panel2.BackColor = Color.LimeGreen;
+                Client.MqttMsgPublishReceived += Client_MqttMsgPublishReceived;
+                try
+                {
+                    Client.Subscribe(new string[] { "vehicle_to_interface" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
+                }
+                catch (Exception ed)
+                {
+                    MessageBox.Show(ed.Message);
+                }
+            }
+            else
+            {
+                panel2.BackColor = Color.DarkRed;
             }
         }
     }

@@ -57,7 +57,7 @@ namespace Telemetri.Variables
 
         public static List<string> ReadByteLog(string splitter)
         {
-            logPlayTimer.Interval = 100;
+            logPlayTimer.Interval = 20; //log periyodu 20 ms
             OpenFileDialog file = new OpenFileDialog();
             file.ShowDialog();
             string path = file.FileName.ToString();

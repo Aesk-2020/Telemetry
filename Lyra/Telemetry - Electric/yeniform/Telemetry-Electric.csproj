@@ -131,12 +131,6 @@
     <Compile Include="NewForms\Cells.Designer.cs">
       <DependentUpon>Cells.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewForms\LogPlayer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NewForms\LogPlayer.Designer.cs">
-      <DependentUpon>LogPlayer.cs</DependentUpon>
-    </Compile>
     <Compile Include="NewForms\MQTTdeneme.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,9 +209,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewForms\Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NewForms\LogPlayer.resx">
-      <DependentUpon>LogPlayer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewForms\MQTTdeneme.resx">
       <DependentUpon>MQTTdeneme.cs</DependentUpon>

@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Telemetry2021));
             this.panelSideMenu = new System.Windows.Forms.Panel();
-            this.logplyrButton = new FontAwesome.Sharp.IconButton();
             this.mqttButton = new FontAwesome.Sharp.IconButton();
             this.settingsButton = new System.Windows.Forms.Button();
             this.exitBtn = new FontAwesome.Sharp.IconButton();
@@ -81,7 +80,6 @@
             // 
             this.panelSideMenu.AutoScroll = true;
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.panelSideMenu.Controls.Add(this.logplyrButton);
             this.panelSideMenu.Controls.Add(this.mqttButton);
             this.panelSideMenu.Controls.Add(this.settingsButton);
             this.panelSideMenu.Controls.Add(this.exitBtn);
@@ -96,28 +94,6 @@
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(250, 761);
             this.panelSideMenu.TabIndex = 1;
-            // 
-            // logplyrButton
-            // 
-            this.logplyrButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.logplyrButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.logplyrButton.FlatAppearance.BorderSize = 0;
-            this.logplyrButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.logplyrButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logplyrButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.logplyrButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.logplyrButton.IconChar = FontAwesome.Sharp.IconChar.PlayCircle;
-            this.logplyrButton.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.logplyrButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.logplyrButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logplyrButton.Location = new System.Drawing.Point(0, 382);
-            this.logplyrButton.Name = "logplyrButton";
-            this.logplyrButton.Size = new System.Drawing.Size(250, 48);
-            this.logplyrButton.TabIndex = 8;
-            this.logplyrButton.Text = "Log Player";
-            this.logplyrButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.logplyrButton.UseVisualStyleBackColor = false;
-            this.logplyrButton.Click += new System.EventHandler(this.logplyrButton_Click);
             // 
             // mqttButton
             // 
@@ -615,6 +591,7 @@
             this.logSpeedUpBtn.Size = new System.Drawing.Size(54, 44);
             this.logSpeedUpBtn.TabIndex = 3;
             this.logSpeedUpBtn.UseVisualStyleBackColor = true;
+            this.logSpeedUpBtn.Click += new System.EventHandler(this.logSpeedUpBtn_Click);
             // 
             // logPlayBtn
             // 
@@ -640,6 +617,7 @@
             this.logSpeedDownBtn.Size = new System.Drawing.Size(54, 44);
             this.logSpeedDownBtn.TabIndex = 1;
             this.logSpeedDownBtn.UseVisualStyleBackColor = true;
+            this.logSpeedDownBtn.Click += new System.EventHandler(this.logSpeedDownBtn_Click);
             // 
             // log10secRewBtn
             // 
@@ -703,7 +681,6 @@
         private FontAwesome.Sharp.IconButton homeButton;
         private System.Windows.Forms.Button settingsButton;
         private FontAwesome.Sharp.IconButton mqttButton;
-        private FontAwesome.Sharp.IconButton logplyrButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
         private System.Windows.Forms.Label label1;

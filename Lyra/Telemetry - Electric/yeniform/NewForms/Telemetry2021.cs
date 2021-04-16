@@ -70,11 +70,6 @@ namespace Telemetri.NewForms
             Telemetry2021.ActiveForm.Close();
         }
 
-        private void logplyrButton_Click(object sender, EventArgs e)
-        {
-            FormManagement.openChildForm(new LogPlayer(), panelChildForm);
-        }
-
         private void lapPlusBtn_Click(object sender, EventArgs e)
         {
             lapCntLabel.Text = (Convert.ToDecimal(lapCntLabel.Text) + 1).ToString();
@@ -142,6 +137,27 @@ namespace Telemetri.NewForms
                     logPlayerStick.Value -= 10;
                 }
             }
+        }
+
+        private void logSpeedUpBtn_Click(object sender, EventArgs e)
+        {
+            if(LogSystem.logPlayTimer.Interval > 10)
+            {
+                LogSystem.logPlayTimer.Interval -= 10;
+            }
+        }
+
+        private void logSpeedDownBtn_Click(object sender, EventArgs e)
+        {
+            if (LogSystem.logPlayTimer.Interval < 1000)
+            {
+                LogSystem.logPlayTimer.Interval += 10;
+            }
+        }
+
+        private void UpdateUI()
+        {
+
         }
     }
 }

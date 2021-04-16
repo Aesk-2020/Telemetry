@@ -21,7 +21,7 @@ namespace Telemetri.Variables
         string _password = "1234";
         string _topic;
         private MqttClient _client;
-        private MqttClient _client1 = new MqttClient("broker.mqttdashboard.com");
+        private MqttClient _client1;
         public MQTT(string username, string password, string topic)
         {
 
@@ -54,6 +54,7 @@ namespace Telemetri.Variables
         {
             if(connected_flag == false)
             {
+                _client1 = new MqttClient("broker.mqttdashboard.com");
                 byte code = _client1.Connect(Guid.NewGuid().ToString(), _username, _password);
                 if (code == 0x00)
                 {
