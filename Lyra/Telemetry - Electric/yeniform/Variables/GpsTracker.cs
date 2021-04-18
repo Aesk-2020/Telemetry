@@ -10,8 +10,8 @@ namespace Telemetri.Variables
         public static byte gps_velocity_u8 { get; set; }
         public static byte gps_sattelite_number_u8 { get; set; }
         public static byte gps_efficiency_u8 { get; set; }
-        public static string log_gps_data => gps_latitude_f64.ToString() + '$' + gps_longtitude_f64.ToString() + '$' +
-                                              gps_velocity_u8.ToString() + '$' + gps_sattelite_number_u8.ToString() + '$' +
+        public static string log_gps_data => gps_latitude_f64.ToString("0.0000000") + '\t' + gps_longtitude_f64.ToString("0.0000000") + '\t' +
+                                              gps_velocity_u8.ToString() + '\t' + gps_sattelite_number_u8.ToString() + '\t' +
                                               gps_efficiency_u8.ToString();
         public uint odometer_gps;
         public double total_angle = 0;

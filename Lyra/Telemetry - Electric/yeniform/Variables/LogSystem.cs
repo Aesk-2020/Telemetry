@@ -141,6 +141,26 @@ namespace Telemetri.Variables
 
             //ARAYÜZ VERİLERİNİ GÜNCELLEME EVENTI
         }
+
+        public static void ExtractSDLog(List<string> list)
+        {
+            string _extractPath;
+            SaveFileDialog sf = new SaveFileDialog();
+            if (sf.ShowDialog() == DialogResult.OK)
+            {
+                _extractPath = Path.GetDirectoryName(sf.FileName);
+                StreamWriter extrWriter = new StreamWriter(@sf.FileName, append: false);
+                extrWriter.WriteLine(MACROS.LOGHEADER);
+                foreach (var item in list)
+                {
+                    ParseStringData(item);
+                    extrWriter.WriteLine(VCU.log_data + Driver.log_data_driver + BMS.log_data_bms + GpsTracker.log_gps_data);
+                }
+                MessageBox.Show("Başarıyla çıkartıldı!");
+                extrWriter.Close();
+            }
+        }
+
         public static void WriteStringLog()
         {
             _sw.WriteLine(VCU.log_data + Driver.log_data_driver + BMS.log_data_bms + GpsTracker.log_gps_data);

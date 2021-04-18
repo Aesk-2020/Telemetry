@@ -28,22 +28,10 @@ namespace Telemetri.NewForms
             string[] ports = SerialPort.GetPortNames();
             portsListBox.Items.AddRange(ports);
             LogSystem.isFirst = true;
-        }/*
-        private void portsListBox_Click(object sender, EventArgs e)
-        {
-            
         }
-        private void mqttConnectBtn_Click(object sender, EventArgs e)
-        {
-            
-        }
-        private void mqttDisconnectBtn_Click(object sender, EventArgs e)
-        {
-            
-        }*/
         private void portConnectBtn_Click(object sender, EventArgs e)
         {
-
+            //LogSystem.ExtractSDLog(lineList); TAŞINACAK
         }
 
         private void portsListBox_Click(object sender, EventArgs e)

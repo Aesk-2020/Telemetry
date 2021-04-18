@@ -35,10 +35,10 @@ namespace Telemetri.Variables
         public static bool dc_bara_current_error_u1 => Convert.ToBoolean((driver_error_u8 >> 4 & 0b00000001));
         public static bool ID_error_u1 => Convert.ToBoolean((driver_error_u8 >> 5 & 0b00000001));
 
-        public static string log_data_driver => phase_a_current_f32.ToString() + '\t' + phase_b_current_f32.ToString() + '\t' +
-                                                dc_bus_current_f32.ToString() + '\t' + dc_bus_voltage_f32.ToString() + '\t' +
-                                                id_f32.ToString() + '\t' + iq_f32.ToString() + '\t' + IArms_f32.ToString() + '\t' +
-                                                Torque_f32.ToString() + '\t' + drive_status_u8.ToString() + '\t' + driver_error_u8.ToString() +
+        public static string log_data_driver => phase_a_current_f32.ToString("0.00") + '\t' + phase_b_current_f32.ToString("0.00") + '\t' +
+                                                dc_bus_current_f32.ToString("0.00") + '\t' + dc_bus_voltage_f32.ToString("0.00") + '\t' +
+                                                id_f32.ToString("0.00") + '\t' + iq_f32.ToString("0.00") + '\t' + IArms_f32.ToString("0.00") + '\t' +
+                                                Torque_f32.ToString("0.00") + '\t' + drive_status_u8.ToString() + '\t' + driver_error_u8.ToString() +
                                                 '\t' + odometer_u32.ToString() + '\t' + motor_temperature_u8 +'\t' + actual_velocity_u8.ToString() + '\t';
                                         
     }

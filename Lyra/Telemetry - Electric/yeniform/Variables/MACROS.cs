@@ -60,5 +60,7 @@ namespace Telemetri.Variables
 
         public static double turAtStart => 350.0;
         public static double turAtStop => 20.0;
+
+        public static string LOGHEADER = "Time	wake_up	set_velocity	can_error	Phase_A_Current	Phase_B_Current	Dc_Bus_Current	Dc_Bus_voltage	Id	Iq	IArms	Torque	drive_status	driver_error	Odometer	Motor_Temperature	actual_velocity	Bat_Voltage	Bat_Current	Bat_Cons	Soc	bms_error	dc_bus_state	Worst_Cell_Voltage	Worst_Cell_Address	Temperature	latitude	longtitude	speed_u8	satellite_number	gpsEfficiency	trueData	checksumError   validDataError";
     }
 }
