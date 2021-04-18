@@ -31,7 +31,7 @@ namespace Telemetri.NewForms
         }
         private void portConnectBtn_Click(object sender, EventArgs e)
         {
-            //LogSystem.ExtractSDLog(lineList); TAŞINACAK
+            LogSystem.ExtractSDLog(lineList); //TAŞINACAK
         }
 
         private void portsListBox_Click(object sender, EventArgs e)

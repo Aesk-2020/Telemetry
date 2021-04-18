@@ -139,7 +139,6 @@ namespace Telemetri.Variables
             GpsTracker.gps_sattelite_number_u8          = logBytes[myindex++];
             GpsTracker.gps_efficiency_u8                = logBytes[myindex++];
 
-            //ARAYÜZ VERİLERİNİ GÜNCELLEME EVENTI
         }
 
         public static void ExtractSDLog(List<string> list)
