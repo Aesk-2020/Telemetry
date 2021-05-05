@@ -180,6 +180,7 @@
             this.finishBtn.TabIndex = 122;
             this.finishBtn.Text = "Finish";
             this.finishBtn.UseVisualStyleBackColor = false;
+            this.finishBtn.Click += new System.EventHandler(this.finishBtn_Click);
             // 
             // startBtn
             // 
@@ -198,6 +199,7 @@
             this.startBtn.TabIndex = 121;
             this.startBtn.Text = "Start";
             this.startBtn.UseVisualStyleBackColor = false;
+            this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
             // portConnectBtn
             // 
@@ -740,7 +742,7 @@
             this.startTimeLabel.ReadOnly = true;
             this.startTimeLabel.Size = new System.Drawing.Size(270, 50);
             this.startTimeLabel.TabIndex = 136;
-            this.startTimeLabel.Text = "13.57.04";
+            this.startTimeLabel.Text = "NULL";
             this.startTimeLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5

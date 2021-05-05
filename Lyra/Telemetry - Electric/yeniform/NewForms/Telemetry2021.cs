@@ -42,12 +42,12 @@ namespace Telemetri.NewForms
 
         private void btnBattery_Click(object sender, EventArgs e)
         {
-            FormManagement.openChildForm(new BMS(), panelChildForm);
+            FormManagement.openChildForm(new BMS_Form(), panelChildForm);
         }
 
         private void btnMotorDriver_Click(object sender, EventArgs e)
         {
-            FormManagement.openChildForm(new MotorDriver(), panelChildForm);
+            FormManagement.openChildForm(new Driver_Form(), panelChildForm);
         }
 
         private void panelChildForm_Paint(object sender, PaintEventArgs e)

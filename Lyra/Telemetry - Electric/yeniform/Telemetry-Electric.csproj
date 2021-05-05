@@ -119,17 +119,23 @@
     <Compile Include="NewForms\Anasayfa.Designer.cs">
       <DependentUpon>Anasayfa.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewForms\BMS.cs">
+    <Compile Include="NewForms\BMS_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewForms\BMS.Designer.cs">
-      <DependentUpon>BMS.cs</DependentUpon>
+    <Compile Include="NewForms\BMS_Form.Designer.cs">
+      <DependentUpon>BMS_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="NewForms\Cells.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NewForms\Cells.Designer.cs">
       <DependentUpon>Cells.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewForms\Graphics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewForms\Graphics.Designer.cs">
+      <DependentUpon>Graphics.cs</DependentUpon>
     </Compile>
     <Compile Include="NewForms\MQTTdeneme.cs">
       <SubType>Form</SubType>
@@ -155,11 +161,11 @@
     <Compile Include="NewForms\Help.Designer.cs">
       <DependentUpon>Help.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewForms\MotorDriver.cs">
+    <Compile Include="NewForms\Driver_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewForms\MotorDriver.Designer.cs">
-      <DependentUpon>MotorDriver.cs</DependentUpon>
+    <Compile Include="NewForms\Driver_Form.Designer.cs">
+      <DependentUpon>Driver_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Variables\BmsUI.cs" />
     <Compile Include="Variables\FormManagement.cs" />
@@ -201,11 +207,14 @@
     <EmbeddedResource Include="NewForms\Anasayfa.resx">
       <DependentUpon>Anasayfa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewForms\BMS.resx">
-      <DependentUpon>BMS.cs</DependentUpon>
+    <EmbeddedResource Include="NewForms\BMS_Form.resx">
+      <DependentUpon>BMS_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewForms\Cells.resx">
       <DependentUpon>Cells.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForms\Graphics.resx">
+      <DependentUpon>Graphics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewForms\Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
@@ -219,8 +228,8 @@
     <EmbeddedResource Include="NewForms\Map.resx">
       <DependentUpon>Map.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewForms\MotorDriver.resx">
-      <DependentUpon>MotorDriver.cs</DependentUpon>
+    <EmbeddedResource Include="NewForms\Driver_Form.resx">
+      <DependentUpon>Driver_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OldForms\BMS_form.resx">
       <DependentUpon>BMS_form.cs</DependentUpon>
