@@ -52,6 +52,7 @@ namespace Telemetri.NewForms
             graphType = Graphics.graphs.batVolt;
             Graphics graphics = new Graphics(graphType);
             graphics.Show();
+            //graphics.changeGraph(time)    BURADA GRAFİĞİ GÜNCELLEYEN TIMER BAŞLATILACAK
         }
 
         private void batCurGraphBtn_Click(object sender, EventArgs e)
@@ -59,6 +60,7 @@ namespace Telemetri.NewForms
             graphType = Graphics.graphs.batCur;
             Graphics graphics = new Graphics(graphType);
             graphics.Show();
+            //graphics.changeGraph(time)    BURADA GRAFİĞİ GÜNCELLEYEN TIMER BAŞLATILACAK
         }
 
         private void batTempGraphBtn_Click(object sender, EventArgs e)
@@ -66,6 +68,7 @@ namespace Telemetri.NewForms
             graphType = Graphics.graphs.batTemp;
             Graphics graphics = new Graphics(graphType);
             graphics.Show();
+            //graphics.changeGraph(time)    BURADA GRAFİĞİ GÜNCELLEYEN TIMER BAŞLATILACAK
         }
 
         private void batConsGraphBtn_Click(object sender, EventArgs e)
@@ -73,6 +76,7 @@ namespace Telemetri.NewForms
             graphType = Graphics.graphs.batCons;
             Graphics graphics = new Graphics(graphType);
             graphics.Show();
+            //graphics.changeGraph(time)    BURADA GRAFİĞİ GÜNCELLEYEN TIMER BAŞLATILACAK
         }
     }
 }
