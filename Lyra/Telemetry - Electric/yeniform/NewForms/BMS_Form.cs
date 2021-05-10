@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telemetri.Variables;
 
 namespace Telemetri.NewForms
 {
@@ -22,7 +23,11 @@ namespace Telemetri.NewForms
 
         private void BMS_Load(object sender, EventArgs e)
         {
-
+            UITools.BMSForm.consTextBox = consTextBox;
+            UITools.BMSForm.curTextBox = currentTextBox;
+            UITools.BMSForm.socTextBox = socTextBox;
+            UITools.BMSForm.tempTextBox = tempTextBox;
+            UITools.BMSForm.voltageTextBox = voltageTextBox;
         }
 
         private void graphicsButton_Click(object sender, EventArgs e)

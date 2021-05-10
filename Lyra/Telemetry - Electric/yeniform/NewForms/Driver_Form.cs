@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telemetri.Variables;
 
 namespace Telemetri.NewForms
 {
@@ -22,7 +23,14 @@ namespace Telemetri.NewForms
 
         private void MotorDriver_Load(object sender, EventArgs e)
         {
-            
+            UITools.DriverForm.dcBusCurLabel = dcBusCurLabel;
+            UITools.DriverForm.dcBusVoltLabel = dcBusVoltLabel;
+            UITools.DriverForm.IArmsLabel = IArmsLabel;
+            UITools.DriverForm.IdLabel = IdLabel;
+            UITools.DriverForm.IqLabel = IqLabel;
+            UITools.DriverForm.phaseALabel = phaseALabel;
+            UITools.DriverForm.phaseBLabel = phaseBLabel;
+            UITools.DriverForm.TorqueLabel = TorqueLabel;
         }
 
         private void graphicsButton_Click(object sender, EventArgs e)

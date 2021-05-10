@@ -1,26 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
-using System.Windows.Forms;
+
 namespace Telemetri.Variables
 {
-    public delegate void LogDelegate();
-    public class MQTT : SerialPortCOMRF
+    public class NewMQTT
     {
-        public event LogDelegate LogEvent;
-        public int mqtt_total_counter = 0;
-        public double MQTT_Efficiency;
-        public DateTime old_time;
-        double totalTime = 0;
+        private string _username = "aesk";
+        private string _password = "1234";
+        private int _dataLength; //sadece mesaj
+        private int _dataCounter = 0;
+        public string topic;
+        public string broker;
+        public MqttClient client;
         bool connected_flag = false;
-        public int MQTT_counter_int32;
-        public int error_counter = 0;
-        public double mqtt_refresh_time;
-        int mqtt_counter_old = 0;
-        string _username = "aesk";
-        string _password = "1234";
-        string _topic;
-        private int steppo = 0;
         private enum step
         {
             CatchSync1 = 0,
@@ -28,48 +26,30 @@ namespace Telemetri.Variables
             CatchLength = 2,
             AddBuffer = 3
         }
-        private MqttClient _client;
-        private MqttClient _client1;
-        public MQTT(string username, string password, string topic)
-        {
+        private step steppo = step.CatchSync1;
 
-            _username = username;
-            _password = password;
-            _topic = topic;
+        public NewMQTT(string _topic, string _broker)
+        {
+            topic = _topic;
+            broker = _broker;
         }
 
-        public MQTT(string topic)
-        {
-            _topic = topic;
-        }
-
-        public MQTT()
+        public NewMQTT()
         {
 
         }
-
-        public void MQTTInit(MqttClient Client)
-        {
-            _client = Client;
-        }
-
-        public void Init()
-        {
-            
-        }
-
         public bool ConnectSubscribe()
         {
-            if(connected_flag == false)
+            if (connected_flag == false)
             {
-                _client1 = new MqttClient("broker.mqttdashboard.com");
-                byte code = _client1.Connect(Guid.NewGuid().ToString(), _username, _password);
+                this.client = new MqttClient(this.broker);
+                byte code = this.client.Connect(Guid.NewGuid().ToString(), _username, _password);
                 if (code == 0x00)
                 {
                     try
                     {
-                        _client1.Subscribe(new string[] { _topic }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
-                        _client1.MqttMsgPublishReceived += Client_MqttMsgPublishReceived;
+                        this.client.Subscribe(new string[] { this.topic }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
+                        this.client.MqttMsgPublishReceived += Client_MqttMsgPublishReceived;
                         connected_flag = true;
                     }
                     catch (Exception exce)
@@ -81,7 +61,6 @@ namespace Telemetri.Variables
                 else
                 {
                     MessageBox.Show($"Sunucuya bağlanılamadı. Hata kodu: {code}");
-                    //MessageBox.Show("Sunucuya bağlanılamadı. Hata kodu: {0}", code.ToString("X"));
                     return false;
                 }
             }
@@ -91,13 +70,12 @@ namespace Telemetri.Variables
                 return true;
             }
         }
-
         public void Disconnect()
         {
-            if(connected_flag == true)
+            if (connected_flag == true)
             {
-                _client1.Disconnect();
-                _client1.MqttMsgPublishReceived -= Client_MqttMsgPublishReceived;
+                this.client.Disconnect();
+                this.client.MqttMsgPublishReceived -= Client_MqttMsgPublishReceived;
                 connected_flag = false;
             }
             else
@@ -106,65 +84,60 @@ namespace Telemetri.Variables
             }
         }
 
-        public byte MQTTsubscribe() //ESKİ KOD
+        private void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
-             byte code = _client.Connect(Guid.NewGuid().ToString(), _username, _password);
-            _client.MqttMsgPublishReceived += Client_MqttMsgPublishReceived;
-            try
+            byte[] recieve_data = e.Message; //rahat çalışmak ve okunailirlik için
+            byte[] worked_data = new byte[255];
+
+            for (int i = 0; i < recieve_data.Length; i++)
             {
-                _client.Subscribe(new string[] { _topic }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
+                switch (steppo)
+                {
+                    case step.CatchSync1:
+                        if (recieve_data[i] == MACROS.SYNC1)
+                        {
+                            steppo = step.CatchSync2; //else ekle hatalı paket yakalasın bunlar CRC dahil
+                            worked_data[_dataCounter++] = recieve_data[i];
+                        }
+                        break;
+                    case step.CatchSync2:
+                        if (recieve_data[i] == MACROS.SYNC2)
+                        {
+                            steppo = step.CatchLength; //bu da aynı şekil
+                            worked_data[_dataCounter++] = recieve_data[i];
+                        }
+                        else
+                        {
+                            steppo = step.CatchSync1;
+                        }
+                        break;
+                    case step.CatchLength:
+                        _dataLength = recieve_data[i];
+                        worked_data[_dataCounter++] = recieve_data[i];
+                        steppo = step.AddBuffer;
+                        break;
+                    case step.AddBuffer:
+                        worked_data[_dataCounter++] = recieve_data[i];
+                        if (_dataCounter == _dataLength + 2)
+                        {
+                            byte CRC_L = recieve_data[i + 1];
+                            byte CRC_H = recieve_data[i + 2];
+                            ushort incomingCRC = BitConverter.ToUInt16(new byte[] { CRC_L, CRC_H }, 0);
+                            ushort calculatedCRC = MACROS.AeskCRCCalculate(worked_data, (uint)worked_data.Length);
+                            if (incomingCRC == calculatedCRC)
+                            {
+                                dataConvertMQTT(worked_data);
+                                //çözülen++;
+                                //indeks kontrol;
+                            }
+                            steppo = step.CatchSync1;
+                        }
+                        break;
+                    default:
+                        break;
+                }
             }
-
-            catch (Exception ex)
-            {
-                //Subscribe error
-                MessageBox.Show(ex.Message);
-            }
-
-            old_time = DateTime.Now;
-            return code; 
         }
-
-        void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e) //ESKİ KOD
-        {
-            mqtt_counter_old = MQTT_counter_int32;
-            if (mqtt_total_counter == 0)
-            {
-                old_time = DateTime.Now;
-            }
-
-            mqtt_total_counter++;
-            DateTime current_time = DateTime.Now;
-            totalTime += (current_time - old_time).TotalMilliseconds;
-            dataConvertMQTT(e.Message);
-            error_counter += find_error(mqtt_counter_old, MQTT_counter_int32);
-            MQTT_Efficiency = 1 - (Convert.ToDouble(error_counter) / Convert.ToDouble(mqtt_total_counter));
-            mqtt_refresh_time = (double)totalTime / mqtt_total_counter;
-            old_time = current_time;
-        }
-
-        public void disConnectMQTT() //ESKİ KOD
-        {
-            _client.Disconnect();
-            _client.MqttMsgPublishReceived -= Client_MqttMsgPublishReceived;
-        }
-
-        int find_error(int old_d, int new_d) //ESKİ KOD
-        {
-
-            int x = new_d - old_d;
-            //hata olup olmadigini anlamak icin en az 2 veri gelmeli
-            //biz old_d yi basta 0 set ettik
-            //yani ilk veri 24 gelince 24 hatamiz olmamali
-            if (old_d == 0)
-            {
-                return 0;
-            }
-
-            return Math.Abs(x - 1);
-
-        }
-
         void dataConvertMQTT(byte[] receiveBuffer) //ESKİ KOD
         {
             int startIndex = 0;
@@ -205,6 +178,7 @@ namespace Telemetri.Variables
             {
                 startIndex += 11;
             }
+            /*
             BMS.bms_cells[0] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex) + BMS.worst_cell_voltage_f32;
             BMS.bms_cells[1] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex) + BMS.worst_cell_voltage_f32;
             BMS.bms_cells[2] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex) + BMS.worst_cell_voltage_f32;
@@ -234,7 +208,6 @@ namespace Telemetri.Variables
             BMS.bms_cells[26] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex) + BMS.worst_cell_voltage_f32;
             BMS.bms_cells[27] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex) + BMS.worst_cell_voltage_f32;
             VCU.can_error_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
-            MQTT_counter_int32 = EncodePackMethods.DataConverterS32(receiveBuffer, ref startIndex);
             BMS.temp1_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
             BMS.temp2_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
             BMS.temp3_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
@@ -268,22 +241,10 @@ namespace Telemetri.Variables
             BMS.bms_soc[22] = ((float)EncodePackMethods.DataConverterS8(receiveBuffer, ref startIndex) / MACROS.SOC_CONVERTER) + BMS.soc_f32;
             BMS.bms_soc[23] = ((float)EncodePackMethods.DataConverterS8(receiveBuffer, ref startIndex) / MACROS.SOC_CONVERTER) + BMS.soc_f32;
             BMS.bms_soc[24] = ((float)EncodePackMethods.DataConverterS8(receiveBuffer, ref startIndex) / MACROS.SOC_CONVERTER) + BMS.soc_f32;
-            BMS.bms_soc[25] = ((float)EncodePackMethods.DataConverterS8(receiveBuffer, ref startIndex) /  MACROS.SOC_CONVERTER) + BMS.soc_f32;
-            BMS.bms_soc[26] = ((float)EncodePackMethods.DataConverterS8(receiveBuffer, ref startIndex) /  MACROS.SOC_CONVERTER) + BMS.soc_f32;
+            BMS.bms_soc[25] = ((float)EncodePackMethods.DataConverterS8(receiveBuffer, ref startIndex) / MACROS.SOC_CONVERTER) + BMS.soc_f32;
+            BMS.bms_soc[26] = ((float)EncodePackMethods.DataConverterS8(receiveBuffer, ref startIndex) / MACROS.SOC_CONVERTER) + BMS.soc_f32;
             BMS.bms_soc[27] = ((float)receiveBuffer[startIndex]) / MACROS.SOC_CONVERTER + BMS.soc_f32;
-            LogEvent();
+            */
         }
-
-        //New data convert function with synchronize control
-        void DataConvertMQTT(byte[] recieveBuffer)
-        {
-            //Gelen verinin senkronizasyonu bozuk olabilir
-            //Kontrol edilecek
-            for (int i = 0; i < recieveBuffer.Length; i++)
-            {
-                
-            }
-        }
-
     }
 }

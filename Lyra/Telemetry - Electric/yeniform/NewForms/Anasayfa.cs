@@ -14,7 +14,7 @@ namespace Telemetri.NewForms
 {
     public partial class Anasayfa : Form
     {
-        MQTT mqttObj = new MQTT("LYRADATA"); //LYRADATA topic'ine bağlanacak MQTT nesnesini oluştur.
+        MQTT mqttObj = new MQTT(MACROS.newSubTopic); //LYRADATA topic'ine bağlanacak MQTT nesnesini oluştur.
         string splitter = "aesk\n";
         List<string> lineList;
         public Anasayfa()
@@ -27,6 +27,14 @@ namespace Telemetri.NewForms
             string[] ports = SerialPort.GetPortNames();
             portsListBox.Items.AddRange(ports);
             LogSystem.isFirst = true;
+            UITools.Anasayfa.actVelocityLabel = actVelocityLabel;
+            UITools.Anasayfa.batConsLabel = batConsLabel;
+            UITools.Anasayfa.batCurLabel = batCurLabel;
+            UITools.Anasayfa.errorsLabel = errorsLabel;
+            UITools.Anasayfa.socLabel = socLabel;
+            UITools.Anasayfa.startTimeLabel = startTimeLabel;
+            UITools.Anasayfa.setVelocityLabel = setVelocityLabel;
+            UITools.Anasayfa.driveStatusLabel = driveStatusLabel;
         }
         private void portConnectBtn_Click(object sender, EventArgs e)
         {

@@ -35,14 +35,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.phaseALabel = new System.Windows.Forms.Label();
+            this.phaseBLabel = new System.Windows.Forms.Label();
+            this.dcBusVoltLabel = new System.Windows.Forms.Label();
+            this.dcBusCurLabel = new System.Windows.Forms.Label();
+            this.IdLabel = new System.Windows.Forms.Label();
+            this.IqLabel = new System.Windows.Forms.Label();
+            this.IArmsLabel = new System.Windows.Forms.Label();
+            this.TorqueLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -57,6 +57,7 @@
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.torqueGraphBtn = new System.Windows.Forms.Button();
             this.iarmsGraphBtn = new System.Windows.Forms.Button();
             this.iqGraphBtn = new System.Windows.Forms.Button();
             this.idGraphBtn = new System.Windows.Forms.Button();
@@ -65,7 +66,6 @@
             this.phaseBGraphBtn = new System.Windows.Forms.Button();
             this.phaseAGraphBtn = new System.Windows.Forms.Button();
             this.graphicsButton = new System.Windows.Forms.Button();
-            this.torqueGraphBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
@@ -172,109 +172,109 @@
             this.label8.Text = "DC BUS (I)";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label9
+            // phaseALabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(3, 40);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(444, 41);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "0.00";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.phaseALabel.AutoSize = true;
+            this.phaseALabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.phaseALabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.phaseALabel.ForeColor = System.Drawing.Color.White;
+            this.phaseALabel.Location = new System.Drawing.Point(3, 40);
+            this.phaseALabel.Name = "phaseALabel";
+            this.phaseALabel.Size = new System.Drawing.Size(444, 41);
+            this.phaseALabel.TabIndex = 9;
+            this.phaseALabel.Text = "0.00";
+            this.phaseALabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label10
+            // phaseBLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(3, 40);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(444, 41);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "0.00";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.phaseBLabel.AutoSize = true;
+            this.phaseBLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.phaseBLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.phaseBLabel.ForeColor = System.Drawing.Color.White;
+            this.phaseBLabel.Location = new System.Drawing.Point(3, 40);
+            this.phaseBLabel.Name = "phaseBLabel";
+            this.phaseBLabel.Size = new System.Drawing.Size(444, 41);
+            this.phaseBLabel.TabIndex = 10;
+            this.phaseBLabel.Text = "0.00";
+            this.phaseBLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label11
+            // dcBusVoltLabel
             // 
-            this.label11.AutoSize = true;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(3, 40);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(444, 41);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "0.00";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.dcBusVoltLabel.AutoSize = true;
+            this.dcBusVoltLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dcBusVoltLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dcBusVoltLabel.ForeColor = System.Drawing.Color.White;
+            this.dcBusVoltLabel.Location = new System.Drawing.Point(3, 40);
+            this.dcBusVoltLabel.Name = "dcBusVoltLabel";
+            this.dcBusVoltLabel.Size = new System.Drawing.Size(444, 41);
+            this.dcBusVoltLabel.TabIndex = 11;
+            this.dcBusVoltLabel.Text = "0.00";
+            this.dcBusVoltLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label12
+            // dcBusCurLabel
             // 
-            this.label12.AutoSize = true;
-            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(3, 40);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(444, 41);
-            this.label12.TabIndex = 12;
-            this.label12.Text = "0.00";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.dcBusCurLabel.AutoSize = true;
+            this.dcBusCurLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dcBusCurLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dcBusCurLabel.ForeColor = System.Drawing.Color.White;
+            this.dcBusCurLabel.Location = new System.Drawing.Point(3, 40);
+            this.dcBusCurLabel.Name = "dcBusCurLabel";
+            this.dcBusCurLabel.Size = new System.Drawing.Size(444, 41);
+            this.dcBusCurLabel.TabIndex = 12;
+            this.dcBusCurLabel.Text = "0.00";
+            this.dcBusCurLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label13
+            // IdLabel
             // 
-            this.label13.AutoSize = true;
-            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(3, 41);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(215, 41);
-            this.label13.TabIndex = 13;
-            this.label13.Text = "0.00";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.IdLabel.AutoSize = true;
+            this.IdLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.IdLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.IdLabel.ForeColor = System.Drawing.Color.White;
+            this.IdLabel.Location = new System.Drawing.Point(3, 41);
+            this.IdLabel.Name = "IdLabel";
+            this.IdLabel.Size = new System.Drawing.Size(215, 41);
+            this.IdLabel.TabIndex = 13;
+            this.IdLabel.Text = "0.00";
+            this.IdLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label14
+            // IqLabel
             // 
-            this.label14.AutoSize = true;
-            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(3, 41);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(215, 41);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "0.00";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.IqLabel.AutoSize = true;
+            this.IqLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.IqLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.IqLabel.ForeColor = System.Drawing.Color.White;
+            this.IqLabel.Location = new System.Drawing.Point(3, 41);
+            this.IqLabel.Name = "IqLabel";
+            this.IqLabel.Size = new System.Drawing.Size(215, 41);
+            this.IqLabel.TabIndex = 14;
+            this.IqLabel.Text = "0.00";
+            this.IqLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label15
+            // IArmsLabel
             // 
-            this.label15.AutoSize = true;
-            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(3, 41);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(215, 41);
-            this.label15.TabIndex = 15;
-            this.label15.Text = "0.00";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.IArmsLabel.AutoSize = true;
+            this.IArmsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.IArmsLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.IArmsLabel.ForeColor = System.Drawing.Color.White;
+            this.IArmsLabel.Location = new System.Drawing.Point(3, 41);
+            this.IArmsLabel.Name = "IArmsLabel";
+            this.IArmsLabel.Size = new System.Drawing.Size(215, 41);
+            this.IArmsLabel.TabIndex = 15;
+            this.IArmsLabel.Text = "0.00";
+            this.IArmsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label16
+            // TorqueLabel
             // 
-            this.label16.AutoSize = true;
-            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(3, 41);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(217, 41);
-            this.label16.TabIndex = 16;
-            this.label16.Text = "0.00";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TorqueLabel.AutoSize = true;
+            this.TorqueLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TorqueLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TorqueLabel.ForeColor = System.Drawing.Color.White;
+            this.TorqueLabel.Location = new System.Drawing.Point(3, 41);
+            this.TorqueLabel.Name = "TorqueLabel";
+            this.TorqueLabel.Size = new System.Drawing.Size(217, 41);
+            this.TorqueLabel.TabIndex = 16;
+            this.TorqueLabel.Text = "0.00";
+            this.TorqueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -327,7 +327,7 @@
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.label10, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.phaseBLabel, 0, 1);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(461, 4);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -342,7 +342,7 @@
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label9, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.phaseALabel, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(4, 4);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -373,7 +373,7 @@
             this.tableLayoutPanel8.ColumnCount = 1;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.Controls.Add(this.label8, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.label12, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.dcBusCurLabel, 0, 1);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(461, 4);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
@@ -388,7 +388,7 @@
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Controls.Add(this.label7, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.label11, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.dcBusVoltLabel, 0, 1);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(4, 4);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
@@ -422,7 +422,7 @@
             // 
             this.tableLayoutPanel12.ColumnCount = 1;
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.Controls.Add(this.label16, 0, 1);
+            this.tableLayoutPanel12.Controls.Add(this.TorqueLabel, 0, 1);
             this.tableLayoutPanel12.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel12.Location = new System.Drawing.Point(688, 4);
@@ -438,7 +438,7 @@
             this.tableLayoutPanel11.ColumnCount = 1;
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel11.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel11.Controls.Add(this.label15, 0, 1);
+            this.tableLayoutPanel11.Controls.Add(this.IArmsLabel, 0, 1);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel11.Location = new System.Drawing.Point(460, 4);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
@@ -453,7 +453,7 @@
             this.tableLayoutPanel10.ColumnCount = 1;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.label14, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(this.IqLabel, 0, 1);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(232, 4);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
@@ -468,7 +468,7 @@
             this.tableLayoutPanel9.ColumnCount = 1;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.label13, 0, 1);
+            this.tableLayoutPanel9.Controls.Add(this.IdLabel, 0, 1);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(4, 4);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
@@ -495,6 +495,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(921, 456);
             this.panel1.TabIndex = 18;
+            // 
+            // torqueGraphBtn
+            // 
+            this.torqueGraphBtn.AutoSize = true;
+            this.torqueGraphBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(13)))), ((int)(((byte)(32)))));
+            this.torqueGraphBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.torqueGraphBtn.FlatAppearance.BorderSize = 0;
+            this.torqueGraphBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.torqueGraphBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.torqueGraphBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.torqueGraphBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.torqueGraphBtn.Location = new System.Drawing.Point(0, 400);
+            this.torqueGraphBtn.Name = "torqueGraphBtn";
+            this.torqueGraphBtn.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.torqueGraphBtn.Size = new System.Drawing.Size(921, 50);
+            this.torqueGraphBtn.TabIndex = 26;
+            this.torqueGraphBtn.Text = "Torque";
+            this.torqueGraphBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.torqueGraphBtn.UseVisualStyleBackColor = false;
+            this.torqueGraphBtn.Visible = false;
+            this.torqueGraphBtn.Click += new System.EventHandler(this.torqueGraphBtn_Click);
             // 
             // iarmsGraphBtn
             // 
@@ -663,27 +684,6 @@
             this.graphicsButton.UseVisualStyleBackColor = false;
             this.graphicsButton.Click += new System.EventHandler(this.graphicsButton_Click);
             // 
-            // torqueGraphBtn
-            // 
-            this.torqueGraphBtn.AutoSize = true;
-            this.torqueGraphBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(13)))), ((int)(((byte)(32)))));
-            this.torqueGraphBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.torqueGraphBtn.FlatAppearance.BorderSize = 0;
-            this.torqueGraphBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.torqueGraphBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.torqueGraphBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.torqueGraphBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.torqueGraphBtn.Location = new System.Drawing.Point(0, 400);
-            this.torqueGraphBtn.Name = "torqueGraphBtn";
-            this.torqueGraphBtn.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.torqueGraphBtn.Size = new System.Drawing.Size(921, 50);
-            this.torqueGraphBtn.TabIndex = 26;
-            this.torqueGraphBtn.Text = "Torque";
-            this.torqueGraphBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.torqueGraphBtn.UseVisualStyleBackColor = false;
-            this.torqueGraphBtn.Visible = false;
-            this.torqueGraphBtn.Click += new System.EventHandler(this.torqueGraphBtn_Click);
-            // 
             // Driver_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -730,14 +730,14 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label phaseALabel;
+        private System.Windows.Forms.Label phaseBLabel;
+        private System.Windows.Forms.Label dcBusVoltLabel;
+        private System.Windows.Forms.Label dcBusCurLabel;
+        private System.Windows.Forms.Label IdLabel;
+        private System.Windows.Forms.Label IqLabel;
+        private System.Windows.Forms.Label IArmsLabel;
+        private System.Windows.Forms.Label TorqueLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;

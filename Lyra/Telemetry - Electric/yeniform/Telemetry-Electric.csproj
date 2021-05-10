@@ -183,6 +183,7 @@
     <Compile Include="Variables\Logs.cs" />
     <Compile Include="Variables\MACROS.cs" />
     <Compile Include="Variables\MQTT.cs" />
+    <Compile Include="Variables\NewMQTT.cs" />
     <Compile Include="Variables\SectorAndTourDatas.cs" />
     <Compile Include="Variables\SerialPortCOMRF.cs" />
     <Compile Include="OldForms\Telemetry.cs">
@@ -203,6 +204,7 @@
     <Compile Include="Variables\Driver.cs" />
     <Compile Include="Variables\ThreadMethods.cs" />
     <Compile Include="Variables\Timers.cs" />
+    <Compile Include="Variables\UITools.cs" />
     <Compile Include="Variables\VCU.cs" />
     <EmbeddedResource Include="NewForms\Anasayfa.resx">
       <DependentUpon>Anasayfa.cs</DependentUpon>

@@ -6,11 +6,16 @@ namespace Telemetri.Variables
 {
     public struct MACROS
     {
+        public const byte SYNC1 = 0X14;
+        public const byte SYNC2 = 0X04;
+        public const int ofsetMQTT = 3;
         public const double C_RADIUS_EARTH_KM = 6371100;
         public const string aesk_IP = "broker.mqttdashboard.com";
         public const string MQTT_username = "digital";
         public const string MQTT_password = "aesk";
         public const string MQTT_topic = "LYRADATA";
+        public const string newSubTopic = "vehicle_to_interface";
+        public const string newPubTopic = "interface_to_vehicle";
         //40.95767341297037, 29.410455013620723
         public const double centerLat = 40.957673;
         public const double centerLong = 29.410455;
@@ -62,5 +67,20 @@ namespace Telemetri.Variables
         public static double turAtStop => 20.0;
 
         public static string LOGHEADER = "wake_up	drive_commands	set_velocity	can_error	Phase_A_Current	Phase_B_Current	Dc_Bus_Current	Dc_Bus_voltage	Id	Iq	IArms	Torque	drive_status	driver_error	Odometer	Motor_Temperature	actual_velocity	Bat_Voltage	Bat_Current	Bat_Cons	Soc	bms_error	dc_bus_state	Worst_Cell_Voltage	Worst_Cell_Address	Temperature	latitude	longtitude	speed_u8	satellite_number	gpsEfficiency	trueData	checksumError   validDataError";
+
+        public static ushort AeskCRCCalculate(byte[] frame, uint framesize)
+        {
+            ushort crc16_data = 0;
+            byte data = 0;
+            for (byte mlen = 0; mlen < framesize; mlen++)
+            {
+                data = Convert.ToByte(((byte)frame[mlen] ^ Convert.ToByte(((crc16_data) & (0xFF)))));
+                Console.WriteLine(data);
+                data = (byte)((byte)data ^ (byte)(data << 4));
+                crc16_data = (ushort)((((ushort)data << 8) | ((crc16_data & 0xFF00) >> 8)) ^ (byte)(data >> 4) ^ ((ushort)data << 3));
+            }
+            return (crc16_data);
+        }
+
     }
 }

@@ -41,20 +41,20 @@
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
-            this.tempLabel = new System.Windows.Forms.TextBox();
+            this.tempTextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.label13 = new System.Windows.Forms.Label();
-            this.consLabel = new System.Windows.Forms.TextBox();
+            this.consTextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.label14 = new System.Windows.Forms.Label();
-            this.voltageLabel = new System.Windows.Forms.TextBox();
+            this.voltageTextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.label15 = new System.Windows.Forms.Label();
-            this.driveStatusLabel = new System.Windows.Forms.TextBox();
+            this.socTextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.label16 = new System.Windows.Forms.Label();
-            this.errorsLabel = new System.Windows.Forms.TextBox();
+            this.currentTextBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
@@ -231,7 +231,7 @@
             this.tableLayoutPanel11.ColumnCount = 1;
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel11.Controls.Add(this.label12, 0, 0);
-            this.tableLayoutPanel11.Controls.Add(this.tempLabel, 0, 1);
+            this.tableLayoutPanel11.Controls.Add(this.tempTextBox, 0, 1);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel11.Location = new System.Drawing.Point(608, 4);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
@@ -254,28 +254,28 @@
             this.label12.Text = "Temp(°C)";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tempLabel
+            // tempTextBox
             // 
-            this.tempLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.tempLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tempLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tempLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tempLabel.ForeColor = System.Drawing.Color.White;
-            this.tempLabel.Location = new System.Drawing.Point(3, 55);
-            this.tempLabel.Multiline = true;
-            this.tempLabel.Name = "tempLabel";
-            this.tempLabel.ReadOnly = true;
-            this.tempLabel.Size = new System.Drawing.Size(290, 36);
-            this.tempLabel.TabIndex = 135;
-            this.tempLabel.Text = "25°C";
-            this.tempLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tempTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.tempTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tempTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tempTextBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tempTextBox.ForeColor = System.Drawing.Color.White;
+            this.tempTextBox.Location = new System.Drawing.Point(3, 55);
+            this.tempTextBox.Multiline = true;
+            this.tempTextBox.Name = "tempTextBox";
+            this.tempTextBox.ReadOnly = true;
+            this.tempTextBox.Size = new System.Drawing.Size(290, 36);
+            this.tempTextBox.TabIndex = 135;
+            this.tempTextBox.Text = "25°C";
+            this.tempTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel10
             // 
             this.tableLayoutPanel10.ColumnCount = 1;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.Controls.Add(this.label13, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.consLabel, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(this.consTextBox, 0, 1);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(306, 4);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
@@ -298,28 +298,28 @@
             this.label13.Text = "Consumption";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // consLabel
+            // consTextBox
             // 
-            this.consLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.consLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.consLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.consLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.consLabel.ForeColor = System.Drawing.Color.White;
-            this.consLabel.Location = new System.Drawing.Point(3, 55);
-            this.consLabel.Multiline = true;
-            this.consLabel.Name = "consLabel";
-            this.consLabel.ReadOnly = true;
-            this.consLabel.Size = new System.Drawing.Size(289, 36);
-            this.consLabel.TabIndex = 135;
-            this.consLabel.Text = "250Wh";
-            this.consLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.consTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.consTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.consTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.consTextBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.consTextBox.ForeColor = System.Drawing.Color.White;
+            this.consTextBox.Location = new System.Drawing.Point(3, 55);
+            this.consTextBox.Multiline = true;
+            this.consTextBox.Name = "consTextBox";
+            this.consTextBox.ReadOnly = true;
+            this.consTextBox.Size = new System.Drawing.Size(289, 36);
+            this.consTextBox.TabIndex = 135;
+            this.consTextBox.Text = "250Wh";
+            this.consTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel9
             // 
             this.tableLayoutPanel9.ColumnCount = 1;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.Controls.Add(this.label14, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.voltageLabel, 0, 1);
+            this.tableLayoutPanel9.Controls.Add(this.voltageTextBox, 0, 1);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(4, 4);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
@@ -342,21 +342,21 @@
             this.label14.Text = "Voltage";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // voltageLabel
+            // voltageTextBox
             // 
-            this.voltageLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.voltageLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.voltageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.voltageLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.voltageLabel.ForeColor = System.Drawing.Color.White;
-            this.voltageLabel.Location = new System.Drawing.Point(3, 55);
-            this.voltageLabel.Multiline = true;
-            this.voltageLabel.Name = "voltageLabel";
-            this.voltageLabel.ReadOnly = true;
-            this.voltageLabel.Size = new System.Drawing.Size(289, 36);
-            this.voltageLabel.TabIndex = 135;
-            this.voltageLabel.Text = "107.6V";
-            this.voltageLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.voltageTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.voltageTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.voltageTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.voltageTextBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.voltageTextBox.ForeColor = System.Drawing.Color.White;
+            this.voltageTextBox.Location = new System.Drawing.Point(3, 55);
+            this.voltageTextBox.Multiline = true;
+            this.voltageTextBox.Name = "voltageTextBox";
+            this.voltageTextBox.ReadOnly = true;
+            this.voltageTextBox.Size = new System.Drawing.Size(289, 36);
+            this.voltageTextBox.TabIndex = 135;
+            this.voltageTextBox.Text = "107.6V";
+            this.voltageTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel12
             // 
@@ -379,7 +379,7 @@
             this.tableLayoutPanel14.ColumnCount = 1;
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel14.Controls.Add(this.label15, 0, 0);
-            this.tableLayoutPanel14.Controls.Add(this.driveStatusLabel, 0, 1);
+            this.tableLayoutPanel14.Controls.Add(this.socTextBox, 0, 1);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel14.Location = new System.Drawing.Point(457, 4);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
@@ -402,28 +402,28 @@
             this.label15.Text = "SoC";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // driveStatusLabel
+            // socTextBox
             // 
-            this.driveStatusLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.driveStatusLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.driveStatusLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.driveStatusLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.driveStatusLabel.ForeColor = System.Drawing.Color.White;
-            this.driveStatusLabel.Location = new System.Drawing.Point(3, 55);
-            this.driveStatusLabel.Multiline = true;
-            this.driveStatusLabel.Name = "driveStatusLabel";
-            this.driveStatusLabel.ReadOnly = true;
-            this.driveStatusLabel.Size = new System.Drawing.Size(441, 36);
-            this.driveStatusLabel.TabIndex = 135;
-            this.driveStatusLabel.Text = "%75";
-            this.driveStatusLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.socTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.socTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.socTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.socTextBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.socTextBox.ForeColor = System.Drawing.Color.White;
+            this.socTextBox.Location = new System.Drawing.Point(3, 55);
+            this.socTextBox.Multiline = true;
+            this.socTextBox.Name = "socTextBox";
+            this.socTextBox.ReadOnly = true;
+            this.socTextBox.Size = new System.Drawing.Size(441, 36);
+            this.socTextBox.TabIndex = 135;
+            this.socTextBox.Text = "%75";
+            this.socTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel13
             // 
             this.tableLayoutPanel13.ColumnCount = 1;
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel13.Controls.Add(this.label16, 0, 0);
-            this.tableLayoutPanel13.Controls.Add(this.errorsLabel, 0, 1);
+            this.tableLayoutPanel13.Controls.Add(this.currentTextBox, 0, 1);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel13.Location = new System.Drawing.Point(4, 4);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
@@ -446,21 +446,21 @@
             this.label16.Text = "Current";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // errorsLabel
+            // currentTextBox
             // 
-            this.errorsLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.errorsLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.errorsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.errorsLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.errorsLabel.ForeColor = System.Drawing.Color.White;
-            this.errorsLabel.Location = new System.Drawing.Point(3, 55);
-            this.errorsLabel.Multiline = true;
-            this.errorsLabel.Name = "errorsLabel";
-            this.errorsLabel.ReadOnly = true;
-            this.errorsLabel.Size = new System.Drawing.Size(440, 36);
-            this.errorsLabel.TabIndex = 135;
-            this.errorsLabel.Text = "20A";
-            this.errorsLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.currentTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.currentTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.currentTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.currentTextBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.currentTextBox.ForeColor = System.Drawing.Color.White;
+            this.currentTextBox.Location = new System.Drawing.Point(3, 55);
+            this.currentTextBox.Multiline = true;
+            this.currentTextBox.Name = "currentTextBox";
+            this.currentTextBox.ReadOnly = true;
+            this.currentTextBox.Size = new System.Drawing.Size(440, 36);
+            this.currentTextBox.TabIndex = 135;
+            this.currentTextBox.Text = "20A";
+            this.currentTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // BMS_Form
             // 
@@ -505,19 +505,19 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox tempLabel;
+        private System.Windows.Forms.TextBox tempTextBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox consLabel;
+        private System.Windows.Forms.TextBox consTextBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox voltageLabel;
+        private System.Windows.Forms.TextBox voltageTextBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox driveStatusLabel;
+        private System.Windows.Forms.TextBox socTextBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox errorsLabel;
+        private System.Windows.Forms.TextBox currentTextBox;
     }
 }
