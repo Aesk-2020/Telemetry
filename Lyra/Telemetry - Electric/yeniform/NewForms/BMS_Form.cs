@@ -14,6 +14,7 @@ namespace Telemetri.NewForms
     public partial class BMS_Form : Form
     {
         Graphics.graphs graphType = new Graphics.graphs();
+        public static Form oldForm = null;
 
         public BMS_Form()
         {
@@ -48,22 +49,36 @@ namespace Telemetri.NewForms
                 batVoltGraphBtn.Visible = false;
                 batTempGraphBtn.Visible = false;
             }
-            
-            
         }
 
         private void batVoltGraphBtn_Click(object sender, EventArgs e)
         {
+            
             graphType = Graphics.graphs.batVolt;
             Graphics graphics = new Graphics(graphType);
+            if (oldForm != null) oldForm.Close();
+            oldForm = graphics;
+            graphics.TopLevel = false;
+            graphics.FormBorderStyle = FormBorderStyle.None;
+            graphics.Dock = DockStyle.Fill;
+            graphics.AutoScroll = true;
+            graphPanel.Controls.Add(graphics);
             graphics.Show();
             //graphics.changeGraph(time)    BURADA GRAFİĞİ GÜNCELLEYEN TIMER BAŞLATILACAK
         }
 
         private void batCurGraphBtn_Click(object sender, EventArgs e)
         {
+
             graphType = Graphics.graphs.batCur;
             Graphics graphics = new Graphics(graphType);
+            if (oldForm != null) oldForm.Close();
+            oldForm = graphics;
+            graphics.TopLevel = false;
+            graphics.FormBorderStyle = FormBorderStyle.None;
+            graphics.Dock = DockStyle.Fill;
+            graphics.AutoScroll = true;
+            graphPanel.Controls.Add(graphics);
             graphics.Show();
             //graphics.changeGraph(time)    BURADA GRAFİĞİ GÜNCELLEYEN TIMER BAŞLATILACAK
         }
@@ -72,6 +87,13 @@ namespace Telemetri.NewForms
         {
             graphType = Graphics.graphs.batTemp;
             Graphics graphics = new Graphics(graphType);
+            if (oldForm != null) oldForm.Close();
+            oldForm = graphics;
+            graphics.TopLevel = false;
+            graphics.FormBorderStyle = FormBorderStyle.None;
+            graphics.Dock = DockStyle.Fill;
+            graphics.AutoScroll = true;
+            graphPanel.Controls.Add(graphics);
             graphics.Show();
             //graphics.changeGraph(time)    BURADA GRAFİĞİ GÜNCELLEYEN TIMER BAŞLATILACAK
         }
@@ -80,6 +102,13 @@ namespace Telemetri.NewForms
         {
             graphType = Graphics.graphs.batCons;
             Graphics graphics = new Graphics(graphType);
+            if (oldForm != null) oldForm.Close();
+            oldForm = graphics;
+            graphics.TopLevel = false;
+            graphics.FormBorderStyle = FormBorderStyle.None;
+            graphics.Dock = DockStyle.Fill;
+            graphics.AutoScroll = true;
+            graphPanel.Controls.Add(graphics);
             graphics.Show();
             //graphics.changeGraph(time)    BURADA GRAFİĞİ GÜNCELLEYEN TIMER BAŞLATILACAK
         }

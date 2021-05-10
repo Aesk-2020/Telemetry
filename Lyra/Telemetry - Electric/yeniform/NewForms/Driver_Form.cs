@@ -14,7 +14,7 @@ namespace Telemetri.NewForms
     public partial class Driver_Form : Form
     {
         Graphics.graphs graphType = new Graphics.graphs();
-
+        public static Form oldForm = null;
         public Driver_Form()
         {
             InitializeComponent();
@@ -65,6 +65,13 @@ namespace Telemetri.NewForms
         {
             graphType = Graphics.graphs.phaseACur;
             Graphics graphics = new Graphics(graphType);
+            if (oldForm != null) oldForm.Close();
+            oldForm = graphics;
+            graphics.TopLevel = false;
+            graphics.FormBorderStyle = FormBorderStyle.None;
+            graphics.Dock = DockStyle.Fill;
+            graphics.AutoScroll = true;
+            graphPanel.Controls.Add(graphics);
             graphics.Show();
         }
 
@@ -72,6 +79,13 @@ namespace Telemetri.NewForms
         {
             graphType = Graphics.graphs.phaseBCur;
             Graphics graphics = new Graphics(graphType);
+            if (oldForm != null) oldForm.Close();
+            oldForm = graphics;
+            graphics.TopLevel = false;
+            graphics.FormBorderStyle = FormBorderStyle.None;
+            graphics.Dock = DockStyle.Fill;
+            graphics.AutoScroll = true;
+            graphPanel.Controls.Add(graphics);
             graphics.Show();
         }
 
@@ -79,6 +93,13 @@ namespace Telemetri.NewForms
         {
             graphType = Graphics.graphs.dcBusVolt;
             Graphics graphics = new Graphics(graphType);
+            if (oldForm != null) oldForm.Close();
+            oldForm = graphics;
+            graphics.TopLevel = false;
+            graphics.FormBorderStyle = FormBorderStyle.None;
+            graphics.Dock = DockStyle.Fill;
+            graphics.AutoScroll = true;
+            graphPanel.Controls.Add(graphics);
             graphics.Show();
         }
 
@@ -86,6 +107,13 @@ namespace Telemetri.NewForms
         {
             graphType = Graphics.graphs.dcBusCur;
             Graphics graphics = new Graphics(graphType);
+            if (oldForm != null) oldForm.Close();
+            oldForm = graphics;
+            graphics.TopLevel = false;
+            graphics.FormBorderStyle = FormBorderStyle.None;
+            graphics.Dock = DockStyle.Fill;
+            graphics.AutoScroll = true;
+            graphPanel.Controls.Add(graphics);
             graphics.Show();
         }
 
@@ -93,6 +121,13 @@ namespace Telemetri.NewForms
         {
             graphType = Graphics.graphs.id;
             Graphics graphics = new Graphics(graphType);
+            if (oldForm != null) oldForm.Close();
+            oldForm = graphics;
+            graphics.TopLevel = false;
+            graphics.FormBorderStyle = FormBorderStyle.None;
+            graphics.Dock = DockStyle.Fill;
+            graphics.AutoScroll = true;
+            graphPanel.Controls.Add(graphics);
             graphics.Show();
         }
 
@@ -100,6 +135,13 @@ namespace Telemetri.NewForms
         {
             graphType = Graphics.graphs.iq;
             Graphics graphics = new Graphics(graphType);
+            if (oldForm != null) oldForm.Close();
+            oldForm = graphics;
+            graphics.TopLevel = false;
+            graphics.FormBorderStyle = FormBorderStyle.None;
+            graphics.Dock = DockStyle.Fill;
+            graphics.AutoScroll = true;
+            graphPanel.Controls.Add(graphics);
             graphics.Show();
         }
 
@@ -107,6 +149,13 @@ namespace Telemetri.NewForms
         {
             graphType = Graphics.graphs.iarms;
             Graphics graphics = new Graphics(graphType);
+            if (oldForm != null) oldForm.Close();
+            oldForm = graphics;
+            graphics.TopLevel = false;
+            graphics.FormBorderStyle = FormBorderStyle.None;
+            graphics.Dock = DockStyle.Fill;
+            graphics.AutoScroll = true;
+            graphPanel.Controls.Add(graphics);
             graphics.Show();
         }
 
@@ -114,6 +163,13 @@ namespace Telemetri.NewForms
         {
             graphType = Graphics.graphs.torque;
             Graphics graphics = new Graphics(graphType);
+            if (oldForm != null) oldForm.Close();
+            oldForm = graphics;
+            graphics.TopLevel = false;
+            graphics.FormBorderStyle = FormBorderStyle.None;
+            graphics.Dock = DockStyle.Fill;
+            graphics.AutoScroll = true;
+            graphPanel.Controls.Add(graphics);
             graphics.Show();
         }
     }

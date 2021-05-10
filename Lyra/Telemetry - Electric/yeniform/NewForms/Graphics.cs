@@ -136,5 +136,18 @@ namespace Telemetri.NewForms
         {
             myChart.Series[0].Points.AddXY(t, Driver.Torque_f32);
         }
+
+        private void clsButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void popupBtn_Click(object sender, EventArgs e)
+        {
+            Graphics graphics = new Graphics(this._graphType);
+            graphics.popupBtn.Visible = false;
+            graphics.Show();
+            this.Show();
+        }
     }
 }

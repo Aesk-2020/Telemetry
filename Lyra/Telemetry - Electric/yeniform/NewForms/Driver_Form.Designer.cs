@@ -66,6 +66,7 @@
             this.phaseBGraphBtn = new System.Windows.Forms.Button();
             this.phaseAGraphBtn = new System.Windows.Forms.Button();
             this.graphicsButton = new System.Windows.Forms.Button();
+            this.graphPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
@@ -481,6 +482,7 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
+            this.panel1.AutoSize = true;
             this.panel1.Controls.Add(this.torqueGraphBtn);
             this.panel1.Controls.Add(this.iarmsGraphBtn);
             this.panel1.Controls.Add(this.iqGraphBtn);
@@ -491,9 +493,9 @@
             this.panel1.Controls.Add(this.phaseAGraphBtn);
             this.panel1.Controls.Add(this.graphicsButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 358);
+            this.panel1.Location = new System.Drawing.Point(0, 364);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(921, 456);
+            this.panel1.Size = new System.Drawing.Size(921, 450);
             this.panel1.TabIndex = 18;
             // 
             // torqueGraphBtn
@@ -684,6 +686,14 @@
             this.graphicsButton.UseVisualStyleBackColor = false;
             this.graphicsButton.Click += new System.EventHandler(this.graphicsButton_Click);
             // 
+            // graphPanel
+            // 
+            this.graphPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.graphPanel.Location = new System.Drawing.Point(0, 286);
+            this.graphPanel.Name = "graphPanel";
+            this.graphPanel.Size = new System.Drawing.Size(921, 78);
+            this.graphPanel.TabIndex = 147;
+            // 
             // Driver_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -691,6 +701,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(921, 814);
+            this.Controls.Add(this.graphPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Driver_Form";
@@ -719,6 +730,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -761,5 +773,6 @@
         private System.Windows.Forms.Button phaseAGraphBtn;
         private System.Windows.Forms.Button graphicsButton;
         private System.Windows.Forms.Button torqueGraphBtn;
+        private System.Windows.Forms.Panel graphPanel;
     }
 }

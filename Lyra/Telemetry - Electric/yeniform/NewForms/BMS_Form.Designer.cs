@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BMS_Form));
             this.socImages = new System.Windows.Forms.ImageList(this.components);
-            this.graphicsButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.batConsGraphBtn = new System.Windows.Forms.Button();
             this.batTempGraphBtn = new System.Windows.Forms.Button();
             this.batCurGraphBtn = new System.Windows.Forms.Button();
             this.batVoltGraphBtn = new System.Windows.Forms.Button();
+            this.graphicsButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
@@ -55,6 +55,7 @@
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.label16 = new System.Windows.Forms.Label();
             this.currentTextBox = new System.Windows.Forms.TextBox();
+            this.graphPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
@@ -75,37 +76,18 @@
             this.socImages.Images.SetKeyName(2, "Başlıksız-2.png");
             this.socImages.Images.SetKeyName(3, "sdmjbhfgasdhjf.png");
             // 
-            // graphicsButton
-            // 
-            this.graphicsButton.AutoSize = true;
-            this.graphicsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.graphicsButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.graphicsButton.FlatAppearance.BorderSize = 0;
-            this.graphicsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.graphicsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.graphicsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.graphicsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.graphicsButton.Location = new System.Drawing.Point(0, 0);
-            this.graphicsButton.Name = "graphicsButton";
-            this.graphicsButton.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.graphicsButton.Size = new System.Drawing.Size(914, 50);
-            this.graphicsButton.TabIndex = 12;
-            this.graphicsButton.Text = "Graphics";
-            this.graphicsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.graphicsButton.UseVisualStyleBackColor = false;
-            this.graphicsButton.Click += new System.EventHandler(this.graphicsButton_Click);
-            // 
             // panel1
             // 
+            this.panel1.AutoSize = true;
             this.panel1.Controls.Add(this.batConsGraphBtn);
             this.panel1.Controls.Add(this.batTempGraphBtn);
             this.panel1.Controls.Add(this.batCurGraphBtn);
             this.panel1.Controls.Add(this.batVoltGraphBtn);
             this.panel1.Controls.Add(this.graphicsButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 378);
+            this.panel1.Location = new System.Drawing.Point(0, 391);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(914, 243);
+            this.panel1.Size = new System.Drawing.Size(914, 250);
             this.panel1.TabIndex = 13;
             // 
             // batConsGraphBtn
@@ -122,7 +104,7 @@
             this.batConsGraphBtn.Name = "batConsGraphBtn";
             this.batConsGraphBtn.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.batConsGraphBtn.Size = new System.Drawing.Size(914, 50);
-            this.batConsGraphBtn.TabIndex = 16;
+            this.batConsGraphBtn.TabIndex = 17;
             this.batConsGraphBtn.Text = "Consumption";
             this.batConsGraphBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.batConsGraphBtn.UseVisualStyleBackColor = false;
@@ -191,6 +173,26 @@
             this.batVoltGraphBtn.UseVisualStyleBackColor = false;
             this.batVoltGraphBtn.Visible = false;
             this.batVoltGraphBtn.Click += new System.EventHandler(this.batVoltGraphBtn_Click);
+            // 
+            // graphicsButton
+            // 
+            this.graphicsButton.AutoSize = true;
+            this.graphicsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.graphicsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.graphicsButton.FlatAppearance.BorderSize = 0;
+            this.graphicsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.graphicsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.graphicsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.graphicsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.graphicsButton.Location = new System.Drawing.Point(0, 0);
+            this.graphicsButton.Name = "graphicsButton";
+            this.graphicsButton.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.graphicsButton.Size = new System.Drawing.Size(914, 50);
+            this.graphicsButton.TabIndex = 12;
+            this.graphicsButton.Text = "Graphics";
+            this.graphicsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.graphicsButton.UseVisualStyleBackColor = false;
+            this.graphicsButton.Click += new System.EventHandler(this.graphicsButton_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -462,13 +464,22 @@
             this.currentTextBox.Text = "20A";
             this.currentTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // graphPanel
+            // 
+            this.graphPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.graphPanel.Location = new System.Drawing.Point(0, 216);
+            this.graphPanel.Name = "graphPanel";
+            this.graphPanel.Size = new System.Drawing.Size(914, 175);
+            this.graphPanel.TabIndex = 146;
+            // 
             // BMS_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(914, 621);
+            this.ClientSize = new System.Drawing.Size(914, 641);
+            this.Controls.Add(this.graphPanel);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.panel1);
             this.Name = "BMS_Form";
@@ -490,17 +501,13 @@
             this.tableLayoutPanel13.ResumeLayout(false);
             this.tableLayoutPanel13.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.ImageList socImages;
-        private System.Windows.Forms.Button graphicsButton;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button batConsGraphBtn;
-        private System.Windows.Forms.Button batTempGraphBtn;
-        private System.Windows.Forms.Button batCurGraphBtn;
-        private System.Windows.Forms.Button batVoltGraphBtn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
@@ -519,5 +526,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox currentTextBox;
+        private System.Windows.Forms.Panel graphPanel;
+        private System.Windows.Forms.Button graphicsButton;
+        private System.Windows.Forms.Button batConsGraphBtn;
+        private System.Windows.Forms.Button batTempGraphBtn;
+        private System.Windows.Forms.Button batCurGraphBtn;
+        private System.Windows.Forms.Button batVoltGraphBtn;
     }
 }
