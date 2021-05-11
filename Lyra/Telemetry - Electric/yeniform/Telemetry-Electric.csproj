@@ -113,6 +113,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Variables\AFront.cs" />
     <Compile Include="NewForms\Anasayfa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +143,12 @@
     </Compile>
     <Compile Include="NewForms\MQTTdeneme.Designer.cs">
       <DependentUpon>MQTTdeneme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewForms\PIDTuningForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewForms\PIDTuningForm.Designer.cs">
+      <DependentUpon>PIDTuningForm.cs</DependentUpon>
     </Compile>
     <Compile Include="NewForms\Telemetry2021.cs">
       <SubType>Form</SubType>
@@ -223,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewForms\MQTTdeneme.resx">
       <DependentUpon>MQTTdeneme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForms\PIDTuningForm.resx">
+      <DependentUpon>PIDTuningForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewForms\Telemetry2021.resx">
       <DependentUpon>Telemetry2021.cs</DependentUpon>

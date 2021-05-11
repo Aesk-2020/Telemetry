@@ -4,16 +4,15 @@ using System.Windows.Forms;
 
 namespace Telemetri.Variables
 {
-    //İsimleri değişebilir
     static class ThreadMethods
     {
-        public static void TextDegis(TextBox mytext, string value)
+        public static void ChangeText(TextBox mytext, string value)
         {
             if (mytext.InvokeRequired)
             {
                 MethodInvoker del = delegate
                 {
-                    TextDegis(mytext,  value);
+                    ChangeText(mytext,  value);
                 };
                 mytext.Invoke(del);
                 return;
@@ -21,13 +20,13 @@ namespace Telemetri.Variables
             mytext.Text = value;
         }
 
-        public static void LabelDegis(Label myLabel, string value)
+        public static void ChangeLabel(Label myLabel, string value)
         {
             if (myLabel.InvokeRequired)
             {
                 MethodInvoker del = delegate
                 {
-                    LabelDegis(myLabel, value);
+                    ChangeLabel(myLabel, value);
                 };
                 myLabel.Invoke(del);
                 return;
@@ -35,13 +34,13 @@ namespace Telemetri.Variables
             myLabel.Text = value;            
         }
 
-        public static void LabelBackColorDegis(Label myLabel, Color value)
+        public static void ChangeLabelBackColor(Label myLabel, Color value)
         {
             if (myLabel.InvokeRequired)
             {
                 MethodInvoker del = delegate
                 {
-                    LabelBackColorDegis(myLabel, value);
+                    ChangeLabelBackColor(myLabel, value);
                 };
                 myLabel.Invoke(del);
                 return;
@@ -49,13 +48,13 @@ namespace Telemetri.Variables
             myLabel.BackColor = value;
         }
 
-        public static void PBoxBackColorDegis(PictureBox myPBox, Color value)
+        public static void ChangePBoxBackColor(PictureBox myPBox, Color value)
         {
             if (myPBox.InvokeRequired)
             {
                 MethodInvoker del = delegate
                 {
-                    PBoxBackColorDegis(myPBox, value);
+                    ChangePBoxBackColor(myPBox, value);
                 };
                 myPBox.Invoke(del);
                 return;
@@ -63,13 +62,13 @@ namespace Telemetri.Variables
                 myPBox.BackColor = value;           
         }
 
-        public static void GaugeValueDegis(GunaGauge myGauge, int value)
+        public static void ChangeGaugeValue(GunaGauge myGauge, int value)
         {
             if (myGauge.InvokeRequired)
             {
                 MethodInvoker del = delegate
                 {
-                    GaugeValueDegis(myGauge, value);
+                    ChangeGaugeValue(myGauge, value);
                 };
                 myGauge.Invoke(del);
                 return;
@@ -77,13 +76,13 @@ namespace Telemetri.Variables
             myGauge.Value = value;        
         }
 
-        public static void PBarValueDegis(GunaProgressBar myBar, int value)
+        public static void ChangePBarValue(GunaProgressBar myBar, int value)
         {
             if (myBar.InvokeRequired)
             {
                 MethodInvoker del = delegate
                 {
-                    PBarValueDegis(myBar, value);
+                    ChangePBarValue(myBar, value);
                 };         
                 myBar.Invoke(del);
                 return;
@@ -91,13 +90,13 @@ namespace Telemetri.Variables
             myBar.Value = value;
         }
 
-        public static void CBarValueDegis(GunaCircleProgressBar myCircle, int value)
+        public static void ChangeCBarValue(GunaCircleProgressBar myCircle, int value)
         {
             if (myCircle.InvokeRequired)
             {
                 MethodInvoker del = delegate
                 {
-                    CBarValueDegis(myCircle, value);
+                    ChangeCBarValue(myCircle, value);
 
                 };
                 myCircle.Invoke(del);

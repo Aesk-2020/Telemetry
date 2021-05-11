@@ -29,14 +29,16 @@ namespace Telemetri.NewForms
             torque = 11,
         }
         public Action<int> changeGraph = null;
-        private graphs _graphType = 0;
+        public static List<Graphics> graphicsList = new List<Graphics>();
+        public static Graphics oldGraph = null;
+        public graphs graphType = 0;
 
         public Graphics(graphs a)
         {
             InitializeComponent();
-            _graphType = a;
+            graphType = a;
 
-            switch (_graphType)
+            switch (graphType)
             {
                 case graphs.batCur:
                     myChart.Series[0].Name = "Battery Current";
@@ -139,15 +141,19 @@ namespace Telemetri.NewForms
 
         private void clsButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            foreach (var item in Graphics.graphicsList.Where(i => i.graphType == this.graphType).ToList())
+            {
+                item.Close();
+            }
+            Graphics.graphicsList.RemoveAll(i => i.graphType == this.graphType);
+            Graphics.oldGraph = null;
         }
 
         private void popupBtn_Click(object sender, EventArgs e)
         {
-            Graphics graphics = new Graphics(this._graphType);
-            graphics.popupBtn.Visible = false;
-            graphics.Show();
-            this.Show();
+            Graphics.graphicsList.Add(new Graphics(graphType));
+            Graphics.graphicsList.Last().popupBtn.Visible = false;
+            Graphics.graphicsList.Last().Show();
         }
     }
 }

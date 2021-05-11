@@ -14,6 +14,7 @@ namespace Telemetri.NewForms
 {
     public partial class Anasayfa : Form
     {
+        public delegate void TriggerFront();
         MQTT mqttObj = new MQTT(MACROS.newSubTopic); //LYRADATA topic'ine bağlanacak MQTT nesnesini oluştur.
         string splitter = "aesk\n";
         List<string> lineList;
@@ -21,6 +22,28 @@ namespace Telemetri.NewForms
         {
             InitializeComponent();
         }
+        #region .. Double Buffered function ..
+        public static void SetDoubleBuffered(System.Windows.Forms.Control c)
+        {
+            if (System.Windows.Forms.SystemInformation.TerminalServerSession)
+                return;
+            System.Reflection.PropertyInfo aProp = typeof(System.Windows.Forms.Control).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            aProp.SetValue(c, true, null);
+        }
+        #endregion
+
+        #region .. code for Flucuring ..
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+
+        #endregion
 
         private void Anasayfa_Load(object sender, EventArgs e)
         {
@@ -35,6 +58,33 @@ namespace Telemetri.NewForms
             UITools.Anasayfa.startTimeLabel = startTimeLabel;
             UITools.Anasayfa.setVelocityLabel = setVelocityLabel;
             UITools.Anasayfa.driveStatusLabel = driveStatusLabel;
+            #region doubleBuffer
+            SetDoubleBuffered(tableLayoutPanel1);
+            SetDoubleBuffered(tableLayoutPanel2);
+            SetDoubleBuffered(tableLayoutPanel3);
+            SetDoubleBuffered(tableLayoutPanel4);
+            SetDoubleBuffered(tableLayoutPanel5);
+            SetDoubleBuffered(tableLayoutPanel6);
+            SetDoubleBuffered(tableLayoutPanel7);
+            SetDoubleBuffered(tableLayoutPanel8);
+            SetDoubleBuffered(tableLayoutPanel9);
+            SetDoubleBuffered(tableLayoutPanel10);
+            SetDoubleBuffered(tableLayoutPanel11);
+            SetDoubleBuffered(tableLayoutPanel12);
+            SetDoubleBuffered(tableLayoutPanel13);
+            SetDoubleBuffered(tableLayoutPanel14);
+            SetDoubleBuffered(finishBtn);
+            SetDoubleBuffered(mqttConnectBtn);
+            SetDoubleBuffered(mqttDisconnectBtn);
+            SetDoubleBuffered(openGUILogBtn);
+            SetDoubleBuffered(openSDLogBtn);
+            SetDoubleBuffered(portConnectBtn);
+            SetDoubleBuffered(portDisconnectBtn);
+            SetDoubleBuffered(startBtn);
+            SetDoubleBuffered(startLogBtn);
+            SetDoubleBuffered(stopLogBtn);
+            #endregion
+
         }
         private void portConnectBtn_Click(object sender, EventArgs e)
         {
@@ -55,6 +105,7 @@ namespace Telemetri.NewForms
                 mqttConnectBtn.Enabled = false;
                 startLogBtn.Enabled = true;
                 portConnectBtn.Enabled = false;
+                AFront.AccessFront += UITools.ChangeUI;
             }
         }
 

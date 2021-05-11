@@ -21,7 +21,11 @@ namespace Telemetri.NewForms
             InitializeComponent();
             FormManagement.openChildForm(new Anasayfa(), panelChildForm);
             LogSystem.logPlayTimer.Tick += LogPlayTimer_Tick;
+            Button[] buttons = { homeButton, mapButton, motordrButton, batteryButton, pidTuningBtn, settingsButton, mqttButton };
+            UITools.Telemetry2021.buttonList.AddRange(buttons);
         }
+
+        
 
         private void LogPlayTimer_Tick(object sender, EventArgs e)
         {
@@ -48,6 +52,7 @@ namespace Telemetri.NewForms
         private void btnMotorDriver_Click(object sender, EventArgs e)
         {
             FormManagement.openChildForm(new Driver_Form(), panelChildForm);
+            pidTuningBtn.Visible = !pidTuningBtn.Visible;
         }
 
         private void panelChildForm_Paint(object sender, PaintEventArgs e)
@@ -158,6 +163,11 @@ namespace Telemetri.NewForms
         private void UpdateUI()
         {
 
+        }
+
+        private void pidTuningBtn_Click(object sender, EventArgs e)
+        {
+            FormManagement.openChildForm(new PIDTuningForm(), panelChildForm);
         }
     }
 }

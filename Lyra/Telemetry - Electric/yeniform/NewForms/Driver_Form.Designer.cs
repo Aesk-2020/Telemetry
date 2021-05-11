@@ -704,6 +704,7 @@
             this.Controls.Add(this.graphPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.DoubleBuffered = true;
             this.Name = "Driver_Form";
             this.Text = "MotorDriver";
             this.Load += new System.EventHandler(this.MotorDriver_Load);

@@ -70,65 +70,65 @@ namespace Telemetri
 
         void displayAllData()
         {
-            ThreadMethods.PBoxBackColorDegis(bms_durum, VCU.bms_wake_up_u1 ? MACROS.AeskBlue : Color.Transparent);
-            ThreadMethods.PBoxBackColorDegis(driver_durum, VCU.driver_wake_up_u1 ? MACROS.AeskBlue : Color.Transparent);
-            ThreadMethods.PBoxBackColorDegis(system_durum, VCU.system_wake_up_u1 ? MACROS.AeskBlue : Color.Transparent);
-            ThreadMethods.PBoxBackColorDegis(nextion_durum, VCU.nextion_control_u1 ? MACROS.AeskBlue : Color.Transparent);
+            ThreadMethods.ChangePBoxBackColor(bms_durum, VCU.bms_wake_up_u1 ? MACROS.AeskBlue : Color.Transparent);
+            ThreadMethods.ChangePBoxBackColor(driver_durum, VCU.driver_wake_up_u1 ? MACROS.AeskBlue : Color.Transparent);
+            ThreadMethods.ChangePBoxBackColor(system_durum, VCU.system_wake_up_u1 ? MACROS.AeskBlue : Color.Transparent);
+            ThreadMethods.ChangePBoxBackColor(nextion_durum, VCU.nextion_control_u1 ? MACROS.AeskBlue : Color.Transparent);
 
-            ThreadMethods.TextDegis(driver_fwrv_status, Driver.direction_u1 ? "REVERSE" : "FORWARD");
-            ThreadMethods.TextDegis(driver_brake_status, Driver.brake_u1 ? "BRAKE ON" : "BRAKE OFF");
-            ThreadMethods.TextDegis(driver_ign_status, Driver.ignition_u1 ? "IGN ON" : "IGN OFF");
-            ThreadMethods.TextDegis(driver_ign_status, Driver.ignition_u1 ? "IGN ON" : "IGN OFF");
-            ThreadMethods.TextDegis(gps_verim, GpsTracker.gps_efficiency_u8.ToString());
-            ThreadMethods.TextDegis(uydu_sayisi, GpsTracker.gps_sattelite_number_u8.ToString());
+            ThreadMethods.ChangeText(driver_fwrv_status, Driver.direction_u1 ? "REVERSE" : "FORWARD");
+            ThreadMethods.ChangeText(driver_brake_status, Driver.brake_u1 ? "BRAKE ON" : "BRAKE OFF");
+            ThreadMethods.ChangeText(driver_ign_status, Driver.ignition_u1 ? "IGN ON" : "IGN OFF");
+            ThreadMethods.ChangeText(driver_ign_status, Driver.ignition_u1 ? "IGN ON" : "IGN OFF");
+            ThreadMethods.ChangeText(gps_verim, GpsTracker.gps_efficiency_u8.ToString());
+            ThreadMethods.ChangeText(uydu_sayisi, GpsTracker.gps_sattelite_number_u8.ToString());
 
-            ThreadMethods.LabelBackColorDegis(zpc, !Driver.zpc_ok_u1 ? MACROS.AeskBlue : Color.Transparent);
-            ThreadMethods.LabelBackColorDegis(pwm_enabled, !Driver.pwm_enabled_u1 ? MACROS.AeskBlue : Color.Transparent);
-            ThreadMethods.LabelBackColorDegis(dc_bus_voltage_error, !Driver.dc_bus_voltager_error_u1 ? Color.Transparent : MACROS.errorColor);
-            ThreadMethods.LabelBackColorDegis(dc_bus_amper_error, !Driver.dc_bara_current_error_u1 ? Color.Transparent : MACROS.errorColor);
-            ThreadMethods.LabelBackColorDegis(motor_temp_error, !Driver.temp_error_u1 ? Color.Transparent : MACROS.errorColor);
-            ThreadMethods.LabelBackColorDegis(tork_limit, !Driver.ID_error_u1 ? Color.Transparent : MACROS.errorColor);
+            ThreadMethods.ChangeLabelBackColor(zpc, !Driver.zpc_ok_u1 ? MACROS.AeskBlue : Color.Transparent);
+            ThreadMethods.ChangeLabelBackColor(pwm_enabled, !Driver.pwm_enabled_u1 ? MACROS.AeskBlue : Color.Transparent);
+            ThreadMethods.ChangeLabelBackColor(dc_bus_voltage_error, !Driver.dc_bus_voltager_error_u1 ? Color.Transparent : MACROS.errorColor);
+            ThreadMethods.ChangeLabelBackColor(dc_bus_amper_error, !Driver.dc_bara_current_error_u1 ? Color.Transparent : MACROS.errorColor);
+            ThreadMethods.ChangeLabelBackColor(motor_temp_error, !Driver.temp_error_u1 ? Color.Transparent : MACROS.errorColor);
+            ThreadMethods.ChangeLabelBackColor(tork_limit, !Driver.ID_error_u1 ? Color.Transparent : MACROS.errorColor);
 
-            ThreadMethods.PBoxBackColorDegis(bms_precharge_flag, BMS.precharge_flag_u1 ? MACROS.AeskBlue : Color.Transparent);
-            ThreadMethods.PBoxBackColorDegis(bms_discharge_flag, BMS.discharge_flag_u1 ? MACROS.AeskBlue : Color.Transparent);
-            ThreadMethods.PBoxBackColorDegis(bms_dc_bus_ready_flag, BMS.dc_bus_ready_flag_u1 ? MACROS.AeskBlue : Color.Transparent);
-            ThreadMethods.PBoxBackColorDegis(bms_high_volt_error, !BMS.high_voltage_error_u1 ? Color.Transparent : MACROS.errorColor);
-            ThreadMethods.PBoxBackColorDegis(bms_low_volt_error, !BMS.low_voltage_u1 ? Color.Transparent : MACROS.errorColor);
-            ThreadMethods.PBoxBackColorDegis(bms_temp_error, !BMS.bms_temp_error_u1 ? Color.Transparent : MACROS.errorColor);
-            ThreadMethods.PBoxBackColorDegis(bms_comm_error, !BMS.comm_error_u1 ? Color.Transparent : MACROS.errorColor);
-            ThreadMethods.PBoxBackColorDegis(bms_over_cur_error, !BMS.over_current_error_u1 ? Color.Transparent : MACROS.errorColor);
-            ThreadMethods.PBoxBackColorDegis(bms_fatal_error, !BMS.bms_fatal_error_u1 ? Color.Transparent : MACROS.errorColor);
+            ThreadMethods.ChangePBoxBackColor(bms_precharge_flag, BMS.precharge_flag_u1 ? MACROS.AeskBlue : Color.Transparent);
+            ThreadMethods.ChangePBoxBackColor(bms_discharge_flag, BMS.discharge_flag_u1 ? MACROS.AeskBlue : Color.Transparent);
+            ThreadMethods.ChangePBoxBackColor(bms_dc_bus_ready_flag, BMS.dc_bus_ready_flag_u1 ? MACROS.AeskBlue : Color.Transparent);
+            ThreadMethods.ChangePBoxBackColor(bms_high_volt_error, !BMS.high_voltage_error_u1 ? Color.Transparent : MACROS.errorColor);
+            ThreadMethods.ChangePBoxBackColor(bms_low_volt_error, !BMS.low_voltage_u1 ? Color.Transparent : MACROS.errorColor);
+            ThreadMethods.ChangePBoxBackColor(bms_temp_error, !BMS.bms_temp_error_u1 ? Color.Transparent : MACROS.errorColor);
+            ThreadMethods.ChangePBoxBackColor(bms_comm_error, !BMS.comm_error_u1 ? Color.Transparent : MACROS.errorColor);
+            ThreadMethods.ChangePBoxBackColor(bms_over_cur_error, !BMS.over_current_error_u1 ? Color.Transparent : MACROS.errorColor);
+            ThreadMethods.ChangePBoxBackColor(bms_fatal_error, !BMS.bms_fatal_error_u1 ? Color.Transparent : MACROS.errorColor);
 
-            ThreadMethods.PBoxBackColorDegis(vcu_can_control, !VCU.vcu_can_control_u1 ? MACROS.AeskBlue : MACROS.errorColor);
-            ThreadMethods.PBoxBackColorDegis(bms_can_control, !VCU.bms_can_control_u1 ? MACROS.AeskBlue : MACROS.errorColor);
-            ThreadMethods.PBoxBackColorDegis(driver_can_control, !VCU.driver_can_control_u1 ? MACROS.AeskBlue : MACROS.errorColor);
-            ThreadMethods.TextDegis(energy, Math.Round(((BMS.soc_f32 / 100.0) * MACROS.total_battery_capacity), 2).ToString());
+            ThreadMethods.ChangePBoxBackColor(vcu_can_control, !VCU.vcu_can_control_u1 ? MACROS.AeskBlue : MACROS.errorColor);
+            ThreadMethods.ChangePBoxBackColor(bms_can_control, !VCU.bms_can_control_u1 ? MACROS.AeskBlue : MACROS.errorColor);
+            ThreadMethods.ChangePBoxBackColor(driver_can_control, !VCU.driver_can_control_u1 ? MACROS.AeskBlue : MACROS.errorColor);
+            ThreadMethods.ChangeText(energy, Math.Round(((BMS.soc_f32 / 100.0) * MACROS.total_battery_capacity), 2).ToString());
             #region bms_text_write
-            ThreadMethods.TextDegis(bms_bat_volt, BMS.bat_volt_f32.ToString());
-            ThreadMethods.TextDegis(bms_bat_current, BMS.bat_current_f32.ToString());
-            ThreadMethods.TextDegis(bms_bat_cons, BMS.bat_cons_f32.ToString());
-            ThreadMethods.TextDegis(bms_soc, BMS.soc_f32.ToString());
-            ThreadMethods.TextDegis(bms_worst_cell_address, BMS.worst_cell_address_u8.ToString());
-            ThreadMethods.TextDegis(bms_worst_cell_volt, BMS.worst_cell_voltage_f32.ToString());
-            ThreadMethods.TextDegis(bms_temp, BMS.temp_u8.ToString());
-            ThreadMethods.TextDegis(power_text, ((int)(BMS.bat_volt_f32 * BMS.bat_current_f32)).ToString());
+            ThreadMethods.ChangeText(bms_bat_volt, BMS.bat_volt_f32.ToString());
+            ThreadMethods.ChangeText(bms_bat_current, BMS.bat_current_f32.ToString());
+            ThreadMethods.ChangeText(bms_bat_cons, BMS.bat_cons_f32.ToString());
+            ThreadMethods.ChangeText(bms_soc, BMS.soc_f32.ToString());
+            ThreadMethods.ChangeText(bms_worst_cell_address, BMS.worst_cell_address_u8.ToString());
+            ThreadMethods.ChangeText(bms_worst_cell_volt, BMS.worst_cell_voltage_f32.ToString());
+            ThreadMethods.ChangeText(bms_temp, BMS.temp_u8.ToString());
+            ThreadMethods.ChangeText(power_text, ((int)(BMS.bat_volt_f32 * BMS.bat_current_f32)).ToString());
             #endregion
             #region driver_text_write
-            ThreadMethods.TextDegis(gidilen_yol_driver, Driver.odometer_u32.ToString());
-            ThreadMethods.LabelDegis(anlik_hiz, Driver.actual_velocity_u8.ToString());
-            ThreadMethods.LabelDegis(anlik_hiz_gps, GpsTracker.gps_velocity_u8.ToString());
-            ThreadMethods.TextDegis(set_hizz, VCU.set_velocity_u8.ToString());
+            ThreadMethods.ChangeText(gidilen_yol_driver, Driver.odometer_u32.ToString());
+            ThreadMethods.ChangeLabel(anlik_hiz, Driver.actual_velocity_u8.ToString());
+            ThreadMethods.ChangeLabel(anlik_hiz_gps, GpsTracker.gps_velocity_u8.ToString());
+            ThreadMethods.ChangeText(set_hizz, VCU.set_velocity_u8.ToString());
 
-            ThreadMethods.TextDegis(maks_hiz, Driver.actual_velocity_u8 > Convert.ToByte(maks_hiz.Text) ? Driver.actual_velocity_u8.ToString() : maks_hiz.Text);
-            ThreadMethods.TextDegis(phase_a_cur, Driver.phase_a_current_f32.ToString());
-            ThreadMethods.TextDegis(phase_b_cur, Driver.phase_b_current_f32.ToString());
-            ThreadMethods.TextDegis(dc_bus_cur, Driver.dc_bus_current_f32.ToString());
-            ThreadMethods.TextDegis(dc_bus_volt, Driver.dc_bus_voltage_f32.ToString());
-            ThreadMethods.TextDegis(motor_temp, Driver.motor_temperature_u8.ToString());
-            ThreadMethods.TextDegis(id, Driver.id_f32.ToString());
-            ThreadMethods.TextDegis(iq, Driver.iq_f32.ToString());
-            ThreadMethods.TextDegis(phase_a_rms, Driver.IArms_f32.ToString());
-            ThreadMethods.TextDegis(torque, Driver.Torque_f32.ToString());
+            ThreadMethods.ChangeText(maks_hiz, Driver.actual_velocity_u8 > Convert.ToByte(maks_hiz.Text) ? Driver.actual_velocity_u8.ToString() : maks_hiz.Text);
+            ThreadMethods.ChangeText(phase_a_cur, Driver.phase_a_current_f32.ToString());
+            ThreadMethods.ChangeText(phase_b_cur, Driver.phase_b_current_f32.ToString());
+            ThreadMethods.ChangeText(dc_bus_cur, Driver.dc_bus_current_f32.ToString());
+            ThreadMethods.ChangeText(dc_bus_volt, Driver.dc_bus_voltage_f32.ToString());
+            ThreadMethods.ChangeText(motor_temp, Driver.motor_temperature_u8.ToString());
+            ThreadMethods.ChangeText(id, Driver.id_f32.ToString());
+            ThreadMethods.ChangeText(iq, Driver.iq_f32.ToString());
+            ThreadMethods.ChangeText(phase_a_rms, Driver.IArms_f32.ToString());
+            ThreadMethods.ChangeText(torque, Driver.Torque_f32.ToString());
             #endregion
 
             if (!MACROS.mouse_mod)
@@ -140,19 +140,19 @@ namespace Telemetri
                 }
             }
 
-            ThreadMethods.CBarValueDegis(angle_gauge, (int)GpsTracker.angle_f64);
-            ThreadMethods.TextDegis(gidilen_yol_gps, myGmap.odometer_gps.ToString());
-            ThreadMethods.TextDegis(kalan_yol_driver, Timers.kalan_yol.ToString());
-            ThreadMethods.TextDegis(turrr, Timers.currentTour.ToString());
-            ThreadMethods.TextDegis(mqtt_solved_paket, mqtt.mqtt_total_counter.ToString());
-            ThreadMethods.TextDegis(mqtt_toplam_paket, mqtt.MQTT_counter_int32.ToString());
-            ThreadMethods.TextDegis(mqtt_verim, ((int)(mqtt.MQTT_Efficiency * MACROS.FLOAT_CONVERTER_2)).ToString());
-            ThreadMethods.LabelDegis(gsm_yenileme, ((int)(mqtt.mqtt_refresh_time)).ToString());
-            ThreadMethods.TextDegis(gelen_bayt, serialportRF.GL_gelen_bayt_u32.ToString());
-            ThreadMethods.TextDegis(cozulen_paket, serialportRF.GL_cozulen_paket_u32.ToString());
-            ThreadMethods.TextDegis(crc_hatali, serialportRF.GL_crc_hatali_u32.ToString());
-            ThreadMethods.TextDegis(baslik_hatali, serialportRF.GL_baslik_hatali_u32.ToString());
-            ThreadMethods.TextDegis(verim, ((float)(serialportRF.GL_rf_efficiency_f32 * 100)).ToString());
+            ThreadMethods.ChangeCBarValue(angle_gauge, (int)GpsTracker.angle_f64);
+            ThreadMethods.ChangeText(gidilen_yol_gps, myGmap.odometer_gps.ToString());
+            ThreadMethods.ChangeText(kalan_yol_driver, Timers.kalan_yol.ToString());
+            ThreadMethods.ChangeText(turrr, Timers.currentTour.ToString());
+            ThreadMethods.ChangeText(mqtt_solved_paket, mqtt.mqtt_total_counter.ToString());
+            ThreadMethods.ChangeText(mqtt_toplam_paket, mqtt.MQTT_counter_int32.ToString());
+            ThreadMethods.ChangeText(mqtt_verim, ((int)(mqtt.MQTT_Efficiency * MACROS.FLOAT_CONVERTER_2)).ToString());
+            ThreadMethods.ChangeLabel(gsm_yenileme, ((int)(mqtt.mqtt_refresh_time)).ToString());
+            ThreadMethods.ChangeText(gelen_bayt, serialportRF.GL_gelen_bayt_u32.ToString());
+            ThreadMethods.ChangeText(cozulen_paket, serialportRF.GL_cozulen_paket_u32.ToString());
+            ThreadMethods.ChangeText(crc_hatali, serialportRF.GL_crc_hatali_u32.ToString());
+            ThreadMethods.ChangeText(baslik_hatali, serialportRF.GL_baslik_hatali_u32.ToString());
+            ThreadMethods.ChangeText(verim, ((float)(serialportRF.GL_rf_efficiency_f32 * 100)).ToString());
             displayGauges();
             MACROS.newDataCome = false;
         }
@@ -162,27 +162,27 @@ namespace Telemetri
         {
             while (raceFlag == true)
             {
-                ThreadMethods.TextDegis(gecen_sure, Timers.Gecen_süre.ToString(MACROS.TimeStringFormat));
-                ThreadMethods.TextDegis(kalan_sure, Timers.Kalan_süre.ToString(MACROS.TimeStringFormat));
-                ThreadMethods.TextDegis(anlik_tur_suresi, Timers.Anlik_tur_süresi.Elapsed.ToString(MACROS.TimeStringFormat));
-                ThreadMethods.TextDegis(ort_hiz, Convert.ToString(Timers.ort_hiz));
-                ThreadMethods.LabelDegis(hedef_hiz, Convert.ToString(Timers.hedef_hiz));
+                ThreadMethods.ChangeText(gecen_sure, Timers.Gecen_süre.ToString(MACROS.TimeStringFormat));
+                ThreadMethods.ChangeText(kalan_sure, Timers.Kalan_süre.ToString(MACROS.TimeStringFormat));
+                ThreadMethods.ChangeText(anlik_tur_suresi, Timers.Anlik_tur_süresi.Elapsed.ToString(MACROS.TimeStringFormat));
+                ThreadMethods.ChangeText(ort_hiz, Convert.ToString(Timers.ort_hiz));
+                ThreadMethods.ChangeLabel(hedef_hiz, Convert.ToString(Timers.hedef_hiz));
                 float score = Timers.currentTour * 5 - (BMS.bat_cons_f32 / (float)Timers.currentTour) - MACROS.ceza_puani + MACROS.odul_puani;
 
-                ThreadMethods.TextDegis(score_txt, Convert.ToString(score));
+                ThreadMethods.ChangeText(score_txt, Convert.ToString(score));
 
                 Thread.Sleep(1000);
             }
         }
         private void displayGauges()
         {
-            ThreadMethods.GaugeValueDegis(anlikhiz_gauge, Driver.actual_velocity_u8);
-            ThreadMethods.GaugeValueDegis(gpshiz_gauge, (GpsTracker.gps_velocity_u8));
-            ThreadMethods.GaugeValueDegis(hedefhiz_gauge, Timers.hedef_hiz);
-            ThreadMethods.PBarValueDegis(kalanyol_gps, (int)myGmap.odometer_gps);
-            ThreadMethods.PBarValueDegis(kalanyol_bar, (int)Driver.odometer_u32);
-            ThreadMethods.CBarValueDegis(atilan_Tur, Timers.currentTour);
-            ThreadMethods.CBarValueDegis(set_hiz_bar, VCU.set_velocity_u8);
+            ThreadMethods.ChangeGaugeValue(anlikhiz_gauge, Driver.actual_velocity_u8);
+            ThreadMethods.ChangeGaugeValue(gpshiz_gauge, (GpsTracker.gps_velocity_u8));
+            ThreadMethods.ChangeGaugeValue(hedefhiz_gauge, Timers.hedef_hiz);
+            ThreadMethods.ChangePBarValue(kalanyol_gps, (int)myGmap.odometer_gps);
+            ThreadMethods.ChangePBarValue(kalanyol_bar, (int)Driver.odometer_u32);
+            ThreadMethods.ChangeCBarValue(atilan_Tur, Timers.currentTour);
+            ThreadMethods.ChangeCBarValue(set_hiz_bar, VCU.set_velocity_u8);
         }
 
         private void portToolStripMenuItem_MouseHover(object sender, EventArgs e)
@@ -364,7 +364,7 @@ namespace Telemetri
                     SectorAndTourdata.consumption_sector_1_f32 = BMS.bat_cons_f32;
                     SectorAndTourdata.gidilen_yol_vcu_sector_1_u32 = Driver.odometer_u32;
                     SectorAndTourdata.sector_name = "S1";
-                    ThreadMethods.LabelDegis(sektor, SectorAndTourdata.sector_name);
+                    ThreadMethods.ChangeLabel(sektor, SectorAndTourdata.sector_name);
                     MACROS.sector_flag[0] = true;
                 }
 
@@ -402,7 +402,7 @@ namespace Telemetri
 
                     SectorAndTourdata.sector1_sure.Reset();
                     SectorAndTourdata.sector_name = "S2";
-                    ThreadMethods.LabelDegis(sektor, SectorAndTourdata.sector_name);
+                    ThreadMethods.ChangeLabel(sektor, SectorAndTourdata.sector_name);
                     MACROS.sector_flag[0] = false;
                     MACROS.sector_flag[1] = true;
                 }
@@ -431,7 +431,7 @@ namespace Telemetri
                     }
                     SectorAndTourdata.sector2_sure.Reset();
                     SectorAndTourdata.sector_name = "S3";
-                    ThreadMethods.LabelDegis(sektor, SectorAndTourdata.sector_name);
+                    ThreadMethods.ChangeLabel(sektor, SectorAndTourdata.sector_name);
                     MACROS.sector_flag[2] = true;
                     MACROS.sector_flag[1] = false;
                 }
@@ -459,7 +459,7 @@ namespace Telemetri
                     }
                     SectorAndTourdata.sector3_sure.Reset();
                     SectorAndTourdata.sector_name = "S4";
-                    ThreadMethods.LabelDegis(sektor, SectorAndTourdata.sector_name);
+                    ThreadMethods.ChangeLabel(sektor, SectorAndTourdata.sector_name);
                     MACROS.sector_flag[3] = true;
                     MACROS.sector_flag[2] = false;
                     MACROS.sector_4to_1 = true;
@@ -513,12 +513,12 @@ namespace Telemetri
             {
                 mylogs.ReadArayüz(old_datas);
                 displayAllData();
-                ThreadMethods.TextDegis(gecen_sure, Timers.Gecen_süre.ToString(MACROS.TimeStringFormat));
-                ThreadMethods.TextDegis(kalan_sure, Timers.Kalan_süre.ToString(MACROS.TimeStringFormat));
-                ThreadMethods.TextDegis(anlik_tur_suresi, mylogs.anlik_tur_sure);
-                ThreadMethods.TextDegis(en_hizli_tur_timer, mylogs.en_hizli_tur_sure);
-                ThreadMethods.TextDegis(ort_hiz, ((byte)(Driver.odometer_u32 / Timers.Gecen_süre.TotalSeconds) * MACROS.mstokmh).ToString());
-                ThreadMethods.LabelDegis(hedef_hiz, Convert.ToString(Timers.hedef_hiz));
+                ThreadMethods.ChangeText(gecen_sure, Timers.Gecen_süre.ToString(MACROS.TimeStringFormat));
+                ThreadMethods.ChangeText(kalan_sure, Timers.Kalan_süre.ToString(MACROS.TimeStringFormat));
+                ThreadMethods.ChangeText(anlik_tur_suresi, mylogs.anlik_tur_sure);
+                ThreadMethods.ChangeText(en_hizli_tur_timer, mylogs.en_hizli_tur_sure);
+                ThreadMethods.ChangeText(ort_hiz, ((byte)(Driver.odometer_u32 / Timers.Gecen_süre.TotalSeconds) * MACROS.mstokmh).ToString());
+                ThreadMethods.ChangeLabel(hedef_hiz, Convert.ToString(Timers.hedef_hiz));
             }
             else
             {
@@ -538,17 +538,17 @@ namespace Telemetri
             if (Logs._IsLog)
             {
                 myDataGrid.addGrid(mylogs.HturAtdata);
-                ThreadMethods.TextDegis(ortalama_tur_suresi, mylogs.ortalama_tur_sure);
+                ThreadMethods.ChangeText(ortalama_tur_suresi, mylogs.ortalama_tur_sure);
                 Timers.currentTour++;
             }
 
             else
             {
-                ThreadMethods.TextDegis(önceki_tur_timer, Timers.Anlik_tur_süresi.Elapsed.ToString(MACROS.TimeStringFormat));
-                ThreadMethods.TextDegis(ortalama_tur_suresi, Timers.Ortalama_tur_süresi.ToString(MACROS.TimeStringFormat));
+                ThreadMethods.ChangeText(önceki_tur_timer, Timers.Anlik_tur_süresi.Elapsed.ToString(MACROS.TimeStringFormat));
+                ThreadMethods.ChangeText(ortalama_tur_suresi, Timers.Ortalama_tur_süresi.ToString(MACROS.TimeStringFormat));
                 if (Timers.IsFastestLaps)
                 {
-                    ThreadMethods.TextDegis(en_hizli_tur_timer, Timers.Anlik_tur_süresi.Elapsed.ToString(MACROS.TimeStringFormat));
+                    ThreadMethods.ChangeText(en_hizli_tur_timer, Timers.Anlik_tur_süresi.Elapsed.ToString(MACROS.TimeStringFormat));
                     Timers.en_hizli_tur_suresi = new TimeSpan(Timers.Anlik_tur_süresi.Elapsed.Hours, Timers.Anlik_tur_süresi.Elapsed.Minutes, Timers.Anlik_tur_süresi.Elapsed.Seconds);
                 }
                 SectorAndTourdata.sector_name = "ST";
@@ -561,7 +561,7 @@ namespace Telemetri
             SectorAndTourdata.gidilen_yol_vcu_sector_T_u32 = Driver.odometer_u32;
             SectorAndTourdata.consumption_sector_T_f32 = BMS.bat_cons_f32;
             int tour_est = (int)((MACROS.total_battery_capacity - BMS.bat_cons_f32) / (BMS.bat_cons_f32 / (float)Timers.currentTour));
-            ThreadMethods.TextDegis(lap_est_txt, Convert.ToString(tour_est));
+            ThreadMethods.ChangeText(lap_est_txt, Convert.ToString(tour_est));
             myGmap.OverlayDelete();
         }
 
