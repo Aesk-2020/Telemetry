@@ -22,6 +22,10 @@ namespace Telemetri.NewForms
         public Anasayfa()
         {
             InitializeComponent();
+
+            TextBox[] textBoxs = {startTimeLabel, socLabel, batCurLabel, batConsLabel,
+             setVelocityLabel, actVelocityLabel, errorsLabel, driveStatusLabel};
+
         }
         #region .. Double Buffered function ..
         public static void SetDoubleBuffered(System.Windows.Forms.Control c)

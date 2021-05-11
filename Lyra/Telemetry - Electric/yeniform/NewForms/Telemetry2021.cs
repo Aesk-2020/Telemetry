@@ -15,6 +15,7 @@ namespace Telemetri.NewForms
 {
     public partial class Telemetry2021 : Form
     {
+        
 
         public Telemetry2021()
         {
@@ -22,6 +23,7 @@ namespace Telemetri.NewForms
             FormManagement.openChildForm(new Anasayfa(), panelChildForm);
             LogSystem.logPlayTimer.Tick += LogPlayTimer_Tick;
             Button[] buttons = { homeButton, mapButton, motordrButton, batteryButton, pidTuningBtn, settingsButton, mqttButton };
+            TextBox[] textBoxs = { activeChannelLabel, mqttPingLabel };
             UITools.Telemetry2021.buttonList.AddRange(buttons);
         }
 

@@ -19,6 +19,9 @@ namespace Telemetri.NewForms
         {
             InitializeComponent();
             graphicsButton.Dock = DockStyle.Bottom;
+
+            Label[] labels = { phaseALabel , phaseBLabel, dcBusCurLabel, dcBusVoltLabel,
+                IdLabel, IqLabel, IArmsLabel, TorqueLabel};
         }
         #region .. Double Buffered function ..
         public static void SetDoubleBuffered(System.Windows.Forms.Control c)
