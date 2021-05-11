@@ -16,6 +16,7 @@ namespace Telemetri.NewForms
     {
         public delegate void TriggerFront();
         MQTT mqttObj = new MQTT(MACROS.newSubTopic); //LYRADATA topic'ine bağlanacak MQTT nesnesini oluştur.
+        NewMQTT mqttobj = new NewMQTT("vehicle_to_interface", MACROS.aesk_IP);
         string splitter = "aesk\n";
         List<string> lineList;
         public Anasayfa()
@@ -47,6 +48,7 @@ namespace Telemetri.NewForms
 
         private void Anasayfa_Load(object sender, EventArgs e)
         {
+            Control.CheckForIllegalCrossThreadCalls = false;
             string[] ports = SerialPort.GetPortNames();
             portsListBox.Items.AddRange(ports);
             LogSystem.isFirst = true;
@@ -99,19 +101,14 @@ namespace Telemetri.NewForms
 
         private void mqttConnectBtn_Click(object sender, EventArgs e)
         {
-            if(mqttObj.ConnectSubscribe())
-            {
-                mqttDisconnectBtn.Enabled = true;
-                mqttConnectBtn.Enabled = false;
-                startLogBtn.Enabled = true;
-                portConnectBtn.Enabled = false;
-                AFront.AccessFront += UITools.ChangeUI;
-            }
+
+            AFront.AccessFront += UITools.ChangeUI;
+            mqttWorker.RunWorkerAsync();
         }
 
         private void mqttDisconnectBtn_Click(object sender, EventArgs e)
         {
-            mqttObj.Disconnect();
+            mqttobj.Disconnect();
             mqttConnectBtn.Enabled = true;
             mqttDisconnectBtn.Enabled = false;
             startLogBtn.Enabled = false;
@@ -160,6 +157,18 @@ namespace Telemetri.NewForms
             startTimeLabel.Text = "NULL";
             startBtn.Enabled = true;
             finishBtn.Enabled = false;
+        }
+
+        private void mqttWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            if (mqttobj.ConnectSubscribe())
+            {
+                MessageBox.Show("Bağlanıldı!");
+                mqttDisconnectBtn.Enabled = true;
+                mqttConnectBtn.Enabled = false;
+                startLogBtn.Enabled = true;
+                portConnectBtn.Enabled = false;
+            }
         }
     }
 }

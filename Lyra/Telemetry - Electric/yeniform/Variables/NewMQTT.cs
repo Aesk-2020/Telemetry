@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telemetri.NewForms;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
 
@@ -13,7 +14,7 @@ namespace Telemetri.Variables
     {
         private string _username = "aesk";
         private string _password = "1234";
-        private int _dataLength; //sadece mesaj
+        private int _dataLength = 54; //sadece mesaj
         private int _dataCounter = 0;
         public string topic;
         public string broker;
@@ -87,7 +88,7 @@ namespace Telemetri.Variables
         private void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
             byte[] recieve_data = e.Message; //rahat çalışmak ve okunailirlik için
-            byte[] worked_data = new byte[255];
+            byte[] worked_data = new byte[54];
 
             for (int i = 0; i < recieve_data.Length; i++)
             {
@@ -99,38 +100,47 @@ namespace Telemetri.Variables
                             steppo = step.CatchSync2; //else ekle hatalı paket yakalasın bunlar CRC dahil
                             worked_data[_dataCounter++] = recieve_data[i];
                         }
+                        else
+                        {
+                            _dataCounter = 0;
+                        }
                         break;
                     case step.CatchSync2:
                         if (recieve_data[i] == MACROS.SYNC2)
                         {
-                            steppo = step.CatchLength; //bu da aynı şekil
+                            steppo = step.AddBuffer; //bu da aynı şekil
                             worked_data[_dataCounter++] = recieve_data[i];
                         }
                         else
                         {
                             steppo = step.CatchSync1;
+                            _dataCounter = 0;
                         }
-                        break;
-                    case step.CatchLength:
-                        _dataLength = recieve_data[i];
-                        worked_data[_dataCounter++] = recieve_data[i];
-                        steppo = step.AddBuffer;
                         break;
                     case step.AddBuffer:
                         worked_data[_dataCounter++] = recieve_data[i];
-                        if (_dataCounter == _dataLength + 2)
+                        if (_dataCounter >= _dataLength)
                         {
-                            byte CRC_L = recieve_data[i + 1];
-                            byte CRC_H = recieve_data[i + 2];
-                            ushort incomingCRC = BitConverter.ToUInt16(new byte[] { CRC_L, CRC_H }, 0);
-                            ushort calculatedCRC = MACROS.AeskCRCCalculate(worked_data, (uint)worked_data.Length);
-                            if (incomingCRC == calculatedCRC)
+                            if(i+2 > 254)
                             {
-                                dataConvertMQTT(worked_data);
-                                //çözülen++;
-                                //indeks kontrol;
+                                //bok
+                            }
+                            else
+                            {
+                                byte CRC_L = recieve_data[i + 1];
+                                byte CRC_H = recieve_data[i + 2];
+                                ushort incomingCRC = BitConverter.ToUInt16(new byte[] { CRC_L, CRC_H }, 0);
+                                ushort calculatedCRC = MACROS.AeskCRCCalculate(worked_data, (uint)worked_data.Length);
+                                if (incomingCRC == calculatedCRC)
+                                {
+                                    dataConvertMQTT(worked_data);
+                                    //çözülen++;
+                                    //indeks kontrol;
+                                }
+
                             }
                             steppo = step.CatchSync1;
+                            _dataCounter = 0;
                         }
                         break;
                     default:
@@ -140,7 +150,7 @@ namespace Telemetri.Variables
         }
         void dataConvertMQTT(byte[] receiveBuffer) //ESKİ KOD
         {
-            int startIndex = 0;
+            int startIndex = 2;
             VCU.wake_up_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
             VCU.set_velocity_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
             Driver.phase_a_current_f32 = (float)EncodePackMethods.DataConverterS16(receiveBuffer, ref startIndex) / MACROS.FLOAT_CONVERTER_2;
@@ -173,11 +183,11 @@ namespace Telemetri.Variables
                 GpsTracker.gps_sattelite_number_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
                 GpsTracker.gps_efficiency_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
             }
-
             else
             {
                 startIndex += 11;
             }
+            AFront.ChangeUI();
             /*
             BMS.bms_cells[0] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex) + BMS.worst_cell_voltage_f32;
             BMS.bms_cells[1] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex) + BMS.worst_cell_voltage_f32;
