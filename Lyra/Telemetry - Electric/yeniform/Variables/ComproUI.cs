@@ -19,11 +19,12 @@ namespace Telemetri.Variables
         private const byte  HEADER2 = 0x04;
         public byte         vehicle_id;
         public byte         target_id = 4;
-        private byte        source_id = 64;
+        private byte        source_id = 17;
         public byte         source_msg_id;
         public byte         msg_size;
-        public byte         msg_index_l = 0;
-        public byte         msg_index_h = 0;
+        public UInt16       msg_index = 0;
+        private byte        msg_index_l;
+        private byte        msg_index_h;
         public byte[]       message;
         private byte         CRC_L;
         private byte         CRC_H;
@@ -35,7 +36,7 @@ namespace Telemetri.Variables
         {
 
         }
-        public ComproUI(byte _vehicle_id, byte _target_id, byte _source_id, byte _msg_size, byte _source_msg_id, byte[] _message)
+        public ComproUI(byte _vehicle_id, byte _target_id, byte _source_id, byte _msg_size, byte _source_msg_id, byte[] _message, UInt16 _msg_index)
         {
             vehicle_id = _vehicle_id;
             target_id = _target_id;
@@ -43,6 +44,8 @@ namespace Telemetri.Variables
             msg_size = _msg_size;
             message = _message;
             source_msg_id = _source_msg_id;
+            byte[] mesajindeks = BitConverter.GetBytes(_msg_index);
+            msg_index_l = mesajindeks[0]; msg_index_h = mesajindeks[1];
         }
 
         public void CreateBuffer()
