@@ -18,8 +18,22 @@ namespace Telemetri.NewForms
         public MQTTdeneme()
         {
             InitializeComponent();
-        }
 
+            Label[] bitLabels = {bit0Label, bit1Label, bit2Label, 
+                bit3Label, bit4Label, bit5Label, bit6Label, bit7Label};
+
+            Label[] wakeUpLabels = {wakeUp0Label, wakeUp1Label, wakeUp2Label,
+            wakeUp3Label, wakeUp4Label, wakeUp5Label, wakeUp6Label, wakeUp7Label};
+
+            Label[] driveCommandLabels = {driveCommand0Label, driveCommand1Label, driveCommand2Label,
+            driveCommand3Label, driveCommand4Label, driveCommand5Label, driveCommand6Label,driveCommand7Label };
+
+            Label[] setVelocity = {setVelocity0Label, setVelocity1Label, setVelocity2Label,
+            setVelocity3Label, setVelocity4Label, setVelocity5Label, setVelocity6Label, setVelocity7Label};
+
+
+        }
+        
         static MqttClient Client;
         bool connectedFlag = false;
         byte wakeupc;

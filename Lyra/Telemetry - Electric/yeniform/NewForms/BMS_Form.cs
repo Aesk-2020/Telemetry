@@ -19,6 +19,9 @@ namespace Telemetri.NewForms
         {
             InitializeComponent();
             graphicsButton.Dock = DockStyle.Bottom;
+
+            TextBox[] textBoxs = {voltageTextBox, consTextBox, tempTextBox,
+                currentTextBox, socTextBox };
         }
         #region .. Double Buffered function ..
         public static void SetDoubleBuffered(System.Windows.Forms.Control c)

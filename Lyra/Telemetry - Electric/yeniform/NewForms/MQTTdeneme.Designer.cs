@@ -33,42 +33,42 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.bit0Label = new System.Windows.Forms.Label();
+            this.bit1Label = new System.Windows.Forms.Label();
+            this.bit2Label = new System.Windows.Forms.Label();
+            this.bit3Label = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.bit7Label = new System.Windows.Forms.Label();
+            this.bit6Label = new System.Windows.Forms.Label();
+            this.bit5Label = new System.Windows.Forms.Label();
+            this.bit4Label = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
+            this.wakeUp7Label = new System.Windows.Forms.Label();
+            this.wakeUp6Label = new System.Windows.Forms.Label();
+            this.wakeUp5Label = new System.Windows.Forms.Label();
+            this.wakeUp4Label = new System.Windows.Forms.Label();
+            this.wakeUp0Label = new System.Windows.Forms.Label();
+            this.wakeUp3Label = new System.Windows.Forms.Label();
+            this.wakeUp1Label = new System.Windows.Forms.Label();
+            this.wakeUp2Label = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
+            this.driveCommand7Label = new System.Windows.Forms.Label();
+            this.driveCommand6Label = new System.Windows.Forms.Label();
+            this.driveCommand5Label = new System.Windows.Forms.Label();
+            this.driveCommand4Label = new System.Windows.Forms.Label();
+            this.driveCommand0Label = new System.Windows.Forms.Label();
+            this.driveCommand3Label = new System.Windows.Forms.Label();
+            this.driveCommand1Label = new System.Windows.Forms.Label();
+            this.driveCommand2Label = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
+            this.setVelocity7Label = new System.Windows.Forms.Label();
+            this.setVelocity6Label = new System.Windows.Forms.Label();
+            this.setVelocity5Label = new System.Windows.Forms.Label();
+            this.setVelocity4Label = new System.Windows.Forms.Label();
+            this.setVelocity0Label = new System.Windows.Forms.Label();
+            this.setVelocity3Label = new System.Windows.Forms.Label();
+            this.setVelocity1Label = new System.Windows.Forms.Label();
+            this.setVelocity2Label = new System.Windows.Forms.Label();
             this.wakeupLabel = new System.Windows.Forms.Label();
             this.drivecomLabel = new System.Windows.Forms.Label();
             this.setveloLabel = new System.Windows.Forms.Label();
@@ -139,57 +139,57 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "BIT";
             // 
-            // label5
+            // bit0Label
             // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 40);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "0";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bit0Label.AutoSize = true;
+            this.bit0Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bit0Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bit0Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.bit0Label.Location = new System.Drawing.Point(3, 0);
+            this.bit0Label.Name = "bit0Label";
+            this.bit0Label.Size = new System.Drawing.Size(42, 40);
+            this.bit0Label.TabIndex = 5;
+            this.bit0Label.Text = "0";
+            this.bit0Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // bit1Label
             // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(51, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 40);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "1";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bit1Label.AutoSize = true;
+            this.bit1Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bit1Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bit1Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.bit1Label.Location = new System.Drawing.Point(51, 0);
+            this.bit1Label.Name = "bit1Label";
+            this.bit1Label.Size = new System.Drawing.Size(42, 40);
+            this.bit1Label.TabIndex = 6;
+            this.bit1Label.Text = "1";
+            this.bit1Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label7
+            // bit2Label
             // 
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(99, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 40);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "2";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bit2Label.AutoSize = true;
+            this.bit2Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bit2Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bit2Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.bit2Label.Location = new System.Drawing.Point(99, 0);
+            this.bit2Label.Name = "bit2Label";
+            this.bit2Label.Size = new System.Drawing.Size(42, 40);
+            this.bit2Label.TabIndex = 7;
+            this.bit2Label.Text = "2";
+            this.bit2Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label8
+            // bit3Label
             // 
-            this.label8.AutoSize = true;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(147, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 40);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "3";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bit3Label.AutoSize = true;
+            this.bit3Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bit3Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bit3Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.bit3Label.Location = new System.Drawing.Point(147, 0);
+            this.bit3Label.Name = "bit3Label";
+            this.bit3Label.Size = new System.Drawing.Size(42, 40);
+            this.bit3Label.TabIndex = 8;
+            this.bit3Label.Text = "3";
+            this.bit3Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
             // 
@@ -202,14 +202,14 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.Controls.Add(this.label12, 7, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label11, 6, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label10, 5, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bit7Label, 7, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bit6Label, 6, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bit5Label, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bit4Label, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bit0Label, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bit3Label, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bit1Label, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bit2Label, 2, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(288, 378);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -218,57 +218,57 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(387, 40);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
-            // label12
+            // bit7Label
             // 
-            this.label12.AutoSize = true;
-            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label12.ForeColor = System.Drawing.SystemColors.Control;
-            this.label12.Location = new System.Drawing.Point(339, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(45, 40);
-            this.label12.TabIndex = 12;
-            this.label12.Text = "7";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bit7Label.AutoSize = true;
+            this.bit7Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bit7Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bit7Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.bit7Label.Location = new System.Drawing.Point(339, 0);
+            this.bit7Label.Name = "bit7Label";
+            this.bit7Label.Size = new System.Drawing.Size(45, 40);
+            this.bit7Label.TabIndex = 12;
+            this.bit7Label.Text = "7";
+            this.bit7Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label11
+            // bit6Label
             // 
-            this.label11.AutoSize = true;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label11.ForeColor = System.Drawing.SystemColors.Control;
-            this.label11.Location = new System.Drawing.Point(291, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(42, 40);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "6";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bit6Label.AutoSize = true;
+            this.bit6Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bit6Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bit6Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.bit6Label.Location = new System.Drawing.Point(291, 0);
+            this.bit6Label.Name = "bit6Label";
+            this.bit6Label.Size = new System.Drawing.Size(42, 40);
+            this.bit6Label.TabIndex = 11;
+            this.bit6Label.Text = "6";
+            this.bit6Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label10
+            // bit5Label
             // 
-            this.label10.AutoSize = true;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.ForeColor = System.Drawing.SystemColors.Control;
-            this.label10.Location = new System.Drawing.Point(243, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(42, 40);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "5";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bit5Label.AutoSize = true;
+            this.bit5Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bit5Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bit5Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.bit5Label.Location = new System.Drawing.Point(243, 0);
+            this.bit5Label.Name = "bit5Label";
+            this.bit5Label.Size = new System.Drawing.Size(42, 40);
+            this.bit5Label.TabIndex = 10;
+            this.bit5Label.Text = "5";
+            this.bit5Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label9
+            // bit4Label
             // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(195, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(42, 40);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "4";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bit4Label.AutoSize = true;
+            this.bit4Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bit4Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bit4Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.bit4Label.Location = new System.Drawing.Point(195, 0);
+            this.bit4Label.Name = "bit4Label";
+            this.bit4Label.Size = new System.Drawing.Size(42, 40);
+            this.bit4Label.TabIndex = 9;
+            this.bit4Label.Text = "4";
+            this.bit4Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
             // 
@@ -281,14 +281,14 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.Controls.Add(this.label14, 7, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label15, 6, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label16, 5, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label17, 4, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label18, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label19, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label20, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label21, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.wakeUp7Label, 7, 0);
+            this.tableLayoutPanel2.Controls.Add(this.wakeUp6Label, 6, 0);
+            this.tableLayoutPanel2.Controls.Add(this.wakeUp5Label, 5, 0);
+            this.tableLayoutPanel2.Controls.Add(this.wakeUp4Label, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.wakeUp0Label, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.wakeUp3Label, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.wakeUp1Label, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.wakeUp2Label, 2, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(285, 430);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
@@ -296,109 +296,109 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(387, 40);
             this.tableLayoutPanel2.TabIndex = 11;
             // 
-            // label14
+            // wakeUp7Label
             // 
-            this.label14.AutoSize = true;
-            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label14.ForeColor = System.Drawing.SystemColors.Control;
-            this.label14.Location = new System.Drawing.Point(339, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(45, 40);
-            this.label14.TabIndex = 12;
-            this.label14.Text = "0";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.wakeUp7Label.AutoSize = true;
+            this.wakeUp7Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wakeUp7Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.wakeUp7Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.wakeUp7Label.Location = new System.Drawing.Point(339, 0);
+            this.wakeUp7Label.Name = "wakeUp7Label";
+            this.wakeUp7Label.Size = new System.Drawing.Size(45, 40);
+            this.wakeUp7Label.TabIndex = 12;
+            this.wakeUp7Label.Text = "0";
+            this.wakeUp7Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label15
+            // wakeUp6Label
             // 
-            this.label15.AutoSize = true;
-            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label15.ForeColor = System.Drawing.SystemColors.Control;
-            this.label15.Location = new System.Drawing.Point(291, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(42, 40);
-            this.label15.TabIndex = 11;
-            this.label15.Text = "0";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.wakeUp6Label.AutoSize = true;
+            this.wakeUp6Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wakeUp6Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.wakeUp6Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.wakeUp6Label.Location = new System.Drawing.Point(291, 0);
+            this.wakeUp6Label.Name = "wakeUp6Label";
+            this.wakeUp6Label.Size = new System.Drawing.Size(42, 40);
+            this.wakeUp6Label.TabIndex = 11;
+            this.wakeUp6Label.Text = "0";
+            this.wakeUp6Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label16
+            // wakeUp5Label
             // 
-            this.label16.AutoSize = true;
-            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label16.ForeColor = System.Drawing.SystemColors.Control;
-            this.label16.Location = new System.Drawing.Point(243, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(42, 40);
-            this.label16.TabIndex = 10;
-            this.label16.Text = "0";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.wakeUp5Label.AutoSize = true;
+            this.wakeUp5Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wakeUp5Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.wakeUp5Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.wakeUp5Label.Location = new System.Drawing.Point(243, 0);
+            this.wakeUp5Label.Name = "wakeUp5Label";
+            this.wakeUp5Label.Size = new System.Drawing.Size(42, 40);
+            this.wakeUp5Label.TabIndex = 10;
+            this.wakeUp5Label.Text = "0";
+            this.wakeUp5Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label17
+            // wakeUp4Label
             // 
-            this.label17.AutoSize = true;
-            this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label17.ForeColor = System.Drawing.SystemColors.Control;
-            this.label17.Location = new System.Drawing.Point(195, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(42, 40);
-            this.label17.TabIndex = 9;
-            this.label17.Text = "0";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.wakeUp4Label.AutoSize = true;
+            this.wakeUp4Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wakeUp4Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.wakeUp4Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.wakeUp4Label.Location = new System.Drawing.Point(195, 0);
+            this.wakeUp4Label.Name = "wakeUp4Label";
+            this.wakeUp4Label.Size = new System.Drawing.Size(42, 40);
+            this.wakeUp4Label.TabIndex = 9;
+            this.wakeUp4Label.Text = "0";
+            this.wakeUp4Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label18
+            // wakeUp0Label
             // 
-            this.label18.AutoSize = true;
-            this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label18.ForeColor = System.Drawing.SystemColors.Control;
-            this.label18.Location = new System.Drawing.Point(3, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(42, 40);
-            this.label18.TabIndex = 5;
-            this.label18.Text = "0";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.wakeUp0Label.AutoSize = true;
+            this.wakeUp0Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wakeUp0Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.wakeUp0Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.wakeUp0Label.Location = new System.Drawing.Point(3, 0);
+            this.wakeUp0Label.Name = "wakeUp0Label";
+            this.wakeUp0Label.Size = new System.Drawing.Size(42, 40);
+            this.wakeUp0Label.TabIndex = 5;
+            this.wakeUp0Label.Text = "0";
+            this.wakeUp0Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label19
+            // wakeUp3Label
             // 
-            this.label19.AutoSize = true;
-            this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label19.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label19.ForeColor = System.Drawing.SystemColors.Control;
-            this.label19.Location = new System.Drawing.Point(147, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(42, 40);
-            this.label19.TabIndex = 8;
-            this.label19.Text = "0";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.wakeUp3Label.AutoSize = true;
+            this.wakeUp3Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wakeUp3Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.wakeUp3Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.wakeUp3Label.Location = new System.Drawing.Point(147, 0);
+            this.wakeUp3Label.Name = "wakeUp3Label";
+            this.wakeUp3Label.Size = new System.Drawing.Size(42, 40);
+            this.wakeUp3Label.TabIndex = 8;
+            this.wakeUp3Label.Text = "0";
+            this.wakeUp3Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label20
+            // wakeUp1Label
             // 
-            this.label20.AutoSize = true;
-            this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label20.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label20.ForeColor = System.Drawing.SystemColors.Control;
-            this.label20.Location = new System.Drawing.Point(51, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(42, 40);
-            this.label20.TabIndex = 6;
-            this.label20.Text = "0";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.wakeUp1Label.AutoSize = true;
+            this.wakeUp1Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wakeUp1Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.wakeUp1Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.wakeUp1Label.Location = new System.Drawing.Point(51, 0);
+            this.wakeUp1Label.Name = "wakeUp1Label";
+            this.wakeUp1Label.Size = new System.Drawing.Size(42, 40);
+            this.wakeUp1Label.TabIndex = 6;
+            this.wakeUp1Label.Text = "0";
+            this.wakeUp1Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label21
+            // wakeUp2Label
             // 
-            this.label21.AutoSize = true;
-            this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label21.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label21.ForeColor = System.Drawing.SystemColors.Control;
-            this.label21.Location = new System.Drawing.Point(99, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(42, 40);
-            this.label21.TabIndex = 7;
-            this.label21.Text = "0";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.wakeUp2Label.AutoSize = true;
+            this.wakeUp2Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wakeUp2Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.wakeUp2Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.wakeUp2Label.Location = new System.Drawing.Point(99, 0);
+            this.wakeUp2Label.Name = "wakeUp2Label";
+            this.wakeUp2Label.Size = new System.Drawing.Size(42, 40);
+            this.wakeUp2Label.TabIndex = 7;
+            this.wakeUp2Label.Text = "0";
+            this.wakeUp2Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel3
             // 
@@ -411,14 +411,14 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel3.Controls.Add(this.label22, 7, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label23, 6, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label24, 5, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label25, 4, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label26, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label27, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label28, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label29, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.driveCommand7Label, 7, 0);
+            this.tableLayoutPanel3.Controls.Add(this.driveCommand6Label, 6, 0);
+            this.tableLayoutPanel3.Controls.Add(this.driveCommand5Label, 5, 0);
+            this.tableLayoutPanel3.Controls.Add(this.driveCommand4Label, 4, 0);
+            this.tableLayoutPanel3.Controls.Add(this.driveCommand0Label, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.driveCommand3Label, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.driveCommand1Label, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.driveCommand2Label, 2, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(285, 476);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
@@ -426,109 +426,109 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(387, 40);
             this.tableLayoutPanel3.TabIndex = 12;
             // 
-            // label22
+            // driveCommand7Label
             // 
-            this.label22.AutoSize = true;
-            this.label22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label22.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label22.ForeColor = System.Drawing.SystemColors.Control;
-            this.label22.Location = new System.Drawing.Point(339, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(45, 40);
-            this.label22.TabIndex = 12;
-            this.label22.Text = "0";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.driveCommand7Label.AutoSize = true;
+            this.driveCommand7Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.driveCommand7Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.driveCommand7Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.driveCommand7Label.Location = new System.Drawing.Point(339, 0);
+            this.driveCommand7Label.Name = "driveCommand7Label";
+            this.driveCommand7Label.Size = new System.Drawing.Size(45, 40);
+            this.driveCommand7Label.TabIndex = 12;
+            this.driveCommand7Label.Text = "0";
+            this.driveCommand7Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label23
+            // driveCommand6Label
             // 
-            this.label23.AutoSize = true;
-            this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label23.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label23.ForeColor = System.Drawing.SystemColors.Control;
-            this.label23.Location = new System.Drawing.Point(291, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(42, 40);
-            this.label23.TabIndex = 11;
-            this.label23.Text = "0";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.driveCommand6Label.AutoSize = true;
+            this.driveCommand6Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.driveCommand6Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.driveCommand6Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.driveCommand6Label.Location = new System.Drawing.Point(291, 0);
+            this.driveCommand6Label.Name = "driveCommand6Label";
+            this.driveCommand6Label.Size = new System.Drawing.Size(42, 40);
+            this.driveCommand6Label.TabIndex = 11;
+            this.driveCommand6Label.Text = "0";
+            this.driveCommand6Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label24
+            // driveCommand5Label
             // 
-            this.label24.AutoSize = true;
-            this.label24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label24.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label24.ForeColor = System.Drawing.SystemColors.Control;
-            this.label24.Location = new System.Drawing.Point(243, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(42, 40);
-            this.label24.TabIndex = 10;
-            this.label24.Text = "0";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.driveCommand5Label.AutoSize = true;
+            this.driveCommand5Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.driveCommand5Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.driveCommand5Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.driveCommand5Label.Location = new System.Drawing.Point(243, 0);
+            this.driveCommand5Label.Name = "driveCommand5Label";
+            this.driveCommand5Label.Size = new System.Drawing.Size(42, 40);
+            this.driveCommand5Label.TabIndex = 10;
+            this.driveCommand5Label.Text = "0";
+            this.driveCommand5Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label25
+            // driveCommand4Label
             // 
-            this.label25.AutoSize = true;
-            this.label25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label25.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label25.ForeColor = System.Drawing.SystemColors.Control;
-            this.label25.Location = new System.Drawing.Point(195, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(42, 40);
-            this.label25.TabIndex = 9;
-            this.label25.Text = "0";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.driveCommand4Label.AutoSize = true;
+            this.driveCommand4Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.driveCommand4Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.driveCommand4Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.driveCommand4Label.Location = new System.Drawing.Point(195, 0);
+            this.driveCommand4Label.Name = "driveCommand4Label";
+            this.driveCommand4Label.Size = new System.Drawing.Size(42, 40);
+            this.driveCommand4Label.TabIndex = 9;
+            this.driveCommand4Label.Text = "0";
+            this.driveCommand4Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label26
+            // driveCommand0Label
             // 
-            this.label26.AutoSize = true;
-            this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label26.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label26.ForeColor = System.Drawing.SystemColors.Control;
-            this.label26.Location = new System.Drawing.Point(3, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(42, 40);
-            this.label26.TabIndex = 5;
-            this.label26.Text = "0";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.driveCommand0Label.AutoSize = true;
+            this.driveCommand0Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.driveCommand0Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.driveCommand0Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.driveCommand0Label.Location = new System.Drawing.Point(3, 0);
+            this.driveCommand0Label.Name = "driveCommand0Label";
+            this.driveCommand0Label.Size = new System.Drawing.Size(42, 40);
+            this.driveCommand0Label.TabIndex = 5;
+            this.driveCommand0Label.Text = "0";
+            this.driveCommand0Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label27
+            // driveCommand3Label
             // 
-            this.label27.AutoSize = true;
-            this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label27.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label27.ForeColor = System.Drawing.SystemColors.Control;
-            this.label27.Location = new System.Drawing.Point(147, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(42, 40);
-            this.label27.TabIndex = 8;
-            this.label27.Text = "0";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.driveCommand3Label.AutoSize = true;
+            this.driveCommand3Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.driveCommand3Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.driveCommand3Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.driveCommand3Label.Location = new System.Drawing.Point(147, 0);
+            this.driveCommand3Label.Name = "driveCommand3Label";
+            this.driveCommand3Label.Size = new System.Drawing.Size(42, 40);
+            this.driveCommand3Label.TabIndex = 8;
+            this.driveCommand3Label.Text = "0";
+            this.driveCommand3Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label28
+            // driveCommand1Label
             // 
-            this.label28.AutoSize = true;
-            this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label28.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label28.ForeColor = System.Drawing.SystemColors.Control;
-            this.label28.Location = new System.Drawing.Point(51, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(42, 40);
-            this.label28.TabIndex = 6;
-            this.label28.Text = "0";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.driveCommand1Label.AutoSize = true;
+            this.driveCommand1Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.driveCommand1Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.driveCommand1Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.driveCommand1Label.Location = new System.Drawing.Point(51, 0);
+            this.driveCommand1Label.Name = "driveCommand1Label";
+            this.driveCommand1Label.Size = new System.Drawing.Size(42, 40);
+            this.driveCommand1Label.TabIndex = 6;
+            this.driveCommand1Label.Text = "0";
+            this.driveCommand1Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label29
+            // driveCommand2Label
             // 
-            this.label29.AutoSize = true;
-            this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label29.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label29.ForeColor = System.Drawing.SystemColors.Control;
-            this.label29.Location = new System.Drawing.Point(99, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(42, 40);
-            this.label29.TabIndex = 7;
-            this.label29.Text = "0";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.driveCommand2Label.AutoSize = true;
+            this.driveCommand2Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.driveCommand2Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.driveCommand2Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.driveCommand2Label.Location = new System.Drawing.Point(99, 0);
+            this.driveCommand2Label.Name = "driveCommand2Label";
+            this.driveCommand2Label.Size = new System.Drawing.Size(42, 40);
+            this.driveCommand2Label.TabIndex = 7;
+            this.driveCommand2Label.Text = "0";
+            this.driveCommand2Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel4
             // 
@@ -541,14 +541,14 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel4.Controls.Add(this.label30, 7, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label31, 6, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label32, 5, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label33, 4, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label34, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label35, 3, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label36, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label37, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.setVelocity7Label, 7, 0);
+            this.tableLayoutPanel4.Controls.Add(this.setVelocity6Label, 6, 0);
+            this.tableLayoutPanel4.Controls.Add(this.setVelocity5Label, 5, 0);
+            this.tableLayoutPanel4.Controls.Add(this.setVelocity4Label, 4, 0);
+            this.tableLayoutPanel4.Controls.Add(this.setVelocity0Label, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.setVelocity3Label, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.setVelocity1Label, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.setVelocity2Label, 2, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(285, 522);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
@@ -556,109 +556,109 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(387, 40);
             this.tableLayoutPanel4.TabIndex = 13;
             // 
-            // label30
+            // setVelocity7Label
             // 
-            this.label30.AutoSize = true;
-            this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label30.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label30.ForeColor = System.Drawing.SystemColors.Control;
-            this.label30.Location = new System.Drawing.Point(339, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(45, 40);
-            this.label30.TabIndex = 12;
-            this.label30.Text = "0";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.setVelocity7Label.AutoSize = true;
+            this.setVelocity7Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.setVelocity7Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.setVelocity7Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.setVelocity7Label.Location = new System.Drawing.Point(339, 0);
+            this.setVelocity7Label.Name = "setVelocity7Label";
+            this.setVelocity7Label.Size = new System.Drawing.Size(45, 40);
+            this.setVelocity7Label.TabIndex = 12;
+            this.setVelocity7Label.Text = "0";
+            this.setVelocity7Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label31
+            // setVelocity6Label
             // 
-            this.label31.AutoSize = true;
-            this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label31.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label31.ForeColor = System.Drawing.SystemColors.Control;
-            this.label31.Location = new System.Drawing.Point(291, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(42, 40);
-            this.label31.TabIndex = 11;
-            this.label31.Text = "0";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.setVelocity6Label.AutoSize = true;
+            this.setVelocity6Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.setVelocity6Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.setVelocity6Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.setVelocity6Label.Location = new System.Drawing.Point(291, 0);
+            this.setVelocity6Label.Name = "setVelocity6Label";
+            this.setVelocity6Label.Size = new System.Drawing.Size(42, 40);
+            this.setVelocity6Label.TabIndex = 11;
+            this.setVelocity6Label.Text = "0";
+            this.setVelocity6Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label32
+            // setVelocity5Label
             // 
-            this.label32.AutoSize = true;
-            this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label32.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label32.ForeColor = System.Drawing.SystemColors.Control;
-            this.label32.Location = new System.Drawing.Point(243, 0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(42, 40);
-            this.label32.TabIndex = 10;
-            this.label32.Text = "0";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.setVelocity5Label.AutoSize = true;
+            this.setVelocity5Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.setVelocity5Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.setVelocity5Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.setVelocity5Label.Location = new System.Drawing.Point(243, 0);
+            this.setVelocity5Label.Name = "setVelocity5Label";
+            this.setVelocity5Label.Size = new System.Drawing.Size(42, 40);
+            this.setVelocity5Label.TabIndex = 10;
+            this.setVelocity5Label.Text = "0";
+            this.setVelocity5Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label33
+            // setVelocity4Label
             // 
-            this.label33.AutoSize = true;
-            this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label33.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label33.ForeColor = System.Drawing.SystemColors.Control;
-            this.label33.Location = new System.Drawing.Point(195, 0);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(42, 40);
-            this.label33.TabIndex = 9;
-            this.label33.Text = "0";
-            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.setVelocity4Label.AutoSize = true;
+            this.setVelocity4Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.setVelocity4Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.setVelocity4Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.setVelocity4Label.Location = new System.Drawing.Point(195, 0);
+            this.setVelocity4Label.Name = "setVelocity4Label";
+            this.setVelocity4Label.Size = new System.Drawing.Size(42, 40);
+            this.setVelocity4Label.TabIndex = 9;
+            this.setVelocity4Label.Text = "0";
+            this.setVelocity4Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label34
+            // setVelocity0Label
             // 
-            this.label34.AutoSize = true;
-            this.label34.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label34.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label34.ForeColor = System.Drawing.SystemColors.Control;
-            this.label34.Location = new System.Drawing.Point(3, 0);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(42, 40);
-            this.label34.TabIndex = 5;
-            this.label34.Text = "0";
-            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.setVelocity0Label.AutoSize = true;
+            this.setVelocity0Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.setVelocity0Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.setVelocity0Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.setVelocity0Label.Location = new System.Drawing.Point(3, 0);
+            this.setVelocity0Label.Name = "setVelocity0Label";
+            this.setVelocity0Label.Size = new System.Drawing.Size(42, 40);
+            this.setVelocity0Label.TabIndex = 5;
+            this.setVelocity0Label.Text = "0";
+            this.setVelocity0Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label35
+            // setVelocity3Label
             // 
-            this.label35.AutoSize = true;
-            this.label35.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label35.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label35.ForeColor = System.Drawing.SystemColors.Control;
-            this.label35.Location = new System.Drawing.Point(147, 0);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(42, 40);
-            this.label35.TabIndex = 8;
-            this.label35.Text = "0";
-            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.setVelocity3Label.AutoSize = true;
+            this.setVelocity3Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.setVelocity3Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.setVelocity3Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.setVelocity3Label.Location = new System.Drawing.Point(147, 0);
+            this.setVelocity3Label.Name = "setVelocity3Label";
+            this.setVelocity3Label.Size = new System.Drawing.Size(42, 40);
+            this.setVelocity3Label.TabIndex = 8;
+            this.setVelocity3Label.Text = "0";
+            this.setVelocity3Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label36
+            // setVelocity1Label
             // 
-            this.label36.AutoSize = true;
-            this.label36.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label36.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label36.ForeColor = System.Drawing.SystemColors.Control;
-            this.label36.Location = new System.Drawing.Point(51, 0);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(42, 40);
-            this.label36.TabIndex = 6;
-            this.label36.Text = "0";
-            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.setVelocity1Label.AutoSize = true;
+            this.setVelocity1Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.setVelocity1Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.setVelocity1Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.setVelocity1Label.Location = new System.Drawing.Point(51, 0);
+            this.setVelocity1Label.Name = "setVelocity1Label";
+            this.setVelocity1Label.Size = new System.Drawing.Size(42, 40);
+            this.setVelocity1Label.TabIndex = 6;
+            this.setVelocity1Label.Text = "0";
+            this.setVelocity1Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label37
+            // setVelocity2Label
             // 
-            this.label37.AutoSize = true;
-            this.label37.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label37.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label37.ForeColor = System.Drawing.SystemColors.Control;
-            this.label37.Location = new System.Drawing.Point(99, 0);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(42, 40);
-            this.label37.TabIndex = 7;
-            this.label37.Text = "0";
-            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.setVelocity2Label.AutoSize = true;
+            this.setVelocity2Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.setVelocity2Label.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.setVelocity2Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.setVelocity2Label.Location = new System.Drawing.Point(99, 0);
+            this.setVelocity2Label.Name = "setVelocity2Label";
+            this.setVelocity2Label.Size = new System.Drawing.Size(42, 40);
+            this.setVelocity2Label.TabIndex = 7;
+            this.setVelocity2Label.Text = "0";
+            this.setVelocity2Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // wakeupLabel
             // 
@@ -778,42 +778,42 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label bit0Label;
+        private System.Windows.Forms.Label bit1Label;
+        private System.Windows.Forms.Label bit2Label;
+        private System.Windows.Forms.Label bit3Label;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label bit7Label;
+        private System.Windows.Forms.Label bit6Label;
+        private System.Windows.Forms.Label bit5Label;
+        private System.Windows.Forms.Label bit4Label;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label wakeUp7Label;
+        private System.Windows.Forms.Label wakeUp6Label;
+        private System.Windows.Forms.Label wakeUp5Label;
+        private System.Windows.Forms.Label wakeUp4Label;
+        private System.Windows.Forms.Label wakeUp0Label;
+        private System.Windows.Forms.Label wakeUp3Label;
+        private System.Windows.Forms.Label wakeUp1Label;
+        private System.Windows.Forms.Label wakeUp2Label;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label driveCommand7Label;
+        private System.Windows.Forms.Label driveCommand6Label;
+        private System.Windows.Forms.Label driveCommand5Label;
+        private System.Windows.Forms.Label driveCommand4Label;
+        private System.Windows.Forms.Label driveCommand0Label;
+        private System.Windows.Forms.Label driveCommand3Label;
+        private System.Windows.Forms.Label driveCommand1Label;
+        private System.Windows.Forms.Label driveCommand2Label;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label setVelocity7Label;
+        private System.Windows.Forms.Label setVelocity6Label;
+        private System.Windows.Forms.Label setVelocity5Label;
+        private System.Windows.Forms.Label setVelocity4Label;
+        private System.Windows.Forms.Label setVelocity0Label;
+        private System.Windows.Forms.Label setVelocity3Label;
+        private System.Windows.Forms.Label setVelocity1Label;
+        private System.Windows.Forms.Label setVelocity2Label;
         private System.Windows.Forms.Label wakeupLabel;
         private System.Windows.Forms.Label drivecomLabel;
         private System.Windows.Forms.Label setveloLabel;
