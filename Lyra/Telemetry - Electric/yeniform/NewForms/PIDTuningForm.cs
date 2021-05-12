@@ -39,7 +39,7 @@ namespace Telemetri.NewForms
 
         private void PIDTuningForm_Load(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = 1;
+            //comboBox1.SelectedIndex = 1;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -54,6 +54,21 @@ namespace Telemetri.NewForms
             comproUII.msg_index++;
             comproUII.CreateBuffer();
             Anasayfa.mqttobj.client.Publish("interface_to_vehicle", comproUII.buffer);
+        }
+
+        private void macTrackBar1_ValueChanged(object sender, decimal value)
+        {
+            kpBox.Text = ((float) macTrackBar1.Value / 100).ToString("0.00");
+        }
+
+        private void macTrackBar2_ValueChanged(object sender, decimal value)
+        {
+            kiBox.Text = ((float)macTrackBar2.Value / 100).ToString("0.00");
+        }
+
+        private void macTrackBar3_ValueChanged(object sender, decimal value)
+        {
+            kdBox.Text = ((float)macTrackBar3.Value / 100).ToString("0.00");
         }
     }
 }

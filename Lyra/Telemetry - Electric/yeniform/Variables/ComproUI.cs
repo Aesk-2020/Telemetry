@@ -16,8 +16,8 @@ namespace Telemetri.Variables
         public const byte EYS = 16;
         public const byte CHARGER = 32;
 
-        private byte  HEADER1 = 0x14;
-        private byte  HEADER2 = 0x04;
+        private byte        HEADER1 = 0x14;
+        private byte        HEADER2 = 0x04;
         public byte         vehicle_id = 0x31;
         public byte         target_id = 4;
         public byte         source_id = 17;
