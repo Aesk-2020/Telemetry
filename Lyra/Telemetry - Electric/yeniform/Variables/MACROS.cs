@@ -8,6 +8,11 @@ namespace Telemetri.Variables
     {
         public const byte SYNC1 = 0X14;
         public const byte SYNC2 = 0X04;
+        public const byte VEHICLE_ID = 0X31;
+        public const byte TARGET_ID = 0X2;
+        public const byte SOURCE_ID = 0X4;
+        public const byte SOURCE_MSG_ID = 0X4;
+
         public const int ofsetMQTT = 3;
         public const double C_RADIUS_EARTH_KM = 6371100;
         public const string aesk_IP = "broker.mqttdashboard.com";

@@ -63,10 +63,28 @@ namespace Telemetri.NewForms
 
         private void button2_Click(object sender, EventArgs e)
         {
+            switch (comboBox1.SelectedItem.ToString())
+            {
+                case "MCU":
+                    comproUI.target_id |= ComproUI.MCU;
+                    break;
+                case "VCU":
+                    comproUI.target_id |= ComproUI.VCU;
+                    break;
+                case "BMS":
+                    comproUI.target_id |= ComproUI.BMS;
+                    break;
+                case "CHARGER":
+                    comproUI.target_id |= ComproUI.CHARGER;
+                    break;
+                default:
+                    break;
+            }
             List<byte> listo = new List<byte>();
             listo.Add(0);
             comproUI.message = listo.ToArray();
             comproUI.msg_size = (byte)comproUI.message.Length;
+            comproUI.vehicle_id = 0x31;
             comproUI.source_msg_id = 20;
             comproUI.msg_index++;
             comproUI.CreateBuffer();

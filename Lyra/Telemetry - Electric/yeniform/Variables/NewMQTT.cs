@@ -20,14 +20,25 @@ namespace Telemetri.Variables
         public string broker;
         public MqttClient client;
         bool connected_flag = false;
+        int msg_index = 0;
+        public static ComproUI compro = new ComproUI();
         private enum step
         {
-            CatchSync1 = 0,
-            CatchSync2 = 1,
-            CatchLength = 2,
-            AddBuffer = 3
+            CatchHeader1 = 0,
+            CatchHeader2 = 1,
+            CatchVehicleId = 3,
+            CatchTargetId = 4,
+            CatchSourceId = 5,
+            CatchSourceMsgId = 6,
+            CatchMsgSize = 7,
+            CatchMsg = 8,
+            CatchMsgIndexL = 9,
+            CatchMsgIndexH = 10,
+            CatchCrcL = 11,
+            CatchCrcH = 12,
+
         }
-        private step steppo = step.CatchSync1;
+        private step steppo = step.CatchHeader1;
 
         public NewMQTT(string _topic, string _broker)
         {
@@ -87,66 +98,154 @@ namespace Telemetri.Variables
 
         private void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
-            byte[] recieve_data = e.Message; //rahat çalışmak ve okunailirlik için
-            byte[] worked_data = new byte[54];
+            byte[] received_data = e.Message; //rahat çalışmak ve okunailirlik için
+            
+            List<byte> worked_data = new List<byte>();
 
-            for (int i = 0; i < recieve_data.Length; i++)
+            for (int i = 0; i < received_data.Length; i++)
             {
                 switch (steppo)
                 {
-                    case step.CatchSync1:
-                        if (recieve_data[i] == MACROS.SYNC1)
+                    case step.CatchHeader1:
                         {
-                            steppo = step.CatchSync2; //else ekle hatalı paket yakalasın bunlar CRC dahil
-                            worked_data[_dataCounter++] = recieve_data[i];
-                        }
-                        else
-                        {
-                            _dataCounter = 0;
-                        }
-                        break;
-                    case step.CatchSync2:
-                        if (recieve_data[i] == MACROS.SYNC2)
-                        {
-                            steppo = step.AddBuffer; //bu da aynı şekil
-                            worked_data[_dataCounter++] = recieve_data[i];
-                        }
-                        else
-                        {
-                            steppo = step.CatchSync1;
-                            _dataCounter = 0;
-                        }
-                        break;
-                    case step.AddBuffer:
-                        worked_data[_dataCounter++] = recieve_data[i];
-                        if (_dataCounter >= _dataLength)
-                        {
-                            if(i+2 > 254)
+                            if (received_data[i] == compro.HEADER1)
                             {
-                                //bok
+                                worked_data.Add(received_data[i]);
+                                _dataCounter++;
+                                steppo = step.CatchHeader2;
                             }
                             else
                             {
-                                byte CRC_L = recieve_data[i + 1];
-                                byte CRC_H = recieve_data[i + 2];
-                                ushort incomingCRC = BitConverter.ToUInt16(new byte[] { CRC_L, CRC_H }, 0);
-                                ushort calculatedCRC = MACROS.AeskCRCCalculate(worked_data, (uint)worked_data.Length);
-                                if (incomingCRC == calculatedCRC)
-                                {
-                                    dataConvertMQTT(worked_data);
-                                    //çözülen++;
-                                    //indeks kontrol;
-                                }
-
+                                _dataCounter = 0;
+                                steppo = step.CatchHeader1;
                             }
-                            steppo = step.CatchSync1;
+                        }
+                        break;
+                    case step.CatchHeader2:
+                        {
+                            if (received_data[i] == compro.HEADER2)
+                            {
+                                worked_data.Add(received_data[i]);
+                                _dataCounter++;
+                                steppo = step.CatchVehicleId;
+                            }
+                            else
+                            {
+                                _dataCounter = 0;
+                                steppo = step.CatchHeader1;
+                            }
+                        }
+                        break;
+                    case step.CatchVehicleId:
+                        {
+                            if(received_data[i] == compro.vehicle_id)
+                            {
+                                worked_data.Add(received_data[i]);
+                                _dataCounter++;
+                                steppo = step.CatchTargetId;
+                            }
+                            else
+                            {
+                                _dataCounter = 0;
+                                steppo = step.CatchHeader1;
+                            }
+                        }
+                        break;
+                    case step.CatchTargetId:
+                        {
+                            compro.target_id = received_data[i];
+                            worked_data.Add(received_data[i]);
+                            _dataCounter++;
+                            steppo = step.CatchSourceId;
+                        }
+                        break;
+                    case step.CatchSourceId:
+                        {
+                            worked_data.Add(received_data[i]);
+                            compro.source_id = received_data[i];
+                            _dataCounter++;
+                            steppo = step.CatchSourceMsgId;
+                        }
+                        break;
+                    case step.CatchSourceMsgId:
+                        {
+                            worked_data.Add(received_data[i]);
+                            compro.source_msg_id = received_data[i];
+                            _dataCounter++;
+                            steppo = step.CatchMsgSize;
+                        }
+                        break;
+                    case step.CatchMsgSize:
+                        {
+                            worked_data.Add(received_data[i]);
+                            compro.msg_size = received_data[i];
+                            _dataCounter++;
+                            steppo = step.CatchMsg;
+                            compro.message = new byte[compro.msg_size];
+                        }
+                        break;
+                    case step.CatchMsg:
+                        {
+                            worked_data.Add(received_data[i]);
+                            compro.message[msg_index++] = received_data[i];
+                            if(msg_index >= compro.msg_size)
+                            {
+                                steppo = step.CatchMsgIndexL;
+                                msg_index = 0;
+                            }
+                        }
+                        break;
+                    case step.CatchMsgIndexL:
+                        {
+                            worked_data.Add(received_data[i]);
+                            compro.msg_index = received_data[i];
+                            steppo = step.CatchMsgIndexH;
+                        }
+                        break;
+                    case step.CatchMsgIndexH:
+                        {
+                            worked_data.Add(received_data[i]);
+                            compro.msg_index = (byte)(compro.msg_index | (received_data[i] << 8));
+                            steppo = step.CatchCrcL;
+                        }
+
+                        break;
+                    case step.CatchCrcL:
+                        {
+                            compro.crc = received_data[i];
+                            steppo = step.CatchCrcH;
+                        }
+                        break;
+                    case step.CatchCrcH:
+                        {
+                            compro.crc = (ushort)(compro.crc | (received_data[i] << 8));
+                            UInt16 crc_calculated;
+                            crc_calculated = MACROS.AeskCRCCalculate(worked_data.ToArray(), (uint)worked_data.Count-2);
+                            if(crc_calculated == compro.crc)
+                            {
+                                dataConvertCompro(worked_data.ToArray());
+                                
+                            }
+                            steppo = step.CatchHeader1;
                             _dataCounter = 0;
+
                         }
                         break;
                     default:
                         break;
                 }
             }
+        }
+        void dataConvertCompro(byte[] receiveBuffer)
+        {
+            int startIndex = 7;
+            float kp;
+            float kd;
+            float ki;
+            kp = BitConverter.ToSingle(receiveBuffer, startIndex);startIndex += 4;
+            kd = BitConverter.ToSingle(receiveBuffer, startIndex);startIndex += 4;
+            ki = BitConverter.ToSingle(receiveBuffer, startIndex);startIndex += 4;
+            MessageBox.Show("Kp: "+kp.ToString()+"\n" + "Kd: " + kd.ToString()+ "\n"+"Ki: " + ki.ToString()+"\n");
         }
         void dataConvertMQTT(byte[] receiveBuffer) //ESKİ KOD
         {

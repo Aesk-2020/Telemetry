@@ -15,15 +15,16 @@ namespace Telemetri.Variables
         public const byte EYS = 16;
         public const byte CHARGER = 32;
 
-        private const byte  HEADER1 = 0x14;
-        private const byte  HEADER2 = 0x04;
-        public byte         vehicle_id;
+        public byte         HEADER1 = 0x14;
+        public byte         HEADER2 = 0x04;
+        public byte         vehicle_id = 0x31;
         public byte         target_id = 4;
-        private byte        source_id = 17;
+        public byte         source_id = 17;
         public byte         source_msg_id;
         public byte         msg_size;
         public UInt16       msg_index = 0;
         public byte[]       message;
+        public UInt16       crc;
         private List<byte> listbuffer = new List<byte>();
 
         public byte[] buffer = new byte[20];
