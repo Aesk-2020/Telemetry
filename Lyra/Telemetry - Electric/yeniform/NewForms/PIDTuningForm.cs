@@ -13,8 +13,6 @@ namespace Telemetri.NewForms
 {
     public partial class PIDTuningForm : Form
     {
-        ComproUI comproUI = new ComproUI();
-
         public PIDTuningForm()
         {
             InitializeComponent();
@@ -22,24 +20,7 @@ namespace Telemetri.NewForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            switch (comboBox1.SelectedItem.ToString())
-            {
-                case "MCU":
-                    comproUI.target_id |= ComproUI.MCU;
-                    break;
-                case "VCU":
-                    comproUI.target_id |= ComproUI.VCU;
-                    break;
-                case "BMS":
-                    comproUI.target_id |= ComproUI.BMS;
-                    break;
-                case "CHARGER":
-                    comproUI.target_id |= ComproUI.CHARGER;
-                    break;
-                default:
-                    break;
-            }
-            comproUI.msg_index++;
+            ComproUI comproUI;
             float kp = float.Parse(kpBox.Text);
             float ki = float.Parse(kiBox.Text);
             float kd = float.Parse(kdBox.Text);
@@ -47,11 +28,11 @@ namespace Telemetri.NewForms
             newlist.AddRange(BitConverter.GetBytes(kp));
             newlist.AddRange(BitConverter.GetBytes(kd));
             newlist.AddRange(BitConverter.GetBytes(ki));
-            comproUI.message = newlist.ToArray();
-            comproUI.msg_size = (byte)comproUI.message.Length;
-            comproUI.vehicle_id = 0x31;
-            comproUI.source_msg_id = 19;
+
+            comproUI = new ComproUI(0x31, ComproUI.VCU | ComproUI.TELEMETRI, newlist.ToArray(), (byte)newlist.Count, 19);
+            comproUI.msg_index++;
             comproUI.CreateBuffer();
+            
             Anasayfa.mqttobj.client.Publish("interface_to_vehicle", comproUI.buffer);
             //Anasayfa.serialPortCOMRF.write(comproUI.buffer);
         }
@@ -63,32 +44,16 @@ namespace Telemetri.NewForms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            switch (comboBox1.SelectedItem.ToString())
-            {
-                case "MCU":
-                    comproUI.target_id |= ComproUI.MCU;
-                    break;
-                case "VCU":
-                    comproUI.target_id |= ComproUI.VCU;
-                    break;
-                case "BMS":
-                    comproUI.target_id |= ComproUI.BMS;
-                    break;
-                case "CHARGER":
-                    comproUI.target_id |= ComproUI.CHARGER;
-                    break;
-                default:
-                    break;
-            }
+            ComproUI comproUII = new ComproUI(0x31, ComproUI.VCU | ComproUI.TELEMETRI, new byte[] { 0 }, 1, 20);
             List<byte> listo = new List<byte>();
             listo.Add(0);
-            comproUI.message = listo.ToArray();
-            comproUI.msg_size = (byte)comproUI.message.Length;
-            comproUI.vehicle_id = 0x31;
-            comproUI.source_msg_id = 20;
-            comproUI.msg_index++;
-            comproUI.CreateBuffer();
-            Anasayfa.mqttobj.client.Publish("interface_to_vehicle", comproUI.buffer);
+            comproUII.message = listo.ToArray();
+            comproUII.msg_size = (byte)comproUII.message.Length;
+            comproUII.vehicle_id = 0x31;
+            comproUII.source_msg_id = 20;
+            comproUII.msg_index++;
+            comproUII.CreateBuffer();
+            Anasayfa.mqttobj.client.Publish("interface_to_vehicle", comproUII.buffer);
         }
     }
 }
