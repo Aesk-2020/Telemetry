@@ -54,6 +54,7 @@ namespace Telemetri.Variables
                     _serialPort.BaudRate = 9600;
                     _serialPort.DataReceived += new SerialDataReceivedEventHandler(sp_DataReceived);
                     _serialPort.Open();
+                    MessageBox.Show("Bağlanıldı.");
                 }
                 else
                 {

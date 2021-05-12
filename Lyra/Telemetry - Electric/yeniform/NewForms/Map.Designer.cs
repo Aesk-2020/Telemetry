@@ -69,6 +69,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Map";
             this.Text = "Harita";
+            this.Load += new System.EventHandler(this.Map_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

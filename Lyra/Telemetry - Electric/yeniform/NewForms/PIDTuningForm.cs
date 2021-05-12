@@ -45,7 +45,8 @@ namespace Telemetri.NewForms
             comproUI.vehicle_id = 0x31;
             comproUI.source_msg_id = 1;
             comproUI.CreateBuffer();
-            Anasayfa.mqttobj.client.Publish("interface_to_vehicle", comproUI.buffer);
+            //Anasayfa.mqttobj.client.Publish("interface_to_vehicle", comproUI.buffer);
+            Anasayfa.serialPortCOMRF.write(comproUI.buffer);
         }
     }
 }

@@ -25,6 +25,12 @@ namespace Telemetri.NewForms
             Button[] buttons = { homeButton, mapButton, motordrButton, batteryButton, pidTuningBtn, settingsButton, mqttButton };
             TextBox[] textBoxs = { activeChannelLabel, mqttPingLabel };
             UITools.Telemetry2021.buttonList.AddRange(buttons);
+            UITools.Telemetry2021.forms.Add("Anasayfa", new Anasayfa());
+            UITools.Telemetry2021.forms.Add("BMS_Form", new BMS_Form());
+            UITools.Telemetry2021.forms.Add("Driver_Form", new Driver_Form());
+            UITools.Telemetry2021.forms.Add("Map", new Map());
+            UITools.Telemetry2021.forms.Add("MQTTdeneme", new MQTTdeneme());
+            UITools.Telemetry2021.forms.Add("PIDTuningForm", new PIDTuningForm());
         }
 
         
@@ -38,22 +44,24 @@ namespace Telemetri.NewForms
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            FormManagement.openChildForm(new Anasayfa(), panelChildForm);
+            FormManagement.openChildForm(UITools.Telemetry2021.forms["Anasayfa"], panelChildForm);
+            
         }
 
         private void btnMap_Click(object sender, EventArgs e)
         {
-            FormManagement.openChildForm(new Map(), panelChildForm);
+            FormManagement.openChildForm(UITools.Telemetry2021.forms["Map"], panelChildForm);
         }
 
         private void btnBattery_Click(object sender, EventArgs e)
         {
-            FormManagement.openChildForm(new BMS_Form(), panelChildForm);
+            FormManagement.openChildForm(UITools.Telemetry2021.forms["BMS_Form"], panelChildForm);
+            
         }
 
         private void btnMotorDriver_Click(object sender, EventArgs e)
         {
-            FormManagement.openChildForm(new Driver_Form(), panelChildForm);
+            FormManagement.openChildForm(UITools.Telemetry2021.forms["Driver_Form"], panelChildForm);
             pidTuningBtn.Visible = !pidTuningBtn.Visible;
         }
 
@@ -68,7 +76,7 @@ namespace Telemetri.NewForms
 
         private void mqttButton_Click(object sender, EventArgs e)
         {
-            FormManagement.openChildForm(new MQTTdeneme(), panelChildForm);
+            FormManagement.openChildForm(UITools.Telemetry2021.forms["MQTTdeneme"], panelChildForm);
         }
 
         
@@ -169,7 +177,7 @@ namespace Telemetri.NewForms
 
         private void pidTuningBtn_Click(object sender, EventArgs e)
         {
-            FormManagement.openChildForm(new PIDTuningForm(), panelChildForm);
+            FormManagement.openChildForm(UITools.Telemetry2021.forms["PIDTuningForm"], panelChildForm);
         }
     }
 }
