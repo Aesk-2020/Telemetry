@@ -16,7 +16,7 @@ namespace Telemetri.NewForms
     {
         public delegate void TriggerFront();
         MQTT mqttObj = new MQTT(MACROS.newSubTopic); //LYRADATA topic'ine bağlanacak MQTT nesnesini oluştur.
-        NewMQTT mqttobj = new NewMQTT("vehicle_to_interface", MACROS.aesk_IP);
+        public static NewMQTT mqttobj = new NewMQTT("vehicle_to_interface", MACROS.aesk_IP);
         string splitter = "aesk\n";
         List<string> lineList;
         public Anasayfa()

@@ -175,6 +175,7 @@
       <DependentUpon>Driver_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Variables\BmsUI.cs" />
+    <Compile Include="Variables\ComproUI.cs" />
     <Compile Include="Variables\FormManagement.cs" />
     <Compile Include="Variables\LogSystem.cs" />
     <Compile Include="Variables\myDataGrid.cs" />

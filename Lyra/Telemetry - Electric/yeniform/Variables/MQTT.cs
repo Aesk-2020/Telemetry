@@ -273,7 +273,6 @@ namespace Telemetri.Variables
             BMS.bms_soc[27] = ((float)receiveBuffer[startIndex]) / MACROS.SOC_CONVERTER + BMS.soc_f32;
             LogEvent();
         }
-
         //New data convert function with synchronize control
         void DataConvertMQTT(byte[] recieveBuffer)
         {
