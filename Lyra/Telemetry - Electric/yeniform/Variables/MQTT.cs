@@ -20,7 +20,6 @@ namespace Telemetri.Variables
         string _username = "aesk";
         string _password = "1234";
         string _topic;
-        private int steppo = 0;
         private enum step
         {
             CatchSync1 = 0,

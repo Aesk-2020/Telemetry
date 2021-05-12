@@ -23,11 +23,8 @@ namespace Telemetri.Variables
         public byte         source_msg_id;
         public byte         msg_size;
         public UInt16       msg_index = 0;
-        private byte        msg_index_l;
-        private byte        msg_index_h;
         public byte[]       message;
-        private byte         CRC_L;
-        private byte         CRC_H;
+        private List<byte> listbuffer = new List<byte>();
 
         public byte[] buffer = new byte[20];
 
@@ -36,40 +33,31 @@ namespace Telemetri.Variables
         {
 
         }
-        public ComproUI(byte _vehicle_id, byte _target_id, byte _source_id, byte _msg_size, byte _source_msg_id, byte[] _message, UInt16 _msg_index)
+        public ComproUI(byte _vehicle_id, byte _target_id, byte _source_id, byte _msg_size, byte _source_msg_id, UInt16 _msg_index)
         {
             vehicle_id = _vehicle_id;
             target_id = _target_id;
             source_id = _source_id;
             msg_size = _msg_size;
-            message = _message;
             source_msg_id = _source_msg_id;
-            byte[] mesajindeks = BitConverter.GetBytes(_msg_index);
-            msg_index_l = mesajindeks[0]; msg_index_h = mesajindeks[1];
         }
 
         public void CreateBuffer()
         {
-            int index = 0;
-            this.buffer[index++] = HEADER1;
-            this.buffer[index++] = HEADER2;
-            this.buffer[index++] = vehicle_id;
-            this.buffer[index++] = target_id;
-            this.buffer[index++] = source_id;
-            this.buffer[index++] = source_msg_id;
-            this.buffer[index++] = msg_size;
-            for (int i = 0; i < msg_size; i++)
-            {
-                buffer[index + i] = message[i];
-            }
-            index += msg_size;
-            ushort CRC = MACROS.AeskCRCCalculate(buffer, (uint)(7 + msg_size));
+            listbuffer.Add(HEADER1);
+            listbuffer.Add(HEADER2);
+            listbuffer.Add(vehicle_id);
+            listbuffer.Add(target_id);
+            listbuffer.Add(source_id);
+            listbuffer.Add(source_msg_id);
+            listbuffer.Add(msg_size);
+            listbuffer.AddRange(message);
+            ushort CRC = MACROS.AeskCRCCalculate(listbuffer.ToArray(), (uint)(7 + msg_size));
             byte[] CRCLH = BitConverter.GetBytes(CRC);
-
-            this.buffer[index++] = msg_index_l;
-            this.buffer[index++] = msg_index_h;
-            buffer[index++] = CRCLH[0];
-            buffer[index] = CRCLH[1];
+            byte[] MSGLH = BitConverter.GetBytes(msg_index);
+            listbuffer.AddRange(MSGLH);
+            listbuffer.AddRange(CRCLH);
+            buffer = listbuffer.ToArray();
         }
     }
 }

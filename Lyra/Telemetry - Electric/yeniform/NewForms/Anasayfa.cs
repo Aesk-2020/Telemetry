@@ -171,7 +171,6 @@ namespace Telemetri.NewForms
         {
             if (mqttobj.ConnectSubscribe())
             {
-                MessageBox.Show("Bağlanıldı!");
                 mqttDisconnectBtn.Enabled = true;
                 mqttConnectBtn.Enabled = false;
                 startLogBtn.Enabled = true;

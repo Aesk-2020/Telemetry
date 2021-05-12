@@ -39,14 +39,38 @@ namespace Telemetri.NewForms
                 default:
                     break;
             }
-            comproUI.message = Encoding.UTF8.GetBytes(textBox1.Text);
-            comproUI.msg_size = (byte)textBox1.Text.Length;
-            comproUI.source_msg_id = 5;
+            comproUI.msg_index++;
+            float kp = float.Parse(kpBox.Text);
+            float ki = float.Parse(kiBox.Text);
+            float kd = float.Parse(kdBox.Text);
+            List<byte> newlist = new List<byte>();
+            newlist.AddRange(BitConverter.GetBytes(kp));
+            newlist.AddRange(BitConverter.GetBytes(kd));
+            newlist.AddRange(BitConverter.GetBytes(ki));
+            comproUI.message = newlist.ToArray();
+            comproUI.msg_size = (byte)comproUI.message.Length;
             comproUI.vehicle_id = 0x31;
-            comproUI.source_msg_id = 1;
+            comproUI.source_msg_id = 19;
             comproUI.CreateBuffer();
-            //Anasayfa.mqttobj.client.Publish("interface_to_vehicle", comproUI.buffer);
-            Anasayfa.serialPortCOMRF.write(comproUI.buffer);
+            Anasayfa.mqttobj.client.Publish("interface_to_vehicle", comproUI.buffer);
+            //Anasayfa.serialPortCOMRF.write(comproUI.buffer);
+        }
+
+        private void PIDTuningForm_Load(object sender, EventArgs e)
+        {
+            comboBox1.SelectedIndex = 1;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            List<byte> listo = new List<byte>();
+            listo.Add(0);
+            comproUI.message = listo.ToArray();
+            comproUI.msg_size = (byte)comproUI.message.Length;
+            comproUI.source_msg_id = 20;
+            comproUI.msg_index++;
+            comproUI.CreateBuffer();
+            Anasayfa.mqttobj.client.Publish("interface_to_vehicle", comproUI.buffer);
         }
     }
 }
