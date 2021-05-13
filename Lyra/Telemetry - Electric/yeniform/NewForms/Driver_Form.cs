@@ -22,6 +22,14 @@ namespace Telemetri.NewForms
 
             Label[] labels = { phaseALabel , phaseBLabel, dcBusCurLabel, dcBusVoltLabel,
                 IdLabel, IqLabel, IArmsLabel, TorqueLabel};
+            UITools.DriverForm.dcBusCurLabel = dcBusCurLabel;
+            UITools.DriverForm.dcBusVoltLabel = dcBusVoltLabel;
+            UITools.DriverForm.IArmsLabel = IArmsLabel;
+            UITools.DriverForm.IdLabel = IdLabel;
+            UITools.DriverForm.IqLabel = IqLabel;
+            UITools.DriverForm.phaseALabel = phaseALabel;
+            UITools.DriverForm.phaseBLabel = phaseBLabel;
+            UITools.DriverForm.TorqueLabel = TorqueLabel;
         }
         #region .. Double Buffered function ..
         public static void SetDoubleBuffered(System.Windows.Forms.Control c)
@@ -47,14 +55,7 @@ namespace Telemetri.NewForms
 
         private void MotorDriver_Load(object sender, EventArgs e)
         {
-            UITools.DriverForm.dcBusCurLabel = dcBusCurLabel;
-            UITools.DriverForm.dcBusVoltLabel = dcBusVoltLabel;
-            UITools.DriverForm.IArmsLabel = IArmsLabel;
-            UITools.DriverForm.IdLabel = IdLabel;
-            UITools.DriverForm.IqLabel = IqLabel;
-            UITools.DriverForm.phaseALabel = phaseALabel;
-            UITools.DriverForm.phaseBLabel = phaseBLabel;
-            UITools.DriverForm.TorqueLabel = TorqueLabel;
+            
             #region doubleBuffer
             SetDoubleBuffered(tableLayoutPanel1);
             SetDoubleBuffered(tableLayoutPanel2);

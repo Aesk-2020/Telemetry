@@ -804,6 +804,7 @@
             // mqttWorker
             // 
             this.mqttWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.mqttWorker_DoWork);
+            this.mqttWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.mqttWorker_RunWorkerCompleted);
             // 
             // myChart
             // 

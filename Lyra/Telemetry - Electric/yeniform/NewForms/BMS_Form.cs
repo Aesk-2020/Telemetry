@@ -22,6 +22,11 @@ namespace Telemetri.NewForms
 
             TextBox[] textBoxs = {voltageTextBox, consTextBox, tempTextBox,
                 currentTextBox, socTextBox };
+            UITools.BMSForm.consTextBox = consTextBox;
+            UITools.BMSForm.curTextBox = currentTextBox;
+            UITools.BMSForm.socTextBox = socTextBox;
+            UITools.BMSForm.tempTextBox = tempTextBox;
+            UITools.BMSForm.voltageTextBox = voltageTextBox;
         }
         #region .. Double Buffered function ..
         public static void SetDoubleBuffered(System.Windows.Forms.Control c)
@@ -46,11 +51,7 @@ namespace Telemetri.NewForms
         #endregion
         private void BMS_Load(object sender, EventArgs e)
         {
-            UITools.BMSForm.consTextBox = consTextBox;
-            UITools.BMSForm.curTextBox = currentTextBox;
-            UITools.BMSForm.socTextBox = socTextBox;
-            UITools.BMSForm.tempTextBox = tempTextBox;
-            UITools.BMSForm.voltageTextBox = voltageTextBox;
+            
 
             #region doubleBuffer
             SetDoubleBuffered(tableLayoutPanel10);

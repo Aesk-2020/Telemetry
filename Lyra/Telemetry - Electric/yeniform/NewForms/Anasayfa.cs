@@ -27,6 +27,14 @@ namespace Telemetri.NewForms
 
             TextBox[] textBoxs = {startTimeLabel, socLabel, batCurLabel, batConsLabel,
              setVelocityLabel, actVelocityLabel, errorsLabel, driveStatusLabel};
+            UITools.Anasayfa.actVelocityLabel = actVelocityLabel;
+            UITools.Anasayfa.batConsLabel = batConsLabel;
+            UITools.Anasayfa.batCurLabel = batCurLabel;
+            UITools.Anasayfa.errorsLabel = errorsLabel;
+            UITools.Anasayfa.socLabel = socLabel;
+            UITools.Anasayfa.startTimeLabel = startTimeLabel;
+            UITools.Anasayfa.setVelocityLabel = setVelocityLabel;
+            UITools.Anasayfa.driveStatusLabel = driveStatusLabel;
 
         }
         #region .. Double Buffered function ..
@@ -58,14 +66,7 @@ namespace Telemetri.NewForms
             string[] ports = SerialPort.GetPortNames();
             portsListBox.Items.AddRange(ports);
             LogSystem.isFirst = true;
-            UITools.Anasayfa.actVelocityLabel = actVelocityLabel;
-            UITools.Anasayfa.batConsLabel = batConsLabel;
-            UITools.Anasayfa.batCurLabel = batCurLabel;
-            UITools.Anasayfa.errorsLabel = errorsLabel;
-            UITools.Anasayfa.socLabel = socLabel;
-            UITools.Anasayfa.startTimeLabel = startTimeLabel;
-            UITools.Anasayfa.setVelocityLabel = setVelocityLabel;
-            UITools.Anasayfa.driveStatusLabel = driveStatusLabel;
+           
             #region doubleBuffer
             SetDoubleBuffered(tableLayoutPanel1);
             SetDoubleBuffered(tableLayoutPanel2);
@@ -109,7 +110,6 @@ namespace Telemetri.NewForms
 
         private void mqttConnectBtn_Click(object sender, EventArgs e)
         {
-
             AFront.AccessFront += UITools.ChangeUI;
             mqttWorker.RunWorkerAsync();
         }
@@ -175,6 +175,14 @@ namespace Telemetri.NewForms
                 mqttConnectBtn.Enabled = false;
                 startLogBtn.Enabled = true;
                 portConnectBtn.Enabled = false;
+            }
+        }
+
+        private void mqttWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if(mqttobj.connected_flag == true)
+            {
+                UITools.PIDForm.logWriter.WriteLine("MQTT'ye bağlanıldı.");
             }
         }
     }

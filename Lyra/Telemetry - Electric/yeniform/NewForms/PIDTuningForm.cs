@@ -17,14 +17,15 @@ namespace Telemetri.NewForms
         public PIDTuningForm()
         {
             InitializeComponent();
-        }
-
-        private void PIDTuningForm_Load(object sender, EventArgs e)
-        {
             UITools.PIDForm.sendButton = sendButton;
             UITools.PIDForm.queryButton = queryButton;
             UITools.PIDForm.logBox = logBox;
             UITools.PIDForm.logWriter = new ConsoleTextBoxWriter(logBox);
+        }
+
+        private void PIDTuningForm_Load(object sender, EventArgs e)
+        {
+            
         }
 
         private void macTrackBar1_ValueChanged(object sender, decimal value)
@@ -58,6 +59,8 @@ namespace Telemetri.NewForms
             comproUI.CreateBuffer();
 
             Anasayfa.mqttobj.client.Publish("interface_to_vehicle", comproUI.buffer);
+            UITools.PIDForm.logWriter.WriteLine("PID sent");
+
         }
 
         private void queryButton_Click(object sender, EventArgs e)
@@ -71,7 +74,7 @@ namespace Telemetri.NewForms
             comproUII.source_msg_id = 20;
             comproUII.msg_index++;
             comproUII.CreateBuffer();
-            //Anasayfa.mqttobj.client.Publish("interface_to_vehicle", comproUII.buffer);
+            Anasayfa.mqttobj.client.Publish("interface_to_vehicle", comproUII.buffer);
             UITools.PIDForm.logWriter.WriteLine("Query sent");
         }
     }

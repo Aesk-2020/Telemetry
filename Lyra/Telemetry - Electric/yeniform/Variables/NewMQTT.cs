@@ -19,7 +19,7 @@ namespace Telemetri.Variables
         public string topic;
         public string broker;
         public MqttClient client;
-        bool connected_flag = false;
+        public bool connected_flag = false;
         int msg_index = 0;
         public static ComproUI compro = new ComproUI();
         private enum step
