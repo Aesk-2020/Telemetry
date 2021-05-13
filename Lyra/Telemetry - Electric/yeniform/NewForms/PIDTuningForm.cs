@@ -14,6 +14,9 @@ namespace Telemetri.NewForms
 {
     public partial class PIDTuningForm : Form
     {
+        ComproUI comproUI;
+        ComproUI comproUII;
+
         public PIDTuningForm()
         {
             InitializeComponent();
@@ -21,6 +24,8 @@ namespace Telemetri.NewForms
             UITools.PIDForm.queryButton = queryButton;
             UITools.PIDForm.logBox = logBox;
             UITools.PIDForm.logWriter = new ConsoleTextBoxWriter(logBox);
+            comproUI = new ComproUI(0x31, ComproUI.VCU | ComproUI.TELEMETRI, 19); //, newlist.ToArray(), (byte)newlist.Count, 19);
+            comproUII = new ComproUI(0x31, ComproUI.VCU | ComproUI.TELEMETRI, 20);
         }
 
         private void PIDTuningForm_Load(object sender, EventArgs e)
@@ -45,7 +50,7 @@ namespace Telemetri.NewForms
 
         private void sendButton_Click(object sender, EventArgs e)
         {
-            ComproUI comproUI;
+            
             float kp = float.Parse(kpBox.Text);
             float ki = float.Parse(kiBox.Text);
             float kd = float.Parse(kdBox.Text);
@@ -53,11 +58,10 @@ namespace Telemetri.NewForms
             newlist.AddRange(BitConverter.GetBytes(kp));
             newlist.AddRange(BitConverter.GetBytes(kd));
             newlist.AddRange(BitConverter.GetBytes(ki));
-
-            comproUI = new ComproUI(0x31, ComproUI.VCU | ComproUI.TELEMETRI, newlist.ToArray(), (byte)newlist.Count, 19);
+            comproUI.message = newlist.ToArray();
+            comproUI.msg_size = (byte)newlist.Count;
             comproUI.msg_index++;
             comproUI.CreateBuffer();
-
             Anasayfa.mqttobj.client.Publish("interface_to_vehicle", comproUI.buffer);
             UITools.PIDForm.logWriter.WriteLine("PID sent");
 
@@ -65,7 +69,6 @@ namespace Telemetri.NewForms
 
         private void queryButton_Click(object sender, EventArgs e)
         {
-            ComproUI comproUII = new ComproUI(0x31, ComproUI.VCU | ComproUI.TELEMETRI, new byte[] { 0 }, 1, 20);
             List<byte> listo = new List<byte>();
             listo.Add(0);
             comproUII.message = listo.ToArray();

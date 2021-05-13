@@ -15,12 +15,13 @@ namespace Telemetri.Variables
         public const byte BMS = 8;
         public const byte EYS = 16;
         public const byte CHARGER = 32;
+        public const byte UI = 64;
 
-        private byte        HEADER1 = 0x14;
-        private byte        HEADER2 = 0x04;
-        public byte         vehicle_id = 0x31;
-        public byte         target_id = 4;
-        public byte         source_id = 17;
+        private byte        HEADER1 = MACROS.SYNC1;
+        private byte        HEADER2 = MACROS.SYNC2;
+        public byte         vehicle_id = MACROS.VEHICLE_ID;
+        public byte         target_id = TELEMETRI;
+        public byte         source_id = UI;
         public byte         source_msg_id;
         public byte         msg_size;
         public UInt16       msg_index = 0;
@@ -28,7 +29,7 @@ namespace Telemetri.Variables
         private UInt16      crc;
         private List<byte> listbuffer = new List<byte>();
 
-        public byte[] buffer = new byte[20];
+        public byte[] buffer = new byte[200];
 
         private enum step
         {
@@ -52,13 +53,11 @@ namespace Telemetri.Variables
         {
 
         }
-        public ComproUI(byte _vehicle_id, byte _target_id, byte[] _message, byte _msg_size, byte _source_msg_id)
+        public ComproUI(byte _vehicle_id, byte _target_id, byte _source_msg_id)
         {
             vehicle_id = _vehicle_id;
             target_id = _target_id;
-            msg_size = _msg_size;
             source_msg_id = _source_msg_id;
-            message = _message;
         }
 
         public void CreateBuffer()
@@ -77,6 +76,7 @@ namespace Telemetri.Variables
             listbuffer.AddRange(MSGLH);
             listbuffer.AddRange(CRCLH);
             buffer = listbuffer.ToArray();
+            listbuffer.Clear();
         }
 
         public void ComproUnpack(byte[] received_data)
@@ -193,6 +193,7 @@ namespace Telemetri.Variables
                             UInt16 crc_calculated = MACROS.AeskCRCCalculate(worked_data.ToArray(), (uint)worked_data.Count - 2);
                             if (crc_calculated == this.crc)
                             {
+                                //BURAYA İNDEX EKLENECEK
                                 dataConvertCompro(worked_data.ToArray());
                             }
                             steppo = step.CatchHeader1;
