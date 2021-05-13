@@ -63,6 +63,8 @@ namespace Telemetri.Variables
                         this.client.Subscribe(new string[] { this.topic }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
                         this.client.MqttMsgPublishReceived += Client_MqttMsgPublishReceived;
                         connected_flag = true;
+                        UITools.PIDForm.queryButton.Enabled = true;
+                        UITools.PIDForm.sendButton.Enabled = true;
                     }
                     catch (Exception exce)
                     {

@@ -28,12 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.kpBox = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.kiBox = new System.Windows.Forms.TextBox();
             this.kdBox = new System.Windows.Forms.TextBox();
             this.macTrackBar1 = new XComponent.SliderBar.MACTrackBar();
@@ -42,31 +38,11 @@
             this.macTrackBar2 = new XComponent.SliderBar.MACTrackBar();
             this.macTrackBar3 = new XComponent.SliderBar.MACTrackBar();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.ıconButton1 = new FontAwesome.Sharp.IconButton();
-            this.ıconButton2 = new FontAwesome.Sharp.IconButton();
+            this.sendButton = new FontAwesome.Sharp.IconButton();
+            this.queryButton = new FontAwesome.Sharp.IconButton();
+            this.logBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(118, 438);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 62);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(537, 390);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 25);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Send";
             // 
             // label4
             // 
@@ -95,27 +71,6 @@
             this.kpBox.TabIndex = 6;
             this.kpBox.Text = "1,27";
             this.kpBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(283, 438);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(169, 62);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(667, 390);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 25);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Query";
             // 
             // kiBox
             // 
@@ -274,39 +229,57 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(707, 170);
             this.tableLayoutPanel1.TabIndex = 21;
             // 
-            // ıconButton1
+            // sendButton
             // 
-            this.ıconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ıconButton1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ıconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.ıconButton1.IconChar = FontAwesome.Sharp.IconChar.Wrench;
-            this.ıconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.ıconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ıconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ıconButton1.Location = new System.Drawing.Point(113, 249);
-            this.ıconButton1.Name = "ıconButton1";
-            this.ıconButton1.Size = new System.Drawing.Size(358, 63);
-            this.ıconButton1.TabIndex = 22;
-            this.ıconButton1.Text = "SEND";
-            this.ıconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ıconButton1.UseVisualStyleBackColor = true;
+            this.sendButton.Enabled = false;
+            this.sendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sendButton.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.sendButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.sendButton.IconChar = FontAwesome.Sharp.IconChar.Wrench;
+            this.sendButton.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.sendButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.sendButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.sendButton.Location = new System.Drawing.Point(113, 249);
+            this.sendButton.Name = "sendButton";
+            this.sendButton.Size = new System.Drawing.Size(358, 63);
+            this.sendButton.TabIndex = 22;
+            this.sendButton.Text = "SEND";
+            this.sendButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sendButton.UseVisualStyleBackColor = true;
+            this.sendButton.Click += new System.EventHandler(this.sendButton_Click);
             // 
-            // ıconButton2
+            // queryButton
             // 
-            this.ıconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ıconButton2.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ıconButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.ıconButton2.IconChar = FontAwesome.Sharp.IconChar.Quora;
-            this.ıconButton2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.ıconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ıconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ıconButton2.Location = new System.Drawing.Point(477, 249);
-            this.ıconButton2.Name = "ıconButton2";
-            this.ıconButton2.Size = new System.Drawing.Size(343, 63);
-            this.ıconButton2.TabIndex = 23;
-            this.ıconButton2.Text = "QUERY";
-            this.ıconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ıconButton2.UseVisualStyleBackColor = true;
+            this.queryButton.Enabled = false;
+            this.queryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.queryButton.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.queryButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.queryButton.IconChar = FontAwesome.Sharp.IconChar.Quora;
+            this.queryButton.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.queryButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.queryButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.queryButton.Location = new System.Drawing.Point(477, 249);
+            this.queryButton.Name = "queryButton";
+            this.queryButton.Size = new System.Drawing.Size(343, 63);
+            this.queryButton.TabIndex = 23;
+            this.queryButton.Text = "QUERY";
+            this.queryButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.queryButton.UseVisualStyleBackColor = true;
+            this.queryButton.Click += new System.EventHandler(this.queryButton_Click);
+            // 
+            // logBox
+            // 
+            this.logBox.AcceptsReturn = true;
+            this.logBox.AcceptsTab = true;
+            this.logBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.logBox.ForeColor = System.Drawing.Color.White;
+            this.logBox.Location = new System.Drawing.Point(113, 318);
+            this.logBox.Multiline = true;
+            this.logBox.Name = "logBox";
+            this.logBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.logBox.Size = new System.Drawing.Size(707, 173);
+            this.logBox.TabIndex = 24;
+            this.logBox.Text = "App started\r\n";
             // 
             // PIDTuningForm
             // 
@@ -314,13 +287,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(924, 616);
-            this.Controls.Add(this.ıconButton2);
-            this.Controls.Add(this.ıconButton1);
+            this.Controls.Add(this.logBox);
+            this.Controls.Add(this.queryButton);
+            this.Controls.Add(this.sendButton);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
             this.Name = "PIDTuningForm";
             this.Text = "PIDTuningForm";
             this.Load += new System.EventHandler(this.PIDTuningForm_Load);
@@ -332,12 +302,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox kpBox;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox kiBox;
         private System.Windows.Forms.TextBox kdBox;
         private XComponent.SliderBar.MACTrackBar macTrackBar1;
@@ -346,7 +312,8 @@
         private XComponent.SliderBar.MACTrackBar macTrackBar2;
         private XComponent.SliderBar.MACTrackBar macTrackBar3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private FontAwesome.Sharp.IconButton ıconButton1;
-        private FontAwesome.Sharp.IconButton ıconButton2;
+        private FontAwesome.Sharp.IconButton sendButton;
+        private FontAwesome.Sharp.IconButton queryButton;
+        private System.Windows.Forms.TextBox logBox;
     }
 }

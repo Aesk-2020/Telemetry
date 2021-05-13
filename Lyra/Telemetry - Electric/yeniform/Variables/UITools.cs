@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,6 +44,13 @@ namespace Telemetri.Variables
             public static Label IqLabel;
             public static Label IArmsLabel;
             public static Label TorqueLabel;
+        }
+        public static class PIDForm
+        {
+            public static Button sendButton;
+            public static Button queryButton;
+            public static TextBox logBox;
+            public static ConsoleTextBoxWriter logWriter;
         }
         public static void ChangeUI()
         {
