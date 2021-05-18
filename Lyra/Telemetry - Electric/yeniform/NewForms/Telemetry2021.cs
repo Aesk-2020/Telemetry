@@ -31,6 +31,7 @@ namespace Telemetri.NewForms
             UITools.Telemetry2021.forms.Add("Map", new Map());
             UITools.Telemetry2021.forms.Add("MQTTdeneme", new MQTTdeneme());
             UITools.Telemetry2021.forms.Add("PIDTuningForm", new PIDTuningForm());
+            UITools.Telemetry2021.forms.Add("TestForm", new TestForm());
         }
 
         
@@ -178,6 +179,11 @@ namespace Telemetri.NewForms
         private void pidTuningBtn_Click(object sender, EventArgs e)
         {
             FormManagement.openChildForm(UITools.Telemetry2021.forms["PIDTuningForm"], panelChildForm);
+        }
+
+        private void ıconButton1_Click(object sender, EventArgs e)
+        {
+            FormManagement.openChildForm(UITools.Telemetry2021.forms["TestForm"], panelChildForm);
         }
     }
 }

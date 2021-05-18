@@ -10,6 +10,21 @@ namespace Telemetri.Variables
 {
     public static class UITools
     {
+        public static class TestForms
+        {
+            public static TextBox setTorqueBox;
+            public static TextBox setSpeedBox;
+            public static TextBox setIdBox;
+            public static TextBox setIqBox;
+            public static TextBox actSpeedBox;
+            public static TextBox actIdBox;
+            public static TextBox actIqBox;
+            public static TextBox setDriveModeBox;
+            public static TextBox actDriveModeBox;
+            public static TextBox saturationBox;
+            public static TextBox temperatureBox;
+            public static TextBox mqttBox;
+        }
         public static class Telemetry2021
         {
             public static List<Button> buttonList = new List<Button>();

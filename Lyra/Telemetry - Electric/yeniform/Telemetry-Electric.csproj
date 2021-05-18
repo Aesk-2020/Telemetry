@@ -113,6 +113,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NewForms\TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewForms\TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Variables\AFront.cs" />
     <Compile Include="NewForms\Anasayfa.cs">
       <SubType>Form</SubType>
@@ -177,8 +183,12 @@
     <Compile Include="Variables\BmsUI.cs" />
     <Compile Include="Variables\ComproUI.cs" />
     <Compile Include="Variables\ConsoleTextBoxWriter.cs" />
+    <Compile Include="Variables\DataBMS.cs" />
+    <Compile Include="Variables\DataGPS.cs" />
+    <Compile Include="Variables\DataVCU.cs" />
     <Compile Include="Variables\FormManagement.cs" />
     <Compile Include="Variables\LogSystem.cs" />
+    <Compile Include="Variables\DataMCU.cs" />
     <Compile Include="Variables\myDataGrid.cs" />
     <Compile Include="Variables\EncodePackMethods.cs" />
     <Compile Include="Variables\GMAPController.cs" />
@@ -244,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewForms\Driver_Form.resx">
       <DependentUpon>Driver_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewForms\TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OldForms\BMS_form.resx">
       <DependentUpon>BMS_form.cs</DependentUpon>

@@ -19,16 +19,11 @@ namespace Telemetri.NewForms
         {
             InitializeComponent();
             graphicsButton.Dock = DockStyle.Bottom;
-
-            Label[] labels = { phaseALabel , phaseBLabel, dcBusCurLabel, dcBusVoltLabel,
-                IdLabel, IqLabel, IArmsLabel, TorqueLabel};
             UITools.DriverForm.dcBusCurLabel = dcBusCurLabel;
             UITools.DriverForm.dcBusVoltLabel = dcBusVoltLabel;
             UITools.DriverForm.IArmsLabel = IArmsLabel;
             UITools.DriverForm.IdLabel = IdLabel;
             UITools.DriverForm.IqLabel = IqLabel;
-            UITools.DriverForm.phaseALabel = phaseALabel;
-            UITools.DriverForm.phaseBLabel = phaseBLabel;
             UITools.DriverForm.TorqueLabel = TorqueLabel;
         }
         #region .. Double Buffered function ..
