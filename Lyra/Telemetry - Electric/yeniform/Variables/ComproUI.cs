@@ -188,11 +188,18 @@ namespace Telemetri.Variables
                     case step.CatchMsg:
                         {
                             worked_data.Add(received_data[i]);
-                            this.message[msg_index++] = received_data[i];
-                            if (msg_index >= this.msg_size)
+                            try
                             {
-                                steppo = step.CatchMsgIndexL;
-                                msg_index = 0;
+                                this.message[msg_index++] = received_data[i];
+                                if (msg_index >= this.msg_size)
+                                {
+                                    steppo = step.CatchMsgIndexL;
+                                    msg_index = 0;
+                                }
+                            }
+                            catch (Exception e)
+                            {
+
                             }
                         }
                         break;

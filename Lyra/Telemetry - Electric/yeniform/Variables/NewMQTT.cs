@@ -22,7 +22,6 @@ namespace Telemetri.Variables
         public MqttClient client;
         public bool connected_flag = false;
         int msg_index = 0;
-        public static ComproUI compro = new ComproUI();
         private enum step
         {
             CatchHeader1 = 0,
@@ -102,6 +101,7 @@ namespace Telemetri.Variables
 
         private void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
+            ComproUI compro = new ComproUI();
             compro.ComproUnpack(e.Message);
         }
         
