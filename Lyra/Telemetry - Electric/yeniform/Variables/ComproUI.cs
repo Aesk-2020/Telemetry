@@ -326,9 +326,9 @@ namespace Telemetri.Variables
                         float kd;
                         float ki;
                         kp = BitConverter.ToSingle(receiveBuffer, startIndex); startIndex += 4;
-                        kd = BitConverter.ToSingle(receiveBuffer, startIndex); startIndex += 4;
                         ki = BitConverter.ToSingle(receiveBuffer, startIndex); startIndex += 4;
-                        MessageBox.Show("Kp: " + kp.ToString() + "\n" + "Kd: " + kd.ToString() + "\n" + "Ki: " + ki.ToString() + "\n");
+                        kd = BitConverter.ToSingle(receiveBuffer, startIndex); startIndex += 4;
+                        MessageBox.Show("Kp: " + kp.ToString() + "\n" + "Ki: " + ki.ToString() + "\n" + "Kd: " + kd.ToString() + "\n");
                         break;
                     }
                 default:

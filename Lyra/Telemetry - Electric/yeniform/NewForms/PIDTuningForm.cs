@@ -56,8 +56,8 @@ namespace Telemetri.NewForms
             float kd = float.Parse(kdBox.Text);
             List<byte> newlist = new List<byte>();
             newlist.AddRange(BitConverter.GetBytes(kp));
-            newlist.AddRange(BitConverter.GetBytes(kd));
             newlist.AddRange(BitConverter.GetBytes(ki));
+            newlist.AddRange(BitConverter.GetBytes(kd));
             comproUI.message = newlist.ToArray();
             comproUI.msg_size = (byte)newlist.Count;
             comproUI.msg_index++;
