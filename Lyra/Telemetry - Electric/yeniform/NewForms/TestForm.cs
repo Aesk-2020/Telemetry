@@ -75,6 +75,7 @@ namespace Telemetri.NewForms
             testTimer.Start();
             startSendBtn.Enabled = false;
             stpBtn.Enabled = true;
+            sendOnceBtn.Enabled = false;
         }
 
         private void stpBtn_Click(object sender, EventArgs e)
@@ -82,6 +83,7 @@ namespace Telemetri.NewForms
             testTimer.Stop();
             startSendBtn.Enabled = true;
             stpBtn.Enabled = false;
+            sendOnceBtn.Enabled = true;
         }
 
         private void testTimer_Tick(object sender, EventArgs e)

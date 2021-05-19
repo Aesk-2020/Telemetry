@@ -69,6 +69,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.textBox32 = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.textBox31 = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
@@ -100,9 +102,7 @@
             this.textBox25 = new System.Windows.Forms.TextBox();
             this.stpBtn = new System.Windows.Forms.Button();
             this.sqLiteCommandBuilder1 = new System.Data.SQLite.SQLiteCommandBuilder();
-            this.label32 = new System.Windows.Forms.Label();
-            this.textBox32 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.sendOnceBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.testTimerInterval)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -545,6 +545,24 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "MCU";
             // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label32.Location = new System.Drawing.Point(23, 290);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(36, 16);
+            this.label32.TabIndex = 47;
+            this.label32.Text = "VDC";
+            // 
+            // textBox32
+            // 
+            this.textBox32.Location = new System.Drawing.Point(148, 280);
+            this.textBox32.Name = "textBox32";
+            this.textBox32.Size = new System.Drawing.Size(78, 26);
+            this.textBox32.TabIndex = 48;
+            this.textBox32.Text = "20";
+            // 
             // label31
             // 
             this.label31.AutoSize = true;
@@ -828,33 +846,15 @@
             this.sqLiteCommandBuilder1.DataAdapter = null;
             this.sqLiteCommandBuilder1.QuoteSuffix = "]";
             // 
-            // label32
+            // sendOnceBtn
             // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label32.Location = new System.Drawing.Point(23, 290);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(36, 16);
-            this.label32.TabIndex = 47;
-            this.label32.Text = "VDC";
-            // 
-            // textBox32
-            // 
-            this.textBox32.Location = new System.Drawing.Point(148, 280);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.Size = new System.Drawing.Size(78, 26);
-            this.textBox32.TabIndex = 48;
-            this.textBox32.Text = "20";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(774, 545);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 20);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "SEND ONCE";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.sendOnceBtn.Location = new System.Drawing.Point(774, 545);
+            this.sendOnceBtn.Name = "sendOnceBtn";
+            this.sendOnceBtn.Size = new System.Drawing.Size(89, 20);
+            this.sendOnceBtn.TabIndex = 12;
+            this.sendOnceBtn.Text = "SEND ONCE";
+            this.sendOnceBtn.UseVisualStyleBackColor = true;
+            this.sendOnceBtn.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // TestForm
             // 
@@ -862,7 +862,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(914, 621);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.sendOnceBtn);
             this.Controls.Add(this.stpBtn);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -962,6 +962,6 @@
         private System.Data.SQLite.SQLiteCommandBuilder sqLiteCommandBuilder1;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox textBox32;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button sendOnceBtn;
     }
 }
