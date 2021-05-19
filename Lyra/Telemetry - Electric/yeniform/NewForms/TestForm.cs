@@ -13,15 +13,45 @@ namespace Telemetri.NewForms
 {
     public partial class TestForm : Form
     {
+        ComproUI comproo;
+        public List<byte> buffer = new List<byte>();
         public TestForm()
         {
             InitializeComponent();
+            comproo = new ComproUI(0x31, ComproUI.UI, 23);
         }
-        public List<byte> buffer = new List<byte>();
+
+        #region .. Double Buffered function ..
+        public static void SetDoubleBuffered(System.Windows.Forms.Control c)
+        {
+            if (System.Windows.Forms.SystemInformation.TerminalServerSession)
+                return;
+            System.Reflection.PropertyInfo aProp = typeof(System.Windows.Forms.Control).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            aProp.SetValue(c, true, null);
+        }
+        #endregion
+
+        #region .. code for Flucuring ..
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+
+        #endregion
 
         private void TestForm_Load(object sender, EventArgs e)
         {
-
+            #region doubleBuffer
+            SetDoubleBuffered(groupBox1);
+            SetDoubleBuffered(groupBox2);
+            SetDoubleBuffered(groupBox3);
+            SetDoubleBuffered(groupBox4);
+            #endregion
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -42,18 +72,26 @@ namespace Telemetri.NewForms
         private void startSendBtn_Click(object sender, EventArgs e)
         {
             testTimer.Interval = (int)testTimerInterval.Value;
-            CreatePack();
             testTimer.Start();
+            startSendBtn.Enabled = false;
+            stpBtn.Enabled = true;
         }
 
         private void stpBtn_Click(object sender, EventArgs e)
         {
             testTimer.Stop();
+            startSendBtn.Enabled = true;
+            stpBtn.Enabled = false;
         }
 
         private void testTimer_Tick(object sender, EventArgs e)
         {
-            Anasayfa.mqttobj.client.Publish("interface_to_vehicle", buffer.ToArray());
+            CreatePack();
+            comproo.message = buffer.ToArray();
+            comproo.msg_size = (byte)buffer.Count;
+            comproo.CreateBuffer();
+            comproo.msg_index++;
+            Anasayfa.mqttobj.client.Publish("vehicle_to_interface", comproo.buffer);
             buffer.Clear();
         }
         private void CreatePack()
@@ -73,18 +111,19 @@ namespace Telemetri.NewForms
             buffer.Add(torque_limit); //torque limit
 
             //MCU
-            UInt16 ID_Actual        = Convert.ToUInt16(textBox18.Text);
-            UInt16 IQ_Actual        = Convert.ToUInt16(textBox17.Text);
-            UInt16 VD_Actual        = Convert.ToUInt16(textBox16.Text);
-            UInt16 Vq_Actual        = Convert.ToUInt16(textBox15.Text);
-            UInt16 ID_Set           = Convert.ToUInt16(textBox14.Text);
-            UInt16 IQ_Set           = Convert.ToUInt16(textBox13.Text);
-            UInt16 Set_Torque       = Convert.ToUInt16(textBox26.Text);
-            UInt16 IDC              = Convert.ToUInt16(textBox27.Text);
-            UInt16 Actual_Speed     = Convert.ToUInt16(textBox28.Text);
-            UInt16 Error_Status     = Convert.ToUInt16(textBox30.Text);
-            byte Motor_Temp         = Convert.ToByte(textBox29);
-            byte Actual_Torque      = Convert.ToByte(textBox31);
+            UInt16 ID_Actual        = (UInt16)(Convert.ToUInt16(textBox18.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 IQ_Actual        = (UInt16)(Convert.ToUInt16(textBox17.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 VD_Actual        = (UInt16)(Convert.ToUInt16(textBox16.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 Vq_Actual        = (UInt16)(Convert.ToUInt16(textBox15.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 ID_Set           = (UInt16)(Convert.ToUInt16(textBox14.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 IQ_Set           = (UInt16)(Convert.ToUInt16(textBox13.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 Set_Torque       = (UInt16)(Convert.ToUInt16(textBox26.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 IDC              = (UInt16)(Convert.ToUInt16(textBox27.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 VDC              = (UInt16)(Convert.ToUInt16(textBox32.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 Actual_Speed     = (UInt16)(Convert.ToUInt16(textBox28.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 Error_Status     = Convert.ToUInt16(textBox29.Text);
+            byte Motor_Temp         = Convert.ToByte(textBox30.Text);
+            byte Actual_Torque      = Convert.ToByte(textBox31.Text);
 
 
             buffer.AddRange(BitConverter.GetBytes(ID_Actual)); //ID_Act
@@ -95,13 +134,13 @@ namespace Telemetri.NewForms
             buffer.AddRange(BitConverter.GetBytes(IQ_Set)); //IQ_Set
             buffer.AddRange(BitConverter.GetBytes(Set_Torque)); //Set_torque
             buffer.AddRange(BitConverter.GetBytes(IDC)); //IDC
+            buffer.AddRange(BitConverter.GetBytes(VDC)); //IDC
             buffer.AddRange(BitConverter.GetBytes(Actual_Speed)); //Act_speed
             buffer.Add(Motor_Temp); //Motor_temp
             buffer.AddRange(BitConverter.GetBytes(Error_Status)); //Error_status
             buffer.Add(Actual_Torque); //Act_torque
 
             //BMS
-
             UInt16 Bat_Volt             = (UInt16)(Convert.ToSingle(textBox12.Text) * MACROS.FLOAT_CONVERTER_2);
             UInt16 Bat_Cur              = (UInt16)(Convert.ToSingle(textBox11.Text) * MACROS.FLOAT_CONVERTER_2);
             UInt16 Bat_cons             = (UInt16)(Convert.ToSingle(textBox10.Text) * MACROS.FLOAT_CONVERTER_1);
@@ -123,11 +162,11 @@ namespace Telemetri.NewForms
             buffer.Add(Temperature); //Temperature
 
             //GPS
-            UInt32 latitude_u32         = (UInt16)(Convert.ToSingle(textBox25.Text) * MACROS.GPS_DIVIDER);
-            UInt32 longtitude_u32       = (UInt16)(Convert.ToSingle(textBox24.Text) * MACROS.GPS_DIVIDER);
-            byte gps_speed              = Convert.ToByte(textBox21);
-            byte gps_satellite_num      = Convert.ToByte(textBox22);
-            byte gps_efficiency         = Convert.ToByte(textBox23);
+            UInt32 latitude_u32         = (UInt32)(Convert.ToSingle(textBox25.Text) * MACROS.GPS_DIVIDER);
+            UInt32 longtitude_u32       = (UInt32)(Convert.ToSingle(textBox24.Text) * MACROS.GPS_DIVIDER);
+            byte gps_speed              = Convert.ToByte(textBox21.Text);
+            byte gps_satellite_num      = Convert.ToByte(textBox22.Text);
+            byte gps_efficiency         = Convert.ToByte(textBox23.Text);
 
             buffer.AddRange(BitConverter.GetBytes(latitude_u32));   //Lattitude
             buffer.AddRange(BitConverter.GetBytes(longtitude_u32)); //Longtitude
@@ -146,11 +185,26 @@ namespace Telemetri.NewForms
             }
 
             //CELL TEMPS
-            for (int i = 0; i < 28; i++)
+            for (int i = 0; i < 7; i++)
             {
                 buffer.Add(33); //Cell_Temp[i]
             }
+            for (int i = 0; i < 28; i++)
+            {
+                buffer.Add(84); // Cell_SoC[i]
+            }
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            CreatePack();
+            comproo.message = buffer.ToArray();
+            comproo.msg_size = (byte)buffer.Count;
+            comproo.CreateBuffer();
+            comproo.msg_index++;
+            Anasayfa.mqttobj.client.Publish("vehicle_to_interface", comproo.buffer);
+            buffer.Clear();
         }
     }
 }

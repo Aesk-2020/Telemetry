@@ -8,12 +8,12 @@ namespace Telemetri.Variables
 {
     public static class DataVCU
     {
-        public static char  drive_commands_u8;
+        public static byte  drive_commands_u8;
         public static short speed_set_rpm_s16;
-        public static char  torque_set_u8;
+        public static byte torque_set_u8;
         public static ushort speed_limit_u16;
-        public static char  torque_limit_u8;
-        public static char  can_error_u8;
+        public static byte torque_limit_u8;
+        public static byte can_error_u8;
         public static byte drive_mode_u3    => Convert.ToByte(drive_commands_u8 & 0b00000011);
         /*
          * Set Drive Mode

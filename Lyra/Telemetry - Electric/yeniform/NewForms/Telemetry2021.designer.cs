@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Telemetry2021));
             this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.ıconButton1 = new FontAwesome.Sharp.IconButton();
             this.mqttButton = new FontAwesome.Sharp.IconButton();
             this.settingsButton = new System.Windows.Forms.Button();
             this.pidTuningBtn = new FontAwesome.Sharp.IconButton();
@@ -65,7 +66,6 @@
             this.logSpeedDownBtn = new System.Windows.Forms.Button();
             this.log10secRewBtn = new System.Windows.Forms.Button();
             this.pauseResume = new System.Windows.Forms.ImageList(this.components);
-            this.ıconButton1 = new FontAwesome.Sharp.IconButton();
             this.panelSideMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -98,6 +98,28 @@
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(250, 761);
             this.panelSideMenu.TabIndex = 1;
+            // 
+            // ıconButton1
+            // 
+            this.ıconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.ıconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ıconButton1.FlatAppearance.BorderSize = 0;
+            this.ıconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.ıconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ıconButton1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ıconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.ıconButton1.IconChar = FontAwesome.Sharp.IconChar.Running;
+            this.ıconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.ıconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ıconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ıconButton1.Location = new System.Drawing.Point(0, 430);
+            this.ıconButton1.Name = "ıconButton1";
+            this.ıconButton1.Size = new System.Drawing.Size(250, 48);
+            this.ıconButton1.TabIndex = 11;
+            this.ıconButton1.Text = "Test";
+            this.ıconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ıconButton1.UseVisualStyleBackColor = false;
+            this.ıconButton1.Click += new System.EventHandler(this.ıconButton1_Click);
             // 
             // mqttButton
             // 
@@ -665,28 +687,6 @@
             this.pauseResume.TransparentColor = System.Drawing.Color.Transparent;
             this.pauseResume.Images.SetKeyName(0, "icons8_pause_button_50px.png");
             this.pauseResume.Images.SetKeyName(1, "icons8_play_button_circled_50px_1.png");
-            // 
-            // ıconButton1
-            // 
-            this.ıconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.ıconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ıconButton1.FlatAppearance.BorderSize = 0;
-            this.ıconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.ıconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ıconButton1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ıconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.ıconButton1.IconChar = FontAwesome.Sharp.IconChar.Running;
-            this.ıconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.ıconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ıconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ıconButton1.Location = new System.Drawing.Point(0, 430);
-            this.ıconButton1.Name = "ıconButton1";
-            this.ıconButton1.Size = new System.Drawing.Size(250, 48);
-            this.ıconButton1.TabIndex = 11;
-            this.ıconButton1.Text = "Test";
-            this.ıconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ıconButton1.UseVisualStyleBackColor = false;
-            this.ıconButton1.Click += new System.EventHandler(this.ıconButton1_Click);
             // 
             // Telemetry2021
             // 

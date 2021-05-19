@@ -65,7 +65,6 @@ namespace Telemetri.Variables
                         connected_flag = true;
                         UITools.PIDForm.queryButton.Enabled = true;
                         UITools.PIDForm.sendButton.Enabled = true;
-                        UITools.TestForms.mqttBox.BackColor = Color.LimeGreen;
                     }
                     catch (Exception exce)
                     {

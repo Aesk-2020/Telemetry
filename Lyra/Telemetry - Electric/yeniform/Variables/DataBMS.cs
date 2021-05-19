@@ -13,15 +13,15 @@ namespace Telemetri.Variables
         public static float cons_u16;               // uint16 / 10
         public static float soc_u16;                // uint16 / 100
         public static float worst_cell_volt_u16;    // uint16 / 100
-        public static char error_u8;                // uint8
-        public static char dc_bus_state_u8;         // uint8
-        public static char worst_cell_address_u8;   // uint8
-        public static char temperature_u8;          // uint8
+        public static byte error_u8;                // uint8
+        public static byte dc_bus_state_u8;         // uint8
+        public static byte worst_cell_address_u8;   // uint8
+        public static byte temperature_u8;          // uint8
         public class Cell
         {
-            public char voltage_u8;
-            public char soc_u8;
-            public char temperature_u8;
+            public byte voltage_u8;
+            public byte soc_u8;
+            public byte temperature_u8;
         }
         public static List<Cell> cells = new List<Cell>(28);
 

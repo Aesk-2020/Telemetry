@@ -34,7 +34,39 @@ namespace Telemetri.NewForms
             UITools.Telemetry2021.forms.Add("TestForm", new TestForm());
         }
 
-        
+        #region .. Double Buffered function ..
+        public static void SetDoubleBuffered(System.Windows.Forms.Control c)
+        {
+            if (System.Windows.Forms.SystemInformation.TerminalServerSession)
+                return;
+            System.Reflection.PropertyInfo aProp = typeof(System.Windows.Forms.Control).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            aProp.SetValue(c, true, null);
+        }
+        #endregion
+
+        #region .. code for Flucuring ..
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+
+        #endregion
+        private void Telemetry2021_Load(object sender, EventArgs e)
+        {
+            #region doubleBuffer
+            SetDoubleBuffered(tableLayoutPanel1);
+            SetDoubleBuffered(tableLayoutPanel2);
+            SetDoubleBuffered(tableLayoutPanel3);
+            SetDoubleBuffered(tableLayoutPanel4);
+            SetDoubleBuffered(tableLayoutPanel5);
+            #endregion
+        }
+
 
         private void LogPlayTimer_Tick(object sender, EventArgs e)
         {
@@ -71,9 +103,7 @@ namespace Telemetri.NewForms
 
         }
 
-        private void Telemetry2021_Load(object sender, EventArgs e)
-        {
-        }
+        
 
         private void mqttButton_Click(object sender, EventArgs e)
         {

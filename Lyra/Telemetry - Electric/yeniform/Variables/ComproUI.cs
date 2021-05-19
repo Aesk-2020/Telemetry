@@ -250,12 +250,12 @@ namespace Telemetri.Variables
                 case MSG_ID.UI_PACK:
                     {
                         //VCU
-                        int startIndex = 0;
-                        DataVCU.drive_commands_u8       = BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        int startIndex = 7;
+                        DataVCU.drive_commands_u8       = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
                         DataVCU.speed_set_rpm_s16       = BitConverter.ToInt16(receiveBuffer, startIndex); startIndex += 2;
-                        DataVCU.torque_set_u8           = BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataVCU.torque_set_u8           = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
                         DataVCU.speed_limit_u16         = BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
-                        DataVCU.torque_limit_u8         = BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataVCU.torque_limit_u8         = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
 
                         //MCU
                         DataMCU.act_id_current_s16      = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
@@ -268,7 +268,7 @@ namespace Telemetri.Variables
                         DataMCU.i_dc_s16                = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
                         DataMCU.v_dc_s16                = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
                         DataMCU.act_speed_s16           = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
-                        DataMCU.temperature_u8          = BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataMCU.temperature_u8          = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
                         DataMCU.error_status_u16        = BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
                         DataMCU.act_torque_s8           = (sbyte)receiveBuffer[startIndex++]; DataMCU.act_torque_s8 -= 100;
 
@@ -278,43 +278,45 @@ namespace Telemetri.Variables
                         DataBMS.cons_u16                = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 10; startIndex += 2;
                         DataBMS.soc_u16                 = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
                         DataBMS.worst_cell_volt_u16     = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 10; startIndex += 2;
-                        DataBMS.error_u8                = BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
-                        DataBMS.dc_bus_state_u8         = BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
-                        DataBMS.worst_cell_address_u8   = BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
-                        DataBMS.temperature_u8          = BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataBMS.error_u8                = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataBMS.dc_bus_state_u8         = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataBMS.worst_cell_address_u8   = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataBMS.temperature_u8          = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
 
                         //GPS
-                        DataGPS.latitude_f32            = BitConverter.ToUInt64(receiveBuffer, startIndex); startIndex += 4;
-                        DataGPS.longtitude_f32          = BitConverter.ToUInt64(receiveBuffer, startIndex); startIndex += 4;
-                        DataGPS.speed_u8                = BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
-                        DataGPS.sattelite_u8            = BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
-                        DataGPS.efficiency_u8           = BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataGPS.latitude_f32            = BitConverter.ToUInt32(receiveBuffer, startIndex) / MACROS.GPS_DIVIDER; startIndex += 4;
+                        DataGPS.longtitude_f32          = BitConverter.ToUInt32(receiveBuffer, startIndex) / MACROS.GPS_DIVIDER; startIndex += 4;
+                        DataGPS.speed_u8                = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataGPS.sattelite_u8            = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataGPS.efficiency_u8           = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
 
                         //CAN Error
-                        DataVCU.can_error_u8            = BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataVCU.can_error_u8            = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
 
                         //Cells
-                        for (int i = 0; i < DataBMS.cells.Count; i++)
+                        for (int i = 0; i < 28; i++)
                         {
-                            DataBMS.cells[i].voltage_u8 = BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                            DataBMS.Cell cell = new DataBMS.Cell();
+                            cell.voltage_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                            DataBMS.cells.Add(cell);
                         }
                         List<char> temps = new List<char>();
                         int count = 0;
                         for (int i = 0; i < 7; i++) // Total temperature sensor count. 
                         {
-                            temps[i] = BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                            temps.Add(BitConverter.ToChar(receiveBuffer, startIndex)); startIndex++;
                         }
-                        for (int i = 0; i < DataBMS.cells.Count; i++) 
+                        for (int i = 0; i < 28; i++) 
                         {
-                            DataBMS.cells[i].temperature_u8 = temps[count++];
+                            DataBMS.cells[i].temperature_u8 = (byte)temps[count++];
                             if(count == 4)
                             {
                                 count = 0;
                             }
                         }
-                        for (int i = 0; i < DataBMS.cells.Count; i++)
+                        for (int i = 0; i < 28; i++)
                         {
-                            DataBMS.cells[i].soc_u8 = BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                            DataBMS.cells[i].soc_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
                         }
 
                         break;
