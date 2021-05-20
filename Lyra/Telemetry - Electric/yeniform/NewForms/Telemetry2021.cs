@@ -209,6 +209,7 @@ namespace Telemetri.NewForms
         private void Telemetry2021_FormClosing(object sender, FormClosingEventArgs e)
         {
             AFront.AccessFront -= UITools.ChangeUI;
+            Anasayfa.mqttobj.Disconnect();
         }
     }
 }

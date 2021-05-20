@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telemetri.NewForms;
 
 namespace Telemetri.Variables
 {
@@ -232,6 +233,8 @@ namespace Telemetri.Variables
                             {
                                 //BURAYA İNDEX EKLENECEK
                                 dataConvertCompro(worked_data.ToArray(), this.source_msg_id);
+                                AFront.ChangeUI();
+                                
                             }
                             steppo = step.CatchHeader1;
 

@@ -92,49 +92,50 @@ namespace Telemetri.Variables
             Anasayfa.setVelocityLabel.Text = VCU.set_velocity_u8.ToString();        //DEĞİŞECEK
             Anasayfa.socLabel.Text = "%" + DataBMS.soc_u16.ToString();              
 
-            if(BMSForm.consTextBox != null)
-            {
-                BMSForm.consTextBox.Text = DataBMS.cons_u16.ToString();
-                BMSForm.curTextBox.Text = DataBMS.cur_s16.ToString();
-                BMSForm.socTextBox.Text = "%" + DataBMS.soc_u16.ToString();
-                BMSForm.tempTextBox.Text = DataBMS.temperature_u8.ToString();
-                BMSForm.voltageTextBox.Text = DataBMS.volt_u16.ToString();
-            }
+            BMSForm.consTextBox.Text = DataBMS.cons_u16.ToString();
+            BMSForm.curTextBox.Text = DataBMS.cur_s16.ToString();
+            BMSForm.socTextBox.Text = "%" + DataBMS.soc_u16.ToString();
+            BMSForm.tempTextBox.Text = DataBMS.temperature_u8.ToString();
+            BMSForm.voltageTextBox.Text = DataBMS.volt_u16.ToString();
 
-            if(DriverForm.dcBusCurLabel != null)
+            if(DataMCU.free_wheeling_status == true)
             {
-                if(DataMCU.free_wheeling_status == true)
-                {
-                    DriverForm.actualStatusLabel.Text = "NO SWITCHING";
-                }
-                else
-                {
-                    DriverForm.actualStatusLabel.Text = DataMCU.torque_mode ? "TORQUE MODE": "SPEED MODE";
-                }
-                DriverForm.actIdLabel.Text = DataMCU.act_id_current_s16.ToString();
-                DriverForm.actIqLabel.Text = DataMCU.act_iq_current_s16.ToString();
-                DriverForm.actTorqueLabel.Text = DataMCU.act_torque_s8.ToString();
-                DriverForm.setIdLabel.Text = DataMCU.set_id_current_s16.ToString();
-                DriverForm.setIqLabel.Text = DataMCU.set_iq_current_s16.ToString();
-                DriverForm.setTorqueLabel.Text = DataMCU.set_torque_s16.ToString();
-                DriverForm.vdLabel.Text = DataMCU.vd_s16.ToString();
-                DriverForm.vqLabel.Text = DataMCU.vq_s16.ToString();
-                DriverForm.dcBusCurLabel.Text = DataMCU.i_dc_s16.ToString();
-                DriverForm.dcBusVoltLabel.Text = DataMCU.v_dc_s16.ToString();
-
-                DriverForm.ISCFFlagBox.BackColor = DataMCU.input_scaling_calib_finished ? Color.LimeGreen : MACROS.UInewBack;
-                DriverForm.overcurIABox.BackColor = DataMCU.over_cur_IA ? Color.LimeGreen : MACROS.UInewBack;
-                DriverForm.overcurIBBox.BackColor = DataMCU.over_cur_IB ? Color.LimeGreen : MACROS.UInewBack;
-                DriverForm.overcurICBox.BackColor = DataMCU.over_cur_IC ? Color.LimeGreen : MACROS.UInewBack;
-                DriverForm.overcurIDCBox.BackColor = DataMCU.over_cur_IDC ? Color.LimeGreen : MACROS.UInewBack;
-                DriverForm.overvoltVDCBox.BackColor = DataMCU.over_volt_VDC ? Color.LimeGreen : MACROS.UInewBack;
-                DriverForm.overtempBox.BackColor = DataMCU.over_temp ? Color.LimeGreen : MACROS.UInewBack;
-                DriverForm.overspeedBox.BackColor = DataMCU.over_speed ? Color.LimeGreen : MACROS.UInewBack;
-                DriverForm.undercurIDCBox.BackColor = DataMCU.under_cur_IDC ? Color.LimeGreen : MACROS.UInewBack;
-                DriverForm.undervoltVDCBox.BackColor = DataMCU.under_volt_VDC ? Color.LimeGreen : MACROS.UInewBack;
-                DriverForm.underspeedBox.BackColor = DataMCU.under_speed ? Color.LimeGreen : MACROS.UInewBack;
-                DriverForm.pwmEnabledBox.BackColor = DataMCU.PWM_enabled ? Color.LimeGreen : MACROS.UInewBack;
+                DriverForm.actualStatusLabel.Text = "NO SWITCHING";
             }
+            else
+            {
+                DriverForm.actualStatusLabel.Text = DataMCU.torque_mode ? "TORQUE MODE": "SPEED MODE";
+            }
+            DriverForm.actIdLabel.Text = DataMCU.act_id_current_s16.ToString();
+            DriverForm.actIqLabel.Text = DataMCU.act_iq_current_s16.ToString();
+            DriverForm.actTorqueLabel.Text = DataMCU.act_torque_s8.ToString();
+            DriverForm.setIdLabel.Text = DataMCU.set_id_current_s16.ToString();
+            DriverForm.setIqLabel.Text = DataMCU.set_iq_current_s16.ToString();
+            DriverForm.setTorqueLabel.Text = DataMCU.set_torque_s16.ToString();
+            DriverForm.vdLabel.Text = DataMCU.vd_s16.ToString();
+            DriverForm.vqLabel.Text = DataMCU.vq_s16.ToString();
+            DriverForm.dcBusCurLabel.Text = DataMCU.i_dc_s16.ToString();
+            DriverForm.dcBusVoltLabel.Text = DataMCU.v_dc_s16.ToString();
+
+            DriverForm.ISCFFlagBox.BackColor = DataMCU.input_scaling_calib_finished ? Color.LimeGreen : MACROS.UInewBack;
+            DriverForm.overcurIABox.BackColor = DataMCU.over_cur_IA ? Color.LimeGreen : MACROS.UInewBack;
+            DriverForm.overcurIBBox.BackColor = DataMCU.over_cur_IB ? Color.LimeGreen : MACROS.UInewBack;
+            DriverForm.overcurICBox.BackColor = DataMCU.over_cur_IC ? Color.LimeGreen : MACROS.UInewBack;
+            DriverForm.overcurIDCBox.BackColor = DataMCU.over_cur_IDC ? Color.LimeGreen : MACROS.UInewBack;
+            DriverForm.overvoltVDCBox.BackColor = DataMCU.over_volt_VDC ? Color.LimeGreen : MACROS.UInewBack;
+            DriverForm.overtempBox.BackColor = DataMCU.over_temp ? Color.LimeGreen : MACROS.UInewBack;
+            DriverForm.overspeedBox.BackColor = DataMCU.over_speed ? Color.LimeGreen : MACROS.UInewBack;
+            DriverForm.undercurIDCBox.BackColor = DataMCU.under_cur_IDC ? Color.LimeGreen : MACROS.UInewBack;
+            DriverForm.undervoltVDCBox.BackColor = DataMCU.under_volt_VDC ? Color.LimeGreen : MACROS.UInewBack;
+            DriverForm.underspeedBox.BackColor = DataMCU.under_speed ? Color.LimeGreen : MACROS.UInewBack;
+            DriverForm.pwmEnabledBox.BackColor = DataMCU.PWM_enabled ? Color.LimeGreen : MACROS.UInewBack;
+
+            foreach (var item in NewForms.Graphics.graphicsList)
+            {
+                item.changeGraph(NewForms.Graphics.graphTime);
+            }
+            NewForms.Graphics.graphTime++;
+
         }
     }
 }

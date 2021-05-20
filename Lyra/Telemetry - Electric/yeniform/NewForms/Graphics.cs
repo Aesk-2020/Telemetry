@@ -184,6 +184,14 @@ namespace Telemetri.NewForms
             Graphics.graphicsList.Last().Show();
         }
 
-      
+        private void Graphics_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            foreach (var item in Graphics.graphicsList.Where(i => i.graphType == this.graphType).ToList())
+            {
+                item.Close();
+            }
+            Graphics.graphicsList.RemoveAll(i => i.graphType == this.graphType);
+            Graphics.oldGraph = null;
+        }
     }
 }

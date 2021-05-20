@@ -110,7 +110,6 @@ namespace Telemetri.NewForms
 
         private void mqttConnectBtn_Click(object sender, EventArgs e)
         {
-            AFront.AccessFront += UITools.ChangeUI;
             mqttWorker.RunWorkerAsync();
         }
 
@@ -175,6 +174,7 @@ namespace Telemetri.NewForms
                 mqttConnectBtn.Enabled = false;
                 startLogBtn.Enabled = true;
                 portConnectBtn.Enabled = false;
+                AFront.AccessFront += UITools.ChangeUI;
             }
         }
 

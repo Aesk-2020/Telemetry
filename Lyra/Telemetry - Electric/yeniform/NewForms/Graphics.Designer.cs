@@ -139,6 +139,7 @@
             this.Controls.Add(this.myChart);
             this.Name = "Graphics";
             this.Text = "Graphics";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Graphics_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.myChart)).EndInit();
             this.ResumeLayout(false);
 

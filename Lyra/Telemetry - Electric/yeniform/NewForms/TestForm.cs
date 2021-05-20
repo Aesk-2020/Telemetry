@@ -113,7 +113,8 @@ namespace Telemetri.NewForms
             buffer.Add(torque_limit); //torque limit
 
             //MCU
-            UInt16 ID_Actual        = (UInt16)(Convert.ToUInt16(textBox18.Text) * MACROS.FLOAT_CONVERTER_2);
+            //UInt16 ID_Actual        = (UInt16)(Convert.ToUInt16(textBox18.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 ID_Actual        = (UInt16)(float.Parse(textBox18.Text) * MACROS.FLOAT_CONVERTER_2);
             UInt16 IQ_Actual        = (UInt16)(Convert.ToUInt16(textBox17.Text) * MACROS.FLOAT_CONVERTER_2);
             UInt16 VD_Actual        = (UInt16)(Convert.ToUInt16(textBox16.Text) * MACROS.FLOAT_CONVERTER_2);
             UInt16 Vq_Actual        = (UInt16)(Convert.ToUInt16(textBox15.Text) * MACROS.FLOAT_CONVERTER_2);
