@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telemetri.NewForms;
 
 namespace Telemetri.Variables
 {
@@ -75,26 +76,26 @@ namespace Telemetri.Variables
             Anasayfa.setVelocityLabel.Text = VCU.set_velocity_u8.ToString();
             Anasayfa.socLabel.Text = "%" + BMS.soc_f32.ToString();
 
-            if(BMSForm.consTextBox != null)
-            {
-                BMSForm.consTextBox.Text = BMS.bat_cons_f32.ToString();
-                BMSForm.curTextBox.Text = BMS.bat_current_f32.ToString();
-                BMSForm.socTextBox.Text = "%" + BMS.soc_f32.ToString();
-                BMSForm.tempTextBox.Text = BMS.temp_u8.ToString();
-                BMSForm.voltageTextBox.Text = BMS.bat_volt_f32.ToString();
-            }
+            BMSForm.consTextBox.Text = BMS.bat_cons_f32.ToString();
+            BMSForm.curTextBox.Text = BMS.bat_current_f32.ToString();
+            BMSForm.socTextBox.Text = "%" + BMS.soc_f32.ToString();
+            BMSForm.tempTextBox.Text = BMS.temp_u8.ToString();
+            BMSForm.voltageTextBox.Text = BMS.bat_volt_f32.ToString();
+           
+            DriverForm.dcBusCurLabel.Text = Driver.dc_bus_current_f32.ToString();
+            DriverForm.dcBusVoltLabel.Text = Driver.dc_bus_voltage_f32.ToString();
+            DriverForm.IArmsLabel.Text = Driver.IArms_f32.ToString();
+            DriverForm.IdLabel.Text = Driver.id_f32.ToString();
+            DriverForm.IqLabel.Text = Driver.iq_f32.ToString();
+            DriverForm.phaseALabel.Text = Driver.phase_a_current_f32.ToString();
+            DriverForm.phaseBLabel.Text = Driver.phase_b_current_f32.ToString();
+            DriverForm.TorqueLabel.Text = Driver.Torque_f32.ToString();
 
-            if(DriverForm.dcBusCurLabel != null)
+            foreach (var item in Graphics.graphicsList)
             {
-                DriverForm.dcBusCurLabel.Text = Driver.dc_bus_current_f32.ToString();
-                DriverForm.dcBusVoltLabel.Text = Driver.dc_bus_voltage_f32.ToString();
-                DriverForm.IArmsLabel.Text = Driver.IArms_f32.ToString();
-                DriverForm.IdLabel.Text = Driver.id_f32.ToString();
-                DriverForm.IqLabel.Text = Driver.iq_f32.ToString();
-                DriverForm.phaseALabel.Text = Driver.phase_a_current_f32.ToString();
-                DriverForm.phaseBLabel.Text = Driver.phase_b_current_f32.ToString();
-                DriverForm.TorqueLabel.Text = Driver.Torque_f32.ToString();
+                item.changeGraph(Graphics.graphTime);
             }
+            Graphics.graphTime++;
         }
     }
 }

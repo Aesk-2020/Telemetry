@@ -700,6 +700,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Telemetry2021";
             this.Text = "AESK Telemetry 2021";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Telemetry2021_FormClosing);
             this.Load += new System.EventHandler(this.Telemetry2021_Load);
             this.panelSideMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
