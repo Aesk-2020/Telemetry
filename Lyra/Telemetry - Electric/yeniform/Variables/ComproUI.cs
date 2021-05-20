@@ -197,9 +197,9 @@ namespace Telemetri.Variables
                                     msg_index = 0;
                                 }
                             }
-                            catch (Exception e)
+                            catch (Exception)
                             {
-
+                                
                             }
                         }
                         break;

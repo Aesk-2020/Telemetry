@@ -19,12 +19,31 @@ namespace Telemetri.NewForms
         {
             InitializeComponent();
             graphicsButton.Dock = DockStyle.Bottom;
-            UITools.DriverForm.dcBusCurLabel = dcBusCurLabel;
-            UITools.DriverForm.dcBusVoltLabel = dcBusVoltLabel;
-            UITools.DriverForm.IArmsLabel = IArmsLabel;
-            UITools.DriverForm.IdLabel = IdLabel;
-            UITools.DriverForm.IqLabel = IqLabel;
-            UITools.DriverForm.TorqueLabel = TorqueLabel;
+            UITools.DriverForm.dcBusCurLabel        = dcBusCurLabel;
+            UITools.DriverForm.dcBusVoltLabel       = dcBusVoltLabel;
+            UITools.DriverForm.actIdLabel           = actIDLabel;
+            UITools.DriverForm.actIqLabel           = actIQLabel;
+            UITools.DriverForm.setIdLabel           = setIDLabel;
+            UITools.DriverForm.setIqLabel           = setIQLabel;
+            UITools.DriverForm.vdLabel              = vdLabel;
+            UITools.DriverForm.vqLabel              = vqLabel;
+            UITools.DriverForm.setTorqueLabel       = setTorqueLabel;
+            UITools.DriverForm.actTorqueLabel       = actTorqueLabel;
+            UITools.DriverForm.overcurIABox         = overCurABox;
+            UITools.DriverForm.overcurIBBox         = overCurBBox;
+            UITools.DriverForm.overcurICBox         = overCurCBox;
+            UITools.DriverForm.overcurIDCBox        = overCurIDCBox;
+            UITools.DriverForm.undercurIDCBox       = underCurIDCBox;
+            UITools.DriverForm.undervoltVDCBox      = undervoltVDCBox;
+            UITools.DriverForm.overvoltVDCBox       = overVoltVDCBox;
+            UITools.DriverForm.underspeedBox        = underspeedBox;
+            UITools.DriverForm.overspeedBox         = overspeedBox;
+            UITools.DriverForm.overtempBox          = overtempBox;
+            UITools.DriverForm.ISCFFlagBox          = ISCFFlagBox;
+            UITools.DriverForm.pwmEnabledBox        = pwmEnabledBox;
+            UITools.DriverForm.actualStatusLabel    = actualStatusLabel;
+            UITools.DriverForm.errorsLabel          = errorsLabel;
+
         }
         #region .. Double Buffered function ..
         public static void SetDoubleBuffered(System.Windows.Forms.Control c)

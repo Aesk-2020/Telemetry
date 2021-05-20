@@ -30,6 +30,7 @@ namespace Telemetri.Variables
         public const uint RFBufferLength = 55;
         public const byte RFBufferHeader = 0x69;
         public static Color AeskBlue = Color.FromArgb(47, 136, 202);
+        public static Color UInewBack = Color.FromArgb(32, 30, 45);
         public const int FLOAT_CONVERTER_1 = 10;
         public const int FLOAT_CONVERTER_2 = 100;
         public const int FLOAT_CONVERTER_3 = 1000;

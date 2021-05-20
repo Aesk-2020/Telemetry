@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -51,14 +52,30 @@ namespace Telemetri.Variables
         }
         public static class DriverForm
         {
-            public static Label phaseALabel;
-            public static Label phaseBLabel;
             public static Label dcBusVoltLabel;
             public static Label dcBusCurLabel;
-            public static Label IdLabel;
-            public static Label IqLabel;
-            public static Label IArmsLabel;
-            public static Label TorqueLabel;
+            public static Label actIdLabel;
+            public static Label actIqLabel;
+            public static Label setIqLabel;
+            public static Label setIdLabel;
+            public static Label setTorqueLabel;
+            public static Label actTorqueLabel;
+            public static Label vdLabel;
+            public static Label vqLabel;
+            public static PictureBox overcurIABox;
+            public static PictureBox overcurIBBox;
+            public static PictureBox overcurICBox;
+            public static PictureBox overcurIDCBox;
+            public static PictureBox undercurIDCBox;
+            public static PictureBox undervoltVDCBox;
+            public static PictureBox overvoltVDCBox;
+            public static PictureBox underspeedBox;
+            public static PictureBox overspeedBox;
+            public static PictureBox overtempBox;
+            public static PictureBox ISCFFlagBox;
+            public static PictureBox pwmEnabledBox;
+            public static Label actualStatusLabel;
+            public static Label errorsLabel;
         }
         public static class PIDForm
         {
@@ -69,31 +86,54 @@ namespace Telemetri.Variables
         }
         public static void ChangeUI()
         {
-            Anasayfa.actVelocityLabel.Text = Driver.actual_velocity_u8.ToString();
-            Anasayfa.batConsLabel.Text = BMS.bat_cons_f32.ToString();
-            Anasayfa.batCurLabel.Text = BMS.bat_current_f32.ToString();
-            Anasayfa.setVelocityLabel.Text = VCU.set_velocity_u8.ToString();
-            Anasayfa.socLabel.Text = "%" + BMS.soc_f32.ToString();
+            Anasayfa.actVelocityLabel.Text = Driver.actual_velocity_u8.ToString();  //DEĞİŞECEK
+            Anasayfa.batConsLabel.Text = DataBMS.cons_u16.ToString();               
+            Anasayfa.batCurLabel.Text = DataBMS.cur_s16.ToString();                 
+            Anasayfa.setVelocityLabel.Text = VCU.set_velocity_u8.ToString();        //DEĞİŞECEK
+            Anasayfa.socLabel.Text = "%" + DataBMS.soc_u16.ToString();              
 
             if(BMSForm.consTextBox != null)
             {
-                BMSForm.consTextBox.Text = BMS.bat_cons_f32.ToString();
-                BMSForm.curTextBox.Text = BMS.bat_current_f32.ToString();
-                BMSForm.socTextBox.Text = "%" + BMS.soc_f32.ToString();
-                BMSForm.tempTextBox.Text = BMS.temp_u8.ToString();
-                BMSForm.voltageTextBox.Text = BMS.bat_volt_f32.ToString();
+                BMSForm.consTextBox.Text = DataBMS.cons_u16.ToString();
+                BMSForm.curTextBox.Text = DataBMS.cur_s16.ToString();
+                BMSForm.socTextBox.Text = "%" + DataBMS.soc_u16.ToString();
+                BMSForm.tempTextBox.Text = DataBMS.temperature_u8.ToString();
+                BMSForm.voltageTextBox.Text = DataBMS.volt_u16.ToString();
             }
 
             if(DriverForm.dcBusCurLabel != null)
             {
-                DriverForm.dcBusCurLabel.Text = Driver.dc_bus_current_f32.ToString();
-                DriverForm.dcBusVoltLabel.Text = Driver.dc_bus_voltage_f32.ToString();
-                DriverForm.IArmsLabel.Text = Driver.IArms_f32.ToString();
-                DriverForm.IdLabel.Text = Driver.id_f32.ToString();
-                DriverForm.IqLabel.Text = Driver.iq_f32.ToString();
-                DriverForm.phaseALabel.Text = Driver.phase_a_current_f32.ToString();
-                DriverForm.phaseBLabel.Text = Driver.phase_b_current_f32.ToString();
-                DriverForm.TorqueLabel.Text = Driver.Torque_f32.ToString();
+                if(DataMCU.free_wheeling_status == true)
+                {
+                    DriverForm.actualStatusLabel.Text = "NO SWITCHING";
+                }
+                else
+                {
+                    DriverForm.actualStatusLabel.Text = DataMCU.torque_mode ? "TORQUE MODE": "SPEED MODE";
+                }
+                DriverForm.actIdLabel.Text = DataMCU.act_id_current_s16.ToString();
+                DriverForm.actIqLabel.Text = DataMCU.act_iq_current_s16.ToString();
+                DriverForm.actTorqueLabel.Text = DataMCU.act_torque_s8.ToString();
+                DriverForm.setIdLabel.Text = DataMCU.set_id_current_s16.ToString();
+                DriverForm.setIqLabel.Text = DataMCU.set_iq_current_s16.ToString();
+                DriverForm.setTorqueLabel.Text = DataMCU.set_torque_s16.ToString();
+                DriverForm.vdLabel.Text = DataMCU.vd_s16.ToString();
+                DriverForm.vqLabel.Text = DataMCU.vq_s16.ToString();
+                DriverForm.dcBusCurLabel.Text = DataMCU.i_dc_s16.ToString();
+                DriverForm.dcBusVoltLabel.Text = DataMCU.v_dc_s16.ToString();
+
+                DriverForm.ISCFFlagBox.BackColor = DataMCU.input_scaling_calib_finished ? Color.LimeGreen : MACROS.UInewBack;
+                DriverForm.overcurIABox.BackColor = DataMCU.over_cur_IA ? Color.LimeGreen : MACROS.UInewBack;
+                DriverForm.overcurIBBox.BackColor = DataMCU.over_cur_IB ? Color.LimeGreen : MACROS.UInewBack;
+                DriverForm.overcurICBox.BackColor = DataMCU.over_cur_IC ? Color.LimeGreen : MACROS.UInewBack;
+                DriverForm.overcurIDCBox.BackColor = DataMCU.over_cur_IDC ? Color.LimeGreen : MACROS.UInewBack;
+                DriverForm.overvoltVDCBox.BackColor = DataMCU.over_volt_VDC ? Color.LimeGreen : MACROS.UInewBack;
+                DriverForm.overtempBox.BackColor = DataMCU.over_temp ? Color.LimeGreen : MACROS.UInewBack;
+                DriverForm.overspeedBox.BackColor = DataMCU.over_speed ? Color.LimeGreen : MACROS.UInewBack;
+                DriverForm.undercurIDCBox.BackColor = DataMCU.under_cur_IDC ? Color.LimeGreen : MACROS.UInewBack;
+                DriverForm.undervoltVDCBox.BackColor = DataMCU.under_volt_VDC ? Color.LimeGreen : MACROS.UInewBack;
+                DriverForm.underspeedBox.BackColor = DataMCU.under_speed ? Color.LimeGreen : MACROS.UInewBack;
+                DriverForm.pwmEnabledBox.BackColor = DataMCU.PWM_enabled ? Color.LimeGreen : MACROS.UInewBack;
             }
         }
     }

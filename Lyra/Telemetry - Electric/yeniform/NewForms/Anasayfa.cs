@@ -17,7 +17,7 @@ namespace Telemetri.NewForms
         public delegate void TriggerFront();
         MQTT mqttObj = new MQTT(MACROS.newSubTopic); //LYRADATA topic'ine bağlanacak MQTT nesnesini oluştur.
         public static SerialPortCOMRF serialPortCOMRF = new SerialPortCOMRF();// NRF'e veri gönderecek seri port nesnesini oluştur.
-        public static NewMQTT mqttobj = new NewMQTT("vehicle_to_interface", MACROS.aesk_IP);
+        public static NewMQTT mqttobj = new NewMQTT("vehicle_to_interface", "LYRADATA", MACROS.aesk_IP);
         string splitter = "aesk\n";
         List<string> lineList;
         SerialPort serialPort = new SerialPort();

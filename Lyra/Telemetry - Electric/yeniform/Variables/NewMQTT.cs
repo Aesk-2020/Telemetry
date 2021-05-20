@@ -18,6 +18,7 @@ namespace Telemetri.Variables
         private int _dataLength = 54; //sadece mesaj
         private int _dataCounter = 0;
         public string topic;
+        public string topic2;
         public string broker;
         public MqttClient client;
         public bool connected_flag = false;
@@ -40,9 +41,10 @@ namespace Telemetri.Variables
         }
         private step steppo = step.CatchHeader1;
 
-        public NewMQTT(string _topic, string _broker)
+        public NewMQTT(string _topic, string _topic2, string _broker)
         {
             topic = _topic;
+            topic2 = _topic2;
             broker = _broker;
         }
 
@@ -60,7 +62,7 @@ namespace Telemetri.Variables
                 {
                     try
                     {
-                        this.client.Subscribe(new string[] { this.topic }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
+                        this.client.Subscribe(new string[] { this.topic, this.topic2 }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
                         this.client.MqttMsgPublishReceived += Client_MqttMsgPublishReceived;
                         connected_flag = true;
                         UITools.PIDForm.queryButton.Enabled = true;
