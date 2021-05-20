@@ -115,15 +115,15 @@ namespace Telemetri.NewForms
             //MCU
             //UInt16 ID_Actual        = (UInt16)(Convert.ToUInt16(textBox18.Text) * MACROS.FLOAT_CONVERTER_2);
             UInt16 ID_Actual        = (UInt16)(float.Parse(textBox18.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 IQ_Actual        = (UInt16)(Convert.ToUInt16(textBox17.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 VD_Actual        = (UInt16)(Convert.ToUInt16(textBox16.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 Vq_Actual        = (UInt16)(Convert.ToUInt16(textBox15.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 ID_Set           = (UInt16)(Convert.ToUInt16(textBox14.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 IQ_Set           = (UInt16)(Convert.ToUInt16(textBox13.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 Set_Torque       = (UInt16)(Convert.ToUInt16(textBox26.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 IDC              = (UInt16)(Convert.ToUInt16(textBox27.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 VDC              = (UInt16)(Convert.ToUInt16(textBox32.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 Actual_Speed     = (UInt16)(Convert.ToUInt16(textBox28.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 IQ_Actual        = (UInt16)(float.Parse(textBox17.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 VD_Actual        = (UInt16)(float.Parse(textBox16.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 Vq_Actual        = (UInt16)(float.Parse(textBox15.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 ID_Set           = (UInt16)(float.Parse(textBox14.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 IQ_Set           = (UInt16)(float.Parse(textBox13.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 Set_Torque       = (UInt16)(float.Parse(textBox26.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 IDC              = (UInt16)(float.Parse(textBox27.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 VDC              = (UInt16)(float.Parse(textBox32.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 Actual_Speed     = (UInt16)(float.Parse(textBox28.Text) * MACROS.FLOAT_CONVERTER_2);
             UInt16 Error_Status     = Convert.ToUInt16(textBox29.Text);
             byte Motor_Temp         = Convert.ToByte(textBox30.Text);
             byte Actual_Torque      = Convert.ToByte(textBox31.Text);
@@ -144,11 +144,11 @@ namespace Telemetri.NewForms
             buffer.Add(Actual_Torque); //Act_torque
 
             //BMS
-            UInt16 Bat_Volt             = (UInt16)(Convert.ToSingle(textBox12.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 Bat_Cur              = (UInt16)(Convert.ToSingle(textBox11.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 Bat_cons             = (UInt16)(Convert.ToSingle(textBox10.Text) * MACROS.FLOAT_CONVERTER_1);
-            UInt16 Soc                  = (UInt16)(Convert.ToSingle(textBox9.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 Worst_Cell_Voltage   = (UInt16)(Convert.ToSingle(textBox8.Text) * MACROS.FLOAT_CONVERTER_1);
+            UInt16 Bat_Volt             = (UInt16)(float.Parse(textBox12.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 Bat_Cur              = (UInt16)(float.Parse(textBox11.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 Bat_cons             = (UInt16)(float.Parse(textBox10.Text) * MACROS.FLOAT_CONVERTER_1);
+            UInt16 Soc                  = (UInt16)(float.Parse(textBox9.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 Worst_Cell_Voltage   = (UInt16)(float.Parse(textBox8.Text) * MACROS.FLOAT_CONVERTER_1);
             byte BMS_Error              = Convert.ToByte(textBox7.Text);
             byte DC_Bus_State           = Convert.ToByte(textBox6.Text);
             byte Worst_Cell_Adress      = Convert.ToByte(textBox19.Text);
@@ -165,8 +165,8 @@ namespace Telemetri.NewForms
             buffer.Add(Temperature); //Temperature
 
             //GPS
-            UInt32 latitude_u32         = (UInt32)(Convert.ToSingle(textBox25.Text) * MACROS.GPS_DIVIDER);
-            UInt32 longtitude_u32       = (UInt32)(Convert.ToSingle(textBox24.Text) * MACROS.GPS_DIVIDER);
+            UInt32 latitude_u32         = (UInt32)(float.Parse(textBox25.Text) * MACROS.GPS_DIVIDER);
+            UInt32 longtitude_u32       = (UInt32)(float.Parse(textBox24.Text) * MACROS.GPS_DIVIDER);
             byte gps_speed              = Convert.ToByte(textBox21.Text);
             byte gps_satellite_num      = Convert.ToByte(textBox22.Text);
             byte gps_efficiency         = Convert.ToByte(textBox23.Text);
