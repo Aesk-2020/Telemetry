@@ -30,6 +30,7 @@ namespace Telemetri.NewForms
             UITools.Telemetry2021.forms.Add("MQTTdeneme", new MQTTdeneme());
             UITools.Telemetry2021.forms.Add("PIDTuningForm", new PIDTuningForm());
             UITools.Telemetry2021.forms.Add("TestForm", new TestForm());
+            UITools.Telemetry2021.forms.Add("Cells", new Cells());
         }
 
         #region .. Double Buffered function ..
@@ -85,6 +86,7 @@ namespace Telemetri.NewForms
         private void btnBattery_Click(object sender, EventArgs e)
         {
             FormManagement.openChildForm(UITools.Telemetry2021.forms["BMS_Form"], panelChildForm);
+            cellsBtn.Visible = !cellsBtn.Visible;
         }
 
         private void btnMotorDriver_Click(object sender, EventArgs e)
@@ -209,7 +211,13 @@ namespace Telemetri.NewForms
         private void Telemetry2021_FormClosing(object sender, FormClosingEventArgs e)
         {
             AFront.AccessFront -= UITools.ChangeUI;
-            Anasayfa.mqttobj.Disconnect();
+            if(Anasayfa.mqttobj.connected_flag == true)
+                Anasayfa.mqttobj.Disconnect();
+        }
+
+        private void cellsBtn_Click(object sender, EventArgs e)
+        {
+            FormManagement.openChildForm(UITools.Telemetry2021.forms["Cells"], panelChildForm);
         }
     }
 }

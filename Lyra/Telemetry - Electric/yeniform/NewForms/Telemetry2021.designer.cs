@@ -31,12 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Telemetry2021));
             this.panelSideMenu = new System.Windows.Forms.Panel();
-            this.ıconButton1 = new FontAwesome.Sharp.IconButton();
-            this.mqttButton = new FontAwesome.Sharp.IconButton();
-            this.settingsButton = new System.Windows.Forms.Button();
-            this.pidTuningBtn = new FontAwesome.Sharp.IconButton();
             this.exitBtn = new FontAwesome.Sharp.IconButton();
-            this.motordrButton = new FontAwesome.Sharp.IconButton();
             this.batteryButton = new FontAwesome.Sharp.IconButton();
             this.mapButton = new FontAwesome.Sharp.IconButton();
             this.homeButton = new FontAwesome.Sharp.IconButton();
@@ -66,6 +61,12 @@
             this.logSpeedDownBtn = new System.Windows.Forms.Button();
             this.log10secRewBtn = new System.Windows.Forms.Button();
             this.pauseResume = new System.Windows.Forms.ImageList(this.components);
+            this.cellsBtn = new FontAwesome.Sharp.IconButton();
+            this.motordrButton = new FontAwesome.Sharp.IconButton();
+            this.pidTuningBtn = new FontAwesome.Sharp.IconButton();
+            this.settingsButton = new System.Windows.Forms.Button();
+            this.mqttButton = new FontAwesome.Sharp.IconButton();
+            this.ıconButton1 = new FontAwesome.Sharp.IconButton();
             this.panelSideMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -86,8 +87,9 @@
             this.panelSideMenu.Controls.Add(this.mqttButton);
             this.panelSideMenu.Controls.Add(this.settingsButton);
             this.panelSideMenu.Controls.Add(this.pidTuningBtn);
-            this.panelSideMenu.Controls.Add(this.exitBtn);
             this.panelSideMenu.Controls.Add(this.motordrButton);
+            this.panelSideMenu.Controls.Add(this.cellsBtn);
+            this.panelSideMenu.Controls.Add(this.exitBtn);
             this.panelSideMenu.Controls.Add(this.batteryButton);
             this.panelSideMenu.Controls.Add(this.mapButton);
             this.panelSideMenu.Controls.Add(this.homeButton);
@@ -98,92 +100,6 @@
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(250, 761);
             this.panelSideMenu.TabIndex = 1;
-            // 
-            // ıconButton1
-            // 
-            this.ıconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.ıconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ıconButton1.FlatAppearance.BorderSize = 0;
-            this.ıconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.ıconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ıconButton1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ıconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.ıconButton1.IconChar = FontAwesome.Sharp.IconChar.Running;
-            this.ıconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.ıconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ıconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ıconButton1.Location = new System.Drawing.Point(0, 430);
-            this.ıconButton1.Name = "ıconButton1";
-            this.ıconButton1.Size = new System.Drawing.Size(250, 48);
-            this.ıconButton1.TabIndex = 11;
-            this.ıconButton1.Text = "Test";
-            this.ıconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ıconButton1.UseVisualStyleBackColor = false;
-            this.ıconButton1.Click += new System.EventHandler(this.ıconButton1_Click);
-            // 
-            // mqttButton
-            // 
-            this.mqttButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.mqttButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.mqttButton.FlatAppearance.BorderSize = 0;
-            this.mqttButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.mqttButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.mqttButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.mqttButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.mqttButton.IconChar = FontAwesome.Sharp.IconChar.Satellite;
-            this.mqttButton.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.mqttButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.mqttButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mqttButton.Location = new System.Drawing.Point(0, 382);
-            this.mqttButton.Name = "mqttButton";
-            this.mqttButton.Size = new System.Drawing.Size(250, 48);
-            this.mqttButton.TabIndex = 10;
-            this.mqttButton.Text = "MQTT";
-            this.mqttButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.mqttButton.UseVisualStyleBackColor = false;
-            this.mqttButton.Click += new System.EventHandler(this.mqttButton_Click);
-            // 
-            // settingsButton
-            // 
-            this.settingsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.settingsButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.settingsButton.FlatAppearance.BorderSize = 0;
-            this.settingsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.settingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.settingsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.settingsButton.Image = ((System.Drawing.Image)(resources.GetObject("settingsButton.Image")));
-            this.settingsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.settingsButton.Location = new System.Drawing.Point(0, 332);
-            this.settingsButton.Name = "settingsButton";
-            this.settingsButton.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.settingsButton.Size = new System.Drawing.Size(250, 50);
-            this.settingsButton.TabIndex = 9;
-            this.settingsButton.Text = " Settings";
-            this.settingsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.settingsButton.UseVisualStyleBackColor = false;
-            // 
-            // pidTuningBtn
-            // 
-            this.pidTuningBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(13)))), ((int)(((byte)(32)))));
-            this.pidTuningBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pidTuningBtn.FlatAppearance.BorderSize = 0;
-            this.pidTuningBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.pidTuningBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pidTuningBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.pidTuningBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.pidTuningBtn.IconChar = FontAwesome.Sharp.IconChar.Wrench;
-            this.pidTuningBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.pidTuningBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.pidTuningBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.pidTuningBtn.Location = new System.Drawing.Point(0, 284);
-            this.pidTuningBtn.Name = "pidTuningBtn";
-            this.pidTuningBtn.Size = new System.Drawing.Size(250, 48);
-            this.pidTuningBtn.TabIndex = 8;
-            this.pidTuningBtn.Text = "PID Tuning";
-            this.pidTuningBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.pidTuningBtn.UseVisualStyleBackColor = false;
-            this.pidTuningBtn.Visible = false;
-            this.pidTuningBtn.Click += new System.EventHandler(this.pidTuningBtn_Click);
             // 
             // exitBtn
             // 
@@ -205,28 +121,6 @@
             this.exitBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.exitBtn.UseVisualStyleBackColor = false;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
-            // 
-            // motordrButton
-            // 
-            this.motordrButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.motordrButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.motordrButton.FlatAppearance.BorderSize = 0;
-            this.motordrButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.motordrButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.motordrButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.motordrButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.motordrButton.IconChar = FontAwesome.Sharp.IconChar.WaveSquare;
-            this.motordrButton.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.motordrButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.motordrButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.motordrButton.Location = new System.Drawing.Point(0, 236);
-            this.motordrButton.Name = "motordrButton";
-            this.motordrButton.Size = new System.Drawing.Size(250, 48);
-            this.motordrButton.TabIndex = 4;
-            this.motordrButton.Text = "Motor Driver";
-            this.motordrButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.motordrButton.UseVisualStyleBackColor = false;
-            this.motordrButton.Click += new System.EventHandler(this.btnMotorDriver_Click);
             // 
             // batteryButton
             // 
@@ -688,6 +582,133 @@
             this.pauseResume.Images.SetKeyName(0, "icons8_pause_button_50px.png");
             this.pauseResume.Images.SetKeyName(1, "icons8_play_button_circled_50px_1.png");
             // 
+            // cellsBtn
+            // 
+            this.cellsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(13)))), ((int)(((byte)(32)))));
+            this.cellsBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cellsBtn.FlatAppearance.BorderSize = 0;
+            this.cellsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.cellsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cellsBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cellsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.cellsBtn.IconChar = FontAwesome.Sharp.IconChar.BatteryThreeQuarters;
+            this.cellsBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.cellsBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.cellsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cellsBtn.Location = new System.Drawing.Point(0, 236);
+            this.cellsBtn.Name = "cellsBtn";
+            this.cellsBtn.Size = new System.Drawing.Size(250, 48);
+            this.cellsBtn.TabIndex = 12;
+            this.cellsBtn.Text = "Battery";
+            this.cellsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.cellsBtn.UseVisualStyleBackColor = false;
+            this.cellsBtn.Visible = false;
+            this.cellsBtn.Click += new System.EventHandler(this.cellsBtn_Click);
+            // 
+            // motordrButton
+            // 
+            this.motordrButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.motordrButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.motordrButton.FlatAppearance.BorderSize = 0;
+            this.motordrButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.motordrButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.motordrButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.motordrButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.motordrButton.IconChar = FontAwesome.Sharp.IconChar.WaveSquare;
+            this.motordrButton.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.motordrButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.motordrButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.motordrButton.Location = new System.Drawing.Point(0, 284);
+            this.motordrButton.Name = "motordrButton";
+            this.motordrButton.Size = new System.Drawing.Size(250, 48);
+            this.motordrButton.TabIndex = 13;
+            this.motordrButton.Text = "Motor Driver";
+            this.motordrButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.motordrButton.UseVisualStyleBackColor = false;
+            // 
+            // pidTuningBtn
+            // 
+            this.pidTuningBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(13)))), ((int)(((byte)(32)))));
+            this.pidTuningBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pidTuningBtn.FlatAppearance.BorderSize = 0;
+            this.pidTuningBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.pidTuningBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pidTuningBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.pidTuningBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.pidTuningBtn.IconChar = FontAwesome.Sharp.IconChar.Wrench;
+            this.pidTuningBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.pidTuningBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.pidTuningBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.pidTuningBtn.Location = new System.Drawing.Point(0, 332);
+            this.pidTuningBtn.Name = "pidTuningBtn";
+            this.pidTuningBtn.Size = new System.Drawing.Size(250, 48);
+            this.pidTuningBtn.TabIndex = 14;
+            this.pidTuningBtn.Text = "PID Tuning";
+            this.pidTuningBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.pidTuningBtn.UseVisualStyleBackColor = false;
+            this.pidTuningBtn.Visible = false;
+            // 
+            // settingsButton
+            // 
+            this.settingsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.settingsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.settingsButton.FlatAppearance.BorderSize = 0;
+            this.settingsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.settingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settingsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.settingsButton.Image = ((System.Drawing.Image)(resources.GetObject("settingsButton.Image")));
+            this.settingsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.settingsButton.Location = new System.Drawing.Point(0, 380);
+            this.settingsButton.Name = "settingsButton";
+            this.settingsButton.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.settingsButton.Size = new System.Drawing.Size(250, 50);
+            this.settingsButton.TabIndex = 15;
+            this.settingsButton.Text = " Settings";
+            this.settingsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.settingsButton.UseVisualStyleBackColor = false;
+            // 
+            // mqttButton
+            // 
+            this.mqttButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.mqttButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.mqttButton.FlatAppearance.BorderSize = 0;
+            this.mqttButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.mqttButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mqttButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.mqttButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.mqttButton.IconChar = FontAwesome.Sharp.IconChar.Satellite;
+            this.mqttButton.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.mqttButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.mqttButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mqttButton.Location = new System.Drawing.Point(0, 430);
+            this.mqttButton.Name = "mqttButton";
+            this.mqttButton.Size = new System.Drawing.Size(250, 48);
+            this.mqttButton.TabIndex = 16;
+            this.mqttButton.Text = "MQTT";
+            this.mqttButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.mqttButton.UseVisualStyleBackColor = false;
+            // 
+            // ıconButton1
+            // 
+            this.ıconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.ıconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ıconButton1.FlatAppearance.BorderSize = 0;
+            this.ıconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.ıconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ıconButton1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ıconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.ıconButton1.IconChar = FontAwesome.Sharp.IconChar.Running;
+            this.ıconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.ıconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ıconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ıconButton1.Location = new System.Drawing.Point(0, 478);
+            this.ıconButton1.Name = "ıconButton1";
+            this.ıconButton1.Size = new System.Drawing.Size(250, 48);
+            this.ıconButton1.TabIndex = 17;
+            this.ıconButton1.Text = "Test";
+            this.ıconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ıconButton1.UseVisualStyleBackColor = false;
+            // 
             // Telemetry2021
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -726,7 +747,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelChildForm;
         private FontAwesome.Sharp.IconButton exitBtn;
-        private FontAwesome.Sharp.IconButton motordrButton;
         private FontAwesome.Sharp.IconButton batteryButton;
         private FontAwesome.Sharp.IconButton mapButton;
         private FontAwesome.Sharp.IconButton homeButton;
@@ -753,9 +773,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.ImageList pauseResume;
         public XComponent.SliderBar.MACTrackBar logPlayerStick;
-        private FontAwesome.Sharp.IconButton pidTuningBtn;
+        private FontAwesome.Sharp.IconButton ıconButton1;
         private FontAwesome.Sharp.IconButton mqttButton;
         private System.Windows.Forms.Button settingsButton;
-        private FontAwesome.Sharp.IconButton ıconButton1;
+        private FontAwesome.Sharp.IconButton pidTuningBtn;
+        private FontAwesome.Sharp.IconButton motordrButton;
+        private FontAwesome.Sharp.IconButton cellsBtn;
     }
 }
