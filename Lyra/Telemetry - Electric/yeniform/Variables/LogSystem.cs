@@ -110,33 +110,41 @@ namespace Telemetri.Variables
 
             byte[] logBytes = ReshapeArray(logBytes2);
 
-            VCU.wake_up_u8                              = logBytes[myindex++];
-            VCU.drive_commands_u8                       = logBytes[myindex++];
-            VCU.set_velocity_u8                         = logBytes[myindex++];
-            VCU.can_error_u8                            = logBytes[myindex++];
-            Driver.phase_a_current_f32                  = (float)BitConverter.ToInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_2; myindex += 2;
-            Driver.phase_b_current_f32                  = (float)BitConverter.ToInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_2; myindex += 2;
-            Driver.dc_bus_current_f32                   = (float)BitConverter.ToInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_2; myindex += 2;
-            Driver.dc_bus_voltage_f32                   = (float)BitConverter.ToUInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_1; myindex += 2;
-            Driver.id_f32                               = (float)BitConverter.ToInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_2; myindex += 2;
-            Driver.iq_f32                               = (float)BitConverter.ToInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_2; myindex += 2;
-            Driver.IArms_f32                            = (float)BitConverter.ToInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_2; myindex += 2;
-            Driver.Torque_f32                           = (float)BitConverter.ToInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_2; myindex += 2;
-            Driver.drive_status_u8                      = logBytes[myindex++];
-            Driver.driver_error_u8                      = logBytes[myindex++];
-            Driver.odometer_u32                         = BitConverter.ToUInt32(logBytes, myindex)                          ; myindex += 4;
-            Driver.motor_temperature_u8                 = logBytes[myindex++];
-            Driver.actual_velocity_u8                   = logBytes[myindex++];
+            //VCU
+            DataVCU.drive_commands_u8   = logBytes[myindex++];
+            DataVCU.speed_set_rpm_s16   = BitConverter.ToInt16(logBytes, myindex); myindex += 2; //0.105183
+            DataVCU.torque_set_u8       = logBytes[myindex++];
+            DataVCU.speed_limit_u16     = BitConverter.ToUInt16(logBytes, myindex); myindex += 2;
+            DataVCU.torque_limit_u8     = logBytes[myindex++];
+
+            //MCU
+            DataMCU.act_id_current_s16  = (float)BitConverter.ToInt16(logBytes, myindex) / 100; myindex += 2;
+            DataMCU.act_iq_current_s16  = (float)BitConverter.ToInt16(logBytes, myindex) / 100; myindex += 2;
+            DataMCU.vd_s16              = (float)BitConverter.ToInt16(logBytes, myindex) / 100; myindex += 2;
+            DataMCU.vq_s16              = (float)BitConverter.ToInt16(logBytes, myindex) / 100; myindex += 2;
+            DataMCU.set_id_current_s16  = (float)BitConverter.ToInt16(logBytes, myindex) / 100; myindex += 2;
+            DataMCU.set_iq_current_s16  = (float)BitConverter.ToInt16(logBytes, myindex) / 100; myindex += 2;
+            DataMCU.set_torque_s16      = (float)BitConverter.ToInt16(logBytes, myindex) / 100; myindex += 2;
+            DataMCU.i_dc_s16            = (float)BitConverter.ToInt16(logBytes, myindex) / 100; myindex += 2;
+            DataMCU.v_dc_s16            = (float)BitConverter.ToInt16(logBytes, myindex) / 100; myindex += 2;
+            DataMCU.act_speed_s16       = (float)BitConverter.ToInt16(logBytes, myindex) / 100; myindex += 2;
+            DataMCU.temperature_u8      = (byte)BitConverter.ToChar(logBytes, myindex); myindex++;
+            DataMCU.error_status_u16    = BitConverter.ToUInt16(logBytes, myindex); myindex += 2;
+            DataMCU.act_torque_s8       = (sbyte)logBytes[myindex++]; DataMCU.act_torque_s8 -= 100;
+
+            //BMS
             BMS.bat_volt_f32                            = (float)BitConverter.ToUInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_2; myindex += 2;
             BMS.bat_current_f32                         = (float)BitConverter.ToInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_2; myindex += 2;
             BMS.bat_cons_f32                            = (float)BitConverter.ToUInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_1; myindex += 2;
             BMS.soc_f32 = BitConverter.ToUInt16(logBytes, myindex);
             BMS.soc_f32 = BMS.soc_f32 / 100;
+            BMS.worst_cell_voltage_f32                  = (float)BitConverter.ToUInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_1; myindex += 2;
             BMS.bms_error_u8                            = logBytes[myindex++];
             BMS.dc_bus_state_u8                         = logBytes[myindex++];
-            BMS.worst_cell_voltage_f32                  = (float)BitConverter.ToUInt16(logBytes, myindex) / MACROS.FLOAT_CONVERTER_1; myindex += 2;
             BMS.worst_cell_address_u8                   = logBytes[myindex++];
             BMS.temp_u8                                 = logBytes[myindex++];
+
+            //GPS
             GpsTracker.gps_latitude_f64                 = (double)BitConverter.ToUInt32(logBytes, myindex) / MACROS.GPS_DIVIDER; myindex += 4;
             GpsTracker.gps_longtitude_f64               = (double)BitConverter.ToUInt32(logBytes, myindex) / MACROS.GPS_DIVIDER; myindex += 4;
             GpsTracker.gps_velocity_u8                  = logBytes[myindex++];

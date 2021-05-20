@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
@@ -184,6 +185,11 @@ namespace Telemetri.NewForms
             {
                 UITools.PIDForm.logWriter.WriteLine("MQTT'ye bağlanıldı.");
             }
+        }
+
+        private void mqttWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+
         }
     }
 }

@@ -15,14 +15,11 @@ namespace Telemetri.Variables
     {
         private string _username = "aesk";
         private string _password = "1234";
-        private int _dataLength = 54; //sadece mesaj
-        private int _dataCounter = 0;
         public string topic;
         public string topic2;
         public string broker;
         public MqttClient client;
         public bool connected_flag = false;
-        int msg_index = 0;
         private enum step
         {
             CatchHeader1 = 0,
@@ -39,7 +36,6 @@ namespace Telemetri.Variables
             CatchCrcH = 12,
 
         }
-        private step steppo = step.CatchHeader1;
 
         public NewMQTT(string _topic, string _topic2, string _broker)
         {

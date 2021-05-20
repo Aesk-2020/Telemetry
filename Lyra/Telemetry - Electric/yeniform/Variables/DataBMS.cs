@@ -17,6 +17,17 @@ namespace Telemetri.Variables
         public static byte dc_bus_state_u8;         // uint8
         public static byte worst_cell_address_u8;   // uint8
         public static byte temperature_u8;          // uint8
+        
+        public enum DC_BUS_STATE
+        {
+            PRECHARGE       = 1,
+            DISCHARGE       = 2,
+            READY           = 4,
+            CHARGING        = 8,
+            BALANCE         = 16,
+            PRECHARGE_ERROR = 32
+        }
+        
         public class Cell
         {
             public byte voltage_u8;

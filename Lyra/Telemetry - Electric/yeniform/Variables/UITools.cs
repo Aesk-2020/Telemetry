@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -41,6 +42,7 @@ namespace Telemetri.Variables
             public static TextBox actVelocityLabel;
             public static TextBox errorsLabel;
             public static TextBox driveStatusLabel;
+            public static Stopwatch mqttStopwatch = new Stopwatch();
         }
         public static class BMSForm
         {
@@ -49,6 +51,7 @@ namespace Telemetri.Variables
             public static TextBox tempTextBox;
             public static TextBox curTextBox;
             public static TextBox socTextBox;
+            public static TextBox dcBusStateBox;
         }
         public static class DriverForm
         {
@@ -118,16 +121,16 @@ namespace Telemetri.Variables
             DriverForm.dcBusVoltLabel.Text = DataMCU.v_dc_s16.ToString();
 
             DriverForm.ISCFFlagBox.BackColor = DataMCU.input_scaling_calib_finished ? Color.LimeGreen : MACROS.UInewBack;
-            DriverForm.overcurIABox.BackColor = DataMCU.over_cur_IA ? Color.LimeGreen : MACROS.UInewBack;
-            DriverForm.overcurIBBox.BackColor = DataMCU.over_cur_IB ? Color.LimeGreen : MACROS.UInewBack;
-            DriverForm.overcurICBox.BackColor = DataMCU.over_cur_IC ? Color.LimeGreen : MACROS.UInewBack;
-            DriverForm.overcurIDCBox.BackColor = DataMCU.over_cur_IDC ? Color.LimeGreen : MACROS.UInewBack;
-            DriverForm.overvoltVDCBox.BackColor = DataMCU.over_volt_VDC ? Color.LimeGreen : MACROS.UInewBack;
-            DriverForm.overtempBox.BackColor = DataMCU.over_temp ? Color.LimeGreen : MACROS.UInewBack;
-            DriverForm.overspeedBox.BackColor = DataMCU.over_speed ? Color.LimeGreen : MACROS.UInewBack;
-            DriverForm.undercurIDCBox.BackColor = DataMCU.under_cur_IDC ? Color.LimeGreen : MACROS.UInewBack;
-            DriverForm.undervoltVDCBox.BackColor = DataMCU.under_volt_VDC ? Color.LimeGreen : MACROS.UInewBack;
-            DriverForm.underspeedBox.BackColor = DataMCU.under_speed ? Color.LimeGreen : MACROS.UInewBack;
+            DriverForm.overcurIABox.BackColor = DataMCU.over_cur_IA ? Color.Crimson : MACROS.UInewBack;
+            DriverForm.overcurIBBox.BackColor = DataMCU.over_cur_IB ? Color.Crimson : MACROS.UInewBack;
+            DriverForm.overcurICBox.BackColor = DataMCU.over_cur_IC ? Color.Crimson : MACROS.UInewBack;
+            DriverForm.overcurIDCBox.BackColor = DataMCU.over_cur_IDC ? Color.Crimson : MACROS.UInewBack;
+            DriverForm.overvoltVDCBox.BackColor = DataMCU.over_volt_VDC ? Color.Crimson : MACROS.UInewBack;
+            DriverForm.overtempBox.BackColor = DataMCU.over_temp ? Color.Crimson : MACROS.UInewBack;
+            DriverForm.overspeedBox.BackColor = DataMCU.over_speed ? Color.Crimson : MACROS.UInewBack;
+            DriverForm.undercurIDCBox.BackColor = DataMCU.under_cur_IDC ? Color.Crimson : MACROS.UInewBack;
+            DriverForm.undervoltVDCBox.BackColor = DataMCU.under_volt_VDC ? Color.Crimson : MACROS.UInewBack;
+            DriverForm.underspeedBox.BackColor = DataMCU.under_speed ? Color.Crimson : MACROS.UInewBack;
             DriverForm.pwmEnabledBox.BackColor = DataMCU.PWM_enabled ? Color.LimeGreen : MACROS.UInewBack;
 
             foreach (var item in NewForms.Graphics.graphicsList)
@@ -136,6 +139,44 @@ namespace Telemetri.Variables
             }
             NewForms.Graphics.graphTime++;
 
+            switch ((DataBMS.DC_BUS_STATE)DataBMS.dc_bus_state_u8)
+            {
+                case DataBMS.DC_BUS_STATE.PRECHARGE:
+                    {
+                        BMSForm.dcBusStateBox.Text = "PRECHARGE";
+                        break;
+                    }
+                case DataBMS.DC_BUS_STATE.DISCHARGE:
+                    {
+                        BMSForm.dcBusStateBox.Text = "DISCHARGE";
+                        break;
+                    }
+                case DataBMS.DC_BUS_STATE.READY:
+                    {
+                        BMSForm.dcBusStateBox.Text = "READY";
+                        break;
+                    }
+                case DataBMS.DC_BUS_STATE.CHARGING:
+                    {
+                        BMSForm.dcBusStateBox.Text = "CHARGING";
+                        break;
+                    }
+                case DataBMS.DC_BUS_STATE.BALANCE:
+                    {
+                        BMSForm.dcBusStateBox.Text = "BALANCE";
+                        break;
+                    }
+                case DataBMS.DC_BUS_STATE.PRECHARGE_ERROR:
+                    {
+                        BMSForm.dcBusStateBox.Text = "PRECHARGE ERROR";
+                        break;
+                    }
+                default:
+                    {
+                        BMSForm.dcBusStateBox.Text = "DATA ERROR";
+                        break;
+                    }
+            }
         }
     }
 }
