@@ -51,8 +51,6 @@ namespace Telemetri.NewForms
         #endregion
         private void BMS_Load(object sender, EventArgs e)
         {
-            
-
             #region doubleBuffer
             SetDoubleBuffered(tableLayoutPanel10);
             SetDoubleBuffered(tableLayoutPanel11);
@@ -106,13 +104,10 @@ namespace Telemetri.NewForms
             Graphics.oldGraph.AutoScroll = true;
             graphPanel.Controls.Add(Graphics.oldGraph);
             Graphics.oldGraph.Show();
-            
-            //graphics.changeGraph(time)    BURADA GRAFİĞİ GÜNCELLEYEN TIMER BAŞLATILACAK
         }
 
         private void batCurGraphBtn_Click(object sender, EventArgs e)
         {
-
             graphType = Graphics.graphs.batCur;
             Graphics.graphicsList.Add(new Graphics(graphType));
             if (Graphics.oldGraph != null)
@@ -127,7 +122,6 @@ namespace Telemetri.NewForms
             Graphics.oldGraph.AutoScroll = true;
             graphPanel.Controls.Add(Graphics.oldGraph);
             Graphics.oldGraph.Show();
-            //graphics.changeGraph(time)    BURADA GRAFİĞİ GÜNCELLEYEN TIMER BAŞLATILACAK
         }
 
         private void batTempGraphBtn_Click(object sender, EventArgs e)
@@ -146,7 +140,6 @@ namespace Telemetri.NewForms
             Graphics.oldGraph.AutoScroll = true;
             graphPanel.Controls.Add(Graphics.oldGraph);
             Graphics.oldGraph.Show();
-            //graphics.changeGraph(time)    BURADA GRAFİĞİ GÜNCELLEYEN TIMER BAŞLATILACAK
         }
 
         private void batConsGraphBtn_Click(object sender, EventArgs e)
@@ -165,7 +158,6 @@ namespace Telemetri.NewForms
             Graphics.oldGraph.AutoScroll = true;
             graphPanel.Controls.Add(Graphics.oldGraph);
             Graphics.oldGraph.Show();
-            //graphics.changeGraph(time)    BURADA GRAFİĞİ GÜNCELLEYEN TIMER BAŞLATILACAK
         }
     }
 }

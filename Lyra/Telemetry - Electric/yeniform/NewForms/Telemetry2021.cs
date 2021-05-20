@@ -15,8 +15,6 @@ namespace Telemetri.NewForms
 {
     public partial class Telemetry2021 : Form
     {
-        
-
         public Telemetry2021()
         {
             InitializeComponent();
@@ -67,7 +65,6 @@ namespace Telemetri.NewForms
             #endregion
         }
 
-
         private void LogPlayTimer_Tick(object sender, EventArgs e)
         {
             logPlayerStick.Value++;
@@ -78,7 +75,6 @@ namespace Telemetri.NewForms
         private void btnHome_Click(object sender, EventArgs e)
         {
             FormManagement.openChildForm(UITools.Telemetry2021.forms["Anasayfa"], panelChildForm);
-            
         }
 
         private void btnMap_Click(object sender, EventArgs e)
@@ -89,7 +85,6 @@ namespace Telemetri.NewForms
         private void btnBattery_Click(object sender, EventArgs e)
         {
             FormManagement.openChildForm(UITools.Telemetry2021.forms["BMS_Form"], panelChildForm);
-            
         }
 
         private void btnMotorDriver_Click(object sender, EventArgs e)
@@ -201,11 +196,6 @@ namespace Telemetri.NewForms
             }
         }
 
-        private void UpdateUI()
-        {
-
-        }
-
         private void pidTuningBtn_Click(object sender, EventArgs e)
         {
             FormManagement.openChildForm(UITools.Telemetry2021.forms["PIDTuningForm"], panelChildForm);
@@ -214,6 +204,11 @@ namespace Telemetri.NewForms
         private void ıconButton1_Click(object sender, EventArgs e)
         {
             FormManagement.openChildForm(UITools.Telemetry2021.forms["TestForm"], panelChildForm);
+        }
+
+        private void Telemetry2021_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            AFront.AccessFront -= UITools.ChangeUI;
         }
     }
 }

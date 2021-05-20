@@ -32,10 +32,38 @@ namespace Telemetri.NewForms
         public static List<Graphics> graphicsList = new List<Graphics>();
         public static Graphics oldGraph = null;
         public graphs graphType = 0;
+        public static int graphTime = 0;
+
+        #region .. Double Buffered function ..
+        public static void SetDoubleBuffered(System.Windows.Forms.Control c)
+        {
+            if (System.Windows.Forms.SystemInformation.TerminalServerSession)
+                return;
+            System.Reflection.PropertyInfo aProp = typeof(System.Windows.Forms.Control).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            aProp.SetValue(c, true, null);
+        }
+        #endregion
+
+        #region .. code for Flucuring ..
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+
+        #endregion
 
         public Graphics(graphs a)
         {
             InitializeComponent();
+            #region doubleBuffer
+            SetDoubleBuffered(myChart);
+            #endregion
+
             graphType = a;
 
             switch (graphType)
@@ -155,5 +183,7 @@ namespace Telemetri.NewForms
             Graphics.graphicsList.Last().popupBtn.Visible = false;
             Graphics.graphicsList.Last().Show();
         }
+
+      
     }
 }
