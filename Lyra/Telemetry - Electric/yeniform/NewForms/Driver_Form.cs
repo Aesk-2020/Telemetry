@@ -83,13 +83,19 @@ namespace Telemetri.NewForms
             SetDoubleBuffered(tableLayoutPanel10);
             SetDoubleBuffered(tableLayoutPanel11);
             SetDoubleBuffered(tableLayoutPanel12);
+            SetDoubleBuffered(tableLayoutPanel13);
+            SetDoubleBuffered(tableLayoutPanel14);
+            SetDoubleBuffered(tableLayoutPanel15);
+            SetDoubleBuffered(tableLayoutPanel16);
+            SetDoubleBuffered(tableLayoutPanel17);
+            SetDoubleBuffered(tableLayoutPanel18);
             SetDoubleBuffered(dcBusCurGraphBtn);
             SetDoubleBuffered(dcBusVoltGraphBtn);
             SetDoubleBuffered(iarmsGraphBtn);
             SetDoubleBuffered(idGraphBtn);
             SetDoubleBuffered(iqGraphBtn);
-            SetDoubleBuffered(phaseAGraphBtn);
-            SetDoubleBuffered(phaseBGraphBtn);
+            SetDoubleBuffered(VDBtn);
+            SetDoubleBuffered(VQBtn);
             SetDoubleBuffered(torqueGraphBtn);
             #endregion
         }
@@ -99,8 +105,8 @@ namespace Telemetri.NewForms
             if (graphicsButton.Dock == DockStyle.Bottom)
             {
                 graphicsButton.Dock = DockStyle.Top;
-                phaseAGraphBtn.Visible = true;
-                phaseBGraphBtn.Visible = true;
+                VDBtn.Visible = true;
+                VQBtn.Visible = true;
                 dcBusCurGraphBtn.Visible = true;
                 dcBusVoltGraphBtn.Visible = true;
                 idGraphBtn.Visible = true;
@@ -111,8 +117,8 @@ namespace Telemetri.NewForms
             else
             {
                 graphicsButton.Dock = DockStyle.Bottom;
-                phaseAGraphBtn.Visible = false;
-                phaseBGraphBtn.Visible = false;
+                VDBtn.Visible = false;
+                VQBtn.Visible = false;
                 dcBusCurGraphBtn.Visible = false;
                 dcBusVoltGraphBtn.Visible = false;
                 idGraphBtn.Visible = false;
@@ -120,42 +126,6 @@ namespace Telemetri.NewForms
                 iarmsGraphBtn.Visible = false;
                 torqueGraphBtn.Visible = false;
             }
-        }
-
-        private void phaseAGraphBtn_Click(object sender, EventArgs e)
-        {
-            graphType = Graphics.graphs.phaseACur;
-            Graphics.graphicsList.Add(new Graphics(graphType));
-            if (Graphics.oldGraph != null)
-            {
-                Graphics.oldGraph.Close();
-                Graphics.graphicsList.Remove(Graphics.graphicsList.Where(i => i.graphType == Graphics.oldGraph.graphType).ToList()[0]);
-            }
-            Graphics.oldGraph = Graphics.graphicsList.Last();
-            Graphics.oldGraph.TopLevel = false;
-            Graphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
-            Graphics.oldGraph.Dock = DockStyle.Fill;
-            Graphics.oldGraph.AutoScroll = true;
-            graphPanel.Controls.Add(Graphics.oldGraph);
-            Graphics.oldGraph.Show();
-        }
-
-        private void phaseBGraphBtn_Click(object sender, EventArgs e)
-        {
-            graphType = Graphics.graphs.phaseBCur;
-            Graphics.graphicsList.Add(new Graphics(graphType));
-            if (Graphics.oldGraph != null)
-            {
-                Graphics.oldGraph.Close();
-                Graphics.graphicsList.Remove(Graphics.graphicsList.Where(i => i.graphType == Graphics.oldGraph.graphType).ToList()[0]);
-            }
-            Graphics.oldGraph = Graphics.graphicsList.Last();
-            Graphics.oldGraph.TopLevel = false;
-            Graphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
-            Graphics.oldGraph.Dock = DockStyle.Fill;
-            Graphics.oldGraph.AutoScroll = true;
-            graphPanel.Controls.Add(Graphics.oldGraph);
-            Graphics.oldGraph.Show();
         }
 
         private void dcBusVoltGraphBtn_Click(object sender, EventArgs e)
@@ -251,6 +221,42 @@ namespace Telemetri.NewForms
         private void torqueGraphBtn_Click(object sender, EventArgs e)
         {
             graphType = Graphics.graphs.torque;
+            Graphics.graphicsList.Add(new Graphics(graphType));
+            if (Graphics.oldGraph != null)
+            {
+                Graphics.oldGraph.Close();
+                Graphics.graphicsList.Remove(Graphics.graphicsList.Where(i => i.graphType == Graphics.oldGraph.graphType).ToList()[0]);
+            }
+            Graphics.oldGraph = Graphics.graphicsList.Last();
+            Graphics.oldGraph.TopLevel = false;
+            Graphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
+            Graphics.oldGraph.Dock = DockStyle.Fill;
+            Graphics.oldGraph.AutoScroll = true;
+            graphPanel.Controls.Add(Graphics.oldGraph);
+            Graphics.oldGraph.Show();
+        }
+
+        private void VDBtn_Click(object sender, EventArgs e)
+        {
+            graphType = Graphics.graphs.VD;
+            Graphics.graphicsList.Add(new Graphics(graphType));
+            if (Graphics.oldGraph != null)
+            {
+                Graphics.oldGraph.Close();
+                Graphics.graphicsList.Remove(Graphics.graphicsList.Where(i => i.graphType == Graphics.oldGraph.graphType).ToList()[0]);
+            }
+            Graphics.oldGraph = Graphics.graphicsList.Last();
+            Graphics.oldGraph.TopLevel = false;
+            Graphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
+            Graphics.oldGraph.Dock = DockStyle.Fill;
+            Graphics.oldGraph.AutoScroll = true;
+            graphPanel.Controls.Add(Graphics.oldGraph);
+            Graphics.oldGraph.Show();
+        }
+
+        private void VQBtn_Click(object sender, EventArgs e)
+        {
+            graphType = Graphics.graphs.VQ;
             Graphics.graphicsList.Add(new Graphics(graphType));
             if (Graphics.oldGraph != null)
             {

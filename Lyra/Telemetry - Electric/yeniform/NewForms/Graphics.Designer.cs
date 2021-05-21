@@ -32,9 +32,8 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 5D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 15D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 10D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1D);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Graphics));
             this.myChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.popupBtn = new System.Windows.Forms.Button();
@@ -94,7 +93,6 @@
             series1.Name = "Current";
             series1.Points.Add(dataPoint1);
             series1.Points.Add(dataPoint2);
-            series1.Points.Add(dataPoint3);
             this.myChart.Series.Add(series1);
             this.myChart.Size = new System.Drawing.Size(837, 450);
             this.myChart.TabIndex = 12;
@@ -139,7 +137,6 @@
             this.Controls.Add(this.myChart);
             this.Name = "Graphics";
             this.Text = "Graphics";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Graphics_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.myChart)).EndInit();
             this.ResumeLayout(false);
 
