@@ -99,8 +99,83 @@ namespace Telemetri.Variables
         private void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
             ComproUI compro = new ComproUI();
-            compro.ComproUnpack(e.Message);
+
+            //compro.ComproUnpack(e.Message);
+            YedekUnpack(e.Message);
+            AFront.ChangeUI();
         }
-        
+
+        public void YedekUnpack(byte[] receiveBuffer)
+        {
+            int startIndex = 0;
+            DataVCU.drive_commands_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataVCU.speed_set_rpm_s16 = BitConverter.ToInt16(receiveBuffer, startIndex); startIndex += 2;
+            DataVCU.torque_set_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataVCU.speed_limit_u16 = BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
+            DataVCU.torque_limit_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+
+            //MCU
+            DataMCU.act_id_current_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.act_iq_current_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.vd_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.vq_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.set_id_current_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.set_iq_current_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.set_torque_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.i_dc_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.v_dc_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.act_speed_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 10; startIndex += 2;
+            DataMCU.temperature_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataMCU.error_status_u16 = BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
+            DataMCU.act_torque_s8 = (sbyte)receiveBuffer[startIndex++]; DataMCU.act_torque_s8 -= 100;
+
+            //BMS
+            DataBMS.volt_u16 = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataBMS.cur_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataBMS.cons_u16 = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 10; startIndex += 2;
+            DataBMS.soc_u16 = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataBMS.worst_cell_volt_u16 = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 10; startIndex += 2;
+            DataBMS.error_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataBMS.dc_bus_state_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataBMS.worst_cell_address_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataBMS.temperature_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+
+            //GPS
+            DataGPS.latitude_f32 = BitConverter.ToUInt32(receiveBuffer, startIndex) / MACROS.GPS_DIVIDER; startIndex += 4;
+            DataGPS.longtitude_f32 = BitConverter.ToUInt32(receiveBuffer, startIndex) / MACROS.GPS_DIVIDER; startIndex += 4;
+            DataGPS.speed_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataGPS.sattelite_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataGPS.efficiency_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+
+            //CAN Error
+            DataVCU.can_error_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+
+            //Cells
+            for (int i = 0; i < 28; i++)
+            {
+                DataBMS.Cell cell = new DataBMS.Cell();
+                cell.voltage_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                DataBMS.cells.Add(cell);
+            }
+            List<char> temps = new List<char>();
+            int count = 0;
+            for (int i = 0; i < 7; i++) // Total temperature sensor count. 
+            {
+                temps.Add(BitConverter.ToChar(receiveBuffer, startIndex)); startIndex++;
+            }
+            for (int i = 0; i < 28; i++)
+            {
+                DataBMS.cells[i].temperature_u8 = (byte)temps[count++];
+                if (count == 4)
+                {
+                    count = 0;
+                }
+            }
+            for (int i = 0; i < 28; i++)
+            {
+                //DataBMS.cells[i].soc_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            }
+        }
+
     }
 }

@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint19 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 5D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint20 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 15D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint21 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 10D);
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint22 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint23 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 10D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint24 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 11D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint25 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 5D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint26 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 15D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint27 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 10D);
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint28 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint29 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 10D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint30 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 11D);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.portsListBox = new System.Windows.Forms.ListBox();
@@ -73,10 +73,8 @@
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.driveStatusLabel = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.errorsLabel = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.startTimeLabel = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -85,6 +83,8 @@
             this.logTimer = new System.Windows.Forms.Timer(this.components);
             this.mqttWorker = new System.ComponentModel.BackgroundWorker();
             this.myChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.driveStatusLabel = new System.Windows.Forms.TextBox();
+            this.errorsLabel = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -661,24 +661,8 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(299, 52);
             this.label2.TabIndex = 131;
-            this.label2.Text = "Drive Status";
+            this.label2.Text = "Set Mode";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // driveStatusLabel
-            // 
-            this.driveStatusLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.driveStatusLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.driveStatusLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.driveStatusLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.driveStatusLabel.ForeColor = System.Drawing.Color.White;
-            this.driveStatusLabel.Location = new System.Drawing.Point(3, 55);
-            this.driveStatusLabel.Multiline = true;
-            this.driveStatusLabel.Name = "driveStatusLabel";
-            this.driveStatusLabel.ReadOnly = true;
-            this.driveStatusLabel.Size = new System.Drawing.Size(299, 36);
-            this.driveStatusLabel.TabIndex = 135;
-            this.driveStatusLabel.Text = "IGNITION ON";
-            this.driveStatusLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel13
             // 
@@ -705,24 +689,8 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(298, 52);
             this.label1.TabIndex = 131;
-            this.label1.Text = "Errors";
+            this.label1.Text = "Graph Scale (Last X)";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // errorsLabel
-            // 
-            this.errorsLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.errorsLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.errorsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.errorsLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.errorsLabel.ForeColor = System.Drawing.Color.White;
-            this.errorsLabel.Location = new System.Drawing.Point(3, 55);
-            this.errorsLabel.Multiline = true;
-            this.errorsLabel.Name = "errorsLabel";
-            this.errorsLabel.ReadOnly = true;
-            this.errorsLabel.Size = new System.Drawing.Size(298, 36);
-            this.errorsLabel.TabIndex = 135;
-            this.errorsLabel.Text = "HIGH VOLTAGE";
-            this.errorsLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel7
             // 
@@ -812,66 +780,97 @@
             // 
             this.myChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.myChart.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            chartArea4.AxisX.IsLabelAutoFit = false;
-            chartArea4.AxisX.LabelStyle.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            chartArea4.AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
-            chartArea4.AxisX.LineColor = System.Drawing.Color.White;
-            chartArea4.AxisX.MajorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea4.AxisX.MajorGrid.LineWidth = 0;
-            chartArea4.AxisX.MajorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea4.AxisX.MinorGrid.LineColor = System.Drawing.Color.White;
-            chartArea4.AxisX.MinorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea4.AxisX.TitleForeColor = System.Drawing.Color.White;
-            chartArea4.AxisX2.LineColor = System.Drawing.Color.White;
-            chartArea4.AxisX2.TitleForeColor = System.Drawing.Color.White;
-            chartArea4.AxisY.IsLabelAutoFit = false;
-            chartArea4.AxisY.LabelStyle.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            chartArea4.AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
-            chartArea4.AxisY.LineColor = System.Drawing.Color.White;
-            chartArea4.AxisY.MajorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea4.AxisY.MajorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea4.AxisY.MinorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea4.AxisY2.LineColor = System.Drawing.Color.White;
-            chartArea4.AxisY2.TitleForeColor = System.Drawing.Color.White;
-            chartArea4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            chartArea4.BorderColor = System.Drawing.Color.White;
-            chartArea4.Name = "ChartArea1";
-            this.myChart.ChartAreas.Add(chartArea4);
+            chartArea5.AxisX.IsLabelAutoFit = false;
+            chartArea5.AxisX.LabelStyle.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            chartArea5.AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea5.AxisX.LineColor = System.Drawing.Color.White;
+            chartArea5.AxisX.MajorGrid.LineColor = System.Drawing.Color.DimGray;
+            chartArea5.AxisX.MajorGrid.LineWidth = 0;
+            chartArea5.AxisX.MajorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea5.AxisX.MinorGrid.LineColor = System.Drawing.Color.White;
+            chartArea5.AxisX.MinorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea5.AxisX.TitleForeColor = System.Drawing.Color.White;
+            chartArea5.AxisX2.LineColor = System.Drawing.Color.White;
+            chartArea5.AxisX2.TitleForeColor = System.Drawing.Color.White;
+            chartArea5.AxisY.IsLabelAutoFit = false;
+            chartArea5.AxisY.LabelStyle.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            chartArea5.AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea5.AxisY.LineColor = System.Drawing.Color.White;
+            chartArea5.AxisY.MajorGrid.LineColor = System.Drawing.Color.DimGray;
+            chartArea5.AxisY.MajorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea5.AxisY.MinorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea5.AxisY2.LineColor = System.Drawing.Color.White;
+            chartArea5.AxisY2.TitleForeColor = System.Drawing.Color.White;
+            chartArea5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            chartArea5.BorderColor = System.Drawing.Color.White;
+            chartArea5.Name = "ChartArea1";
+            this.myChart.ChartAreas.Add(chartArea5);
             this.myChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            legend4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            legend4.ForeColor = System.Drawing.Color.White;
-            legend4.HeaderSeparatorColor = System.Drawing.Color.White;
-            legend4.IsTextAutoFit = false;
-            legend4.ItemColumnSeparatorColor = System.Drawing.Color.White;
-            legend4.Name = "Legend1";
-            legend4.TitleForeColor = System.Drawing.Color.White;
-            legend4.TitleSeparatorColor = System.Drawing.Color.White;
-            this.myChart.Legends.Add(legend4);
+            legend5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            legend5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            legend5.ForeColor = System.Drawing.Color.White;
+            legend5.HeaderSeparatorColor = System.Drawing.Color.White;
+            legend5.IsTextAutoFit = false;
+            legend5.ItemColumnSeparatorColor = System.Drawing.Color.White;
+            legend5.Name = "Legend1";
+            legend5.TitleForeColor = System.Drawing.Color.White;
+            legend5.TitleSeparatorColor = System.Drawing.Color.White;
+            this.myChart.Legends.Add(legend5);
             this.myChart.Location = new System.Drawing.Point(0, 308);
             this.myChart.Name = "myChart";
             this.myChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            series7.LabelForeColor = System.Drawing.Color.White;
-            series7.Legend = "Legend1";
-            series7.Name = "Set Hız";
-            series7.Points.Add(dataPoint19);
-            series7.Points.Add(dataPoint20);
-            series7.Points.Add(dataPoint21);
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series8.Legend = "Legend1";
-            series8.Name = "Act Hız";
-            series8.Points.Add(dataPoint22);
-            series8.Points.Add(dataPoint23);
-            series8.Points.Add(dataPoint24);
-            this.myChart.Series.Add(series7);
-            this.myChart.Series.Add(series8);
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series9.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            series9.LabelForeColor = System.Drawing.Color.White;
+            series9.Legend = "Legend1";
+            series9.Name = "Set Hız";
+            series9.Points.Add(dataPoint25);
+            series9.Points.Add(dataPoint26);
+            series9.Points.Add(dataPoint27);
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series10.Legend = "Legend1";
+            series10.Name = "Act Hız";
+            series10.Points.Add(dataPoint28);
+            series10.Points.Add(dataPoint29);
+            series10.Points.Add(dataPoint30);
+            this.myChart.Series.Add(series9);
+            this.myChart.Series.Add(series10);
             this.myChart.Size = new System.Drawing.Size(914, 313);
             this.myChart.TabIndex = 145;
             this.myChart.Text = "chart1";
+            // 
+            // driveStatusLabel
+            // 
+            this.driveStatusLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.driveStatusLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.driveStatusLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.driveStatusLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.driveStatusLabel.ForeColor = System.Drawing.Color.White;
+            this.driveStatusLabel.Location = new System.Drawing.Point(3, 55);
+            this.driveStatusLabel.Multiline = true;
+            this.driveStatusLabel.Name = "driveStatusLabel";
+            this.driveStatusLabel.ReadOnly = true;
+            this.driveStatusLabel.Size = new System.Drawing.Size(299, 36);
+            this.driveStatusLabel.TabIndex = 135;
+            this.driveStatusLabel.Text = "IGNITION ON";
+            this.driveStatusLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // errorsLabel
+            // 
+            this.errorsLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.errorsLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.errorsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.errorsLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.errorsLabel.ForeColor = System.Drawing.Color.White;
+            this.errorsLabel.Location = new System.Drawing.Point(3, 55);
+            this.errorsLabel.Multiline = true;
+            this.errorsLabel.Name = "errorsLabel";
+            this.errorsLabel.Size = new System.Drawing.Size(298, 36);
+            this.errorsLabel.TabIndex = 135;
+            this.errorsLabel.Text = "50";
+            this.errorsLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Anasayfa
             // 
@@ -946,10 +945,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox driveStatusLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox errorsLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox batConsLabel;
@@ -962,5 +959,7 @@
         public System.Windows.Forms.Timer logTimer;
         private System.ComponentModel.BackgroundWorker mqttWorker;
         private System.Windows.Forms.DataVisualization.Charting.Chart myChart;
+        private System.Windows.Forms.TextBox driveStatusLabel;
+        private System.Windows.Forms.TextBox errorsLabel;
     }
 }

@@ -100,6 +100,90 @@
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
+            this.cell2Vbox = new System.Windows.Forms.TextBox();
+            this.cell2socBox = new System.Windows.Forms.TextBox();
+            this.cell2tempBox = new System.Windows.Forms.TextBox();
+            this.cell1tempBox = new System.Windows.Forms.TextBox();
+            this.cell3tempBox = new System.Windows.Forms.TextBox();
+            this.cell4tempBox = new System.Windows.Forms.TextBox();
+            this.cell4socBox = new System.Windows.Forms.TextBox();
+            this.cell4Vbox = new System.Windows.Forms.TextBox();
+            this.cell3socBox = new System.Windows.Forms.TextBox();
+            this.cell3Vbox = new System.Windows.Forms.TextBox();
+            this.cell5tempBox = new System.Windows.Forms.TextBox();
+            this.cell5Vbox = new System.Windows.Forms.TextBox();
+            this.cell5socBox = new System.Windows.Forms.TextBox();
+            this.cell6tempBox = new System.Windows.Forms.TextBox();
+            this.cell6Vbox = new System.Windows.Forms.TextBox();
+            this.cell6socBox = new System.Windows.Forms.TextBox();
+            this.cell7tempBox = new System.Windows.Forms.TextBox();
+            this.cell7Vbox = new System.Windows.Forms.TextBox();
+            this.cell7socBox = new System.Windows.Forms.TextBox();
+            this.cell8tempBox = new System.Windows.Forms.TextBox();
+            this.cell8Vbox = new System.Windows.Forms.TextBox();
+            this.cell8socBox = new System.Windows.Forms.TextBox();
+            this.cell1socBox = new System.Windows.Forms.TextBox();
+            this.cell1Vbox = new System.Windows.Forms.TextBox();
+            this.cell9Vbox = new System.Windows.Forms.TextBox();
+            this.cell9socBox = new System.Windows.Forms.TextBox();
+            this.cell9tempBox = new System.Windows.Forms.TextBox();
+            this.cell10tempBox = new System.Windows.Forms.TextBox();
+            this.cell10Vbox = new System.Windows.Forms.TextBox();
+            this.cell10socBox = new System.Windows.Forms.TextBox();
+            this.cell11tempBox = new System.Windows.Forms.TextBox();
+            this.cell11Vbox = new System.Windows.Forms.TextBox();
+            this.cell11socBox = new System.Windows.Forms.TextBox();
+            this.cell12tempBox = new System.Windows.Forms.TextBox();
+            this.cell12Vbox = new System.Windows.Forms.TextBox();
+            this.cell12socBox = new System.Windows.Forms.TextBox();
+            this.cell13tempBox = new System.Windows.Forms.TextBox();
+            this.cell13Vbox = new System.Windows.Forms.TextBox();
+            this.cell13socBox = new System.Windows.Forms.TextBox();
+            this.cell14tempBox = new System.Windows.Forms.TextBox();
+            this.cell14Vbox = new System.Windows.Forms.TextBox();
+            this.cell14socBox = new System.Windows.Forms.TextBox();
+            this.cell15socBox = new System.Windows.Forms.TextBox();
+            this.cell15Vbox = new System.Windows.Forms.TextBox();
+            this.cell15tempBox = new System.Windows.Forms.TextBox();
+            this.cell16tempBox = new System.Windows.Forms.TextBox();
+            this.cell16Vbox = new System.Windows.Forms.TextBox();
+            this.cell16socBox = new System.Windows.Forms.TextBox();
+            this.cell17tempBox = new System.Windows.Forms.TextBox();
+            this.cell17Vbox = new System.Windows.Forms.TextBox();
+            this.cell17socBox = new System.Windows.Forms.TextBox();
+            this.cell18tempBox = new System.Windows.Forms.TextBox();
+            this.cell18Vbox = new System.Windows.Forms.TextBox();
+            this.cell18socBox = new System.Windows.Forms.TextBox();
+            this.cell19tempBox = new System.Windows.Forms.TextBox();
+            this.cell19Vbox = new System.Windows.Forms.TextBox();
+            this.cell19socBox = new System.Windows.Forms.TextBox();
+            this.cell20socBox = new System.Windows.Forms.TextBox();
+            this.cell20tempBox = new System.Windows.Forms.TextBox();
+            this.cell20Vbox = new System.Windows.Forms.TextBox();
+            this.cell21tempBox = new System.Windows.Forms.TextBox();
+            this.cell21Vbox = new System.Windows.Forms.TextBox();
+            this.cell21socBox = new System.Windows.Forms.TextBox();
+            this.cell22tempBox = new System.Windows.Forms.TextBox();
+            this.cell22Vbox = new System.Windows.Forms.TextBox();
+            this.cell22socBox = new System.Windows.Forms.TextBox();
+            this.cell24tempBox = new System.Windows.Forms.TextBox();
+            this.cell23tempBox = new System.Windows.Forms.TextBox();
+            this.cell23Vbox = new System.Windows.Forms.TextBox();
+            this.cell23socBox = new System.Windows.Forms.TextBox();
+            this.cell24Vbox = new System.Windows.Forms.TextBox();
+            this.cell24socBox = new System.Windows.Forms.TextBox();
+            this.cell25tempBox = new System.Windows.Forms.TextBox();
+            this.cell25Vbox = new System.Windows.Forms.TextBox();
+            this.cell25socBox = new System.Windows.Forms.TextBox();
+            this.cell26tempBox = new System.Windows.Forms.TextBox();
+            this.cell26Vbox = new System.Windows.Forms.TextBox();
+            this.cell26socBox = new System.Windows.Forms.TextBox();
+            this.cell27tempBox = new System.Windows.Forms.TextBox();
+            this.cell27Vbox = new System.Windows.Forms.TextBox();
+            this.cell27socBox = new System.Windows.Forms.TextBox();
+            this.cell28tempBox = new System.Windows.Forms.TextBox();
+            this.cell28Vbox = new System.Windows.Forms.TextBox();
+            this.cell28socBox = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel29.SuspendLayout();
@@ -197,6 +281,9 @@
             this.tableLayoutPanel29.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel29.ColumnCount = 1;
             this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel29.Controls.Add(this.cell28socBox, 0, 2);
+            this.tableLayoutPanel29.Controls.Add(this.cell28Vbox, 0, 1);
+            this.tableLayoutPanel29.Controls.Add(this.cell28tempBox, 0, 3);
             this.tableLayoutPanel29.Controls.Add(this.label28, 0, 0);
             this.tableLayoutPanel29.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel29.Location = new System.Drawing.Point(699, 468);
@@ -227,6 +314,9 @@
             this.tableLayoutPanel28.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel28.ColumnCount = 1;
             this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel28.Controls.Add(this.cell27socBox, 0, 2);
+            this.tableLayoutPanel28.Controls.Add(this.cell27Vbox, 0, 1);
+            this.tableLayoutPanel28.Controls.Add(this.cell27tempBox, 0, 3);
             this.tableLayoutPanel28.Controls.Add(this.label27, 0, 0);
             this.tableLayoutPanel28.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel28.Location = new System.Drawing.Point(583, 468);
@@ -257,6 +347,9 @@
             this.tableLayoutPanel27.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel27.ColumnCount = 1;
             this.tableLayoutPanel27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel27.Controls.Add(this.cell26socBox, 0, 2);
+            this.tableLayoutPanel27.Controls.Add(this.cell26Vbox, 0, 1);
+            this.tableLayoutPanel27.Controls.Add(this.cell26tempBox, 0, 3);
             this.tableLayoutPanel27.Controls.Add(this.label26, 0, 0);
             this.tableLayoutPanel27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel27.Location = new System.Drawing.Point(467, 468);
@@ -287,6 +380,9 @@
             this.tableLayoutPanel26.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel26.ColumnCount = 1;
             this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel26.Controls.Add(this.cell25socBox, 0, 2);
+            this.tableLayoutPanel26.Controls.Add(this.cell25Vbox, 0, 1);
+            this.tableLayoutPanel26.Controls.Add(this.cell25tempBox, 0, 3);
             this.tableLayoutPanel26.Controls.Add(this.label25, 0, 0);
             this.tableLayoutPanel26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel26.Location = new System.Drawing.Point(351, 468);
@@ -317,6 +413,9 @@
             this.tableLayoutPanel25.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel25.ColumnCount = 1;
             this.tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel25.Controls.Add(this.cell24socBox, 0, 2);
+            this.tableLayoutPanel25.Controls.Add(this.cell24Vbox, 0, 1);
+            this.tableLayoutPanel25.Controls.Add(this.cell24tempBox, 0, 3);
             this.tableLayoutPanel25.Controls.Add(this.label24, 0, 0);
             this.tableLayoutPanel25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel25.Location = new System.Drawing.Point(235, 468);
@@ -347,6 +446,9 @@
             this.tableLayoutPanel24.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel24.ColumnCount = 1;
             this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel24.Controls.Add(this.cell23socBox, 0, 2);
+            this.tableLayoutPanel24.Controls.Add(this.cell23Vbox, 0, 1);
+            this.tableLayoutPanel24.Controls.Add(this.cell23tempBox, 0, 3);
             this.tableLayoutPanel24.Controls.Add(this.label23, 0, 0);
             this.tableLayoutPanel24.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel24.Location = new System.Drawing.Point(119, 468);
@@ -377,6 +479,9 @@
             this.tableLayoutPanel23.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel23.ColumnCount = 1;
             this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel23.Controls.Add(this.cell22socBox, 0, 2);
+            this.tableLayoutPanel23.Controls.Add(this.cell22Vbox, 0, 1);
+            this.tableLayoutPanel23.Controls.Add(this.cell22tempBox, 0, 3);
             this.tableLayoutPanel23.Controls.Add(this.label22, 0, 0);
             this.tableLayoutPanel23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel23.Location = new System.Drawing.Point(3, 468);
@@ -407,6 +512,9 @@
             this.tableLayoutPanel22.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel22.ColumnCount = 1;
             this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel22.Controls.Add(this.cell21socBox, 0, 2);
+            this.tableLayoutPanel22.Controls.Add(this.cell21Vbox, 0, 1);
+            this.tableLayoutPanel22.Controls.Add(this.cell21tempBox, 0, 3);
             this.tableLayoutPanel22.Controls.Add(this.label21, 0, 0);
             this.tableLayoutPanel22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel22.Location = new System.Drawing.Point(699, 313);
@@ -437,6 +545,9 @@
             this.tableLayoutPanel21.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel21.ColumnCount = 1;
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel21.Controls.Add(this.cell20Vbox, 0, 1);
+            this.tableLayoutPanel21.Controls.Add(this.cell20socBox, 0, 2);
+            this.tableLayoutPanel21.Controls.Add(this.cell20tempBox, 0, 3);
             this.tableLayoutPanel21.Controls.Add(this.label20, 0, 0);
             this.tableLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel21.Location = new System.Drawing.Point(583, 313);
@@ -467,6 +578,9 @@
             this.tableLayoutPanel20.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel20.ColumnCount = 1;
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel20.Controls.Add(this.cell19socBox, 0, 2);
+            this.tableLayoutPanel20.Controls.Add(this.cell19Vbox, 0, 1);
+            this.tableLayoutPanel20.Controls.Add(this.cell19tempBox, 0, 3);
             this.tableLayoutPanel20.Controls.Add(this.label19, 0, 0);
             this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel20.Location = new System.Drawing.Point(467, 313);
@@ -497,6 +611,9 @@
             this.tableLayoutPanel19.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel19.ColumnCount = 1;
             this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel19.Controls.Add(this.cell18socBox, 0, 2);
+            this.tableLayoutPanel19.Controls.Add(this.cell18Vbox, 0, 1);
+            this.tableLayoutPanel19.Controls.Add(this.cell18tempBox, 0, 3);
             this.tableLayoutPanel19.Controls.Add(this.label18, 0, 0);
             this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel19.Location = new System.Drawing.Point(351, 313);
@@ -527,6 +644,9 @@
             this.tableLayoutPanel18.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel18.ColumnCount = 1;
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel18.Controls.Add(this.cell17socBox, 0, 2);
+            this.tableLayoutPanel18.Controls.Add(this.cell17Vbox, 0, 1);
+            this.tableLayoutPanel18.Controls.Add(this.cell17tempBox, 0, 3);
             this.tableLayoutPanel18.Controls.Add(this.label17, 0, 0);
             this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel18.Location = new System.Drawing.Point(235, 313);
@@ -557,6 +677,9 @@
             this.tableLayoutPanel17.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel17.ColumnCount = 1;
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel17.Controls.Add(this.cell16socBox, 0, 2);
+            this.tableLayoutPanel17.Controls.Add(this.cell16Vbox, 0, 1);
+            this.tableLayoutPanel17.Controls.Add(this.cell16tempBox, 0, 3);
             this.tableLayoutPanel17.Controls.Add(this.label16, 0, 0);
             this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel17.Location = new System.Drawing.Point(119, 313);
@@ -587,6 +710,9 @@
             this.tableLayoutPanel16.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel16.ColumnCount = 1;
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel16.Controls.Add(this.cell15tempBox, 0, 3);
+            this.tableLayoutPanel16.Controls.Add(this.cell15Vbox, 0, 1);
+            this.tableLayoutPanel16.Controls.Add(this.cell15socBox, 0, 2);
             this.tableLayoutPanel16.Controls.Add(this.label15, 0, 0);
             this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel16.Location = new System.Drawing.Point(3, 313);
@@ -617,6 +743,9 @@
             this.tableLayoutPanel15.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel15.ColumnCount = 1;
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel15.Controls.Add(this.cell14socBox, 0, 2);
+            this.tableLayoutPanel15.Controls.Add(this.cell14Vbox, 0, 1);
+            this.tableLayoutPanel15.Controls.Add(this.cell14tempBox, 0, 3);
             this.tableLayoutPanel15.Controls.Add(this.label14, 0, 0);
             this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel15.Location = new System.Drawing.Point(699, 158);
@@ -647,6 +776,9 @@
             this.tableLayoutPanel14.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel14.ColumnCount = 1;
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel14.Controls.Add(this.cell13socBox, 0, 2);
+            this.tableLayoutPanel14.Controls.Add(this.cell13Vbox, 0, 1);
+            this.tableLayoutPanel14.Controls.Add(this.cell13tempBox, 0, 3);
             this.tableLayoutPanel14.Controls.Add(this.label13, 0, 0);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel14.Location = new System.Drawing.Point(583, 158);
@@ -677,6 +809,9 @@
             this.tableLayoutPanel13.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel13.ColumnCount = 1;
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel13.Controls.Add(this.cell12socBox, 0, 2);
+            this.tableLayoutPanel13.Controls.Add(this.cell12Vbox, 0, 1);
+            this.tableLayoutPanel13.Controls.Add(this.cell12tempBox, 0, 3);
             this.tableLayoutPanel13.Controls.Add(this.label12, 0, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel13.Location = new System.Drawing.Point(467, 158);
@@ -707,6 +842,9 @@
             this.tableLayoutPanel12.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel12.ColumnCount = 1;
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel12.Controls.Add(this.cell11socBox, 0, 2);
+            this.tableLayoutPanel12.Controls.Add(this.cell11Vbox, 0, 1);
+            this.tableLayoutPanel12.Controls.Add(this.cell11tempBox, 0, 3);
             this.tableLayoutPanel12.Controls.Add(this.label11, 0, 0);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel12.Location = new System.Drawing.Point(351, 158);
@@ -737,6 +875,9 @@
             this.tableLayoutPanel11.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel11.ColumnCount = 1;
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel11.Controls.Add(this.cell10socBox, 0, 2);
+            this.tableLayoutPanel11.Controls.Add(this.cell10Vbox, 0, 1);
+            this.tableLayoutPanel11.Controls.Add(this.cell10tempBox, 0, 3);
             this.tableLayoutPanel11.Controls.Add(this.label10, 0, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel11.Location = new System.Drawing.Point(235, 158);
@@ -767,6 +908,9 @@
             this.tableLayoutPanel10.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel10.ColumnCount = 1;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.Controls.Add(this.cell9tempBox, 0, 3);
+            this.tableLayoutPanel10.Controls.Add(this.cell9socBox, 0, 2);
+            this.tableLayoutPanel10.Controls.Add(this.cell9Vbox, 0, 1);
             this.tableLayoutPanel10.Controls.Add(this.label9, 0, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(119, 158);
@@ -797,6 +941,9 @@
             this.tableLayoutPanel9.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel9.ColumnCount = 1;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.Controls.Add(this.cell8socBox, 0, 2);
+            this.tableLayoutPanel9.Controls.Add(this.cell8Vbox, 0, 1);
+            this.tableLayoutPanel9.Controls.Add(this.cell8tempBox, 0, 3);
             this.tableLayoutPanel9.Controls.Add(this.label8, 0, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 158);
@@ -827,6 +974,9 @@
             this.tableLayoutPanel8.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel8.ColumnCount = 1;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.Controls.Add(this.cell7socBox, 0, 2);
+            this.tableLayoutPanel8.Controls.Add(this.cell7Vbox, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.cell7tempBox, 0, 3);
             this.tableLayoutPanel8.Controls.Add(this.label7, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(699, 3);
@@ -857,6 +1007,9 @@
             this.tableLayoutPanel7.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Controls.Add(this.cell6socBox, 0, 2);
+            this.tableLayoutPanel7.Controls.Add(this.cell6Vbox, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.cell6tempBox, 0, 3);
             this.tableLayoutPanel7.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(583, 3);
@@ -887,6 +1040,9 @@
             this.tableLayoutPanel6.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Controls.Add(this.cell5socBox, 0, 2);
+            this.tableLayoutPanel6.Controls.Add(this.cell5Vbox, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.cell5tempBox, 0, 3);
             this.tableLayoutPanel6.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(467, 3);
@@ -917,6 +1073,9 @@
             this.tableLayoutPanel5.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.cell4Vbox, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.cell4socBox, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.cell4tempBox, 0, 3);
             this.tableLayoutPanel5.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(351, 3);
@@ -926,6 +1085,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(110, 149);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
@@ -947,6 +1107,9 @@
             this.tableLayoutPanel4.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.cell3Vbox, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.cell3socBox, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.cell3tempBox, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(235, 3);
@@ -977,7 +1140,10 @@
             this.tableLayoutPanel3.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.cell2tempBox, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.cell2socBox, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.cell2Vbox, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(119, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -1007,6 +1173,9 @@
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.cell1Vbox, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cell1socBox, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.cell1tempBox, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
@@ -1016,6 +1185,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(110, 149);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -1236,6 +1406,930 @@
             this.label40.Text = "Temperature";
             this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cell2Vbox
+            // 
+            this.cell2Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell2Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell2Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell2Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell2Vbox.Multiline = true;
+            this.cell2Vbox.Name = "cell2Vbox";
+            this.cell2Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell2Vbox.TabIndex = 1;
+            // 
+            // cell2socBox
+            // 
+            this.cell2socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell2socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell2socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell2socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell2socBox.Multiline = true;
+            this.cell2socBox.Name = "cell2socBox";
+            this.cell2socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell2socBox.TabIndex = 2;
+            // 
+            // cell2tempBox
+            // 
+            this.cell2tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell2tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell2tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell2tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell2tempBox.Multiline = true;
+            this.cell2tempBox.Name = "cell2tempBox";
+            this.cell2tempBox.Size = new System.Drawing.Size(102, 30);
+            this.cell2tempBox.TabIndex = 3;
+            // 
+            // cell1tempBox
+            // 
+            this.cell1tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell1tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell1tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell1tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell1tempBox.Multiline = true;
+            this.cell1tempBox.Name = "cell1tempBox";
+            this.cell1tempBox.Size = new System.Drawing.Size(102, 30);
+            this.cell1tempBox.TabIndex = 2;
+            // 
+            // cell3tempBox
+            // 
+            this.cell3tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell3tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell3tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell3tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell3tempBox.Multiline = true;
+            this.cell3tempBox.Name = "cell3tempBox";
+            this.cell3tempBox.Size = new System.Drawing.Size(102, 30);
+            this.cell3tempBox.TabIndex = 2;
+            // 
+            // cell4tempBox
+            // 
+            this.cell4tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell4tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell4tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell4tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell4tempBox.Multiline = true;
+            this.cell4tempBox.Name = "cell4tempBox";
+            this.cell4tempBox.Size = new System.Drawing.Size(102, 30);
+            this.cell4tempBox.TabIndex = 2;
+            // 
+            // cell4socBox
+            // 
+            this.cell4socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell4socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell4socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell4socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell4socBox.Multiline = true;
+            this.cell4socBox.Name = "cell4socBox";
+            this.cell4socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell4socBox.TabIndex = 4;
+            // 
+            // cell4Vbox
+            // 
+            this.cell4Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell4Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell4Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell4Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell4Vbox.Multiline = true;
+            this.cell4Vbox.Name = "cell4Vbox";
+            this.cell4Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell4Vbox.TabIndex = 4;
+            // 
+            // cell3socBox
+            // 
+            this.cell3socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell3socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell3socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell3socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell3socBox.Multiline = true;
+            this.cell3socBox.Name = "cell3socBox";
+            this.cell3socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell3socBox.TabIndex = 4;
+            // 
+            // cell3Vbox
+            // 
+            this.cell3Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell3Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell3Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell3Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell3Vbox.Multiline = true;
+            this.cell3Vbox.Name = "cell3Vbox";
+            this.cell3Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell3Vbox.TabIndex = 5;
+            // 
+            // cell5tempBox
+            // 
+            this.cell5tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell5tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell5tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell5tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell5tempBox.Multiline = true;
+            this.cell5tempBox.Name = "cell5tempBox";
+            this.cell5tempBox.Size = new System.Drawing.Size(102, 30);
+            this.cell5tempBox.TabIndex = 4;
+            // 
+            // cell5Vbox
+            // 
+            this.cell5Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell5Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell5Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell5Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell5Vbox.Multiline = true;
+            this.cell5Vbox.Name = "cell5Vbox";
+            this.cell5Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell5Vbox.TabIndex = 5;
+            // 
+            // cell5socBox
+            // 
+            this.cell5socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell5socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell5socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell5socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell5socBox.Multiline = true;
+            this.cell5socBox.Name = "cell5socBox";
+            this.cell5socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell5socBox.TabIndex = 6;
+            // 
+            // cell6tempBox
+            // 
+            this.cell6tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell6tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell6tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell6tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell6tempBox.Multiline = true;
+            this.cell6tempBox.Name = "cell6tempBox";
+            this.cell6tempBox.Size = new System.Drawing.Size(102, 30);
+            this.cell6tempBox.TabIndex = 4;
+            // 
+            // cell6Vbox
+            // 
+            this.cell6Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell6Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell6Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell6Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell6Vbox.Multiline = true;
+            this.cell6Vbox.Name = "cell6Vbox";
+            this.cell6Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell6Vbox.TabIndex = 5;
+            // 
+            // cell6socBox
+            // 
+            this.cell6socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell6socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell6socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell6socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell6socBox.Multiline = true;
+            this.cell6socBox.Name = "cell6socBox";
+            this.cell6socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell6socBox.TabIndex = 6;
+            // 
+            // cell7tempBox
+            // 
+            this.cell7tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell7tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell7tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell7tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell7tempBox.Multiline = true;
+            this.cell7tempBox.Name = "cell7tempBox";
+            this.cell7tempBox.Size = new System.Drawing.Size(106, 30);
+            this.cell7tempBox.TabIndex = 4;
+            // 
+            // cell7Vbox
+            // 
+            this.cell7Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell7Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell7Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell7Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell7Vbox.Multiline = true;
+            this.cell7Vbox.Name = "cell7Vbox";
+            this.cell7Vbox.Size = new System.Drawing.Size(106, 30);
+            this.cell7Vbox.TabIndex = 5;
+            // 
+            // cell7socBox
+            // 
+            this.cell7socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell7socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell7socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell7socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell7socBox.Multiline = true;
+            this.cell7socBox.Name = "cell7socBox";
+            this.cell7socBox.Size = new System.Drawing.Size(106, 30);
+            this.cell7socBox.TabIndex = 6;
+            // 
+            // cell8tempBox
+            // 
+            this.cell8tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell8tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell8tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell8tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell8tempBox.Multiline = true;
+            this.cell8tempBox.Name = "cell8tempBox";
+            this.cell8tempBox.Size = new System.Drawing.Size(102, 30);
+            this.cell8tempBox.TabIndex = 4;
+            // 
+            // cell8Vbox
+            // 
+            this.cell8Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell8Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell8Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell8Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell8Vbox.Multiline = true;
+            this.cell8Vbox.Name = "cell8Vbox";
+            this.cell8Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell8Vbox.TabIndex = 5;
+            // 
+            // cell8socBox
+            // 
+            this.cell8socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell8socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell8socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell8socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell8socBox.Multiline = true;
+            this.cell8socBox.Name = "cell8socBox";
+            this.cell8socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell8socBox.TabIndex = 6;
+            // 
+            // cell1socBox
+            // 
+            this.cell1socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell1socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell1socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell1socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell1socBox.Multiline = true;
+            this.cell1socBox.Name = "cell1socBox";
+            this.cell1socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell1socBox.TabIndex = 4;
+            // 
+            // cell1Vbox
+            // 
+            this.cell1Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell1Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell1Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell1Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell1Vbox.Multiline = true;
+            this.cell1Vbox.Name = "cell1Vbox";
+            this.cell1Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell1Vbox.TabIndex = 5;
+            // 
+            // cell9Vbox
+            // 
+            this.cell9Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell9Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell9Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell9Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell9Vbox.Multiline = true;
+            this.cell9Vbox.Name = "cell9Vbox";
+            this.cell9Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell9Vbox.TabIndex = 4;
+            // 
+            // cell9socBox
+            // 
+            this.cell9socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell9socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell9socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell9socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell9socBox.Multiline = true;
+            this.cell9socBox.Name = "cell9socBox";
+            this.cell9socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell9socBox.TabIndex = 5;
+            // 
+            // cell9tempBox
+            // 
+            this.cell9tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell9tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell9tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell9tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell9tempBox.Multiline = true;
+            this.cell9tempBox.Name = "cell9tempBox";
+            this.cell9tempBox.Size = new System.Drawing.Size(102, 30);
+            this.cell9tempBox.TabIndex = 6;
+            // 
+            // cell10tempBox
+            // 
+            this.cell10tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell10tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell10tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell10tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell10tempBox.Multiline = true;
+            this.cell10tempBox.Name = "cell10tempBox";
+            this.cell10tempBox.Size = new System.Drawing.Size(102, 30);
+            this.cell10tempBox.TabIndex = 5;
+            // 
+            // cell10Vbox
+            // 
+            this.cell10Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell10Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell10Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell10Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell10Vbox.Multiline = true;
+            this.cell10Vbox.Name = "cell10Vbox";
+            this.cell10Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell10Vbox.TabIndex = 6;
+            // 
+            // cell10socBox
+            // 
+            this.cell10socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell10socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell10socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell10socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell10socBox.Multiline = true;
+            this.cell10socBox.Name = "cell10socBox";
+            this.cell10socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell10socBox.TabIndex = 7;
+            // 
+            // cell11tempBox
+            // 
+            this.cell11tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell11tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell11tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell11tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell11tempBox.Multiline = true;
+            this.cell11tempBox.Name = "cell11tempBox";
+            this.cell11tempBox.Size = new System.Drawing.Size(102, 30);
+            this.cell11tempBox.TabIndex = 5;
+            // 
+            // cell11Vbox
+            // 
+            this.cell11Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell11Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell11Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell11Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell11Vbox.Multiline = true;
+            this.cell11Vbox.Name = "cell11Vbox";
+            this.cell11Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell11Vbox.TabIndex = 6;
+            // 
+            // cell11socBox
+            // 
+            this.cell11socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell11socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell11socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell11socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell11socBox.Multiline = true;
+            this.cell11socBox.Name = "cell11socBox";
+            this.cell11socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell11socBox.TabIndex = 7;
+            // 
+            // cell12tempBox
+            // 
+            this.cell12tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell12tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell12tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell12tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell12tempBox.Multiline = true;
+            this.cell12tempBox.Name = "cell12tempBox";
+            this.cell12tempBox.Size = new System.Drawing.Size(102, 30);
+            this.cell12tempBox.TabIndex = 5;
+            // 
+            // cell12Vbox
+            // 
+            this.cell12Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell12Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell12Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell12Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell12Vbox.Multiline = true;
+            this.cell12Vbox.Name = "cell12Vbox";
+            this.cell12Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell12Vbox.TabIndex = 6;
+            // 
+            // cell12socBox
+            // 
+            this.cell12socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell12socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell12socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell12socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell12socBox.Multiline = true;
+            this.cell12socBox.Name = "cell12socBox";
+            this.cell12socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell12socBox.TabIndex = 7;
+            // 
+            // cell13tempBox
+            // 
+            this.cell13tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell13tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell13tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell13tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell13tempBox.Multiline = true;
+            this.cell13tempBox.Name = "cell13tempBox";
+            this.cell13tempBox.Size = new System.Drawing.Size(102, 30);
+            this.cell13tempBox.TabIndex = 5;
+            // 
+            // cell13Vbox
+            // 
+            this.cell13Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell13Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell13Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell13Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell13Vbox.Multiline = true;
+            this.cell13Vbox.Name = "cell13Vbox";
+            this.cell13Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell13Vbox.TabIndex = 6;
+            // 
+            // cell13socBox
+            // 
+            this.cell13socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell13socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell13socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell13socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell13socBox.Multiline = true;
+            this.cell13socBox.Name = "cell13socBox";
+            this.cell13socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell13socBox.TabIndex = 7;
+            // 
+            // cell14tempBox
+            // 
+            this.cell14tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell14tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell14tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell14tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell14tempBox.Multiline = true;
+            this.cell14tempBox.Name = "cell14tempBox";
+            this.cell14tempBox.Size = new System.Drawing.Size(106, 30);
+            this.cell14tempBox.TabIndex = 5;
+            // 
+            // cell14Vbox
+            // 
+            this.cell14Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell14Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell14Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell14Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell14Vbox.Multiline = true;
+            this.cell14Vbox.Name = "cell14Vbox";
+            this.cell14Vbox.Size = new System.Drawing.Size(106, 30);
+            this.cell14Vbox.TabIndex = 6;
+            // 
+            // cell14socBox
+            // 
+            this.cell14socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell14socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell14socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell14socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell14socBox.Multiline = true;
+            this.cell14socBox.Name = "cell14socBox";
+            this.cell14socBox.Size = new System.Drawing.Size(106, 30);
+            this.cell14socBox.TabIndex = 7;
+            // 
+            // cell15socBox
+            // 
+            this.cell15socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell15socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell15socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell15socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell15socBox.Multiline = true;
+            this.cell15socBox.Name = "cell15socBox";
+            this.cell15socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell15socBox.TabIndex = 5;
+            // 
+            // cell15Vbox
+            // 
+            this.cell15Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell15Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell15Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell15Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell15Vbox.Multiline = true;
+            this.cell15Vbox.Name = "cell15Vbox";
+            this.cell15Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell15Vbox.TabIndex = 6;
+            // 
+            // cell15tempBox
+            // 
+            this.cell15tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell15tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell15tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell15tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell15tempBox.Multiline = true;
+            this.cell15tempBox.Name = "cell15tempBox";
+            this.cell15tempBox.Size = new System.Drawing.Size(102, 30);
+            this.cell15tempBox.TabIndex = 7;
+            // 
+            // cell16tempBox
+            // 
+            this.cell16tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell16tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell16tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell16tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell16tempBox.Multiline = true;
+            this.cell16tempBox.Name = "cell16tempBox";
+            this.cell16tempBox.Size = new System.Drawing.Size(102, 30);
+            this.cell16tempBox.TabIndex = 5;
+            // 
+            // cell16Vbox
+            // 
+            this.cell16Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell16Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell16Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell16Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell16Vbox.Multiline = true;
+            this.cell16Vbox.Name = "cell16Vbox";
+            this.cell16Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell16Vbox.TabIndex = 6;
+            // 
+            // cell16socBox
+            // 
+            this.cell16socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell16socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell16socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell16socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell16socBox.Multiline = true;
+            this.cell16socBox.Name = "cell16socBox";
+            this.cell16socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell16socBox.TabIndex = 7;
+            // 
+            // cell17tempBox
+            // 
+            this.cell17tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell17tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell17tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell17tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell17tempBox.Multiline = true;
+            this.cell17tempBox.Name = "cell17tempBox";
+            this.cell17tempBox.Size = new System.Drawing.Size(102, 30);
+            this.cell17tempBox.TabIndex = 5;
+            // 
+            // cell17Vbox
+            // 
+            this.cell17Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell17Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell17Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell17Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell17Vbox.Multiline = true;
+            this.cell17Vbox.Name = "cell17Vbox";
+            this.cell17Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell17Vbox.TabIndex = 6;
+            // 
+            // cell17socBox
+            // 
+            this.cell17socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell17socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell17socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell17socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell17socBox.Multiline = true;
+            this.cell17socBox.Name = "cell17socBox";
+            this.cell17socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell17socBox.TabIndex = 7;
+            // 
+            // cell18tempBox
+            // 
+            this.cell18tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell18tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell18tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell18tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell18tempBox.Multiline = true;
+            this.cell18tempBox.Name = "cell18tempBox";
+            this.cell18tempBox.Size = new System.Drawing.Size(102, 30);
+            this.cell18tempBox.TabIndex = 5;
+            // 
+            // cell18Vbox
+            // 
+            this.cell18Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell18Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell18Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell18Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell18Vbox.Multiline = true;
+            this.cell18Vbox.Name = "cell18Vbox";
+            this.cell18Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell18Vbox.TabIndex = 6;
+            // 
+            // cell18socBox
+            // 
+            this.cell18socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell18socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell18socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell18socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell18socBox.Multiline = true;
+            this.cell18socBox.Name = "cell18socBox";
+            this.cell18socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell18socBox.TabIndex = 7;
+            // 
+            // cell19tempBox
+            // 
+            this.cell19tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell19tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell19tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell19tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell19tempBox.Multiline = true;
+            this.cell19tempBox.Name = "cell19tempBox";
+            this.cell19tempBox.Size = new System.Drawing.Size(102, 30);
+            this.cell19tempBox.TabIndex = 5;
+            // 
+            // cell19Vbox
+            // 
+            this.cell19Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell19Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell19Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell19Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell19Vbox.Multiline = true;
+            this.cell19Vbox.Name = "cell19Vbox";
+            this.cell19Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell19Vbox.TabIndex = 6;
+            // 
+            // cell19socBox
+            // 
+            this.cell19socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell19socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell19socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell19socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell19socBox.Multiline = true;
+            this.cell19socBox.Name = "cell19socBox";
+            this.cell19socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell19socBox.TabIndex = 7;
+            // 
+            // cell20socBox
+            // 
+            this.cell20socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell20socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell20socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell20socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell20socBox.Multiline = true;
+            this.cell20socBox.Name = "cell20socBox";
+            this.cell20socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell20socBox.TabIndex = 5;
+            // 
+            // cell20tempBox
+            // 
+            this.cell20tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell20tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell20tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell20tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell20tempBox.Multiline = true;
+            this.cell20tempBox.Name = "cell20tempBox";
+            this.cell20tempBox.Size = new System.Drawing.Size(102, 30);
+            this.cell20tempBox.TabIndex = 6;
+            // 
+            // cell20Vbox
+            // 
+            this.cell20Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell20Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell20Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell20Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell20Vbox.Multiline = true;
+            this.cell20Vbox.Name = "cell20Vbox";
+            this.cell20Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell20Vbox.TabIndex = 7;
+            // 
+            // cell21tempBox
+            // 
+            this.cell21tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell21tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell21tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell21tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell21tempBox.Multiline = true;
+            this.cell21tempBox.Name = "cell21tempBox";
+            this.cell21tempBox.Size = new System.Drawing.Size(106, 30);
+            this.cell21tempBox.TabIndex = 5;
+            // 
+            // cell21Vbox
+            // 
+            this.cell21Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell21Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell21Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell21Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell21Vbox.Multiline = true;
+            this.cell21Vbox.Name = "cell21Vbox";
+            this.cell21Vbox.Size = new System.Drawing.Size(106, 30);
+            this.cell21Vbox.TabIndex = 6;
+            // 
+            // cell21socBox
+            // 
+            this.cell21socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell21socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell21socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell21socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell21socBox.Multiline = true;
+            this.cell21socBox.Name = "cell21socBox";
+            this.cell21socBox.Size = new System.Drawing.Size(106, 30);
+            this.cell21socBox.TabIndex = 7;
+            // 
+            // cell22tempBox
+            // 
+            this.cell22tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell22tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell22tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell22tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell22tempBox.Multiline = true;
+            this.cell22tempBox.Name = "cell22tempBox";
+            this.cell22tempBox.Size = new System.Drawing.Size(102, 31);
+            this.cell22tempBox.TabIndex = 5;
+            // 
+            // cell22Vbox
+            // 
+            this.cell22Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell22Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell22Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell22Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell22Vbox.Multiline = true;
+            this.cell22Vbox.Name = "cell22Vbox";
+            this.cell22Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell22Vbox.TabIndex = 6;
+            // 
+            // cell22socBox
+            // 
+            this.cell22socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell22socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell22socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell22socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell22socBox.Multiline = true;
+            this.cell22socBox.Name = "cell22socBox";
+            this.cell22socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell22socBox.TabIndex = 7;
+            // 
+            // cell24tempBox
+            // 
+            this.cell24tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell24tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell24tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell24tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell24tempBox.Multiline = true;
+            this.cell24tempBox.Name = "cell24tempBox";
+            this.cell24tempBox.Size = new System.Drawing.Size(102, 31);
+            this.cell24tempBox.TabIndex = 5;
+            // 
+            // cell23tempBox
+            // 
+            this.cell23tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell23tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell23tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell23tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell23tempBox.Multiline = true;
+            this.cell23tempBox.Name = "cell23tempBox";
+            this.cell23tempBox.Size = new System.Drawing.Size(102, 31);
+            this.cell23tempBox.TabIndex = 6;
+            // 
+            // cell23Vbox
+            // 
+            this.cell23Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell23Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell23Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell23Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell23Vbox.Multiline = true;
+            this.cell23Vbox.Name = "cell23Vbox";
+            this.cell23Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell23Vbox.TabIndex = 7;
+            // 
+            // cell23socBox
+            // 
+            this.cell23socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell23socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell23socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell23socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell23socBox.Multiline = true;
+            this.cell23socBox.Name = "cell23socBox";
+            this.cell23socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell23socBox.TabIndex = 8;
+            // 
+            // cell24Vbox
+            // 
+            this.cell24Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell24Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell24Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell24Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell24Vbox.Multiline = true;
+            this.cell24Vbox.Name = "cell24Vbox";
+            this.cell24Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell24Vbox.TabIndex = 6;
+            // 
+            // cell24socBox
+            // 
+            this.cell24socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell24socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell24socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell24socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell24socBox.Multiline = true;
+            this.cell24socBox.Name = "cell24socBox";
+            this.cell24socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell24socBox.TabIndex = 7;
+            // 
+            // cell25tempBox
+            // 
+            this.cell25tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell25tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell25tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell25tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell25tempBox.Multiline = true;
+            this.cell25tempBox.Name = "cell25tempBox";
+            this.cell25tempBox.Size = new System.Drawing.Size(102, 31);
+            this.cell25tempBox.TabIndex = 5;
+            // 
+            // cell25Vbox
+            // 
+            this.cell25Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell25Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell25Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell25Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell25Vbox.Multiline = true;
+            this.cell25Vbox.Name = "cell25Vbox";
+            this.cell25Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell25Vbox.TabIndex = 6;
+            // 
+            // cell25socBox
+            // 
+            this.cell25socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell25socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell25socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell25socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell25socBox.Multiline = true;
+            this.cell25socBox.Name = "cell25socBox";
+            this.cell25socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell25socBox.TabIndex = 7;
+            // 
+            // cell26tempBox
+            // 
+            this.cell26tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell26tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell26tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell26tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell26tempBox.Multiline = true;
+            this.cell26tempBox.Name = "cell26tempBox";
+            this.cell26tempBox.Size = new System.Drawing.Size(102, 31);
+            this.cell26tempBox.TabIndex = 5;
+            // 
+            // cell26Vbox
+            // 
+            this.cell26Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell26Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell26Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell26Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell26Vbox.Multiline = true;
+            this.cell26Vbox.Name = "cell26Vbox";
+            this.cell26Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell26Vbox.TabIndex = 6;
+            // 
+            // cell26socBox
+            // 
+            this.cell26socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell26socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell26socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell26socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell26socBox.Multiline = true;
+            this.cell26socBox.Name = "cell26socBox";
+            this.cell26socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell26socBox.TabIndex = 7;
+            // 
+            // cell27tempBox
+            // 
+            this.cell27tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell27tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell27tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell27tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell27tempBox.Multiline = true;
+            this.cell27tempBox.Name = "cell27tempBox";
+            this.cell27tempBox.Size = new System.Drawing.Size(102, 31);
+            this.cell27tempBox.TabIndex = 5;
+            // 
+            // cell27Vbox
+            // 
+            this.cell27Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell27Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell27Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell27Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell27Vbox.Multiline = true;
+            this.cell27Vbox.Name = "cell27Vbox";
+            this.cell27Vbox.Size = new System.Drawing.Size(102, 30);
+            this.cell27Vbox.TabIndex = 6;
+            // 
+            // cell27socBox
+            // 
+            this.cell27socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell27socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell27socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell27socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell27socBox.Multiline = true;
+            this.cell27socBox.Name = "cell27socBox";
+            this.cell27socBox.Size = new System.Drawing.Size(102, 30);
+            this.cell27socBox.TabIndex = 7;
+            // 
+            // cell28tempBox
+            // 
+            this.cell28tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell28tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell28tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell28tempBox.Location = new System.Drawing.Point(4, 115);
+            this.cell28tempBox.Multiline = true;
+            this.cell28tempBox.Name = "cell28tempBox";
+            this.cell28tempBox.Size = new System.Drawing.Size(106, 31);
+            this.cell28tempBox.TabIndex = 5;
+            // 
+            // cell28Vbox
+            // 
+            this.cell28Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell28Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell28Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell28Vbox.Location = new System.Drawing.Point(4, 41);
+            this.cell28Vbox.Multiline = true;
+            this.cell28Vbox.Name = "cell28Vbox";
+            this.cell28Vbox.Size = new System.Drawing.Size(106, 30);
+            this.cell28Vbox.TabIndex = 6;
+            // 
+            // cell28socBox
+            // 
+            this.cell28socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.cell28socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cell28socBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cell28socBox.Location = new System.Drawing.Point(4, 78);
+            this.cell28socBox.Multiline = true;
+            this.cell28socBox.Name = "cell28socBox";
+            this.cell28socBox.Size = new System.Drawing.Size(106, 30);
+            this.cell28socBox.TabIndex = 7;
+            // 
             // Cells
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1385,5 +2479,89 @@
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.TextBox cell28socBox;
+        private System.Windows.Forms.TextBox cell28Vbox;
+        private System.Windows.Forms.TextBox cell28tempBox;
+        private System.Windows.Forms.TextBox cell27socBox;
+        private System.Windows.Forms.TextBox cell27Vbox;
+        private System.Windows.Forms.TextBox cell27tempBox;
+        private System.Windows.Forms.TextBox cell26socBox;
+        private System.Windows.Forms.TextBox cell26Vbox;
+        private System.Windows.Forms.TextBox cell26tempBox;
+        private System.Windows.Forms.TextBox cell25socBox;
+        private System.Windows.Forms.TextBox cell25Vbox;
+        private System.Windows.Forms.TextBox cell25tempBox;
+        private System.Windows.Forms.TextBox cell24socBox;
+        private System.Windows.Forms.TextBox cell24Vbox;
+        private System.Windows.Forms.TextBox cell24tempBox;
+        private System.Windows.Forms.TextBox cell23socBox;
+        private System.Windows.Forms.TextBox cell23Vbox;
+        private System.Windows.Forms.TextBox cell23tempBox;
+        private System.Windows.Forms.TextBox cell22socBox;
+        private System.Windows.Forms.TextBox cell22Vbox;
+        private System.Windows.Forms.TextBox cell22tempBox;
+        private System.Windows.Forms.TextBox cell21socBox;
+        private System.Windows.Forms.TextBox cell21Vbox;
+        private System.Windows.Forms.TextBox cell21tempBox;
+        private System.Windows.Forms.TextBox cell20Vbox;
+        private System.Windows.Forms.TextBox cell20socBox;
+        private System.Windows.Forms.TextBox cell20tempBox;
+        private System.Windows.Forms.TextBox cell19socBox;
+        private System.Windows.Forms.TextBox cell19Vbox;
+        private System.Windows.Forms.TextBox cell19tempBox;
+        private System.Windows.Forms.TextBox cell18socBox;
+        private System.Windows.Forms.TextBox cell18Vbox;
+        private System.Windows.Forms.TextBox cell18tempBox;
+        private System.Windows.Forms.TextBox cell17socBox;
+        private System.Windows.Forms.TextBox cell17Vbox;
+        private System.Windows.Forms.TextBox cell17tempBox;
+        private System.Windows.Forms.TextBox cell16socBox;
+        private System.Windows.Forms.TextBox cell16Vbox;
+        private System.Windows.Forms.TextBox cell16tempBox;
+        private System.Windows.Forms.TextBox cell15tempBox;
+        private System.Windows.Forms.TextBox cell15Vbox;
+        private System.Windows.Forms.TextBox cell15socBox;
+        private System.Windows.Forms.TextBox cell14socBox;
+        private System.Windows.Forms.TextBox cell14Vbox;
+        private System.Windows.Forms.TextBox cell14tempBox;
+        private System.Windows.Forms.TextBox cell13socBox;
+        private System.Windows.Forms.TextBox cell13Vbox;
+        private System.Windows.Forms.TextBox cell13tempBox;
+        private System.Windows.Forms.TextBox cell12socBox;
+        private System.Windows.Forms.TextBox cell12Vbox;
+        private System.Windows.Forms.TextBox cell12tempBox;
+        private System.Windows.Forms.TextBox cell11socBox;
+        private System.Windows.Forms.TextBox cell11Vbox;
+        private System.Windows.Forms.TextBox cell11tempBox;
+        private System.Windows.Forms.TextBox cell10socBox;
+        private System.Windows.Forms.TextBox cell10Vbox;
+        private System.Windows.Forms.TextBox cell10tempBox;
+        private System.Windows.Forms.TextBox cell9tempBox;
+        private System.Windows.Forms.TextBox cell9socBox;
+        private System.Windows.Forms.TextBox cell9Vbox;
+        private System.Windows.Forms.TextBox cell8socBox;
+        private System.Windows.Forms.TextBox cell8Vbox;
+        private System.Windows.Forms.TextBox cell8tempBox;
+        private System.Windows.Forms.TextBox cell7socBox;
+        private System.Windows.Forms.TextBox cell7Vbox;
+        private System.Windows.Forms.TextBox cell7tempBox;
+        private System.Windows.Forms.TextBox cell6socBox;
+        private System.Windows.Forms.TextBox cell6Vbox;
+        private System.Windows.Forms.TextBox cell6tempBox;
+        private System.Windows.Forms.TextBox cell5socBox;
+        private System.Windows.Forms.TextBox cell5Vbox;
+        private System.Windows.Forms.TextBox cell5tempBox;
+        private System.Windows.Forms.TextBox cell4Vbox;
+        private System.Windows.Forms.TextBox cell4socBox;
+        private System.Windows.Forms.TextBox cell4tempBox;
+        private System.Windows.Forms.TextBox cell3Vbox;
+        private System.Windows.Forms.TextBox cell3socBox;
+        private System.Windows.Forms.TextBox cell3tempBox;
+        private System.Windows.Forms.TextBox cell2tempBox;
+        private System.Windows.Forms.TextBox cell2socBox;
+        private System.Windows.Forms.TextBox cell2Vbox;
+        private System.Windows.Forms.TextBox cell1Vbox;
+        private System.Windows.Forms.TextBox cell1socBox;
+        private System.Windows.Forms.TextBox cell1tempBox;
     }
 }

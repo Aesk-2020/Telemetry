@@ -36,7 +36,7 @@ namespace Telemetri.NewForms
             UITools.Anasayfa.startTimeLabel = startTimeLabel;
             UITools.Anasayfa.setVelocityLabel = setVelocityLabel;
             UITools.Anasayfa.driveStatusLabel = driveStatusLabel;
-
+            UITools.Anasayfa.actsetSpeedChart = myChart;
         }
         #region .. Double Buffered function ..
         public static void SetDoubleBuffered(System.Windows.Forms.Control c)

@@ -89,24 +89,10 @@ namespace Telemetri.NewForms
             cellsBtn.Visible = !cellsBtn.Visible;
         }
 
-        private void btnMotorDriver_Click(object sender, EventArgs e)
-        {
-            FormManagement.openChildForm(UITools.Telemetry2021.forms["Driver_Form"], panelChildForm);
-            pidTuningBtn.Visible = !pidTuningBtn.Visible;
-        }
-
         private void panelChildForm_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
-        
-
-        private void mqttButton_Click(object sender, EventArgs e)
-        {
-            FormManagement.openChildForm(UITools.Telemetry2021.forms["MQTTdeneme"], panelChildForm);
-        }
-
         
         private void exitBtn_Click(object sender, EventArgs e)
         {
@@ -198,16 +184,6 @@ namespace Telemetri.NewForms
             }
         }
 
-        private void pidTuningBtn_Click(object sender, EventArgs e)
-        {
-            FormManagement.openChildForm(UITools.Telemetry2021.forms["PIDTuningForm"], panelChildForm);
-        }
-
-        private void ıconButton1_Click(object sender, EventArgs e)
-        {
-            FormManagement.openChildForm(UITools.Telemetry2021.forms["TestForm"], panelChildForm);
-        }
-
         private void Telemetry2021_FormClosing(object sender, FormClosingEventArgs e)
         {
             AFront.AccessFront -= UITools.ChangeUI;
@@ -218,6 +194,22 @@ namespace Telemetri.NewForms
         private void cellsBtn_Click(object sender, EventArgs e)
         {
             FormManagement.openChildForm(UITools.Telemetry2021.forms["Cells"], panelChildForm);
+        }
+
+        private void motordrButton_Click(object sender, EventArgs e)
+        {
+            FormManagement.openChildForm(UITools.Telemetry2021.forms["Driver_Form"], panelChildForm);
+            pidTuningBtn.Visible = !pidTuningBtn.Visible;
+        }
+
+        private void ıconButton1_Click_1(object sender, EventArgs e)
+        {
+            FormManagement.openChildForm(UITools.Telemetry2021.forms["TestForm"], panelChildForm);
+        }
+
+        private void pidTuningBtn_Click_1(object sender, EventArgs e)
+        {
+            FormManagement.openChildForm(UITools.Telemetry2021.forms["PIDTuningForm"], panelChildForm);
         }
     }
 }

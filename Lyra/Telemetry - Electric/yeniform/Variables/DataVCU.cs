@@ -15,6 +15,9 @@ namespace Telemetri.Variables
         public static byte torque_limit_u8;
         public static byte can_error_u8;
         public static byte drive_mode_u3    => Convert.ToByte(drive_commands_u8 & 0b00000011);
+        
+        
+
         /*
          * Set Drive Mode
          * 0: No operation
