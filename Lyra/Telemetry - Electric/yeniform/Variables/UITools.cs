@@ -104,6 +104,16 @@ namespace Telemetri.Variables
             Anasayfa.socLabel.Text = "%" + DataBMS.soc_u16.ToString();
             Anasayfa.actsetSpeedChart.Series[0].Points.Add(DataVCU.speed_set_rpm_s16);
             Anasayfa.actsetSpeedChart.Series[1].Points.Add(DataMCU.act_speed_s16);
+            
+            if(DataVCU.freewheeling_u1 == true)
+            {
+                Anasayfa.driveStatusLabel.Text = "FREEWHEELING";
+            }
+            else
+            {
+                Anasayfa.driveStatusLabel.Text = DataVCU.vcu_torque_output_u1 ? "TORQUE OUTPUT" : "SPEED OUTPUT";
+            }
+
             Anasayfa.actsetSpeedChart.ChartAreas[0].AxisX.Minimum = Anasayfa.actsetSpeedChart.Series[1].Points.Count - Convert.ToInt32(UITools.Anasayfa.errorsLabel.Text);
             Anasayfa.actsetSpeedChart.ChartAreas[0].AxisX.Maximum = Anasayfa.actsetSpeedChart.Series[1].Points.Count;
 
@@ -126,7 +136,7 @@ namespace Telemetri.Variables
             DriverForm.actTorqueLabel.Text = DataMCU.act_torque_s8.ToString();
             DriverForm.setIdLabel.Text = DataMCU.set_id_current_s16.ToString();
             DriverForm.setIqLabel.Text = DataMCU.set_iq_current_s16.ToString();
-            DriverForm.setTorqueLabel.Text = DataMCU.set_torque_s16.ToString();
+            DriverForm.setTorqueLabel.Text = DataVCU.torque_set_s16.ToString();
             DriverForm.vdLabel.Text = DataMCU.vd_s16.ToString();
             DriverForm.vqLabel.Text = DataMCU.vq_s16.ToString();
             DriverForm.dcBusCurLabel.Text = DataMCU.i_dc_s16.ToString();

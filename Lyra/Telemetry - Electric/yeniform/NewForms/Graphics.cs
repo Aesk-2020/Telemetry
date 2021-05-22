@@ -186,10 +186,7 @@ namespace Telemetri.NewForms
 
         private void Graphics_FormClosing(object sender, FormClosingEventArgs e)
         {
-            foreach (var item in Graphics.graphicsList.Where(i => i.graphType == this.graphType).ToList())
-            {
-                item.Close();
-            }
+            Graphics.graphicsList.Where(i => i.graphType == this.graphType).ToList()[0].Close();
             Graphics.graphicsList.RemoveAll(i => i.graphType == this.graphType);
             Graphics.oldGraph = null;
         }

@@ -113,7 +113,7 @@ namespace Telemetri.Variables
             //VCU
             DataVCU.drive_commands_u8   = logBytes[myindex++];
             DataVCU.speed_set_rpm_s16   = BitConverter.ToInt16(logBytes, myindex); myindex += 2; //0.105183
-            DataVCU.torque_set_u8       = logBytes[myindex++];
+            DataVCU.torque_set_s16      = BitConverter.ToInt16(logBytes, myindex); myindex+=2;
             DataVCU.speed_limit_u16     = BitConverter.ToUInt16(logBytes, myindex); myindex += 2;
             DataVCU.torque_limit_u8     = logBytes[myindex++];
 
@@ -187,7 +187,7 @@ namespace Telemetri.Variables
 
         public static void WriteStringLog()
         {
-            _sw.WriteLine(VCU.log_data + Driver.log_data_driver + BMS.log_data_bms + GpsTracker.log_gps_data);
+            _sw.WriteLine(DataVCU.log_data + DataMCU.log_data + DataBMS.log_data + GpsTracker.log_gps_data);
             _sw.Flush();
         }
         public static bool StartLog(Timer logTimer)
@@ -202,7 +202,7 @@ namespace Telemetri.Variables
                     
                     writePath = Path.GetDirectoryName(_savefile.FileName);
                     _sw = new StreamWriter(@_savefile.FileName, append: false);
-                    _sw.WriteLine("Tarih");
+                    _sw.WriteLine("Drive Commands" + "\n" + "Speed Set RPM" + "\n" + "Torque Set" + "\n" + "Speed Limit" + "\n" + "Torque Limit" + "\n" + "ID" + "\n" + "IQ" + "\n" + "VD" + "\n" + "VQ" + "\n" + "Set ID" + "\n" + "Set IQ" + "\n" + "Set Torque" + "\n" + "IDC" + "\n" + "VDC" + "\n" + "Act Speed" + "\n" + "Motor Temp" + "\n" + "Errors" + "\n" + "Act Torque" + "\n" + "Battery Voltage" + "\n" + "Battery Current" + "\n" + "Battery Consumption" + "\n" + "SoC" + "\n" + "Worst Cell Address" + "\n" + "BMS Error" + "\n" + "DC Bus State" + "\n" + "Worst cell address" + "\n" + "Battery temp");
                     
                     logTimer.Start();
                     isFirst = false;

@@ -42,5 +42,19 @@ namespace Telemetri.Variables
          *  Freewheeling 0: Switching on (Anahtarlama açık) => Torque Mode 1: Torque Mode, Torque Mode 0: Speed_Mode
          */
 
+        public static string log_data => act_id_current_s16.ToString() + "\t" +
+                                            act_iq_current_s16.ToString() + "\t" +
+                                            vd_s16.ToString() + "\t" +
+                                            vq_s16.ToString() + "\t" +
+                                            set_id_current_s16.ToString() + "\t" +
+                                            set_iq_current_s16.ToString() + "\t" +
+                                            set_torque_s16.ToString() + "\t" +
+                                            i_dc_s16.ToString() + "\t" +
+                                            v_dc_s16.ToString() + "\t" +
+                                            act_speed_s16.ToString() + "\t" +
+                                            temperature_u8.ToString() + "\t" +
+                                            error_status_u16.ToString() + "\t" +
+                                            act_torque_s8.ToString() + "\t";
+
     }
 }
