@@ -19,8 +19,8 @@ namespace Telemetri.NewForms
             batVolt = 1,
             batCons = 2,
             batTemp = 3,
-            phaseACur = 4,
-            phaseBCur = 5,
+            VD = 4,
+            VQ = 5,
             dcBusVolt = 6,
             dcBusCur = 7,
             id = 8,
@@ -28,11 +28,10 @@ namespace Telemetri.NewForms
             iarms = 10,
             torque = 11,
         }
-        public Action<int> changeGraph = null;
+        public Action changeGraph = null;
         public static List<Graphics> graphicsList = new List<Graphics>();
         public static Graphics oldGraph = null;
         public graphs graphType = 0;
-        public static int graphTime = 0;
 
         #region .. Double Buffered function ..
         public static void SetDoubleBuffered(System.Windows.Forms.Control c)
@@ -63,9 +62,8 @@ namespace Telemetri.NewForms
             #region doubleBuffer
             SetDoubleBuffered(myChart);
             #endregion
-
+            this.ControlBox = false;
             graphType = a;
-
             switch (graphType)
             {
                 case graphs.batCur:
@@ -84,13 +82,13 @@ namespace Telemetri.NewForms
                     myChart.Series[0].Name = "Battery Temperature";
                     changeGraph = this.changeBatTemp;
                     break;
-                case graphs.phaseACur:
-                    myChart.Series[0].Name = "Phase A Current";
-                    changeGraph = this.changePhaseACur;
+                case graphs.VD:
+                    myChart.Series[0].Name = "VD";
+                    changeGraph = this.changeVD;
                     break;
-                case graphs.phaseBCur:
-                    myChart.Series[0].Name = "Phase B Current";
-                    changeGraph = this.changePhaseBCur;
+                case graphs.VQ:
+                    myChart.Series[0].Name = "VQ";
+                    changeGraph = this.changeVQ;
                     break;
                 case graphs.dcBusCur:
                     myChart.Series[0].Name = "DC Bus Current";
@@ -99,10 +97,6 @@ namespace Telemetri.NewForms
                 case graphs.dcBusVolt:
                     myChart.Series[0].Name = "DC Bus Voltage";
                     changeGraph = this.changeDcBusVolt;
-                    break;
-                case graphs.iarms:
-                    myChart.Series[0].Name = "Iarms";
-                    changeGraph = this.changeIarms;
                     break;
                 case graphs.iq:
                     myChart.Series[0].Name = "IQ";
@@ -118,53 +112,71 @@ namespace Telemetri.NewForms
                     break;
             }
         }
-        private void changeBatCur(int t)
+        private void changeBatCur()
         {
-            myChart.Series[0].Points.AddXY(t, BMS.bat_current_f32);
+            myChart.Series[0].Points.Add(DataBMS.cur_s16);
+            myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
+            myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
         }
-        private void changeBatVolt(int t)
+        private void changeBatVolt()
         {
-            myChart.Series[0].Points.AddXY(t, BMS.bat_volt_f32);
+            myChart.Series[0].Points.Add(DataBMS.volt_u16);
+            myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
+            myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
         }
-        private void changeBatCons(int t)
+        private void changeBatCons()
         {
-            myChart.Series[0].Points.AddXY(t, BMS.bat_cons_f32);
+            myChart.Series[0].Points.Add(DataBMS.cur_s16);
+            myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
+            myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
         }
-        private void changeBatTemp(int t)
+        private void changeBatTemp()
         {
-            myChart.Series[0].Points.AddXY(t, BMS.temp_u8);
+            myChart.Series[0].Points.Add(DataBMS.temperature_u8);
+            myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
+            myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
         }
-        private void changePhaseACur(int t)
+        private void changeVD()
         {
-            myChart.Series[0].Points.AddXY(t, Driver.phase_a_current_f32);
+            myChart.Series[0].Points.Add(DataMCU.vd_s16);
+            myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
+            myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
         }
-        private void changePhaseBCur(int t)
+        private void changeVQ()
         {
-            myChart.Series[0].Points.AddXY(t, Driver.phase_b_current_f32);
+            myChart.Series[0].Points.Add(DataMCU.vq_s16);
+            myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
+            myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
         }
-        private void changeDcBusCur(int t)
+        private void changeDcBusCur()
         {
-            myChart.Series[0].Points.AddXY(t, Driver.dc_bus_current_f32);
+            myChart.Series[0].Points.Add(DataMCU.i_dc_s16);
+            myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
+            myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
         }
-        private void changeDcBusVolt(int t)
+        private void changeDcBusVolt()
         {
-            myChart.Series[0].Points.AddXY(t, Driver.dc_bus_voltage_f32);
+            myChart.Series[0].Points.Add(DataMCU.v_dc_s16);
+            myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
+            myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
         }
-        private void changeIarms(int t)
+        private void changeIQ()
         {
-            myChart.Series[0].Points.AddXY(t, Driver.IArms_f32);
+            myChart.Series[0].Points.Add(DataMCU.act_iq_current_s16);
+            myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
+            myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
         }
-        private void changeIQ(int t)
+        private void changeID()
         {
-            myChart.Series[0].Points.AddXY(t, Driver.iq_f32);
+            myChart.Series[0].Points.Add(DataMCU.act_id_current_s16);
+            myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
+            myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
         }
-        private void changeID(int t)
+        private void changeTorque()
         {
-            myChart.Series[0].Points.AddXY(t, Driver.id_f32);
-        }
-        private void changeTorque(int t)
-        {
-            myChart.Series[0].Points.AddXY(t, Driver.Torque_f32);
+            myChart.Series[0].Points.Add(DataMCU.act_torque_s8);
+            myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
+            myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
         }
 
         private void clsButton_Click(object sender, EventArgs e)
@@ -182,13 +194,6 @@ namespace Telemetri.NewForms
             Graphics.graphicsList.Add(new Graphics(graphType));
             Graphics.graphicsList.Last().popupBtn.Visible = false;
             Graphics.graphicsList.Last().Show();
-        }
-
-        private void Graphics_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Graphics.graphicsList.Where(i => i.graphType == this.graphType).ToList()[0].Close();
-            Graphics.graphicsList.RemoveAll(i => i.graphType == this.graphType);
-            Graphics.oldGraph = null;
         }
     }
 }

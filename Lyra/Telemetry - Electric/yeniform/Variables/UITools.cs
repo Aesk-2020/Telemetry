@@ -98,22 +98,12 @@ namespace Telemetri.Variables
         public static void ChangeUI()
         {
             Anasayfa.actVelocityLabel.Text = DataMCU.act_speed_s16.ToString();
-            Anasayfa.batConsLabel.Text = DataBMS.cons_u16.ToString();               
-            Anasayfa.batCurLabel.Text = DataBMS.cur_s16.ToString();                 
-            Anasayfa.setVelocityLabel.Text = (DataVCU.speed_set_rpm_s16/1).ToString(); //0.105183
+            Anasayfa.batConsLabel.Text = DataBMS.cons_u16.ToString();
+            Anasayfa.batCurLabel.Text = DataBMS.cur_s16.ToString();
+            Anasayfa.setVelocityLabel.Text = (DataVCU.speed_set_rpm_s16 / 1).ToString(); //0.105183
             Anasayfa.socLabel.Text = "%" + DataBMS.soc_u16.ToString();
             Anasayfa.actsetSpeedChart.Series[0].Points.Add(DataVCU.speed_set_rpm_s16);
             Anasayfa.actsetSpeedChart.Series[1].Points.Add(DataMCU.act_speed_s16);
-            
-            if(DataVCU.freewheeling_u1 == true)
-            {
-                Anasayfa.driveStatusLabel.Text = "FREEWHEELING";
-            }
-            else
-            {
-                Anasayfa.driveStatusLabel.Text = DataVCU.vcu_torque_output_u1 ? "TORQUE OUTPUT" : "SPEED OUTPUT";
-            }
-
             Anasayfa.actsetSpeedChart.ChartAreas[0].AxisX.Minimum = Anasayfa.actsetSpeedChart.Series[1].Points.Count - Convert.ToInt32(UITools.Anasayfa.errorsLabel.Text);
             Anasayfa.actsetSpeedChart.ChartAreas[0].AxisX.Maximum = Anasayfa.actsetSpeedChart.Series[1].Points.Count;
 
@@ -123,20 +113,20 @@ namespace Telemetri.Variables
             BMSForm.tempTextBox.Text = DataBMS.temperature_u8.ToString();
             BMSForm.voltageTextBox.Text = DataBMS.volt_u16.ToString();
 
-            if(DataMCU.free_wheeling_status == true)
+            if (DataMCU.free_wheeling_status == true)
             {
                 DriverForm.actualStatusLabel.Text = "NO SWITCHING";
             }
             else
             {
-                DriverForm.actualStatusLabel.Text = DataMCU.torque_mode ? "TORQUE MODE": "SPEED MODE";
+                DriverForm.actualStatusLabel.Text = DataMCU.torque_mode ? "TORQUE MODE" : "SPEED MODE";
             }
             DriverForm.actIdLabel.Text = DataMCU.act_id_current_s16.ToString();
             DriverForm.actIqLabel.Text = DataMCU.act_iq_current_s16.ToString();
             DriverForm.actTorqueLabel.Text = DataMCU.act_torque_s8.ToString();
             DriverForm.setIdLabel.Text = DataMCU.set_id_current_s16.ToString();
             DriverForm.setIqLabel.Text = DataMCU.set_iq_current_s16.ToString();
-            DriverForm.setTorqueLabel.Text = DataVCU.torque_set_s16.ToString();
+            DriverForm.setTorqueLabel.Text = DataMCU.set_torque_s16.ToString();
             DriverForm.vdLabel.Text = DataMCU.vd_s16.ToString();
             DriverForm.vqLabel.Text = DataMCU.vq_s16.ToString();
             DriverForm.dcBusCurLabel.Text = DataMCU.i_dc_s16.ToString();
@@ -199,7 +189,7 @@ namespace Telemetri.Variables
                         break;
                     }
             }*/
-            
+
             for (int i = 0; i < DataBMS.cells.Count; i++)
             {
                 CellsForm.cellsVoltBoxList[i].Text = DataBMS.cells[i].voltage_u8.ToString();
