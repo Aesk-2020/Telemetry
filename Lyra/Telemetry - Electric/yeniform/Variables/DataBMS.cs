@@ -44,7 +44,7 @@ namespace Telemetri.Variables
             public byte soc_u8;
             public byte temperature_u8;
         }
-        public static List<Cell> cells = new List<Cell>(28);
+        public static List<Cell> cells = new List<Cell>();
 
         public static bool high_voltage_error_u1    => Convert.ToBoolean((error_u8 & 0b00000001));
         public static bool low_voltage_error_u1     => Convert.ToBoolean((error_u8 >> 1 & 0b00000001));

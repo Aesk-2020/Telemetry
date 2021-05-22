@@ -157,9 +157,8 @@ namespace Telemetri.Variables
 
             foreach (var item in NewForms.Graphics.graphicsList)
             {
-                item.changeGraph(NewForms.Graphics.graphTime);
+                item.changeGraph();
             }
-            NewForms.Graphics.graphTime++;
 
             BMSForm.dcBusStateBox.Text = DataBMS.dc_bus_state_u8.ToString();
             /*switch ((DataBMS.DC_BUS_STATE)DataBMS.dc_bus_state_u8)
@@ -200,13 +199,14 @@ namespace Telemetri.Variables
                         break;
                     }
             }*/
-            /*
+            
             for (int i = 0; i < DataBMS.cells.Count; i++)
             {
                 CellsForm.cellsVoltBoxList[i].Text = DataBMS.cells[i].voltage_u8.ToString();
                 CellsForm.cellsSocBoxList[i].Text = DataBMS.cells[i].soc_u8.ToString();
                 CellsForm.cellsTempBoxList[i].Text = DataBMS.cells[i].temperature_u8.ToString();
-            }*/
+            }
+            DataBMS.cells.Clear();
         }
     }
 }

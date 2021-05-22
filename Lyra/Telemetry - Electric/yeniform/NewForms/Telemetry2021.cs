@@ -18,7 +18,6 @@ namespace Telemetri.NewForms
         public Telemetry2021()
         {
             InitializeComponent();
-            FormManagement.openChildForm(new Anasayfa(), panelChildForm);
             LogSystem.logPlayTimer.Tick += LogPlayTimer_Tick;
             Button[] buttons = { homeButton, mapButton, motordrButton, batteryButton, pidTuningBtn, settingsButton, mqttButton };
             TextBox[] textBoxs = { activeChannelLabel, mqttPingLabel };
@@ -31,6 +30,8 @@ namespace Telemetri.NewForms
             UITools.Telemetry2021.forms.Add("PIDTuningForm", new PIDTuningForm());
             UITools.Telemetry2021.forms.Add("TestForm", new TestForm());
             UITools.Telemetry2021.forms.Add("Cells", new Cells());
+
+            FormManagement.openChildForm(UITools.Telemetry2021.forms["Anasayfa"], panelChildForm);
         }
 
         #region .. Double Buffered function ..

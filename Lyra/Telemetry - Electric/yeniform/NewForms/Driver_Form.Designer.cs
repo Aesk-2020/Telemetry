@@ -69,8 +69,8 @@
             this.idGraphBtn = new System.Windows.Forms.Button();
             this.dcBusCurGraphBtn = new System.Windows.Forms.Button();
             this.dcBusVoltGraphBtn = new System.Windows.Forms.Button();
-            this.phaseBGraphBtn = new System.Windows.Forms.Button();
-            this.phaseAGraphBtn = new System.Windows.Forms.Button();
+            this.VQBtn = new System.Windows.Forms.Button();
+            this.VDBtn = new System.Windows.Forms.Button();
             this.graphicsButton = new System.Windows.Forms.Button();
             this.graphPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
@@ -632,8 +632,8 @@
             this.panel1.Controls.Add(this.idGraphBtn);
             this.panel1.Controls.Add(this.dcBusCurGraphBtn);
             this.panel1.Controls.Add(this.dcBusVoltGraphBtn);
-            this.panel1.Controls.Add(this.phaseBGraphBtn);
-            this.panel1.Controls.Add(this.phaseAGraphBtn);
+            this.panel1.Controls.Add(this.VQBtn);
+            this.panel1.Controls.Add(this.VDBtn);
             this.panel1.Controls.Add(this.graphicsButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 466);
@@ -767,47 +767,47 @@
             this.dcBusVoltGraphBtn.Visible = false;
             this.dcBusVoltGraphBtn.Click += new System.EventHandler(this.dcBusVoltGraphBtn_Click);
             // 
-            // phaseBGraphBtn
+            // VQBtn
             // 
-            this.phaseBGraphBtn.AutoSize = true;
-            this.phaseBGraphBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(13)))), ((int)(((byte)(32)))));
-            this.phaseBGraphBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.phaseBGraphBtn.FlatAppearance.BorderSize = 0;
-            this.phaseBGraphBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.phaseBGraphBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.phaseBGraphBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.phaseBGraphBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.phaseBGraphBtn.Location = new System.Drawing.Point(0, 100);
-            this.phaseBGraphBtn.Name = "phaseBGraphBtn";
-            this.phaseBGraphBtn.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.phaseBGraphBtn.Size = new System.Drawing.Size(904, 50);
-            this.phaseBGraphBtn.TabIndex = 18;
-            this.phaseBGraphBtn.Text = "Phase B Current";
-            this.phaseBGraphBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.phaseBGraphBtn.UseVisualStyleBackColor = false;
-            this.phaseBGraphBtn.Visible = false;
-            this.phaseBGraphBtn.Click += new System.EventHandler(this.phaseBGraphBtn_Click);
+            this.VQBtn.AutoSize = true;
+            this.VQBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(13)))), ((int)(((byte)(32)))));
+            this.VQBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VQBtn.FlatAppearance.BorderSize = 0;
+            this.VQBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.VQBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VQBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.VQBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.VQBtn.Location = new System.Drawing.Point(0, 100);
+            this.VQBtn.Name = "VQBtn";
+            this.VQBtn.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.VQBtn.Size = new System.Drawing.Size(904, 50);
+            this.VQBtn.TabIndex = 18;
+            this.VQBtn.Text = "VQ";
+            this.VQBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.VQBtn.UseVisualStyleBackColor = false;
+            this.VQBtn.Visible = false;
+            this.VQBtn.Click += new System.EventHandler(this.VQBtn_Click);
             // 
-            // phaseAGraphBtn
+            // VDBtn
             // 
-            this.phaseAGraphBtn.AutoSize = true;
-            this.phaseAGraphBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(13)))), ((int)(((byte)(32)))));
-            this.phaseAGraphBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.phaseAGraphBtn.FlatAppearance.BorderSize = 0;
-            this.phaseAGraphBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.phaseAGraphBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.phaseAGraphBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.phaseAGraphBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.phaseAGraphBtn.Location = new System.Drawing.Point(0, 50);
-            this.phaseAGraphBtn.Name = "phaseAGraphBtn";
-            this.phaseAGraphBtn.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.phaseAGraphBtn.Size = new System.Drawing.Size(904, 50);
-            this.phaseAGraphBtn.TabIndex = 17;
-            this.phaseAGraphBtn.Text = "Phase A Current";
-            this.phaseAGraphBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.phaseAGraphBtn.UseVisualStyleBackColor = false;
-            this.phaseAGraphBtn.Visible = false;
-            this.phaseAGraphBtn.Click += new System.EventHandler(this.phaseAGraphBtn_Click);
+            this.VDBtn.AutoSize = true;
+            this.VDBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(13)))), ((int)(((byte)(32)))));
+            this.VDBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VDBtn.FlatAppearance.BorderSize = 0;
+            this.VDBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
+            this.VDBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VDBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.VDBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.VDBtn.Location = new System.Drawing.Point(0, 50);
+            this.VDBtn.Name = "VDBtn";
+            this.VDBtn.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.VDBtn.Size = new System.Drawing.Size(904, 50);
+            this.VDBtn.TabIndex = 17;
+            this.VDBtn.Text = "VD";
+            this.VDBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.VDBtn.UseVisualStyleBackColor = false;
+            this.VDBtn.Visible = false;
+            this.VDBtn.Click += new System.EventHandler(this.VDBtn_Click);
             // 
             // graphicsButton
             // 
@@ -1347,8 +1347,8 @@
         private System.Windows.Forms.Button idGraphBtn;
         private System.Windows.Forms.Button dcBusCurGraphBtn;
         private System.Windows.Forms.Button dcBusVoltGraphBtn;
-        private System.Windows.Forms.Button phaseBGraphBtn;
-        private System.Windows.Forms.Button phaseAGraphBtn;
+        private System.Windows.Forms.Button VQBtn;
+        private System.Windows.Forms.Button VDBtn;
         private System.Windows.Forms.Button graphicsButton;
         private System.Windows.Forms.Button torqueGraphBtn;
         private System.Windows.Forms.Panel graphPanel;

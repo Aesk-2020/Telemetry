@@ -72,10 +72,17 @@ namespace Telemetri.NewForms
         private void startSendBtn_Click(object sender, EventArgs e)
         {
             testTimer.Interval = (int)testTimerInterval.Value;
-            testTimer.Start();
-            startSendBtn.Enabled = false;
-            stpBtn.Enabled = true;
-            sendOnceBtn.Enabled = false;
+            if(Anasayfa.mqttobj.connected_flag == true)
+            {
+                testTimer.Start();
+                startSendBtn.Enabled = false;
+                stpBtn.Enabled = true;
+                sendOnceBtn.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("MQTT Bağlantısı Yok!");
+            }
         }
 
         private void stpBtn_Click(object sender, EventArgs e)
