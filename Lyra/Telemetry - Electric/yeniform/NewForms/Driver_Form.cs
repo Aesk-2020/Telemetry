@@ -184,7 +184,7 @@ namespace Telemetri.NewForms
 
         private void iqGraphBtn_Click(object sender, EventArgs e)
         {
-            graphType = Graphics.graphs.iq;
+            graphType = Graphics.graphs.iqActIq;
             Graphics.graphicsList.Add(new Graphics(graphType));
             if (Graphics.oldGraph != null)
             {

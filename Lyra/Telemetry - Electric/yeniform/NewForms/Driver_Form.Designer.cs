@@ -698,7 +698,7 @@
             this.iqGraphBtn.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.iqGraphBtn.Size = new System.Drawing.Size(904, 50);
             this.iqGraphBtn.TabIndex = 22;
-            this.iqGraphBtn.Text = "IQ";
+            this.iqGraphBtn.Text = "SET IQ / ACTUAL IQ";
             this.iqGraphBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iqGraphBtn.UseVisualStyleBackColor = false;
             this.iqGraphBtn.Visible = false;
