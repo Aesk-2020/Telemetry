@@ -101,7 +101,16 @@ namespace Telemetri.Variables
             ComproUI compro = new ComproUI();
 
             //compro.ComproUnpack(e.Message);
-            YedekUnpack(e.Message);
+            if(e.Topic == "LYRADATA")
+            {
+                YedekUnpack(e.Message);
+            }
+            else if(e.Topic == "vehicle_to_interface")
+            {
+                ComproUI pack = new ComproUI();
+                //MessageBox.Show("geliyooo");
+                pack.ComproUnpack(e.Message);
+            }
             AFront.ChangeUI();
         }
 

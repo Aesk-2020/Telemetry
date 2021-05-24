@@ -165,7 +165,7 @@
             // 
             // pidTuningBtn
             // 
-            this.pidTuningBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(13)))), ((int)(((byte)(32)))));
+            this.pidTuningBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.pidTuningBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.pidTuningBtn.FlatAppearance.BorderSize = 0;
             this.pidTuningBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
@@ -183,7 +183,6 @@
             this.pidTuningBtn.Text = "PID Tuning";
             this.pidTuningBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.pidTuningBtn.UseVisualStyleBackColor = false;
-            this.pidTuningBtn.Visible = false;
             this.pidTuningBtn.Click += new System.EventHandler(this.pidTuningBtn_Click_1);
             // 
             // motordrButton
@@ -210,7 +209,7 @@
             // 
             // cellsBtn
             // 
-            this.cellsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(13)))), ((int)(((byte)(32)))));
+            this.cellsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.cellsBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.cellsBtn.FlatAppearance.BorderSize = 0;
             this.cellsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
@@ -225,10 +224,9 @@
             this.cellsBtn.Name = "cellsBtn";
             this.cellsBtn.Size = new System.Drawing.Size(250, 48);
             this.cellsBtn.TabIndex = 12;
-            this.cellsBtn.Text = "Battery";
+            this.cellsBtn.Text = "Cells";
             this.cellsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.cellsBtn.UseVisualStyleBackColor = false;
-            this.cellsBtn.Visible = false;
             this.cellsBtn.Click += new System.EventHandler(this.cellsBtn_Click);
             // 
             // exitBtn

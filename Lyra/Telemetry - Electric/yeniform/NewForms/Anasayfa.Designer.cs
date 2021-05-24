@@ -49,7 +49,7 @@
             this.portDisconnectBtn = new FontAwesome.Sharp.IconButton();
             this.mqttDisconnectBtn = new FontAwesome.Sharp.IconButton();
             this.mqttConnectBtn = new FontAwesome.Sharp.IconButton();
-            this.openGUILogBtn = new FontAwesome.Sharp.IconButton();
+            this.resetBoardButton = new FontAwesome.Sharp.IconButton();
             this.openSDLogBtn = new FontAwesome.Sharp.IconButton();
             this.stopLogBtn = new FontAwesome.Sharp.IconButton();
             this.startLogBtn = new FontAwesome.Sharp.IconButton();
@@ -85,6 +85,9 @@
             this.logTimer = new System.Windows.Forms.Timer(this.components);
             this.mqttWorker = new System.ComponentModel.BackgroundWorker();
             this.myChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.setTorqueBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -102,6 +105,7 @@
             this.panel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myChart)).BeginInit();
+            this.tableLayoutPanel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -159,7 +163,7 @@
             this.tableLayoutPanel1.Controls.Add(this.portDisconnectBtn, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.mqttDisconnectBtn, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.mqttConnectBtn, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.openGUILogBtn, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.resetBoardButton, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.openSDLogBtn, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.stopLogBtn, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.startLogBtn, 1, 0);
@@ -288,23 +292,25 @@
             this.mqttConnectBtn.UseVisualStyleBackColor = false;
             this.mqttConnectBtn.Click += new System.EventHandler(this.mqttConnectBtn_Click);
             // 
-            // openGUILogBtn
+            // resetBoardButton
             // 
-            this.openGUILogBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.openGUILogBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.openGUILogBtn.FlatAppearance.BorderSize = 0;
-            this.openGUILogBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.openGUILogBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.openGUILogBtn.ForeColor = System.Drawing.SystemColors.Window;
-            this.openGUILogBtn.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.openGUILogBtn.IconColor = System.Drawing.Color.Black;
-            this.openGUILogBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.openGUILogBtn.Location = new System.Drawing.Point(316, 46);
-            this.openGUILogBtn.Name = "openGUILogBtn";
-            this.openGUILogBtn.Size = new System.Drawing.Size(149, 36);
-            this.openGUILogBtn.TabIndex = 116;
-            this.openGUILogBtn.Text = "Open GUI Log";
-            this.openGUILogBtn.UseVisualStyleBackColor = false;
+            this.resetBoardButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.resetBoardButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.resetBoardButton.Enabled = false;
+            this.resetBoardButton.FlatAppearance.BorderSize = 0;
+            this.resetBoardButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resetBoardButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.resetBoardButton.ForeColor = System.Drawing.SystemColors.Window;
+            this.resetBoardButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.resetBoardButton.IconColor = System.Drawing.Color.Black;
+            this.resetBoardButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.resetBoardButton.Location = new System.Drawing.Point(316, 46);
+            this.resetBoardButton.Name = "resetBoardButton";
+            this.resetBoardButton.Size = new System.Drawing.Size(149, 36);
+            this.resetBoardButton.TabIndex = 116;
+            this.resetBoardButton.Text = "Reset Board";
+            this.resetBoardButton.UseVisualStyleBackColor = false;
+            this.resetBoardButton.Click += new System.EventHandler(this.resetBoardButton_Click);
             // 
             // openSDLogBtn
             // 
@@ -435,7 +441,7 @@
             this.actVelocityLabel.ReadOnly = true;
             this.actVelocityLabel.Size = new System.Drawing.Size(126, 36);
             this.actVelocityLabel.TabIndex = 135;
-            this.actVelocityLabel.Text = "17 km/h";
+            this.actVelocityLabel.Text = "0 rpm";
             this.actVelocityLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel5
@@ -466,7 +472,7 @@
             this.setVelocityLabel.ReadOnly = true;
             this.setVelocityLabel.Size = new System.Drawing.Size(125, 36);
             this.setVelocityLabel.TabIndex = 135;
-            this.setVelocityLabel.Text = "24 km/h";
+            this.setVelocityLabel.Text = "0 rpm";
             this.setVelocityLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel8
@@ -528,7 +534,7 @@
             this.batConsLabel.ReadOnly = true;
             this.batConsLabel.Size = new System.Drawing.Size(196, 36);
             this.batConsLabel.TabIndex = 135;
-            this.batConsLabel.Text = "639Wh";
+            this.batConsLabel.Text = "0 Wh";
             this.batConsLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel10
@@ -572,7 +578,7 @@
             this.batCurLabel.ReadOnly = true;
             this.batCurLabel.Size = new System.Drawing.Size(194, 36);
             this.batCurLabel.TabIndex = 135;
-            this.batCurLabel.Text = "5.00A";
+            this.batCurLabel.Text = "5.00 A";
             this.batCurLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel9
@@ -616,22 +622,24 @@
             this.socLabel.ReadOnly = true;
             this.socLabel.Size = new System.Drawing.Size(194, 36);
             this.socLabel.TabIndex = 135;
-            this.socLabel.Text = "%67.74";
+            this.socLabel.Text = "%100";
             this.socLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel12
             // 
             this.tableLayoutPanel12.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel12.ColumnCount = 2;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.ColumnCount = 3;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel12.Controls.Add(this.tableLayoutPanel15, 0, 0);
             this.tableLayoutPanel12.Controls.Add(this.tableLayoutPanel14, 0, 0);
             this.tableLayoutPanel12.Controls.Add(this.tableLayoutPanel13, 0, 0);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel12.Location = new System.Drawing.Point(287, 111);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 1;
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel12.Size = new System.Drawing.Size(624, 102);
             this.tableLayoutPanel12.TabIndex = 141;
             // 
@@ -642,12 +650,12 @@
             this.tableLayoutPanel14.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel14.Controls.Add(this.driveStatusLabel, 0, 1);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(315, 4);
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(211, 4);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 2;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(305, 94);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(200, 94);
             this.tableLayoutPanel14.TabIndex = 138;
             // 
             // label2
@@ -658,7 +666,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(299, 52);
+            this.label2.Size = new System.Drawing.Size(194, 52);
             this.label2.TabIndex = 131;
             this.label2.Text = "Set Mode";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -674,9 +682,9 @@
             this.driveStatusLabel.Multiline = true;
             this.driveStatusLabel.Name = "driveStatusLabel";
             this.driveStatusLabel.ReadOnly = true;
-            this.driveStatusLabel.Size = new System.Drawing.Size(299, 36);
+            this.driveStatusLabel.Size = new System.Drawing.Size(194, 36);
             this.driveStatusLabel.TabIndex = 135;
-            this.driveStatusLabel.Text = "IGNITION ON";
+            this.driveStatusLabel.Text = "None";
             this.driveStatusLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel13
@@ -691,7 +699,7 @@
             this.tableLayoutPanel13.RowCount = 2;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(304, 94);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(200, 94);
             this.tableLayoutPanel13.TabIndex = 137;
             // 
             // label1
@@ -702,7 +710,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(298, 52);
+            this.label1.Size = new System.Drawing.Size(194, 52);
             this.label1.TabIndex = 131;
             this.label1.Text = "Graph Scale (Last X)";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -717,7 +725,7 @@
             this.errorsLabel.Location = new System.Drawing.Point(3, 55);
             this.errorsLabel.Multiline = true;
             this.errorsLabel.Name = "errorsLabel";
-            this.errorsLabel.Size = new System.Drawing.Size(298, 36);
+            this.errorsLabel.Size = new System.Drawing.Size(194, 36);
             this.errorsLabel.TabIndex = 135;
             this.errorsLabel.Text = "50";
             this.errorsLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -871,6 +879,50 @@
             this.myChart.TabIndex = 145;
             this.myChart.Text = "chart1";
             // 
+            // tableLayoutPanel15
+            // 
+            this.tableLayoutPanel15.ColumnCount = 1;
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel15.Controls.Add(this.label9, 0, 0);
+            this.tableLayoutPanel15.Controls.Add(this.setTorqueBox, 0, 1);
+            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(418, 4);
+            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            this.tableLayoutPanel15.RowCount = 2;
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(202, 94);
+            this.tableLayoutPanel15.TabIndex = 139;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(196, 52);
+            this.label9.TabIndex = 131;
+            this.label9.Text = "Set Torque";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // setTorqueBox
+            // 
+            this.setTorqueBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.setTorqueBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.setTorqueBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.setTorqueBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.setTorqueBox.ForeColor = System.Drawing.Color.White;
+            this.setTorqueBox.Location = new System.Drawing.Point(3, 55);
+            this.setTorqueBox.Multiline = true;
+            this.setTorqueBox.Name = "setTorqueBox";
+            this.setTorqueBox.ReadOnly = true;
+            this.setTorqueBox.Size = new System.Drawing.Size(196, 36);
+            this.setTorqueBox.TabIndex = 135;
+            this.setTorqueBox.Text = "0 N*m";
+            this.setTorqueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Anasayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -908,6 +960,8 @@
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.myChart)).EndInit();
+            this.tableLayoutPanel15.ResumeLayout(false);
+            this.tableLayoutPanel15.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -922,7 +976,7 @@
         private FontAwesome.Sharp.IconButton portDisconnectBtn;
         private FontAwesome.Sharp.IconButton mqttDisconnectBtn;
         private FontAwesome.Sharp.IconButton mqttConnectBtn;
-        private FontAwesome.Sharp.IconButton openGUILogBtn;
+        private FontAwesome.Sharp.IconButton resetBoardButton;
         private FontAwesome.Sharp.IconButton openSDLogBtn;
         private FontAwesome.Sharp.IconButton stopLogBtn;
         private FontAwesome.Sharp.IconButton startLogBtn;
@@ -960,5 +1014,8 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart myChart;
         private System.Windows.Forms.TextBox driveStatusLabel;
         private System.Windows.Forms.TextBox errorsLabel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox setTorqueBox;
     }
 }

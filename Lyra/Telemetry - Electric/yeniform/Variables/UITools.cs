@@ -42,6 +42,7 @@ namespace Telemetri.Variables
             public static TextBox setVelocityLabel;
             public static TextBox actVelocityLabel;
             public static TextBox errorsLabel;
+            public static TextBox setTorqueBox;
             public static TextBox driveStatusLabel;
             public static Stopwatch mqttStopwatch = new Stopwatch();
             public static Chart actsetSpeedChart;
@@ -54,6 +55,13 @@ namespace Telemetri.Variables
             public static TextBox curTextBox;
             public static TextBox socTextBox;
             public static TextBox dcBusStateBox;
+
+            public static PictureBox prechargeBox;
+            public static PictureBox dischargeBox;
+            public static PictureBox dcBusReadyBox;
+            public static PictureBox chargingBox;
+            public static PictureBox balancingBox;
+            public static PictureBox prechargeErrorBox;
         }
         public static class DriverForm
         {
@@ -97,20 +105,21 @@ namespace Telemetri.Variables
         }
         public static void ChangeUI()
         {
-            Anasayfa.actVelocityLabel.Text = DataMCU.act_speed_s16.ToString();
-            Anasayfa.batConsLabel.Text = DataBMS.cons_u16.ToString();
-            Anasayfa.batCurLabel.Text = DataBMS.cur_s16.ToString();
-            Anasayfa.setVelocityLabel.Text = (DataVCU.speed_set_rpm_s16 / 1).ToString(); //0.105183
+            Anasayfa.actVelocityLabel.Text = DataMCU.act_speed_s16.ToString() + " rpm";
+            Anasayfa.batConsLabel.Text = DataBMS.cons_u16.ToString() + " Wh";
+            Anasayfa.batCurLabel.Text = DataBMS.cur_s16.ToString() + " A";
+            Anasayfa.setVelocityLabel.Text = (DataVCU.speed_set_rpm_s16 / 1).ToString() + " rpm"; //0.105183
             Anasayfa.socLabel.Text = "%" + DataBMS.soc_u16.ToString();
+            Anasayfa.setTorqueBox.Text = DataVCU.torque_set_s16.ToString() + " N*m";
             Anasayfa.actsetSpeedChart.Series[0].Points.Add(DataVCU.speed_set_rpm_s16);
             Anasayfa.actsetSpeedChart.Series[1].Points.Add(DataMCU.act_speed_s16);
             Anasayfa.actsetSpeedChart.ChartAreas[0].AxisX.Minimum = Anasayfa.actsetSpeedChart.Series[1].Points.Count - Convert.ToInt32(UITools.Anasayfa.errorsLabel.Text);
             Anasayfa.actsetSpeedChart.ChartAreas[0].AxisX.Maximum = Anasayfa.actsetSpeedChart.Series[1].Points.Count;
 
-            BMSForm.consTextBox.Text = DataBMS.cons_u16.ToString();
-            BMSForm.curTextBox.Text = DataBMS.cur_s16.ToString();
+            BMSForm.consTextBox.Text = DataBMS.cons_u16.ToString() + " Wh";
+            BMSForm.curTextBox.Text = DataBMS.cur_s16.ToString() + " A";
             BMSForm.socTextBox.Text = "%" + DataBMS.soc_u16.ToString();
-            BMSForm.tempTextBox.Text = DataBMS.temperature_u8.ToString();
+            BMSForm.tempTextBox.Text = DataBMS.temperature_u8.ToString() + " °C";
             BMSForm.voltageTextBox.Text = DataBMS.volt_u16.ToString();
 
             if (DataMCU.free_wheeling_status == true)
@@ -150,7 +159,6 @@ namespace Telemetri.Variables
                 item.changeGraph();
             }
 
-            BMSForm.dcBusStateBox.Text = DataBMS.dc_bus_state_u8.ToString();
             /*switch ((DataBMS.DC_BUS_STATE)DataBMS.dc_bus_state_u8)
             {
                 case DataBMS.DC_BUS_STATE.PRECHARGE:

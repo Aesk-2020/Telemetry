@@ -22,6 +22,8 @@ namespace Telemetri.NewForms
         string splitter = "aesk\n";
         List<string> lineList;
         SerialPort serialPort = new SerialPort();
+        ComproUI comproUIII;
+
         public Anasayfa()
         {
             InitializeComponent();
@@ -37,6 +39,8 @@ namespace Telemetri.NewForms
             UITools.Anasayfa.setVelocityLabel = setVelocityLabel;
             UITools.Anasayfa.driveStatusLabel = driveStatusLabel;
             UITools.Anasayfa.actsetSpeedChart = myChart;
+            UITools.Anasayfa.setTorqueBox = setTorqueBox;
+            comproUIII = new ComproUI(0x31, ComproUI.TELEMETRI, 24);
         }
         #region .. Double Buffered function ..
         public static void SetDoubleBuffered(System.Windows.Forms.Control c)
@@ -86,7 +90,7 @@ namespace Telemetri.NewForms
             SetDoubleBuffered(finishBtn);
             SetDoubleBuffered(mqttConnectBtn);
             SetDoubleBuffered(mqttDisconnectBtn);
-            SetDoubleBuffered(openGUILogBtn);
+            SetDoubleBuffered(resetBoardButton);
             SetDoubleBuffered(openSDLogBtn);
             SetDoubleBuffered(portConnectBtn);
             SetDoubleBuffered(portDisconnectBtn);
@@ -120,6 +124,7 @@ namespace Telemetri.NewForms
             mqttConnectBtn.Enabled = true;
             mqttDisconnectBtn.Enabled = false;
             startLogBtn.Enabled = false;
+            resetBoardButton.Enabled = false;
             portConnectBtn.Enabled = true;
         }
 
@@ -174,6 +179,7 @@ namespace Telemetri.NewForms
                 mqttDisconnectBtn.Enabled = true;
                 mqttConnectBtn.Enabled = false;
                 startLogBtn.Enabled = true;
+                resetBoardButton.Enabled = true;
                 portConnectBtn.Enabled = false;
                 AFront.AccessFront += UITools.ChangeUI;
             }
@@ -190,6 +196,15 @@ namespace Telemetri.NewForms
         private void mqttWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
 
+        }
+
+        private void resetBoardButton_Click(object sender, EventArgs e)
+        {
+            comproUIII.message = new byte[] { 0 };
+            comproUIII.msg_size = 1;
+            comproUIII.msg_index = 2;
+            comproUIII.CreateBuffer();
+            mqttobj.client.Publish("interface_to_vehicle", comproUIII.buffer);
         }
     }
 }

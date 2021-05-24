@@ -28,37 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.gMapTool = new GMap.NET.WindowsForms.GMapControl();
             this.SuspendLayout();
             // 
-            // label1
+            // gMapTool
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(4, 1);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(306, 108);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Harita";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(914, 621);
-            this.tableLayoutPanel1.TabIndex = 2;
+            this.gMapTool.Bearing = 0F;
+            this.gMapTool.CanDragMap = true;
+            this.gMapTool.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gMapTool.EmptyTileColor = System.Drawing.Color.Navy;
+            this.gMapTool.GrayScaleMode = false;
+            this.gMapTool.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.gMapTool.LevelsKeepInMemory = 5;
+            this.gMapTool.Location = new System.Drawing.Point(0, 0);
+            this.gMapTool.MarkersEnabled = true;
+            this.gMapTool.MaxZoom = 2;
+            this.gMapTool.MinZoom = 2;
+            this.gMapTool.MouseWheelZoomEnabled = true;
+            this.gMapTool.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.gMapTool.Name = "gMapTool";
+            this.gMapTool.NegativeMode = false;
+            this.gMapTool.PolygonsEnabled = true;
+            this.gMapTool.RetryLoadTile = 0;
+            this.gMapTool.RoutesEnabled = true;
+            this.gMapTool.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.gMapTool.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.gMapTool.ShowTileGridLines = false;
+            this.gMapTool.Size = new System.Drawing.Size(914, 621);
+            this.gMapTool.TabIndex = 0;
+            this.gMapTool.Zoom = 0D;
             // 
             // Map
             // 
@@ -66,19 +64,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(914, 621);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.gMapTool);
             this.Name = "Map";
             this.Text = "Harita";
             this.Load += new System.EventHandler(this.Map_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private GMap.NET.WindowsForms.GMapControl gMapTool;
     }
 }

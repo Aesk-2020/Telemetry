@@ -27,7 +27,12 @@ namespace Telemetri.NewForms
             UITools.BMSForm.socTextBox = socTextBox;
             UITools.BMSForm.tempTextBox = tempTextBox;
             UITools.BMSForm.voltageTextBox = voltageTextBox;
-            UITools.BMSForm.dcBusStateBox = dcBusStateBox;
+            UITools.BMSForm.prechargeBox = prechargeBox;
+            UITools.BMSForm.dischargeBox = dischargeBox;
+            UITools.BMSForm.dcBusReadyBox = dcBusReadyBox;
+            UITools.BMSForm.balancingBox = balancingBox;
+            UITools.BMSForm.chargingBox = chragingBox;
+            UITools.BMSForm.prechargeErrorBox = prechargeErrorBox;
         }
         #region .. Double Buffered function ..
         public static void SetDoubleBuffered(System.Windows.Forms.Control c)

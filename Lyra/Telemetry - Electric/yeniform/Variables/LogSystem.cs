@@ -104,7 +104,7 @@ namespace Telemetri.Variables
         private static int myindex = 0;
         public static void ParseStringData(string hamlog)
         {
-            myindex = 0;
+            myindex = 2;
             byte[] logBytes1 = Encoding.UTF8.GetBytes(hamlog);
             byte[] logBytes2 = Encoding.Unicode.GetBytes(hamlog);
 
@@ -202,7 +202,7 @@ namespace Telemetri.Variables
                     
                     writePath = Path.GetDirectoryName(_savefile.FileName);
                     _sw = new StreamWriter(@_savefile.FileName, append: false);
-                    _sw.WriteLine("Drive Commands" + "\n" + "Speed Set RPM" + "\n" + "Torque Set" + "\n" + "Speed Limit" + "\n" + "Torque Limit" + "\n" + "ID" + "\n" + "IQ" + "\n" + "VD" + "\n" + "VQ" + "\n" + "Set ID" + "\n" + "Set IQ" + "\n" + "Set Torque" + "\n" + "IDC" + "\n" + "VDC" + "\n" + "Act Speed" + "\n" + "Motor Temp" + "\n" + "Errors" + "\n" + "Act Torque" + "\n" + "Battery Voltage" + "\n" + "Battery Current" + "\n" + "Battery Consumption" + "\n" + "SoC" + "\n" + "Worst Cell Address" + "\n" + "BMS Error" + "\n" + "DC Bus State" + "\n" + "Worst cell address" + "\n" + "Battery temp");
+                    _sw.WriteLine("Drive Commands" + "\t" + "Speed Set RPM" + "\t" + "Torque Set" + "\t" + "Speed Limit" + "\t" + "Torque Limit" + "\t" + "ID" + "\t" + "IQ" + "\t" + "VD" + "\t" + "VQ" + "\t" + "Set ID" + "\t" + "Set IQ" + "\t" + "Set Torque" + "\t" + "IDC" + "\t" + "VDC" + "\t" + "Act Speed" + "\t" + "Motor Temp" + "\t" + "Errors" + "\t" + "Act Torque" + "\t" + "Battery Voltage" + "\t" + "Battery Current" + "\t" + "Battery Consumption" + "\t" + "SoC" + "\t" + "Worst Cell Address" + "\t" + "BMS Error" + "\t" + "DC Bus State" + "\t" + "Worst cell address" + "\t" + "Battery temp" + "\t" + "Lattitude" + "\t" + "Longtitude" + "\t" + "GPS Velocity" + "\t" + "Sattelites" + "\t" + "Efficiency");
                     
                     logTimer.Start();
                     isFirst = false;

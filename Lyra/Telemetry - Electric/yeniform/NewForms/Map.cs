@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telemetri.Variables;
 
 namespace Telemetri.NewForms
 {
     public partial class Map : Form
     {
+
+        GMAPController myGmap = new GMAPController(MACROS.centerLat, MACROS.centerLong, MACROS.startLineLat, MACROS.startLineLong);
+
         public Map()
         {
             InitializeComponent();
@@ -47,7 +51,9 @@ namespace Telemetri.NewForms
         private void Map_Load(object sender, EventArgs e)
         {
             #region doubleBuffer
-            SetDoubleBuffered(tableLayoutPanel1);
+            myGmap.GMAPController_Init(gMapTool);
+            //SetDoubleBuffered(tableLayoutPanel1);
+
             #endregion
         }
     }

@@ -58,7 +58,7 @@ namespace Telemetri.Variables
             PID_QUERY_ANSWER = 21,
             COMM_QUERY = 22,
             UI_PACK = 23,
-            MCU_ALMAN = 24,
+            RESET_TELEMETRY = 24,
             MSG_ID_COUNT = 25,
         }
 

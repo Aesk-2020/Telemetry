@@ -87,7 +87,6 @@ namespace Telemetri.NewForms
         private void btnBattery_Click(object sender, EventArgs e)
         {
             FormManagement.openChildForm(UITools.Telemetry2021.forms["BMS_Form"], panelChildForm);
-            cellsBtn.Visible = !cellsBtn.Visible;
         }
 
         private void panelChildForm_Paint(object sender, PaintEventArgs e)
@@ -200,7 +199,6 @@ namespace Telemetri.NewForms
         private void motordrButton_Click(object sender, EventArgs e)
         {
             FormManagement.openChildForm(UITools.Telemetry2021.forms["Driver_Form"], panelChildForm);
-            pidTuningBtn.Visible = !pidTuningBtn.Visible;
         }
 
         private void ıconButton1_Click_1(object sender, EventArgs e)
