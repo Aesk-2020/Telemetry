@@ -107,33 +107,33 @@ namespace Telemetri.NewForms
         {
             
             //VCU
-            UInt16 set_rpm          = Convert.ToUInt16(textBox2.Text);
+            Int16 set_rpm          = Convert.ToInt16(textBox2.Text);
             UInt16 speed_limit      = Convert.ToByte(textBox4.Text);
             byte drive_commands     = Convert.ToByte(textBox1.Text);
-            byte torque             = Convert.ToByte(textBox3.Text);
+            Int16 torque             = Convert.ToInt16(textBox3.Text);
             byte torque_limit       = Convert.ToByte(textBox5.Text);
 
             buffer.Add(drive_commands);  //drive commands
             buffer.AddRange(BitConverter.GetBytes(set_rpm)); //set rpm
-            buffer.Add(torque); //set torque
+            buffer.AddRange(BitConverter.GetBytes(torque)); //set torque
             buffer.AddRange(BitConverter.GetBytes(speed_limit)); //speed limit
             buffer.Add(torque_limit); //torque limit
 
             //MCU
             //UInt16 ID_Actual        = (UInt16)(Convert.ToUInt16(textBox18.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 ID_Actual        = (UInt16)(float.Parse(textBox18.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 IQ_Actual        = (UInt16)(float.Parse(textBox17.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 VD_Actual        = (UInt16)(float.Parse(textBox16.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 Vq_Actual        = (UInt16)(float.Parse(textBox15.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 ID_Set           = (UInt16)(float.Parse(textBox14.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 IQ_Set           = (UInt16)(float.Parse(textBox13.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 Set_Torque       = (UInt16)(float.Parse(textBox26.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 IDC              = (UInt16)(float.Parse(textBox27.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 VDC              = (UInt16)(float.Parse(textBox32.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 Actual_Speed     = (UInt16)(float.Parse(textBox28.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 Error_Status     = Convert.ToUInt16(textBox29.Text);
-            byte Motor_Temp         = Convert.ToByte(textBox30.Text);
-            byte Actual_Torque      = Convert.ToByte(textBox31.Text);
+            Int16 ID_Actual        = (Int16)(float.Parse(textBox18.Text) * MACROS.FLOAT_CONVERTER_2);
+            Int16 IQ_Actual        = (Int16)(float.Parse(textBox17.Text) * MACROS.FLOAT_CONVERTER_2);
+            Int16 VD_Actual        = (Int16)(float.Parse(textBox16.Text) * MACROS.FLOAT_CONVERTER_2);
+            Int16 Vq_Actual        = (Int16)(float.Parse(textBox15.Text) * MACROS.FLOAT_CONVERTER_2);
+            Int16 ID_Set           = (Int16)(float.Parse(textBox14.Text) * MACROS.FLOAT_CONVERTER_2);
+            Int16 IQ_Set           = (Int16)(float.Parse(textBox13.Text) * MACROS.FLOAT_CONVERTER_2);
+            Int16 Set_Torque       = (Int16)(float.Parse(textBox26.Text) * MACROS.FLOAT_CONVERTER_2);
+            Int16 IDC              = (Int16)(float.Parse(textBox27.Text) * MACROS.FLOAT_CONVERTER_2);
+            Int16 VDC              = (Int16)(float.Parse(textBox32.Text) * MACROS.FLOAT_CONVERTER_2);
+            Int16 Actual_Speed     = (Int16)(float.Parse(textBox28.Text) * MACROS.FLOAT_CONVERTER_2);
+            UInt16 Error_Status    = Convert.ToUInt16(textBox29.Text);
+            byte Motor_Temp        = Convert.ToByte(textBox30.Text);
+            byte Actual_Torque     = Convert.ToByte(textBox31.Text);
 
 
             buffer.AddRange(BitConverter.GetBytes(ID_Actual)); //ID_Act
@@ -152,7 +152,7 @@ namespace Telemetri.NewForms
 
             //BMS
             UInt16 Bat_Volt             = (UInt16)(float.Parse(textBox12.Text) * MACROS.FLOAT_CONVERTER_2);
-            UInt16 Bat_Cur              = (UInt16)(float.Parse(textBox11.Text) * MACROS.FLOAT_CONVERTER_2);
+            Int16 Bat_Cur               = (Int16)(float.Parse(textBox11.Text) * MACROS.FLOAT_CONVERTER_2);
             UInt16 Bat_cons             = (UInt16)(float.Parse(textBox10.Text) * MACROS.FLOAT_CONVERTER_1);
             UInt16 Soc                  = (UInt16)(float.Parse(textBox9.Text) * MACROS.FLOAT_CONVERTER_2);
             UInt16 Worst_Cell_Voltage   = (UInt16)(float.Parse(textBox8.Text) * MACROS.FLOAT_CONVERTER_1);
