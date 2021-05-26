@@ -23,7 +23,7 @@ namespace Telemetri.NewForms
             VQ = 5,
             dcBusVolt = 6,
             dcBusCur = 7,
-            id = 8,
+            idSetIq = 8,
             iqActIq = 9,
             iarms = 10,
             torque = 11,
@@ -105,9 +105,11 @@ namespace Telemetri.NewForms
 
                     changeGraph = this.changeSetIQActIq;
                     break;
-                case graphs.id:
-                    myChart.Series[0].Name = "ID";
-                    changeGraph = this.changeID;
+                case graphs.idSetIq:
+                    myChart.Series[0].Name = "Set ID";
+                    myChart.Series.Add("Set IQ");
+                    myChart.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                    changeGraph = this.changeIDIQ;
                     break;
                 case graphs.torque:
                     myChart.Series[0].Name = "Torque";
@@ -170,9 +172,10 @@ namespace Telemetri.NewForms
             myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
             myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
         }
-        private void changeID()
+        private void changeIDIQ()
         {
-            myChart.Series[0].Points.Add(DataMCU.act_id_current_s16);
+            myChart.Series[0].Points.Add(DataMCU.set_id_current_s16);
+            myChart.Series[1].Points.Add(DataMCU.set_iq_current_s16);
             myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
             myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
         }

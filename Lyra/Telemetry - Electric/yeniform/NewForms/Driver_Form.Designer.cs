@@ -719,7 +719,7 @@
             this.idGraphBtn.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.idGraphBtn.Size = new System.Drawing.Size(904, 50);
             this.idGraphBtn.TabIndex = 21;
-            this.idGraphBtn.Text = "ID";
+            this.idGraphBtn.Text = "SET ID / SET IQ";
             this.idGraphBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.idGraphBtn.UseVisualStyleBackColor = false;
             this.idGraphBtn.Visible = false;
