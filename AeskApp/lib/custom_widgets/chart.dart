@@ -313,7 +313,7 @@ Widget driverPhaseA(){
             padding: const EdgeInsets.only(bottom: 25),
             child: SfCartesianChart(
               title: ChartTitle(
-                  text: "driverPhaseA",
+                  text: "Set ID",
                   textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
               primaryXAxis: CategoryAxis(),
               tooltipBehavior: TooltipBehavior(enable: true),
@@ -322,7 +322,7 @@ Widget driverPhaseA(){
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
                   yValueMapper: (graph_data data, _) =>
-                  data.driver_phase_a_current_g,
+                  data.driver_set_id_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -345,7 +345,7 @@ Widget driverPhaseB(){
             padding: const EdgeInsets.only(bottom: 25),
             child: SfCartesianChart(
               title: ChartTitle(
-                  text: "driverPhaseB",
+                  text: "Act Speed",
                   textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
               primaryXAxis: CategoryAxis(),
               tooltipBehavior: TooltipBehavior(enable: true),
@@ -354,7 +354,7 @@ Widget driverPhaseB(){
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
                   yValueMapper: (graph_data data, _) =>
-                  data.driver_phase_b_current_g,
+                  data.driver_actspeed_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -377,7 +377,7 @@ Widget dcBusCur(){
             padding: const EdgeInsets.only(bottom: 25),
             child: SfCartesianChart(
               title: ChartTitle(
-                  text: "DC BUS CUR",
+                  text: "Act Torque",
                   textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
               primaryXAxis: CategoryAxis(),
               tooltipBehavior: TooltipBehavior(enable: true),
@@ -386,7 +386,7 @@ Widget dcBusCur(){
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
                   yValueMapper: (graph_data data, _) =>
-                  data.driver_dc_bus_current_g,
+                  data.driver_acttorque_s8_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -409,7 +409,7 @@ Widget driverIdG(){
             padding: const EdgeInsets.only(bottom: 25),
             child: SfCartesianChart(
               title: ChartTitle(
-                  text: "Driver ID G",
+                  text: "IDC",
                   textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
               primaryXAxis: CategoryAxis(),
               tooltipBehavior: TooltipBehavior(enable: true),
@@ -417,7 +417,7 @@ Widget driverIdG(){
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.driver_id_g,
+                  yValueMapper: (graph_data data, _) => data.driver_idc_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -440,7 +440,7 @@ Widget driverIdQ(){
             padding: const EdgeInsets.only(bottom: 25),
             child: SfCartesianChart(
               title: ChartTitle(
-                  text: "Driver ID Q",
+                  text: "Set IQ",
                   textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
               primaryXAxis: CategoryAxis(),
               tooltipBehavior: TooltipBehavior(enable: true),
@@ -448,7 +448,7 @@ Widget driverIdQ(){
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.driver_iq_g,
+                  yValueMapper: (graph_data data, _) => data.driver_set_iq_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -471,7 +471,7 @@ Widget driverVdG(){
             padding: const EdgeInsets.only(bottom: 25),
             child: SfCartesianChart(
               title: ChartTitle(
-                  text: "Driver VD G",
+                  text: "VDC",
                   textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
               primaryXAxis: CategoryAxis(),
               tooltipBehavior: TooltipBehavior(enable: true),
@@ -479,7 +479,7 @@ Widget driverVdG(){
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.driver_vd_g,
+                  yValueMapper: (graph_data data, _) => data.driver_vdc_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -502,7 +502,7 @@ Widget driverVqG(){
             padding: const EdgeInsets.only(bottom: 25),
             child: SfCartesianChart(
               title: ChartTitle(
-                  text: "Driver VQ G",
+                  text: "Act Speed",
                   textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
               primaryXAxis: CategoryAxis(),
               tooltipBehavior: TooltipBehavior(enable: true),
@@ -510,7 +510,7 @@ Widget driverVqG(){
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.driver_vq_g,
+                  yValueMapper: (graph_data data, _) => data.driver_actspeed_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,

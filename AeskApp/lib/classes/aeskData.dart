@@ -4,70 +4,44 @@ import 'package:aeskapp/classes/Mqtt.dart';
 import 'package:flutter/foundation.dart';
 
 class graph_data{
-  var driver_phase_a_current_g;
-  var driver_phase_b_current_g;
-  var driver_dc_bus_current_g;
-  var driver_id_g;
-  var driver_iq_g;
-  var driver_vd_g;
-  var driver_vq_g;
+  var vcu_drive_command_u8;
+  var vcu_speed_set_rpm_s16;
+  var vcu_set_torque_s16;
+  var vcu_speed_limit_u16;
+  var vcu_torque_limit_u8;
+  var driver_set_id_s16_g;
+  var driver_set_iq_s16_g;
+  var driver_set_torque_s16_g;
+  var driver_idc_s16_g;
+  var driver_vdc_s16_g;
+  var driver_actspeed_s16_g;
+  var driver_motortemp_u8_g;
+  var driver_errorstatus_u1_g;
+  var driver_acttorque_s8_g;
   var bms_bat_volt_g;
   var bms_bat_current_g;
   var bms_bat_cons_g;
   double time;
-  var eys_bat_current_g;//10
-  var eys_fc_current_g;//10
-  var eys_out_current_g;//10
-  var eys_bat_volt_g;//10
-  var eys_fc_volt_g;//10
-  var eys_out_volt_g;//10
-  var eys_bat_cons_g;//10
-  var eys_fc_cons_g;//10
-  var eys_fc_lt_cons_g;//10
-  var eys_out_cons_g;//10
-  var eys_penalty_g;//10//100
-  var eys_temp_g;
-  //var eys_error_g;
-  //bool eys_bat_cur_error_g;
-  //bool eys_fc_cur_error_g;
-  //bool eys_out_cur_error_g;
-  //bool eys_bat_volt_error_g;
-  //bool eys_fc_volt_error_g;
-  //bool eys_out_volt_error_g;
-  double eys_sharing_ratio;
-  graph_data(this.driver_phase_a_current_g,
-      this.driver_phase_b_current_g,
-      this.driver_dc_bus_current_g,
-      this.driver_id_g,
-      this.driver_iq_g,
-      this.driver_vd_g,
-      this.driver_vq_g,
+  graph_data(
+      this.vcu_drive_command_u8,
+      this.vcu_speed_set_rpm_s16,
+      this.vcu_set_torque_s16,
+      this.vcu_speed_limit_u16,
+      this.driver_set_id_s16_g,
+      this.driver_set_iq_s16_g,
+      this.driver_set_torque_s16_g,
+      this.driver_idc_s16_g,
+      this.driver_vdc_s16_g,
+      this.driver_actspeed_s16_g,
+      this.driver_motortemp_u8_g,
+      this.driver_errorstatus_u1_g,
+      this.driver_acttorque_s8_g,
       this.bms_bat_volt_g,
       this.bms_bat_current_g,
       this.bms_bat_cons_g,
-      this.time,
-      this.eys_bat_current_g,
-      this.eys_fc_current_g,
-      this.eys_out_current_g,
-      this.eys_bat_volt_g,
-      this.eys_fc_volt_g,
-      this.eys_out_volt_g,
-      this.eys_bat_cons_g,
-      this.eys_fc_cons_g,
-      this.eys_fc_lt_cons_g,
-      this.eys_out_cons_g,
-      this.eys_penalty_g,
-      this.eys_sharing_ratio,
-      this.eys_temp_g,
-      //this.eys_bat_cur_error_g,
-      //this.eys_fc_cur_error_g,
-      //this.eys_out_cur_error_g,
-      //this.eys_bat_volt_error_g,
-      //this.eys_fc_volt_error_g,
-      //this.eys_out_volt_error_g,
+      this.time
       );
 }
-
 
 int i;
 
@@ -168,7 +142,7 @@ class AeskData extends ChangeNotifier{
   static double x_time=0;
   static var ping = 0;
 
-  static List<graph_data> graphData_array = List.generate(100, (index) => graph_data(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0), growable: false);
+  static List<graph_data> graphData_array = List.generate(100, (index) => graph_data(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0), growable: false);
   static List<int> battery_cells = List.generate(28, (index) => 0);
   static int cellCount = 28;
 
@@ -362,36 +336,26 @@ class AeskData extends ChangeNotifier{
     for(i=0;i<graphData_array.length-1;i++){
       graphData_array[i] = graphData_array[i+1];
     }
-    graphData_array[graphData_array.length-1] = graph_data(driver_set_torque_s16,
-        driver_vdc_s16,
-        driver_idc_s16,
+    graphData_array[graphData_array.length-1] = graph_data(
+        vcu_drive_command_u8,
+        vcu_speed_set_rpm_s16,
+        vcu_set_torque_s16,
+        vcu_speed_limit_u16,
+        driver_act_iq_u16,
+        driver_act_id_u16,
+        driver_act_vd_s16,
+        driver_act_vq_s16,
         driver_set_id_s16,
         driver_set_iq_s16,
-        driver_act_id_u16,
-        driver_act_iq_u16,
-        bms_bat_volt_f32,
+        driver_set_torque_s16,
+        driver_idc_s16,
+        driver_vdc_s16,
+        bms_bat_volt_f32,//10
         bms_bat_current_f32,
-        bms_bat_cons_f32,
-        x_time,
-        eys_bat_current_int16,
-        eys_fc_current_int16,
-        eys_out_current_int16,
-        eys_bat_volt_int16,
-        eys_fc_volt_int16,
-        eys_out_volt_int16,
-        eys_bat_cons_uint16,
-        eys_fc_cons_uint16,
-        eys_fc_lt_cons_uint16,
-        eys_out_cons_uint16,
-        eys_penalty_int8,
-        eys_sharing_ratio_uint16,
-        eys_temp_uint8
+        bms_bat_cons_f32,//10
+        x_time
         );
     notifyListeners();
-
-    for(i=0;i<graphData_array.length;i++){
-      debugPrint(i.toString()+' '+graphData_array[i].driver_phase_a_current_g.toString());
-    }
   }
 
 }
