@@ -166,7 +166,7 @@ namespace Telemetri.NewForms
 
         private void idGraphBtn_Click(object sender, EventArgs e)
         {
-            graphType = Graphics.graphs.idSetIq;
+            graphType = Graphics.graphs.setIdActId;
             Graphics.graphicsList.Add(new Graphics(graphType));
             if (Graphics.oldGraph != null)
             {
