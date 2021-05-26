@@ -114,7 +114,7 @@ Widget AeskConditionCheck(String text, bool condition, BuildContext context) {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         myText(text, 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-        Icon(Icons.lens, size: 20, color: (condition ? Colors.green : Colors.transparent),)
+        Icon(Icons.lens, size: 20, color: (condition ? Colors.red : Colors.transparent),)
       ],
     ),
   );

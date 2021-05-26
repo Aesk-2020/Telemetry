@@ -54,54 +54,31 @@ Widget Vcu(){
                           0 : FlexColumnWidth(1.5),
                           1 : FlexColumnWidth(1),
                         },
-                        children: <TableRow>[
-                          TableRow(
-                            children: <Widget>[
-                              myText("Komutlar", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                              myText("Durum", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                            ],
-                          ),
-                        ],
                       ),
                     ),
+                    myText("     Actual Drive Status", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                     Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(60, 0, 0, 0),
-                      child: Table(
-                        children: <TableRow>[
-                          TableRow(
-                            children: <Widget>[
-                              myText("IGNITION", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                              myText(AeskData.drive_status_ignition_u1 ? "AKTİF":"İNAKTİF", scale.size.width/20.571428, AeskData.drive_status_ignition_u1 ? Colors.green : Colors.red , FontWeight.bold)
-                            ],
-                          ),
-                          TableRow(
-                            children: <Widget>[
-                              myText("BRAKE", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                              myText(AeskData.drive_status_brake_u1 ? "AKTİF":"İNAKTİF", scale.size.width/20.571428, AeskData.drive_status_brake_u1 ? Colors.green : Colors.red, FontWeight.bold)
-                            ],
-                          ),
-                          TableRow(
-                            children: <Widget>[
-                              myText("DIRECTION", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                              myText(AeskData.drive_status_direction_u1 ? "GERİ":"İLERİ", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold)
-                            ],
-                          ),
-                        ],
-                      ),
+                    Column(
+                      children: <Widget>[
+                        myText("     af", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold)
+                      ],
                     ),
-
                     SizedBox(height: 15,),
                     myText("     Hatalar", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                     Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
                     Column(
                       children: <Widget>[
-                        AeskErrorCheck(" ZPC", AeskData.driver_error_ZPC_u1, context),
-                        AeskErrorCheck(" PWM", AeskData.driver_error_PWM_u1, context),
-                        AeskErrorCheck(" DC BARA", AeskData.driver_error_DC_bara_u1, context),
-                        AeskErrorCheck(" TEMPERATURE ", AeskData.driver_error_temprature_u1, context),
-                        AeskErrorCheck(" DC BARA CURRENT", AeskData.driver_error_DC_bara_current_u1, context),
-                        AeskErrorCheck(" TORQUE LIMIT", AeskData.driver_error_WakeUp_u1, context),
+                        AeskConditionCheck(" OVER CUR I_A", AeskData.driver_overcur_ia_u1, context),
+                        AeskConditionCheck(" OVER CUR I_B", AeskData.driver_overcur_ib_u1, context),
+                        AeskConditionCheck(" OVER CUR I_C", AeskData.driver_overcur_ic_u1, context),
+                        AeskConditionCheck(" OVER CUR I_DC ", AeskData.driver_overcur_idc_u1, context),
+                        AeskConditionCheck(" UNDER VOLT V_DC", AeskData.driver_undervolt_vdc_u1, context),
+                        AeskConditionCheck(" OVER VOLT V_DC", AeskData.driver_overvolt_vdc_u1, context),
+                        AeskConditionCheck(" UNDER SPEED", AeskData.driver_underspeed_u1, context),
+                        AeskConditionCheck(" OVER SPEED", AeskData.driver_overspeed_u1, context),
+                        AeskConditionCheck(" OVER TEMP", AeskData.driver_overtemp_u1, context),
+                        AeskConditionCheck(" ZPC FINISHED", AeskData.driver_zpcf_u1, context),
+                        AeskConditionCheck(" PWM_ENABLED", AeskData.driver_pwm_enabled_u1, context),
                           ],
                         ),
                     SizedBox(height: 15,),

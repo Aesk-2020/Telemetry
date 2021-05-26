@@ -21,7 +21,7 @@ namespace Telemetri.NewForms
             graphicsButton.Dock = DockStyle.Bottom;
 
             TextBox[] textBoxs = {voltageTextBox, consTextBox, tempTextBox,
-                currentTextBox, socTextBox };
+                currentTextBox, longtBox };
             UITools.BMSForm.consTextBox = consTextBox;
             UITools.BMSForm.curTextBox = currentTextBox;
             UITools.BMSForm.socTextBox = socTextBox;
@@ -33,6 +33,8 @@ namespace Telemetri.NewForms
             UITools.BMSForm.balancingBox = balancingBox;
             UITools.BMSForm.chargingBox = chragingBox;
             UITools.BMSForm.prechargeErrorBox = prechargeErrorBox;
+            UITools.BMSForm.lattBox = lattBox;
+            UITools.BMSForm.longtBox = longtBox;
         }
         #region .. Double Buffered function ..
         public static void SetDoubleBuffered(System.Windows.Forms.Control c)

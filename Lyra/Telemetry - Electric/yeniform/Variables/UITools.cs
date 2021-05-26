@@ -55,6 +55,8 @@ namespace Telemetri.Variables
             public static TextBox curTextBox;
             public static TextBox socTextBox;
             public static TextBox dcBusStateBox;
+            public static TextBox lattBox;
+            public static TextBox longtBox;
 
             public static PictureBox prechargeBox;
             public static PictureBox dischargeBox;
@@ -121,6 +123,8 @@ namespace Telemetri.Variables
             BMSForm.socTextBox.Text = "%" + DataBMS.soc_u16.ToString();
             BMSForm.tempTextBox.Text = DataBMS.temperature_u8.ToString() + " °C";
             BMSForm.voltageTextBox.Text = DataBMS.volt_u16.ToString();
+            BMSForm.longtBox.Text = GpsTracker.gps_longtitude_f64.ToString();
+            BMSForm.lattBox.Text = GpsTracker.gps_latitude_f64.ToString();
 
             if (DataMCU.free_wheeling_status == true)
             {

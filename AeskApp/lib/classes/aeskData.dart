@@ -100,6 +100,20 @@ class AeskData extends ChangeNotifier{
   static bool driver_error_DC_bara_current_u1 = false;
   static bool driver_error_WakeUp_u1          = false;
 
+  static bool driver_overcur_ia_u1               = false;
+  static bool driver_overcur_ib_u1               = false;
+  static bool driver_overcur_ic_u1               = false;
+  static bool driver_overcur_idc_u1              = false;
+  static bool driver_undercur_idc_u1             = false;
+  static bool driver_undervolt_vdc_u1            = false;
+  static bool driver_overvolt_vdc_u1             = false;
+  static bool driver_underspeed_u1               = false;
+  static bool driver_overspeed_u1                = false;
+  static bool driver_overtemp_u1                 = false;
+  static bool driver_zpcf_u1                     = false;
+  static bool driver_pwm_enabled_u1              = false;
+
+
   static var driver_odometer_u32;
   static var driver_motor_temperature_u8;
   static var driver_actual_velocity_u8        = 0;

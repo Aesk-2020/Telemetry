@@ -20,7 +20,8 @@ namespace Telemetri.Variables
         public static bool freewheeling_u1 => Convert.ToBoolean((drive_commands_u8 >> 2 & 0b00000001));
         public static bool vcu_torque_output_u1 => Convert.ToBoolean((drive_commands_u8 >> 3 & 0b00000001));
         public static bool brake_u1         => Convert.ToBoolean((drive_commands_u8 >> 4 & 0b00000001));
-        public static bool direction_u1     => Convert.ToBoolean((drive_commands_u8 >> 5 & 0b00000001));
+        public static bool dcbus_u1     => Convert.ToBoolean((drive_commands_u8 >> 5 & 0b00000001));
+        public static bool direction_u1     => Convert.ToBoolean((drive_commands_u8 >> 6 & 0b00000001));
         /*
          * Brake
          * 0: Off
