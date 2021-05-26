@@ -17,7 +17,7 @@ namespace Telemetri.Variables
         public static float set_torque_s16;     //int16 / 100 /
         public static float i_dc_s16;           //int16 / 100 /
         public static float v_dc_s16;           //int16 / 100 /
-        public static float act_speed_s16;      //int16 / 100
+        public static short act_speed_s16;      //int16 / 100
         public static byte temperature_u8;     //byte
         public static ushort error_status_u16;
         public static sbyte act_torque_s8;      //int8 - 100 /

@@ -42,7 +42,7 @@ namespace Telemetri.NewForms
             UITools.DriverForm.ISCFFlagBox          = ISCFFlagBox;
             UITools.DriverForm.pwmEnabledBox        = pwmEnabledBox;
             UITools.DriverForm.actualStatusLabel    = actualStatusLabel;
-            UITools.DriverForm.errorsLabel          = errorsLabel;
+            UITools.DriverForm.temperatureLabel     = temperatureLabel;
 
         }
         #region .. Double Buffered function ..

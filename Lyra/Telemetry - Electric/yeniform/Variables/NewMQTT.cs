@@ -118,7 +118,7 @@ namespace Telemetri.Variables
         {
             int startIndex = 0;
             DataVCU.drive_commands_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
-            DataVCU.speed_set_rpm_s16 = BitConverter.ToInt16(receiveBuffer, startIndex); startIndex += 2;
+            DataVCU.speed_set_rpm_s16 = (short)Math.Round(BitConverter.ToInt16(receiveBuffer, startIndex) * 0.105183); startIndex += 2; //0.105183 rpm to kmh rate
             DataVCU.torque_set_s16    = BitConverter.ToInt16(receiveBuffer, startIndex); startIndex += 2;
             DataVCU.speed_limit_u16   = BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
             DataVCU.torque_limit_u8   = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
@@ -133,7 +133,7 @@ namespace Telemetri.Variables
             DataMCU.set_torque_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
             DataMCU.i_dc_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
             DataMCU.v_dc_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
-            DataMCU.act_speed_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 10; startIndex += 2;
+            DataMCU.act_speed_s16 = (short)Math.Round(BitConverter.ToInt16(receiveBuffer, startIndex) * 0.105183 / 10); startIndex += 2;
             DataMCU.temperature_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
             DataMCU.error_status_u16 = BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
             DataMCU.act_torque_s8 = (sbyte)receiveBuffer[startIndex++]; DataMCU.act_torque_s8 -= 100;

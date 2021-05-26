@@ -127,7 +127,7 @@ namespace Telemetri.Variables
             DataMCU.set_torque_s16      = (float)BitConverter.ToInt16(logBytes, myindex) / 100; myindex += 2;
             DataMCU.i_dc_s16            = (float)BitConverter.ToInt16(logBytes, myindex) / 100; myindex += 2;
             DataMCU.v_dc_s16            = (float)BitConverter.ToInt16(logBytes, myindex) / 100; myindex += 2;
-            DataMCU.act_speed_s16       = (float)BitConverter.ToInt16(logBytes, myindex) / 100; myindex += 2;
+            DataMCU.act_speed_s16       = (short)(BitConverter.ToInt16(logBytes, myindex) / 10); myindex += 2;
             DataMCU.temperature_u8      = (byte)BitConverter.ToChar(logBytes, myindex); myindex++;
             DataMCU.error_status_u16    = BitConverter.ToUInt16(logBytes, myindex); myindex += 2;
             DataMCU.act_torque_s8       = (sbyte)logBytes[myindex++]; DataMCU.act_torque_s8 -= 100;
@@ -187,10 +187,10 @@ namespace Telemetri.Variables
 
         public static void WriteStringLog()
         {
-            _sw.WriteLine(DataVCU.log_data + DataMCU.log_data + DataBMS.log_data + GpsTracker.log_gps_data);
+            _sw.WriteLine(DateTime.Now.ToString("HH:mm:ss") + "\t" + DataVCU.log_data + DataMCU.log_data + DataBMS.log_data + GpsTracker.log_gps_data);
             _sw.Flush();
         }
-        public static bool StartLog(Timer logTimer)
+        public static bool StartLog(System.Timers.Timer logTimer)
         {
             _savefile = new SaveFileDialog();
             
@@ -202,7 +202,7 @@ namespace Telemetri.Variables
                     
                     writePath = Path.GetDirectoryName(_savefile.FileName);
                     _sw = new StreamWriter(@_savefile.FileName, append: false);
-                    _sw.WriteLine("Drive Commands" + "\t" + "Speed Set RPM" + "\t" + "Torque Set" + "\t" + "Speed Limit" + "\t" + "Torque Limit" + "\t" + "ID" + "\t" + "IQ" + "\t" + "VD" + "\t" + "VQ" + "\t" + "Set ID" + "\t" + "Set IQ" + "\t" + "Set Torque" + "\t" + "IDC" + "\t" + "VDC" + "\t" + "Act Speed" + "\t" + "Motor Temp" + "\t" + "Errors" + "\t" + "Act Torque" + "\t" + "Battery Voltage" + "\t" + "Battery Current" + "\t" + "Battery Consumption" + "\t" + "SoC" + "\t" + "Worst Cell Address" + "\t" + "BMS Error" + "\t" + "DC Bus State" + "\t" + "Worst cell address" + "\t" + "Battery temp" + "\t" + "Lattitude" + "\t" + "Longtitude" + "\t" + "GPS Velocity" + "\t" + "Sattelites" + "\t" + "Efficiency");
+                    _sw.WriteLine("Time" + "\t" + "Drive Commands" + "\t" + "Speed Set kmh" + "\t" + "Torque Set" + "\t" + "Speed Limit" + "\t" + "Torque Limit" + "\t" + "Kp" + "\t" + "Ki" + "\t" + "Kd" + "\t" + "ID" + "\t" + "IQ" + "\t" + "VD" + "\t" + "VQ" + "\t" + "Set ID" + "\t" + "Set IQ" + "\t" + "Set Torque" + "\t" + "IDC" + "\t" + "VDC" + "\t" + "Act Speed" + "\t" + "Motor Temp" + "\t" + "Errors" + "\t" + "Act Torque" + "\t" + "Battery Voltage" + "\t" + "Battery Current" + "\t" + "Battery Consumption" + "\t" + "SoC" + "\t" + "Worst Cell Address" + "\t" + "BMS Error" + "\t" + "DC Bus State" + "\t" + "Worst cell address" + "\t" + "Battery temp" + "\t" + "Lattitude" + "\t" + "Longtitude" + "\t" + "GPS Velocity" + "\t" + "Sattelites" + "\t" + "Efficiency");
                     
                     logTimer.Start();
                     isFirst = false;
@@ -227,7 +227,7 @@ namespace Telemetri.Variables
            
         }
 
-        public static void StopLog(Timer timer)
+        public static void StopLog(System.Timers.Timer timer)
         {
             timer.Stop();
             _sw.Close();

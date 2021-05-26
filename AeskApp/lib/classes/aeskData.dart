@@ -73,32 +73,28 @@ int i;
 
 class AeskData extends ChangeNotifier{
 
-  static var vcu_can_error_u8;
-  static var vcu_wake_up_u8;
+  //new
   static var vcu_drive_command_u8;
-  static var vcu_set_velocity_u8              = 0;
-  static var driver_phase_a_current_f32;//100
-  static var driver_phase_b_current_f32;//100
-  static var driver_dc_bus_current_f32;//100
-  static var driver_dc_bus_voltage_f32;//10
-  static var driver_id_f32;//100
-  static var driver_iq_f32;//100
-  static var driver_vd_f32;//100 iarms
-  static var driver_vq_f32;//100 torque?
-  static var driver_drive_status_u8;
+  static var vcu_speed_set_rpm_s16 = 0.0;
+  static var vcu_set_torque_s16 = 0.0;
+  static var vcu_speed_limit_u16;
+  static var vcu_torque_limit_u8;
+  static var vcu_can_error_u8;
 
-  static bool drive_status_direction_u1 = false; //1 forward 0 reverse
-  static bool drive_status_brake_u1     = false; //1 on 0 off
-  static bool drive_status_ignition_u1  = false; //1 on 0 off
-
-  static var driver_driver_error_u8;
-
-  static bool driver_error_ZPC_u1             = false;
-  static bool driver_error_PWM_u1             = false;
-  static bool driver_error_DC_bara_u1         = false;
-  static bool driver_error_temprature_u1      = false;
-  static bool driver_error_DC_bara_current_u1 = false;
-  static bool driver_error_WakeUp_u1          = false;
+  //new
+  static var driver_act_iq_u16              = 0.0;
+  static var driver_act_id_u16              = 0.0;
+  static var driver_act_vd_s16              = 0.0;
+  static var driver_act_vq_s16              = 0.0;
+  static var driver_set_id_s16              = 0.0;
+  static var driver_set_iq_s16              = 0.0;
+  static var driver_set_torque_s16          = 0.0;
+  static var driver_idc_s16                 = 0.0;
+  static var driver_vdc_s16                 = 0.0;
+  static var driver_actspeed_s16            = 0.0;
+  static var driver_motortemp_u8            = 0;
+  static var driver_errorstatus_u16         = 0;
+  static var driver_acttorque_s8            = 0;
 
   static bool driver_overcur_ia_u1               = false;
   static bool driver_overcur_ib_u1               = false;
@@ -112,11 +108,9 @@ class AeskData extends ChangeNotifier{
   static bool driver_overtemp_u1                 = false;
   static bool driver_zpcf_u1                     = false;
   static bool driver_pwm_enabled_u1              = false;
+  static bool driver_freewheeling_u1             = false;
+  static bool driver_torque_mode_u1              = false;
 
-
-  static var driver_odometer_u32;
-  static var driver_motor_temperature_u8;
-  static var driver_actual_velocity_u8        = 0;
   static var bms_bat_volt_f32;//10
   static var bms_bat_current_f32;//100
   static var bms_bat_cons_f32;//10
@@ -143,6 +137,7 @@ class AeskData extends ChangeNotifier{
   static var bms_worst_cell_address_u8 = 0;
   static var bms_temp_u8;
   static var bms_power_f32;
+
   static var gpsTracker_gps_latitude_f64;  //1000000
   static var gpsTracker_gps_longtitude_f64;
   static var gpsTracker_gps_velocity_u8;
@@ -183,52 +178,49 @@ class AeskData extends ChangeNotifier{
 
     int _startIndex = 0;
 
-    vcu_wake_up_u8 = message.getUint8(_startIndex);
+    vcu_drive_command_u8 = message.getUint8(_startIndex);     _startIndex++;
+    vcu_speed_set_rpm_s16 = message.getInt16(_startIndex) / 100;    _startIndex += 2;
+    vcu_set_torque_s16 = message.getInt16(_startIndex) / 100;       _startIndex += 2;
+    vcu_speed_limit_u16 = message.getUint16(_startIndex);     _startIndex += 2;
+    vcu_torque_limit_u8 = message.getUint8(_startIndex);      _startIndex++;
+
+    driver_act_id_u16 = message.getInt16(_startIndex,myEndian)/100;
+    _startIndex += 2;
+
+    driver_act_iq_u16 = message.getInt16(_startIndex,myEndian)/100;
+    _startIndex += 2;
+
+    driver_act_vd_s16 = message.getInt16(_startIndex,myEndian)/100;
+    _startIndex += 2;
+
+    driver_act_vq_s16 = message.getInt16(_startIndex,myEndian)/100;
+    _startIndex += 2;
+
+    driver_set_id_s16 = message.getInt16(_startIndex,myEndian)/100;
+    _startIndex += 2;
+
+    driver_set_iq_s16 = message.getInt16(_startIndex,myEndian)/100;
+    _startIndex += 2;
+
+    driver_set_torque_s16 = message.getInt16(_startIndex,myEndian)/100;
+    _startIndex += 2;
+
+    driver_idc_s16 = message.getInt16(_startIndex,myEndian)/100;
+    _startIndex += 2;
+
+    driver_vdc_s16 = message.getInt16(_startIndex) / 100;
+    _startIndex += 2;
+
+    driver_actspeed_s16 = message.getInt16(_startIndex) / 100;
+    _startIndex += 2;
+
+    driver_motortemp_u8 = message.getUint8(_startIndex);
     _startIndex++;
 
-    /*vcu_drive_command_u8 = message.getUint8(_startIndex);
-    _startIndex++;*/
+    driver_errorstatus_u16 = message.getUint16(_startIndex, myEndian);
+    _startIndex += 2;
 
-    vcu_set_velocity_u8 = message.getUint8(_startIndex);
-    _startIndex++;
-
-    driver_phase_a_current_f32 = message.getInt16(_startIndex,myEndian)/100;
-    _startIndex +=2;
-
-    driver_phase_b_current_f32 = message.getInt16(_startIndex,myEndian)/100;
-    _startIndex+=2;
-
-    driver_dc_bus_current_f32 = message.getInt16(_startIndex,myEndian)/100;
-    _startIndex+=2;
-
-    driver_dc_bus_voltage_f32 = message.getUint16(_startIndex,myEndian)/10;
-    _startIndex+=2;
-
-    driver_id_f32 = message.getInt16(_startIndex,myEndian)/100;
-    _startIndex+=2;
-
-    driver_iq_f32 = message.getInt16(_startIndex,myEndian)/100;
-    _startIndex+=2;
-
-    driver_vd_f32 = message.getInt16(_startIndex,myEndian)/100;
-    _startIndex+=2;
-
-    driver_vq_f32 = message.getInt16(_startIndex,myEndian)/100;
-    _startIndex+=2;
-
-    driver_drive_status_u8 = message.getUint8(_startIndex);
-    _startIndex++;
-
-    driver_driver_error_u8 = message.getUint8(_startIndex);
-    _startIndex++;
-
-    driver_odometer_u32 = message.getUint32(_startIndex,myEndian);
-    _startIndex+=4;
-
-    driver_motor_temperature_u8 = message.getUint8(_startIndex);
-    _startIndex++;
-
-    driver_actual_velocity_u8 = message.getUint8(_startIndex);
+    driver_acttorque_s8 = message.getInt8(_startIndex);
     _startIndex++;
 
     bms_bat_volt_f32 = message.getUint16(_startIndex,myEndian)/100;
@@ -275,6 +267,8 @@ class AeskData extends ChangeNotifier{
     gpsTracker_gps_efficiency_u8 = message.getUint8(_startIndex);
     _startIndex++;
 
+    vcu_can_error_u8 = message.getUint8(_startIndex);
+    _startIndex++;
 
     cellCount = MqttAesk.isLyra ? 28 : 16;
 
@@ -337,24 +331,20 @@ class AeskData extends ChangeNotifier{
       eys_out_volt_error_u1 = (((eys_error_uint8 >> 5) & 1) == 1) ? true : false;
     }
 
-    vcu_can_error_u8 = message.getUint8(_startIndex);
-    _startIndex++;
-
-    MQTT_counter_int32 = message.getInt32(_startIndex,myEndian);
-    _startIndex+=4;
-
-
-
-    drive_status_direction_u1 = ((driver_drive_status_u8 & 1) == 1) ? true : false;
-    drive_status_brake_u1 = (((driver_drive_status_u8 >> 1) & 1) == 1) ? true : false;
-    drive_status_ignition_u1 = (((driver_drive_status_u8 >> 2) & 1) == 1) ? true : false;
-
-    driver_error_ZPC_u1             = ((driver_driver_error_u8 & 1) == 1) ? true : false;
-    driver_error_PWM_u1             = (((driver_driver_error_u8 >> 1) & 1) == 1) ? true : false;
-    driver_error_DC_bara_u1         = (((driver_driver_error_u8 >> 2) & 1) == 1) ? true : false;
-    driver_error_temprature_u1      = (((driver_driver_error_u8 >> 3) & 1) == 1) ? true : false;
-    driver_error_DC_bara_current_u1 = (((driver_driver_error_u8 >> 4) & 1) == 1) ? true : false;
-    driver_error_WakeUp_u1          = (((driver_driver_error_u8 >> 5) & 1) == 1) ? true : false;
+    driver_overcur_ia_u1            = ((driver_errorstatus_u16 & 1) == 1) ? true : false;
+    driver_overcur_ib_u1            = (((driver_errorstatus_u16 >> 1) & 1) == 1) ? true : false;
+    driver_overcur_ic_u1            = (((driver_errorstatus_u16 >> 2) & 1) == 1) ? true : false;
+    driver_overcur_idc_u1           = (((driver_errorstatus_u16 >> 3) & 1) == 1) ? true : false;
+    driver_undercur_idc_u1          = (((driver_errorstatus_u16 >> 4) & 1) == 1) ? true : false;
+    driver_undervolt_vdc_u1         = (((driver_errorstatus_u16 >> 5) & 1) == 1) ? true : false;
+    driver_overvolt_vdc_u1          = (((driver_errorstatus_u16 >> 6) & 1) == 1) ? true : false;
+    driver_underspeed_u1            = (((driver_errorstatus_u16 >> 7) & 1) == 1) ? true : false;
+    driver_overspeed_u1             = (((driver_errorstatus_u16 >> 8) & 1) == 1) ? true : false;
+    driver_overtemp_u1              = (((driver_errorstatus_u16 >> 9) & 1) == 1) ? true : false;
+    driver_zpcf_u1                  = (((driver_errorstatus_u16 >> 10) & 1) == 1) ? true : false;
+    driver_pwm_enabled_u1           = (((driver_errorstatus_u16 >> 11) & 1) == 1) ? true : false;
+    driver_freewheeling_u1          = (((driver_errorstatus_u16 >> 12) & 1) == 1) ? true : false;
+    driver_torque_mode_u1           = (((driver_errorstatus_u16 >> 13) & 1) == 1) ? true : false;
 
     bms_state_precharge_u1    = ((bms_dc_bus_state_u8 & 1) == 1) ? true : false;
     bms_state_discharge_u1    = (((bms_dc_bus_state_u8 >> 1) & 1) == 1) ? true : false;
@@ -372,13 +362,13 @@ class AeskData extends ChangeNotifier{
     for(i=0;i<graphData_array.length-1;i++){
       graphData_array[i] = graphData_array[i+1];
     }
-    graphData_array[graphData_array.length-1] = graph_data(driver_phase_a_current_f32,
-        driver_phase_b_current_f32,
-        driver_dc_bus_current_f32,
-        driver_id_f32,
-        driver_iq_f32,
-        driver_vd_f32,
-        driver_vq_f32,
+    graphData_array[graphData_array.length-1] = graph_data(driver_set_torque_s16,
+        driver_vdc_s16,
+        driver_idc_s16,
+        driver_set_id_s16,
+        driver_set_iq_s16,
+        driver_act_id_u16,
+        driver_act_iq_u16,
         bms_bat_volt_f32,
         bms_bat_current_f32,
         bms_bat_cons_f32,

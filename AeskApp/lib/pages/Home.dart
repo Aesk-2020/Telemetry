@@ -65,64 +65,62 @@ class _HomeState extends State<Home> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 DataBox(
-                                  ad: "Ping",
-                                  veri: AeskData.ping.toString(),
+                                  ad: "Act Torque",
+                                  veri: AeskData.driver_acttorque_s8.toString(),
                                 ),
                                 DataBox(
-                                  ad: "BAT VOLT",
+                                  ad: "Bat Volt",
                                   veri:
                                   AeskData.bms_bat_volt_f32.toStringAsFixed(2),
                                 ),
                                 DataBox(
-                                  ad: "BAT CUR",
+                                  ad: "Bat Cur",
                                   veri: AeskData.bms_bat_current_f32
                                       .toStringAsFixed(2),
                                 ),
                                 DataBox(
-                                  ad: "BAT CONS",
+                                  ad: "Bat Cons",
                                   veri:
                                   AeskData.bms_bat_cons_f32.toStringAsFixed(2),
                                 ),
                                 DataBox(
-                                  ad: "SOC",
+                                  ad: "SoC",
                                   veri: AeskData.bms_soc_f32.toStringAsFixed(2),
                                 ),
                                 DataBox(
-                                  ad: "Phase B",
-                                  veri: AeskData.driver_phase_b_current_f32
-                                      .toStringAsFixed(2),
+                                  ad: "IDC",
+                                  veri: AeskData.driver_idc_s16.toStringAsFixed(2),
                                 ),
                               ],
                             ),
                             Column(
                               children: <Widget>[
                                 DataBox(
-                                  ad: "MOTOR TEMP",
-                                  veri: AeskData.driver_motor_temperature_u8
+                                  ad: "Motor Temp",
+                                  veri: AeskData.driver_motortemp_u8.toStringAsFixed(2),
+                                ),
+                                DataBox(
+                                  ad: "Set ID",
+                                  veri: AeskData.driver_set_id_s16
                                       .toStringAsFixed(2),
                                 ),
                                 DataBox(
-                                  ad: "Phase A Current",
-                                  veri: AeskData.driver_phase_a_current_f32
+                                  ad: "Set IQ",
+                                  veri: AeskData.driver_set_iq_s16.toStringAsFixed(2),
+                                ),
+                                DataBox(
+                                  ad: "Act ID",
+                                  veri: AeskData.driver_act_id_u16
                                       .toStringAsFixed(2),
                                 ),
                                 DataBox(
-                                  ad: "Torque",
-                                  veri: AeskData.driver_vq_f32.toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                  ad: "DC BUS CUR",
-                                  veri: AeskData.driver_dc_bus_current_f32
+                                  ad: "Act IQ",
+                                  veri: AeskData.driver_act_iq_u16
                                       .toStringAsFixed(2),
                                 ),
                                 DataBox(
-                                  ad: "DC BUS VOLT",
-                                  veri: AeskData.driver_dc_bus_voltage_f32
-                                      .toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                  ad: "IArms",
-                                  veri: AeskData.driver_vd_f32.toStringAsFixed(2),
+                                  ad: "Set Torque",
+                                  veri: AeskData.driver_set_torque_s16.toStringAsFixed(2),
                                 ),
                               ],
                             ),
@@ -141,12 +139,12 @@ class _HomeState extends State<Home> {
     else if(AeskData.bms_bat_current_f32==null){
       AeskData.bms_bat_current_f32 = AeskData.bms_bat_volt_f32 =
           AeskData.bms_dc_bus_state_u8 = AeskData.bms_soc_f32 = AeskData
-          .driver_actual_velocity_u8 = AeskData.driver_dc_bus_current_f32 = 0;
-      AeskData.driver_dc_bus_voltage_f32 = AeskData.driver_id_f32 =
-          AeskData.driver_iq_f32 = AeskData.driver_motor_temperature_u8 = AeskData
-          .driver_odometer_u32 = AeskData.driver_phase_a_current_f32 = 0;
-      AeskData.driver_phase_b_current_f32 = AeskData.driver_vd_f32 =
-          AeskData.driver_vq_f32 = AeskData.bms_bat_cons_f32 =
+          .driver_set_torque_s16 = AeskData.driver_act_iq_u16 = 0;
+      AeskData.driver_set_id_s16 = AeskData.driver_set_iq_s16 =
+          AeskData.driver_act_id_u16 = 0; AeskData.driver_motortemp_u8 = 0; AeskData
+          .driver_idc_s16 = 0; AeskData.driver_vdc_s16 = 0;
+      AeskData.driver_acttorque_s8 = 0; AeskData.driver_errorstatus_u16 = 0;
+          AeskData.vcu_set_torque_s16 = 0; AeskData.bms_bat_cons_f32 = 0;
           AeskData.bms_temp_u8 = AeskData.bms_power_f32 = 0;
       return WillPopScope(
         onWillPop: () {
@@ -198,8 +196,8 @@ class _HomeState extends State<Home> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 DataBox(
-                                  ad: "Ping",
-                                  veri: AeskData.ping.toString(),
+                                  ad: "Act Torque",
+                                  veri: AeskData.driver_acttorque_s8.toString(),
                                 ),
                                 DataBox(
                                   ad: "BAT VOLT",
@@ -221,9 +219,8 @@ class _HomeState extends State<Home> {
                                   veri: AeskData.bms_soc_f32.toStringAsFixed(2),
                                 ),
                                 DataBox(
-                                  ad: "Phase B",
-                                  veri: AeskData.driver_phase_b_current_f32
-                                      .toStringAsFixed(2),
+                                  ad: "IDC",
+                                  veri: AeskData.driver_idc_s16.toStringAsFixed(2),
                                 ),
                               ],
                             ),
@@ -231,31 +228,30 @@ class _HomeState extends State<Home> {
                               children: <Widget>[
                                 DataBox(
                                   ad: "MOTOR TEMP",
-                                  veri: AeskData.driver_motor_temperature_u8
+                                  veri: AeskData.driver_motortemp_u8.toStringAsFixed(2),
+                                ),
+                                DataBox(
+                                  ad: "Set ID",
+                                  veri: AeskData.driver_set_id_s16
                                       .toStringAsFixed(2),
                                 ),
                                 DataBox(
-                                  ad: "Phase A Current",
-                                  veri: AeskData.driver_phase_a_current_f32
+                                  ad: "Set IQ",
+                                  veri: AeskData.driver_set_iq_s16.toStringAsFixed(2),
+                                ),
+                                DataBox(
+                                  ad: "Act ID",
+                                  veri: AeskData.driver_act_id_u16
                                       .toStringAsFixed(2),
                                 ),
                                 DataBox(
-                                  ad: "Torque",
-                                  veri: AeskData.driver_vq_f32.toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                  ad: "DC BUS CUR",
-                                  veri: AeskData.driver_dc_bus_current_f32
+                                  ad: "Act IQ",
+                                  veri: AeskData.driver_act_iq_u16
                                       .toStringAsFixed(2),
                                 ),
                                 DataBox(
-                                  ad: "DC BUS VOLT",
-                                  veri: AeskData.driver_dc_bus_voltage_f32
-                                      .toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                  ad: "IArms",
-                                  veri: AeskData.driver_vd_f32.toStringAsFixed(2),
+                                  ad: "Set Torque",
+                                  veri: AeskData.driver_set_torque_s16.toStringAsFixed(2),
                                 ),
                               ],
                             ),

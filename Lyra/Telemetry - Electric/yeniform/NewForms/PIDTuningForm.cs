@@ -51,13 +51,13 @@ namespace Telemetri.NewForms
         private void sendButton_Click(object sender, EventArgs e)
         {
             
-            float kp = float.Parse(kpBox.Text);
-            float ki = float.Parse(kiBox.Text);
-            float kd = float.Parse(kdBox.Text);
+            DataVCU.kp = float.Parse(kpBox.Text);
+            DataVCU.ki = float.Parse(kiBox.Text);
+            DataVCU.kd = float.Parse(kdBox.Text);
             List<byte> newlist = new List<byte>();
-            newlist.AddRange(BitConverter.GetBytes(kp));
-            newlist.AddRange(BitConverter.GetBytes(ki));
-            newlist.AddRange(BitConverter.GetBytes(kd));
+            newlist.AddRange(BitConverter.GetBytes(DataVCU.kp));
+            newlist.AddRange(BitConverter.GetBytes(DataVCU.ki));
+            newlist.AddRange(BitConverter.GetBytes(DataVCU.kd));
             comproUI.message = newlist.ToArray();
             comproUI.msg_size = (byte)newlist.Count;
             comproUI.msg_index++;

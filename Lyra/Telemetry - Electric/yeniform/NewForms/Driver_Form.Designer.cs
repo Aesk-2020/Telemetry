@@ -100,7 +100,7 @@
             this.undervoltVDCBox = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
-            this.errorsLabel = new System.Windows.Forms.Label();
+            this.temperatureLabel = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.label17 = new System.Windows.Forms.Label();
@@ -1173,7 +1173,7 @@
             // 
             this.tableLayoutPanel16.ColumnCount = 1;
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel16.Controls.Add(this.errorsLabel, 0, 1);
+            this.tableLayoutPanel16.Controls.Add(this.temperatureLabel, 0, 1);
             this.tableLayoutPanel16.Controls.Add(this.label16, 0, 0);
             this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel16.Location = new System.Drawing.Point(455, 4);
@@ -1184,18 +1184,18 @@
             this.tableLayoutPanel16.Size = new System.Drawing.Size(445, 82);
             this.tableLayoutPanel16.TabIndex = 5;
             // 
-            // errorsLabel
+            // temperatureLabel
             // 
-            this.errorsLabel.AutoSize = true;
-            this.errorsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.errorsLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.errorsLabel.ForeColor = System.Drawing.Color.White;
-            this.errorsLabel.Location = new System.Drawing.Point(3, 41);
-            this.errorsLabel.Name = "errorsLabel";
-            this.errorsLabel.Size = new System.Drawing.Size(439, 41);
-            this.errorsLabel.TabIndex = 16;
-            this.errorsLabel.Text = "None";
-            this.errorsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.temperatureLabel.AutoSize = true;
+            this.temperatureLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.temperatureLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.temperatureLabel.ForeColor = System.Drawing.Color.White;
+            this.temperatureLabel.Location = new System.Drawing.Point(3, 41);
+            this.temperatureLabel.Name = "temperatureLabel";
+            this.temperatureLabel.Size = new System.Drawing.Size(439, 41);
+            this.temperatureLabel.TabIndex = 16;
+            this.temperatureLabel.Text = "None";
+            this.temperatureLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label16
             // 
@@ -1207,7 +1207,7 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(439, 41);
             this.label16.TabIndex = 5;
-            this.label16.Text = "Errors";
+            this.label16.Text = "Temperature";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel17
@@ -1380,7 +1380,7 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
-        private System.Windows.Forms.Label errorsLabel;
+        private System.Windows.Forms.Label temperatureLabel;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox overtempBox;
         private System.Windows.Forms.PictureBox overCurCBox;

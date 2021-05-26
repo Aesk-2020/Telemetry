@@ -130,7 +130,7 @@ namespace Telemetri.NewForms
             Int16 Set_Torque       = (Int16)(float.Parse(textBox26.Text) * MACROS.FLOAT_CONVERTER_2);
             Int16 IDC              = (Int16)(float.Parse(textBox27.Text) * MACROS.FLOAT_CONVERTER_2);
             Int16 VDC              = (Int16)(float.Parse(textBox32.Text) * MACROS.FLOAT_CONVERTER_2);
-            Int16 Actual_Speed     = (Int16)(float.Parse(textBox28.Text) * MACROS.FLOAT_CONVERTER_2);
+            Int16 Actual_Speed     = (Int16)(float.Parse(textBox28.Text) * MACROS.FLOAT_CONVERTER_1);
             UInt16 Error_Status    = Convert.ToUInt16(textBox29.Text);
             byte Motor_Temp        = Convert.ToByte(textBox30.Text);
             byte Actual_Torque     = Convert.ToByte(textBox31.Text);

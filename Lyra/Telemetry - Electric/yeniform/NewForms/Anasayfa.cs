@@ -23,6 +23,7 @@ namespace Telemetri.NewForms
         List<string> lineList;
         SerialPort serialPort = new SerialPort();
         ComproUI comproUIII;
+        System.Timers.Timer loggTimer = new System.Timers.Timer(50);
 
         public Anasayfa()
         {
@@ -41,6 +42,11 @@ namespace Telemetri.NewForms
             UITools.Anasayfa.actsetSpeedChart = myChart;
             UITools.Anasayfa.setTorqueBox = setTorqueBox;
             comproUIII = new ComproUI(0x31, ComproUI.TELEMETRI, 24);
+        }
+
+        private void LoggTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            LogSystem.WriteStringLog();
         }
         #region .. Double Buffered function ..
         public static void SetDoubleBuffered(System.Windows.Forms.Control c)
@@ -130,7 +136,8 @@ namespace Telemetri.NewForms
 
         private void startLogBtn_Click(object sender, EventArgs e)
         {
-            if(LogSystem.StartLog(logTimer) == true)
+            loggTimer.Elapsed += LoggTimer_Elapsed;
+            if (LogSystem.StartLog(loggTimer) == true)
             {
                 startLogBtn.Enabled = false;
                 stopLogBtn.Enabled = true;
@@ -141,14 +148,10 @@ namespace Telemetri.NewForms
             }
         }
 
-        private void logTimer_Tick(object sender, EventArgs e)
-        {
-            LogSystem.WriteStringLog();
-        }
-
         private void stopLogBtn_Click(object sender, EventArgs e)
         {
-            LogSystem.StopLog(logTimer);
+            LogSystem.StopLog(loggTimer);
+            loggTimer.Elapsed -= LoggTimer_Elapsed;
             startLogBtn.Enabled = true;
             stopLogBtn.Enabled = false;
         }

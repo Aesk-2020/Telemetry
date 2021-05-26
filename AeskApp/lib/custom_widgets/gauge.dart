@@ -31,7 +31,7 @@ class AeskGauge extends StatelessWidget {
                   ],
                   pointers: <GaugePointer>[
                     NeedlePointer(
-                        value: AeskData.driver_actual_velocity_u8.toDouble(),
+                        value: AeskData.driver_actspeed_s16.toDouble(),
                         enableDragging: true,
                         needleLength: 0.7,
                         needleEndWidth: 5,

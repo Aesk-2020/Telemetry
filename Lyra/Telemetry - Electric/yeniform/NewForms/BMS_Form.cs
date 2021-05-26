@@ -35,6 +35,7 @@ namespace Telemetri.NewForms
             UITools.BMSForm.prechargeErrorBox = prechargeErrorBox;
             UITools.BMSForm.lattBox = lattBox;
             UITools.BMSForm.longtBox = longtBox;
+            UITools.BMSForm.powerBox = powerBox;
         }
         #region .. Double Buffered function ..
         public static void SetDoubleBuffered(System.Windows.Forms.Control c)

@@ -75,6 +75,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.prechargeErrorBox = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.powerBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
@@ -93,6 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dischargeBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prechargeBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prechargeErrorBox)).BeginInit();
+            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // socImages
@@ -241,13 +245,15 @@
             // tableLayoutPanel8
             // 
             this.tableLayoutPanel8.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel8.ColumnCount = 3;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel8.ColumnCount = 4;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00062F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00062F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00062F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.99813F));
+            this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel5, 2, 0);
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel9, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel13, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel10, 2, 0);
+            this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel10, 3, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
@@ -268,7 +274,7 @@
             this.tableLayoutPanel9.RowCount = 2;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(295, 94);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(219, 94);
             this.tableLayoutPanel9.TabIndex = 137;
             // 
             // label14
@@ -279,7 +285,7 @@
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(3, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(289, 52);
+            this.label14.Size = new System.Drawing.Size(213, 52);
             this.label14.TabIndex = 131;
             this.label14.Text = "Voltage";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -295,9 +301,9 @@
             this.voltageTextBox.Multiline = true;
             this.voltageTextBox.Name = "voltageTextBox";
             this.voltageTextBox.ReadOnly = true;
-            this.voltageTextBox.Size = new System.Drawing.Size(289, 36);
+            this.voltageTextBox.Size = new System.Drawing.Size(213, 36);
             this.voltageTextBox.TabIndex = 135;
-            this.voltageTextBox.Text = "107.6V";
+            this.voltageTextBox.Text = "0.0V";
             this.voltageTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel13
@@ -307,12 +313,12 @@
             this.tableLayoutPanel13.Controls.Add(this.label16, 0, 0);
             this.tableLayoutPanel13.Controls.Add(this.currentTextBox, 0, 1);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(306, 4);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(230, 4);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 2;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(295, 94);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(219, 94);
             this.tableLayoutPanel13.TabIndex = 137;
             // 
             // label16
@@ -323,7 +329,7 @@
             this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(3, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(289, 52);
+            this.label16.Size = new System.Drawing.Size(213, 52);
             this.label16.TabIndex = 131;
             this.label16.Text = "Current";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -339,9 +345,9 @@
             this.currentTextBox.Multiline = true;
             this.currentTextBox.Name = "currentTextBox";
             this.currentTextBox.ReadOnly = true;
-            this.currentTextBox.Size = new System.Drawing.Size(289, 36);
+            this.currentTextBox.Size = new System.Drawing.Size(213, 36);
             this.currentTextBox.TabIndex = 135;
-            this.currentTextBox.Text = "20A";
+            this.currentTextBox.Text = "0A";
             this.currentTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel10
@@ -351,12 +357,12 @@
             this.tableLayoutPanel10.Controls.Add(this.label13, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.consTextBox, 0, 1);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(608, 4);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(682, 4);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(296, 94);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(222, 94);
             this.tableLayoutPanel10.TabIndex = 138;
             // 
             // label13
@@ -367,7 +373,7 @@
             this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(3, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(290, 52);
+            this.label13.Size = new System.Drawing.Size(216, 52);
             this.label13.TabIndex = 131;
             this.label13.Text = "Consumption";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -383,7 +389,7 @@
             this.consTextBox.Multiline = true;
             this.consTextBox.Name = "consTextBox";
             this.consTextBox.ReadOnly = true;
-            this.consTextBox.Size = new System.Drawing.Size(290, 36);
+            this.consTextBox.Size = new System.Drawing.Size(216, 36);
             this.consTextBox.TabIndex = 135;
             this.consTextBox.Text = "250Wh";
             this.consTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -493,7 +499,7 @@
             this.socTextBox.ReadOnly = true;
             this.socTextBox.Size = new System.Drawing.Size(213, 36);
             this.socTextBox.TabIndex = 135;
-            this.socTextBox.Text = "%75";
+            this.socTextBox.Text = "%00.0";
             this.socTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel14
@@ -581,7 +587,7 @@
             this.tempTextBox.ReadOnly = true;
             this.tempTextBox.Size = new System.Drawing.Size(213, 36);
             this.tempTextBox.TabIndex = 135;
-            this.tempTextBox.Text = "25 °C";
+            this.tempTextBox.Text = "00 °C";
             this.tempTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // graphPanel
@@ -755,6 +761,50 @@
             this.prechargeErrorBox.TabIndex = 132;
             this.prechargeErrorBox.TabStop = false;
             // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.label9, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.powerBox, 0, 1);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(456, 4);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(219, 94);
+            this.tableLayoutPanel5.TabIndex = 148;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(213, 52);
+            this.label9.TabIndex = 131;
+            this.label9.Text = "Power";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // powerBox
+            // 
+            this.powerBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.powerBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.powerBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.powerBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.powerBox.ForeColor = System.Drawing.Color.White;
+            this.powerBox.Location = new System.Drawing.Point(3, 55);
+            this.powerBox.Multiline = true;
+            this.powerBox.Name = "powerBox";
+            this.powerBox.ReadOnly = true;
+            this.powerBox.Size = new System.Drawing.Size(213, 36);
+            this.powerBox.TabIndex = 135;
+            this.powerBox.Text = "0W";
+            this.powerBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // BMS_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -796,6 +846,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dischargeBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prechargeBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prechargeErrorBox)).EndInit();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -847,5 +899,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox socTextBox;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox powerBox;
     }
 }

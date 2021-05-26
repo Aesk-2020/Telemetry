@@ -57,6 +57,7 @@ namespace Telemetri.Variables
             public static TextBox dcBusStateBox;
             public static TextBox lattBox;
             public static TextBox longtBox;
+            public static TextBox powerBox;
 
             public static PictureBox prechargeBox;
             public static PictureBox dischargeBox;
@@ -90,7 +91,7 @@ namespace Telemetri.Variables
             public static PictureBox ISCFFlagBox;
             public static PictureBox pwmEnabledBox;
             public static Label actualStatusLabel;
-            public static Label errorsLabel;
+            public static Label temperatureLabel;
         }
         public static class CellsForm
         {
@@ -107,10 +108,10 @@ namespace Telemetri.Variables
         }
         public static void ChangeUI()
         {
-            Anasayfa.actVelocityLabel.Text = DataMCU.act_speed_s16.ToString() + " rpm";
+            Anasayfa.actVelocityLabel.Text = DataMCU.act_speed_s16.ToString() + " kmh"; 
             Anasayfa.batConsLabel.Text = DataBMS.cons_u16.ToString() + " Wh";
             Anasayfa.batCurLabel.Text = DataBMS.cur_s16.ToString() + " A";
-            Anasayfa.setVelocityLabel.Text = (DataVCU.speed_set_rpm_s16 / 1).ToString() + " rpm"; //0.105183
+            Anasayfa.setVelocityLabel.Text = DataVCU.speed_set_rpm_s16.ToString() + " kmh"; //0.105183 rpm to kmh rate
             Anasayfa.socLabel.Text = "%" + DataBMS.soc_u16.ToString();
             Anasayfa.setTorqueBox.Text = DataVCU.torque_set_s16.ToString() + " N*m";
             Anasayfa.actsetSpeedChart.Series[0].Points.Add(DataVCU.speed_set_rpm_s16);
@@ -125,6 +126,7 @@ namespace Telemetri.Variables
             BMSForm.voltageTextBox.Text = DataBMS.volt_u16.ToString();
             BMSForm.longtBox.Text = GpsTracker.gps_longtitude_f64.ToString();
             BMSForm.lattBox.Text = GpsTracker.gps_latitude_f64.ToString();
+            BMSForm.powerBox.Text = (DataBMS.volt_u16 * DataBMS.cur_s16).ToString();
 
             if (DataMCU.free_wheeling_status == true)
             {
@@ -144,6 +146,7 @@ namespace Telemetri.Variables
             DriverForm.vqLabel.Text = DataMCU.vq_s16.ToString();
             DriverForm.dcBusCurLabel.Text = DataMCU.i_dc_s16.ToString();
             DriverForm.dcBusVoltLabel.Text = DataMCU.v_dc_s16.ToString();
+            DriverForm.temperatureLabel.Text = DataMCU.temperature_u8.ToString();
 
             DriverForm.ISCFFlagBox.BackColor = DataMCU.input_scaling_calib_finished ? Color.LimeGreen : MACROS.UInewBack;
             DriverForm.overcurIABox.BackColor = DataMCU.over_cur_IA ? Color.Crimson : MACROS.UInewBack;

@@ -13,20 +13,6 @@ Widget ErrorHandler(int index){
   return Consumer<MqttAesk>(
     builder: (context, _, child){
 
-      if(AeskData.driver_error_ZPC_u1 && index == 0)
-        return myText("ZPC HATASI", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
-      else if(AeskData.driver_error_PWM_u1 && index == 1)
-        return myText("PWM HATASI", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
-      else if(AeskData.driver_error_DC_bara_u1 && index == 2)
-        return myText("DC BARA HATASI", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
-      else if(AeskData.driver_error_temprature_u1 && index == 3)
-        return myText("TEMPERATURE HATASI", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
-      else if(AeskData.driver_error_DC_bara_current_u1 && index == 4)
-        return myText("DC BARA CURRENT HATASI", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
-      else if(AeskData.driver_error_WakeUp_u1 && index == 5)
-        return myText("ID HATASI", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold);
-      else
-        return SizedBox(height: 0,);
     },
   );
 
@@ -60,7 +46,7 @@ Widget Vcu(){
                     Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
                     Column(
                       children: <Widget>[
-                        myText("     af", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold)
+                        myText(AeskData.driver_freewheeling_u1 ? "      FREEWHEELING" : (AeskData.driver_torque_mode_u1 ? "     TORQUE MODE" : "     SPEED MODE"), scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold)
                       ],
                     ),
                     SizedBox(height: 15,),
@@ -108,11 +94,11 @@ Widget Vcu(){
                         children: <Widget>[
                           Container(
                             margin: EdgeInsets.all(scale.size.width/41.142857),
-                            child: Text("ID:" + " " + AeskData.driver_id_f32.toStringAsFixed(2),style: TextStyle(fontWeight: FontWeight.bold,fontSize: scale.size.width/20.571428,color: Theme.of(context).textTheme.headline1.color,fontFamily: "GOTHIC",),textAlign: TextAlign.start,),),
+                            child: Text("Act ID:" + " " + AeskData.driver_act_id_u16.toStringAsFixed(2),style: TextStyle(fontWeight: FontWeight.bold,fontSize: scale.size.width/20.571428,color: Theme.of(context).textTheme.headline1.color,fontFamily: "GOTHIC",),textAlign: TextAlign.start,),),
                           Container(
                             margin: EdgeInsets.all(scale.size.width/41.142857),
                             alignment: Alignment.center,
-                            child: Text("IQ:" + " " + AeskData.driver_iq_f32.toStringAsFixed(2), style: TextStyle(fontWeight: FontWeight.bold,fontSize: scale.size.width/20.571428,color: Theme.of(context).textTheme.headline1.color,fontFamily: "GOTHIC",),textAlign: TextAlign.center,),),
+                            child: Text("Act IQ:" + " " + AeskData.driver_act_iq_u16.toStringAsFixed(2), style: TextStyle(fontWeight: FontWeight.bold,fontSize: scale.size.width/20.571428,color: Theme.of(context).textTheme.headline1.color,fontFamily: "GOTHIC",),textAlign: TextAlign.center,),),
                         ],
                       ),
                     ),
@@ -132,8 +118,8 @@ Widget Vcu(){
                           Container(
                             margin: EdgeInsets.all(scale.size.width/41.142857),
                             child: myText(
-                                "IArms:" +" "+
-                                    AeskData.driver_vd_f32
+                                "VD:" +" "+
+                                    AeskData.driver_act_vd_s16
                                         .toStringAsFixed(2),
                                 scale.size.width/20.571428,
                                 Theme.of(context).textTheme.headline1.color,
@@ -142,8 +128,8 @@ Widget Vcu(){
                           Container(
                             margin: EdgeInsets.all(scale.size.width/41.142857),
                             child: myText(
-                                "Torque:" +" "+
-                                    AeskData.driver_vq_f32
+                                "VQ:" +" "+
+                                    AeskData.driver_act_vq_s16
                                         .toStringAsFixed(2),
                                 scale.size.width/20.571428,
                                 Theme.of(context).textTheme.headline1.color,
@@ -168,9 +154,9 @@ Widget Vcu(){
                           Container(
                             //margin: EdgeInsets.all(scale.size.width/41.142857),
                             child: myText(
-                                "Phase A:" +
+                                "Set ID:" +
                                     " " +
-                                    AeskData.driver_phase_a_current_f32
+                                    AeskData.driver_set_id_s16
                                         .toStringAsFixed(2)+"   ",
                                 scale.size.width/20.571428,
                                 Theme.of(context).textTheme.headline1.color,
@@ -179,9 +165,9 @@ Widget Vcu(){
                           Container(
                             //margin: EdgeInsets.all(scale.size.width/41.142857),
                             child: myText(
-                                "Phase B:" +
+                                "Set IQ:" +
                                     " " +
-                                    AeskData.driver_phase_b_current_f32
+                                    AeskData.driver_set_iq_s16
                                         .toStringAsFixed(2),
                                 scale.size.width/20.571428,
                                 Theme.of(context).textTheme.headline1.color,
@@ -208,7 +194,7 @@ Widget Vcu(){
                             child: myText(
                                 "IDC:" +
                                     " " +
-                                    AeskData.driver_dc_bus_current_f32
+                                    AeskData.driver_idc_s16
                                         .toStringAsFixed(2),
                                 scale.size.width/20.571428,
                                 Theme.of(context).textTheme.headline1.color,
@@ -219,7 +205,7 @@ Widget Vcu(){
                             child: myText(
                                 "VDC:" +
                                     " " +
-                                    AeskData.driver_dc_bus_voltage_f32
+                                    AeskData.driver_vdc_s16
                                         .toStringAsFixed(2),
                                 scale.size.width/20.571428,
                                 Theme.of(context).textTheme.headline1.color,
@@ -233,7 +219,7 @@ Widget Vcu(){
                     Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
                     Container(
                       child: myText(
-                          "Motor Sıcaklığı : " +AeskData.driver_motor_temperature_u8.toStringAsFixed(2)+ " °C",
+                          "Motor Sıcaklığı : " +AeskData.driver_motortemp_u8.toString()+ " °C",
                           scale.size.width/20.571428,
                           Theme.of(context).textTheme.headline1.color,
                           FontWeight.bold),
@@ -249,7 +235,7 @@ Widget Vcu(){
                     ),
                     Container(
                       child: myText(
-                          "Anlık Hız : "+AeskData.driver_actual_velocity_u8.toStringAsFixed(2)+" km/h",
+                          "Anlık Hız : "+AeskData.driver_actspeed_s16.toStringAsFixed(2)+" km/h",
                           scale.size.width/20.571428,
                           Theme.of(context).textTheme.headline1.color,
                           FontWeight.bold),
@@ -264,7 +250,7 @@ Widget Vcu(){
                       ),
                     ),
                     Container(
-                      child: myText("Set Hız: "+AeskData.vcu_set_velocity_u8.toStringAsFixed(2)+" km/h", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                      child: myText("Set Hız: "+AeskData.vcu_speed_set_rpm_s16.toStringAsFixed(2)+" km/h", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                       alignment: Alignment.center,
                       height: 50,
                       margin: EdgeInsets.fromLTRB(25, 0, 25, 5),
@@ -275,7 +261,7 @@ Widget Vcu(){
                     ),
                     Container(
                       child: myText(
-                          "Gidilen Mesafe : "+AeskData.driver_odometer_u32.toStringAsFixed(2),
+                          "Set Torque : "+AeskData.vcu_set_torque_s16.toStringAsFixed(2),
                           scale.size.width/20.571428,
                           Theme.of(context).textTheme.headline1.color,
                           FontWeight.bold),

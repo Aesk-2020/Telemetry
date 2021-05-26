@@ -90,7 +90,7 @@
                                   ),
                                   DataBox(
                                     ad: "Phase B",
-                                    veri: AeskData.driver_phase_b_current_f32
+                                    veri: AeskData.driver_actspeed_s16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
@@ -138,32 +138,32 @@
                                 children: <Widget>[
                                   DataBox(
                                     ad: "MOTOR TEMP",
-                                    veri: AeskData.driver_motor_temperature_u8
+                                    veri: AeskData.driver_actspeed_s16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "Phase A Current",
-                                    veri: AeskData.driver_phase_a_current_f32
+                                    veri: AeskData.driver_actspeed_s16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "Torque",
-                                    veri: AeskData.driver_vq_f32
+                                    veri: AeskData.driver_actspeed_s16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "DC BUS CUR",
-                                    veri: AeskData.driver_dc_bus_current_f32
+                                    veri: AeskData.driver_actspeed_s16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "DC BUS VOLT",
-                                    veri: AeskData.driver_dc_bus_voltage_f32
+                                    veri: AeskData.driver_actspeed_s16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "IArms",
-                                    veri: AeskData.driver_vd_f32
+                                    veri: AeskData.driver_actspeed_s16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
@@ -218,14 +218,14 @@
     } else if (AeskData.bms_bat_current_f32 == null) {
       AeskData.bms_bat_current_f32 = AeskData.bms_bat_volt_f32 =
           AeskData.bms_dc_bus_state_u8 = AeskData.bms_soc_f32 =
-              AeskData.driver_actual_velocity_u8 =
-                  AeskData.driver_dc_bus_current_f32 = 0;
-      AeskData.driver_dc_bus_voltage_f32 = AeskData.driver_id_f32 =
-          AeskData.driver_iq_f32 = AeskData.driver_motor_temperature_u8 =
-              AeskData.driver_odometer_u32 =
-                  AeskData.driver_phase_a_current_f32 = 0;
-      AeskData.driver_phase_b_current_f32 = AeskData.driver_vd_f32 =
-          AeskData.driver_vq_f32 = AeskData.bms_bat_cons_f32 =
+              AeskData.driver_actspeed_s16 = 0;
+                  AeskData.driver_motortemp_u8 = 0;
+      AeskData.driver_idc_s16 = AeskData.driver_act_vd_s16 =
+          AeskData.driver_set_iq_s16 = AeskData.driver_idc_s16 =
+              AeskData.driver_idc_s16 =
+                  AeskData.driver_act_vd_s16 = 0;
+      AeskData.driver_act_iq_u16 = 0; AeskData.driver_act_id_u16 = 0;
+          AeskData.driver_errorstatus_u16 = 0; AeskData.bms_bat_cons_f32 =
               AeskData.bms_temp_u8 = AeskData.bms_power_f32 = 0;
       return WillPopScope(
         onWillPop: () {
@@ -303,7 +303,7 @@
                                   ),
                                   DataBox(
                                     ad: "Phase B",
-                                    veri: AeskData.driver_phase_b_current_f32
+                                    veri: AeskData.driver_act_iq_u16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
@@ -351,32 +351,32 @@
                                 children: <Widget>[
                                   DataBox(
                                     ad: "MOTOR TEMP",
-                                    veri: AeskData.driver_motor_temperature_u8
+                                    veri: AeskData.driver_act_iq_u16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "Phase A Current",
-                                    veri: AeskData.driver_phase_a_current_f32
+                                    veri: AeskData.driver_act_vd_s16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "Torque",
-                                    veri: AeskData.driver_vq_f32
+                                    veri: AeskData.driver_idc_s16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "DC BUS CUR",
-                                    veri: AeskData.driver_dc_bus_current_f32
+                                    veri: AeskData.driver_idc_s16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "DC BUS VOLT",
-                                    veri: AeskData.driver_dc_bus_voltage_f32
+                                    veri: AeskData.driver_idc_s16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "IArms",
-                                    veri: AeskData.driver_vd_f32
+                                    veri: AeskData.driver_idc_s16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
