@@ -69,40 +69,7 @@ namespace Telemetri.NewForms
 
         }
 
-        private void startSendBtn_Click(object sender, EventArgs e)
-        {
-            testTimer.Interval = (int)testTimerInterval.Value;
-            if(Anasayfa.mqttobj.connected_flag == true)
-            {
-                testTimer.Start();
-                startSendBtn.Enabled = false;
-                stpBtn.Enabled = true;
-                sendOnceBtn.Enabled = false;
-            }
-            else
-            {
-                MessageBox.Show("MQTT Bağlantısı Yok!");
-            }
-        }
-
-        private void stpBtn_Click(object sender, EventArgs e)
-        {
-            testTimer.Stop();
-            startSendBtn.Enabled = true;
-            stpBtn.Enabled = false;
-            sendOnceBtn.Enabled = true;
-        }
-
-        private void testTimer_Tick(object sender, EventArgs e)
-        {
-            CreatePack();
-            comproo.message = buffer.ToArray();
-            comproo.msg_size = (byte)buffer.Count;
-            comproo.CreateBuffer();
-            comproo.msg_index++;
-            Anasayfa.mqttobj.client.Publish("vehicle_to_interface", comproo.buffer);
-            buffer.Clear();
-        }
+        
         private void CreatePack()
         {
             
@@ -205,8 +172,31 @@ namespace Telemetri.NewForms
             }
 
         }
+        private void startSendBtn_Click(object sender, EventArgs e)
+        {
+            testTimer.Interval = (int)testTimerInterval.Value;
+            if (Anasayfa.mqttobj.connected_flag == true)
+            {
+                testTimer.Start();
+                startSendBtn.Enabled = false;
+                stpBtn.Enabled = true;
+                sendOnceBtn.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("MQTT Bağlantısı Yok!");
+            }
+        }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void stpBtn_Click(object sender, EventArgs e)
+        {
+            testTimer.Stop();
+            startSendBtn.Enabled = true;
+            stpBtn.Enabled = false;
+            sendOnceBtn.Enabled = true;
+        }
+
+        private void testTimer_Tick(object sender, EventArgs e)
         {
             CreatePack();
             comproo.message = buffer.ToArray();
@@ -214,6 +204,70 @@ namespace Telemetri.NewForms
             comproo.CreateBuffer();
             comproo.msg_index++;
             Anasayfa.mqttobj.client.Publish("vehicle_to_interface", comproo.buffer);
+            buffer.Clear();
+        }
+
+        private void sendOnceBtn_Click(object sender, EventArgs e)
+        {
+            if (Anasayfa.mqttobj.connected_flag == true)
+            {
+                CreatePack();
+                comproo.message = buffer.ToArray();
+                comproo.msg_size = (byte)buffer.Count;
+                comproo.CreateBuffer();
+                comproo.msg_index++;
+                Anasayfa.mqttobj.client.Publish("vehicle_to_interface", comproo.buffer);
+                buffer.Clear();
+            }
+            else
+            {
+                MessageBox.Show("MQTT Bağlantısı Yok!");
+            }
+        }
+
+        private void sendOnceNC_Click(object sender, EventArgs e)
+        {
+            if (Anasayfa.mqttobj.connected_flag == true)
+            {
+                CreatePack();
+                Anasayfa.mqttobj.client.Publish("vehicle_to_interface", buffer.ToArray());
+                buffer.Clear();
+            }
+            else
+            {
+                MessageBox.Show("MQTT Bağlantısı Yok!");
+            }
+        }
+
+        private void stopSendNC_Click(object sender, EventArgs e)
+        {
+            testTimerNC.Stop();
+            startSendNC.Enabled = true;
+            stopSendNC.Enabled = false;
+            sendOnceNC.Enabled = true;
+        }
+
+        private void startSendNC_Click(object sender, EventArgs e)
+        {
+            testTimerNC.Interval = (int)testTimerInterval.Value;
+            if (Anasayfa.mqttobj.connected_flag == true)
+            {
+                testTimerNC.Start();
+                startSendNC.Enabled = false;
+                stopSendNC.Enabled = true;
+                sendOnceNC.Enabled = false;
+
+            }
+            else
+            {
+                MessageBox.Show("MQTT Bağlantısı Yok!");
+            }
+        }
+
+        private void testTimerNC_Tick(object sender, EventArgs e)
+        {
+            CreatePack();
+            Anasayfa.mqttobj.client.Publish("vehicle_to_interface", buffer.ToArray());
             buffer.Clear();
         }
     }
