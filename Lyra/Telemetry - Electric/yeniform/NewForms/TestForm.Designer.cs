@@ -103,6 +103,12 @@
             this.stpBtn = new System.Windows.Forms.Button();
             this.sqLiteCommandBuilder1 = new System.Data.SQLite.SQLiteCommandBuilder();
             this.sendOnceBtn = new System.Windows.Forms.Button();
+            this.startSendNC = new System.Windows.Forms.Button();
+            this.stopSendNC = new System.Windows.Forms.Button();
+            this.sendOnceNC = new System.Windows.Forms.Button();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.testTimerNC = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.testTimerInterval)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -848,13 +854,67 @@
             // 
             // sendOnceBtn
             // 
-            this.sendOnceBtn.Location = new System.Drawing.Point(774, 545);
+            this.sendOnceBtn.Location = new System.Drawing.Point(679, 571);
             this.sendOnceBtn.Name = "sendOnceBtn";
             this.sendOnceBtn.Size = new System.Drawing.Size(89, 20);
             this.sendOnceBtn.TabIndex = 12;
             this.sendOnceBtn.Text = "SEND ONCE";
             this.sendOnceBtn.UseVisualStyleBackColor = true;
-            this.sendOnceBtn.Click += new System.EventHandler(this.button1_Click_1);
+            this.sendOnceBtn.Click += new System.EventHandler(this.sendOnceBtn_Click);
+            // 
+            // startSendNC
+            // 
+            this.startSendNC.Location = new System.Drawing.Point(584, 519);
+            this.startSendNC.Name = "startSendNC";
+            this.startSendNC.Size = new System.Drawing.Size(89, 20);
+            this.startSendNC.TabIndex = 13;
+            this.startSendNC.Text = "START SEND";
+            this.startSendNC.UseVisualStyleBackColor = true;
+            this.startSendNC.Click += new System.EventHandler(this.startSendNC_Click);
+            // 
+            // stopSendNC
+            // 
+            this.stopSendNC.Location = new System.Drawing.Point(584, 545);
+            this.stopSendNC.Name = "stopSendNC";
+            this.stopSendNC.Size = new System.Drawing.Size(89, 20);
+            this.stopSendNC.TabIndex = 14;
+            this.stopSendNC.Text = "STOP";
+            this.stopSendNC.UseVisualStyleBackColor = true;
+            this.stopSendNC.Click += new System.EventHandler(this.stopSendNC_Click);
+            // 
+            // sendOnceNC
+            // 
+            this.sendOnceNC.Location = new System.Drawing.Point(584, 571);
+            this.sendOnceNC.Name = "sendOnceNC";
+            this.sendOnceNC.Size = new System.Drawing.Size(89, 20);
+            this.sendOnceNC.TabIndex = 15;
+            this.sendOnceNC.Text = "SEND ONCE";
+            this.sendOnceNC.UseVisualStyleBackColor = true;
+            this.sendOnceNC.Click += new System.EventHandler(this.sendOnceNC_Click);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label33.Location = new System.Drawing.Point(692, 498);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(54, 13);
+            this.label33.TabIndex = 16;
+            this.label33.Text = "COMPRO";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label34.Location = new System.Drawing.Point(596, 498);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(73, 13);
+            this.label34.TabIndex = 17;
+            this.label34.Text = "NO COMPRO";
+            // 
+            // testTimerNC
+            // 
+            this.testTimerNC.Tick += new System.EventHandler(this.testTimerNC_Tick);
             // 
             // TestForm
             // 
@@ -862,6 +922,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(914, 621);
+            this.Controls.Add(this.label34);
+            this.Controls.Add(this.label33);
+            this.Controls.Add(this.sendOnceNC);
+            this.Controls.Add(this.stopSendNC);
+            this.Controls.Add(this.startSendNC);
             this.Controls.Add(this.sendOnceBtn);
             this.Controls.Add(this.stpBtn);
             this.Controls.Add(this.groupBox4);
@@ -884,6 +949,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -963,5 +1029,11 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox textBox32;
         private System.Windows.Forms.Button sendOnceBtn;
+        private System.Windows.Forms.Button startSendNC;
+        private System.Windows.Forms.Button stopSendNC;
+        private System.Windows.Forms.Button sendOnceNC;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Timer testTimerNC;
     }
 }
