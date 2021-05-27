@@ -4,21 +4,17 @@ import 'package:mqtt_client/mqtt_client.dart' as mqtt;
 import 'package:flutter/foundation.dart';
 import 'dart:async';
 import 'package:aeskapp/pages/Login.dart' as login;
-
-
 ///bit işlemleri kütüğhaneleri byte array vs.
-
 var old_iteration_date;
 
 class MqttAesk extends ChangeNotifier {
+  static String broker = login.selectedItem.name;
 
-  static String broker = login.selectedItem.toString();
   static int port = 1883;
   static String username = 'digital';
   static String password = 'aesk';
-
   static String clientIdentifier =
-      DateTime.now().toString(); //cihaz isimlerine göre atama ya
+  DateTime.now().toString(); //cihaz isimlerine göre atama ya
   static bool isLyra;
 
   mqtt.MqttClient client;
@@ -89,6 +85,7 @@ class MqttAesk extends ChangeNotifier {
   void _onMessage(List<mqtt.MqttReceivedMessage> event) {
     old_iteration_date ??= DateTime.now();
     var new_iteration_date = DateTime.now();
+
     AeskData.ping =
         new_iteration_date.difference(old_iteration_date).inMilliseconds;
     AeskData.x_time += AeskData.ping;
@@ -96,7 +93,7 @@ class MqttAesk extends ChangeNotifier {
     old_iteration_date = new_iteration_date;
 
     final mqtt.MqttPublishMessage recMess =
-        event[0].payload as mqtt.MqttPublishMessage;
+    event[0].payload as mqtt.MqttPublishMessage;
     var message = recMess.payload.message.buffer.asByteData(0);
     AeskData(message, Endian.little);
     notifyListeners();

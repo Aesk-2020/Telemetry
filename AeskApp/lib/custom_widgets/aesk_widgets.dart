@@ -25,6 +25,7 @@ List<DrawerListClass> drawerListHydra = [
   DrawerListClass(image: "custom-icon.png", text: "Özelleştirme Ekranı", destination: "/Custom"),
 ];
 
+Color crimsonRed = Color.fromRGBO(220, 20, 60, 1.0);
 
 //********************************** Scaffold Widget ****************************************************//
 Widget aeskScaffold({Widget myBody, BuildContext context}) {
@@ -101,7 +102,7 @@ Widget AeskErrorCheck(String text, bool condition, BuildContext context) {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         myText(text, 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-        Icon(Icons.lens, size: 20, color: (condition ? Colors.red : Colors.green),)
+        Icon(Icons.lens, size: 20, color: (condition ? crimsonRed : Colors.transparent),)
       ],
     ),
   );
@@ -114,7 +115,7 @@ Widget AeskConditionCheck(String text, bool condition, BuildContext context) {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         myText(text, 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-        Icon(Icons.lens, size: 20, color: (condition ? Colors.red : Colors.transparent),)
+        Icon(Icons.lens, size: 20, color: (condition ? crimsonRed : Colors.transparent),)
       ],
     ),
   );

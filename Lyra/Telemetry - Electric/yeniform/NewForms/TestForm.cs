@@ -267,7 +267,7 @@ namespace Telemetri.NewForms
         private void testTimerNC_Tick(object sender, EventArgs e)
         {
             CreatePack();
-            Anasayfa.mqttobj.client.Publish("vehicle_to_interface", buffer.ToArray());
+            Anasayfa.mqttobj.client.Publish("LYRADATA", buffer.ToArray());
             buffer.Clear();
         }
     }
