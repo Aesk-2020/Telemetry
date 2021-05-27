@@ -4,37 +4,39 @@ import 'package:aeskapp/classes/Mqtt.dart';
 import 'package:flutter/foundation.dart';
 
 class graph_data{
-  var vcu_drive_command_u8;
-  var vcu_speed_set_rpm_s16;
-  var vcu_set_torque_s16;
-  var vcu_speed_limit_u16;
-  var vcu_torque_limit_u8;
+  var vcu_drive_command_u8_g;
+  var vcu_speed_set_rpm_s16_g;
+  var vcu_set_torque_s16_g;
+  var vcu_speed_limit_u16_g;
+  var vcu_torque_limit_u8_g;
   var driver_set_id_s16_g;
+  var driver_act_id_s16_g;
   var driver_set_iq_s16_g;
+  var driver_act_iq_s16_g;
   var driver_set_torque_s16_g;
   var driver_idc_s16_g;
   var driver_vdc_s16_g;
   var driver_actspeed_s16_g;
   var driver_motortemp_u8_g;
-  var driver_errorstatus_u1_g;
   var driver_acttorque_s8_g;
   var bms_bat_volt_g;
   var bms_bat_current_g;
   var bms_bat_cons_g;
   double time;
   graph_data(
-      this.vcu_drive_command_u8,
-      this.vcu_speed_set_rpm_s16,
-      this.vcu_set_torque_s16,
-      this.vcu_speed_limit_u16,
+      this.vcu_drive_command_u8_g,
+      this.vcu_speed_set_rpm_s16_g,
+      this.vcu_set_torque_s16_g,
+      this.vcu_speed_limit_u16_g,
       this.driver_set_id_s16_g,
+      this.driver_act_id_s16_g,
       this.driver_set_iq_s16_g,
+      this.driver_act_iq_s16_g,
       this.driver_set_torque_s16_g,
       this.driver_idc_s16_g,
       this.driver_vdc_s16_g,
       this.driver_actspeed_s16_g,
       this.driver_motortemp_u8_g,
-      this.driver_errorstatus_u1_g,
       this.driver_acttorque_s8_g,
       this.bms_bat_volt_g,
       this.bms_bat_current_g,
@@ -142,7 +144,7 @@ class AeskData extends ChangeNotifier{
   static double x_time=0;
   static var ping = 0;
 
-  static List<graph_data> graphData_array = List.generate(100, (index) => graph_data(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0), growable: false);
+  static List<graph_data> graphData_array = List.generate(100, (index) => graph_data(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0), growable: false);
   static List<int> battery_cells = List.generate(28, (index) => 0);
   static int cellCount = 28;
 
@@ -154,6 +156,7 @@ class AeskData extends ChangeNotifier{
 
     vcu_drive_command_u8 = message.getUint8(_startIndex);     _startIndex++;
     vcu_speed_set_rpm_s16 = message.getInt16(_startIndex) / 100;    _startIndex += 2;
+    vcu_speed_set_rpm_s16 = (vcu_speed_set_rpm_s16 * 0.105183).roundToDouble();
     vcu_set_torque_s16 = message.getInt16(_startIndex) / 100;       _startIndex += 2;
     vcu_speed_limit_u16 = message.getUint16(_startIndex);     _startIndex += 2;
     vcu_torque_limit_u8 = message.getUint8(_startIndex);      _startIndex++;
@@ -187,6 +190,7 @@ class AeskData extends ChangeNotifier{
 
     driver_actspeed_s16 = message.getInt16(_startIndex) / 100;
     _startIndex += 2;
+    driver_actspeed_s16 = (driver_actspeed_s16 * 0.105183).roundToDouble();
 
     driver_motortemp_u8 = message.getUint8(_startIndex);
     _startIndex++;
@@ -341,15 +345,16 @@ class AeskData extends ChangeNotifier{
         vcu_speed_set_rpm_s16,
         vcu_set_torque_s16,
         vcu_speed_limit_u16,
-        driver_act_iq_u16,
-        driver_act_id_u16,
-        driver_act_vd_s16,
-        driver_act_vq_s16,
         driver_set_id_s16,
+        driver_act_id_u16,
         driver_set_iq_s16,
+        driver_act_iq_u16,
         driver_set_torque_s16,
         driver_idc_s16,
         driver_vdc_s16,
+        driver_actspeed_s16,
+        driver_motortemp_u8,
+        driver_acttorque_s8,
         bms_bat_volt_f32,//10
         bms_bat_current_f32,
         bms_bat_cons_f32,//10

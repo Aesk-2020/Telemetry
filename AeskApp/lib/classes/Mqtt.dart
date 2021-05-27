@@ -89,7 +89,6 @@ class MqttAesk extends ChangeNotifier {
   void _onMessage(List<mqtt.MqttReceivedMessage> event) {
     old_iteration_date ??= DateTime.now();
     var new_iteration_date = DateTime.now();
-
     AeskData.ping =
         new_iteration_date.difference(old_iteration_date).inMilliseconds;
     AeskData.x_time += AeskData.ping;
