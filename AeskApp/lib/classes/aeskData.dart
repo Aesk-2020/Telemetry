@@ -185,10 +185,10 @@ class AeskData extends ChangeNotifier{
     driver_idc_s16 = message.getInt16(_startIndex,myEndian)/100;
     _startIndex += 2;
 
-    driver_vdc_s16 = message.getInt16(_startIndex) / 100;
+    driver_vdc_s16 = message.getInt16(_startIndex, myEndian) / 100;
     _startIndex += 2;
 
-    driver_actspeed_s16 = message.getInt16(_startIndex) / 100;
+    driver_actspeed_s16 = message.getInt16(_startIndex,myEndian) / 100;
     _startIndex += 2;
     driver_actspeed_s16 = (driver_actspeed_s16 * 0.105183).roundToDouble();
 
