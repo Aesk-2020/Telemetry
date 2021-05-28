@@ -133,7 +133,7 @@ void LogStart(Sd_Card_Data *sdcard_data)
 		HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
 		vars_to_str(sdcard_data->path, "%d_%d_%d_%d_%d_%d_(%d).txt", sDate.Date, sDate.Month, sDate.Year, sTime.Hours, sTime.Minutes, sTime.Seconds, sdcard_data->logger_u32);
 
-		sdcard_data->result_open = f_open(&sdcard_data->myFile, sdcard_data->path, FA_WRITE | FA_OPEN_APPEND | FA_OPEN_EXISTING | FA_OPEN_ALWAYS);
+		sdcard_data->result_open = f_open(&sdcard_data->myFile, sdcard_data->path, FA_WRITE | FA_OPEN_APPEND);
 		f_write(&sdcard_data->myFile, SDHeader, strlen(SDHeader), (void*) &sdcard_data->writtenbyte);
 		sdcard_data->state = SD_Card_Detect;
 		f_close(&sdcard_data->myFile);
@@ -317,7 +317,7 @@ void LogAsString(LyraDatas lyradata, GPS_Handle gps_data, Sd_Card_Data *sd_card_
 	vars_to_str((char*) sd_card_data->total_log, "%d:%d:%d\t", sTime.Hours, sTime.Minutes, sTime.Seconds);
 	strcat(sd_card_data->total_log, (const char*) sd_card_data->transmitBuf);
 	sd_card_data->result_open = f_open(&sd_card_data->myFile, sd_card_data->path,
-			FA_WRITE | FA_OPEN_APPEND | FA_OPEN_ALWAYS);
+			FA_WRITE | FA_OPEN_APPEND);
 	if(sd_card_data->result_open != FR_OK)
 	{
 		sd_card_data->errorcounter_u32++;
@@ -325,7 +325,7 @@ void LogAsString(LyraDatas lyradata, GPS_Handle gps_data, Sd_Card_Data *sd_card_
 		if(sd_card_data->result_close == FR_OK)
 		{
 			sd_card_data->result_open = f_open(&sd_card_data->myFile, sd_card_data->path,
-					FA_WRITE | FA_OPEN_APPEND | FA_OPEN_ALWAYS);
+					FA_WRITE | FA_OPEN_APPEND);
 		}
 	}
 	sd_card_data->result_write = f_write(&sd_card_data->myFile, sd_card_data->total_log, strlen(sd_card_data->total_log), (void*) &sd_card_data->writtenbyte);

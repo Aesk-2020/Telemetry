@@ -58,8 +58,8 @@ all: main-build
 main-build: Hydra_Telemetry_System_2020_v1.elf secondary-outputs
 
 # Tool invocations
-Hydra_Telemetry_System_2020_v1.elf: $(OBJS) $(USER_OBJS) C:\Users\Yusuf\STM32CubeIDE\workspace_1.5.0\Hydra_Telemetry_System_2020_v1\STM32F412RETX_FLASH.ld
-	arm-none-eabi-gcc -o "Hydra_Telemetry_System_2020_v1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Yusuf\STM32CubeIDE\workspace_1.5.0\Hydra_Telemetry_System_2020_v1\STM32F412RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Hydra_Telemetry_System_2020_v1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Hydra_Telemetry_System_2020_v1.elf: $(OBJS) $(USER_OBJS) F:\Github\Telemetry\Hydra_Telemetry_System_2020_v1\STM32F412RETX_FLASH.ld
+	arm-none-eabi-gcc -o "Hydra_Telemetry_System_2020_v1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"F:\Github\Telemetry\Hydra_Telemetry_System_2020_v1\STM32F412RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Hydra_Telemetry_System_2020_v1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
