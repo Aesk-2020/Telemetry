@@ -139,7 +139,7 @@ class _HomeState extends State<Home> {
     else if(AeskData.bms_bat_current_f32==null){
       AeskData.bms_bat_current_f32 = AeskData.bms_bat_volt_f32 =
           AeskData.bms_dc_bus_state_u8 = AeskData.bms_soc_f32 = AeskData
-          .driver_set_torque_s16 = AeskData.driver_act_iq_u16 = 0;
+          .driver_set_torque_s16 = 0; AeskData.driver_act_iq_u16 = 0;
       AeskData.driver_set_id_s16 = AeskData.driver_set_iq_s16 =
           AeskData.driver_act_id_u16 = 0; AeskData.driver_motortemp_u8 = 0; AeskData
           .driver_idc_s16 = 0; AeskData.driver_vdc_s16 = 0;
