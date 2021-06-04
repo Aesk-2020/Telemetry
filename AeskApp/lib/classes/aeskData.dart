@@ -52,7 +52,7 @@ class AeskData extends ChangeNotifier{
   //new
   static var vcu_drive_command_u8;
   static var vcu_speed_set_rpm_s16 = 0.0;
-  static var vcu_set_torque_s16 = 0;
+  static var vcu_set_torque_s16 = 0.0;
   static var vcu_speed_limit_u16;
   static var vcu_torque_limit_u8;
   static var vcu_can_error_u8;
@@ -64,7 +64,7 @@ class AeskData extends ChangeNotifier{
   static var driver_act_vq_s16              = 0.0;
   static var driver_set_id_s16              = 0.0;
   static var driver_set_iq_s16              = 0.0;
-  static var driver_set_torque_s16          = 0;
+  static var driver_set_torque_s16          = 0.0;
   static var driver_idc_s16                 = 0.0;
   static var driver_vdc_s16                 = 0.0;
   static var driver_actspeed_s16            = 0.0;
@@ -157,7 +157,7 @@ class AeskData extends ChangeNotifier{
     vcu_drive_command_u8 = message.getUint8(_startIndex);     _startIndex++;
     vcu_speed_set_rpm_s16 = message.getInt16(_startIndex) / 100;    _startIndex += 2;
     vcu_speed_set_rpm_s16 = (vcu_speed_set_rpm_s16 * 0.105183).roundToDouble();
-    vcu_set_torque_s16 = message.getInt16(_startIndex);       _startIndex += 2;
+    vcu_set_torque_s16 = message.getInt16(_startIndex) / 100;       _startIndex += 2;
     vcu_speed_limit_u16 = message.getUint16(_startIndex);     _startIndex += 2;
     vcu_torque_limit_u8 = message.getUint8(_startIndex);      _startIndex++;
 
@@ -179,7 +179,7 @@ class AeskData extends ChangeNotifier{
     driver_set_iq_s16 = message.getInt16(_startIndex,myEndian)/100;
     _startIndex += 2;
 
-    driver_set_torque_s16 = message.getInt16(_startIndex,myEndian);
+    driver_set_torque_s16 = message.getInt16(_startIndex,myEndian)/100;
     _startIndex += 2;
 
     driver_idc_s16 = message.getInt16(_startIndex,myEndian)/100;

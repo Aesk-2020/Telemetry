@@ -26,7 +26,6 @@ List<DrawerListClass> drawerListHydra = [
 ];
 
 Color crimsonRed = Color.fromRGBO(220, 20, 60, 1.0);
-Color aeskBBlue = Color.fromRGBO(47, 136, 202, 1.0);
 
 //********************************** Scaffold Widget ****************************************************//
 Widget aeskScaffold({Widget myBody, BuildContext context}) {
@@ -116,7 +115,7 @@ Widget AeskConditionCheck(String text, bool condition, BuildContext context) {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         myText(text, 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-        Icon(Icons.lens, size: 20, color: (condition ? Colors.green : Colors.transparent),)
+        Icon(Icons.lens, size: 20, color: (condition ? crimsonRed : Colors.transparent),)
       ],
     ),
   );
