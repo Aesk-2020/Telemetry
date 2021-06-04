@@ -19,6 +19,8 @@ namespace Telemetri.NewForms
         {
             InitializeComponent();
             comproo = new ComproUI(0x31, ComproUI.UI, 23);
+            UITools.TestForms.cozuldulyraBox = cozuldulyraBox;
+            UITools.TestForms.cozulduvtiBox = cozulduvtiBox;
         }
 
         #region .. Double Buffered function ..

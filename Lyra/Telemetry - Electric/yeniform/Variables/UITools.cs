@@ -27,6 +27,11 @@ namespace Telemetri.Variables
             public static TextBox saturationBox;
             public static TextBox temperatureBox;
             public static TextBox mqttBox;
+
+            public static int lyraco = 0;
+            public static int vtico = 0;
+            public static Label cozuldulyraBox;
+            public static Label cozulduvtiBox;
         }
         public static class Telemetry2021
         {
@@ -134,7 +139,7 @@ namespace Telemetri.Variables
             }
             else
             {
-                DriverForm.actualStatusLabel.Text = DataMCU.torque_mode ? "TORQUE MODE" : "SPEED MODE";
+                DriverForm.actualStatusLabel.Text = DataMCU.torque_mode ? "SPEED MODE" : "TORQUE MODE";
             }
             DriverForm.actIdLabel.Text = DataMCU.act_id_current_s16.ToString();
             DriverForm.actIqLabel.Text = DataMCU.act_iq_current_s16.ToString();

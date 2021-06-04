@@ -103,12 +103,19 @@ namespace Telemetri.Variables
             //compro.ComproUnpack(e.Message);
             if(e.Topic == "LYRADATA")
             {
-                YedekUnpack(e.Message);
+                if(e.Retain == false)
+                {
+                    YedekUnpack(e.Message);
+                    UITools.TestForms.lyraco++;
+                    UITools.TestForms.cozuldulyraBox.Text = UITools.TestForms.lyraco.ToString();
+                }
+                
             }
             else if(e.Topic == "vehicle_to_interface")
             {
                 ComproUI pack = new ComproUI();
-                //MessageBox.Show("geliyooo");
+                UITools.TestForms.vtico++;
+                UITools.TestForms.cozulduvtiBox.Text = UITools.TestForms.vtico.ToString();
                 pack.ComproUnpack(e.Message);
             }
             AFront.ChangeUI();
@@ -116,7 +123,7 @@ namespace Telemetri.Variables
 
         public void YedekUnpack(byte[] receiveBuffer)
         {
-            int startIndex = 0;
+            int startIndex = 7;
             DataVCU.drive_commands_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
             DataVCU.speed_set_rpm_s16 = (short)Math.Round(BitConverter.ToInt16(receiveBuffer, startIndex) * 0.105183); startIndex += 2; //0.105183 rpm to kmh rate
             DataVCU.torque_set_s16    = BitConverter.ToInt16(receiveBuffer, startIndex); startIndex += 2;

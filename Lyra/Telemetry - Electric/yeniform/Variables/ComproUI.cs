@@ -25,9 +25,9 @@ namespace Telemetri.Variables
         public byte source_id = UI;
         public byte source_msg_id;
         public byte msg_size;
-        public UInt16 msg_index = 0;
+        public ushort msg_index = 0;
         public byte[] message;
-        private UInt16 crc;
+        private ushort crc;
         private List<byte> listbuffer = new List<byte>();
 
         public byte[] buffer = new byte[200];
@@ -113,6 +113,7 @@ namespace Telemetri.Variables
         public void ComproUnpack(byte[] received_data)
         {
             List<byte> worked_data = new List<byte>();
+            ushort incom_index = 0;
 
             for (int i = 0; i < received_data.Length; i++)
             {
@@ -214,7 +215,7 @@ namespace Telemetri.Variables
                     case step.CatchMsgIndexH:
                         {
                             worked_data.Add(received_data[i]);
-                            this.msg_index = (byte)(this.msg_index | (received_data[i] << 8));
+                            incom_index = (byte)(this.msg_index | (received_data[i] << 8));
                             steppo = step.CatchCrcL;
                         }
 
@@ -231,10 +232,17 @@ namespace Telemetri.Variables
                             UInt16 crc_calculated = MACROS.AeskCRCCalculate(worked_data.ToArray(), (uint)worked_data.Count - 2);
                             if (crc_calculated == this.crc)
                             {
-                                //BURAYA İNDEX EKLENECEK
                                 dataConvertCompro(worked_data.ToArray(), this.source_msg_id);
                                 AFront.ChangeUI();
-                                
+                                //BURAYA İNDEX EKLENECEK
+                                /*if(IndexControl(incom_index) == true)
+                                {
+                                    
+                                }
+                                else
+                                {
+                                    //HABERLEŞME HATALARINI DOLDUR BURAYA
+                                }*/
                             }
                             steppo = step.CatchHeader1;
 
@@ -245,6 +253,33 @@ namespace Telemetri.Variables
                 }
             }
         }
+
+        private bool IndexControl(ushort incoming_index)
+        {
+            var difference = incoming_index - this.msg_index; // Gelen index bilgisiyle elimizdekinin farkı alınır.
+            /*
+             * Bu fark 0 ile -10 arasındaysa gelen mesaj daha önce elimize ulaşmış bir mesajdır.
+             * Çünkü mesaj gönderilirken aynı kod bloğunda (scope) gönderilmektedir. Bu durumda mesajı
+             * çözmemizin bir anlamı yoktur, çünkü bu mesaj elimize önceden ulaşmıştır ve eski bir bilgiyi
+             * taşımaktadır.
+             */
+            if (difference <= 0 && difference >= -10)
+            {
+                return false;
+            }
+
+            /*
+             * Eğer fark -10'dan küçükse bilgi kaynağı reset yemiş kabul edilir. 0'dan büyükse de gelen indeks
+             * daha yeni bir indeks olacağından paketin çözülmesi gerekir. Bu aşamada nesneye ait indeks
+             * bilgisi de güncellenir.
+             */
+            else
+            {
+                this.msg_index = incoming_index;
+                return true;
+            }
+        }
+
         void dataConvertCompro(byte[] receiveBuffer, byte source_msg_id)
         {
             
@@ -292,7 +327,7 @@ namespace Telemetri.Variables
                         DataGPS.speed_u8                = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
                         DataGPS.sattelite_u8            = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
                         DataGPS.efficiency_u8           = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
-
+                        /*
                         //CAN Error
                         DataVCU.can_error_u8            = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
 
@@ -321,7 +356,7 @@ namespace Telemetri.Variables
                         {
                             DataBMS.cells[i].soc_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
                         }
-
+                        */
                         break;
                     }
                 case MSG_ID.PID_QUERY_ANSWER:

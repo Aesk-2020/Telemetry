@@ -109,6 +109,8 @@
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.testTimerNC = new System.Windows.Forms.Timer(this.components);
+            this.cozuldulyraBox = new System.Windows.Forms.Label();
+            this.cozulduvtiBox = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.testTimerInterval)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -916,12 +918,36 @@
             // 
             this.testTimerNC.Tick += new System.EventHandler(this.testTimerNC_Tick);
             // 
+            // cozuldulyraBox
+            // 
+            this.cozuldulyraBox.AutoSize = true;
+            this.cozuldulyraBox.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cozuldulyraBox.ForeColor = System.Drawing.Color.White;
+            this.cozuldulyraBox.Location = new System.Drawing.Point(414, 448);
+            this.cozuldulyraBox.Name = "cozuldulyraBox";
+            this.cozuldulyraBox.Size = new System.Drawing.Size(85, 29);
+            this.cozuldulyraBox.TabIndex = 18;
+            this.cozuldulyraBox.Text = "label35";
+            // 
+            // cozulduvtiBox
+            // 
+            this.cozulduvtiBox.AutoSize = true;
+            this.cozulduvtiBox.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cozulduvtiBox.ForeColor = System.Drawing.Color.White;
+            this.cozulduvtiBox.Location = new System.Drawing.Point(414, 491);
+            this.cozulduvtiBox.Name = "cozulduvtiBox";
+            this.cozulduvtiBox.Size = new System.Drawing.Size(85, 29);
+            this.cozulduvtiBox.TabIndex = 19;
+            this.cozulduvtiBox.Text = "label36";
+            // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(914, 621);
+            this.Controls.Add(this.cozulduvtiBox);
+            this.Controls.Add(this.cozuldulyraBox);
             this.Controls.Add(this.label34);
             this.Controls.Add(this.label33);
             this.Controls.Add(this.sendOnceNC);
@@ -1035,5 +1061,7 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Timer testTimerNC;
+        private System.Windows.Forms.Label cozuldulyraBox;
+        private System.Windows.Forms.Label cozulduvtiBox;
     }
 }
