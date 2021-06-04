@@ -18,10 +18,7 @@ namespace Telemetri.NewForms
         public BMS_Form()
         {
             InitializeComponent();
-            graphicsButton.Dock = DockStyle.Bottom;
 
-            TextBox[] textBoxs = {voltageTextBox, consTextBox, tempTextBox,
-                currentTextBox, longtBox };
             UITools.BMSForm.consTextBox = consTextBox;
             UITools.BMSForm.curTextBox = currentTextBox;
             UITools.BMSForm.socTextBox = socTextBox;
@@ -36,6 +33,13 @@ namespace Telemetri.NewForms
             UITools.BMSForm.lattBox = lattBox;
             UITools.BMSForm.longtBox = longtBox;
             UITools.BMSForm.powerBox = powerBox;
+
+            UITools.BMSForm.overcurBox = overcurBox;
+            UITools.BMSForm.commsBox = commsBox;
+            UITools.BMSForm.temperrBox = temperrBox;
+            UITools.BMSForm.lowvoltageBox = lowvoltageBox;
+            UITools.BMSForm.highvoltageBox = highvoltageBox;
+            UITools.BMSForm.fatalBox = fatalBox;
         }
         #region .. Double Buffered function ..
         public static void SetDoubleBuffered(System.Windows.Forms.Control c)
@@ -69,104 +73,9 @@ namespace Telemetri.NewForms
             SetDoubleBuffered(tableLayoutPanel3);
             SetDoubleBuffered(tableLayoutPanel8);
             SetDoubleBuffered(tableLayoutPanel9);
-            SetDoubleBuffered(batConsGraphBtn);
-            SetDoubleBuffered(batCurGraphBtn);
-            SetDoubleBuffered(batTempGraphBtn);
-            SetDoubleBuffered(batVoltGraphBtn);
+            SetDoubleBuffered(tableLayoutPanel6);
             #endregion
         }
 
-        private void graphicsButton_Click(object sender, EventArgs e)
-        {
-            if(graphicsButton.Dock == DockStyle.Bottom)
-            {
-                graphicsButton.Dock = DockStyle.Top;
-                batConsGraphBtn.Visible = true;
-                batCurGraphBtn.Visible = true;
-                batVoltGraphBtn.Visible = true;
-                batTempGraphBtn.Visible = true;
-            }
-            else
-            {
-                graphicsButton.Dock = DockStyle.Bottom;
-                batConsGraphBtn.Visible = false;
-                batCurGraphBtn.Visible = false;
-                batVoltGraphBtn.Visible = false;
-                batTempGraphBtn.Visible = false;
-            }
-        }
-
-        private void batVoltGraphBtn_Click(object sender, EventArgs e)
-        {
-            
-            graphType = Graphics.graphs.batVolt;
-            Graphics.graphicsList.Add(new Graphics(graphType));
-            if (Graphics.oldGraph != null)
-            {
-                Graphics.oldGraph.Close();
-                Graphics.graphicsList.Remove(Graphics.graphicsList.Where(i => i.graphType == Graphics.oldGraph.graphType).ToList()[0]);
-            }
-            Graphics.oldGraph = Graphics.graphicsList.Last();
-            Graphics.oldGraph.TopLevel = false;
-            Graphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
-            Graphics.oldGraph.Dock = DockStyle.Fill;
-            Graphics.oldGraph.AutoScroll = true;
-            graphPanel.Controls.Add(Graphics.oldGraph);
-            Graphics.oldGraph.Show();
-        }
-
-        private void batCurGraphBtn_Click(object sender, EventArgs e)
-        {
-            graphType = Graphics.graphs.batCur;
-            Graphics.graphicsList.Add(new Graphics(graphType));
-            if (Graphics.oldGraph != null)
-            {
-                Graphics.oldGraph.Close();
-                Graphics.graphicsList.Remove(Graphics.graphicsList.Where(i => i.graphType == Graphics.oldGraph.graphType).ToList()[0]);
-            }
-            Graphics.oldGraph = Graphics.graphicsList.Last();
-            Graphics.oldGraph.TopLevel = false;
-            Graphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
-            Graphics.oldGraph.Dock = DockStyle.Fill;
-            Graphics.oldGraph.AutoScroll = true;
-            graphPanel.Controls.Add(Graphics.oldGraph);
-            Graphics.oldGraph.Show();
-        }
-
-        private void batTempGraphBtn_Click(object sender, EventArgs e)
-        {
-            graphType = Graphics.graphs.batTemp;
-            Graphics.graphicsList.Add(new Graphics(graphType));
-            if (Graphics.oldGraph != null)
-            {
-                Graphics.oldGraph.Close();
-                Graphics.graphicsList.Remove(Graphics.graphicsList.Where(i => i.graphType == Graphics.oldGraph.graphType).ToList()[0]);
-            }
-            Graphics.oldGraph = Graphics.graphicsList.Last();
-            Graphics.oldGraph.TopLevel = false;
-            Graphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
-            Graphics.oldGraph.Dock = DockStyle.Fill;
-            Graphics.oldGraph.AutoScroll = true;
-            graphPanel.Controls.Add(Graphics.oldGraph);
-            Graphics.oldGraph.Show();
-        }
-
-        private void batConsGraphBtn_Click(object sender, EventArgs e)
-        {
-            graphType = Graphics.graphs.batCons;
-            Graphics.graphicsList.Add(new Graphics(graphType));
-            if (Graphics.oldGraph != null)
-            {
-                Graphics.oldGraph.Close();
-                Graphics.graphicsList.Remove(Graphics.graphicsList.Where(i => i.graphType == Graphics.oldGraph.graphType).ToList()[0]);
-            }
-            Graphics.oldGraph = Graphics.graphicsList.Last();
-            Graphics.oldGraph.TopLevel = false;
-            Graphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
-            Graphics.oldGraph.Dock = DockStyle.Fill;
-            Graphics.oldGraph.AutoScroll = true;
-            graphPanel.Controls.Add(Graphics.oldGraph);
-            Graphics.oldGraph.Show();
-        }
     }
 }

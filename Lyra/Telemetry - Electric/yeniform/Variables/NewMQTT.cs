@@ -123,7 +123,7 @@ namespace Telemetri.Variables
 
         public void YedekUnpack(byte[] receiveBuffer)
         {
-            int startIndex = 7;
+            int startIndex = 0;
             DataVCU.drive_commands_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
             DataVCU.speed_set_rpm_s16 = (short)Math.Round(BitConverter.ToInt16(receiveBuffer, startIndex) * 0.105183); startIndex += 2; //0.105183 rpm to kmh rate
             DataVCU.torque_set_s16    = BitConverter.ToInt16(receiveBuffer, startIndex); startIndex += 2;

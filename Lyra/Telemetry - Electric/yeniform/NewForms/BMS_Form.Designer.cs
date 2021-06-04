@@ -31,14 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BMS_Form));
             this.socImages = new System.Windows.Forms.ImageList(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.batConsGraphBtn = new System.Windows.Forms.Button();
-            this.batTempGraphBtn = new System.Windows.Forms.Button();
-            this.batCurGraphBtn = new System.Windows.Forms.Button();
-            this.batVoltGraphBtn = new System.Windows.Forms.Button();
-            this.graphicsButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.powerBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.label14 = new System.Windows.Forms.Label();
             this.voltageTextBox = new System.Windows.Forms.TextBox();
@@ -61,7 +58,6 @@
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
             this.tempTextBox = new System.Windows.Forms.TextBox();
-            this.graphPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.balancingBox = new System.Windows.Forms.PictureBox();
             this.chragingBox = new System.Windows.Forms.PictureBox();
@@ -75,12 +71,22 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.prechargeErrorBox = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.powerBox = new System.Windows.Forms.TextBox();
-            this.panel1.SuspendLayout();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.overcurBox = new System.Windows.Forms.PictureBox();
+            this.commsBox = new System.Windows.Forms.PictureBox();
+            this.temperrBox = new System.Windows.Forms.PictureBox();
+            this.lowvoltageBox = new System.Windows.Forms.PictureBox();
+            this.highvoltageBox = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.fatalBox = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
@@ -96,7 +102,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dischargeBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prechargeBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prechargeErrorBox)).BeginInit();
-            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.overcurBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commsBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.temperrBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lowvoltageBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.highvoltageBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fatalBox)).BeginInit();
             this.SuspendLayout();
             // 
             // socImages
@@ -107,124 +119,6 @@
             this.socImages.Images.SetKeyName(1, "Başlıksız-1.png");
             this.socImages.Images.SetKeyName(2, "Başlıksız-2.png");
             this.socImages.Images.SetKeyName(3, "sdmjbhfgasdhjf.png");
-            // 
-            // panel1
-            // 
-            this.panel1.AutoSize = true;
-            this.panel1.Controls.Add(this.batConsGraphBtn);
-            this.panel1.Controls.Add(this.batTempGraphBtn);
-            this.panel1.Controls.Add(this.batCurGraphBtn);
-            this.panel1.Controls.Add(this.batVoltGraphBtn);
-            this.panel1.Controls.Add(this.graphicsButton);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 391);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(914, 250);
-            this.panel1.TabIndex = 13;
-            // 
-            // batConsGraphBtn
-            // 
-            this.batConsGraphBtn.AutoSize = true;
-            this.batConsGraphBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(13)))), ((int)(((byte)(32)))));
-            this.batConsGraphBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.batConsGraphBtn.FlatAppearance.BorderSize = 0;
-            this.batConsGraphBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.batConsGraphBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.batConsGraphBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.batConsGraphBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.batConsGraphBtn.Location = new System.Drawing.Point(0, 200);
-            this.batConsGraphBtn.Name = "batConsGraphBtn";
-            this.batConsGraphBtn.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.batConsGraphBtn.Size = new System.Drawing.Size(914, 50);
-            this.batConsGraphBtn.TabIndex = 17;
-            this.batConsGraphBtn.Text = "Consumption";
-            this.batConsGraphBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.batConsGraphBtn.UseVisualStyleBackColor = false;
-            this.batConsGraphBtn.Visible = false;
-            this.batConsGraphBtn.Click += new System.EventHandler(this.batConsGraphBtn_Click);
-            // 
-            // batTempGraphBtn
-            // 
-            this.batTempGraphBtn.AutoSize = true;
-            this.batTempGraphBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(13)))), ((int)(((byte)(32)))));
-            this.batTempGraphBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.batTempGraphBtn.FlatAppearance.BorderSize = 0;
-            this.batTempGraphBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.batTempGraphBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.batTempGraphBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.batTempGraphBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.batTempGraphBtn.Location = new System.Drawing.Point(0, 150);
-            this.batTempGraphBtn.Name = "batTempGraphBtn";
-            this.batTempGraphBtn.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.batTempGraphBtn.Size = new System.Drawing.Size(914, 50);
-            this.batTempGraphBtn.TabIndex = 15;
-            this.batTempGraphBtn.Text = "Battery Temperature";
-            this.batTempGraphBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.batTempGraphBtn.UseVisualStyleBackColor = false;
-            this.batTempGraphBtn.Visible = false;
-            this.batTempGraphBtn.Click += new System.EventHandler(this.batTempGraphBtn_Click);
-            // 
-            // batCurGraphBtn
-            // 
-            this.batCurGraphBtn.AutoSize = true;
-            this.batCurGraphBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(13)))), ((int)(((byte)(32)))));
-            this.batCurGraphBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.batCurGraphBtn.FlatAppearance.BorderSize = 0;
-            this.batCurGraphBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.batCurGraphBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.batCurGraphBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.batCurGraphBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.batCurGraphBtn.Location = new System.Drawing.Point(0, 100);
-            this.batCurGraphBtn.Name = "batCurGraphBtn";
-            this.batCurGraphBtn.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.batCurGraphBtn.Size = new System.Drawing.Size(914, 50);
-            this.batCurGraphBtn.TabIndex = 14;
-            this.batCurGraphBtn.Text = "Battery Current";
-            this.batCurGraphBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.batCurGraphBtn.UseVisualStyleBackColor = false;
-            this.batCurGraphBtn.Visible = false;
-            this.batCurGraphBtn.Click += new System.EventHandler(this.batCurGraphBtn_Click);
-            // 
-            // batVoltGraphBtn
-            // 
-            this.batVoltGraphBtn.AutoSize = true;
-            this.batVoltGraphBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(13)))), ((int)(((byte)(32)))));
-            this.batVoltGraphBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.batVoltGraphBtn.FlatAppearance.BorderSize = 0;
-            this.batVoltGraphBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.batVoltGraphBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.batVoltGraphBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.batVoltGraphBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.batVoltGraphBtn.Location = new System.Drawing.Point(0, 50);
-            this.batVoltGraphBtn.Name = "batVoltGraphBtn";
-            this.batVoltGraphBtn.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.batVoltGraphBtn.Size = new System.Drawing.Size(914, 50);
-            this.batVoltGraphBtn.TabIndex = 13;
-            this.batVoltGraphBtn.Text = "Battery Voltage";
-            this.batVoltGraphBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.batVoltGraphBtn.UseVisualStyleBackColor = false;
-            this.batVoltGraphBtn.Visible = false;
-            this.batVoltGraphBtn.Click += new System.EventHandler(this.batVoltGraphBtn_Click);
-            // 
-            // graphicsButton
-            // 
-            this.graphicsButton.AutoSize = true;
-            this.graphicsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.graphicsButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.graphicsButton.FlatAppearance.BorderSize = 0;
-            this.graphicsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.graphicsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.graphicsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.graphicsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.graphicsButton.Location = new System.Drawing.Point(0, 0);
-            this.graphicsButton.Name = "graphicsButton";
-            this.graphicsButton.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.graphicsButton.Size = new System.Drawing.Size(914, 50);
-            this.graphicsButton.TabIndex = 12;
-            this.graphicsButton.Text = "Graphics";
-            this.graphicsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.graphicsButton.UseVisualStyleBackColor = false;
-            this.graphicsButton.Click += new System.EventHandler(this.graphicsButton_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -261,6 +155,50 @@
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(908, 102);
             this.tableLayoutPanel8.TabIndex = 140;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.label9, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.powerBox, 0, 1);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(456, 4);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(219, 94);
+            this.tableLayoutPanel5.TabIndex = 148;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(213, 52);
+            this.label9.TabIndex = 131;
+            this.label9.Text = "Power";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // powerBox
+            // 
+            this.powerBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.powerBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.powerBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.powerBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.powerBox.ForeColor = System.Drawing.Color.White;
+            this.powerBox.Location = new System.Drawing.Point(3, 55);
+            this.powerBox.Multiline = true;
+            this.powerBox.Name = "powerBox";
+            this.powerBox.ReadOnly = true;
+            this.powerBox.Size = new System.Drawing.Size(213, 36);
+            this.powerBox.TabIndex = 135;
+            this.powerBox.Text = "0W";
+            this.powerBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel9
             // 
@@ -590,14 +528,6 @@
             this.tempTextBox.Text = "00 °C";
             this.tempTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // graphPanel
-            // 
-            this.graphPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.graphPanel.Location = new System.Drawing.Point(0, 318);
-            this.graphPanel.Name = "graphPanel";
-            this.graphPanel.Size = new System.Drawing.Size(914, 73);
-            this.graphPanel.TabIndex = 146;
-            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
@@ -761,49 +691,168 @@
             this.prechargeErrorBox.TabIndex = 132;
             this.prechargeErrorBox.TabStop = false;
             // 
-            // tableLayoutPanel5
+            // tableLayoutPanel6
             // 
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.label9, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.powerBox, 0, 1);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(456, 4);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(219, 94);
-            this.tableLayoutPanel5.TabIndex = 148;
+            this.tableLayoutPanel6.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel6.ColumnCount = 6;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66708F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66709F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66709F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66542F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel6.Controls.Add(this.overcurBox, 4, 1);
+            this.tableLayoutPanel6.Controls.Add(this.commsBox, 3, 1);
+            this.tableLayoutPanel6.Controls.Add(this.temperrBox, 2, 1);
+            this.tableLayoutPanel6.Controls.Add(this.lowvoltageBox, 1, 1);
+            this.tableLayoutPanel6.Controls.Add(this.highvoltageBox, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.label10, 5, 0);
+            this.tableLayoutPanel6.Controls.Add(this.label11, 4, 0);
+            this.tableLayoutPanel6.Controls.Add(this.label17, 3, 0);
+            this.tableLayoutPanel6.Controls.Add(this.label18, 2, 0);
+            this.tableLayoutPanel6.Controls.Add(this.label19, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.label20, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.fatalBox, 5, 1);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 318);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(914, 102);
+            this.tableLayoutPanel6.TabIndex = 148;
             // 
-            // label9
+            // overcurBox
             // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(3, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(213, 52);
-            this.label9.TabIndex = 131;
-            this.label9.Text = "Power";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.overcurBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.overcurBox.Location = new System.Drawing.Point(612, 54);
+            this.overcurBox.Name = "overcurBox";
+            this.overcurBox.Size = new System.Drawing.Size(145, 44);
+            this.overcurBox.TabIndex = 137;
+            this.overcurBox.TabStop = false;
             // 
-            // powerBox
+            // commsBox
             // 
-            this.powerBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.powerBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.powerBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.powerBox.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.powerBox.ForeColor = System.Drawing.Color.White;
-            this.powerBox.Location = new System.Drawing.Point(3, 55);
-            this.powerBox.Multiline = true;
-            this.powerBox.Name = "powerBox";
-            this.powerBox.ReadOnly = true;
-            this.powerBox.Size = new System.Drawing.Size(213, 36);
-            this.powerBox.TabIndex = 135;
-            this.powerBox.Text = "0W";
-            this.powerBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.commsBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.commsBox.Location = new System.Drawing.Point(460, 54);
+            this.commsBox.Name = "commsBox";
+            this.commsBox.Size = new System.Drawing.Size(145, 44);
+            this.commsBox.TabIndex = 136;
+            this.commsBox.TabStop = false;
+            // 
+            // temperrBox
+            // 
+            this.temperrBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.temperrBox.Location = new System.Drawing.Point(308, 54);
+            this.temperrBox.Name = "temperrBox";
+            this.temperrBox.Size = new System.Drawing.Size(145, 44);
+            this.temperrBox.TabIndex = 135;
+            this.temperrBox.TabStop = false;
+            // 
+            // lowvoltageBox
+            // 
+            this.lowvoltageBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lowvoltageBox.Location = new System.Drawing.Point(156, 54);
+            this.lowvoltageBox.Name = "lowvoltageBox";
+            this.lowvoltageBox.Size = new System.Drawing.Size(145, 44);
+            this.lowvoltageBox.TabIndex = 134;
+            this.lowvoltageBox.TabStop = false;
+            // 
+            // highvoltageBox
+            // 
+            this.highvoltageBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.highvoltageBox.Location = new System.Drawing.Point(4, 54);
+            this.highvoltageBox.Name = "highvoltageBox";
+            this.highvoltageBox.Size = new System.Drawing.Size(145, 44);
+            this.highvoltageBox.TabIndex = 133;
+            this.highvoltageBox.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(764, 1);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(146, 49);
+            this.label10.TabIndex = 131;
+            this.label10.Text = "Fatal";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(612, 1);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(145, 49);
+            this.label11.TabIndex = 131;
+            this.label11.Text = "Over Current";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label17.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(460, 1);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(145, 49);
+            this.label17.TabIndex = 131;
+            this.label17.Text = "Comms";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label18.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(308, 1);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(145, 49);
+            this.label18.TabIndex = 131;
+            this.label18.Text = "Temperature";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label19.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(156, 1);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(145, 49);
+            this.label19.TabIndex = 131;
+            this.label19.Text = "Low Voltage";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label20.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(4, 1);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(145, 49);
+            this.label20.TabIndex = 131;
+            this.label20.Text = "High Voltage";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // fatalBox
+            // 
+            this.fatalBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fatalBox.Location = new System.Drawing.Point(764, 54);
+            this.fatalBox.Name = "fatalBox";
+            this.fatalBox.Size = new System.Drawing.Size(146, 44);
+            this.fatalBox.TabIndex = 132;
+            this.fatalBox.TabStop = false;
             // 
             // BMS_Form
             // 
@@ -812,17 +861,16 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(914, 641);
-            this.Controls.Add(this.graphPanel);
+            this.Controls.Add(this.tableLayoutPanel6);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.tableLayoutPanel3);
-            this.Controls.Add(this.panel1);
             this.Name = "BMS_Form";
             this.Text = "BMS";
             this.Load += new System.EventHandler(this.BMS_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
             this.tableLayoutPanel13.ResumeLayout(false);
@@ -846,16 +894,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.dischargeBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prechargeBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prechargeErrorBox)).EndInit();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.overcurBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commsBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.temperrBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lowvoltageBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.highvoltageBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fatalBox)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.ImageList socImages;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
@@ -874,12 +926,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox currentTextBox;
-        private System.Windows.Forms.Panel graphPanel;
-        private System.Windows.Forms.Button graphicsButton;
-        private System.Windows.Forms.Button batConsGraphBtn;
-        private System.Windows.Forms.Button batTempGraphBtn;
-        private System.Windows.Forms.Button batCurGraphBtn;
-        private System.Windows.Forms.Button batVoltGraphBtn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -902,5 +948,18 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox powerBox;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.PictureBox overcurBox;
+        private System.Windows.Forms.PictureBox commsBox;
+        private System.Windows.Forms.PictureBox temperrBox;
+        private System.Windows.Forms.PictureBox lowvoltageBox;
+        private System.Windows.Forms.PictureBox highvoltageBox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.PictureBox fatalBox;
     }
 }

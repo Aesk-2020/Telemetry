@@ -70,6 +70,13 @@ namespace Telemetri.Variables
             public static PictureBox chargingBox;
             public static PictureBox balancingBox;
             public static PictureBox prechargeErrorBox;
+
+            public static PictureBox overcurBox;
+            public static PictureBox commsBox;
+            public static PictureBox temperrBox;
+            public static PictureBox lowvoltageBox;
+            public static PictureBox highvoltageBox;
+            public static PictureBox fatalBox;
         }
         public static class DriverForm
         {
@@ -123,6 +130,7 @@ namespace Telemetri.Variables
             Anasayfa.actsetSpeedChart.Series[1].Points.Add(DataMCU.act_speed_s16);
             Anasayfa.actsetSpeedChart.ChartAreas[0].AxisX.Minimum = Anasayfa.actsetSpeedChart.Series[1].Points.Count - Convert.ToInt32(UITools.Anasayfa.errorsLabel.Text);
             Anasayfa.actsetSpeedChart.ChartAreas[0].AxisX.Maximum = Anasayfa.actsetSpeedChart.Series[1].Points.Count;
+            Anasayfa.driveStatusLabel.Text = DataVCU.freewheeling_u1 ? "FREEWHEELING" : (DataVCU.vcu_torque_output_u1 ? "TORQUE MODE" : "SPEED MODE");
 
             BMSForm.consTextBox.Text = DataBMS.cons_u16.ToString() + " Wh";
             BMSForm.curTextBox.Text = DataBMS.cur_s16.ToString() + " A";
@@ -132,6 +140,13 @@ namespace Telemetri.Variables
             BMSForm.longtBox.Text = GpsTracker.gps_longtitude_f64.ToString();
             BMSForm.lattBox.Text = GpsTracker.gps_latitude_f64.ToString();
             BMSForm.powerBox.Text = (DataBMS.volt_u16 * DataBMS.cur_s16).ToString();
+
+            BMSForm.fatalBox.BackColor = DataBMS.fatal_error_u1 ? Color.Crimson : MACROS.UInewBack;
+            BMSForm.highvoltageBox.BackColor = DataBMS.high_voltage_error_u1 ? Color.Crimson : MACROS.UInewBack;
+            BMSForm.lowvoltageBox.BackColor = DataBMS.low_voltage_error_u1 ? Color.Crimson : MACROS.UInewBack;
+            BMSForm.commsBox.BackColor = DataBMS.communication_error_u1 ? Color.Crimson : MACROS.UInewBack;
+            BMSForm.overcurBox.BackColor = DataBMS.over_current_error_u1 ? Color.Crimson : MACROS.UInewBack;
+            BMSForm.temperrBox.BackColor = DataBMS.temp_error_u1 ? Color.Crimson : MACROS.UInewBack;
 
             if (DataMCU.free_wheeling_status == true)
             {
