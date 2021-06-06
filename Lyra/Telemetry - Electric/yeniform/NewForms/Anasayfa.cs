@@ -166,6 +166,7 @@ namespace Telemetri.NewForms
             startTimeLabel.Text = DateTime.Now.ToString("HH:mm:ss");
             startBtn.Enabled = false;
             finishBtn.Enabled = true;
+            DataBMS.startFinishConBuffer = DataBMS.cons_u16;
         }
 
         private void finishBtn_Click(object sender, EventArgs e)
@@ -173,6 +174,8 @@ namespace Telemetri.NewForms
             startTimeLabel.Text = "NULL";
             startBtn.Enabled = true;
             finishBtn.Enabled = false;
+            DataBMS.startFinishCon = DataBMS.cons_u16 - DataBMS.startFinishConBuffer;
+            MessageBox.Show($"Toplam tüketim: {DataBMS.startFinishCon} Wh");
         }
 
         private void mqttWorker_DoWork(object sender, DoWorkEventArgs e)

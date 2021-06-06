@@ -131,6 +131,7 @@ namespace Telemetri.Variables
             DataVCU.torque_limit_u8   = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
 
             //MCU
+            
             DataMCU.act_id_current_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
             DataMCU.act_iq_current_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
             DataMCU.vd_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
@@ -166,31 +167,33 @@ namespace Telemetri.Variables
             //CAN Error
             DataVCU.can_error_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
 
-            //Cells
-            for (int i = 0; i < 28; i++)
+            for (int i = 0; i < DataBMS.cells.Count; i++)
             {
-                DataBMS.Cell cell = new DataBMS.Cell();
-                cell.voltage_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
-                DataBMS.cells.Add(cell);
+                DataBMS.cells[0].voltage_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
             }
-            List<char> temps = new List<char>();
-            int count = 0;
-            for (int i = 0; i < 7; i++) // Total temperature sensor count. 
+
+            int counterr = 0;
+            for (int i = 0; i < DataBMS.cells.Count / 4; i++)
             {
-                temps.Add(BitConverter.ToChar(receiveBuffer, startIndex)); startIndex++;
-            }
-            for (int i = 0; i < 28; i++)
-            {
-                DataBMS.cells[i].temperature_u8 = (byte)temps[count++];
-                if (count == 4)
+                byte temperatureBuffer = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                for (int j = 0; j < 4; j++)
                 {
-                    count = 0;
+                    DataBMS.cells[counterr++].temperature_u8 = temperatureBuffer;
                 }
             }
-            for (int i = 0; i < 28; i++)
+            // 0 1 2 3
+            // 4 5 6 7
+            // 8 9 10 11
+            // 12 13 14 15
+            // 14 15 16 17
+            // 18 19 20 21
+            // 21 22 23 24
+            // 25 26 27 28
+
+            /*for (int i = 0; i < DataBMS.cells.Count; i++)
             {
-                //DataBMS.cells[i].soc_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
-            }
+                DataBMS.cells[0].soc_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            }*/
         }
 
     }
