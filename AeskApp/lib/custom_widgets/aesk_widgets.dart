@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 
 List<DrawerListClass> drawerListLyra = [
   DrawerListClass(image: "home-icon.png", text: "AnaSayfa", destination: "/Home"),
-  DrawerListClass(image: "mcu-icon.png", text: "MCU & VCU", destination: "/Vcu"),
+  DrawerListClass(image: "mcu-icon.png", text: "ECU", destination: "/Vcu"),
   DrawerListClass(image: "bms-icon.png", text: "BMS", destination: "/Bms"),
   DrawerListClass(image: "cells-icon.png", text: "Batarya Hücreleri", destination: "/Cells"),
   DrawerListClass(image: "map-icon.png", text: "Harita", destination: "/Location"),
@@ -16,7 +16,7 @@ List<DrawerListClass> drawerListLyra = [
 ];
 List<DrawerListClass> drawerListHydra = [
   DrawerListClass(image: "home-icon.png", text: "AnaSayfa", destination: "/HomeHydro"),
-  DrawerListClass(image: "mcu-icon.png", text: "MCU & VCU", destination: "/Vcu"),
+  DrawerListClass(image: "mcu-icon.png", text: "ECU", destination: "/Vcu"),
   DrawerListClass(image: "bms-icon.png", text: "BMS", destination: "/Bms"),
   DrawerListClass(image: "ems-icon.png", text: "EMS", destination: "/Ems"),
   DrawerListClass(image: "cells-icon.png", text: "Batarya Hücreleri", destination: "/CellsHydro"),
@@ -115,7 +115,21 @@ Widget AeskConditionCheck(String text, bool condition, BuildContext context) {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         myText(text, 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-        Icon(Icons.lens, size: 20, color: (condition ? crimsonRed : Colors.transparent),)
+        Icon(Icons.lens, size: 20, color: (condition ? Colors.green : Colors.transparent),)
+      ],
+    ),
+  );
+}
+
+Widget AeskDirectionCheck(String text, bool condition, BuildContext context) {
+  return Padding(
+    padding: EdgeInsets.fromLTRB(25, 0, 25, 0),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        myText(text, 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+        Icon(condition ? Icons.arrow_back : Icons.arrow_forward, size: 20, color: aeskBlue,)
       ],
     ),
   );

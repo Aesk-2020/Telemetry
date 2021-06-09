@@ -42,7 +42,15 @@ Widget Vcu(){
                         },
                       ),
                     ),
-                    myText("     Actual Drive Status", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                    myText("     Set Drive Command (VCU)", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                    Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
+                    Column(
+                      children: <Widget>[
+                        myText(AeskData.vcu_command_freewheeling_u1 ? "      FREEWHEELING" : (AeskData.vcu_command_mode_u1 ? "     TORQUE MODE" : "     SPEED MODE"), scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                      ],
+                    ),
+                    SizedBox(height: 15,),
+                    myText("     Actual Drive Status (MCU)", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                     Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
                     Column(
                       children: <Widget>[
@@ -50,19 +58,31 @@ Widget Vcu(){
                       ],
                     ),
                     SizedBox(height: 15,),
+                    myText("     VCU States", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                    Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
+                    Column(
+                      children: <Widget>[
+                        AeskConditionCheck(" BMS WAKE UP", AeskData.vcu_command_bms_wake_u1, context),
+                        AeskConditionCheck(" MCU WAKE UP", AeskData.vcu_command_mcu_wake_u1, context),
+                        AeskConditionCheck(" BRAKE", AeskData.vcu_command_brake_u1, context),
+                        AeskDirectionCheck(" DIRECTION", AeskData.vcu_command_direction_u1, context),
+                        AeskConditionCheck(" DC BUS READY", AeskData.vcu_command_dcbus_u1, context),
+                      ],
+                    ),
+                    SizedBox(height: 15,),
                     myText("     Hatalar", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                     Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
                     Column(
                       children: <Widget>[
-                        AeskConditionCheck(" OVER CUR I_A", AeskData.driver_overcur_ia_u1, context),
-                        AeskConditionCheck(" OVER CUR I_B", AeskData.driver_overcur_ib_u1, context),
-                        AeskConditionCheck(" OVER CUR I_C", AeskData.driver_overcur_ic_u1, context),
-                        AeskConditionCheck(" OVER CUR I_DC ", AeskData.driver_overcur_idc_u1, context),
-                        AeskConditionCheck(" UNDER VOLT V_DC", AeskData.driver_undervolt_vdc_u1, context),
-                        AeskConditionCheck(" OVER VOLT V_DC", AeskData.driver_overvolt_vdc_u1, context),
-                        AeskConditionCheck(" UNDER SPEED", AeskData.driver_underspeed_u1, context),
-                        AeskConditionCheck(" OVER SPEED", AeskData.driver_overspeed_u1, context),
-                        AeskConditionCheck(" OVER TEMP", AeskData.driver_overtemp_u1, context),
+                        AeskErrorCheck(" OVER CUR I_A", AeskData.driver_overcur_ia_u1, context),
+                        AeskErrorCheck(" OVER CUR I_B", AeskData.driver_overcur_ib_u1, context),
+                        AeskErrorCheck(" OVER CUR I_C", AeskData.driver_overcur_ic_u1, context),
+                        AeskErrorCheck(" OVER CUR I_DC ", AeskData.driver_overcur_idc_u1, context),
+                        AeskErrorCheck(" UNDER VOLT V_DC", AeskData.driver_undervolt_vdc_u1, context),
+                        AeskErrorCheck(" OVER VOLT V_DC", AeskData.driver_overvolt_vdc_u1, context),
+                        AeskErrorCheck(" UNDER SPEED", AeskData.driver_underspeed_u1, context),
+                        AeskErrorCheck(" OVER SPEED", AeskData.driver_overspeed_u1, context),
+                        AeskErrorCheck(" OVER TEMP", AeskData.driver_overtemp_u1, context),
                         AeskConditionCheck(" ZPC FINISHED", AeskData.driver_zpcf_u1, context),
                         AeskConditionCheck(" PWM_ENABLED", AeskData.driver_pwm_enabled_u1, context),
                           ],
@@ -261,7 +281,7 @@ Widget Vcu(){
                     ),
                     Container(
                       child: myText(
-                          "Set Torque : "+AeskData.vcu_set_torque_s16.toStringAsFixed(2),
+                          "Set Torque : "+AeskData.vcu_set_torque_s16.toString() + " N*m",
                           scale.size.width/20.571428,
                           Theme.of(context).textTheme.headline1.color,
                           FontWeight.bold),

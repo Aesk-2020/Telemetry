@@ -52,7 +52,7 @@ class AeskData extends ChangeNotifier{
   //new
   static var vcu_drive_command_u8;
   static var vcu_speed_set_rpm_s16 = 0.0;
-  static var vcu_set_torque_s16 = 0.0;
+  static var vcu_set_torque_s16 = 0;
   static var vcu_speed_limit_u16;
   static var vcu_torque_limit_u8;
   static var vcu_can_error_u8;
@@ -71,6 +71,14 @@ class AeskData extends ChangeNotifier{
   static var driver_motortemp_u8            = 0;
   static var driver_errorstatus_u16         = 0;
   static var driver_acttorque_s8            = 0;
+
+  static bool vcu_command_bms_wake_u1 = false;
+  static bool vcu_command_mcu_wake_u1 = false;
+  static bool vcu_command_freewheeling_u1 = false;
+  static bool vcu_command_mode_u1 = false;
+  static bool vcu_command_brake_u1 = false;
+  static bool vcu_command_dcbus_u1 = false;
+  static bool vcu_command_direction_u1 = false;
 
   static bool driver_overcur_ia_u1               = false;
   static bool driver_overcur_ib_u1               = false;
@@ -155,10 +163,10 @@ class AeskData extends ChangeNotifier{
     int _startIndex = 0;
 
     vcu_drive_command_u8 = message.getUint8(_startIndex);     _startIndex++;
-    vcu_speed_set_rpm_s16 = message.getInt16(_startIndex) / 100;    _startIndex += 2;
+    vcu_speed_set_rpm_s16 = message.getInt16(_startIndex, myEndian).toDouble();    _startIndex += 2;
     vcu_speed_set_rpm_s16 = (vcu_speed_set_rpm_s16 * 0.105183).roundToDouble();
-    vcu_set_torque_s16 = message.getInt16(_startIndex) / 100;       _startIndex += 2;
-    vcu_speed_limit_u16 = message.getUint16(_startIndex);     _startIndex += 2;
+    vcu_set_torque_s16 = message.getInt16(_startIndex, myEndian);       _startIndex += 2;
+    vcu_speed_limit_u16 = message.getUint16(_startIndex, myEndian);     _startIndex += 2;
     vcu_torque_limit_u8 = message.getUint8(_startIndex);      _startIndex++;
 
     driver_act_id_u16 = message.getInt16(_startIndex,myEndian)/100;
@@ -188,7 +196,7 @@ class AeskData extends ChangeNotifier{
     driver_vdc_s16 = message.getInt16(_startIndex, myEndian) / 100;
     _startIndex += 2;
 
-    driver_actspeed_s16 = message.getInt16(_startIndex,myEndian) / 100;
+    driver_actspeed_s16 = message.getUint16(_startIndex,myEndian) / 10;
     _startIndex += 2;
     driver_actspeed_s16 = (driver_actspeed_s16 * 0.105183).roundToDouble();
 
@@ -213,14 +221,14 @@ class AeskData extends ChangeNotifier{
     bms_soc_f32 = message.getUint16(_startIndex,myEndian)/100;
     _startIndex+=2;
 
+    bms_worst_cell_voltage_f32 = message.getUint16(_startIndex,myEndian) / 10;
+    _startIndex+=2;
+
     bms_bms_error_u8 = message.getUint8(_startIndex);
     _startIndex++;
 
     bms_dc_bus_state_u8 = message.getUint8(_startIndex);
     _startIndex++;
-
-    bms_worst_cell_voltage_f32 = message.getUint16(_startIndex,myEndian) / 10;
-    _startIndex+=2;
 
     bms_worst_cell_address_u8 = message.getUint8(_startIndex);
     _startIndex++;
@@ -336,6 +344,15 @@ class AeskData extends ChangeNotifier{
     bms_error_over_current_u1   = (((bms_bms_error_u8 >> 4) & 1) == 1) ? true : false;
     bms_error_fatal_u1          = (((bms_bms_error_u8 >> 5) & 1) == 1) ? true : false;
     bms_error_isolation_u1      = (((bms_bms_error_u8 >> 6) & 1) == 1) ? true : false;
+
+    vcu_command_bms_wake_u1         = ((vcu_drive_command_u8 & 1) == 1) ? true : false;
+    vcu_command_mcu_wake_u1         = (((vcu_drive_command_u8 >> 1) & 1) == 1) ? true : false;
+    vcu_command_freewheeling_u1     = (((vcu_drive_command_u8 >> 2) & 1) == 1) ? true : false;
+    vcu_command_mode_u1             = (((vcu_drive_command_u8 >> 3) & 1) == 1) ? true : false;
+    vcu_command_brake_u1            = (((vcu_drive_command_u8 >> 4) & 1) == 1) ? true : false;
+    vcu_command_dcbus_u1            = (((vcu_drive_command_u8 >> 5) & 1) == 1) ? true : false;
+    vcu_command_direction_u1        = (((vcu_drive_command_u8 >> 6) & 1) == 1) ? true : false;
+
 
     for(i=0;i<graphData_array.length-1;i++){
       graphData_array[i] = graphData_array[i+1];
