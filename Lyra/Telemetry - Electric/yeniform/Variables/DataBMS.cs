@@ -42,12 +42,19 @@ namespace Telemetri.Variables
         
         public class Cell
         {
-            public byte voltage_u8;
-            public byte soc_u8;
-            public byte temperature_u8;
+            public byte voltage_u8 = 0;
+            public byte soc_u8 = 0;
+            public byte temperature_u8 = 0;
         }
-        public static List<Cell> cells = new List<Cell>(28);
-
+        public static List<Cell> cells = new List<Cell>();
+        public static void CellInit()
+        {
+            for (int i = 0; i < 28; i++)
+            {
+                DataBMS.Cell cell = new DataBMS.Cell();
+                DataBMS.cells.Add(cell);
+            }
+        }
         public static bool high_voltage_error_u1    => Convert.ToBoolean((error_u8 & 0b00000001));
         public static bool low_voltage_error_u1     => Convert.ToBoolean((error_u8 >> 1 & 0b00000001));
         public static bool temp_error_u1            => Convert.ToBoolean((error_u8 >> 2 & 0b00000001));

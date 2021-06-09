@@ -169,7 +169,8 @@ namespace Telemetri.Variables
 
             for (int i = 0; i < DataBMS.cells.Count; i++)
             {
-                DataBMS.cells[0].voltage_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+
+                DataBMS.cells[i].voltage_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
             }
 
             int counterr = 0;
