@@ -19,14 +19,13 @@ namespace Telemetri.NewForms
             batVolt = 1,
             batCons = 2,
             batTemp = 3,
-            VD = 4,
-            VQ = 5,
-            dcBusVolt = 6,
-            dcBusCur = 7,
-            setIdActId = 8,
-            iqActIq = 9,
-            iarms = 10,
-            torque = 11,
+            VDVQ = 4,
+            dcBusVolt = 5,
+            dcBusCur = 6,
+            setIdActId = 7,
+            iqActIq = 8,
+            iarms = 9,
+            torque = 10,
         }
         public Action changeGraph = null;
         public static List<Graphics> graphicsList = new List<Graphics>();
@@ -82,13 +81,12 @@ namespace Telemetri.NewForms
                     myChart.Series[0].Name = "Battery Temperature";
                     changeGraph = this.changeBatTemp;
                     break;
-                case graphs.VD:
+                case graphs.VDVQ:
                     myChart.Series[0].Name = "VD";
-                    changeGraph = this.changeVD;
-                    break;
-                case graphs.VQ:
-                    myChart.Series[0].Name = "VQ";
-                    changeGraph = this.changeVQ;
+                    myChart.Series.Add("VQ");
+                    myChart.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+
+                    changeGraph = this.changeVDVQ;
                     break;
                 case graphs.dcBusCur:
                     myChart.Series[0].Name = "DC Bus Current";
@@ -141,15 +139,10 @@ namespace Telemetri.NewForms
             myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
             myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
         }
-        private void changeVD()
+        private void changeVDVQ()
         {
             myChart.Series[0].Points.Add(DataMCU.vd_s16);
-            myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
-            myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
-        }
-        private void changeVQ()
-        {
-            myChart.Series[0].Points.Add(DataMCU.vq_s16);
+            myChart.Series[1].Points.Add(DataMCU.vq_s16);
             myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
             myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
         }

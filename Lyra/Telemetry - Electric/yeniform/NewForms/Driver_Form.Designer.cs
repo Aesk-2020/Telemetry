@@ -69,7 +69,6 @@
             this.idGraphBtn = new System.Windows.Forms.Button();
             this.dcBusCurGraphBtn = new System.Windows.Forms.Button();
             this.dcBusVoltGraphBtn = new System.Windows.Forms.Button();
-            this.VQBtn = new System.Windows.Forms.Button();
             this.VDBtn = new System.Windows.Forms.Button();
             this.graphicsButton = new System.Windows.Forms.Button();
             this.graphPanel = new System.Windows.Forms.Panel();
@@ -632,13 +631,12 @@
             this.panel1.Controls.Add(this.idGraphBtn);
             this.panel1.Controls.Add(this.dcBusCurGraphBtn);
             this.panel1.Controls.Add(this.dcBusVoltGraphBtn);
-            this.panel1.Controls.Add(this.VQBtn);
             this.panel1.Controls.Add(this.VDBtn);
             this.panel1.Controls.Add(this.graphicsButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 466);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(904, 450);
+            this.panel1.Size = new System.Drawing.Size(904, 400);
             this.panel1.TabIndex = 18;
             // 
             // torqueGraphBtn
@@ -651,7 +649,7 @@
             this.torqueGraphBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.torqueGraphBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.torqueGraphBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.torqueGraphBtn.Location = new System.Drawing.Point(0, 400);
+            this.torqueGraphBtn.Location = new System.Drawing.Point(0, 350);
             this.torqueGraphBtn.Name = "torqueGraphBtn";
             this.torqueGraphBtn.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.torqueGraphBtn.Size = new System.Drawing.Size(904, 50);
@@ -672,7 +670,7 @@
             this.iarmsGraphBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iarmsGraphBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.iarmsGraphBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.iarmsGraphBtn.Location = new System.Drawing.Point(0, 350);
+            this.iarmsGraphBtn.Location = new System.Drawing.Point(0, 300);
             this.iarmsGraphBtn.Name = "iarmsGraphBtn";
             this.iarmsGraphBtn.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.iarmsGraphBtn.Size = new System.Drawing.Size(904, 50);
@@ -693,7 +691,7 @@
             this.iqGraphBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iqGraphBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.iqGraphBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.iqGraphBtn.Location = new System.Drawing.Point(0, 300);
+            this.iqGraphBtn.Location = new System.Drawing.Point(0, 250);
             this.iqGraphBtn.Name = "iqGraphBtn";
             this.iqGraphBtn.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.iqGraphBtn.Size = new System.Drawing.Size(904, 50);
@@ -714,7 +712,7 @@
             this.idGraphBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.idGraphBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.idGraphBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.idGraphBtn.Location = new System.Drawing.Point(0, 250);
+            this.idGraphBtn.Location = new System.Drawing.Point(0, 200);
             this.idGraphBtn.Name = "idGraphBtn";
             this.idGraphBtn.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.idGraphBtn.Size = new System.Drawing.Size(904, 50);
@@ -735,7 +733,7 @@
             this.dcBusCurGraphBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dcBusCurGraphBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dcBusCurGraphBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.dcBusCurGraphBtn.Location = new System.Drawing.Point(0, 200);
+            this.dcBusCurGraphBtn.Location = new System.Drawing.Point(0, 150);
             this.dcBusCurGraphBtn.Name = "dcBusCurGraphBtn";
             this.dcBusCurGraphBtn.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.dcBusCurGraphBtn.Size = new System.Drawing.Size(904, 50);
@@ -756,7 +754,7 @@
             this.dcBusVoltGraphBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dcBusVoltGraphBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dcBusVoltGraphBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.dcBusVoltGraphBtn.Location = new System.Drawing.Point(0, 150);
+            this.dcBusVoltGraphBtn.Location = new System.Drawing.Point(0, 100);
             this.dcBusVoltGraphBtn.Name = "dcBusVoltGraphBtn";
             this.dcBusVoltGraphBtn.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.dcBusVoltGraphBtn.Size = new System.Drawing.Size(904, 50);
@@ -766,27 +764,6 @@
             this.dcBusVoltGraphBtn.UseVisualStyleBackColor = false;
             this.dcBusVoltGraphBtn.Visible = false;
             this.dcBusVoltGraphBtn.Click += new System.EventHandler(this.dcBusVoltGraphBtn_Click);
-            // 
-            // VQBtn
-            // 
-            this.VQBtn.AutoSize = true;
-            this.VQBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(13)))), ((int)(((byte)(32)))));
-            this.VQBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VQBtn.FlatAppearance.BorderSize = 0;
-            this.VQBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.VQBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.VQBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.VQBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.VQBtn.Location = new System.Drawing.Point(0, 100);
-            this.VQBtn.Name = "VQBtn";
-            this.VQBtn.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.VQBtn.Size = new System.Drawing.Size(904, 50);
-            this.VQBtn.TabIndex = 18;
-            this.VQBtn.Text = "VQ";
-            this.VQBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.VQBtn.UseVisualStyleBackColor = false;
-            this.VQBtn.Visible = false;
-            this.VQBtn.Click += new System.EventHandler(this.VQBtn_Click);
             // 
             // VDBtn
             // 
@@ -803,7 +780,7 @@
             this.VDBtn.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.VDBtn.Size = new System.Drawing.Size(904, 50);
             this.VDBtn.TabIndex = 17;
-            this.VDBtn.Text = "VD";
+            this.VDBtn.Text = "VD / VQ";
             this.VDBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.VDBtn.UseVisualStyleBackColor = false;
             this.VDBtn.Visible = false;
@@ -1347,7 +1324,6 @@
         private System.Windows.Forms.Button idGraphBtn;
         private System.Windows.Forms.Button dcBusCurGraphBtn;
         private System.Windows.Forms.Button dcBusVoltGraphBtn;
-        private System.Windows.Forms.Button VQBtn;
         private System.Windows.Forms.Button VDBtn;
         private System.Windows.Forms.Button graphicsButton;
         private System.Windows.Forms.Button torqueGraphBtn;

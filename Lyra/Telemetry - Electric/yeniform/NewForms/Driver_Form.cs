@@ -95,7 +95,6 @@ namespace Telemetri.NewForms
             SetDoubleBuffered(idGraphBtn);
             SetDoubleBuffered(iqGraphBtn);
             SetDoubleBuffered(VDBtn);
-            SetDoubleBuffered(VQBtn);
             SetDoubleBuffered(torqueGraphBtn);
             #endregion
         }
@@ -106,7 +105,6 @@ namespace Telemetri.NewForms
             {
                 graphicsButton.Dock = DockStyle.Top;
                 VDBtn.Visible = true;
-                VQBtn.Visible = true;
                 dcBusCurGraphBtn.Visible = true;
                 dcBusVoltGraphBtn.Visible = true;
                 idGraphBtn.Visible = true;
@@ -118,7 +116,6 @@ namespace Telemetri.NewForms
             {
                 graphicsButton.Dock = DockStyle.Bottom;
                 VDBtn.Visible = false;
-                VQBtn.Visible = false;
                 dcBusCurGraphBtn.Visible = false;
                 dcBusVoltGraphBtn.Visible = false;
                 idGraphBtn.Visible = false;
@@ -238,25 +235,7 @@ namespace Telemetri.NewForms
 
         private void VDBtn_Click(object sender, EventArgs e)
         {
-            graphType = Graphics.graphs.VD;
-            Graphics.graphicsList.Add(new Graphics(graphType));
-            if (Graphics.oldGraph != null)
-            {
-                Graphics.oldGraph.Close();
-                Graphics.graphicsList.Remove(Graphics.graphicsList.Where(i => i.graphType == Graphics.oldGraph.graphType).ToList()[0]);
-            }
-            Graphics.oldGraph = Graphics.graphicsList.Last();
-            Graphics.oldGraph.TopLevel = false;
-            Graphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
-            Graphics.oldGraph.Dock = DockStyle.Fill;
-            Graphics.oldGraph.AutoScroll = true;
-            graphPanel.Controls.Add(Graphics.oldGraph);
-            Graphics.oldGraph.Show();
-        }
-
-        private void VQBtn_Click(object sender, EventArgs e)
-        {
-            graphType = Graphics.graphs.VQ;
+            graphType = Graphics.graphs.VDVQ;
             Graphics.graphicsList.Add(new Graphics(graphType));
             if (Graphics.oldGraph != null)
             {
