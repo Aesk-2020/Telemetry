@@ -167,15 +167,13 @@ namespace Telemetri.Variables
             //CAN Error
             DataVCU.can_error_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
 
-            for (int i = 0; i < 28; i++)
+            for (int i = 0; i < DataBMS.cells.Count; i++)
             {
-                DataBMS.Cell cell = new DataBMS.Cell();
-                cell.voltage_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
-                DataBMS.cells.Add(cell);
+                DataBMS.cells[0].voltage_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
             }
 
             int counterr = 0;
-            for (int i = 0; i < 28 / 4; i++)
+            for (int i = 0; i < DataBMS.cells.Count / 4; i++)
             {
                 byte temperatureBuffer = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
                 for (int j = 0; j < 4; j++)
