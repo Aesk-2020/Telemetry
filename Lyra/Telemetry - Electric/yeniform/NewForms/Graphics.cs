@@ -101,13 +101,13 @@ namespace Telemetri.NewForms
                     myChart.Series.Add("Actual IQ");
                     myChart.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
 
-                    changeGraph = this.changeSetIQActIq;
+                    changeGraph = this.changeSetIQActIQ;
                     break;
                 case graphs.setIdActId:
                     myChart.Series[0].Name = "Set ID";
                     myChart.Series.Add("Actual ID");
                     myChart.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-                    changeGraph = this.changeSetIDActIQ;
+                    changeGraph = this.changeSetIDActID;
                     break;
                 case graphs.torque:
                     myChart.Series[0].Name = "Torque";
@@ -158,17 +158,17 @@ namespace Telemetri.NewForms
             myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
             myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
         }
-        private void changeSetIQActIq()
+        private void changeSetIQActIQ()
         {
-            myChart.Series[0].Points.Add(DataMCU.act_iq_current_s16);
-            myChart.Series[1].Points.Add(DataMCU.set_iq_current_s16);
+            myChart.Series[0].Points.Add(DataMCU.set_iq_current_s16);
+            myChart.Series[1].Points.Add(DataMCU.act_iq_current_s16);
             myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
             myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
         }
-        private void changeSetIDActIQ()
+        private void changeSetIDActID()
         {
             myChart.Series[0].Points.Add(DataMCU.set_id_current_s16);
-            myChart.Series[1].Points.Add(DataMCU.set_iq_current_s16);
+            myChart.Series[1].Points.Add(DataMCU.act_id_current_s16);
             myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
             myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
         }
