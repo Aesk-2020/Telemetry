@@ -24,9 +24,9 @@ namespace Telemetri.Variables
                                             cur_s16.ToString() + "\t" + 
                                             cons_u16.ToString() + "\t" + 
                                             soc_u16.ToString() + "\t" + 
-                                            worst_cell_address_u8.ToString() + "\t" + 
                                             error_u8.ToString() + "\t" + 
                                             dc_bus_state_u8.ToString() + "\t" +
+                                            worst_cell_volt_u16.ToString() + "\t" + 
                                             worst_cell_address_u8.ToString() + "\t" +
                                             temperature_u8.ToString() + "\t";
 
