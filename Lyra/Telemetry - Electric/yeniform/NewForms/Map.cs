@@ -95,9 +95,11 @@ namespace Telemetri.NewForms
 
         private void gMapTool_MouseClick(object sender, MouseEventArgs e)
         {
-            //gMapTool.Overlays.Clear();
+            gMapTool.Overlays.Clear();
             PointLatLng mouse_position = gMapTool.FromLocalToLatLng(e.X, e.Y);
+
             AddMarker(mouse_position, GMarkerGoogleType.red_small, gMapTool);
+            GpsTracker.LapControl(GpsTracker.intercityPoint1, GpsTracker.intercityPoint2, GpsTracker.intercityPoint3, mouse_position);
         }
         private void AddMarker(PointLatLng point, GMarkerGoogleType gMarker, GMapControl gMap)
         {
