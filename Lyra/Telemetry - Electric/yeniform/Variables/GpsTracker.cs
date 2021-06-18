@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GMap.NET;
+using System;
 
 namespace Telemetri.Variables
 {
@@ -13,6 +14,11 @@ namespace Telemetri.Variables
         public static string log_gps_data => gps_latitude_f64.ToString("0.0000000") + '\t' + gps_longtitude_f64.ToString("0.0000000") + '\t' +
                                               gps_velocity_u8.ToString() + '\t' + gps_sattelite_number_u8.ToString() + '\t' +
                                               gps_efficiency_u8.ToString();
+
+        public static PointLatLng intercityPoint1 = new PointLatLng(40.9520173224503, 29.4054678082466);
+        public static PointLatLng intercityPoint2 = new PointLatLng(40.9520861983152, 29.4059774279594);
+        public static PointLatLng intercityPoint3 = new PointLatLng(40.9521798896338, 29.4065064936876);
+        
         public uint odometer_gps;
         public double total_angle = 0;
         public double old_angle;
@@ -23,6 +29,8 @@ namespace Telemetri.Variables
         private double _startLongtitude;
         private double _FirststopLatitude;
         private double _FirststopLongtitude;
+
+
         public GpsTracker(double centerLat, double centerLong, double startLineLatitude, double startLineLong)
         {
             _startLatitude = centerLat;

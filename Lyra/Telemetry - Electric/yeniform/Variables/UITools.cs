@@ -166,7 +166,7 @@ namespace Telemetri.Variables
             DriverForm.vqLabel.Text = DataMCU.vq_s16.ToString();
             DriverForm.dcBusCurLabel.Text = DataMCU.i_dc_s16.ToString();
             DriverForm.dcBusVoltLabel.Text = DataMCU.v_dc_s16.ToString();
-            DriverForm.temperatureLabel.Text = DataMCU.temperature_u8.ToString();
+            DriverForm.temperatureLabel.Text = DataMCU.temperature_u8.ToString() + " °C";
 
             DriverForm.ISCFFlagBox.BackColor = DataMCU.input_scaling_calib_finished ? Color.LimeGreen : MACROS.UInewBack;
             DriverForm.overcurIABox.BackColor = DataMCU.over_cur_IA ? Color.Crimson : MACROS.UInewBack;

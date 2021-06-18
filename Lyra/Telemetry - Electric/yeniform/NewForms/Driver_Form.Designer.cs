@@ -1184,7 +1184,7 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(439, 41);
             this.label16.TabIndex = 5;
-            this.label16.Text = "Temperature";
+            this.label16.Text = "Motor Temperature";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel17
