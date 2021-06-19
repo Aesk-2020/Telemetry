@@ -17,12 +17,13 @@ namespace Telemetri.Variables
                                               gps_velocity_u8.ToString() + '\t' + gps_sattelite_number_u8.ToString() + '\t' +
                                               gps_efficiency_u8.ToString();
         //NEW
-        public static PointLatLng intercityPoint1 = new PointLatLng(40.9520173224503, 29.4054678082466); //İSTANBUL PARK VARSAYILAN 1.NOKTA
-        public static PointLatLng intercityPoint2 = new PointLatLng(40.9520861983152, 29.4059774279594); //İSTANBUL PARK VARSAYILAN 2.NOKTA
-        public static PointLatLng intercityPoint3 = new PointLatLng(40.9521798896338, 29.4065064936876); //İSTANBUL PARK VARSAYILAN 3.NOKTA
+        public static PointLatLng lapPoint1 = new PointLatLng(40.9520173224503, 29.4054678082466); //İSTANBUL PARK VARSAYILAN 1.NOKTA
+        public static PointLatLng lapPoint2 = new PointLatLng(40.9520861983152, 29.4059774279594); //İSTANBUL PARK VARSAYILAN 2.NOKTA
+        public static PointLatLng lapPoint3 = new PointLatLng(40.9521798896338, 29.4065064936876); //İSTANBUL PARK VARSAYILAN 3.NOKTA
         public static LapCountSteps step = LapCountSteps.PointOne;
         public static int lapCounter = 0;
-        
+        public static long pointDistance = 40;
+
         //NEW
         public enum LapCountSteps
         {
@@ -31,6 +32,7 @@ namespace Telemetri.Variables
             PointThree  = 2,
         }
 
+
         public static void LapControl(PointLatLng p1, PointLatLng p2, PointLatLng p3, PointLatLng pRecieved)
         {
             switch (step)
@@ -38,7 +40,7 @@ namespace Telemetri.Variables
                 case LapCountSteps.PointOne:
                     {
                         long distance = CalculateDistance(p1, pRecieved);
-                        if(distance < 40)
+                        if(distance < pointDistance)
                         {
                             step = LapCountSteps.PointTwo;
                         }
@@ -48,7 +50,7 @@ namespace Telemetri.Variables
                     {
                         long distance1 = CalculateDistance(p1, pRecieved);
                         long distance2 = CalculateDistance(p2, pRecieved);
-                        if(distance1 < 40 && distance2 < 40)
+                        if(distance1 < pointDistance && distance2 < pointDistance)
                         {
                             step = LapCountSteps.PointThree;
                         }
@@ -58,11 +60,11 @@ namespace Telemetri.Variables
                     {
                         long distance1 = CalculateDistance(p2, pRecieved);
                         long distance2 = CalculateDistance(p3, pRecieved);
-                        if (distance1 < 40 && distance2 < 40)
+                        if (distance1 < pointDistance && distance2 < pointDistance)
                         {
                             step = LapCountSteps.PointOne;
                             lapCounter++;
-                            UITools.Telemetry2021.lapCount.Text = lapCounter.ToString();
+                            UITools.Telemetry2021.lapCount.Text = lapCounter.ToString() + "/8";
                         }
                         break;
                     }
@@ -71,7 +73,7 @@ namespace Telemetri.Variables
             }
         }
 
-        private static long CalculateDistance(PointLatLng p1, PointLatLng p2)
+        public static long CalculateDistance(PointLatLng p1, PointLatLng p2)
         {
             Int64 p1Lat = (Int64)(Math.Round(p1.Lat, 6, MidpointRounding.AwayFromZero) * MACROS.GPS_DIVIDER);
             Int64 p1Lng = (Int64)(Math.Round(p1.Lng, 6, MidpointRounding.AwayFromZero) * MACROS.GPS_DIVIDER);

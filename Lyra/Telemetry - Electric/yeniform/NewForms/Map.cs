@@ -18,6 +18,8 @@ namespace Telemetri.NewForms
     {
 
         GMAPController myGmap = new GMAPController(MACROS.centerLat, MACROS.centerLong, MACROS.startLineLat, MACROS.startLineLong);
+        bool lapControlCalibrationMode = false;
+        int calibrationClickCount = 0;
 
         public Map()
         {
@@ -65,9 +67,9 @@ namespace Telemetri.NewForms
             #region doubleBuffer
             myGmap.GMAPController_Init(gMapTool);
 
-            AddMarker(GpsTracker.intercityPoint1, GMarkerGoogleType.arrow, gMapTool);
-            AddMarker(GpsTracker.intercityPoint2, GMarkerGoogleType.arrow, gMapTool);
-            AddMarker(GpsTracker.intercityPoint3, GMarkerGoogleType.arrow, gMapTool);
+            AddMarker(GpsTracker.lapPoint1, GMarkerGoogleType.arrow, gMapTool);
+            AddMarker(GpsTracker.lapPoint2, GMarkerGoogleType.arrow, gMapTool);
+            AddMarker(GpsTracker.lapPoint3, GMarkerGoogleType.arrow, gMapTool);
             //SetDoubleBuffered(tableLayoutPanel1);
             #endregion
         }
@@ -95,11 +97,66 @@ namespace Telemetri.NewForms
 
         private void gMapTool_MouseClick(object sender, MouseEventArgs e)
         {
-            gMapTool.Overlays.Clear();
-            PointLatLng mouse_position = gMapTool.FromLocalToLatLng(e.X, e.Y);
+            if (e.Button == MouseButtons.Left)
+            {
+                if(lapControlCalibrationMode == true)
+                {
+                    calibrationClickCount++;
+                    switch (calibrationClickCount)
+                    {
+                        case 1:
+                            GpsTracker.lapPoint1 = gMapTool.FromLocalToLatLng(e.X, e.Y);
+                            AddMarker(GpsTracker.lapPoint1, GMarkerGoogleType.green_small, gMapTool);
+                            break;
+                        case 2:
+                            GpsTracker.lapPoint2 = gMapTool.FromLocalToLatLng(e.X, e.Y);
+                            AddMarker(GpsTracker.lapPoint2, GMarkerGoogleType.green_small, gMapTool);
+                            break;
+                        case 3:
+                            GpsTracker.lapPoint3 = gMapTool.FromLocalToLatLng(e.X, e.Y);
+                            AddMarker(GpsTracker.lapPoint3, GMarkerGoogleType.green_small, gMapTool);
+                            calibrationClickCount = 0;
+                            lapControlCalibrationMode = false;
+                            long distance1 = GpsTracker.CalculateDistance(GpsTracker.lapPoint1, GpsTracker.lapPoint2);
+                            long distance2 = GpsTracker.CalculateDistance(GpsTracker.lapPoint2, GpsTracker.lapPoint3);
+                            if(Math.Abs(distance1 - distance2) < 20)
+                            {
+                                long avgDistance = (distance1 + distance2) / 2;
+                                GpsTracker.pointDistance = avgDistance;
+                                MessageBox.Show($"Kalibrasyon başarılı! Noktalar arası ortalama mesafe {avgDistance} metre.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Kalibrasyon hatalı! Noktaları düz bir çizgi üzerinde seçiniz.");
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else
+                {
+                    gMapTool.Overlays.Clear();
+                    PointLatLng mouse_position = gMapTool.FromLocalToLatLng(e.X, e.Y);
 
-            AddMarker(mouse_position, GMarkerGoogleType.red_small, gMapTool);
-            GpsTracker.LapControl(GpsTracker.intercityPoint1, GpsTracker.intercityPoint2, GpsTracker.intercityPoint3, mouse_position);
+                    AddMarker(mouse_position, GMarkerGoogleType.red_small, gMapTool);
+                    GpsTracker.LapControl(GpsTracker.lapPoint1, GpsTracker.lapPoint2, GpsTracker.lapPoint3, mouse_position);
+                }
+            }
+            else if (e.Button == MouseButtons.Right)
+            {
+                DialogResult dialogResult = MessageBox.Show("Kalibrasyon modunu açmak istediğinizden emin misiniz?","Kalibrasyon modu", MessageBoxButtons.YesNo);
+                if(dialogResult == DialogResult.Yes)
+                {
+                    gMapTool.Overlays.Clear();
+                    lapControlCalibrationMode = true;
+                    MessageBox.Show("Tur algoritması kalibrasyon modu açıldı." +
+                        " Lütfen 3 nokta belirleyiniz." +
+                        " Belirlediğiniz noktalar arasındaki mesafenin eşit olmasına dikkat ediniz." +
+                        " Göz kararı eşit olması yeterli olacaktır.", "Kalibrasyon Modu");
+                }
+            }
+
         }
         private void AddMarker(PointLatLng point, GMarkerGoogleType gMarker, GMapControl gMap)
         {

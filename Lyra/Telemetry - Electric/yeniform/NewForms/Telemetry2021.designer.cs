@@ -532,13 +532,13 @@
             // 
             this.lapCntLabel.AutoSize = true;
             this.lapCntLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lapCntLabel.Font = new System.Drawing.Font("Ink Free", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lapCntLabel.Font = new System.Drawing.Font("Kristen ITC", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lapCntLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
             this.lapCntLabel.Location = new System.Drawing.Point(146, 0);
             this.lapCntLabel.Name = "lapCntLabel";
             this.lapCntLabel.Size = new System.Drawing.Size(67, 47);
             this.lapCntLabel.TabIndex = 130;
-            this.lapCntLabel.Text = "0";
+            this.lapCntLabel.Text = "0/8";
             this.lapCntLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LapResetBtn
