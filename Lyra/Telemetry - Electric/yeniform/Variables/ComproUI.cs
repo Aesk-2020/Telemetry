@@ -53,13 +53,14 @@ namespace Telemetri.Variables
             BMS_SOC_3 = 16,
             BMS_SOC_4 = 17,
             BMS_TO_CHARGER = 18,
-            PID_TUNNING = 19,
-            PID_QUERY = 20,
-            PID_QUERY_ANSWER = 21,
-            COMM_QUERY = 22,
-            UI_PACK = 23,
-            RESET_TELEMETRY = 24,
-            MSG_ID_COUNT = 25,
+            BMS_SOH = 19,
+            PID_TUNNING = 20,
+            PID_QUERY = 21,
+            PID_QUERY_ANSWER = 22,
+            COMM_QUERY = 23,
+            UI_PACK = 24,
+            RESET_TELEMETRY = 25,
+            MSG_ID_COUNT = 26,
         }
 
         private enum step

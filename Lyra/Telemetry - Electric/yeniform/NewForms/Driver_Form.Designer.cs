@@ -64,7 +64,6 @@
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.torqueGraphBtn = new System.Windows.Forms.Button();
-            this.iarmsGraphBtn = new System.Windows.Forms.Button();
             this.iqGraphBtn = new System.Windows.Forms.Button();
             this.idGraphBtn = new System.Windows.Forms.Button();
             this.dcBusCurGraphBtn = new System.Windows.Forms.Button();
@@ -626,7 +625,6 @@
             this.panel1.AutoScroll = true;
             this.panel1.AutoSize = true;
             this.panel1.Controls.Add(this.torqueGraphBtn);
-            this.panel1.Controls.Add(this.iarmsGraphBtn);
             this.panel1.Controls.Add(this.iqGraphBtn);
             this.panel1.Controls.Add(this.idGraphBtn);
             this.panel1.Controls.Add(this.dcBusCurGraphBtn);
@@ -636,7 +634,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 466);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(904, 400);
+            this.panel1.Size = new System.Drawing.Size(904, 350);
             this.panel1.TabIndex = 18;
             // 
             // torqueGraphBtn
@@ -649,7 +647,7 @@
             this.torqueGraphBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.torqueGraphBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.torqueGraphBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.torqueGraphBtn.Location = new System.Drawing.Point(0, 350);
+            this.torqueGraphBtn.Location = new System.Drawing.Point(0, 300);
             this.torqueGraphBtn.Name = "torqueGraphBtn";
             this.torqueGraphBtn.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.torqueGraphBtn.Size = new System.Drawing.Size(904, 50);
@@ -659,27 +657,6 @@
             this.torqueGraphBtn.UseVisualStyleBackColor = false;
             this.torqueGraphBtn.Visible = false;
             this.torqueGraphBtn.Click += new System.EventHandler(this.torqueGraphBtn_Click);
-            // 
-            // iarmsGraphBtn
-            // 
-            this.iarmsGraphBtn.AutoSize = true;
-            this.iarmsGraphBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(13)))), ((int)(((byte)(32)))));
-            this.iarmsGraphBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iarmsGraphBtn.FlatAppearance.BorderSize = 0;
-            this.iarmsGraphBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(36)))), ((int)(((byte)(73)))));
-            this.iarmsGraphBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iarmsGraphBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.iarmsGraphBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.iarmsGraphBtn.Location = new System.Drawing.Point(0, 300);
-            this.iarmsGraphBtn.Name = "iarmsGraphBtn";
-            this.iarmsGraphBtn.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.iarmsGraphBtn.Size = new System.Drawing.Size(904, 50);
-            this.iarmsGraphBtn.TabIndex = 23;
-            this.iarmsGraphBtn.Text = "IARMS";
-            this.iarmsGraphBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iarmsGraphBtn.UseVisualStyleBackColor = false;
-            this.iarmsGraphBtn.Visible = false;
-            this.iarmsGraphBtn.Click += new System.EventHandler(this.iarmsGraphBtn_Click);
             // 
             // iqGraphBtn
             // 
@@ -1319,7 +1296,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button iarmsGraphBtn;
         private System.Windows.Forms.Button iqGraphBtn;
         private System.Windows.Forms.Button idGraphBtn;
         private System.Windows.Forms.Button dcBusCurGraphBtn;
