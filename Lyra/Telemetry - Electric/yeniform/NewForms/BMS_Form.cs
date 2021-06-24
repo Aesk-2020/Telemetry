@@ -13,7 +13,7 @@ namespace Telemetri.NewForms
 {
     public partial class BMS_Form : Form
     {
-        Graphics.graphs graphType = new Graphics.graphs();
+        //Graphics.graphs graphType = new Graphics.graphs();
 
         public BMS_Form()
         {
