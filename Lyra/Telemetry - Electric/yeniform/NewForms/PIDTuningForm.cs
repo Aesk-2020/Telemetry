@@ -16,6 +16,7 @@ namespace Telemetri.NewForms
     {
         ComproUI comproUI;
         ComproUI comproUII;
+        private ushort msgIndex = 0;
 
         public PIDTuningForm()
         {
@@ -82,7 +83,8 @@ namespace Telemetri.NewForms
             newlist.AddRange(BitConverter.GetBytes(DataVCU.kd));
             comproUI.message = newlist.ToArray();
             comproUI.msg_size = (byte)newlist.Count;
-            comproUI.msg_index++;
+            msgIndex++;
+            comproUI.msg_index = msgIndex;
             comproUI.CreateBuffer();
             Anasayfa.mqttobj.client.Publish("interface_to_vehicle", comproUI.buffer);
             UITools.PIDForm.logWriter.WriteLine("PID sent");
@@ -97,7 +99,8 @@ namespace Telemetri.NewForms
             comproUII.msg_size = (byte)comproUII.message.Length;
             comproUII.vehicle_id = 0x31;
             comproUII.source_msg_id = 20;
-            comproUII.msg_index++;
+            msgIndex++;
+            comproUII.msg_index = msgIndex;
             comproUII.CreateBuffer();
             Anasayfa.mqttobj.client.Publish("interface_to_vehicle", comproUII.buffer);
             UITools.PIDForm.logWriter.WriteLine("Query sent");
