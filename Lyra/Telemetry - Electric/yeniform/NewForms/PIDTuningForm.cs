@@ -77,17 +77,19 @@ namespace Telemetri.NewForms
             DataVCU.kp = float.Parse(kpBox.Text);
             DataVCU.ki = float.Parse(kiBox.Text);
             DataVCU.kd = float.Parse(kdBox.Text);
+            DataVCU.kr = float.Parse(krBox.Text);
             List<byte> newlist = new List<byte>();
             newlist.AddRange(BitConverter.GetBytes(DataVCU.kp));
             newlist.AddRange(BitConverter.GetBytes(DataVCU.ki));
             newlist.AddRange(BitConverter.GetBytes(DataVCU.kd));
-            Anasayfa.serialRF.SendData(newlist, newlist.Count, (byte)ComproUI.MSG_ID.PID_TUNNING);
+            newlist.AddRange(BitConverter.GetBytes(DataVCU.kr * MACROS.FLOAT_CONVERTER_2));
+
             comproUI.message = newlist.ToArray();
             comproUI.msg_size = (byte)newlist.Count;
             msgIndex++;
             comproUI.msg_index = msgIndex;
             comproUI.CreateBuffer();
-            //Anasayfa.mqttobj.client.Publish("interface_to_vehicle", comproUI.buffer);
+            Anasayfa.mqttobj.client.Publish("interface_to_vehicle", comproUI.buffer);
             UITools.PIDForm.logWriter.WriteLine("PID sent");
 
         }
@@ -100,12 +102,16 @@ namespace Telemetri.NewForms
             comproUII.msg_size = (byte)comproUII.message.Length;
             comproUII.vehicle_id = 0x31;
             comproUII.source_msg_id = 20;
-            Anasayfa.serialRF.SendData(new List<byte> { 0 }, 1, (byte)ComproUI.MSG_ID.PID_QUERY);
             msgIndex++;
             comproUII.msg_index = msgIndex;
             comproUII.CreateBuffer();
-            //Anasayfa.mqttobj.client.Publish("interface_to_vehicle", comproUII.buffer);
+            Anasayfa.mqttobj.client.Publish("interface_to_vehicle", comproUII.buffer);
             UITools.PIDForm.logWriter.WriteLine("Query sent");
+        }
+
+        private void macTrackBar4_ValueChanged(object sender, decimal value)
+        {
+            krBox.Text = ((float)macTrackBar4.Value / 100).ToString("0.00");
         }
     }
 }

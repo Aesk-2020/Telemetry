@@ -6,7 +6,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
-using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,9 +17,7 @@ namespace Telemetri.NewForms
     {
         public delegate void TriggerFront();
         MQTT mqttObj = new MQTT(MACROS.newSubTopic); //LYRADATA topic'ine bağlanacak MQTT nesnesini oluştur.
-        
         public static SerialPortCOMRF serialPortCOMRF = new SerialPortCOMRF();// NRF'e veri gönderecek seri port nesnesini oluştur.
-        public static SerialRF serialRF = new SerialRF();
         public static NewMQTT mqttobj = new NewMQTT("vehicle_to_interface", "LYRADATA", MACROS.aesk_IP);
         string splitter = "aesk\n";
         List<string> lineList;
@@ -80,19 +77,7 @@ namespace Telemetri.NewForms
             string[] ports = SerialPort.GetPortNames();
             portsListBox.Items.AddRange(ports);
             LogSystem.isFirst = true;
-
-            #region portWatcher
-            var watcher = new ManagementEventWatcher();
-            var watcher2 = new ManagementEventWatcher();
-            var query = new WqlEventQuery("SELECT * FROM Win32_DeviceChangeEvent WHERE EventType = 2");
-            var query2 = new WqlEventQuery("SELECT * FROM Win32_DeviceChangeEvent WHERE EventType = 3");
-            watcher2.EventArrived += new EventArrivedEventHandler(watcher_EventArrived);
-            watcher.EventArrived += new EventArrivedEventHandler(watcher_EventArrived);
-            watcher.Query = query;
-            watcher2.Query = query2;
-            watcher.Start();
-            watcher2.Start();
-            #endregion
+           
             #region doubleBuffer
             SetDoubleBuffered(tableLayoutPanel1);
             SetDoubleBuffered(tableLayoutPanel2);
@@ -121,11 +106,17 @@ namespace Telemetri.NewForms
             #endregion
 
         }
-
+        private void portConnectBtn_Click(object sender, EventArgs e)
+        {
+            //LogSystem.ExtractSDLog(lineList); //TAŞINACAK
+            serialPortCOMRF.SerialPortInit(serialPort);
+            serialPortCOMRF.ConnectSerialPort(portsListBox.SelectedItem.ToString());
+        }
 
         private void portsListBox_Click(object sender, EventArgs e)
         {
-
+            string[] ports = SerialPort.GetPortNames();
+            portsListBox.Items.AddRange(ports);
         }
 
         private void mqttConnectBtn_Click(object sender, EventArgs e)
@@ -221,48 +212,5 @@ namespace Telemetri.NewForms
             comproUIII.CreateBuffer();
             mqttobj.client.Publish("interface_to_vehicle", comproUIII.buffer);
         }
-
-        private void portsListBox_DoubleClick(object sender, EventArgs e)
-        {
-            portsListBox.Items.Clear();
-            string[] ports = SerialPort.GetPortNames();
-            portsListBox.Items.AddRange(ports);
-        }
-
-        private void portsListBox_MouseHover(object sender, EventArgs e)
-        {
-            portConnectTip.SetToolTip(portsListBox, "Portları yenilemek için çift tıklayın");
-        }
-
-        private void watcher_EventArrived(object sender, EventArgs e)
-        {
-            portsListBox.Items.Clear();
-            string[] ports = SerialPort.GetPortNames();
-            portsListBox.Items.AddRange(ports);
-        }
-
-        private void portConnectBtn_Click_1(object sender, EventArgs e)
-        {
-            //LogSystem.ExtractSDLog(lineList); //TAŞINACAK
-            serialRF.SyncChar = 0xAB;
-            if (portsListBox.SelectedItem != null)
-            {
-                serialRF.Connect(portsListBox.SelectedItem.ToString(), 9600);
-                portConnectBtn.Enabled = false;
-                portDisconnectBtn.Enabled = true;
-            }
-            else
-            {
-                MessageBox.Show("Portu seçiniz.");
-            }
-        }
-
-        private void portDisconnectBtn_Click(object sender, EventArgs e)
-        {
-            serialRF.Disconnect();
-            portConnectBtn.Enabled = true;
-            portDisconnectBtn.Enabled = false;
-        }
     }
 }
-    

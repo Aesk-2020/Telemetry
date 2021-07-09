@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -87,7 +86,6 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.mqttWorker = new System.ComponentModel.BackgroundWorker();
             this.myChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.portConnectTip = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -147,8 +145,6 @@
             this.portsListBox.Size = new System.Drawing.Size(116, 84);
             this.portsListBox.TabIndex = 118;
             this.portsListBox.Click += new System.EventHandler(this.portsListBox_Click);
-            this.portsListBox.DoubleClick += new System.EventHandler(this.portsListBox_DoubleClick);
-            this.portsListBox.MouseHover += new System.EventHandler(this.portsListBox_MouseHover);
             // 
             // tableLayoutPanel1
             // 
@@ -234,7 +230,7 @@
             this.portConnectBtn.TabIndex = 119;
             this.portConnectBtn.Text = "Port Connect";
             this.portConnectBtn.UseVisualStyleBackColor = false;
-            this.portConnectBtn.Click += new System.EventHandler(this.portConnectBtn_Click_1);
+            this.portConnectBtn.Click += new System.EventHandler(this.portConnectBtn_Click);
             // 
             // portDisconnectBtn
             // 
@@ -254,7 +250,6 @@
             this.portDisconnectBtn.TabIndex = 120;
             this.portDisconnectBtn.Text = "Port Disconnect";
             this.portDisconnectBtn.UseVisualStyleBackColor = false;
-            this.portDisconnectBtn.Click += new System.EventHandler(this.portDisconnectBtn_Click);
             // 
             // mqttDisconnectBtn
             // 
@@ -1014,6 +1009,5 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox setTorqueBox;
-        private System.Windows.Forms.ToolTip portConnectTip;
     }
 }
