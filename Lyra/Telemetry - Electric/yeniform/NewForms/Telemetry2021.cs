@@ -31,7 +31,6 @@ namespace Telemetri.NewForms
             UITools.Telemetry2021.forms.Add("TestForm", new TestForm());
             UITools.Telemetry2021.forms.Add("Cells", new Cells());
             UITools.Telemetry2021.lapCount = lapCntLabel;
-            UITools.Telemetry2021.activeChannelLabel = activeChannelLabel;
 
             FormManagement.openChildForm(UITools.Telemetry2021.forms["Anasayfa"], panelChildForm);
         }

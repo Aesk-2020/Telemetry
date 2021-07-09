@@ -38,7 +38,6 @@ namespace Telemetri.Variables
             public static List<Button> buttonList = new List<Button>();
             public static Dictionary<string, Form> forms = new Dictionary<string, Form>();
             public static Label lapCount;
-            public static TextBox activeChannelLabel;
         }
         public static class Anasayfa
         {
