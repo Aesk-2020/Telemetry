@@ -396,7 +396,7 @@
             this.activeChannelLabel.Name = "activeChannelLabel";
             this.activeChannelLabel.Size = new System.Drawing.Size(147, 40);
             this.activeChannelLabel.TabIndex = 149;
-            this.activeChannelLabel.Text = "RF";
+            this.activeChannelLabel.Text = "None";
             this.activeChannelLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // mqttPingLabel
