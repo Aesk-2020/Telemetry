@@ -77,10 +77,13 @@ namespace Telemetri.NewForms
             DataVCU.kp = float.Parse(kpBox.Text);
             DataVCU.ki = float.Parse(kiBox.Text);
             DataVCU.kd = float.Parse(kdBox.Text);
+            DataVCU.kr = float.Parse(krBox.Text);
+            ushort krBuffer = (ushort)(DataVCU.kr * 100);
             List<byte> newlist = new List<byte>();
             newlist.AddRange(BitConverter.GetBytes(DataVCU.kp));
             newlist.AddRange(BitConverter.GetBytes(DataVCU.ki));
             newlist.AddRange(BitConverter.GetBytes(DataVCU.kd));
+            newlist.AddRange(BitConverter.GetBytes(krBuffer));
             Anasayfa.serialRF.SendData(newlist, newlist.Count, (byte)ComproUI.MSG_ID.PID_TUNNING);
             comproUI.message = newlist.ToArray();
             comproUI.msg_size = (byte)newlist.Count;
@@ -106,6 +109,11 @@ namespace Telemetri.NewForms
             comproUII.CreateBuffer();
             //Anasayfa.mqttobj.client.Publish("interface_to_vehicle", comproUII.buffer);
             UITools.PIDForm.logWriter.WriteLine("Query sent");
+        }
+
+        private void macTrackBar4_ValueChanged(object sender, decimal value)
+        {
+            krBox.Text = ((float)macTrackBar4.Value / 100).ToString("0.00");
         }
     }
 }

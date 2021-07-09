@@ -17,6 +17,7 @@ namespace Telemetri.Variables
         public static float kp = 11;
         public static float ki = 11;
         public static float kd = 1;
+        public static float kr = 1;
 
         public static bool BMS_Wake_u1 => Convert.ToBoolean((drive_commands_u8 >> 0 & 0b00000001));
         public static bool MCU_Wake_u1 => Convert.ToBoolean((drive_commands_u8 >> 1 & 0b00000001));
