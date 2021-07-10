@@ -75,7 +75,7 @@ namespace Telemetri.Variables
             buffer.Insert(0, 0xAB);
             buffer.Insert(1, msgId);
             buffer.Insert(2, mehceAglamasiLength);
-            if (_serialPort.IsOpen)
+            if (_serialPort != null)
             {
                 _serialPort.Write(buffer.ToArray(), 0, length);
             }

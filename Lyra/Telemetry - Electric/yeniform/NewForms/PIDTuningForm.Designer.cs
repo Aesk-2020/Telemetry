@@ -38,14 +38,14 @@
             this.macTrackBar2 = new XComponent.SliderBar.MACTrackBar();
             this.macTrackBar3 = new XComponent.SliderBar.MACTrackBar();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.macTrackBar4 = new XComponent.SliderBar.MACTrackBar();
+            this.krBox = new System.Windows.Forms.TextBox();
             this.logBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.sendButton = new FontAwesome.Sharp.IconButton();
             this.queryButton = new FontAwesome.Sharp.IconButton();
-            this.krBox = new System.Windows.Forms.TextBox();
-            this.macTrackBar4 = new XComponent.SliderBar.MACTrackBar();
-            this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -240,6 +240,59 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(775, 208);
             this.tableLayoutPanel1.TabIndex = 21;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(4, 154);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(129, 53);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Kr";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // macTrackBar4
+            // 
+            this.macTrackBar4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.macTrackBar4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.macTrackBar4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.macTrackBar4.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.macTrackBar4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(125)))), ((int)(((byte)(123)))));
+            this.macTrackBar4.IndentHeight = 6;
+            this.macTrackBar4.Location = new System.Drawing.Point(277, 157);
+            this.macTrackBar4.Maximum = 500;
+            this.macTrackBar4.Minimum = 0;
+            this.macTrackBar4.Name = "macTrackBar4";
+            this.macTrackBar4.Size = new System.Drawing.Size(494, 48);
+            this.macTrackBar4.TabIndex = 22;
+            this.macTrackBar4.TickColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(146)))), ((int)(((byte)(148)))));
+            this.macTrackBar4.TickFrequency = 50;
+            this.macTrackBar4.TickHeight = 5;
+            this.macTrackBar4.TrackerColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(130)))), ((int)(((byte)(198)))));
+            this.macTrackBar4.TrackerSize = new System.Drawing.Size(16, 16);
+            this.macTrackBar4.TrackLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.macTrackBar4.TrackLineHeight = 3;
+            this.macTrackBar4.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.macTrackBar4.Value = 0;
+            this.macTrackBar4.ValueChanged += new XComponent.SliderBar.ValueChangedHandler(this.macTrackBar4_ValueChanged);
+            // 
+            // krBox
+            // 
+            this.krBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.krBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.krBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.krBox.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.krBox.ForeColor = System.Drawing.Color.White;
+            this.krBox.Location = new System.Drawing.Point(140, 157);
+            this.krBox.Multiline = true;
+            this.krBox.Name = "krBox";
+            this.krBox.Size = new System.Drawing.Size(130, 47);
+            this.krBox.TabIndex = 21;
+            this.krBox.Text = "1,27";
+            this.krBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // logBox
             // 
             this.logBox.AcceptsReturn = true;
@@ -328,59 +381,6 @@
             this.queryButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.queryButton.UseVisualStyleBackColor = true;
             this.queryButton.Click += new System.EventHandler(this.queryButton_Click);
-            // 
-            // krBox
-            // 
-            this.krBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.krBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.krBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.krBox.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.krBox.ForeColor = System.Drawing.Color.White;
-            this.krBox.Location = new System.Drawing.Point(140, 157);
-            this.krBox.Multiline = true;
-            this.krBox.Name = "krBox";
-            this.krBox.Size = new System.Drawing.Size(130, 47);
-            this.krBox.TabIndex = 21;
-            this.krBox.Text = "1,27";
-            this.krBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // macTrackBar4
-            // 
-            this.macTrackBar4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.macTrackBar4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.macTrackBar4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.macTrackBar4.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.macTrackBar4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(125)))), ((int)(((byte)(123)))));
-            this.macTrackBar4.IndentHeight = 6;
-            this.macTrackBar4.Location = new System.Drawing.Point(277, 157);
-            this.macTrackBar4.Maximum = 500;
-            this.macTrackBar4.Minimum = 0;
-            this.macTrackBar4.Name = "macTrackBar4";
-            this.macTrackBar4.Size = new System.Drawing.Size(494, 48);
-            this.macTrackBar4.TabIndex = 22;
-            this.macTrackBar4.TickColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(146)))), ((int)(((byte)(148)))));
-            this.macTrackBar4.TickFrequency = 50;
-            this.macTrackBar4.TickHeight = 5;
-            this.macTrackBar4.TrackerColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(130)))), ((int)(((byte)(198)))));
-            this.macTrackBar4.TrackerSize = new System.Drawing.Size(16, 16);
-            this.macTrackBar4.TrackLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
-            this.macTrackBar4.TrackLineHeight = 3;
-            this.macTrackBar4.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
-            this.macTrackBar4.Value = 0;
-            this.macTrackBar4.ValueChanged += new XComponent.SliderBar.ValueChangedHandler(this.macTrackBar4_ValueChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(4, 154);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 53);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "Kr";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PIDTuningForm
             // 
