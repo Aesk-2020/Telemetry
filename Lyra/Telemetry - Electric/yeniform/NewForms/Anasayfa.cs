@@ -80,7 +80,7 @@ namespace Telemetri.NewForms
             string[] ports = SerialPort.GetPortNames();
             portsListBox.Items.AddRange(ports);
             LogSystem.isFirst = true;
-
+            startLogBtn.Enabled = false;
             #region portWatcher
             var watcher = new ManagementEventWatcher();
             var watcher2 = new ManagementEventWatcher();
@@ -195,7 +195,6 @@ namespace Telemetri.NewForms
                 mqttConnectBtn.Enabled = false;
                 startLogBtn.Enabled = true;
                 resetBoardButton.Enabled = true;
-                portConnectBtn.Enabled = false;
                 AFront.AccessFront += UITools.ChangeUI;
             }
         }

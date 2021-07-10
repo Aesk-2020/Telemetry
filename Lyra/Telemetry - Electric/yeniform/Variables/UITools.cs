@@ -132,7 +132,7 @@ namespace Telemetri.Variables
             Anasayfa.actsetSpeedChart.Series[1].Points.Add(DataMCU.act_speed_s16);
             Anasayfa.actsetSpeedChart.ChartAreas[0].AxisX.Minimum = Anasayfa.actsetSpeedChart.Series[1].Points.Count - Convert.ToInt32(UITools.Anasayfa.errorsLabel.Text);
             Anasayfa.actsetSpeedChart.ChartAreas[0].AxisX.Maximum = Anasayfa.actsetSpeedChart.Series[1].Points.Count;
-            Anasayfa.driveStatusLabel.Text = DataVCU.freewheeling_u1 ? "FREEWHEELING" : (DataVCU.vcu_torque_output_u1 ? "TORQUE MODE" : "SPEED MODE");
+            Anasayfa.driveStatusLabel.Text = DataVCU.ignition_u1 ? (DataVCU.vcu_torque_output_u1 ? "TORQUE MODE" : "SPEED MODE") : "IGNITION OFF";
 
             BMSForm.consTextBox.Text = DataBMS.cons_u16.ToString() + " Wh";
             BMSForm.curTextBox.Text = DataBMS.cur_s16.ToString() + " A";

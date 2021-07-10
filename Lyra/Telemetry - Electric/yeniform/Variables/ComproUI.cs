@@ -366,13 +366,16 @@ namespace Telemetri.Variables
                         float kp;
                         float kd;
                         float ki;
+                        float kr;
                         kp = BitConverter.ToSingle(receiveBuffer, startIndex); startIndex += 4;
                         ki = BitConverter.ToSingle(receiveBuffer, startIndex); startIndex += 4;
                         kd = BitConverter.ToSingle(receiveBuffer, startIndex); startIndex += 4;
-                        MessageBox.Show("Kp: " + kp.ToString() + "\n" + "Ki: " + ki.ToString() + "\n" + "Kd: " + kd.ToString() + "\n");
+                        kr = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        MessageBox.Show("Kp: " + kp.ToString() + "\n" + "Ki: " + ki.ToString() + "\n" + "Kd: " + kd.ToString() + "\n" + "Kr:" + kr.ToString() + "\n");
                         DataVCU.kp = kp;
                         DataVCU.ki = ki;
                         DataVCU.kd = kd;
+                        DataVCU.kr = kr;
                         break;
                     }
                 default:
