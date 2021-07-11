@@ -136,7 +136,7 @@
             this.Controls.Add(this.popupBtn);
             this.Controls.Add(this.myChart);
             this.Name = "Graphics";
-            this.Text = "Graphics";
+            this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.myChart)).EndInit();
             this.ResumeLayout(false);
 
