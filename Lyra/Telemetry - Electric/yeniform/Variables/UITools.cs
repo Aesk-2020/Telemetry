@@ -130,10 +130,10 @@ namespace Telemetri.Variables
             Anasayfa.setVelocityLabel.Text = DataVCU.speed_set_rpm_s16.ToString() + " kmh"; //0.105183 rpm to kmh rate
             Anasayfa.socLabel.Text = "%" + DataBMS.soc_u16.ToString();
             Anasayfa.setTorqueBox.Text = DataVCU.torque_set_s16.ToString() + " N*m";
-            Anasayfa.actsetSpeedChart.Series[0].Points.Add(DataVCU.speed_set_rpm_s16);
-            Anasayfa.actsetSpeedChart.Series[1].Points.Add(DataMCU.act_speed_s16);
-            Anasayfa.actsetSpeedChart.ChartAreas[0].AxisX.Minimum = Anasayfa.actsetSpeedChart.Series[1].Points.Count - Convert.ToInt32(UITools.Anasayfa.errorsLabel.Text);
-            Anasayfa.actsetSpeedChart.ChartAreas[0].AxisX.Maximum = Anasayfa.actsetSpeedChart.Series[1].Points.Count;
+            //Anasayfa.actsetSpeedChart.Series[0].Points.Add(DataVCU.speed_set_rpm_s16);
+            //Anasayfa.actsetSpeedChart.Series[1].Points.Add(DataMCU.act_speed_s16);
+            //Anasayfa.actsetSpeedChart.ChartAreas[0].AxisX.Minimum = Anasayfa.actsetSpeedChart.Series[1].Points.Count - Convert.ToInt32(UITools.Anasayfa.errorsLabel.Text);
+            //Anasayfa.actsetSpeedChart.ChartAreas[0].AxisX.Maximum = Anasayfa.actsetSpeedChart.Series[1].Points.Count;
             Anasayfa.driveStatusLabel.Text = DataVCU.ignition_u1 ? (DataVCU.vcu_torque_output_u1 ? "TORQUE MODE" : "SPEED MODE") : "IGNITION OFF";
             Anasayfa.sdCardStaBox.BackColor = DataVCU.SD_result_u8 == 0 ? Color.LimeGreen : Color.Crimson;
             Anasayfa.tcuMinLabel.Text = DataVCU.TCU_minute_u8.ToString();

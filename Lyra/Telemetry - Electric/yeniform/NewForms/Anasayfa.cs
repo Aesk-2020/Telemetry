@@ -42,7 +42,7 @@ namespace Telemetri.NewForms
             UITools.Anasayfa.startTimeLabel = startTimeLabel;
             UITools.Anasayfa.setVelocityLabel = setVelocityLabel;
             UITools.Anasayfa.driveStatusLabel = driveStatusLabel;
-            UITools.Anasayfa.actsetSpeedChart = myChart;
+            //UITools.Anasayfa.actsetSpeedChart = myChart;
             UITools.Anasayfa.setTorqueBox = setTorqueBox;
             UITools.Anasayfa.tcuMinLabel = tcuMinLabel;
             UITools.Anasayfa.sdCardStaBox = sdCardStatBox;

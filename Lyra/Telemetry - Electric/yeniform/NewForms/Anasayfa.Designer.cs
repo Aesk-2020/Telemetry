@@ -29,16 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint7 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 5D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint8 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 15D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint9 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 10D);
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint10 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint11 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 10D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint12 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 11D);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.portsListBox = new System.Windows.Forms.ListBox();
@@ -78,20 +68,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.driveStatusLabel = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tcuMinLabel = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.errorsLabel = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.startTimeLabel = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.sdCardStatBox = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.mqttWorker = new System.ComponentModel.BackgroundWorker();
-            this.myChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.portConnectTip = new System.Windows.Forms.ToolTip(this.components);
-            this.label10 = new System.Windows.Forms.Label();
-            this.startTimeLabel = new System.Windows.Forms.TextBox();
-            this.sdCardStatBox = new System.Windows.Forms.PictureBox();
-            this.tcuMinLabel = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -107,10 +96,9 @@
             this.tableLayoutPanel14.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sdCardStatBox)).BeginInit();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.myChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sdCardStatBox)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -744,7 +732,7 @@
             this.tableLayoutPanel13.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel13.ColumnCount = 2;
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
             this.tableLayoutPanel13.Controls.Add(this.label11, 1, 0);
             this.tableLayoutPanel13.Controls.Add(this.tcuMinLabel, 0, 1);
             this.tableLayoutPanel13.Controls.Add(this.label1, 0, 0);
@@ -759,6 +747,34 @@
             this.tableLayoutPanel13.Size = new System.Drawing.Size(200, 94);
             this.tableLayoutPanel13.TabIndex = 137;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(107, 1);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(89, 49);
+            this.label11.TabIndex = 146;
+            this.label11.Text = "TCU Min";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tcuMinLabel
+            // 
+            this.tcuMinLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.tcuMinLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tcuMinLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tcuMinLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tcuMinLabel.ForeColor = System.Drawing.Color.White;
+            this.tcuMinLabel.Location = new System.Drawing.Point(107, 54);
+            this.tcuMinLabel.Multiline = true;
+            this.tcuMinLabel.Name = "tcuMinLabel";
+            this.tcuMinLabel.Size = new System.Drawing.Size(89, 36);
+            this.tcuMinLabel.TabIndex = 136;
+            this.tcuMinLabel.Text = "0";
+            this.tcuMinLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -767,7 +783,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(4, 1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 49);
+            this.label1.Size = new System.Drawing.Size(96, 49);
             this.label1.TabIndex = 131;
             this.label1.Text = "Graph Scale";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -782,7 +798,7 @@
             this.errorsLabel.Location = new System.Drawing.Point(4, 54);
             this.errorsLabel.Multiline = true;
             this.errorsLabel.Name = "errorsLabel";
-            this.errorsLabel.Size = new System.Drawing.Size(97, 36);
+            this.errorsLabel.Size = new System.Drawing.Size(96, 36);
             this.errorsLabel.TabIndex = 135;
             this.errorsLabel.Text = "50";
             this.errorsLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -792,7 +808,7 @@
             this.tableLayoutPanel7.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel7.ColumnCount = 2;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
             this.tableLayoutPanel7.Controls.Add(this.startTimeLabel, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.label10, 1, 0);
@@ -806,6 +822,22 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(276, 100);
             this.tableLayoutPanel7.TabIndex = 139;
             // 
+            // startTimeLabel
+            // 
+            this.startTimeLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.startTimeLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.startTimeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.startTimeLabel.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.startTimeLabel.ForeColor = System.Drawing.Color.White;
+            this.startTimeLabel.Location = new System.Drawing.Point(4, 46);
+            this.startTimeLabel.Multiline = true;
+            this.startTimeLabel.Name = "startTimeLabel";
+            this.startTimeLabel.ReadOnly = true;
+            this.startTimeLabel.Size = new System.Drawing.Size(191, 50);
+            this.startTimeLabel.TabIndex = 138;
+            this.startTimeLabel.Text = "NULL";
+            this.startTimeLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -814,10 +846,32 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(4, 1);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(192, 41);
+            this.label5.Size = new System.Drawing.Size(191, 41);
             this.label5.TabIndex = 135;
             this.label5.Text = "Start Time";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(202, 1);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(70, 41);
+            this.label10.TabIndex = 137;
+            this.label10.Text = "SD";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // sdCardStatBox
+            // 
+            this.sdCardStatBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sdCardStatBox.Location = new System.Drawing.Point(202, 46);
+            this.sdCardStatBox.Name = "sdCardStatBox";
+            this.sdCardStatBox.Size = new System.Drawing.Size(70, 50);
+            this.sdCardStatBox.TabIndex = 139;
+            this.sdCardStatBox.TabStop = false;
             // 
             // panel2
             // 
@@ -854,144 +908,12 @@
             this.mqttWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.mqttWorker_ProgressChanged);
             this.mqttWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.mqttWorker_RunWorkerCompleted);
             // 
-            // myChart
-            // 
-            this.myChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.myChart.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            chartArea2.AxisX.IsLabelAutoFit = false;
-            chartArea2.AxisX.LabelStyle.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            chartArea2.AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
-            chartArea2.AxisX.LineColor = System.Drawing.Color.White;
-            chartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisX.MajorGrid.LineWidth = 0;
-            chartArea2.AxisX.MajorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea2.AxisX.MinorGrid.LineColor = System.Drawing.Color.White;
-            chartArea2.AxisX.MinorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea2.AxisX.TitleForeColor = System.Drawing.Color.White;
-            chartArea2.AxisX2.LineColor = System.Drawing.Color.White;
-            chartArea2.AxisX2.TitleForeColor = System.Drawing.Color.White;
-            chartArea2.AxisY.IsLabelAutoFit = false;
-            chartArea2.AxisY.LabelStyle.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            chartArea2.AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
-            chartArea2.AxisY.LineColor = System.Drawing.Color.White;
-            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.DimGray;
-            chartArea2.AxisY.MajorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea2.AxisY.MinorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea2.AxisY2.LineColor = System.Drawing.Color.White;
-            chartArea2.AxisY2.TitleForeColor = System.Drawing.Color.White;
-            chartArea2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            chartArea2.BorderColor = System.Drawing.Color.White;
-            chartArea2.Name = "ChartArea1";
-            this.myChart.ChartAreas.Add(chartArea2);
-            this.myChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            legend2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            legend2.ForeColor = System.Drawing.Color.White;
-            legend2.HeaderSeparatorColor = System.Drawing.Color.White;
-            legend2.IsTextAutoFit = false;
-            legend2.ItemColumnSeparatorColor = System.Drawing.Color.White;
-            legend2.Name = "Legend1";
-            legend2.TitleForeColor = System.Drawing.Color.White;
-            legend2.TitleSeparatorColor = System.Drawing.Color.White;
-            this.myChart.Legends.Add(legend2);
-            this.myChart.Location = new System.Drawing.Point(0, 308);
-            this.myChart.Name = "myChart";
-            this.myChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            series3.LabelForeColor = System.Drawing.Color.White;
-            series3.Legend = "Legend1";
-            series3.Name = "Set Hız";
-            series3.Points.Add(dataPoint7);
-            series3.Points.Add(dataPoint8);
-            series3.Points.Add(dataPoint9);
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Legend = "Legend1";
-            series4.Name = "Act Hız";
-            series4.Points.Add(dataPoint10);
-            series4.Points.Add(dataPoint11);
-            series4.Points.Add(dataPoint12);
-            this.myChart.Series.Add(series3);
-            this.myChart.Series.Add(series4);
-            this.myChart.Size = new System.Drawing.Size(914, 313);
-            this.myChart.TabIndex = 145;
-            this.myChart.Text = "chart1";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(203, 1);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 41);
-            this.label10.TabIndex = 137;
-            this.label10.Text = "SD";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // startTimeLabel
-            // 
-            this.startTimeLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.startTimeLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.startTimeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.startTimeLabel.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.startTimeLabel.ForeColor = System.Drawing.Color.White;
-            this.startTimeLabel.Location = new System.Drawing.Point(4, 46);
-            this.startTimeLabel.Multiline = true;
-            this.startTimeLabel.Name = "startTimeLabel";
-            this.startTimeLabel.ReadOnly = true;
-            this.startTimeLabel.Size = new System.Drawing.Size(192, 50);
-            this.startTimeLabel.TabIndex = 138;
-            this.startTimeLabel.Text = "NULL";
-            this.startTimeLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // sdCardStatBox
-            // 
-            this.sdCardStatBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sdCardStatBox.Location = new System.Drawing.Point(203, 46);
-            this.sdCardStatBox.Name = "sdCardStatBox";
-            this.sdCardStatBox.Size = new System.Drawing.Size(69, 50);
-            this.sdCardStatBox.TabIndex = 139;
-            this.sdCardStatBox.TabStop = false;
-            // 
-            // tcuMinLabel
-            // 
-            this.tcuMinLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.tcuMinLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tcuMinLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcuMinLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tcuMinLabel.ForeColor = System.Drawing.Color.White;
-            this.tcuMinLabel.Location = new System.Drawing.Point(108, 54);
-            this.tcuMinLabel.Multiline = true;
-            this.tcuMinLabel.Name = "tcuMinLabel";
-            this.tcuMinLabel.Size = new System.Drawing.Size(88, 36);
-            this.tcuMinLabel.TabIndex = 136;
-            this.tcuMinLabel.Text = "0";
-            this.tcuMinLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(108, 1);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 49);
-            this.label11.TabIndex = 146;
-            this.label11.Text = "TCU Min";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Anasayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(914, 621);
-            this.Controls.Add(this.myChart);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "Anasayfa";
@@ -1021,10 +943,9 @@
             this.tableLayoutPanel13.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sdCardStatBox)).EndInit();
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.myChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sdCardStatBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1072,7 +993,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox socLabel;
         private System.ComponentModel.BackgroundWorker mqttWorker;
-        private System.Windows.Forms.DataVisualization.Charting.Chart myChart;
         private System.Windows.Forms.TextBox driveStatusLabel;
         private System.Windows.Forms.TextBox errorsLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
