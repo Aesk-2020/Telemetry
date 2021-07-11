@@ -169,6 +169,12 @@ namespace Telemetri.Variables
             //CAN Error
             DataVCU.can_error_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
 
+            //SD result
+            DataVCU.SD_result_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+
+            //TCU minute
+            DataVCU.TCU_minute_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+
             for (int i = 0; i < DataBMS.cells.Count; i++)
             {
 

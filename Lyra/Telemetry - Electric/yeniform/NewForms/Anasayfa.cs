@@ -44,6 +44,8 @@ namespace Telemetri.NewForms
             UITools.Anasayfa.driveStatusLabel = driveStatusLabel;
             UITools.Anasayfa.actsetSpeedChart = myChart;
             UITools.Anasayfa.setTorqueBox = setTorqueBox;
+            UITools.Anasayfa.tcuMinLabel = tcuMinLabel;
+            UITools.Anasayfa.sdCardStaBox = sdCardStatBox;
             comproUIII = new ComproUI(0x31, ComproUI.TELEMETRI, 24);
         }
 
@@ -217,6 +219,7 @@ namespace Telemetri.NewForms
             comproUIII.message = new byte[] { 0 };
             comproUIII.msg_size = 1;
             comproUIII.msg_index = 2;
+            comproUIII.source_msg_id = (byte)ComproUI.MSG_ID.RESET_TELEMETRY;
             comproUIII.CreateBuffer();
             mqttobj.client.Publish("interface_to_vehicle", comproUIII.buffer);
         }

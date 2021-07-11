@@ -57,9 +57,9 @@ namespace Telemetri.Variables
             PID_TUNNING = 20,
             PID_QUERY = 21,
             PID_QUERY_ANSWER = 22,
-            COMM_QUERY = 23,
+            RESET_TELEMETRY = 23,
             UI_PACK = 24,
-            RESET_TELEMETRY = 25,
+            COMM_QUERY = 25,
             MSG_ID_COUNT = 26,
         }
 

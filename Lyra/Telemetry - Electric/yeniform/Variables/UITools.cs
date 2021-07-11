@@ -50,9 +50,11 @@ namespace Telemetri.Variables
             public static TextBox actVelocityLabel;
             public static TextBox errorsLabel;
             public static TextBox setTorqueBox;
+            public static TextBox tcuMinLabel;
             public static TextBox driveStatusLabel;
             public static Stopwatch mqttStopwatch = new Stopwatch();
             public static Chart actsetSpeedChart;
+            public static PictureBox sdCardStaBox;
         }
         public static class BMSForm
         {
@@ -133,6 +135,8 @@ namespace Telemetri.Variables
             Anasayfa.actsetSpeedChart.ChartAreas[0].AxisX.Minimum = Anasayfa.actsetSpeedChart.Series[1].Points.Count - Convert.ToInt32(UITools.Anasayfa.errorsLabel.Text);
             Anasayfa.actsetSpeedChart.ChartAreas[0].AxisX.Maximum = Anasayfa.actsetSpeedChart.Series[1].Points.Count;
             Anasayfa.driveStatusLabel.Text = DataVCU.ignition_u1 ? (DataVCU.vcu_torque_output_u1 ? "TORQUE MODE" : "SPEED MODE") : "IGNITION OFF";
+            Anasayfa.sdCardStaBox.BackColor = DataVCU.SD_result_u8 == 0 ? Color.LimeGreen : Color.Crimson;
+            Anasayfa.tcuMinLabel.Text = DataVCU.TCU_minute_u8.ToString();
 
             BMSForm.consTextBox.Text = DataBMS.cons_u16.ToString() + " Wh";
             BMSForm.curTextBox.Text = DataBMS.cur_s16.ToString() + " A";
