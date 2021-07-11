@@ -120,40 +120,24 @@ namespace Telemetri.NewForms
             myChart.Series[0].Points.Add(DataBMS.cur_s16);
             myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
             myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
-            if(myChart.Series[0].Points.Count > 150)
-            {
-                myChart.Series[0].Points.RemoveAt(0);
-            }
         }
         private void changeBatVolt()
         {
             myChart.Series[0].Points.Add(DataBMS.volt_u16);
             myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
             myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
-            if (myChart.Series[0].Points.Count > 150)
-            {
-                myChart.Series[0].Points.RemoveAt(0);
-            }
         }
         private void changeBatCons()
         {
             myChart.Series[0].Points.Add(DataBMS.cur_s16);
             myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
             myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
-            if (myChart.Series[0].Points.Count > 150)
-            {
-                myChart.Series[0].Points.RemoveAt(0);
-            }
         }
         private void changeBatTemp()
         {
             myChart.Series[0].Points.Add(DataBMS.temperature_u8);
             myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
             myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
-            if (myChart.Series[0].Points.Count > 150)
-            {
-                myChart.Series[0].Points.RemoveAt(0);
-            }
         }
         private void changeVDVQ()
         {
@@ -161,34 +145,18 @@ namespace Telemetri.NewForms
             myChart.Series[1].Points.Add(DataMCU.vq_s16);
             myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
             myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
-            if (myChart.Series[0].Points.Count > 150)
-            {
-                myChart.Series[0].Points.RemoveAt(0);
-            }
-            if (myChart.Series[1].Points.Count > 150)
-            {
-                myChart.Series[1].Points.RemoveAt(0);
-            }
         }
         private void changeDcBusCur()
         {
             myChart.Series[0].Points.Add(DataMCU.i_dc_s16);
             myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
             myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
-            if (myChart.Series[0].Points.Count > 150)
-            {
-                myChart.Series[0].Points.RemoveAt(0);
-            }
         }
         private void changeDcBusVolt()
         {
             myChart.Series[0].Points.Add(DataMCU.v_dc_s16);
             myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
             myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
-            if (myChart.Series[0].Points.Count > 150)
-            {
-                myChart.Series[0].Points.RemoveAt(0);
-            }
         }
         private void changeSetIQActIQ()
         {
@@ -196,14 +164,6 @@ namespace Telemetri.NewForms
             myChart.Series[1].Points.Add(DataMCU.act_iq_current_s16);
             myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
             myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
-            if (myChart.Series[0].Points.Count > 150)
-            {
-                myChart.Series[0].Points.RemoveAt(0);
-            }
-            if (myChart.Series[1].Points.Count > 150)
-            {
-                myChart.Series[1].Points.RemoveAt(0);
-            }
         }
         private void changeSetIDActID()
         {
@@ -211,24 +171,12 @@ namespace Telemetri.NewForms
             myChart.Series[1].Points.Add(DataMCU.act_id_current_s16);
             myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
             myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
-            if (myChart.Series[0].Points.Count > 150)
-            {
-                myChart.Series[0].Points.RemoveAt(0);
-            }
-            if (myChart.Series[1].Points.Count > 150)
-            {
-                myChart.Series[1].Points.RemoveAt(0);
-            }
         }
         private void changeTorque()
         {
             myChart.Series[0].Points.Add(DataMCU.act_torque_s8);
             myChart.ChartAreas[0].AxisX.Minimum = myChart.Series[0].Points.Count - 100;
             myChart.ChartAreas[0].AxisX.Maximum = myChart.Series[0].Points.Count;
-            if (myChart.Series[0].Points.Count > 150)
-            {
-                myChart.Series[0].Points.RemoveAt(0);
-            }
         }
 
         private void clsButton_Click(object sender, EventArgs e)
