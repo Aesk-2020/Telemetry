@@ -249,6 +249,7 @@ namespace Telemetri.NewForms
                 serialRF.Connect(portsListBox.SelectedItem.ToString(), 9600);
                 portConnectBtn.Enabled = false;
                 portDisconnectBtn.Enabled = true;
+                AFront.AccessFront += UITools.ChangeUI;
             }
             else
             {
@@ -261,6 +262,7 @@ namespace Telemetri.NewForms
             serialRF.Disconnect();
             portConnectBtn.Enabled = true;
             portDisconnectBtn.Enabled = false;
+            AFront.AccessFront -= UITools.ChangeUI;
         }
     }
 }

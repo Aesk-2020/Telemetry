@@ -105,11 +105,13 @@ namespace Telemetri.Variables
             {
                 if(e.Retain == false)
                 {
-                    YedekUnpack(e.Message);
-                    UITools.TestForms.lyraco++;
-                    UITools.TestForms.cozuldulyraBox.Text = UITools.TestForms.lyraco.ToString();
+                    if(e.Message.Length != 0)
+                    {
+                        YedekUnpack(e.Message);
+                        UITools.TestForms.lyraco++;
+                        UITools.TestForms.cozuldulyraBox.Text = UITools.TestForms.lyraco.ToString();
+                    }
                 }
-                
             }
             else if(e.Topic == "vehicle_to_interface")
             {

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO.Ports;
 using System.Windows.Forms;
+using Telemetri.NewForms;
 
 namespace Telemetri.Variables
 {
@@ -95,6 +96,49 @@ namespace Telemetri.Variables
                 _serialPort.Write(buffer.ToArray(), 0, length);
             }
         }
+        private void NRFUnpack(byte[] receiveBuffer)
+        {
+            int startIndex = 3;
+            DataVCU.drive_commands_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataVCU.speed_set_rpm_s16 = (short)Math.Round(BitConverter.ToInt16(receiveBuffer, startIndex) * 0.105183); startIndex += 2;
+            DataVCU.torque_set_s16 = BitConverter.ToInt16(receiveBuffer, startIndex); startIndex += 2;
+            DataVCU.speed_limit_u16 = BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
+            DataVCU.torque_limit_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+
+            //MCU
+            DataMCU.act_id_current_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.act_iq_current_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.vd_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.vq_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.set_id_current_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.set_iq_current_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.set_torque_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.i_dc_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.v_dc_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.act_speed_s16 = (short)Math.Round(BitConverter.ToInt16(receiveBuffer, startIndex) * 0.105183 / 10); startIndex += 2;
+            DataMCU.temperature_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataMCU.error_status_u16 = BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
+            DataMCU.act_torque_s8 = (sbyte)receiveBuffer[startIndex++]; DataMCU.act_torque_s8 -= 100;
+
+            //BMS
+            DataBMS.volt_u16 = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataBMS.cur_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataBMS.cons_u16 = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 10; startIndex += 2;
+            DataBMS.soc_u16 = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataBMS.worst_cell_volt_u16 = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 10; startIndex += 2;
+            DataBMS.error_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataBMS.dc_bus_state_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataBMS.worst_cell_address_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataBMS.temperature_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+
+            //GPS
+            DataGPS.latitude_f32 = BitConverter.ToUInt32(receiveBuffer, startIndex) / MACROS.GPS_DIVIDER; startIndex += 4;
+            DataGPS.longtitude_f32 = BitConverter.ToUInt32(receiveBuffer, startIndex) / MACROS.GPS_DIVIDER; startIndex += 4;
+            DataGPS.speed_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataGPS.sattelite_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataGPS.efficiency_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+
+        }
 
         private void _serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
@@ -157,14 +201,16 @@ namespace Telemetri.Variables
                             if(crcIncoming == crcCalculated)
                             {
                                 BALONSAYACSIL++;
-                                UITools.Anasayfa.actVelocityLabel.Text = BALONSAYACSIL.ToString();
+                                NRFUnpack(_recieveData);
+                                AFront.ChangeUI();
+                                //UITools.Anasayfa.actVelocityLabel.Text = BALONSAYACSIL.ToString();
                                 //pack solved
                                 //convert the data
                             }
                             else
                             {
                                 BALONSAYACSIL2++;
-                                UITools.Anasayfa.setVelocityLabel.Text = BALONSAYACSIL2.ToString();
+                                //UITools.Anasayfa.setVelocityLabel.Text = BALONSAYACSIL2.ToString();
                             }
                             _dataCounter = 0;
                             _state = ReceiveDataStates.CatchHeader;
