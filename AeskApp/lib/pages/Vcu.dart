@@ -42,15 +42,15 @@ Widget Vcu(){
                         },
                       ),
                     ),
-                    myText("     Set Drive Command (VCU)", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                    myText("     Sürüş Modu (VCU)", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                     Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
                     Column(
                       children: <Widget>[
-                        myText(AeskData.vcu_command_freewheeling_u1 ? "      FREEWHEELING" : (AeskData.vcu_command_mode_u1 ? "     TORQUE MODE" : "     SPEED MODE"), scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                        myText(AeskData.vcu_command_ignition_u1 ? "      IGNITION OFF" : (AeskData.vcu_command_mode_u1 ? "     TORQUE MODE" : "     SPEED MODE"), scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                       ],
                     ),
                     SizedBox(height: 15,),
-                    myText("     Actual Drive Status (MCU)", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                    myText("     Sürüş Modu (MCU)", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                     Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
                     Column(
                       children: <Widget>[
@@ -58,7 +58,7 @@ Widget Vcu(){
                       ],
                     ),
                     SizedBox(height: 15,),
-                    myText("     VCU States", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                    myText("     VCU Durumu", scale.size.width/20.571428, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                     Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
                     Column(
                       children: <Widget>[
@@ -66,7 +66,6 @@ Widget Vcu(){
                         AeskConditionCheck(" MCU WAKE UP", AeskData.vcu_command_mcu_wake_u1, context),
                         AeskConditionCheck(" BRAKE", AeskData.vcu_command_brake_u1, context),
                         AeskDirectionCheck(" DIRECTION", AeskData.vcu_command_direction_u1, context),
-                        AeskConditionCheck(" DC BUS READY", AeskData.vcu_command_dcbus_u1, context),
                       ],
                     ),
                     SizedBox(height: 15,),

@@ -74,11 +74,11 @@ class AeskData extends ChangeNotifier{
 
   static bool vcu_command_bms_wake_u1 = false;
   static bool vcu_command_mcu_wake_u1 = false;
-  static bool vcu_command_freewheeling_u1 = false;
+  static bool vcu_command_ignition_u1 = false;
   static bool vcu_command_mode_u1 = false;
   static bool vcu_command_brake_u1 = false;
-  static bool vcu_command_dcbus_u1 = false;
   static bool vcu_command_direction_u1 = false;
+  static bool vcu_command_motorselect_u1 = false;
 
   static bool driver_overcur_ia_u1               = false;
   static bool driver_overcur_ib_u1               = false;
@@ -196,7 +196,7 @@ class AeskData extends ChangeNotifier{
     driver_vdc_s16 = message.getInt16(_startIndex, myEndian) / 100;
     _startIndex += 2;
 
-    driver_actspeed_s16 = message.getUint16(_startIndex,myEndian) / 10;
+    driver_actspeed_s16 = message.getInt16(_startIndex,myEndian) / 10;
     _startIndex += 2;
     driver_actspeed_s16 = (driver_actspeed_s16 * 0.105183).roundToDouble();
 
@@ -255,6 +255,8 @@ class AeskData extends ChangeNotifier{
 
     vcu_can_error_u8 = message.getUint8(_startIndex);
     _startIndex++;
+
+    _startIndex+=2;
 
     cellCount = MqttAesk.isLyra ? 28 : 16;
 
@@ -347,11 +349,11 @@ class AeskData extends ChangeNotifier{
 
     vcu_command_bms_wake_u1         = ((vcu_drive_command_u8 & 1) == 1) ? true : false;
     vcu_command_mcu_wake_u1         = (((vcu_drive_command_u8 >> 1) & 1) == 1) ? true : false;
-    vcu_command_freewheeling_u1     = (((vcu_drive_command_u8 >> 2) & 1) == 1) ? true : false;
+    vcu_command_ignition_u1         = (((vcu_drive_command_u8 >> 2) & 1) == 1) ? true : false;
     vcu_command_mode_u1             = (((vcu_drive_command_u8 >> 3) & 1) == 1) ? true : false;
     vcu_command_brake_u1            = (((vcu_drive_command_u8 >> 4) & 1) == 1) ? true : false;
-    vcu_command_dcbus_u1            = (((vcu_drive_command_u8 >> 5) & 1) == 1) ? true : false;
-    vcu_command_direction_u1        = (((vcu_drive_command_u8 >> 6) & 1) == 1) ? true : false;
+    vcu_command_direction_u1        = (((vcu_drive_command_u8 >> 5) & 1) == 1) ? true : false;
+    vcu_command_motorselect_u1      = (((vcu_drive_command_u8 >> 6) & 1) == 1) ? true : false;
 
 
     for(i=0;i<graphData_array.length-1;i++){
