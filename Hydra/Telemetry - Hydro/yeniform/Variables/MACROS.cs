@@ -20,6 +20,7 @@ namespace telemetry_hydro.Variables
         public const uint RFBufferLength = 80;
         public const byte RFBufferHeader = 0x31;
         public static Color AeskBlue = Color.FromArgb(47, 136, 202);
+        public static Color AeskDark = Color.FromArgb(48, 51, 58);
         public const int FLOAT_CONVERTER_1 = 10;
         public const int FLOAT_CONVERTER_2 = 100;
         public const int FLOAT_CONVERTER_3 = 1000;

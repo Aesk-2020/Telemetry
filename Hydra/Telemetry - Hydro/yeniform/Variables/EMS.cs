@@ -30,9 +30,9 @@ namespace telemetry_hydro.Variables
         public static bool fc_voltage_error_u1 => Convert.ToBoolean((error_u8 >> 4 & 0b00000001));
         public static bool out_voltage_error_u1 => Convert.ToBoolean((error_u8 >> 5 & 0b00000001));
 
-        public static string log_datas_ems => bat_cons_f32.ToString() + '$' + fc_cons_f32.ToString() + '$' + fc_lt_cons_f32.ToString() + '$' + out_cons_f32.ToString() + '$' + 
-                                              bat_cur_f32.ToString()  + '$' + fc_cur_f32.ToString()  + '$' + out_cur_f32.ToString()    + '$' + 
-                                              bat_volt_f32.ToString() + '$' + fc_volt_f32.ToString() + '$' + out_volt_f32.ToString()   + '$' + 
-                                              bat_soc_f32.ToString()  +'$'  + error_u8.ToString()    + '$' + penalty_s8.ToString()     + '$' + temperature_u8.ToString();
+        public static string log_datas_ems => bat_cons_f32.ToString() + '\t' + fc_cons_f32.ToString() + '\t' + fc_lt_cons_f32.ToString() + '\t' + out_cons_f32.ToString() + '\t' + 
+                                              bat_cur_f32.ToString()  + '\t' + fc_cur_f32.ToString()  + '\t' + out_cur_f32.ToString()    + '\t' + 
+                                              bat_volt_f32.ToString() + '\t' + fc_volt_f32.ToString() + '\t' + out_volt_f32.ToString()   + '\t' + 
+                                              bat_soc_f32.ToString()  +'\t'  + error_u8.ToString()    + '\t' + penalty_s8.ToString()     + '\t' + temperature_u8.ToString();
     }
 }

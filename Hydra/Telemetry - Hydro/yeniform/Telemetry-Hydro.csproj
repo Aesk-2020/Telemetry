@@ -82,9 +82,6 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="SlimDX, Version=4.0.13.43, Culture=neutral, PublicKeyToken=b1b0c32fd1ffe4f9, processorArchitecture=x86">
-      <HintPath>..\packages\SlimDX.4.0.13.44\lib\NET40\SlimDX.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -110,22 +107,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Variables\BmsUI.cs" />
+    <Compile Include="Variables\DataBMS.cs" />
+    <Compile Include="Variables\DataMCU.cs" />
+    <Compile Include="Variables\DataVCU.cs" />
     <Compile Include="Variables\EMS.cs" />
+    <Compile Include="Variables\DataGPS.cs" />
     <Compile Include="Variables\myDataGrid.cs" />
     <Compile Include="Variables\EncodePackMethods.cs" />
     <Compile Include="Variables\GMAPController.cs" />
-    <Compile Include="Variables\GpsTracker.cs" />
-    <Compile Include="graph_form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="graph_form.Designer.cs">
-      <DependentUpon>graph_form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Variables\Logs.cs" />
     <Compile Include="Variables\MACROS.cs" />
     <Compile Include="Variables\MQTT.cs" />
     <Compile Include="Variables\SectorAndTourDatas.cs" />
-    <Compile Include="Variables\SerialPortCOMRF.cs" />
     <Compile Include="Telemetry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,16 +132,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Variables\BMS.cs" />
-    <Compile Include="Variables\Driver.cs" />
     <Compile Include="Variables\ThreadMethods.cs" />
-    <Compile Include="Variables\Timers.cs" />
-    <Compile Include="Variables\VCU.cs" />
+    <Compile Include="Variables\TimeOperations.cs" />
     <EmbeddedResource Include="BMS_form.resx">
       <DependentUpon>BMS_form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="graph_form.resx">
-      <DependentUpon>graph_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telemetry.resx">
       <DependentUpon>Telemetry.cs</DependentUpon>

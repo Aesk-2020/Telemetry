@@ -2,10 +2,12 @@
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
 using System.Windows.Forms;
+using Telemetri.Variables;
+
 namespace telemetry_hydro.Variables
 {
     public delegate void LogDelegate();
-    public class MQTT : SerialPortCOMRF
+    public class MQTT
     {
         public event LogDelegate LogEvent;
         public int mqtt_total_counter = 0;
@@ -20,6 +22,7 @@ namespace telemetry_hydro.Variables
         string _password;
         string _topic;
         private MqttClient _client;
+        bool isFirst = true;
         public MQTT(string username, string password, string topic)
         {
 
@@ -48,7 +51,7 @@ namespace telemetry_hydro.Variables
             //SERVER BIZI KABUL ETTI MI
             try
             {
-                _client.Subscribe(new string[] { _topic }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
+                _client.Subscribe(new string[] { _topic, "vehicle_to_interface_2" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
             }
 
             catch (Exception ex)
@@ -63,20 +66,27 @@ namespace telemetry_hydro.Variables
 
         void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
-            mqtt_counter_old = MQTT_counter_int32;
-            if (mqtt_total_counter == 0)
+            if(e.Topic == "HYDRADATA")
             {
-                old_time = DateTime.Now;
-            }
+                mqtt_counter_old = MQTT_counter_int32;
+                if (mqtt_total_counter == 0)
+                {
+                    old_time = DateTime.Now;
+                }
 
-            mqtt_total_counter++;
-            DateTime current_time = DateTime.Now;
-            totalTime += (current_time - old_time).TotalMilliseconds;
-            dataConvertMQTT(e.Message);
-            error_counter += find_error(mqtt_counter_old, MQTT_counter_int32);
-            MQTT_Efficiency = 1 - (Convert.ToDouble(error_counter) / Convert.ToDouble(mqtt_total_counter));
-            mqtt_refresh_time = (double)totalTime / mqtt_total_counter;
-            old_time = current_time;
+                mqtt_total_counter++;
+                DateTime current_time = DateTime.Now;
+                totalTime += (current_time - old_time).TotalMilliseconds;
+                dataConvertMQTT(e.Message);
+                error_counter += find_error(mqtt_counter_old, MQTT_counter_int32);
+                MQTT_Efficiency = 1 - (Convert.ToDouble(error_counter) / Convert.ToDouble(mqtt_total_counter));
+                mqtt_refresh_time = (double)totalTime / mqtt_total_counter;
+                old_time = current_time;
+            }
+            else if(e.Topic == "vehicle_to_interface_2")
+            {
+                Random rnd = new Random();
+            }
         }
 
         public void disConnectMQTT()
@@ -104,63 +114,73 @@ namespace telemetry_hydro.Variables
         void dataConvertMQTT(byte[] receiveBuffer)
         {
             int startIndex = 0;
+            DataVCU.drive_commands_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataVCU.speed_set_rpm_s16 = (short)Math.Round(BitConverter.ToInt16(receiveBuffer, startIndex) * 0.105183); startIndex += 2; //0.105183 rpm to kmh rate
+            DataVCU.torque_set_s16 = BitConverter.ToInt16(receiveBuffer, startIndex); startIndex += 2;
+            DataVCU.speed_limit_u16 = BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
+            DataVCU.torque_limit_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
 
-            VCU.wake_up_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
-            VCU.set_velocity_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
+            //MCU
 
-            Driver.phase_a_current_f32 = (float)EncodePackMethods.DataConverterS16(receiveBuffer, ref startIndex) / MACROS.FLOAT_CONVERTER_2;
-            Driver.phase_b_current_f32 = (float)EncodePackMethods.DataConverterS16(receiveBuffer, ref startIndex) / MACROS.FLOAT_CONVERTER_2;
-            Driver.dc_bus_current_f32 = (float)EncodePackMethods.DataConverterS16(receiveBuffer, ref startIndex) / MACROS.FLOAT_CONVERTER_2;
-            Driver.dc_bus_voltage_f32 = (float)EncodePackMethods.DataConverterU16(receiveBuffer, ref startIndex) / MACROS.FLOAT_CONVERTER_1;
-            Driver.id_f32 = (float)EncodePackMethods.DataConverterS16(receiveBuffer, ref startIndex) / MACROS.FLOAT_CONVERTER_2;
-            Driver.iq_f32 = (float)EncodePackMethods.DataConverterS16(receiveBuffer, ref startIndex) / MACROS.FLOAT_CONVERTER_2;
-            Driver.phase_a_rms_f32 = (float)EncodePackMethods.DataConverterS16(receiveBuffer, ref startIndex) / MACROS.FLOAT_CONVERTER_2;
-            Driver.torque_f32 = (float)EncodePackMethods.DataConverterS16(receiveBuffer, ref startIndex) / MACROS.FLOAT_CONVERTER_2;
-            Driver.drive_status_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
-            Driver.driver_error_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
-            Driver.odometer_u32 = EncodePackMethods.DataConverterU32(receiveBuffer, ref startIndex);
-            Driver.motor_temperature_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
-            Driver.actual_velocity_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
+            DataMCU.act_id_current_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.act_iq_current_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.vd_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.vq_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.set_id_current_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.set_iq_current_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.set_torque_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.i_dc_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.v_dc_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataMCU.act_speed_s16 = (short)Math.Round(BitConverter.ToInt16(receiveBuffer, startIndex) * 0.105183 / 10); startIndex += 2;
+            DataMCU.temperature_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataMCU.error_status_u16 = BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
+            DataMCU.act_torque_s8 = (sbyte)receiveBuffer[startIndex++]; DataMCU.act_torque_s8 -= 100;
 
-            BMS.bat_volt_f32 = (float)EncodePackMethods.DataConverterU16(receiveBuffer, ref startIndex) / MACROS.FLOAT_CONVERTER_2;
-            BMS.bat_current_f32 = (float)EncodePackMethods.DataConverterS16(receiveBuffer, ref startIndex) / MACROS.FLOAT_CONVERTER_2;
-            BMS.bat_cons_f32 = (float)EncodePackMethods.DataConverterU16(receiveBuffer, ref startIndex) / MACROS.FLOAT_CONVERTER_1;
-            BMS.soc_f32 = (float)EncodePackMethods.DataConverterU16(receiveBuffer, ref startIndex) / MACROS.FLOAT_CONVERTER_2;
-            BMS.bms_error_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
-            BMS.dc_bus_state_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
-            BMS.worst_cell_voltage_f32 = (float)EncodePackMethods.DataConverterU16(receiveBuffer, ref startIndex) / MACROS.FLOAT_CONVERTER_1;
-            BMS.worst_cell_address_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
-            BMS.temp_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
-            if (!MACROS.mouse_mod)
+            //BMS
+            DataBMS.volt_u16 = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataBMS.cur_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataBMS.cons_u16 = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 10; startIndex += 2;
+            DataBMS.soc_u16 = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+            DataBMS.worst_cell_volt_u16 = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 10; startIndex += 2;
+            DataBMS.error_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataBMS.dc_bus_state_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataBMS.worst_cell_address_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataBMS.temperature_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+
+            //GPS
+            DataGPS.gps_latitude_f64 = BitConverter.ToUInt32(receiveBuffer, startIndex) / MACROS.GPS_DIVIDER; startIndex += 4;
+            DataGPS.gps_longtitude_f64 = BitConverter.ToUInt32(receiveBuffer, startIndex) / MACROS.GPS_DIVIDER; startIndex += 4;
+            DataGPS.gps_velocity_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataGPS.gps_sattelite_number_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataGPS.gps_efficiency_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            if(isFirst == true)
             {
-                GpsTracker.gps_latitude_f64 = (double)EncodePackMethods.DataConverterU32(receiveBuffer, ref startIndex) / MACROS.GPS_DIVIDER;
-                GpsTracker.gps_longtitude_f64 = (double)EncodePackMethods.DataConverterU32(receiveBuffer, ref startIndex) / MACROS.GPS_DIVIDER;
-                GpsTracker.gps_velocity_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
-                GpsTracker.gps_sattelite_number_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
-                GpsTracker.gps_efficiency_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
+                DataGPS.point1 = new GMap.NET.PointLatLng(DataGPS.gps_latitude_f64, DataGPS.gps_longtitude_f64);
+                isFirst = false;
             }
-
             else
             {
-                startIndex += 11;
+                DataGPS.point2 = DataGPS.point1;
+                DataGPS.point2 = new GMap.NET.PointLatLng(DataGPS.gps_latitude_f64, DataGPS.gps_longtitude_f64);
+                long distance = DataGPS.CalculateDistance(DataGPS.point1, DataGPS.point2);
+                DataGPS.odometer += distance;
+                DataGPS.LapControl(DataGPS.lapPoint1, DataGPS.lapPoint2, DataGPS.lapPoint3, new GMap.NET.PointLatLng(DataGPS.gps_latitude_f64, DataGPS.gps_longtitude_f64));
             }
 
-            BMS.bms_cells[0] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex) + BMS.worst_cell_voltage_f32;
-            BMS.bms_cells[1] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex) + BMS.worst_cell_voltage_f32;
-            BMS.bms_cells[2] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex) + BMS.worst_cell_voltage_f32;
-            BMS.bms_cells[3] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex) + BMS.worst_cell_voltage_f32;
-            BMS.bms_cells[4] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex) + BMS.worst_cell_voltage_f32;
-            BMS.bms_cells[5] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex) + BMS.worst_cell_voltage_f32;
-            BMS.bms_cells[6] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex) + BMS.worst_cell_voltage_f32;
-            BMS.bms_cells[7] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex) + BMS.worst_cell_voltage_f32;
-            BMS.bms_cells[8] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex) + BMS.worst_cell_voltage_f32;
-            BMS.bms_cells[9] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex) + BMS.worst_cell_voltage_f32;
-            BMS.bms_cells[10] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex) + BMS.worst_cell_voltage_f32;
-            BMS.bms_cells[11] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex) + BMS.worst_cell_voltage_f32;
-            BMS.bms_cells[12] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex) + BMS.worst_cell_voltage_f32;
-            BMS.bms_cells[13] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex) + BMS.worst_cell_voltage_f32;
-            BMS.bms_cells[14] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex) + BMS.worst_cell_voltage_f32;
-            BMS.bms_cells[15] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex) + BMS.worst_cell_voltage_f32;
+            //CAN Error
+            DataVCU.can_error_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+
+            //SD result
+            DataVCU.SD_result_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+
+            //TCU minute
+            DataVCU.TCU_minute_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+
+            for (int i = 0; i < DataBMS.cells.Count; i++)
+            {
+
+                DataBMS.cells[i].voltage_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            }
 
             EMS.bat_cons_f32 = (float)EncodePackMethods.DataConverterS16(receiveBuffer, ref startIndex)/MACROS.FLOAT_CONVERTER_1;
             EMS.fc_cons_f32 = (float)EncodePackMethods.DataConverterS16(receiveBuffer, ref startIndex) / MACROS.FLOAT_CONVERTER_1;
@@ -179,15 +199,28 @@ namespace telemetry_hydro.Variables
             EMS.bat_soc_f32 = (float)EncodePackMethods.DataConverterU16(receiveBuffer, ref startIndex) / MACROS.FLOAT_CONVERTER_3;
             EMS.temperature_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
             EMS.error_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
-            VCU.can_error_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
-            MQTT_counter_int32 = EncodePackMethods.DataConverterS32(receiveBuffer, ref startIndex);
-            BMS.bms_temp[0] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
-            BMS.bms_temp[1] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
-            BMS.bms_temp[2] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
-            BMS.bms_temp[3] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
-            BMS.bms_temp[4] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
-            BMS.bms_temp[5] = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
-            BMS.bms_temp[6] = receiveBuffer[startIndex];
+            int counterr = 0;
+            for (int i = 0; i < DataBMS.cells.Count / 4; i++)
+            {
+                byte temperatureBuffer = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                for (int j = 0; j < 4; j++)
+                {
+                    DataBMS.cells[counterr++].temperature_u8 = temperatureBuffer;
+                }
+            }
+            // 0 1 2 3
+            // 4 5 6 7
+            // 8 9 10 11
+            // 12 13 14 15
+            // 14 15 16 17
+            // 18 19 20 21
+            // 21 22 23 24
+            // 25 26 27 28
+
+            /*for (int i = 0; i < DataBMS.cells.Count; i++)
+            {
+                DataBMS.cells[0].soc_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            }*/
             LogEvent();
         }
     }

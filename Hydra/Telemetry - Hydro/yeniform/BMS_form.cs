@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telemetri.Variables;
 using telemetry_hydro.Variables;
 namespace telemetry_hydro
 {
@@ -206,6 +207,7 @@ namespace telemetry_hydro
         }
         private void DisplayVoltage()
         {
+            /*
             for (int i = 0; i < 16; i++)
             {
                 if (BMS.bms_cells[i] >= 4000)
@@ -252,10 +254,11 @@ namespace telemetry_hydro
             charge_state.BackColor = BMS.charging_u1 ? MACROS.AeskBlue : Color.Red;
             max_cell_temp.Text = BMS.temp_u8.ToString();
             SoC.Text = BMS.soc_f32.ToString();
-
+            */
         }
         private void DisplayTemprature()
         {
+            /*
             cell1_temp.Text = BMS.bms_temp[0].ToString();
             cell2_temp.Text = BMS.bms_temp[0].ToString();
             cell3_temp.Text = BMS.bms_temp[1].ToString();
@@ -272,9 +275,8 @@ namespace telemetry_hydro
             cell14_temp.Text = BMS.bms_temp[6].ToString();
             cell15_temp.Text = BMS.bms_temp[6].ToString();
             cell16_temp.Text = BMS.bms_temp[6].ToString();
-
-
-        }
+            */
+                    }
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {

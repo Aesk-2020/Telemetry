@@ -16,6 +16,7 @@ class MqttAesk extends ChangeNotifier {
   static String clientIdentifier =
   DateTime.now().toString(); //cihaz isimlerine göre atama ya
   static bool isLyra;
+  static String myTopic;
 
   mqtt.MqttClient client;
   mqtt.MqttConnectionState connectionState;
@@ -94,6 +95,7 @@ class MqttAesk extends ChangeNotifier {
 
     final mqtt.MqttPublishMessage recMess =
     event[0].payload as mqtt.MqttPublishMessage;
+    myTopic = event[0].topic;
     var message = recMess.payload.message.buffer.asByteData(0);
     AeskData(message, Endian.little);
     notifyListeners();

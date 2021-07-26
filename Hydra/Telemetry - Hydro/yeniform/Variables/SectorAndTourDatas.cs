@@ -4,6 +4,7 @@ namespace telemetry_hydro.Variables
 {
     public struct SectorAndTourDatas
     {
+        /*
         public static Stopwatch sector1_sure = new Stopwatch();
         public static Stopwatch sector2_sure = new Stopwatch();
         public static Stopwatch sector3_sure = new Stopwatch();
@@ -62,7 +63,8 @@ namespace telemetry_hydro.Variables
         public static object[] sector4Datas => new object[9] {Timers.currentTour, sector_name, SectorAndTourDatas.sector4_sure.Elapsed.ToString(MACROS.TimeStringFormat),
                                            SectorAndTourDatas.gidilen_yol_vcu_sector_4_u32, SectorAndTourDatas.gidilen_yol_gps_sector_4_u32,
                                            SectorAndTourDatas.sector_4_ortalama_hiz_vcu, SectorAndTourDatas.sector_4_ortalama_hiz_gps, consumption_out_sector_4_f32, consumption_sector_4_f32};
-    }
+    */
+     }
 };
             
             
