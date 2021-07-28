@@ -8,11 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-
+using LiveCharts.Defaults;
 namespace Telemetri.Variables
 {
     public static class UITools
     {
+        public static LiveCharts.IChartValues chartValues;
         public static class TestForms
         {
             public static TextBox setTorqueBox;
@@ -39,6 +40,7 @@ namespace Telemetri.Variables
             public static Dictionary<string, Form> forms = new Dictionary<string, Form>();
             public static Label lapCount;
             public static TextBox activeChannelLabel;
+            public static Timer graphTimer;
         }
         public static class Anasayfa
         {
@@ -55,6 +57,11 @@ namespace Telemetri.Variables
             public static Stopwatch mqttStopwatch = new Stopwatch();
             public static Chart actsetSpeedChart;
             public static PictureBox sdCardStaBox;
+            public static FontAwesome.Sharp.IconButton mqttConnectBtn;
+            public static FontAwesome.Sharp.IconButton mqttDisconnectBtn;
+            public static FontAwesome.Sharp.IconButton startLogBtn;
+            public static FontAwesome.Sharp.IconButton resetBoardBtn;
+            public static FontAwesome.Sharp.IconButton portConnectBtn;
         }
         public static class BMSForm
         {
@@ -187,10 +194,7 @@ namespace Telemetri.Variables
             DriverForm.underspeedBox.BackColor = DataMCU.under_speed ? Color.Crimson : MACROS.UInewBack;
             DriverForm.pwmEnabledBox.BackColor = DataMCU.PWM_enabled ? Color.LimeGreen : MACROS.UInewBack;
 
-            foreach (var item in NewForms.Graphics.graphicsList)
-            {
-                item.changeGraph();
-            }
+           
 
             /*switch ((DataBMS.DC_BUS_STATE)DataBMS.dc_bus_state_u8)
             {
@@ -238,6 +242,11 @@ namespace Telemetri.Variables
                 CellsForm.cellsTempBoxList[i].Text = DataBMS.cells[i].temperature_u8.ToString();
             }
             DataBMS.cells.Clear();
+
+            foreach (var item in NewForms.NewGraphics.graphicsList)
+            {
+                item.collectGraphBuf();
+            }
         }
     }
 }

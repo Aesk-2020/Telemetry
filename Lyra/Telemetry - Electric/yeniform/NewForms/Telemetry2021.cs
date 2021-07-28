@@ -32,6 +32,7 @@ namespace Telemetri.NewForms
             UITools.Telemetry2021.forms.Add("Cells", new Cells());
             UITools.Telemetry2021.lapCount = lapCntLabel;
             UITools.Telemetry2021.activeChannelLabel = activeChannelLabel;
+            UITools.Telemetry2021.graphTimer = graphTimer;
 
             FormManagement.openChildForm(UITools.Telemetry2021.forms["Anasayfa"], panelChildForm);
         }
@@ -211,6 +212,14 @@ namespace Telemetri.NewForms
         private void pidTuningBtn_Click_1(object sender, EventArgs e)
         {
             FormManagement.openChildForm(UITools.Telemetry2021.forms["PIDTuningForm"], panelChildForm);
+        }
+
+        private void graphTimer_Tick(object sender, EventArgs e)
+        {
+            foreach (var item in NewForms.NewGraphics.graphicsList)
+            {
+                item.changeGraph();
+            }
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Telemetri.NewForms
 {
     public partial class Driver_Form : Form
     {
-        Graphics.graphs graphType = new Graphics.graphs();
+        NewGraphics.graphs graphType = new NewGraphics.graphs();
         public static Form oldForm = null;
         public Driver_Form()
         {
@@ -124,110 +124,195 @@ namespace Telemetri.NewForms
 
         private void dcBusVoltGraphBtn_Click(object sender, EventArgs e)
         {
-            graphType = Graphics.graphs.dcBusVolt;
-            Graphics.graphicsList.Add(new Graphics(graphType));
-            if (Graphics.oldGraph != null)
+            //graphType = Graphics.graphs.dcBusVolt;
+            //Graphics.graphicsList.Add(new Graphics(graphType));
+            //if (Graphics.oldGraph != null)
+            //{
+            //    Graphics.oldGraph.Close();
+            //    Graphics.graphicsList.Remove(Graphics.graphicsList.Where(i => i.graphType == Graphics.oldGraph.graphType).ToList()[0]);
+            //}
+            //Graphics.oldGraph = Graphics.graphicsList.Last();
+            //Graphics.oldGraph.TopLevel = false;
+            //Graphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
+            //Graphics.oldGraph.Dock = DockStyle.Fill;
+            //Graphics.oldGraph.AutoScroll = true;
+            //graphPanel.Controls.Add(Graphics.oldGraph);
+            //Graphics.oldGraph.Show();
+
+            graphType = NewGraphics.graphs.dcBusVolt;
+            NewGraphics.graphicsList.Add(new NewGraphics(graphType));
+            if (NewGraphics.oldGraph != null)
             {
-                Graphics.oldGraph.Close();
-                Graphics.graphicsList.Remove(Graphics.graphicsList.Where(i => i.graphType == Graphics.oldGraph.graphType).ToList()[0]);
+                NewGraphics.oldGraph.Close();
+                NewGraphics.graphicsList.Remove(NewGraphics.graphicsList.Where(i => i.graphType == NewGraphics.oldGraph.graphType).ToList()[0]);
             }
-            Graphics.oldGraph = Graphics.graphicsList.Last();
-            Graphics.oldGraph.TopLevel = false;
-            Graphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
-            Graphics.oldGraph.Dock = DockStyle.Fill;
-            Graphics.oldGraph.AutoScroll = true;
-            graphPanel.Controls.Add(Graphics.oldGraph);
-            Graphics.oldGraph.Show();
+            NewGraphics.oldGraph = NewGraphics.graphicsList.Last();
+            NewGraphics.oldGraph.TopLevel = false;
+            NewGraphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
+            NewGraphics.oldGraph.Dock = DockStyle.Fill;
+            NewGraphics.oldGraph.AutoScroll = true;
+            graphPanel.Controls.Add(NewGraphics.oldGraph);
+            NewGraphics.oldGraph.Show();
         }
 
         private void dcBusCurGraphBtn_Click(object sender, EventArgs e)
         {
-            graphType = Graphics.graphs.dcBusCur;
-            Graphics.graphicsList.Add(new Graphics(graphType));
-            if (Graphics.oldGraph != null)
+            //graphType = Graphics.graphs.dcBusCur;
+            //Graphics.graphicsList.Add(new Graphics(graphType));
+            //if (Graphics.oldGraph != null)
+            //{
+            //    Graphics.oldGraph.Close();
+            //    Graphics.graphicsList.Remove(Graphics.graphicsList.Where(i => i.graphType == Graphics.oldGraph.graphType).ToList()[0]);
+            //}
+            //Graphics.oldGraph = Graphics.graphicsList.Last();
+            //Graphics.oldGraph.TopLevel = false;
+            //Graphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
+            //Graphics.oldGraph.Dock = DockStyle.Fill;
+            //Graphics.oldGraph.AutoScroll = true;
+            //graphPanel.Controls.Add(Graphics.oldGraph);
+            //Graphics.oldGraph.Show();
+            graphType = NewGraphics.graphs.dcBusCur;
+            NewGraphics.graphicsList.Add(new NewGraphics(graphType));
+            if (NewGraphics.oldGraph != null)
             {
-                Graphics.oldGraph.Close();
-                Graphics.graphicsList.Remove(Graphics.graphicsList.Where(i => i.graphType == Graphics.oldGraph.graphType).ToList()[0]);
+                NewGraphics.oldGraph.Close();
+                NewGraphics.graphicsList.Remove(NewGraphics.graphicsList.Where(i => i.graphType == NewGraphics.oldGraph.graphType).ToList()[0]);
             }
-            Graphics.oldGraph = Graphics.graphicsList.Last();
-            Graphics.oldGraph.TopLevel = false;
-            Graphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
-            Graphics.oldGraph.Dock = DockStyle.Fill;
-            Graphics.oldGraph.AutoScroll = true;
-            graphPanel.Controls.Add(Graphics.oldGraph);
-            Graphics.oldGraph.Show();
+            NewGraphics.oldGraph = NewGraphics.graphicsList.Last();
+            NewGraphics.oldGraph.TopLevel = false;
+            NewGraphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
+            NewGraphics.oldGraph.Dock = DockStyle.Fill;
+            NewGraphics.oldGraph.AutoScroll = true;
+            graphPanel.Controls.Add(NewGraphics.oldGraph);
+            NewGraphics.oldGraph.Show();
         }
 
         private void idGraphBtn_Click(object sender, EventArgs e)
         {
-            graphType = Graphics.graphs.setIdActId;
-            Graphics.graphicsList.Add(new Graphics(graphType));
-            if (Graphics.oldGraph != null)
+            //graphType = Graphics.graphs.setIdActId;
+            //Graphics.graphicsList.Add(new Graphics(graphType));
+            //if (Graphics.oldGraph != null)
+            //{
+            //    Graphics.oldGraph.Close();
+            //    Graphics.graphicsList.Remove(Graphics.graphicsList.Where(i => i.graphType == Graphics.oldGraph.graphType).ToList()[0]);
+            //}
+            //Graphics.oldGraph = Graphics.graphicsList.Last();
+            //Graphics.oldGraph.TopLevel = false;
+            //Graphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
+            //Graphics.oldGraph.Dock = DockStyle.Fill;
+            //Graphics.oldGraph.AutoScroll = true;
+            //graphPanel.Controls.Add(Graphics.oldGraph);
+            //Graphics.oldGraph.Show();
+            graphType = NewGraphics.graphs.setIdActId;
+            NewGraphics.graphicsList.Add(new NewGraphics(graphType));
+            if (NewGraphics.oldGraph != null)
             {
-                Graphics.oldGraph.Close();
-                Graphics.graphicsList.Remove(Graphics.graphicsList.Where(i => i.graphType == Graphics.oldGraph.graphType).ToList()[0]);
+                NewGraphics.oldGraph.Close();
+                NewGraphics.graphicsList.Remove(NewGraphics.graphicsList.Where(i => i.graphType == NewGraphics.oldGraph.graphType).ToList()[0]);
             }
-            Graphics.oldGraph = Graphics.graphicsList.Last();
-            Graphics.oldGraph.TopLevel = false;
-            Graphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
-            Graphics.oldGraph.Dock = DockStyle.Fill;
-            Graphics.oldGraph.AutoScroll = true;
-            graphPanel.Controls.Add(Graphics.oldGraph);
-            Graphics.oldGraph.Show();
+            NewGraphics.oldGraph = NewGraphics.graphicsList.Last();
+            NewGraphics.oldGraph.TopLevel = false;
+            NewGraphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
+            NewGraphics.oldGraph.Dock = DockStyle.Fill;
+            NewGraphics.oldGraph.AutoScroll = true;
+            graphPanel.Controls.Add(NewGraphics.oldGraph);
+            NewGraphics.oldGraph.Show();
         }
 
         private void iqGraphBtn_Click(object sender, EventArgs e)
         {
-            graphType = Graphics.graphs.iqActIq;
-            Graphics.graphicsList.Add(new Graphics(graphType));
-            if (Graphics.oldGraph != null)
+            //graphType = Graphics.graphs.iqActIq;
+            //Graphics.graphicsList.Add(new Graphics(graphType));
+            //if (Graphics.oldGraph != null)
+            //{
+            //    Graphics.oldGraph.Close();
+            //    Graphics.graphicsList.Remove(Graphics.graphicsList.Where(i => i.graphType == Graphics.oldGraph.graphType).ToList()[0]);
+            //}
+            //Graphics.oldGraph = Graphics.graphicsList.Last();
+            //Graphics.oldGraph.TopLevel = false;
+            //Graphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
+            //Graphics.oldGraph.Dock = DockStyle.Fill;
+            //Graphics.oldGraph.AutoScroll = true;
+            //graphPanel.Controls.Add(Graphics.oldGraph);
+            //Graphics.oldGraph.Show();
+            graphType = NewGraphics.graphs.iqActIq;
+            NewGraphics.graphicsList.Add(new NewGraphics(graphType));
+            if (NewGraphics.oldGraph != null)
             {
-                Graphics.oldGraph.Close();
-                Graphics.graphicsList.Remove(Graphics.graphicsList.Where(i => i.graphType == Graphics.oldGraph.graphType).ToList()[0]);
+                NewGraphics.oldGraph.Close();
+                NewGraphics.graphicsList.Remove(NewGraphics.graphicsList.Where(i => i.graphType == NewGraphics.oldGraph.graphType).ToList()[0]);
             }
-            Graphics.oldGraph = Graphics.graphicsList.Last();
-            Graphics.oldGraph.TopLevel = false;
-            Graphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
-            Graphics.oldGraph.Dock = DockStyle.Fill;
-            Graphics.oldGraph.AutoScroll = true;
-            graphPanel.Controls.Add(Graphics.oldGraph);
-            Graphics.oldGraph.Show();
+            NewGraphics.oldGraph = NewGraphics.graphicsList.Last();
+            NewGraphics.oldGraph.TopLevel = false;
+            NewGraphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
+            NewGraphics.oldGraph.Dock = DockStyle.Fill;
+            NewGraphics.oldGraph.AutoScroll = true;
+            graphPanel.Controls.Add(NewGraphics.oldGraph);
+            NewGraphics.oldGraph.Show();
         }
 
         private void torqueGraphBtn_Click(object sender, EventArgs e)
         {
-            graphType = Graphics.graphs.torque;
-            Graphics.graphicsList.Add(new Graphics(graphType));
-            if (Graphics.oldGraph != null)
+            //graphType = Graphics.graphs.torque;
+            //Graphics.graphicsList.Add(new Graphics(graphType));
+            //if (Graphics.oldGraph != null)
+            //{
+            //    Graphics.oldGraph.Close();
+            //    Graphics.graphicsList.Remove(Graphics.graphicsList.Where(i => i.graphType == Graphics.oldGraph.graphType).ToList()[0]);
+            //}
+            //Graphics.oldGraph = Graphics.graphicsList.Last();
+            //Graphics.oldGraph.TopLevel = false;
+            //Graphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
+            //Graphics.oldGraph.Dock = DockStyle.Fill;
+            //Graphics.oldGraph.AutoScroll = true;
+            //graphPanel.Controls.Add(Graphics.oldGraph);
+            //Graphics.oldGraph.Show();
+            graphType = NewGraphics.graphs.torque;
+            NewGraphics.graphicsList.Add(new NewGraphics(graphType));
+            if (NewGraphics.oldGraph != null)
             {
-                Graphics.oldGraph.Close();
-                Graphics.graphicsList.Remove(Graphics.graphicsList.Where(i => i.graphType == Graphics.oldGraph.graphType).ToList()[0]);
+                NewGraphics.oldGraph.Close();
+                NewGraphics.graphicsList.Remove(NewGraphics.graphicsList.Where(i => i.graphType == NewGraphics.oldGraph.graphType).ToList()[0]);
             }
-            Graphics.oldGraph = Graphics.graphicsList.Last();
-            Graphics.oldGraph.TopLevel = false;
-            Graphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
-            Graphics.oldGraph.Dock = DockStyle.Fill;
-            Graphics.oldGraph.AutoScroll = true;
-            graphPanel.Controls.Add(Graphics.oldGraph);
-            Graphics.oldGraph.Show();
+            NewGraphics.oldGraph = NewGraphics.graphicsList.Last();
+            NewGraphics.oldGraph.TopLevel = false;
+            NewGraphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
+            NewGraphics.oldGraph.Dock = DockStyle.Fill;
+            NewGraphics.oldGraph.AutoScroll = true;
+            graphPanel.Controls.Add(NewGraphics.oldGraph);
+            NewGraphics.oldGraph.Show();
         }
 
         private void VDBtn_Click(object sender, EventArgs e)
         {
-            graphType = Graphics.graphs.VDVQ;
-            Graphics.graphicsList.Add(new Graphics(graphType));
-            if (Graphics.oldGraph != null)
+            //graphType = Graphics.graphs.VDVQ;
+            //Graphics.graphicsList.Add(new Graphics(graphType));
+            //if (Graphics.oldGraph != null)
+            //{
+            //    Graphics.oldGraph.Close();
+            //    Graphics.graphicsList.Remove(Graphics.graphicsList.Where(i => i.graphType == Graphics.oldGraph.graphType).ToList()[0]);
+            //}
+            //Graphics.oldGraph = Graphics.graphicsList.Last();
+            //Graphics.oldGraph.TopLevel = false;
+            //Graphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
+            //Graphics.oldGraph.Dock = DockStyle.Fill;
+            //Graphics.oldGraph.AutoScroll = true;
+            //graphPanel.Controls.Add(Graphics.oldGraph);
+            //Graphics.oldGraph.Show();
+            graphType = NewGraphics.graphs.VDVQ;
+            NewGraphics.graphicsList.Add(new NewGraphics(graphType));
+            if (NewGraphics.oldGraph != null)
             {
-                Graphics.oldGraph.Close();
-                Graphics.graphicsList.Remove(Graphics.graphicsList.Where(i => i.graphType == Graphics.oldGraph.graphType).ToList()[0]);
+                NewGraphics.oldGraph.Close();
+                NewGraphics.graphicsList.Remove(NewGraphics.graphicsList.Where(i => i.graphType == NewGraphics.oldGraph.graphType).ToList()[0]);
             }
-            Graphics.oldGraph = Graphics.graphicsList.Last();
-            Graphics.oldGraph.TopLevel = false;
-            Graphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
-            Graphics.oldGraph.Dock = DockStyle.Fill;
-            Graphics.oldGraph.AutoScroll = true;
-            graphPanel.Controls.Add(Graphics.oldGraph);
-            Graphics.oldGraph.Show();
+            NewGraphics.oldGraph = NewGraphics.graphicsList.Last();
+            NewGraphics.oldGraph.TopLevel = false;
+            NewGraphics.oldGraph.FormBorderStyle = FormBorderStyle.None;
+            NewGraphics.oldGraph.Dock = DockStyle.Fill;
+            NewGraphics.oldGraph.AutoScroll = true;
+            graphPanel.Controls.Add(NewGraphics.oldGraph);
+            NewGraphics.oldGraph.Show();
         }
     }
 }

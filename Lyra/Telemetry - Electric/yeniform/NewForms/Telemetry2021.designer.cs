@@ -67,6 +67,7 @@
             this.logSpeedDownBtn = new System.Windows.Forms.Button();
             this.log10secRewBtn = new System.Windows.Forms.Button();
             this.pauseResume = new System.Windows.Forms.ImageList(this.components);
+            this.graphTimer = new System.Windows.Forms.Timer(this.components);
             this.panelSideMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -710,6 +711,11 @@
             this.pauseResume.Images.SetKeyName(0, "icons8_pause_button_50px.png");
             this.pauseResume.Images.SetKeyName(1, "icons8_play_button_circled_50px_1.png");
             // 
+            // graphTimer
+            // 
+            this.graphTimer.Interval = 1000;
+            this.graphTimer.Tick += new System.EventHandler(this.graphTimer_Tick);
+            // 
             // Telemetry2021
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -780,5 +786,6 @@
         private FontAwesome.Sharp.IconButton pidTuningBtn;
         private FontAwesome.Sharp.IconButton motordrButton;
         private FontAwesome.Sharp.IconButton cellsBtn;
+        private System.Windows.Forms.Timer graphTimer;
     }
 }
