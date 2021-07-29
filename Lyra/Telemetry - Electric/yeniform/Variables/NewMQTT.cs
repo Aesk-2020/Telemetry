@@ -20,6 +20,7 @@ namespace Telemetri.Variables
         public string broker;
         public MqttClient client;
         public bool connected_flag = false;
+        public DateTime lastResponse;
         private enum step
         {
             CatchHeader1 = 0,
@@ -115,12 +116,14 @@ namespace Telemetri.Variables
             UITools.Anasayfa.startLogBtn.Enabled = false;
             UITools.Anasayfa.resetBoardBtn.Enabled = false;
             UITools.Anasayfa.portConnectBtn.Enabled = true;
+            UITools.Telemetry2021.activeChannelLabel.Text = "None";
             UITools.Telemetry2021.graphTimer.Stop();
         }
 
 
         private void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
+            lastResponse = DateTime.Now;
             ComproUI compro = new ComproUI();
 
             //compro.ComproUnpack(e.Message);

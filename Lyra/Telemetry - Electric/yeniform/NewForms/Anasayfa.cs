@@ -141,8 +141,6 @@ namespace Telemetri.NewForms
         private void mqttDisconnectBtn_Click(object sender, EventArgs e)
         {
             mqttobj.Disconnect();
-   
-            
         }
 
         private void startLogBtn_Click(object sender, EventArgs e)
@@ -207,6 +205,7 @@ namespace Telemetri.NewForms
             {
                 UITools.PIDForm.logWriter.WriteLine("MQTT'ye bağlanıldı.");
                 UITools.Telemetry2021.graphTimer.Start();
+                UITools.Telemetry2021.activeChannelLabel.Text = "MQTT";
             }
         }
 
@@ -250,10 +249,13 @@ namespace Telemetri.NewForms
             serialRF.SyncChar = 0xAB;
             if (portsListBox.SelectedItem != null)
             {
-                serialRF.Connect(portsListBox.SelectedItem.ToString(), 9600);
-                portConnectBtn.Enabled = false;
-                portDisconnectBtn.Enabled = true;
-                AFront.AccessFront += UITools.ChangeUI;
+                if(serialRF.Connect(portsListBox.SelectedItem.ToString(), 9600) == true)
+                {
+                    portConnectBtn.Enabled = false;
+                    portDisconnectBtn.Enabled = true;
+                    AFront.AccessFront += UITools.ChangeUI;
+                    UITools.Telemetry2021.activeChannelLabel.Text = "RF";
+                }
             }
             else
             {
@@ -266,11 +268,8 @@ namespace Telemetri.NewForms
             serialRF.Disconnect();
             portConnectBtn.Enabled = true;
             portDisconnectBtn.Enabled = false;
+            UITools.Telemetry2021.activeChannelLabel.Text = "None";
             AFront.AccessFront -= UITools.ChangeUI;
-        }
-
-        private void denemeTimer_Tick(object sender, EventArgs e)
-        {
         }
     }
 }
