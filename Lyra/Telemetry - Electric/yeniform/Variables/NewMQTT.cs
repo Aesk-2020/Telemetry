@@ -20,6 +20,8 @@ namespace Telemetri.Variables
         public string broker;
         public MqttClient client;
         public bool connected_flag = false;
+        public DateTime lastResponse;
+        public DateTime Response;
         private enum step
         {
             CatchHeader1 = 0,
@@ -53,28 +55,38 @@ namespace Telemetri.Variables
             if (connected_flag == false)
             {
                 this.client = new MqttClient(this.broker);
-                byte code = this.client.Connect(Guid.NewGuid().ToString(), _username, _password);
-                if (code == 0x00)
+                try
                 {
-                    try
+                    byte code = this.client.Connect(Guid.NewGuid().ToString(), _username, _password);
+                    if (code == 0x00)
                     {
-                        this.client.Subscribe(new string[] { this.topic, this.topic2 }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
-                        this.client.MqttMsgPublishReceived += Client_MqttMsgPublishReceived;
-                        connected_flag = true;
-                        UITools.PIDForm.queryButton.Enabled = true;
-                        UITools.PIDForm.sendButton.Enabled = true;
+                        try
+                        {
+                            this.client.Subscribe(new string[] { this.topic, this.topic2 }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
+                            this.client.MqttMsgPublishReceived += Client_MqttMsgPublishReceived;
+                            this.client.ConnectionClosed += Client_MqttConnectionClosed;
+                            connected_flag = true;
+                            UITools.PIDForm.queryButton.Enabled = true;
+                            UITools.PIDForm.sendButton.Enabled = true;
+                        }
+                        catch (Exception exce)
+                        {
+                            MessageBox.Show(exce.Message);
+                        }
+                        return true;
                     }
-                    catch (Exception exce)
+                    else
                     {
-                        MessageBox.Show(exce.Message);
+                        MessageBox.Show($"Sunucuya bağlanılamadı. Hata kodu: {code}");
+                        return false;
                     }
-                    return true;
                 }
-                else
+                catch (Exception e)
                 {
-                    MessageBox.Show($"Sunucuya bağlanılamadı. Hata kodu: {code}");
+                    MessageBox.Show("Lütfen internet bağlantınızı kontrol edin");
                     return false;
                 }
+               
             }
             else
             {
@@ -87,17 +99,34 @@ namespace Telemetri.Variables
             if (connected_flag == true)
             {
                 this.client.Disconnect();
-                this.client.MqttMsgPublishReceived -= Client_MqttMsgPublishReceived;
-                connected_flag = false;
+                
             }
             else
             {
                 MessageBox.Show("Zaten bağlı değilsiniz");
             }
         }
+        private void Client_MqttConnectionClosed(object sender, EventArgs e)
+        {
+            this.client.MqttMsgPublishReceived -= Client_MqttMsgPublishReceived;
+            this.client.ConnectionClosed -= Client_MqttConnectionClosed;
+            connected_flag = false;
+
+            UITools.Anasayfa.mqttConnectBtn.Enabled = true;
+            UITools.Anasayfa.mqttDisconnectBtn.Enabled = false;
+            UITools.Anasayfa.startLogBtn.Enabled = false;
+            UITools.Anasayfa.resetBoardBtn.Enabled = false;
+            UITools.Anasayfa.portConnectBtn.Enabled = true;
+            UITools.Telemetry2021.activeChannelLabel.Text = "None";
+            UITools.Telemetry2021.graphTimer.Stop();
+        }
+
 
         private void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
+            lastResponse = Response;
+            Response = DateTime.Now;
+
             ComproUI compro = new ComproUI();
 
             //compro.ComproUnpack(e.Message);

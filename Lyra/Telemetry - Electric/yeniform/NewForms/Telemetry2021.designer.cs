@@ -46,10 +46,12 @@
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.activeChannelLabel = new System.Windows.Forms.TextBox();
             this.mqttPingLabel = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.mqttConnectionStateIcon = new FontAwesome.Sharp.IconPictureBox();
+            this.activeChannelLabel = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -67,12 +69,15 @@
             this.logSpeedDownBtn = new System.Windows.Forms.Button();
             this.log10secRewBtn = new System.Windows.Forms.Button();
             this.pauseResume = new System.Windows.Forms.ImageList(this.components);
+            this.graphTimer = new System.Windows.Forms.Timer(this.components);
+            this.mqttConnetctionControlTimer = new System.Windows.Forms.Timer(this.components);
             this.panelSideMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelChildForm.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mqttConnectionStateIcon)).BeginInit();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -367,37 +372,24 @@
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.activeChannelLabel, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.mqttPingLabel, 0, 1);
+            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.68831F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.19481F));
+            this.tableLayoutPanel4.Controls.Add(this.mqttPingLabel, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.label4, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label5, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.mqttConnectionStateIcon, 2, 1);
+            this.tableLayoutPanel4.Controls.Add(this.activeChannelLabel, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(622, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(309, 94);
             this.tableLayoutPanel4.TabIndex = 146;
-            // 
-            // activeChannelLabel
-            // 
-            this.activeChannelLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.activeChannelLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.activeChannelLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.activeChannelLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.activeChannelLabel.ForeColor = System.Drawing.Color.White;
-            this.activeChannelLabel.Location = new System.Drawing.Point(4, 50);
-            this.activeChannelLabel.Multiline = true;
-            this.activeChannelLabel.Name = "activeChannelLabel";
-            this.activeChannelLabel.Size = new System.Drawing.Size(147, 40);
-            this.activeChannelLabel.TabIndex = 149;
-            this.activeChannelLabel.Text = "None";
-            this.activeChannelLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // mqttPingLabel
             // 
@@ -406,11 +398,11 @@
             this.mqttPingLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mqttPingLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mqttPingLabel.ForeColor = System.Drawing.Color.White;
-            this.mqttPingLabel.Location = new System.Drawing.Point(158, 50);
+            this.mqttPingLabel.Location = new System.Drawing.Point(106, 50);
             this.mqttPingLabel.Multiline = true;
             this.mqttPingLabel.Name = "mqttPingLabel";
-            this.mqttPingLabel.Size = new System.Drawing.Size(147, 40);
-            this.mqttPingLabel.TabIndex = 148;
+            this.mqttPingLabel.Size = new System.Drawing.Size(105, 40);
+            this.mqttPingLabel.TabIndex = 151;
             this.mqttPingLabel.Text = "97";
             this.mqttPingLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -420,9 +412,9 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(158, 1);
+            this.label4.Location = new System.Drawing.Point(106, 1);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(147, 45);
+            this.label4.Size = new System.Drawing.Size(105, 45);
             this.label4.TabIndex = 146;
             this.label4.Text = "MQTT Ping";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -435,10 +427,54 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(4, 1);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 45);
+            this.label3.Size = new System.Drawing.Size(95, 45);
             this.label3.TabIndex = 127;
             this.label3.Text = "Channel";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(218, 1);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(87, 45);
+            this.label5.TabIndex = 150;
+            this.label5.Text = "State";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // mqttConnectionStateIcon
+            // 
+            this.mqttConnectionStateIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.mqttConnectionStateIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mqttConnectionStateIcon.ForeColor = System.Drawing.Color.Red;
+            this.mqttConnectionStateIcon.IconChar = FontAwesome.Sharp.IconChar.Stop;
+            this.mqttConnectionStateIcon.IconColor = System.Drawing.Color.Red;
+            this.mqttConnectionStateIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.mqttConnectionStateIcon.IconSize = 36;
+            this.mqttConnectionStateIcon.Location = new System.Drawing.Point(245, 54);
+            this.mqttConnectionStateIcon.Margin = new System.Windows.Forms.Padding(30, 7, 3, 3);
+            this.mqttConnectionStateIcon.Name = "mqttConnectionStateIcon";
+            this.mqttConnectionStateIcon.Size = new System.Drawing.Size(60, 36);
+            this.mqttConnectionStateIcon.TabIndex = 151;
+            this.mqttConnectionStateIcon.TabStop = false;
+            // 
+            // activeChannelLabel
+            // 
+            this.activeChannelLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.activeChannelLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.activeChannelLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.activeChannelLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.activeChannelLabel.ForeColor = System.Drawing.Color.White;
+            this.activeChannelLabel.Location = new System.Drawing.Point(4, 50);
+            this.activeChannelLabel.Multiline = true;
+            this.activeChannelLabel.Name = "activeChannelLabel";
+            this.activeChannelLabel.Size = new System.Drawing.Size(95, 40);
+            this.activeChannelLabel.TabIndex = 150;
+            this.activeChannelLabel.Text = "None";
+            this.activeChannelLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel15
             // 
@@ -710,6 +746,17 @@
             this.pauseResume.Images.SetKeyName(0, "icons8_pause_button_50px.png");
             this.pauseResume.Images.SetKeyName(1, "icons8_play_button_circled_50px_1.png");
             // 
+            // graphTimer
+            // 
+            this.graphTimer.Interval = 1000;
+            this.graphTimer.Tick += new System.EventHandler(this.graphTimer_Tick);
+            // 
+            // mqttConnetctionControlTimer
+            // 
+            this.mqttConnetctionControlTimer.Enabled = true;
+            this.mqttConnetctionControlTimer.Interval = 1000;
+            this.mqttConnetctionControlTimer.Tick += new System.EventHandler(this.mqttConnetctionControlTimer_Tick);
+            // 
             // Telemetry2021
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -731,6 +778,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mqttConnectionStateIcon)).EndInit();
             this.tableLayoutPanel15.ResumeLayout(false);
             this.tableLayoutPanel15.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -767,8 +815,6 @@
         private System.Windows.Forms.Button logSpeedDownBtn;
         private System.Windows.Forms.Button log10secRewBtn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.TextBox activeChannelLabel;
-        private System.Windows.Forms.TextBox mqttPingLabel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
@@ -780,5 +826,11 @@
         private FontAwesome.Sharp.IconButton pidTuningBtn;
         private FontAwesome.Sharp.IconButton motordrButton;
         private FontAwesome.Sharp.IconButton cellsBtn;
+        private System.Windows.Forms.Timer graphTimer;
+        private System.Windows.Forms.Label label5;
+        private FontAwesome.Sharp.IconPictureBox mqttConnectionStateIcon;
+        private System.Windows.Forms.TextBox mqttPingLabel;
+        private System.Windows.Forms.TextBox activeChannelLabel;
+        private System.Windows.Forms.Timer mqttConnetctionControlTimer;
     }
 }

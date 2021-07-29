@@ -10,13 +10,17 @@ using System.Windows.Forms;
 using System.IO.Ports;
 using Telemetri.Variables;
 using Telemetri.NewForms;
+using System.Net.NetworkInformation;
 
 namespace Telemetri.NewForms
 {
     public partial class Telemetry2021 : Form
     {
+        TimeSpan timeSpan;
+        DateTime dateTime = DateTime.Now;
         public Telemetry2021()
         {
+            
             InitializeComponent();
             LogSystem.logPlayTimer.Tick += LogPlayTimer_Tick;
             Button[] buttons = { homeButton, mapButton, motordrButton, batteryButton, pidTuningBtn, settingsButton, mqttButton };
@@ -32,6 +36,8 @@ namespace Telemetri.NewForms
             UITools.Telemetry2021.forms.Add("Cells", new Cells());
             UITools.Telemetry2021.lapCount = lapCntLabel;
             UITools.Telemetry2021.activeChannelLabel = activeChannelLabel;
+            UITools.Telemetry2021.graphTimer = graphTimer;
+            UITools.Telemetry2021.mqttPingLabel = mqttPingLabel;
 
             FormManagement.openChildForm(UITools.Telemetry2021.forms["Anasayfa"], panelChildForm);
         }
@@ -211,6 +217,50 @@ namespace Telemetri.NewForms
         private void pidTuningBtn_Click_1(object sender, EventArgs e)
         {
             FormManagement.openChildForm(UITools.Telemetry2021.forms["PIDTuningForm"], panelChildForm);
+        }
+
+        private void graphTimer_Tick(object sender, EventArgs e)
+        {
+            foreach (var item in NewForms.NewGraphics.graphicsList)
+            {
+                item.changeGraph();
+            }
+        }
+
+        private void mqttConnetctionControlTimer_Tick(object sender, EventArgs e)
+        {
+            if (Anasayfa.mqttobj.connected_flag == true)
+            {
+                timeSpan = DateTime.Now - Anasayfa.mqttobj.Response;
+
+                if (timeSpan.TotalSeconds > 3)
+                {
+                    mqttConnectionStateIcon.IconChar = FontAwesome.Sharp.IconChar.Pause;
+                    mqttConnectionStateIcon.IconColor = Color.DodgerBlue;
+                    try
+                    {
+                        if (new Ping().Send("www.google.com.mx").Status != IPStatus.Success)
+                        {
+                            Anasayfa.mqttobj.Disconnect();
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        Anasayfa.mqttobj.Disconnect();
+                    }
+                   
+                }
+                else
+                {
+                    mqttConnectionStateIcon.IconChar = FontAwesome.Sharp.IconChar.Play;
+                    mqttConnectionStateIcon.IconColor = Color.Lime;
+                }
+            }
+            else
+            {
+                mqttConnectionStateIcon.IconChar = FontAwesome.Sharp.IconChar.Stop;
+                mqttConnectionStateIcon.IconColor = Color.Red;
+            }
         }
     }
 }

@@ -48,7 +48,7 @@ namespace Telemetri.Variables
                 MessageBox.Show(ex.Message);
             }
         }
-        public void Connect(string portName, int baudRate)
+        public bool Connect(string portName, int baudRate)
         {
             _serialPort = new SerialPort(portName, baudRate);
             _serialPort.DataReceived += _serialPort_DataReceived;
@@ -58,10 +58,12 @@ namespace Telemetri.Variables
                 UITools.Telemetry2021.activeChannelLabel.Text = "RF";
                 UITools.PIDForm.queryButton.Enabled = true;
                 UITools.PIDForm.sendButton.Enabled = true;
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                return false;
             }
         }
 
