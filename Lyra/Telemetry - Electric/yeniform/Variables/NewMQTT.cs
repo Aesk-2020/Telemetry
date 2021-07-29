@@ -21,6 +21,7 @@ namespace Telemetri.Variables
         public MqttClient client;
         public bool connected_flag = false;
         public DateTime lastResponse;
+        public DateTime Response;
         private enum step
         {
             CatchHeader1 = 0,
@@ -123,7 +124,9 @@ namespace Telemetri.Variables
 
         private void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
-            lastResponse = DateTime.Now;
+            lastResponse = Response;
+            Response = DateTime.Now;
+
             ComproUI compro = new ComproUI();
 
             //compro.ComproUnpack(e.Message);

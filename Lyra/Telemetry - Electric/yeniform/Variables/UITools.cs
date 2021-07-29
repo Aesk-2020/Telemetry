@@ -39,6 +39,7 @@ namespace Telemetri.Variables
             public static List<Button> buttonList = new List<Button>();
             public static Dictionary<string, Form> forms = new Dictionary<string, Form>();
             public static Label lapCount;
+            public static TextBox mqttPingLabel;
             public static TextBox activeChannelLabel;
             public static Timer graphTimer;
         }
@@ -247,6 +248,8 @@ namespace Telemetri.Variables
             {
                 item.collectGraphBuf();
             }
+            TimeSpan timeSpan = NewForms.Anasayfa.mqttobj.Response - NewForms.Anasayfa.mqttobj.lastResponse;
+            UITools.Telemetry2021.mqttPingLabel.Text = Math.Round(timeSpan.TotalMilliseconds).ToString();
         }
     }
 }

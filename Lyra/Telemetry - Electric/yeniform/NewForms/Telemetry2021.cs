@@ -37,6 +37,7 @@ namespace Telemetri.NewForms
             UITools.Telemetry2021.lapCount = lapCntLabel;
             UITools.Telemetry2021.activeChannelLabel = activeChannelLabel;
             UITools.Telemetry2021.graphTimer = graphTimer;
+            UITools.Telemetry2021.mqttPingLabel = mqttPingLabel;
 
             FormManagement.openChildForm(UITools.Telemetry2021.forms["Anasayfa"], panelChildForm);
         }
@@ -230,7 +231,7 @@ namespace Telemetri.NewForms
         {
             if (Anasayfa.mqttobj.connected_flag == true)
             {
-                timeSpan = DateTime.Now - Anasayfa.mqttobj.lastResponse;
+                timeSpan = DateTime.Now - Anasayfa.mqttobj.Response;
 
                 if (timeSpan.TotalSeconds > 3)
                 {
