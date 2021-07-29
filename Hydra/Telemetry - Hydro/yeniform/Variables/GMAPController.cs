@@ -17,7 +17,7 @@ namespace telemetry_hydro.Variables
     public delegate void GMAPDeleteOverlay();
     public static class GMAPController
     {
-        private static GMapControl _gmap;
+        public static GMapControl _gmap;
         private static GMapOverlay markers = new GMapOverlay("markers");
         static bool isFirst = true;
 

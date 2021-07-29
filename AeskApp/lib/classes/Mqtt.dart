@@ -41,6 +41,13 @@ class MqttAesk extends ChangeNotifier {
         .withWillQos(mqtt.MqttQos.atMostOnce);
     client.connectionMessage = connMess;
 
+    /*
+    const pubTopic = 'topic/test';
+    final builder = MqttClientPayloadBuilder();
+    builder.addString('Hello MQTT');
+    client.publishMessage(pubTopic, MqttQos.atLeastOnce, builder.payload);
+    */
+
     //baglanilan yer burasi
     try {
       await client.connect(username, password);

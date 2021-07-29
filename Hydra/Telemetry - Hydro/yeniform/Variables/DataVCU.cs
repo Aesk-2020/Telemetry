@@ -24,7 +24,7 @@ namespace Telemetri.Variables
         public static bool BMS_Wake_u1 => Convert.ToBoolean((drive_commands_u8 >> 0 & 0b00000001));
         public static bool MCU_Wake_u1 => Convert.ToBoolean((drive_commands_u8 >> 1 & 0b00000001));
         public static bool ignition_u1 => Convert.ToBoolean((drive_commands_u8 >> 2 & 0b00000001));
-        public static bool vcu_torque_output_u1 => Convert.ToBoolean((drive_commands_u8 >> 3 & 0b00000001));
+        public static bool vcu_drive_mode_u1 => Convert.ToBoolean((drive_commands_u8 >> 3 & 0b00000001));
         public static bool brake_u1         => Convert.ToBoolean((drive_commands_u8 >> 4 & 0b00000001));
         public static bool direction_u1     => Convert.ToBoolean((drive_commands_u8 >> 5 & 0b00000001));
         public static bool motor_select_u1     => Convert.ToBoolean((drive_commands_u8 >> 6 & 0b00000001));

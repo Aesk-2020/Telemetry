@@ -45,6 +45,10 @@ namespace Telemetri.Variables
             public byte voltage_u8 = 0;
             public byte soc_u8 = 0;
             public byte temperature_u8 = 0;
+
+            public float actVoltage = 0;
+            public float actSoC = 0;
+            public float actTemp = 0;
         }
         public static List<Cell> cells = new List<Cell>();
         public static void CellInit()

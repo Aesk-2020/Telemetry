@@ -91,6 +91,10 @@ class _HomeState extends State<Home> {
                                   ad: "IDC",
                                   veri: AeskData.driver_idc_s16.toStringAsFixed(2),
                                 ),
+                                DataBox(
+                                    ad: "Act Speed",
+                                    veri: AeskData.driver_actspeed_s16.toStringAsFixed(1)
+                                ),
                               ],
                             ),
                             Column(
@@ -121,6 +125,10 @@ class _HomeState extends State<Home> {
                                 DataBox(
                                   ad: "Set Torque",
                                   veri: AeskData.driver_set_torque_s16.toStringAsFixed(2),
+                                ),
+                                DataBox(
+                                  ad: "Set Speed",
+                                  veri: AeskData.vcu_speed_set_rpm_s16.toString()
                                 ),
                               ],
                             ),

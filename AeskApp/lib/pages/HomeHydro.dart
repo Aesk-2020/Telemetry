@@ -70,135 +70,100 @@
                                     veri: AeskData.ping.toString(),
                                   ),
                                   DataBox(
-                                    ad: "BMS BAT VOLT",
-                                    veri: AeskData.bms_bat_volt_f32.toStringAsFixed(2),
+                                    ad: "Penalty",
+                                    veri: AeskData.eys_penalty_int8.toString(),
                                   ),
                                   DataBox(
-                                    ad: "BMS BAT CUR",
+                                    ad: "Set Velocity",
+                                    veri: AeskData.vcu_speed_set_rpm_s16
+                                        .toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "Bat Temp",
+                                    veri: AeskData.bms_temp_u8.toString()
+                                  ),
+                                  DataBox(
+                                    ad: "Bat Volt",
+                                    veri: AeskData.bms_bat_volt_f32
+                                        .toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "Bat Cur",
                                     veri: AeskData.bms_bat_current_f32
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "BMS BAT CONS",
-                                    veri: AeskData.bms_bat_cons_f32
+                                    ad: "FC Cons",
+                                    veri: AeskData.eys_fc_cons_uint16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "BMS SOC",
-                                    veri:
-                                        AeskData.bms_soc_f32.toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "Phase B",
-                                    veri: AeskData.driver_actspeed_s16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "EYS BAT VOLT",
-                                    veri: AeskData.eys_bat_volt_int16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "EYS BAT CUR",
-                                    veri: AeskData.eys_bat_current_int16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "EYS BAT CONS",
-                                    veri: AeskData.eys_bat_cons_uint16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "EYS OUT VOLT",
+                                    ad: "Out Volt",
                                     veri: AeskData.eys_out_volt_int16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "EYS TEMP",
-                                    veri: AeskData.eys_temp_uint8
+                                    ad: "Out Cons",
+                                    veri: AeskData.eys_out_cons_uint16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "EYS SHARING RATIO",
-                                    veri: AeskData.eys_sharing_ratio_uint16
+                                    ad: "IDC",
+                                    veri: AeskData.driver_idc_s16
                                         .toStringAsFixed(2),
-                                  ),
-                                  Container(
-                                    height: scale.size.height / 13.6686,
-                                    width: scale.size.width / 2.4935,
-                                    alignment: Alignment.center,
-                                    margin: EdgeInsets.fromLTRB(10, 20, 10, 10),
-                                    child: FittedBox(
-                                      child: Center(),
-                                    ),
                                   ),
                                 ],
                               ),
                               Column(
                                 children: <Widget>[
                                   DataBox(
-                                    ad: "MOTOR TEMP",
+                                    ad: "Motor Temp",
+                                    veri: AeskData.driver_motortemp_u8
+                                        .toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "SoC",
+                                    veri: AeskData.bms_soc_f32
+                                        .toStringAsFixed(1),
+                                  ),
+                                  DataBox(
+                                    ad: "Act Velocity",
                                     veri: AeskData.driver_actspeed_s16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "Phase A Current",
-                                    veri: AeskData.driver_actspeed_s16
+                                    ad: "Tube Temp",
+                                    veri: AeskData.eys_temp_uint8
+                                        .toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "FC Volt",
+                                    veri: AeskData.eys_bat_volt_int16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "Torque",
-                                    veri: AeskData.driver_actspeed_s16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "DC BUS CUR",
-                                    veri: AeskData.driver_actspeed_s16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "DC BUS VOLT",
-                                    veri: AeskData.driver_actspeed_s16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "IArms",
-                                    veri: AeskData.driver_actspeed_s16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "EYS FC CONS",
-                                    veri: AeskData.eys_fc_cons_uint16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "EYS FC CUR",
+                                    ad: "FC Cur",
                                     veri: AeskData.eys_fc_current_int16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "EYS FC LT CONS",
+                                    ad: "FC LT Cons",
                                     veri: AeskData.eys_fc_lt_cons_uint16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "EYS FC VOLT",
-                                    veri: AeskData.eys_fc_volt_int16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "EYS OUT CONS",
-                                    veri: AeskData.eys_out_cons_uint16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "EYS OUT CUR",
+                                    ad: "Out Cur",
                                     veri: AeskData.eys_out_current_int16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "EYS PENALTY",
-                                    veri: AeskData.eys_penalty_int8
+                                    ad: "Sharing",
+                                    veri: AeskData.eys_sharing_ratio_uint16
+                                        .toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "VDC",
+                                    veri: AeskData.driver_vdc_s16
                                         .toStringAsFixed(2),
                                   ),
                                 ],
@@ -335,15 +300,6 @@
                                     ad: "EYS SHARING RATIO",
                                     veri: AeskData.eys_sharing_ratio_uint16
                                         .toStringAsFixed(2),
-                                  ),
-                                  Container(
-                                    height: scale.size.height / 13.6686,
-                                    width: scale.size.width / 2.4935,
-                                    alignment: Alignment.center,
-                                    margin: EdgeInsets.fromLTRB(10, 20, 10, 10),
-                                    child: FittedBox(
-                                      child: Center(),
-                                    ),
                                   ),
                                 ],
                               ),

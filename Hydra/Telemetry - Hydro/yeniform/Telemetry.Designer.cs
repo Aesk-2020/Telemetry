@@ -30,19 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telemetry));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.error_ready = new System.Windows.Forms.ImageList(this.components);
-            this.gmap_sag = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.GpsMouseModAktif = new System.Windows.Forms.ToolStripMenuItem();
-            this.GpsMouseModDeaktif = new System.Windows.Forms.ToolStripMenuItem();
-            this.MarkerTemizlee = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
@@ -144,6 +139,7 @@
             this.manuelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.otoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.turAtToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.yardımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.bmsTempBox = new System.Windows.Forms.TextBox();
             this.bmsWcaBox = new System.Windows.Forms.TextBox();
@@ -249,8 +245,11 @@
             this.label85 = new System.Windows.Forms.Label();
             this.label86 = new System.Windows.Forms.Label();
             this.label87 = new System.Windows.Forms.Label();
-            this.yardımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gmap_sag.SuspendLayout();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.lapCountBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.açToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kapatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
@@ -312,6 +311,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mcuWakeBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emsWakeBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.igniWakeBox)).BeginInit();
+            this.tableLayoutPanel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // error_ready
@@ -322,47 +322,11 @@
             this.error_ready.Images.SetKeyName(1, "cooltext347148907798044.png");
             this.error_ready.Images.SetKeyName(2, "asdasdasdsad.png");
             // 
-            // gmap_sag
-            // 
-            this.gmap_sag.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.GpsMouseModAktif,
-            this.GpsMouseModDeaktif,
-            this.MarkerTemizlee});
-            this.gmap_sag.Name = "gmap_sag";
-            this.gmap_sag.Size = new System.Drawing.Size(202, 70);
-            // 
-            // GpsMouseModAktif
-            // 
-            this.GpsMouseModAktif.Name = "GpsMouseModAktif";
-            this.GpsMouseModAktif.Size = new System.Drawing.Size(201, 22);
-            this.GpsMouseModAktif.Text = "Gps Mouse Mod Aktif";
-            this.GpsMouseModAktif.Click += new System.EventHandler(this.GpsMouseModAktif_Click);
-            // 
-            // GpsMouseModDeaktif
-            // 
-            this.GpsMouseModDeaktif.Name = "GpsMouseModDeaktif";
-            this.GpsMouseModDeaktif.Size = new System.Drawing.Size(201, 22);
-            this.GpsMouseModDeaktif.Text = "Gps Mouse Mod Deaktif";
-            this.GpsMouseModDeaktif.Click += new System.EventHandler(this.GpsMouseModDeaktif_Click);
-            // 
-            // MarkerTemizlee
-            // 
-            this.MarkerTemizlee.Name = "MarkerTemizlee";
-            this.MarkerTemizlee.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
-            this.MarkerTemizlee.Size = new System.Drawing.Size(201, 22);
-            this.MarkerTemizlee.Text = "Marker Temizle";
-            this.MarkerTemizlee.Click += new System.EventHandler(this.MarkerTemizlee_Click);
-            // 
             // imageList1
             // 
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(200, 40);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // groupBox2
             // 
@@ -1638,43 +1602,43 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridView1.Location = new System.Drawing.Point(6, 763);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridView1.RowHeadersWidth = 55;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -1685,7 +1649,6 @@
             // 
             this.gmap.Bearing = 0F;
             this.gmap.CanDragMap = true;
-            this.gmap.ContextMenuStrip = this.gmap_sag;
             this.gmap.EmptyTileColor = System.Drawing.Color.Navy;
             this.gmap.GrayScaleMode = false;
             this.gmap.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
@@ -1707,6 +1670,7 @@
             this.gmap.Size = new System.Drawing.Size(850, 761);
             this.gmap.TabIndex = 101;
             this.gmap.Zoom = 0D;
+            this.gmap.MouseClick += new System.Windows.Forms.MouseEventHandler(this.gmap_MouseClick);
             // 
             // menuStrip1
             // 
@@ -1736,7 +1700,7 @@
             // 
             this.başlatToolStripMenuItem.Name = "başlatToolStripMenuItem";
             this.başlatToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.başlatToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.başlatToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.başlatToolStripMenuItem.Text = "Başlat";
             this.başlatToolStripMenuItem.Click += new System.EventHandler(this.başlatToolStripMenuItem_Click);
             // 
@@ -1744,7 +1708,7 @@
             // 
             this.bitirToolStripMenuItem.Name = "bitirToolStripMenuItem";
             this.bitirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.bitirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bitirToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.bitirToolStripMenuItem.Text = "Bitir";
             this.bitirToolStripMenuItem.Click += new System.EventHandler(this.bitirToolStripMenuItem_Click);
             // 
@@ -1785,9 +1749,13 @@
             // 
             // bMSToolStripMenuItem
             // 
+            this.bMSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.açToolStripMenuItem,
+            this.kapatToolStripMenuItem});
             this.bMSToolStripMenuItem.Name = "bMSToolStripMenuItem";
             this.bMSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bMSToolStripMenuItem.Text = "BMS";
+            this.bMSToolStripMenuItem.Click += new System.EventHandler(this.bMSToolStripMenuItem_Click);
             // 
             // grafiklerToolStripMenuItem
             // 
@@ -1810,28 +1778,34 @@
             this.manuelToolStripMenuItem,
             this.otoToolStripMenuItem});
             this.turSayımıToolStripMenuItem.Name = "turSayımıToolStripMenuItem";
-            this.turSayımıToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.turSayımıToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.turSayımıToolStripMenuItem.Text = "Tur Sayımı";
             // 
             // manuelToolStripMenuItem
             // 
             this.manuelToolStripMenuItem.Name = "manuelToolStripMenuItem";
-            this.manuelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manuelToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.manuelToolStripMenuItem.Text = "Manuel";
             this.manuelToolStripMenuItem.Click += new System.EventHandler(this.manuelToolStripMenuItem_Click);
             // 
             // otoToolStripMenuItem
             // 
             this.otoToolStripMenuItem.Name = "otoToolStripMenuItem";
-            this.otoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.otoToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.otoToolStripMenuItem.Text = "Oto";
             this.otoToolStripMenuItem.Click += new System.EventHandler(this.otoToolStripMenuItem_Click);
             // 
             // turAtToolStripMenuItem1
             // 
             this.turAtToolStripMenuItem1.Name = "turAtToolStripMenuItem1";
-            this.turAtToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.turAtToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
             this.turAtToolStripMenuItem1.Text = "Tur At";
+            // 
+            // yardımToolStripMenuItem
+            // 
+            this.yardımToolStripMenuItem.Name = "yardımToolStripMenuItem";
+            this.yardımToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.yardımToolStripMenuItem.Text = "Yardım";
             // 
             // tableLayoutPanel2
             // 
@@ -3159,7 +3133,7 @@
             this.groupBox7.Location = new System.Drawing.Point(696, 605);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.groupBox7.Size = new System.Drawing.Size(351, 156);
+            this.groupBox7.Size = new System.Drawing.Size(351, 103);
             this.groupBox7.TabIndex = 121;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Wake Up";
@@ -3276,11 +3250,64 @@
             this.label87.Text = "BMS";
             this.label87.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // yardımToolStripMenuItem
+            // tableLayoutPanel9
             // 
-            this.yardımToolStripMenuItem.Name = "yardımToolStripMenuItem";
-            this.yardımToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
-            this.yardımToolStripMenuItem.Text = "Yardım";
+            this.tableLayoutPanel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.tableLayoutPanel9.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
+            this.tableLayoutPanel9.ColumnCount = 2;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.08295F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.91705F));
+            this.tableLayoutPanel9.Controls.Add(this.lapCountBox, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(this.label6, 0, 0);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(696, 714);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 1;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(351, 37);
+            this.tableLayoutPanel9.TabIndex = 122;
+            // 
+            // lapCountBox
+            // 
+            this.lapCountBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.lapCountBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lapCountBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lapCountBox.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lapCountBox.ForeColor = System.Drawing.Color.White;
+            this.lapCountBox.Location = new System.Drawing.Point(166, 6);
+            this.lapCountBox.Multiline = true;
+            this.lapCountBox.Name = "lapCountBox";
+            this.lapCountBox.ReadOnly = true;
+            this.lapCountBox.Size = new System.Drawing.Size(179, 25);
+            this.lapCountBox.TabIndex = 107;
+            this.lapCountBox.Text = "0 / 8";
+            this.lapCountBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(6, 3);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(151, 31);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Tur Sayısı";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // açToolStripMenuItem
+            // 
+            this.açToolStripMenuItem.Name = "açToolStripMenuItem";
+            this.açToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.açToolStripMenuItem.Text = "Aç";
+            this.açToolStripMenuItem.Click += new System.EventHandler(this.açToolStripMenuItem_Click);
+            // 
+            // kapatToolStripMenuItem
+            // 
+            this.kapatToolStripMenuItem.Name = "kapatToolStripMenuItem";
+            this.kapatToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kapatToolStripMenuItem.Text = "Kapat";
+            this.kapatToolStripMenuItem.Click += new System.EventHandler(this.kapatToolStripMenuItem_Click);
             // 
             // telemetry
             // 
@@ -3288,6 +3315,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.tableLayoutPanel9);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -3314,7 +3342,6 @@
             this.Text = "AESK Telemetry";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telemetry_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.gmap_sag.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel13.ResumeLayout(false);
             this.tableLayoutPanel15.ResumeLayout(false);
@@ -3392,6 +3419,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.mcuWakeBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emsWakeBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.igniWakeBox)).EndInit();
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3401,11 +3430,6 @@
         private System.Windows.Forms.ImageList error_ready;
         private System.Windows.Forms.ImageList imageList1;
         private System.IO.Ports.SerialPort serialPort1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ContextMenuStrip gmap_sag;
-        private System.Windows.Forms.ToolStripMenuItem GpsMouseModAktif;
-        private System.Windows.Forms.ToolStripMenuItem GpsMouseModDeaktif;
-        private System.Windows.Forms.ToolStripMenuItem MarkerTemizlee;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
@@ -3613,6 +3637,11 @@
         private System.Windows.Forms.Label label82;
         private System.Windows.Forms.PictureBox gpsReadyBox;
         private System.Windows.Forms.ToolStripMenuItem yardımToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        private System.Windows.Forms.TextBox lapCountBox;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ToolStripMenuItem açToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kapatToolStripMenuItem;
     }
 }
 

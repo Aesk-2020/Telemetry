@@ -56,6 +56,8 @@ class AeskData extends ChangeNotifier{
   static var vcu_speed_limit_u16;
   static var vcu_torque_limit_u8;
   static var vcu_can_error_u8;
+  static var sd_result_u8;
+  static var tcu_minute_u8;
 
   //new
   static var driver_act_iq_u16              = 0.0;
@@ -160,7 +162,7 @@ class AeskData extends ChangeNotifier{
 //threadlamamız gerekecekse burayı threadlayacaz
   AeskData(ByteData message,Endian myEndian){
 
-    int _startIndex = MqttAesk.myTopic == "LYRADATA" ? 0 : 7;
+    int _startIndex = MqttAesk.myTopic == "LYRADATA" || MqttAesk.myTopic == "HYDRADATA" ? 0 : 7; //BU TOPICLERDE DEĞİLSE COMPRO KULLANILIYOR
 
     vcu_drive_command_u8 = message.getUint8(_startIndex);     _startIndex++;
     vcu_speed_set_rpm_s16 = message.getInt16(_startIndex, myEndian).toDouble();    _startIndex += 2;
@@ -256,71 +258,74 @@ class AeskData extends ChangeNotifier{
     vcu_can_error_u8 = message.getUint8(_startIndex);
     _startIndex++;
 
-    if(MqttAesk.myTopic == "LYRADATA")
-      {
-        _startIndex+=2;
+    sd_result_u8 = message.getUint8(_startIndex);
+    _startIndex++;
 
-        cellCount = MqttAesk.isLyra ? 28 : 16;
+    tcu_minute_u8 = message.getUint8(_startIndex);
+    _startIndex++;
 
-        for(int i = 0; i < cellCount; i++){
-          battery_cells[i] = message.getUint8(_startIndex) + bms_worst_cell_voltage_f32.toInt();
-          bms_min_finder = battery_cells[i] < battery_cells[bms_min_finder] ? i : bms_min_finder;
-          _startIndex++;
-        }
+    if(MqttAesk.myTopic == "LYRADATA" || MqttAesk.myTopic == "HYDRADATA") {
+      //BU TOPICLERDE CELLER AKTARILDIĞINDAN BÖYLE YAZILDI
+      cellCount = MqttAesk.isLyra ? 28 : 16;
 
-
-        if(MqttAesk.isLyra == false) {
-          eys_bat_cons_uint16 = message.getUint16(_startIndex,myEndian) / 10;
-          _startIndex += 2;
-
-          eys_fc_cons_uint16 = message.getUint16(_startIndex,myEndian) / 10;
-          _startIndex += 2;
-
-          eys_fc_lt_cons_uint16 = message.getUint16(_startIndex,myEndian) / 10;
-          _startIndex += 2;
-
-          eys_out_cons_uint16 = message.getUint16(_startIndex,myEndian) / 10;
-          _startIndex += 2;
-
-          eys_bat_current_int16 = message.getInt16(_startIndex,myEndian) / 10;
-          _startIndex += 2;
-
-          eys_fc_current_int16 = message.getInt16(_startIndex,myEndian) / 10;
-          _startIndex += 2;
-
-          eys_out_current_int16 = message.getInt16(_startIndex,myEndian) / 10;
-          _startIndex += 2;
-
-          eys_bat_volt_int16 = message.getInt16(_startIndex,myEndian) / 10;
-          _startIndex += 2;
-
-          eys_fc_volt_int16 = message.getInt16(_startIndex,myEndian) / 10;
-          _startIndex += 2;
-
-          eys_out_volt_int16 = message.getInt16(_startIndex,myEndian) / 10;
-          _startIndex += 2;
-
-          eys_penalty_int8 = message.getInt8(_startIndex);
-          _startIndex++;
-
-          eys_sharing_ratio_uint16 = message.getUint16(_startIndex,myEndian) / 1000;
-          _startIndex += 2;
-
-          eys_temp_uint8 = message.getUint8(_startIndex);
-          _startIndex++;
-
-          eys_error_uint8 = message.getUint8(_startIndex);
-          _startIndex++;
-
-
-          eys_bat_cur_error_u1 = ((eys_error_uint8 & 1) == 1) ? true : false;
-          eys_fc_cur_error_u1 = (((eys_error_uint8 >> 1) & 1) == 1) ? true : false;
-          eys_out_cur_error_u1 = (((eys_error_uint8 >> 2) & 1) == 1) ? true : false;
-          eys_bat_volt_error_u1 = (((eys_error_uint8 >> 3) & 1) == 1) ? true : false;
-          eys_fc_volt_error_u1 = (((eys_error_uint8 >> 4) & 1) == 1) ? true : false;
-          eys_out_volt_error_u1 = (((eys_error_uint8 >> 5) & 1) == 1) ? true : false;
+      for(int i = 0; i < cellCount; i++){
+        battery_cells[i] = message.getUint8(_startIndex) + bms_worst_cell_voltage_f32.toInt();
+        bms_min_finder = battery_cells[i] < battery_cells[bms_min_finder] ? i : bms_min_finder;
+        _startIndex++;
       }
+    }
 
+    if(MqttAesk.isLyra == false) {
+      //HIDROMOBIL VERILERI HER TURLU BURADA GELECEK
+      eys_bat_cons_uint16 = message.getUint16(_startIndex,myEndian) / 10;
+      _startIndex += 2;
+
+      eys_fc_cons_uint16 = message.getUint16(_startIndex,myEndian) / 10;
+      _startIndex += 2;
+
+      eys_fc_lt_cons_uint16 = message.getUint16(_startIndex,myEndian) / 10;
+      _startIndex += 2;
+
+      eys_out_cons_uint16 = message.getUint16(_startIndex,myEndian) / 10;
+      _startIndex += 2;
+
+      eys_bat_current_int16 = message.getInt16(_startIndex,myEndian) / 10;
+      _startIndex += 2;
+
+      eys_fc_current_int16 = message.getInt16(_startIndex,myEndian) / 10;
+      _startIndex += 2;
+
+      eys_out_current_int16 = message.getInt16(_startIndex,myEndian) / 10;
+      _startIndex += 2;
+
+      eys_bat_volt_int16 = message.getInt16(_startIndex,myEndian) / 10;
+      _startIndex += 2;
+
+      eys_fc_volt_int16 = message.getInt16(_startIndex,myEndian) / 10;
+      _startIndex += 2;
+
+      eys_out_volt_int16 = message.getInt16(_startIndex,myEndian) / 10;
+      _startIndex += 2;
+
+      eys_penalty_int8 = message.getInt8(_startIndex);
+      _startIndex++;
+
+      eys_sharing_ratio_uint16 = message.getUint16(_startIndex,myEndian) / 1000;
+      _startIndex += 2;
+
+      eys_temp_uint8 = message.getUint8(_startIndex);
+      _startIndex++;
+
+      eys_error_uint8 = message.getUint8(_startIndex);
+      _startIndex++;
+
+
+      eys_bat_cur_error_u1 = ((eys_error_uint8 & 1) == 1) ? true : false;
+      eys_fc_cur_error_u1 = (((eys_error_uint8 >> 1) & 1) == 1) ? true : false;
+      eys_out_cur_error_u1 = (((eys_error_uint8 >> 2) & 1) == 1) ? true : false;
+      eys_bat_volt_error_u1 = (((eys_error_uint8 >> 3) & 1) == 1) ? true : false;
+      eys_fc_volt_error_u1 = (((eys_error_uint8 >> 4) & 1) == 1) ? true : false;
+      eys_out_volt_error_u1 = (((eys_error_uint8 >> 5) & 1) == 1) ? true : false;
     }
 
     driver_overcur_ia_u1            = ((driver_errorstatus_u16 & 1) == 1) ? true : false;

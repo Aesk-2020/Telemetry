@@ -66,26 +66,28 @@ namespace telemetry_hydro.Variables
 
         void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
-            if(e.Topic == "HYDRADATA")
+            mqtt_counter_old = MQTT_counter_int32;
+            if (mqtt_total_counter == 0)
             {
-                mqtt_counter_old = MQTT_counter_int32;
-                if (mqtt_total_counter == 0)
-                {
-                    old_time = DateTime.Now;
-                }
+                old_time = DateTime.Now;
+            }
 
-                mqtt_total_counter++;
-                DateTime current_time = DateTime.Now;
-                totalTime += (current_time - old_time).TotalMilliseconds;
+            mqtt_total_counter++;
+            DateTime current_time = DateTime.Now;
+            totalTime += (current_time - old_time).TotalMilliseconds;
+            error_counter += find_error(mqtt_counter_old, MQTT_counter_int32);
+            MQTT_Efficiency = 1 - (Convert.ToDouble(error_counter) / Convert.ToDouble(mqtt_total_counter));
+            mqtt_refresh_time = (double)totalTime / mqtt_total_counter;
+            old_time = current_time;
+            if (e.Topic == "HYDRADATA")
+            {
                 dataConvertMQTT(e.Message);
-                error_counter += find_error(mqtt_counter_old, MQTT_counter_int32);
-                MQTT_Efficiency = 1 - (Convert.ToDouble(error_counter) / Convert.ToDouble(mqtt_total_counter));
-                mqtt_refresh_time = (double)totalTime / mqtt_total_counter;
-                old_time = current_time;
             }
             else if(e.Topic == "vehicle_to_interface_2")
             {
-                Random rnd = new Random();
+                ComproUI pack = new ComproUI();
+                pack.ComproUnpack(e.Message);
+                LogEvent();
             }
         }
 
@@ -121,7 +123,6 @@ namespace telemetry_hydro.Variables
             DataVCU.torque_limit_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
 
             //MCU
-
             DataMCU.act_id_current_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
             DataMCU.act_iq_current_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
             DataMCU.vd_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
@@ -148,23 +149,23 @@ namespace telemetry_hydro.Variables
             DataBMS.temperature_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
 
             //GPS
-            DataGPS.gps_latitude_f64 = BitConverter.ToUInt32(receiveBuffer, startIndex) / MACROS.GPS_DIVIDER; startIndex += 4;
-            DataGPS.gps_longtitude_f64 = BitConverter.ToUInt32(receiveBuffer, startIndex) / MACROS.GPS_DIVIDER; startIndex += 4;
-            DataGPS.gps_velocity_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
-            DataGPS.gps_sattelite_number_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
-            DataGPS.gps_efficiency_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataGPS.latitude_f32 = BitConverter.ToUInt32(receiveBuffer, startIndex) / MACROS.GPS_DIVIDER; startIndex += 4;
+            DataGPS.longtitude_f32 = BitConverter.ToUInt32(receiveBuffer, startIndex) / MACROS.GPS_DIVIDER; startIndex += 4;
+            DataGPS.speed_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataGPS.sattelite_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+            DataGPS.efficiency_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
             if(isFirst == true)
             {
-                DataGPS.point1 = new GMap.NET.PointLatLng(DataGPS.gps_latitude_f64, DataGPS.gps_longtitude_f64);
+                DataGPS.point1 = new GMap.NET.PointLatLng(DataGPS.latitude_f32, DataGPS.longtitude_f32);
                 isFirst = false;
             }
             else
             {
                 DataGPS.point2 = DataGPS.point1;
-                DataGPS.point2 = new GMap.NET.PointLatLng(DataGPS.gps_latitude_f64, DataGPS.gps_longtitude_f64);
+                DataGPS.point2 = new GMap.NET.PointLatLng(DataGPS.latitude_f32, DataGPS.longtitude_f32);
                 long distance = DataGPS.CalculateDistance(DataGPS.point1, DataGPS.point2);
                 DataGPS.odometer += distance;
-                DataGPS.LapControl(DataGPS.lapPoint1, DataGPS.lapPoint2, DataGPS.lapPoint3, new GMap.NET.PointLatLng(DataGPS.gps_latitude_f64, DataGPS.gps_longtitude_f64));
+                DataGPS.LapControl(DataGPS.lapPoint1, DataGPS.lapPoint2, DataGPS.lapPoint3, new GMap.NET.PointLatLng(DataGPS.latitude_f32, DataGPS.longtitude_f32));
             }
 
             //CAN Error
@@ -178,8 +179,8 @@ namespace telemetry_hydro.Variables
 
             for (int i = 0; i < DataBMS.cells.Count; i++)
             {
-
                 DataBMS.cells[i].voltage_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                DataBMS.cells[i].actVoltage = DataBMS.cells[i].voltage_u8 + DataBMS.worst_cell_volt_u16;
             }
 
             EMS.bat_cons_f32 = (float)EncodePackMethods.DataConverterS16(receiveBuffer, ref startIndex)/MACROS.FLOAT_CONVERTER_1;

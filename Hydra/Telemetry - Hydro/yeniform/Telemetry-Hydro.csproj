@@ -107,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Variables\BmsUI.cs" />
+    <Compile Include="Variables\ComproUI.cs" />
     <Compile Include="Variables\DataBMS.cs" />
     <Compile Include="Variables\DataMCU.cs" />
     <Compile Include="Variables\DataVCU.cs" />

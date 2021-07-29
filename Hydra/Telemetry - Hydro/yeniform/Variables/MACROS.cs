@@ -6,6 +6,12 @@ namespace telemetry_hydro.Variables
 {
     public struct MACROS
     {
+        public const byte SYNC1 = 0x14;
+        public const byte SYNC2 = 0x04;
+        public const byte VEHICLE_ID = 0x31;
+        public const byte TARGET_ID = 0X2;
+        public const byte SOURCE_ID = 0X4;
+        public const byte SOURCE_MSG_ID = 0X4;
         public const double C_RADIUS_EARTH_KM = 6371100;
         public const string aesk_IP = "broker.mqttdashboard.com";
         public const string MQTT_username = "digital";
@@ -32,7 +38,7 @@ namespace telemetry_hydro.Variables
         public static bool mouse_mod = false;
         public static byte[] gsm_reset_buffer = new byte[4] { 0x34, 0xFF, 0xAF, 0xBF };
         public static UInt32 toplam_yol = 58500;
-        public static Color errorColor = Color.Red;
+        public static Color errorColor = Color.Crimson;
         public static MqttClient client = new MqttClient(aesk_IP);
         public static string TimeStringFormat = @"hh\:mm\:ss";
         public static double total_Tur = 30;
@@ -58,5 +64,19 @@ namespace telemetry_hydro.Variables
         public static bool IsSd = false;
 
         public static double total_battery_capacity = 1000;
+
+        public static ushort AeskCRCCalculate(byte[] frame, uint framesize)
+        {
+            ushort crc16_data = 0;
+            byte data = 0;
+            for (byte mlen = 0; mlen < framesize; mlen++)
+            {
+                data = Convert.ToByte(((byte)frame[mlen] ^ Convert.ToByte(((crc16_data) & (0xFF)))));
+                Console.WriteLine(data);
+                data = (byte)((byte)data ^ (byte)(data << 4));
+                crc16_data = (ushort)((((ushort)data << 8) | ((crc16_data & 0xFF00) >> 8)) ^ (byte)(data >> 4) ^ ((ushort)data << 3));
+            }
+            return (crc16_data);
+        }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using GMap.NET;
+using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
 using System;
 using telemetry_hydro.Variables;
 
@@ -7,20 +9,20 @@ namespace Telemetri.Variables
     public static class DataGPS
     {
         public static double angle_f64 { get; set; }
-        public static double gps_latitude_f64 { get; set; }
-        public static double gps_longtitude_f64 { get; set; }
-        public static byte gps_velocity_u8 { get; set; }
-        public static byte gps_sattelite_number_u8 { get; set; }
-        public static byte gps_efficiency_u8 { get; set; }
+        public static double latitude_f32 { get; set; }
+        public static double longtitude_f32 { get; set; }
+        public static byte speed_u8 { get; set; }
+        public static byte sattelite_u8 { get; set; }
+        public static byte efficiency_u8 { get; set; }
 
         public static long odometer = 0;
         public static PointLatLng point1;
         public static PointLatLng point2;
 
         //UPDATED
-        public static string log_gps_data => gps_latitude_f64.ToString("0.0000000") + '\t' + gps_longtitude_f64.ToString("0.0000000") + '\t' +
-                                              gps_velocity_u8.ToString() + '\t' + gps_sattelite_number_u8.ToString() + '\t' +
-                                              gps_efficiency_u8.ToString();
+        public static string log_gps_data => latitude_f32.ToString("0.0000000") + '\t' + longtitude_f32.ToString("0.0000000") + '\t' +
+                                              speed_u8.ToString() + '\t' + sattelite_u8.ToString() + '\t' +
+                                              efficiency_u8.ToString();
         //NEW
         public static PointLatLng lapPoint1 = new PointLatLng(40.9520173224503, 29.4054678082466); //İSTANBUL PARK VARSAYILAN 1.NOKTA
         public static PointLatLng lapPoint2 = new PointLatLng(40.9520861983152, 29.4059774279594); //İSTANBUL PARK VARSAYILAN 2.NOKTA
@@ -69,7 +71,11 @@ namespace Telemetri.Variables
                         {
                             step = LapCountSteps.PointOne;
                             lapCounter++;
-                            //UITools.Telemetry2021.lapCount.Text = lapCounter.ToString() + "/8";
+                            GMAPController._gmap.Overlays.Clear();
+                            AddMarker(lapPoint1, GMarkerGoogleType.green_small, GMAPController._gmap);
+                            AddMarker(lapPoint2, GMarkerGoogleType.green_small, GMAPController._gmap);
+                            AddMarker(lapPoint3, GMarkerGoogleType.green_small, GMAPController._gmap);
+                            //TUR ALGO NOKTALARINI HARİTAYA EKLE
                         }
                         break;
                     }
@@ -92,6 +98,14 @@ namespace Telemetri.Variables
 
             return distance;
         }
-
+        public static void AddMarker(PointLatLng point, GMarkerGoogleType gMarker, GMapControl gMap)
+        {
+            GMapOverlay gMapOverlay = new GMapOverlay("markers");
+            GMapMarker mapMarker = new GMarkerGoogle(point, gMarker);
+            gMapOverlay.Markers.Add(mapMarker);
+            gMap.Overlays.Add(gMapOverlay);
+            gMap.Zoom += 0.00000001;
+            gMap.Zoom -= 0.00000001;
+        }
     }
 }

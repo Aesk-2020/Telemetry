@@ -8,280 +8,161 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Timers;
 using Telemetri.Variables;
 using telemetry_hydro.Variables;
 namespace telemetry_hydro
 {
     public partial class BMS_form : Form
     {
+
+        public static List<PictureBox> cellPictureBoxes = new List<PictureBox>();
+        public static List<Label> cellVoltLabels = new List<Label>();
+        public static List<Label> cellTempLabels = new List<Label>();
+        public static System.Timers.Timer updateForm = new System.Timers.Timer(1000);
+
         public BMS_form()
         {
             InitializeComponent();
-        }
+            #region InitCellsAndTimer
+            cellPictureBoxes.Add(cell1PictureBox);
+            cellPictureBoxes.Add(cell2PictureBox);
+            cellPictureBoxes.Add(cell3PictureBox);
+            cellPictureBoxes.Add(cell4PictureBox);
+            cellPictureBoxes.Add(cell5PictureBox);
+            cellPictureBoxes.Add(cell6PictureBox);
+            cellPictureBoxes.Add(cell7PictureBox);
+            cellPictureBoxes.Add(cell8PictureBox);
+            cellPictureBoxes.Add(cell9PictureBox);
+            cellPictureBoxes.Add(cell10PictureBox);
+            cellPictureBoxes.Add(cell11PictureBox);
+            cellPictureBoxes.Add(cell12PictureBox);
+            cellPictureBoxes.Add(cell13PictureBox);
+            cellPictureBoxes.Add(cell14PictureBox);
+            cellPictureBoxes.Add(cell15PictureBox);
+            cellPictureBoxes.Add(cell16PictureBox);
+            cellPictureBoxes.Add(cell17PictureBox);
+            cellPictureBoxes.Add(cell18PictureBox);
+            cellPictureBoxes.Add(cell19PictureBox);
+            cellPictureBoxes.Add(cell20PictureBox);
+            cellPictureBoxes.Add(cell21PictureBox);
+            cellPictureBoxes.Add(cell22PictureBox);
+            cellPictureBoxes.Add(cell23PictureBox);
+            cellPictureBoxes.Add(cell24PictureBox);
+            cellPictureBoxes.Add(cell25PictureBox);
+            cellPictureBoxes.Add(cell26PictureBox);
+            cellPictureBoxes.Add(cell27PictureBox);
+            cellPictureBoxes.Add(cell28PictureBox);
 
-        BmsUI bmsUI = new BmsUI();
-        string[] ports = SerialPort.GetPortNames();
-        const int CatchHeader = 0;
-        const int ExtractType = 1;
-        const int AddBuffer = 2;
+            cellTempLabels.Add(cell1TempBox);
+            cellTempLabels.Add(cell2TempBox);
+            cellTempLabels.Add(cell3TempBox);
+            cellTempLabels.Add(cell4TempBox);
+            cellTempLabels.Add(cell5TempBox);
+            cellTempLabels.Add(cell6TempBox);
+            cellTempLabels.Add(cell7TempBox);
+            cellTempLabels.Add(cell8TempBox);
+            cellTempLabels.Add(cell9TempBox);
+            cellTempLabels.Add(cell10TempBox);
+            cellTempLabels.Add(cell11TempBox);
+            cellTempLabels.Add(cell12TempBox);
+            cellTempLabels.Add(cell13TempBox);
+            cellTempLabels.Add(cell14TempBox);
+            cellTempLabels.Add(cell15TempBox);
+            cellTempLabels.Add(cell16TempBox);
+            cellTempLabels.Add(cell17TempBox);
+            cellTempLabels.Add(cell18TempBox);
+            cellTempLabels.Add(cell19TempBox);
+            cellTempLabels.Add(cell20TempBox);
+            cellTempLabels.Add(cell21TempBox);
+            cellTempLabels.Add(cell22TempBox);
+            cellTempLabels.Add(cell23TempBox);
+            cellTempLabels.Add(cell24TempBox);
+            cellTempLabels.Add(cell25TempBox);
+            cellTempLabels.Add(cell26TempBox);
+            cellTempLabels.Add(cell27TempBox);
+            cellTempLabels.Add(cell28TempBox);
+
+            cellVoltLabels.Add(cell1VoltBox);
+            cellVoltLabels.Add(cell2VoltBox);
+            cellVoltLabels.Add(cell3VoltBox);
+            cellVoltLabels.Add(cell4VoltBox);
+            cellVoltLabels.Add(cell5VoltBox);
+            cellVoltLabels.Add(cell6VoltBox);
+            cellVoltLabels.Add(cell7VoltBox);
+            cellVoltLabels.Add(cell8VoltBox);
+            cellVoltLabels.Add(cell9VoltBox);
+            cellVoltLabels.Add(cell10VoltBox);
+            cellVoltLabels.Add(cell11VoltBox);
+            cellVoltLabels.Add(cell12VoltBox);
+            cellVoltLabels.Add(cell13VoltBox);
+            cellVoltLabels.Add(cell14VoltBox);
+            cellVoltLabels.Add(cell15VoltBox);
+            cellVoltLabels.Add(cell16VoltBox);
+            cellVoltLabels.Add(cell17VoltBox);
+            cellVoltLabels.Add(cell18VoltBox);
+            cellVoltLabels.Add(cell19VoltBox);
+            cellVoltLabels.Add(cell20VoltBox);
+            cellVoltLabels.Add(cell21VoltBox);
+            cellVoltLabels.Add(cell22VoltBox);
+            cellVoltLabels.Add(cell23VoltBox);
+            cellVoltLabels.Add(cell24VoltBox);
+            cellVoltLabels.Add(cell25VoltBox);
+            cellVoltLabels.Add(cell26VoltBox);
+            cellVoltLabels.Add(cell27VoltBox);
+            cellVoltLabels.Add(cell28VoltBox);
+
+            updateForm.Elapsed += UpdateForm_Elapsed;
+            #endregion
+        }
 
         private void BMS_Load(object sender, EventArgs e)
         {
-            timer1.Enabled = true;
-            #region CellPictures
-            bmsUI.imgArray[0] = cell1_picture;
-            bmsUI.imgArray[1] = cell2_picture;
-            bmsUI.imgArray[2] = cell3_picture;
-            bmsUI.imgArray[3] = cell4_picture;
-            bmsUI.imgArray[4] = cell5_picture;
-            bmsUI.imgArray[5] = cell6_picture;
-            bmsUI.imgArray[6] = cell7_picture;
-            bmsUI.imgArray[7] = cell8_picture;
-            bmsUI.imgArray[8] = cell9_picture;
-            bmsUI.imgArray[9] = cell10_picture;
-            bmsUI.imgArray[10] = cell11_picture;
-            bmsUI.imgArray[11] = cell12_picture;
-            bmsUI.imgArray[12] = cell13_picture;
-            bmsUI.imgArray[13] = cell14_picture;
-            bmsUI.imgArray[14] = cell15_picture;
-            bmsUI.imgArray[15] = cell16_picture;
-
-            #endregion
-            #region VoltageLabels
-            bmsUI.voltageLabelsArray[0] = cell1_voltage;
-            bmsUI.voltageLabelsArray[1] = cell2_voltage;
-            bmsUI.voltageLabelsArray[2] = cell3_voltage;
-            bmsUI.voltageLabelsArray[3] = cell4_voltage;
-            bmsUI.voltageLabelsArray[4] = cell5_voltage;
-            bmsUI.voltageLabelsArray[5] = cell6_voltage;
-            bmsUI.voltageLabelsArray[6] = cell7_voltage;
-            bmsUI.voltageLabelsArray[7] = cell8_voltage;
-            bmsUI.voltageLabelsArray[8] = cell9_voltage;
-            bmsUI.voltageLabelsArray[9] = cell10_voltage;
-            bmsUI.voltageLabelsArray[10] = cell11_voltage;
-            bmsUI.voltageLabelsArray[11] = cell12_voltage;
-            bmsUI.voltageLabelsArray[12] = cell13_voltage;
-            bmsUI.voltageLabelsArray[13] = cell14_voltage;
-            bmsUI.voltageLabelsArray[14] = cell15_voltage;
-            bmsUI.voltageLabelsArray[15] = cell16_voltage;
-
-            #endregion
-            #region TempratureLabels            
-            bmsUI.tempLabelsArray[0] = cell1_temp;
-            bmsUI.tempLabelsArray[1] = cell2_temp;
-            bmsUI.tempLabelsArray[2] = cell3_temp;
-            bmsUI.tempLabelsArray[3] = cell4_temp;
-            bmsUI.tempLabelsArray[4] = cell5_temp;
-            bmsUI.tempLabelsArray[5] = cell6_temp;
-            bmsUI.tempLabelsArray[6] = cell7_temp;
-            bmsUI.tempLabelsArray[7] = cell8_temp;
-            bmsUI.tempLabelsArray[8] = cell9_temp;
-            bmsUI.tempLabelsArray[9] = cell10_temp;
-            bmsUI.tempLabelsArray[10] = cell11_temp;
-            bmsUI.tempLabelsArray[11] = cell12_temp;
-            bmsUI.tempLabelsArray[12] = cell13_temp;
-            bmsUI.tempLabelsArray[13] = cell14_temp;
-            bmsUI.tempLabelsArray[14] = cell15_temp;
-            bmsUI.tempLabelsArray[15] = cell16_temp;
-            #endregion
-
-            foreach (string port in ports)
-            {
-                ports_list.Items.Add(port);
-                ports_list.SelectedIndex = 0;
-            }
-            baudrates_list.Items.Add("2400");
-            baudrates_list.Items.Add("4800");
-            baudrates_list.Items.Add("9600");
-            baudrates_list.Items.Add("19200");
-            baudrates_list.Items.Add("115200");
-            baudrates_list.SelectedIndex = 2;
-
+            
         }
 
-        private void tableLayoutPanel68_Paint(object sender, PaintEventArgs e)
+        private void UpdateForm_Elapsed(object sender, ElapsedEventArgs e)
         {
-
+            DisplayAll();
         }
 
-        private void connect_button_Click(object sender, EventArgs e)
+        private void DisplayAll()
         {
-            if (serialPort1.IsOpen == false)
+            for (int i = 0; i < 28; i++)
             {
-                try
+                if(DataBMS.cells[i].actVoltage >= 4.0)
                 {
-                    serialPort1.PortName = ports_list.Text;
-                    serialPort1.BaudRate = Convert.ToInt32(baudrates_list.Text);
-                    serialPort1.Open();
-                    serialPort1.DataReceived += new SerialDataReceivedEventHandler(serialPort1_DataReceived);
-                    if (serialPort1.IsOpen == true)
-                    {
-                        connection_label.Text = "Bağlantı Açık";
-                        connection_label.ForeColor = Color.Green;
-                    }
+                    cellPictureBoxes[i].Image = cell_images.Images[4];
                 }
-                catch (Exception hata)
+                else if (DataBMS.cells[i].actVoltage < 4.0 && DataBMS.cells[i].actVoltage >= 3.75)
                 {
-                    MessageBox.Show("Hata:" + hata.Message);
+                    cellPictureBoxes[i].Image = cell_images.Images[3];
                 }
-            }
-        }
-        private void disconnect_button_Click(object sender, EventArgs e)
-        {
-            if (serialPort1.IsOpen == true)
-            {
-                serialPort1.Close();
-                connection_label.Text = "Bağlantı Kapalı";
-                connection_label.ForeColor = Color.Red;
-            }
-        }
-
-        static int step = 0;
-        static int data_counter = 0;
-
-        private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
-        {
-            int bytes = serialPort1.BytesToRead;
-            byte[] buffer = new byte[bytes];
-
-            serialPort1.Read(buffer, 0, bytes);
-
-            for (int i = 0; i < bytes; i++)
-            {
-                switch (step)
+                else if (DataBMS.cells[i].actVoltage < 3.75 && DataBMS.cells[i].actVoltage >= 3.2)
                 {
-                    case CatchHeader:
-                        {
-                            if (buffer[i] == 0xA0)
-                            {
-                                bmsUI.captured_data[data_counter] = buffer[i];
-                                data_counter++;
-                                step = ExtractType;
-                            }
-                            else
-                            {
-                                step = CatchHeader;
-                            }
-                            break;
-                        }
-                    case ExtractType:
-                        {
-                            bmsUI.captured_data[data_counter] = buffer[i];
-                            data_counter++;
-                            bmsUI.data_type = bmsUI.ExtractType(buffer[i]);
-                            bmsUI.message_length = bmsUI.ExtractMessageLength(buffer[i]);
-                            step = AddBuffer;
-                            break;
-                        }
-                    case AddBuffer:
-                        {
-                            bmsUI.captured_data[data_counter] = buffer[i];
-                            data_counter++;
-                            if (data_counter >= bmsUI.message_length)
-                            {
-                                data_counter = 0;
-                                step = CatchHeader;
-                                bmsUI.gelen_crc = bmsUI.ExtractCRC(bmsUI.captured_data[bmsUI.message_length + 1], bmsUI.captured_data[bmsUI.message_length]);
-                                ushort hesaplanan_crc = bmsUI.aeskCRCCalculate(bmsUI.captured_data, Convert.ToUInt16(bmsUI.message_length));
-                                switch (bmsUI.data_type)
-                                {
-                                    case 1:
-                                        DisplayVoltage();
-                                        break;
-                                    case 2:
-                                        DisplayTemprature();
-                                        break;
-                                    case 3:
-                                        break;
-                                    default:
-                                        break;
-                                }
-                            }
-                            step = CatchHeader;
-                            break;
-                        }
-                    default:
-                        break;
+                    cellPictureBoxes[i].Image = cell_images.Images[2];
                 }
+                else if (DataBMS.cells[i].actVoltage < 3.2 && DataBMS.cells[i].actVoltage >= 2.5)
+                {
+                    cellPictureBoxes[i].Image = cell_images.Images[1];
+                }
+                else
+                {
+                    cellPictureBoxes[i].Image = cell_images.Images[0];
+                }
+                cellVoltLabels[i].Text = DataBMS.cells[i].actVoltage.ToString("0.000");
+                cellTempLabels[i].Text = DataBMS.cells[i].temperature_u8.ToString();
             }
-        }
-        private void DisplayVoltage()
-        {
             /*
             for (int i = 0; i < 16; i++)
             {
-                if (BMS.bms_cells[i] >= 4000)
-                    bmsUI.imgArray[i].Image = cell_images.Images[4];
-                else if (BMS.bms_cells[i] < 4000 && BMS.bms_cells[i] >= 3750)
-                    bmsUI.imgArray[i].Image = cell_images.Images[3];
-                else if (BMS.bms_cells[i] < 3750 && BMS.bms_cells[i] >= 3300)
-                    bmsUI.imgArray[i].Image = cell_images.Images[2];
-                else if (BMS.bms_cells[i] < 3300 && BMS.bms_cells[i] >= 2750)
-                    bmsUI.imgArray[i].Image = cell_images.Images[1];
-                else
-                    bmsUI.imgArray[i].Image = cell_images.Images[0];
-            }
-
-            for (int i = 0; i < 16; i++)
-            {
                 bmsUI.voltageLabelsArray[i].Text = Convert.ToString(BMS.bms_cells[i]);
-            }
-
-            if (BMS.soc_f32 > 80.0)
-            {
-                flower_box.Image = socList.Images[4];
-            }
-            else if (BMS.soc_f32 > 60 && BMS.soc_f32 < 80)
-            {
-                flower_box.Image = socList.Images[3];
-            }
-
-            else if (BMS.soc_f32 < 60 && BMS.soc_f32 > 40)
-            {
-                flower_box.Image = socList.Images[2];
-            }
-
-            else if (BMS.soc_f32 < 40 && BMS.soc_f32 > 20)
-            {
-                flower_box.Image = socList.Images[1];
-            }
-
-            else
-            {
-                flower_box.Image = socList.Images[0];
             }
 
             charge_state.BackColor = BMS.charging_u1 ? MACROS.AeskBlue : Color.Red;
             max_cell_temp.Text = BMS.temp_u8.ToString();
             SoC.Text = BMS.soc_f32.ToString();
             */
-        }
-        private void DisplayTemprature()
-        {
-            /*
-            cell1_temp.Text = BMS.bms_temp[0].ToString();
-            cell2_temp.Text = BMS.bms_temp[0].ToString();
-            cell3_temp.Text = BMS.bms_temp[1].ToString();
-            cell4_temp.Text = BMS.bms_temp[1].ToString();
-            cell5_temp.Text = BMS.bms_temp[2].ToString();
-            cell6_temp.Text = BMS.bms_temp[2].ToString();
-            cell7_temp.Text = BMS.bms_temp[3].ToString();
-            cell8_temp.Text = BMS.bms_temp[3].ToString();
-            cell9_temp.Text = BMS.bms_temp[4].ToString();
-            cell10_temp.Text = BMS.bms_temp[4].ToString();
-            cell11_temp.Text = BMS.bms_temp[5].ToString();
-            cell12_temp.Text = BMS.bms_temp[5].ToString();
-            cell13_temp.Text = BMS.bms_temp[5].ToString();
-            cell14_temp.Text = BMS.bms_temp[6].ToString();
-            cell15_temp.Text = BMS.bms_temp[6].ToString();
-            cell16_temp.Text = BMS.bms_temp[6].ToString();
-            */
-                    }
-
-        private void timer1_Tick_1(object sender, EventArgs e)
-        {
-            DisplayVoltage();
-            DisplayTemprature();
         }
     }
 }
