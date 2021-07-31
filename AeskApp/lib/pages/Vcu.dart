@@ -4,9 +4,10 @@ import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
 import 'package:aeskapp/custom_widgets/gauge.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-
-
+import 'package:mqtt_client/mqtt_client.dart' as mqtt;
+import 'dart:typed_data';
 
 Widget ErrorHandler(int index){
 
@@ -15,9 +16,13 @@ Widget ErrorHandler(int index){
 
     },
   );
-
 }
+
 Widget Vcu(){
+  TextEditingController kpController = TextEditingController();
+  TextEditingController kiController = TextEditingController();
+  TextEditingController kdController = TextEditingController();
+  TextEditingController krController = TextEditingController();
   return SafeArea(
     child: SingleChildScrollView(
       child: Consumer<MqttAesk>(
@@ -296,6 +301,182 @@ Widget Vcu(){
                     ),
                     SizedBox(height: 15,),
                     AeskGauge(),
+                    SizedBox(height: 15,),
+                    myText("     Set Kp Kd Ki Kr", 20, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                    Divider(thickness: 4,color: Theme.of(context).textTheme.headline3.color,endIndent: 25,indent: 25,),
+                    SizedBox(height: 10,),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(25, 0, 25, 5),
+                      child: TextField(
+                        style: TextStyle(
+                            fontFamily: "GOTHIC",
+                            fontSize: 20,
+                            color: Theme.of(context).textTheme.headline1.color,
+                            fontWeight: FontWeight.bold
+                        ),
+                        keyboardType: TextInputType.numberWithOptions(),
+                        controller: kpController,
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: "Kp",
+                            suffixIcon: Icon(Icons.settings_input_component),
+                            labelStyle: TextStyle(
+                                fontFamily: "GOTHIC",
+                                fontSize: 20,
+                                color: Theme.of(context).textTheme.headline1.color,
+                                fontWeight: FontWeight.bold
+                                ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(25, 0, 25, 5),
+                      child: TextField(
+                        style: TextStyle(
+                            fontFamily: "GOTHIC",
+                            fontSize: 20,
+                            color: Theme.of(context).textTheme.headline1.color,
+                            fontWeight: FontWeight.bold
+                        ),
+                        controller: kiController,
+                        keyboardType: TextInputType.numberWithOptions(),
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: "Ki",
+                          suffixIcon: Icon(Icons.settings_input_component),
+                          labelStyle: TextStyle(
+                              fontFamily: "GOTHIC",
+                              fontSize: 20,
+                              color: Theme.of(context).textTheme.headline1.color,
+                              fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(25, 0, 25, 5),
+                      child: TextField(
+                        style: TextStyle(
+                            fontFamily: "GOTHIC",
+                            fontSize: 20,
+                            color: Theme.of(context).textTheme.headline1.color,
+                            fontWeight: FontWeight.bold
+                        ),
+                        controller: kdController,
+                        keyboardType: TextInputType.numberWithOptions(),
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: "Kd",
+                          suffixIcon: Icon(Icons.settings_input_component),
+                          labelStyle: TextStyle(
+                              fontFamily: "GOTHIC",
+                              fontSize: 20,
+                              color: Theme.of(context).textTheme.headline1.color,
+                              fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(25, 0, 25, 5),
+                      child: TextField(
+                        style: TextStyle(
+                            fontFamily: "GOTHIC",
+                            fontSize: 20,
+                            color: Theme.of(context).textTheme.headline1.color,
+                            fontWeight: FontWeight.bold
+                        ),
+                        controller: krController,
+                        keyboardType: TextInputType.numberWithOptions(),
+                        decoration: InputDecoration(
+                          suffixIcon: Icon(Icons.settings_input_component),
+                          border: OutlineInputBorder(),
+                          labelText: "Kr",
+                          labelStyle: TextStyle(
+                              fontFamily: "GOTHIC",
+                              fontSize: 20,
+                              color: Theme.of(context).textTheme.headline1.color,
+                              fontWeight: FontWeight.bold
+                          ),/*
+                            hintText: "Kp",
+                            hintStyle: TextStyle(
+                                fontFamily: "GOTHIC",
+                                fontSize: 20,
+                                color: Theme.of(context).textTheme.headline1.color,
+                                fontWeight: FontWeight.normal
+                            ),*/
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(25, 0, 25, 5),
+                      child: Center(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            ElevatedButton.icon(
+                                icon: Icon(CupertinoIcons.paperplane_fill, color: Theme.of(context).textTheme.headline2.color),
+                                label: myText("Send", 20, Theme.of(context).textTheme.headline2.color, FontWeight.bold),
+                                onPressed: () async {
+                                  final builder = mqtt.MqttClientPayloadBuilder();
+                                  var kp = double.parse(kpController.text);
+                                  var ki = double.parse(kiController.text);
+                                  var kd = double.parse(kdController.text);
+                                  var kr = double.parse(krController.text);
+
+                                  builder.addByte(0x14); //SYNC1
+                                  builder.addByte(0x04); //SYNC2
+                                  builder.addByte(0x31); //VEHICLE
+                                  builder.addByte(0x04); //TARGET
+                                  builder.addByte(0x40); //SOURCE
+                                  builder.addByte(0x19); //SOURCE_MSG_ID //0X1A
+                                  builder.addByte(0x20); //MSG SIZE
+                                  builder.addDouble(kp);
+                                  builder.addDouble(ki);
+                                  builder.addDouble(kd);
+                                  builder.addDouble(kr);
+                                  builder.addByte(0xA0); //INDEX_L
+                                  builder.addByte(0x01); //INDEX_H
+                                  builder.addByte(0x01); //CRC_L - SALLAMA CRC
+                                  builder.addByte(0x01); //CRC_H - GOMULUDE BYPASS EDILIYOR
+
+                                  MqttAesk.client.publishMessage(MqttAesk.isLyra ? "interface_to_vehicle" : "interface_to_vehicle_2", mqtt.MqttQos.atMostOnce, builder.payload);
+                                  print(
+                                            "Kp: " + kpController.text +
+                                          "\nKd: " + kdController.text +
+                                          "\nKi: " + kiController.text +
+                                          "\nKr: " + krController.text
+                                  );
+
+                                },
+                            ),
+                            ElevatedButton.icon(
+                              icon: Icon(CupertinoIcons.question_circle_fill, color: Theme.of(context).textTheme.headline2.color),
+                              label: myText("Query", 20, Theme.of(context).textTheme.headline2.color, FontWeight.bold),
+                              onPressed: () async {
+                                final builder = mqtt.MqttClientPayloadBuilder();
+                                builder.addByte(0x14); //SYNC1
+                                builder.addByte(0x04); //SYNC2
+                                builder.addByte(0x31); //VEHICLE
+                                builder.addByte(0x04); //TARGET
+                                builder.addByte(0x40); //SOURCE
+                                builder.addByte(0x1A); //SOURCE_MSG_ID
+                                builder.addByte(0x01); //MSG SIZE
+                                builder.addByte(0x00); //MSG
+                                builder.addByte(0xA0); //INDEX_L
+                                builder.addByte(0x01); //INDEX_H
+                                builder.addByte(0x01); //CRC_L - SALLAMA CRC
+                                builder.addByte(0x01); //CRC_H - GOMULUDE BYPASS EDILIYOR
+
+                                MqttAesk.client.publishMessage(MqttAesk.isLyra ? "interface_to_vehicle" : "interface_to_vehicle_2", mqtt.MqttQos.atMostOnce, builder.payload);
+                                print("Query sent");
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 15,),
                   ],
                 ),
               ),

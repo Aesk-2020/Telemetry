@@ -123,8 +123,10 @@ class _LoggingState extends State<Logging> {
                 if (checkbox != null) {
                   showDialog(
                     context: context,
-                    child: SpinKitCircle(color: Theme.of(context).appBarTheme.color,),
                     barrierDismissible: false,
+                    builder: (BuildContext context) {
+                        return SpinKitCircle(color: Theme.of(context).appBarTheme.color,);
+                      },
                   );
                   dynamic state;
                   try{
@@ -142,21 +144,25 @@ class _LoggingState extends State<Logging> {
                     Navigator.pushReplacementNamed(context, "/Login");
                     showDialog(
                       context: context,
-                      child: AlertDialog(
-                        title: myText("HATA", 30, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                        content: myText("Bağlantı başarısız! Lütfen internet bağlantınızı kontrol edin", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                        backgroundColor: Theme.of(context).backgroundColor,
-                      ),
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: myText("HATA", 30, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                          content: myText("Bağlantı başarısız! Lütfen internet bağlantınızı kontrol edin", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                          backgroundColor: Theme.of(context).backgroundColor,
+                        );
+                      }
                     );
                   }
                 }else{
                   showDialog(
                     context: context,
-                    child: AlertDialog(
-                      title: myText("HATA", 30, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                      content: myText("Lütfen bir araç tipi seçiniz.", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                      backgroundColor: Theme.of(context).backgroundColor,
-                    ),
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: myText("HATA", 30, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                        content: myText("Lütfen bir araç tipi seçiniz.", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                        backgroundColor: Theme.of(context).backgroundColor,
+                      );
+                    },
                   );
                 }
               },

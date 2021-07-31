@@ -21,7 +21,7 @@ namespace Telemetri.NewForms
         
         public static SerialPortCOMRF serialPortCOMRF = new SerialPortCOMRF();// NRF'e veri gönderecek seri port nesnesini oluştur.
         public static SerialRF serialRF = new SerialRF();
-        public static NewMQTT mqttobj = new NewMQTT("vehicle_to_interface_2", "LYRADATA", MACROS.aesk_IP);
+        public static NewMQTT mqttobj = new NewMQTT("vehicle_to_interface", "LYRADATA", MACROS.aesk_IP);
         string splitter = "aesk\n";
         List<string> lineList;
         ComproUI comproUIII;

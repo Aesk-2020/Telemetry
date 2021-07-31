@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 import 'package:aeskapp/classes/aeskData.dart';
 import 'package:mqtt_client/mqtt_client.dart' as mqtt;
+import 'package:mqtt_client/mqtt_server_client.dart';
 import 'package:flutter/foundation.dart';
 import 'dart:async';
 import 'package:aeskapp/pages/Login.dart' as login;
@@ -14,18 +15,20 @@ class MqttAesk extends ChangeNotifier {
   static String username = 'digital';
   static String password = 'aesk';
   static String clientIdentifier =
-  DateTime.now().toString(); //cihaz isimlerine göre atama ya
+  DateTime.now().microsecond.toString(); //cihaz isimlerine göre atama ya
   static bool isLyra;
   static String myTopic;
+  static String pubTopic = 'DENEME';
 
-  mqtt.MqttClient client;
+  //mqtt.MqttClient client;
   mqtt.MqttConnectionState connectionState;
+  static MqttServerClient client;
 
 //kilit eleman
   StreamSubscription subscription;
 
   Future<bool> connect() async {
-    client = mqtt.MqttClient(broker, "40");
+    client = MqttServerClient(broker, clientIdentifier);
     client.port = port;
     client.logging(on: true);
     client.keepAlivePeriod = 30;
@@ -41,12 +44,12 @@ class MqttAesk extends ChangeNotifier {
         .withWillQos(mqtt.MqttQos.atMostOnce);
     client.connectionMessage = connMess;
 
-    /*
-    const pubTopic = 'topic/test';
-    final builder = MqttClientPayloadBuilder();
-    builder.addString('Hello MQTT');
-    client.publishMessage(pubTopic, MqttQos.atLeastOnce, builder.payload);
-    */
+
+    /*final builder = mqtt.MqttClientPayloadBuilder();
+    builder.addString('Hello AESKKKKKK');
+    client.publishMessage(pubTopic, mqtt.MqttQos.atMostOnce, builder.payload);*/
+
+
 
     //baglanilan yer burasi
     try {

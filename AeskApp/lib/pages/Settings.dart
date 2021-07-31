@@ -73,52 +73,54 @@ class _SettingsState extends State<Settings> {
               onTap: () {
                 showDialog(
                   context: context,
-                  child: AlertDialog(
-                    title: myText("Hakkında", 20, aeskBlue, FontWeight.bold),
-                    backgroundColor: Theme.of(context).backgroundColor,
-                    content: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        myText(
-                            "Bu uygulama AESK Nesne Yönelim Ekibi tarafından geliştirilmiştir",
-                            20,
-                            Theme.of(context).textTheme.headline1.color,
-                            FontWeight.bold),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          "Geliştiriciler:",
-                          style: TextStyle(
-                              decoration: TextDecoration.underline,
-                              color:
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: myText("Hakkında", 20, aeskBlue, FontWeight.bold),
+                      backgroundColor: Theme.of(context).backgroundColor,
+                      content: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          myText(
+                              "Bu uygulama AESK Nesne Yönelim Ekibi tarafından geliştirilmiştir",
+                              20,
                               Theme.of(context).textTheme.headline1.color,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
-                        ),
-                        myText(
-                            "Ahmet Furkan Ünlü",
-                            20,
-                            Theme.of(context).textTheme.headline1.color,
-                            FontWeight.bold),
-                        myText(
-                            "Emre Urcu",
-                            20,
-                            Theme.of(context).textTheme.headline1.color,
-                            FontWeight.bold),
-                        myText(
-                            "Yusuf Kemal Palacı",
-                            20,
-                            Theme.of(context).textTheme.headline1.color,
-                            FontWeight.bold),
-                        myText(
-                            "Yusuf Yıldız",
-                            20,
-                            Theme.of(context).textTheme.headline1.color,
-                            FontWeight.bold),
-                      ],
-                    ),
-                  ),
+                              FontWeight.bold),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "Geliştiriciler:",
+                            style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                color:
+                                Theme.of(context).textTheme.headline1.color,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20),
+                          ),
+                          myText(
+                              "Ahmet Furkan Ünlü",
+                              20,
+                              Theme.of(context).textTheme.headline1.color,
+                              FontWeight.bold),
+                          myText(
+                              "Emre Urcu",
+                              20,
+                              Theme.of(context).textTheme.headline1.color,
+                              FontWeight.bold),
+                          myText(
+                              "Yusuf Kemal Palacı",
+                              20,
+                              Theme.of(context).textTheme.headline1.color,
+                              FontWeight.bold),
+                          myText(
+                              "Yusuf Yıldız",
+                              20,
+                              Theme.of(context).textTheme.headline1.color,
+                              FontWeight.bold),
+                        ],
+                      ),
+                    );
+                  }
                 );
               },
             ),

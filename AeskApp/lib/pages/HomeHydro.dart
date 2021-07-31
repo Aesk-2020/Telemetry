@@ -19,24 +19,26 @@
         onWillPop: () {
           return showDialog(
             context: context,
-            child: CupertinoAlertDialog(
-              //backgroundColor: Theme.of(context).backgroundColor,
-              content: Text(
-                "Çıkmak istediğinize emin misiniz?",
-                style: TextStyle(fontSize: 20, color: Colors.black),
-              ),
-              actions: <Widget>[
-                CupertinoDialogAction(
-                  child: myText("HAYIR", 18, Colors.black, FontWeight.bold),
-                  onPressed: () => Navigator.pop(context, false),
+            builder: (BuildContext context) {
+              return CupertinoAlertDialog(
+                //backgroundColor: Theme.of(context).backgroundColor,
+                content: Text(
+                  "Çıkmak istediğinize emin misiniz?",
+                  style: TextStyle(fontSize: 20, color: Colors.black),
                 ),
-                CupertinoDialogAction(
-                  child: myText("EVET", 18, Colors.black, FontWeight.bold),
-                  onPressed: () => SystemChannels.platform
-                      .invokeMethod('SystemNavigator.pop'),
-                ),
-              ],
-            ),
+                actions: <Widget>[
+                  CupertinoDialogAction(
+                    child: myText("HAYIR", 18, Colors.black, FontWeight.bold),
+                    onPressed: () => Navigator.pop(context, false),
+                  ),
+                  CupertinoDialogAction(
+                    child: myText("EVET", 18, Colors.black, FontWeight.bold),
+                    onPressed: () => SystemChannels.platform
+                        .invokeMethod('SystemNavigator.pop'),
+                  ),
+                ],
+              );
+            }
           );
         },
         child: SafeArea(
@@ -196,24 +198,26 @@
         onWillPop: () {
           return showDialog(
             context: context,
-            child: CupertinoAlertDialog(
-              //backgroundColor: Theme.of(context).backgroundColor,
-              content: Text(
-                "Çıkmak istediğinize emin misiniz?",
-                style: TextStyle(fontSize: 20, color: Colors.black),
-              ),
-              actions: <Widget>[
-                CupertinoDialogAction(
-                  child: myText("HAYIR", 18, Colors.black, FontWeight.bold),
-                  onPressed: () => Navigator.pop(context, false),
+            builder: (BuildContext context) {
+              return CupertinoAlertDialog(
+                //backgroundColor: Theme.of(context).backgroundColor,
+                content: Text(
+                  "Çıkmak istediğinize emin misiniz?",
+                  style: TextStyle(fontSize: 20, color: Colors.black),
                 ),
-                CupertinoDialogAction(
-                  child: myText("EVET", 18, Colors.black, FontWeight.bold),
-                  onPressed: () => SystemChannels.platform
-                      .invokeMethod('SystemNavigator.pop'),
-                ),
-              ],
-            ),
+                actions: <Widget>[
+                  CupertinoDialogAction(
+                    child: myText("HAYIR", 18, Colors.black, FontWeight.bold),
+                    onPressed: () => Navigator.pop(context, false),
+                  ),
+                  CupertinoDialogAction(
+                    child: myText("EVET", 18, Colors.black, FontWeight.bold),
+                    onPressed: () => SystemChannels.platform
+                        .invokeMethod('SystemNavigator.pop'),
+                  ),
+                ],
+              );
+            }
           );
         },
         child: SafeArea(
