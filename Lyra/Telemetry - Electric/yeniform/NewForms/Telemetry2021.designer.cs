@@ -574,7 +574,7 @@
             this.lapCntLabel.Name = "lapCntLabel";
             this.lapCntLabel.Size = new System.Drawing.Size(67, 47);
             this.lapCntLabel.TabIndex = 130;
-            this.lapCntLabel.Text = "0/8";
+            this.lapCntLabel.Text = "0";
             this.lapCntLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LapResetBtn

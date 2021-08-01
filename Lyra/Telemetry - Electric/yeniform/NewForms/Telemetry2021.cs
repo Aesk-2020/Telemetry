@@ -25,6 +25,7 @@ namespace Telemetri.NewForms
             LogSystem.logPlayTimer.Tick += LogPlayTimer_Tick;
             Button[] buttons = { homeButton, mapButton, motordrButton, batteryButton, pidTuningBtn, settingsButton, mqttButton };
             TextBox[] textBoxs = { activeChannelLabel, mqttPingLabel };
+
             UITools.Telemetry2021.buttonList.AddRange(buttons);
             UITools.Telemetry2021.forms.Add("Anasayfa", new Anasayfa());
             UITools.Telemetry2021.forms.Add("BMS_Form", new BMS_Form());
@@ -72,6 +73,7 @@ namespace Telemetri.NewForms
             SetDoubleBuffered(tableLayoutPanel3);
             SetDoubleBuffered(tableLayoutPanel4);
             SetDoubleBuffered(tableLayoutPanel5);
+
             #endregion
         }
 
@@ -110,6 +112,9 @@ namespace Telemetri.NewForms
         private void lapPlusBtn_Click(object sender, EventArgs e)
         {
             lapCntLabel.Text = (Convert.ToDecimal(lapCntLabel.Text) + 1).ToString();
+            DataBMS.startFinishCon = DataBMS.cons_u16 - DataBMS.startFinishConBuffer;
+            UITools.Anasayfa.lastLapConsBox.Text = DataBMS.startFinishCon.ToString();
+            TimeOperations.LapFinish();
         }
 
         private void lapMinusBtn_Click(object sender, EventArgs e)

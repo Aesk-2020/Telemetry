@@ -53,6 +53,7 @@ namespace Telemetri.Variables
             public static TextBox actVelocityLabel;
             public static TextBox errorsLabel;
             public static TextBox setTorqueBox;
+            public static TextBox lastLapConsBox;
             public static TextBox tcuMinLabel;
             public static TextBox driveStatusLabel;
             public static Stopwatch mqttStopwatch = new Stopwatch();

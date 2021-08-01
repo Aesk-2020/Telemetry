@@ -49,6 +49,11 @@ namespace Telemetri.NewForms
             UITools.Anasayfa.startLogBtn = startLogBtn;
             UITools.Anasayfa.resetBoardBtn = resetBoardButton;
             UITools.Anasayfa.portConnectBtn = portConnectBtn;
+            UITools.Anasayfa.lastLapConsBox = lastLapConsBox;
+            TimeOperations.avgLapBox = avgLapTimeBox;
+            TimeOperations.currentLapBox = currentLapBox;
+            TimeOperations.fastestLapBox = fastestLapBox;
+            TimeOperations.lastLapBox = lastLapBox;
             comproUIII = new ComproUI(0x31, ComproUI.TELEMETRI, 24);
         }
 
@@ -123,6 +128,39 @@ namespace Telemetri.NewForms
             SetDoubleBuffered(startBtn);
             SetDoubleBuffered(startLogBtn);
             SetDoubleBuffered(stopLogBtn);
+            SetDoubleBuffered(tableLayoutPanel15);
+            SetDoubleBuffered(tableLayoutPanel16);
+            SetDoubleBuffered(tableLayoutPanel17);
+            SetDoubleBuffered(tableLayoutPanel18);
+            SetDoubleBuffered(tableLayoutPanel19);
+            SetDoubleBuffered(tableLayoutPanel20);
+            SetDoubleBuffered(tableLayoutPanel21);
+            SetDoubleBuffered(tableLayoutPanel22);
+            SetDoubleBuffered(tableLayoutPanel23);
+            SetDoubleBuffered(label1);
+            SetDoubleBuffered(label2);
+            SetDoubleBuffered(label3);
+            SetDoubleBuffered(label4);
+            SetDoubleBuffered(label5);
+            SetDoubleBuffered(label6);
+            SetDoubleBuffered(label7);
+            SetDoubleBuffered(label8);
+            SetDoubleBuffered(label9);
+            SetDoubleBuffered(label10);
+            SetDoubleBuffered(label11);
+            SetDoubleBuffered(label12);
+            SetDoubleBuffered(label13);
+            SetDoubleBuffered(label14);
+            SetDoubleBuffered(label15);
+            SetDoubleBuffered(label16);
+            SetDoubleBuffered(label17);
+            SetDoubleBuffered(lastLapConsBox);
+            SetDoubleBuffered(lastLapBox);
+            SetDoubleBuffered(lastLapAvgSpeedBox);
+            SetDoubleBuffered(lastLapConsBox);
+            SetDoubleBuffered(setTorqueBox);
+            SetDoubleBuffered(currentLapBox);
+            SetDoubleBuffered(sdCardStatBox);
             #endregion
 
         }
@@ -176,6 +214,7 @@ namespace Telemetri.NewForms
             startBtn.Enabled = false;
             finishBtn.Enabled = true;
             DataBMS.startFinishConBuffer = DataBMS.cons_u16;
+            TimeOperations.StartRace();
         }
 
         private void finishBtn_Click(object sender, EventArgs e)
@@ -183,8 +222,9 @@ namespace Telemetri.NewForms
             startTimeLabel.Text = "NULL";
             startBtn.Enabled = true;
             finishBtn.Enabled = false;
-            DataBMS.startFinishCon = DataBMS.cons_u16 - DataBMS.startFinishConBuffer;
-            MessageBox.Show($"Toplam tüketim: {DataBMS.startFinishCon} Wh");
+            //DataBMS.startFinishCon = DataBMS.cons_u16 - DataBMS.startFinishConBuffer;
+            TimeOperations.FinishRace();
+            //MessageBox.Show($"Toplam tüketim: {DataBMS.startFinishCon} Wh");
         }
 
         private void mqttWorker_DoWork(object sender, DoWorkEventArgs e)

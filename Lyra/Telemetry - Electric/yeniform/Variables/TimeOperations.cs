@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Timers;
 using System.Windows.Forms;
 
-namespace telemetry_hydro.Variables
+namespace Telemetri.Variables
 {
     public static class TimeOperations
     {

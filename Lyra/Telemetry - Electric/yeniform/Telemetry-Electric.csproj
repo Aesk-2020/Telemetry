@@ -244,6 +244,7 @@
     <Compile Include="Variables\Driver.cs" />
     <Compile Include="Variables\SerialRF.cs" />
     <Compile Include="Variables\ThreadMethods.cs" />
+    <Compile Include="Variables\TimeOperations.cs" />
     <Compile Include="Variables\Timers.cs" />
     <Compile Include="Variables\UITools.cs" />
     <Compile Include="Variables\VCU.cs" />
