@@ -118,6 +118,34 @@ namespace Telemetri.Variables
             public static Label actualStatusLabel;
             public static Label temperatureLabel;
         }
+        public static class DriverForm2
+        {
+            public static Label dcBusVoltLabel2;
+            public static Label dcBusCurLabel2;
+            public static Label actIdLabel2;
+            public static Label actIqLabel2;
+            public static Label setIqLabel2;
+            public static Label setIdLabel2;
+            public static Label setTorqueLabel2;
+            public static Label actTorqueLabel2;
+            public static Label vdLabel2;
+            public static Label vqLabel2;
+            public static PictureBox overcurIABox2;
+            public static PictureBox overcurIBBox2;
+            public static PictureBox overcurICBox2;
+            public static PictureBox overcurIDCBox2;
+            public static PictureBox undercurIDCBox2;
+            public static PictureBox undervoltVDCBox2;
+            public static PictureBox overvoltVDCBox2;
+            public static PictureBox underspeedBox2;
+            public static PictureBox overspeedBox2;
+            public static PictureBox overtempBox2;
+            public static PictureBox ISCFFlagBox2;
+            public static PictureBox pwmEnabledBox2;
+            public static Label actualStatusLabel2;
+            public static Label temperatureLabel2;
+        }
+
         public static class CellsForm
         {
             public static List<TextBox> cellsVoltBoxList = new List<TextBox>();
@@ -196,7 +224,39 @@ namespace Telemetri.Variables
             DriverForm.underspeedBox.BackColor = DataMCU.under_speed ? Color.Crimson : MACROS.UInewBack;
             DriverForm.pwmEnabledBox.BackColor = DataMCU.PWM_enabled ? Color.LimeGreen : MACROS.UInewBack;
 
-           
+            if (DataMCU.free_wheeling_status == true)
+            {
+                DriverForm2.actualStatusLabel2.Text = "NO SWITCHING";
+            }
+            else
+            {
+                DriverForm2.actualStatusLabel2.Text = DataMCU.torque_mode ? "SPEED MODE" : "TORQUE MODE";
+            }
+            DriverForm2.actIdLabel2.Text = DataMCU.act_id_current_s16.ToString();
+            DriverForm2.actIqLabel2.Text = DataMCU.act_iq_current_s16.ToString();
+            DriverForm2.actTorqueLabel2.Text = DataMCU.act_torque_s8.ToString();
+            DriverForm2.setIdLabel2.Text = DataMCU.set_id_current_s16.ToString();
+            DriverForm2.setIqLabel2.Text = DataMCU.set_iq_current_s16.ToString();
+            DriverForm2.setTorqueLabel2.Text = DataMCU.set_torque_s16.ToString();
+            DriverForm2.vdLabel2.Text = DataMCU.vd_s16.ToString();
+            DriverForm2.vqLabel2.Text = DataMCU.vq_s16.ToString();
+            DriverForm2.dcBusCurLabel2.Text = DataMCU.i_dc_s16.ToString();
+            DriverForm2.dcBusVoltLabel2.Text = DataMCU.v_dc_s16.ToString();
+            DriverForm2.temperatureLabel2.Text = DataMCU.temperature_u8.ToString() + " °C";
+
+            DriverForm2.ISCFFlagBox2.BackColor = DataMCU.input_scaling_calib_finished ? Color.LimeGreen : MACROS.UInewBack;
+            DriverForm2.overcurIABox2.BackColor = DataMCU.over_cur_IA ? Color.Crimson : MACROS.UInewBack;
+            DriverForm2.overcurIBBox2.BackColor = DataMCU.over_cur_IB ? Color.Crimson : MACROS.UInewBack;
+            DriverForm2.overcurICBox2.BackColor = DataMCU.over_cur_IC ? Color.Crimson : MACROS.UInewBack;
+            DriverForm2.overcurIDCBox2.BackColor = DataMCU.over_cur_IDC ? Color.Crimson : MACROS.UInewBack;
+            DriverForm2.overvoltVDCBox2.BackColor = DataMCU.over_volt_VDC ? Color.Crimson : MACROS.UInewBack;
+            DriverForm2.overtempBox2.BackColor = DataMCU.over_temp ? Color.Crimson : MACROS.UInewBack;
+            DriverForm2.overspeedBox2.BackColor = DataMCU.over_speed ? Color.Crimson : MACROS.UInewBack;
+            DriverForm2.undercurIDCBox2.BackColor = DataMCU.under_cur_IDC ? Color.Crimson : MACROS.UInewBack;
+            DriverForm2.undervoltVDCBox2.BackColor = DataMCU.under_volt_VDC ? Color.Crimson : MACROS.UInewBack;
+            DriverForm2.underspeedBox2.BackColor = DataMCU.under_speed ? Color.Crimson : MACROS.UInewBack;
+            DriverForm2.pwmEnabledBox2.BackColor = DataMCU.PWM_enabled ? Color.LimeGreen : MACROS.UInewBack;
+
 
             /*switch ((DataBMS.DC_BUS_STATE)DataBMS.dc_bus_state_u8)
             {

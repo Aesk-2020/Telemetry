@@ -69,7 +69,6 @@ namespace Telemetri.NewForms
 
         private void MotorDriver_Load(object sender, EventArgs e)
         {
-            
             #region doubleBuffer
             SetDoubleBuffered(tableLayoutPanel1);
             SetDoubleBuffered(tableLayoutPanel2);

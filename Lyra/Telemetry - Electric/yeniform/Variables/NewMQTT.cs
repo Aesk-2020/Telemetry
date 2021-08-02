@@ -83,7 +83,7 @@ namespace Telemetri.Variables
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Lütfen internet bağlantınızı kontrol edin");
+                    MessageBox.Show("Lütfen internet bağlantınızı kontrol edin\n" + e.Message);
                     return false;
                 }
                

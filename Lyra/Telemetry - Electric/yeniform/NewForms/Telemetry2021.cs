@@ -23,13 +23,14 @@ namespace Telemetri.NewForms
             
             InitializeComponent();
             LogSystem.logPlayTimer.Tick += LogPlayTimer_Tick;
-            Button[] buttons = { homeButton, mapButton, motordrButton, batteryButton, pidTuningBtn, settingsButton, mqttButton };
+            Button[] buttons = { homeButton, mapButton, motordrButton, batteryButton, pidTuningBtn };
             TextBox[] textBoxs = { activeChannelLabel, mqttPingLabel };
 
             UITools.Telemetry2021.buttonList.AddRange(buttons);
             UITools.Telemetry2021.forms.Add("Anasayfa", new Anasayfa());
             UITools.Telemetry2021.forms.Add("BMS_Form", new BMS_Form());
             UITools.Telemetry2021.forms.Add("Driver_Form", new Driver_Form());
+            UITools.Telemetry2021.forms.Add("DriverForm2", new DriverForm2());
             UITools.Telemetry2021.forms.Add("Map", new Map());
             UITools.Telemetry2021.forms.Add("MQTTdeneme", new MQTTdeneme());
             UITools.Telemetry2021.forms.Add("PIDTuningForm", new PIDTuningForm());
@@ -211,17 +212,16 @@ namespace Telemetri.NewForms
 
         private void motordrButton_Click(object sender, EventArgs e)
         {
-            FormManagement.openChildForm(UITools.Telemetry2021.forms["Driver_Form"], panelChildForm);
-        }
+            MouseEventArgs me = (MouseEventArgs)e;
+            if(me.Button == MouseButtons.Left)
+            {
+                FormManagement.openChildForm(UITools.Telemetry2021.forms["Driver_Form"], panelChildForm);
+            }
+            else if(me.Button == MouseButtons.Right)
+            {
+                UITools.Telemetry2021.forms["Driver_Form"].Show();
+            }
 
-        private void ıconButton1_Click_1(object sender, EventArgs e)
-        {
-            FormManagement.openChildForm(UITools.Telemetry2021.forms["TestForm"], panelChildForm);
-        }
-
-        private void pidTuningBtn_Click_1(object sender, EventArgs e)
-        {
-            FormManagement.openChildForm(UITools.Telemetry2021.forms["PIDTuningForm"], panelChildForm);
         }
 
         private void graphTimer_Tick(object sender, EventArgs e)
@@ -266,6 +266,37 @@ namespace Telemetri.NewForms
                 mqttConnectionStateIcon.IconChar = FontAwesome.Sharp.IconChar.Stop;
                 mqttConnectionStateIcon.IconColor = Color.Red;
             }
+        }
+        private void testButton_Click(object sender, EventArgs e)
+        {
+            FormManagement.openChildForm(UITools.Telemetry2021.forms["TestForm"], panelChildForm);
+        }
+
+        private void pidTuningBtn_Click(object sender, EventArgs e)
+        {
+            FormManagement.openChildForm(UITools.Telemetry2021.forms["PIDTuningForm"], panelChildForm);
+        }
+
+        private void motordrButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void motordrButton2_MouseUp(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Left)
+            {
+                FormManagement.openChildForm(UITools.Telemetry2021.forms["DriverForm2"], panelChildForm);
+            }
+            if (e.Button == MouseButtons.Middle)
+            {
+
+            }
+        }
+
+        private void doubleMotorCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            DataMCU.IS_DOUBLE_MCU = doubleMotorCheck.Checked;
         }
     }
 }
