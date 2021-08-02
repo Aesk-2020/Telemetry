@@ -314,6 +314,21 @@ namespace Telemetri.Variables
                         DataMCU.error_status_u16        = BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
                         DataMCU.act_torque_s8           = (sbyte)receiveBuffer[startIndex++]; DataMCU.act_torque_s8 -= 100;
 
+                        //MCU2
+                        DataMCU.act_id_current_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.act_iq_current_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.vd_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.vq_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.set_id_current_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.set_iq_current_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.set_torque_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.i_dc_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.v_dc_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.act_speed_s16_mcu2 = (short)Math.Round(0.105183 * (BitConverter.ToInt16(receiveBuffer, startIndex) / 10)); startIndex += 2;
+                        DataMCU.temperature_u8_mcu2 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataMCU.error_status_u16_mcu2 = BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
+                        DataMCU.act_torque_s8_mcu2 = (sbyte)receiveBuffer[startIndex++]; DataMCU.act_torque_s8 -= 100;
+
                         //BMS
                         DataBMS.volt_u16                = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
                         DataBMS.cur_s16                 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
