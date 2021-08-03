@@ -68,12 +68,12 @@
                                 //mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   DataBox(
-                                    ad: "Ping",
-                                    veri: AeskData.ping.toString(),
+                                    ad: "TCU min",
+                                    veri: AeskData.tcu_minute_u8.toString(),
                                   ),
                                   DataBox(
-                                    ad: "Penalty",
-                                    veri: AeskData.eys_penalty_int8.toString(),
+                                    ad: "SD Result",
+                                    veri: AeskData.sd_result_u8.toString(),
                                   ),
                                   DataBox(
                                     ad: "Set Velocity",
@@ -114,6 +114,21 @@
                                     veri: AeskData.driver_idc_s16
                                         .toStringAsFixed(2),
                                   ),
+                                  DataBox(
+                                    ad: "Ki",
+                                    veri: AeskData.ki
+                                        .toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "Set Torque L",
+                                    veri: AeskData.vcu_set_torque_s16
+                                        .toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "Act Velocity L",
+                                    veri: AeskData.driver_actspeed_s16
+                                        .toStringAsFixed(2),
+                                  ),
                                 ],
                               ),
                               Column(
@@ -124,9 +139,9 @@
                                         .toString(),
                                   ),
                                   DataBox(
-                                    ad: "SoC",
-                                    veri: AeskData.bms_soc_f32
-                                        .toStringAsFixed(1),
+                                    ad: "SD Result Write",
+                                    veri: AeskData.sd_result_write_u8
+                                        .toString(),
                                   ),
                                   DataBox(
                                     ad: "Act Velocity",
@@ -159,13 +174,28 @@
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "Sharing",
-                                    veri: AeskData.eys_sharing_ratio_uint16
+                                    ad: "SoC",
+                                    veri: AeskData.bms_soc_f32
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "VDC",
                                     veri: AeskData.driver_vdc_s16
+                                        .toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "Kp",
+                                    veri: AeskData.kp
+                                        .toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "Set Torque R",
+                                    veri: AeskData.vcu_set_torque_2_s16
+                                        .toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "Act Velocity R",
+                                    veri: AeskData.driver_actspeed_s16_2
                                         .toStringAsFixed(2),
                                   ),
                                 ],

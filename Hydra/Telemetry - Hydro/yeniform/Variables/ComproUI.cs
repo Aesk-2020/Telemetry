@@ -296,7 +296,7 @@ namespace Telemetri.Variables
                         DataVCU.drive_commands_u8       = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
                         DataVCU.speed_set_rpm_s16       = (short)Math.Round(BitConverter.ToInt16(receiveBuffer, startIndex) * 0.105183); startIndex += 2;
                         DataVCU.torque_set_s16          = BitConverter.ToInt16(receiveBuffer, startIndex); startIndex += 2;
-                        DataVCU.speed_limit_u16         = BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
+                        DataVCU.torque_set_2_s16         = BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
                         DataVCU.torque_limit_u8         = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
 
                         //MCU
@@ -355,6 +355,7 @@ namespace Telemetri.Variables
                         
                         //SD result
                         DataVCU.SD_result_u8            = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataVCU.SD_result_write_u8      = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
 
                         //TCU minute
                         DataVCU.TCU_minute_u8           = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;

@@ -137,8 +137,14 @@ class _LoggingState extends State<Logging> {
                   print(state);
                   if (state == true) {
                     MqttAesk.isLyra = checkbox;
-                    checkbox ? mqttAesk.subscribeToTopic("LYRADATA") : mqttAesk.subscribeToTopic("HYDRADATA");
-                    mqttAesk.subscribeToTopic("vehicle_to_interface");
+                    if(MqttAesk.isLyra) {
+                      mqttAesk.subscribeToTopic("LYRADATA");
+                      mqttAesk.subscribeToTopic("vehicle_to_interface");
+                    }
+                    else {
+                      mqttAesk.subscribeToTopic("HYDRADATA");
+                      mqttAesk.subscribeToTopic("vehicle_to_interface_2");
+                    }
                     Navigator.pushNamed(context, checkbox ? "/Home" : "/HomeHydro");
                   } else {
                     Navigator.pushReplacementNamed(context, "/Login");

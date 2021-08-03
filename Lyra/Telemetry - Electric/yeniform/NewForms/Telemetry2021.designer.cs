@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Telemetry2021));
             this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.doubleMotorCheck = new System.Windows.Forms.CheckBox();
             this.testButton = new FontAwesome.Sharp.IconButton();
             this.pidTuningBtn = new FontAwesome.Sharp.IconButton();
             this.motordrButton2 = new FontAwesome.Sharp.IconButton();
@@ -70,7 +71,6 @@
             this.pauseResume = new System.Windows.Forms.ImageList(this.components);
             this.graphTimer = new System.Windows.Forms.Timer(this.components);
             this.mqttConnetctionControlTimer = new System.Windows.Forms.Timer(this.components);
-            this.doubleMotorCheck = new System.Windows.Forms.CheckBox();
             this.panelSideMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -105,6 +105,20 @@
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(250, 761);
             this.panelSideMenu.TabIndex = 1;
+            // 
+            // doubleMotorCheck
+            // 
+            this.doubleMotorCheck.AutoSize = true;
+            this.doubleMotorCheck.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.doubleMotorCheck.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubleMotorCheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.doubleMotorCheck.Location = new System.Drawing.Point(0, 476);
+            this.doubleMotorCheck.Name = "doubleMotorCheck";
+            this.doubleMotorCheck.Size = new System.Drawing.Size(250, 23);
+            this.doubleMotorCheck.TabIndex = 23;
+            this.doubleMotorCheck.Text = "Double Motor";
+            this.doubleMotorCheck.UseVisualStyleBackColor = true;
+            this.doubleMotorCheck.CheckedChanged += new System.EventHandler(this.doubleMotorCheck_CheckedChanged);
             // 
             // testButton
             // 
@@ -739,20 +753,6 @@
             this.mqttConnetctionControlTimer.Enabled = true;
             this.mqttConnetctionControlTimer.Interval = 1000;
             this.mqttConnetctionControlTimer.Tick += new System.EventHandler(this.mqttConnetctionControlTimer_Tick);
-            // 
-            // doubleMotorCheck
-            // 
-            this.doubleMotorCheck.AutoSize = true;
-            this.doubleMotorCheck.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.doubleMotorCheck.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubleMotorCheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.doubleMotorCheck.Location = new System.Drawing.Point(0, 476);
-            this.doubleMotorCheck.Name = "doubleMotorCheck";
-            this.doubleMotorCheck.Size = new System.Drawing.Size(250, 23);
-            this.doubleMotorCheck.TabIndex = 23;
-            this.doubleMotorCheck.Text = "Double Motor";
-            this.doubleMotorCheck.UseVisualStyleBackColor = true;
-            this.doubleMotorCheck.CheckedChanged += new System.EventHandler(this.doubleMotorCheck_CheckedChanged);
             // 
             // Telemetry2021
             // 

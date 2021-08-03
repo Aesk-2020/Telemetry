@@ -100,6 +100,7 @@ namespace telemetry_hydro
             ThreadMethods.PBoxBackColorDegis(emsCanBox, DataVCU.ems_can_error_u1 ? Color.Crimson : MACROS.AeskDark);
             ThreadMethods.PBoxBackColorDegis(bmsCanBox, DataVCU.bms_can_error_u1 ? Color.Crimson : MACROS.AeskDark);
             ThreadMethods.PBoxBackColorDegis(mcuCanBox, DataVCU.mcu_can_error_u1 ? Color.Crimson : MACROS.AeskDark);
+            ThreadMethods.PBoxBackColorDegis(logBox, (DataVCU.SD_result_u8 == 0 && DataVCU.SD_result_write_u8 == 0) ? Color.LimeGreen : Color.Crimson);
             ThreadMethods.PBoxBackColorDegis(gpsReadyBox, DataGPS.latitude_f32 != 0 ? Color.LimeGreen : Color.Crimson);
             #endregion
             #region BMS_TEXT
@@ -146,6 +147,18 @@ namespace telemetry_hydro
             ThreadMethods.TextDegis(actIqBox, DataMCU.act_iq_current_s16.ToString());
             ThreadMethods.TextDegis(setTorqueBox, DataMCU.set_torque_s16.ToString());
             ThreadMethods.TextDegis(actTorqueBox, DataMCU.act_torque_s8.ToString());
+
+            ThreadMethods.TextDegis(actSpeed2Box, DataMCU.act_speed_s16_mcu2.ToString());
+            ThreadMethods.TextDegis(idc2Box, DataMCU.i_dc_s16_mcu2.ToString());
+            ThreadMethods.TextDegis(vdc2Box, DataMCU.v_dc_s16_mcu2.ToString());
+            ThreadMethods.TextDegis(vd2Box, DataMCU.vd_s16_mcu2.ToString());
+            ThreadMethods.TextDegis(vq2Box, DataMCU.vq_s16_mcu2.ToString());
+            ThreadMethods.TextDegis(setId2Box, DataMCU.set_id_current_s16_mcu2.ToString());
+            ThreadMethods.TextDegis(setIq2Box, DataMCU.set_iq_current_s16_mcu2.ToString());
+            ThreadMethods.TextDegis(actId2Box, DataMCU.act_id_current_s16_mcu2.ToString());
+            ThreadMethods.TextDegis(actIq2Box, DataMCU.act_iq_current_s16_mcu2.ToString());
+            ThreadMethods.TextDegis(setTorque2Box, DataMCU.set_torque_s16_mcu2.ToString());
+            ThreadMethods.TextDegis(actTorque2Box, DataMCU.act_torque_s8_mcu2.ToString());
             #endregion
             ThreadMethods.TextDegis(distTravelledBox, (DataGPS.odometer / 1000).ToString("0.000") + "km");
             ThreadMethods.LabelDegis(gpsSpeedBox, DataGPS.speed_u8.ToString());

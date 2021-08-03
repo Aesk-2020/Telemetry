@@ -11,7 +11,7 @@ namespace Telemetri.Variables
         public static byte  drive_commands_u8;
         public static short speed_set_rpm_s16;
         public static short torque_set_s16;
-        public static ushort speed_limit_u16;
+        public static ushort torque_set_2_s16;
         public static byte torque_limit_u8;
         public static byte can_error_u8;
         public static float kp = 11;
@@ -19,6 +19,7 @@ namespace Telemetri.Variables
         public static float kd = 1;
         public static float kr = 1;
         public static byte SD_result_u8;
+        public static byte SD_result_write_u8;
         public static byte TCU_minute_u8;
 
         public static bool BMS_Wake_u1 => Convert.ToBoolean((drive_commands_u8 >> 0 & 0b00000001));
@@ -46,7 +47,7 @@ namespace Telemetri.Variables
         public static string log_data => drive_commands_u8.ToString() + "\t" +
                                             speed_set_rpm_s16.ToString() + "\t" +
                                             torque_set_s16.ToString() + "\t" +
-                                            speed_limit_u16.ToString() + "\t" +
+                                            torque_set_2_s16.ToString() + "\t" +
                                             torque_limit_u8 + "\t" +
                                             kp + "\t" + ki + "\t" + kd + "\t";
     }

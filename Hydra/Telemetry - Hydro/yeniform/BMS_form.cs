@@ -123,7 +123,7 @@ namespace telemetry_hydro
 
         private void UpdateForm_Elapsed(object sender, ElapsedEventArgs e)
         {
-            DisplayAll();
+            //DisplayAll();
         }
 
         private void DisplayAll()
