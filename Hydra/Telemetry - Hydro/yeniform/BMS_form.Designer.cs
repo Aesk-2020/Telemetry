@@ -415,6 +415,7 @@
             this.cell24PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell24PictureBox.BackColor = System.Drawing.Color.White;
             this.cell24PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell24PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell24PictureBox.Image")));
             this.cell24PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -516,6 +517,7 @@
             this.cell25PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell25PictureBox.BackColor = System.Drawing.Color.White;
             this.cell25PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell25PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell25PictureBox.Image")));
             this.cell25PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -617,6 +619,7 @@
             this.cell22PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell22PictureBox.BackColor = System.Drawing.Color.White;
             this.cell22PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell22PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell22PictureBox.Image")));
             this.cell22PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -718,6 +721,7 @@
             this.cell26PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell26PictureBox.BackColor = System.Drawing.Color.White;
             this.cell26PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell26PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell26PictureBox.Image")));
             this.cell26PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -819,6 +823,7 @@
             this.cell27PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell27PictureBox.BackColor = System.Drawing.Color.White;
             this.cell27PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell27PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell27PictureBox.Image")));
             this.cell27PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -920,6 +925,7 @@
             this.cell28PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell28PictureBox.BackColor = System.Drawing.Color.White;
             this.cell28PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell28PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell28PictureBox.Image")));
             this.cell28PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -1021,6 +1027,7 @@
             this.cell23PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell23PictureBox.BackColor = System.Drawing.Color.White;
             this.cell23PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell23PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell23PictureBox.Image")));
             this.cell23PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -1150,6 +1157,7 @@
             this.cell17PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell17PictureBox.BackColor = System.Drawing.Color.White;
             this.cell17PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell17PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell17PictureBox.Image")));
             this.cell17PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -1251,6 +1259,7 @@
             this.cell18PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell18PictureBox.BackColor = System.Drawing.Color.White;
             this.cell18PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell18PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell18PictureBox.Image")));
             this.cell18PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -1352,6 +1361,7 @@
             this.cell15PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell15PictureBox.BackColor = System.Drawing.Color.White;
             this.cell15PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell15PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell15PictureBox.Image")));
             this.cell15PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -1453,6 +1463,7 @@
             this.cell16PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell16PictureBox.BackColor = System.Drawing.Color.White;
             this.cell16PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell16PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell16PictureBox.Image")));
             this.cell16PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -1554,6 +1565,7 @@
             this.cell19PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell19PictureBox.BackColor = System.Drawing.Color.White;
             this.cell19PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell19PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell19PictureBox.Image")));
             this.cell19PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -1655,6 +1667,7 @@
             this.cell20PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell20PictureBox.BackColor = System.Drawing.Color.White;
             this.cell20PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell20PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell20PictureBox.Image")));
             this.cell20PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -1756,6 +1769,7 @@
             this.cell21PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell21PictureBox.BackColor = System.Drawing.Color.White;
             this.cell21PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell21PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell21PictureBox.Image")));
             this.cell21PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -1885,6 +1899,7 @@
             this.cell10PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell10PictureBox.BackColor = System.Drawing.Color.White;
             this.cell10PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell10PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell10PictureBox.Image")));
             this.cell10PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -1986,6 +2001,7 @@
             this.cell11PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell11PictureBox.BackColor = System.Drawing.Color.White;
             this.cell11PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell11PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell11PictureBox.Image")));
             this.cell11PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -2087,6 +2103,7 @@
             this.cell8PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell8PictureBox.BackColor = System.Drawing.Color.White;
             this.cell8PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell8PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell8PictureBox.Image")));
             this.cell8PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -2188,6 +2205,7 @@
             this.cell9PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell9PictureBox.BackColor = System.Drawing.Color.White;
             this.cell9PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell9PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell9PictureBox.Image")));
             this.cell9PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -2289,6 +2307,7 @@
             this.cell12PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell12PictureBox.BackColor = System.Drawing.Color.White;
             this.cell12PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell12PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell12PictureBox.Image")));
             this.cell12PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -2390,6 +2409,7 @@
             this.cell13PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell13PictureBox.BackColor = System.Drawing.Color.White;
             this.cell13PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell13PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell13PictureBox.Image")));
             this.cell13PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -2491,6 +2511,7 @@
             this.cell14PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell14PictureBox.BackColor = System.Drawing.Color.White;
             this.cell14PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell14PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell14PictureBox.Image")));
             this.cell14PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -2620,6 +2641,7 @@
             this.cell3PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell3PictureBox.BackColor = System.Drawing.Color.White;
             this.cell3PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell3PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell3PictureBox.Image")));
             this.cell3PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -2721,6 +2743,7 @@
             this.cell4PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell4PictureBox.BackColor = System.Drawing.Color.White;
             this.cell4PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell4PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell4PictureBox.Image")));
             this.cell4PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -2822,6 +2845,7 @@
             this.cell1PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell1PictureBox.BackColor = System.Drawing.Color.White;
             this.cell1PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell1PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell1PictureBox.Image")));
             this.cell1PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -2923,6 +2947,7 @@
             this.cell7PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell7PictureBox.BackColor = System.Drawing.Color.White;
             this.cell7PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell7PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell7PictureBox.Image")));
             this.cell7PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -3024,6 +3049,7 @@
             this.cell6PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell6PictureBox.BackColor = System.Drawing.Color.White;
             this.cell6PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell6PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell6PictureBox.Image")));
             this.cell6PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -3123,6 +3149,7 @@
             this.cell5PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell5PictureBox.BackColor = System.Drawing.Color.White;
             this.cell5PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell5PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell5PictureBox.Image")));
             this.cell5PictureBox.Location = new System.Drawing.Point(4, 4);
@@ -3224,6 +3251,7 @@
             this.cell2PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cell2PictureBox.BackColor = System.Drawing.Color.White;
             this.cell2PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cell2PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cell2PictureBox.Image")));
             this.cell2PictureBox.Location = new System.Drawing.Point(4, 4);

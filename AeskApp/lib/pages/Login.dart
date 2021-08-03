@@ -26,9 +26,9 @@ class ListItem {
 
 class _LoggingState extends State<Logging> {
   List<ListItem> dropdownItems = [
-    ListItem(1, "mqtt.omerfurkandemircioglu.com.tr"),
-    ListItem(2, "mqtt.omerustun.com.tr"),
-    ListItem(3, "broker.mqttdashboard.com")
+    ListItem(1, "broker.mqttdashboard.com"),
+    ListItem(2, "mqtt.omerfurkandemircioglu.com.tr"),
+    ListItem(3, "mqtt.omerustun.com.tr")
   ];
 
   List<DropdownMenuItem<ListItem>> buildDropDownMenuItems(List listItems) {

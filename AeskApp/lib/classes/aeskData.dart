@@ -202,7 +202,7 @@ class AeskData extends ChangeNotifier{
   AeskData(ByteData message,Endian myEndian){
 
     int _startIndex = MqttAesk.myTopic == "LYRADATA" || MqttAesk.myTopic == "HYDRADATA" ? 0 : 5; //BU TOPICLERDE DEĞİLSE COMPRO KULLANILIYOR
-    if(message.lengthInBytes > 11) {
+    if(MqttAesk.myPayload.message.length > 100) {
       if(MqttAesk.myTopic == "vehicle_to_interface" || MqttAesk.myTopic == "vehicle_to_interface_2") {
         srcMsgId =  message.getUint8(_startIndex);
         _startIndex+=2;
@@ -351,9 +351,10 @@ class AeskData extends ChangeNotifier{
         tcu_minute_u8 = message.getUint8(_startIndex);
         _startIndex++;
 
-        if(MqttAesk.myTopic == "LYRADATA" || MqttAesk.myTopic == "HYDRADATA") {
+        if(MqttAesk.myTopic == "LYRADATA" || MqttAesk.myTopic == "HYDRADATA" || MqttAesk.myTopic == "vehicle_to_interface_2") {
           //BU TOPICLERDE CELLER AKTARILDIĞINDAN BÖYLE YAZILDI
-          cellCount = MqttAesk.isLyra ? 28 : 16;
+          //cellCount = MqttAesk.isLyra ? 28 : 16;
+          cellCount = 28;
 
           for(int i = 0; i < cellCount; i++){
             battery_cells[i] = message.getUint8(_startIndex) + bms_worst_cell_voltage_f32.toInt();
@@ -506,8 +507,9 @@ class AeskData extends ChangeNotifier{
               , 20, Colors.green, FontWeight.bold),
         );
       }
+
+      notifyListeners();
     }
-    notifyListeners();
   }
 
 }

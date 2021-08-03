@@ -63,6 +63,36 @@ Widget CellsHydro(){
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
+                          CellWidget("Cell-17", AeskData.battery_cells[16].toString(), context, AeskData.bms_min_finder == 12 ? Colors.red[500] : Theme.of(context).textTheme.headline1.color),
+                          CellWidget("Cell-18", AeskData.battery_cells[17].toString(), context, AeskData.bms_min_finder == 13 ? Colors.red[500] : Theme.of(context).textTheme.headline1.color),
+                          CellWidget("Cell-19", AeskData.battery_cells[18].toString(), context, AeskData.bms_min_finder == 14 ? Colors.red[500] : Theme.of(context).textTheme.headline1.color),
+                          CellWidget("Cell-20", AeskData.battery_cells[19].toString(), context, AeskData.bms_min_finder == 15 ? Colors.red[500] : Theme.of(context).textTheme.headline1.color),
+                        ],
+                      ),
+                      SizedBox(height: 20,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          CellWidget("Cell-21", AeskData.battery_cells[20].toString(), context, AeskData.bms_min_finder == 12 ? Colors.red[500] : Theme.of(context).textTheme.headline1.color),
+                          CellWidget("Cell-22", AeskData.battery_cells[21].toString(), context, AeskData.bms_min_finder == 13 ? Colors.red[500] : Theme.of(context).textTheme.headline1.color),
+                          CellWidget("Cell-23", AeskData.battery_cells[22].toString(), context, AeskData.bms_min_finder == 14 ? Colors.red[500] : Theme.of(context).textTheme.headline1.color),
+                          CellWidget("Cell-24", AeskData.battery_cells[23].toString(), context, AeskData.bms_min_finder == 15 ? Colors.red[500] : Theme.of(context).textTheme.headline1.color),
+                        ],
+                      ),
+                      SizedBox(height: 20,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          CellWidget("Cell-25", AeskData.battery_cells[24].toString(), context, AeskData.bms_min_finder == 12 ? Colors.red[500] : Theme.of(context).textTheme.headline1.color),
+                          CellWidget("Cell-26", AeskData.battery_cells[25].toString(), context, AeskData.bms_min_finder == 13 ? Colors.red[500] : Theme.of(context).textTheme.headline1.color),
+                          CellWidget("Cell-27", AeskData.battery_cells[26].toString(), context, AeskData.bms_min_finder == 14 ? Colors.red[500] : Theme.of(context).textTheme.headline1.color),
+                          CellWidget("Cell-28", AeskData.battery_cells[27].toString(), context, AeskData.bms_min_finder == 15 ? Colors.red[500] : Theme.of(context).textTheme.headline1.color),
+                        ],
+                      ),
+                      SizedBox(height: 20,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
                           CellWidget("Worst Cell Voltage", AeskData.bms_worst_cell_voltage_f32.toString(), context, Theme.of(context).textTheme.headline1.color)
                         ],
                       ),

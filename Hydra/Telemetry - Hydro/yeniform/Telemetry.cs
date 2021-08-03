@@ -30,6 +30,7 @@ namespace telemetry_hydro
             myDataGrid.InitDataGrid(dataGridView1);
             myDisplayThread = new Thread(displayMyAllData) { IsBackground = true, Priority = ThreadPriority.Normal };
             mqtt.LogEvent += logDatas;
+            DataBMS.CellInit();
             CheckForIllegalCrossThreadCalls = false;
 
             TimeOperations.avgLapBox = avgLapTimeBox;

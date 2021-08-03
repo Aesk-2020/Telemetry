@@ -334,7 +334,8 @@ namespace Telemetri.Variables
                         DataBMS.cur_s16                 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
                         DataBMS.cons_u16                = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 10; startIndex += 2;
                         DataBMS.soc_u16                 = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
-                        DataBMS.worst_cell_volt_u16     = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 1000; startIndex += 2;
+                        DataBMS.worst_cell_volt_u16_raw     = (float)BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
+                        DataBMS.worst_cell_volt_u16     = DataBMS.worst_cell_volt_u16_raw / 1000;
                         DataBMS.error_u8                = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
                         DataBMS.dc_bus_state_u8         = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
                         DataBMS.worst_cell_address_u8   = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
@@ -360,6 +361,13 @@ namespace Telemetri.Variables
                         //TCU minute
                         DataVCU.TCU_minute_u8           = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
 
+                        //Cells
+                        for (int i = 0; i < DataBMS.cells.Count; i++)
+                        {
+                            DataBMS.cells[i].voltage_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                            DataBMS.cells[i].actVoltage = (float)(DataBMS.cells[i].voltage_u8 + DataBMS.worst_cell_volt_u16_raw) / 1000;
+                        }
+
                         //EMS
                         EMS.bat_cons_f32 = (float)EncodePackMethods.DataConverterS16(receiveBuffer, ref startIndex) / MACROS.FLOAT_CONVERTER_1;
                         EMS.fc_cons_f32 = (float)EncodePackMethods.DataConverterS16(receiveBuffer, ref startIndex) / MACROS.FLOAT_CONVERTER_1;
@@ -379,23 +387,11 @@ namespace Telemetri.Variables
                         EMS.temperature_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
                         EMS.error_u8 = EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex);
 
-                        if(isFirst == true)
-                        {
-                            telemetry_hydro.BMS_form.updateForm.Start();
-                            isFirst = false;
-                        }
-                        /*
-                        //Cells
-                        for (int i = 0; i < DataBMS.cells.Count; i++)
-                        {
-                            DataBMS.cells[i].voltage_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
-                            DataBMS.cells[i].actVoltage = DataBMS.cells[i].voltage_u8 + DataBMS.worst_cell_volt_u16;
-                        }
-                        List<char> temps = new List<char>();
+                        List<byte> temps = new List<byte>();
                         int count = 0;
                         for (int i = 0; i < 7; i++) // Total temperature sensor count. 
                         {
-                            temps.Add(BitConverter.ToChar(receiveBuffer, startIndex)); startIndex++;
+                            temps.Add(EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex));
                         }
                         for (int i = 0; i < 28; i++) 
                         {
@@ -405,6 +401,14 @@ namespace Telemetri.Variables
                                 count = 0;
                             }
                         }
+
+                        if (isFirst == true)
+                        {
+                            telemetry_hydro.BMS_form.updateForm.Start();
+                            isFirst = false;
+                        }
+
+                        /*
                         for (int i = 0; i < 28; i++)
                         {
                             DataBMS.cells[i].soc_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;

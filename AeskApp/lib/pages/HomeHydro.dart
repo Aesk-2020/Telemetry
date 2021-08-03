@@ -227,27 +227,27 @@
       return WillPopScope(
         onWillPop: () {
           return showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return CupertinoAlertDialog(
-                //backgroundColor: Theme.of(context).backgroundColor,
-                content: Text(
-                  "Çıkmak istediğinize emin misiniz?",
-                  style: TextStyle(fontSize: 20, color: Colors.black),
-                ),
-                actions: <Widget>[
-                  CupertinoDialogAction(
-                    child: myText("HAYIR", 18, Colors.black, FontWeight.bold),
-                    onPressed: () => Navigator.pop(context, false),
+              context: context,
+              builder: (BuildContext context) {
+                return CupertinoAlertDialog(
+                  //backgroundColor: Theme.of(context).backgroundColor,
+                  content: Text(
+                    "Çıkmak istediğinize emin misiniz?",
+                    style: TextStyle(fontSize: 20, color: Colors.black),
                   ),
-                  CupertinoDialogAction(
-                    child: myText("EVET", 18, Colors.black, FontWeight.bold),
-                    onPressed: () => SystemChannels.platform
-                        .invokeMethod('SystemNavigator.pop'),
-                  ),
-                ],
-              );
-            }
+                  actions: <Widget>[
+                    CupertinoDialogAction(
+                      child: myText("HAYIR", 18, Colors.black, FontWeight.bold),
+                      onPressed: () => Navigator.pop(context, false),
+                    ),
+                    CupertinoDialogAction(
+                      child: myText("EVET", 18, Colors.black, FontWeight.bold),
+                      onPressed: () => SystemChannels.platform
+                          .invokeMethod('SystemNavigator.pop'),
+                    ),
+                  ],
+                );
+              }
           );
         },
         child: SafeArea(
@@ -277,62 +277,65 @@
                                 //mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   DataBox(
-                                    ad: "Ping",
-                                    veri: AeskData.ping.toString(),
+                                    ad: "TCU min",
+                                    veri: AeskData.tcu_minute_u8.toString(),
                                   ),
                                   DataBox(
-                                    ad: "BMS BAT VOLT",
+                                    ad: "SD Result",
+                                    veri: AeskData.sd_result_u8.toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "Set Velocity",
+                                    veri: AeskData.vcu_speed_set_rpm_s16
+                                        .toString(),
+                                  ),
+                                  DataBox(
+                                      ad: "Bat Temp",
+                                      veri: AeskData.bms_temp_u8.toString()
+                                  ),
+                                  DataBox(
+                                    ad: "Bat Volt",
                                     veri: AeskData.bms_bat_volt_f32
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "BMS BAT CUR",
+                                    ad: "Bat Cur",
                                     veri: AeskData.bms_bat_current_f32
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "BMS BAT CONS",
-                                    veri: AeskData.bms_bat_cons_f32
+                                    ad: "FC Cons",
+                                    veri: AeskData.eys_fc_cons_uint16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "BMS SOC",
-                                    veri:
-                                        AeskData.bms_soc_f32.toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "Phase B",
-                                    veri: AeskData.driver_act_iq_u16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "EYS BAT VOLT",
-                                    veri: AeskData.eys_bat_volt_int16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "EYS BAT CUR",
-                                    veri: AeskData.eys_bat_current_int16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "EYS BAT CONS",
-                                    veri: AeskData.eys_bat_cons_uint16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "EYS OUT VOLT",
+                                    ad: "Out Volt",
                                     veri: AeskData.eys_out_volt_int16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "EYS TEMP",
-                                    veri: AeskData.eys_temp_uint8
+                                    ad: "Out Cons",
+                                    veri: AeskData.eys_out_cons_uint16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "EYS SHARING RATIO",
-                                    veri: AeskData.eys_sharing_ratio_uint16
+                                    ad: "IDC",
+                                    veri: AeskData.driver_idc_s16
+                                        .toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "Ki",
+                                    veri: AeskData.ki
+                                        .toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "Set Torque L",
+                                    veri: AeskData.vcu_set_torque_s16
+                                        .toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "Act Velocity L",
+                                    veri: AeskData.driver_actspeed_s16
                                         .toStringAsFixed(2),
                                   ),
                                 ],
@@ -340,68 +343,68 @@
                               Column(
                                 children: <Widget>[
                                   DataBox(
-                                    ad: "MOTOR TEMP",
-                                    veri: AeskData.driver_act_iq_u16
+                                    ad: "Motor Temp",
+                                    veri: AeskData.driver_motortemp_u8
+                                        .toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "SD Result Write",
+                                    veri: AeskData.sd_result_write_u8
+                                        .toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "Act Velocity",
+                                    veri: AeskData.driver_actspeed_s16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "Phase A Current",
-                                    veri: AeskData.driver_act_vd_s16
+                                    ad: "Tube Temp",
+                                    veri: AeskData.eys_temp_uint8
+                                        .toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "FC Volt",
+                                    veri: AeskData.eys_bat_volt_int16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "Torque",
-                                    veri: AeskData.driver_idc_s16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "DC BUS CUR",
-                                    veri: AeskData.driver_idc_s16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "DC BUS VOLT",
-                                    veri: AeskData.driver_idc_s16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "IArms",
-                                    veri: AeskData.driver_idc_s16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "EYS FC CONS",
-                                    veri: AeskData.eys_fc_cons_uint16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "EYS FC CUR",
+                                    ad: "FC Cur",
                                     veri: AeskData.eys_fc_current_int16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "EYS FC LT CONS",
+                                    ad: "FC LT Cons",
                                     veri: AeskData.eys_fc_lt_cons_uint16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "EYS FC VOLT",
-                                    veri: AeskData.eys_fc_volt_int16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "EYS OUT CONS",
-                                    veri: AeskData.eys_out_cons_uint16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "EYS OUT CUR",
+                                    ad: "Out Cur",
                                     veri: AeskData.eys_out_current_int16
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "EYS PENALTY",
-                                    veri: AeskData.eys_penalty_int8
+                                    ad: "SoC",
+                                    veri: AeskData.bms_soc_f32
+                                        .toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "VDC",
+                                    veri: AeskData.driver_vdc_s16
+                                        .toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "Kp",
+                                    veri: AeskData.kp
+                                        .toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "Set Torque R",
+                                    veri: AeskData.vcu_set_torque_2_s16
+                                        .toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "Act Velocity R",
+                                    veri: AeskData.driver_actspeed_s16_2
                                         .toStringAsFixed(2),
                                   ),
                                 ],
