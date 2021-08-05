@@ -278,6 +278,13 @@
             this.vq2Box = new System.Windows.Forms.TextBox();
             this.label94 = new System.Windows.Forms.Label();
             this.setSpeed2Box = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
+            this.highPrioBox = new System.Windows.Forms.TextBox();
+            this.midPrioBox = new System.Windows.Forms.TextBox();
+            this.lowPrioBox = new System.Windows.Forms.TextBox();
+            this.label95 = new System.Windows.Forms.Label();
+            this.label96 = new System.Windows.Forms.Label();
+            this.label97 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
@@ -344,6 +351,7 @@
             this.tableLayoutPanel20.SuspendLayout();
             this.tableLayoutPanel21.SuspendLayout();
             this.tableLayoutPanel22.SuspendLayout();
+            this.tableLayoutPanel23.SuspendLayout();
             this.SuspendLayout();
             // 
             // error_ready
@@ -1571,7 +1579,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(1734, 179);
+            this.label11.Location = new System.Drawing.Point(1861, 278);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(32, 13);
             this.label11.TabIndex = 109;
@@ -1582,7 +1590,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(1606, 171);
+            this.label12.Location = new System.Drawing.Point(1733, 270);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 21);
             this.label12.TabIndex = 107;
@@ -1593,7 +1601,7 @@
             this.targetSpeedBox.AutoSize = true;
             this.targetSpeedBox.Font = new System.Drawing.Font("Lucida Sans", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.targetSpeedBox.ForeColor = System.Drawing.Color.White;
-            this.targetSpeedBox.Location = new System.Drawing.Point(1694, 165);
+            this.targetSpeedBox.Location = new System.Drawing.Point(1821, 264);
             this.targetSpeedBox.Name = "targetSpeedBox";
             this.targetSpeedBox.Size = new System.Drawing.Size(49, 32);
             this.targetSpeedBox.TabIndex = 108;
@@ -1604,7 +1612,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(1734, 211);
+            this.label9.Location = new System.Drawing.Point(1657, 278);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(32, 13);
             this.label9.TabIndex = 106;
@@ -1615,7 +1623,7 @@
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(1606, 203);
+            this.label28.Location = new System.Drawing.Point(1529, 270);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(66, 21);
             this.label28.TabIndex = 104;
@@ -1626,7 +1634,7 @@
             this.gpsSpeedBox.AutoSize = true;
             this.gpsSpeedBox.Font = new System.Drawing.Font("Lucida Sans", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpsSpeedBox.ForeColor = System.Drawing.Color.White;
-            this.gpsSpeedBox.Location = new System.Drawing.Point(1694, 197);
+            this.gpsSpeedBox.Location = new System.Drawing.Point(1617, 264);
             this.gpsSpeedBox.Name = "gpsSpeedBox";
             this.gpsSpeedBox.Size = new System.Drawing.Size(49, 32);
             this.gpsSpeedBox.TabIndex = 105;
@@ -3787,12 +3795,122 @@
             this.setSpeed2Box.Text = "NaN";
             this.setSpeed2Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // tableLayoutPanel23
+            // 
+            this.tableLayoutPanel23.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
+            this.tableLayoutPanel23.ColumnCount = 3;
+            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.82353F));
+            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel23.Controls.Add(this.highPrioBox, 0, 1);
+            this.tableLayoutPanel23.Controls.Add(this.midPrioBox, 0, 1);
+            this.tableLayoutPanel23.Controls.Add(this.lowPrioBox, 0, 1);
+            this.tableLayoutPanel23.Controls.Add(this.label95, 0, 0);
+            this.tableLayoutPanel23.Controls.Add(this.label96, 1, 0);
+            this.tableLayoutPanel23.Controls.Add(this.label97, 2, 0);
+            this.tableLayoutPanel23.ForeColor = System.Drawing.Color.White;
+            this.tableLayoutPanel23.Location = new System.Drawing.Point(1533, 161);
+            this.tableLayoutPanel23.Name = "tableLayoutPanel23";
+            this.tableLayoutPanel23.RowCount = 2;
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel23.Size = new System.Drawing.Size(220, 81);
+            this.tableLayoutPanel23.TabIndex = 124;
+            // 
+            // highPrioBox
+            // 
+            this.highPrioBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.highPrioBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.highPrioBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.highPrioBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.highPrioBox.ForeColor = System.Drawing.Color.White;
+            this.highPrioBox.Location = new System.Drawing.Point(6, 45);
+            this.highPrioBox.Multiline = true;
+            this.highPrioBox.Name = "highPrioBox";
+            this.highPrioBox.ReadOnly = true;
+            this.highPrioBox.Size = new System.Drawing.Size(62, 30);
+            this.highPrioBox.TabIndex = 21;
+            this.highPrioBox.Text = "NaN";
+            this.highPrioBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // midPrioBox
+            // 
+            this.midPrioBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.midPrioBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.midPrioBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.midPrioBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.midPrioBox.ForeColor = System.Drawing.Color.White;
+            this.midPrioBox.Location = new System.Drawing.Point(77, 45);
+            this.midPrioBox.Multiline = true;
+            this.midPrioBox.Name = "midPrioBox";
+            this.midPrioBox.ReadOnly = true;
+            this.midPrioBox.Size = new System.Drawing.Size(64, 30);
+            this.midPrioBox.TabIndex = 20;
+            this.midPrioBox.Text = "NaN";
+            this.midPrioBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lowPrioBox
+            // 
+            this.lowPrioBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.lowPrioBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lowPrioBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lowPrioBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lowPrioBox.ForeColor = System.Drawing.Color.White;
+            this.lowPrioBox.Location = new System.Drawing.Point(150, 45);
+            this.lowPrioBox.Multiline = true;
+            this.lowPrioBox.Name = "lowPrioBox";
+            this.lowPrioBox.ReadOnly = true;
+            this.lowPrioBox.Size = new System.Drawing.Size(64, 30);
+            this.lowPrioBox.TabIndex = 19;
+            this.lowPrioBox.Text = "NaN";
+            this.lowPrioBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label95.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label95.ForeColor = System.Drawing.Color.White;
+            this.label95.Location = new System.Drawing.Point(6, 3);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(62, 36);
+            this.label95.TabIndex = 5;
+            this.label95.Text = "High Prio";
+            this.label95.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label96.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label96.ForeColor = System.Drawing.Color.White;
+            this.label96.Location = new System.Drawing.Point(77, 3);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(64, 36);
+            this.label96.TabIndex = 6;
+            this.label96.Text = "Mid Prio";
+            this.label96.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label97.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label97.ForeColor = System.Drawing.Color.White;
+            this.label97.Location = new System.Drawing.Point(150, 3);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(64, 36);
+            this.label97.TabIndex = 7;
+            this.label97.Text = "Low Prio";
+            this.label97.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // telemetry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.tableLayoutPanel23);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.tableLayoutPanel9);
             this.Controls.Add(this.groupBox6);
@@ -3906,6 +4024,8 @@
             this.tableLayoutPanel21.PerformLayout();
             this.tableLayoutPanel22.ResumeLayout(false);
             this.tableLayoutPanel22.PerformLayout();
+            this.tableLayoutPanel23.ResumeLayout(false);
+            this.tableLayoutPanel23.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4155,6 +4275,13 @@
         private System.Windows.Forms.TextBox vq2Box;
         private System.Windows.Forms.Label label94;
         private System.Windows.Forms.TextBox setSpeed2Box;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel23;
+        private System.Windows.Forms.TextBox highPrioBox;
+        private System.Windows.Forms.TextBox midPrioBox;
+        private System.Windows.Forms.TextBox lowPrioBox;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.Label label97;
     }
 }
 

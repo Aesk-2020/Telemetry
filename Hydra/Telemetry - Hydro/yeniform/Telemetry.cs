@@ -75,6 +75,9 @@ namespace telemetry_hydro
 
             ThreadMethods.TextDegis(gps_verim, DataGPS.efficiency_u8.ToString());
             ThreadMethods.TextDegis(uydu_sayisi, DataGPS.sattelite_u8.ToString());
+            ThreadMethods.TextDegis(lowPrioBox, DataVCU.tcuLpMessageCounter.ToString());
+            ThreadMethods.TextDegis(midPrioBox, DataVCU.tcuMpMessageCounter.ToString());
+            ThreadMethods.TextDegis(highPrioBox, DataVCU.tcuHpMessageCounter.ToString());
 
             #region MCU_ERROR_STATUS
             ThreadMethods.PBoxBackColorDegis(overCurABox, DataMCU.over_cur_IA ? Color.Crimson : MACROS.AeskDark);
