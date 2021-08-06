@@ -58,15 +58,16 @@ int i;
 class AeskData extends ChangeNotifier{
 
   //new
-  static var vcu_drive_command_u8;
+  static var vcu_drive_command_u8 = 0;
   static var vcu_speed_set_rpm_s16 = 0.0;
   static var vcu_set_torque_s16 = 0;
-  static var vcu_set_torque_2_s16;
-  static var vcu_torque_limit_u8;
-  static var vcu_can_error_u8;
-  static var sd_result_u8;
-  static var sd_result_write_u8;
-  static var tcu_minute_u8;
+  static var vcu_set_torque_2_s16 = 0;
+  static var vcu_torque_limit_u8 = 0;
+  static var vcu_steering_s8 = 0;
+  static var vcu_can_error_u8 = 0;
+  static var sd_result_u8 = 0;
+  static var sd_result_write_u8 = 0;
+  static var tcu_minute_u8 = 0;
 
   //new
   static var driver_act_iq_u16              = 0.0;
@@ -213,6 +214,250 @@ class AeskData extends ChangeNotifier{
         case "vehicle_to_interface": {
           srcMsgId =  message.getUint8(_startIndex);
           _startIndex+=2;
+          switch(srcMsgId) {
+            case HP_UI_PACK: {
+              vcu_drive_command_u8 = message.getUint8(_startIndex);     _startIndex++;
+              vcu_speed_set_rpm_s16 = message.getInt16(_startIndex, myEndian).toDouble();    _startIndex += 2;
+              vcu_speed_set_rpm_s16 = (vcu_speed_set_rpm_s16 * 0.105183).roundToDouble();
+              vcu_set_torque_s16 = message.getInt16(_startIndex, myEndian);       _startIndex += 2;
+              vcu_set_torque_2_s16 = message.getInt16(_startIndex, myEndian);     _startIndex += 2;
+              vcu_torque_limit_u8 = message.getUint8(_startIndex);      _startIndex++;
+              vcu_steering_s8 = message.getUint8(_startIndex);      _startIndex++;
+              vcu_steering_s8 -= 54;
+
+              driver_act_id_u16 = message.getInt16(_startIndex,myEndian)/100;
+              _startIndex += 2;
+
+              driver_act_iq_u16 = message.getInt16(_startIndex,myEndian)/100;
+              _startIndex += 2;
+
+              driver_act_vd_s16 = message.getInt16(_startIndex,myEndian)/100;
+              _startIndex += 2;
+
+              driver_act_vq_s16 = message.getInt16(_startIndex,myEndian)/100;
+              _startIndex += 2;
+
+              driver_set_id_s16 = message.getInt16(_startIndex,myEndian)/100;
+              _startIndex += 2;
+
+              driver_set_iq_s16 = message.getInt16(_startIndex,myEndian)/100;
+              _startIndex += 2;
+
+              driver_set_torque_s16 = message.getInt16(_startIndex,myEndian)/100;
+              _startIndex += 2;
+
+              driver_idc_s16 = message.getInt16(_startIndex,myEndian)/100;
+              _startIndex += 2;
+
+              driver_vdc_s16 = message.getInt16(_startIndex, myEndian) / 100;
+              _startIndex += 2;
+
+              driver_actspeed_s16 = message.getInt16(_startIndex,myEndian) / 10;
+              _startIndex += 2;
+              driver_actspeed_s16 = (driver_actspeed_s16 * 0.105183).roundToDouble();
+
+              driver_motortemp_u8 = message.getUint8(_startIndex);
+              _startIndex++;
+
+              driver_errorstatus_u16 = message.getUint16(_startIndex, myEndian);
+              _startIndex += 2;
+
+              driver_acttorque_s8 = message.getInt8(_startIndex);
+              _startIndex++;
+
+              driver_act_id_u16_2 = message.getInt16(_startIndex,myEndian)/100;
+              _startIndex += 2;
+
+              driver_act_iq_u16_2 = message.getInt16(_startIndex,myEndian)/100;
+              _startIndex += 2;
+
+              driver_act_vd_s16_2 = message.getInt16(_startIndex,myEndian)/100;
+              _startIndex += 2;
+
+              driver_act_vq_s16_2 = message.getInt16(_startIndex,myEndian)/100;
+              _startIndex += 2;
+
+              driver_set_id_s16_2 = message.getInt16(_startIndex,myEndian)/100;
+              _startIndex += 2;
+
+              driver_set_iq_s16_2 = message.getInt16(_startIndex,myEndian)/100;
+              _startIndex += 2;
+
+              driver_set_torque_s16_2 = message.getInt16(_startIndex,myEndian)/100;
+              _startIndex += 2;
+
+              driver_idc_s16_2 = message.getInt16(_startIndex,myEndian)/100;
+              _startIndex += 2;
+
+              driver_vdc_s16_2 = message.getInt16(_startIndex, myEndian) / 100;
+              _startIndex += 2;
+
+              driver_actspeed_s16_2 = message.getInt16(_startIndex,myEndian) / 10;
+              _startIndex += 2;
+              driver_actspeed_s16_2 = (driver_actspeed_s16_2 * 0.105183).roundToDouble();
+
+              driver_motortemp_u8_2 = message.getUint8(_startIndex);
+              _startIndex++;
+
+              driver_errorstatus_u16_2 = message.getUint16(_startIndex, myEndian);
+              _startIndex += 2;
+
+              driver_acttorque_s8_2 = message.getInt8(_startIndex);
+              _startIndex++;
+
+              vcu_command_bms_wake_u1         = ((vcu_drive_command_u8 & 1) == 1) ? true : false;
+              vcu_command_mcu_wake_u1         = (((vcu_drive_command_u8 >> 1) & 1) == 1) ? true : false;
+              vcu_command_ignition_u1         = (((vcu_drive_command_u8 >> 2) & 1) == 1) ? true : false;
+              vcu_command_mode_u1             = (((vcu_drive_command_u8 >> 3) & 1) == 1) ? true : false;
+              vcu_command_brake_u1            = (((vcu_drive_command_u8 >> 4) & 1) == 1) ? true : false;
+              vcu_command_direction_u1        = (((vcu_drive_command_u8 >> 5) & 1) == 1) ? true : false;
+              vcu_command_motorselect_u1      = (((vcu_drive_command_u8 >> 6) & 1) == 1) ? true : false;
+
+              driver_overcur_ia_u1            = ((driver_errorstatus_u16 & 1) == 1) ? true : false;
+              driver_overcur_ib_u1            = (((driver_errorstatus_u16 >> 1) & 1) == 1) ? true : false;
+              driver_overcur_ic_u1            = (((driver_errorstatus_u16 >> 2) & 1) == 1) ? true : false;
+              driver_overcur_idc_u1           = (((driver_errorstatus_u16 >> 3) & 1) == 1) ? true : false;
+              driver_undercur_idc_u1          = (((driver_errorstatus_u16 >> 4) & 1) == 1) ? true : false;
+              driver_undervolt_vdc_u1         = (((driver_errorstatus_u16 >> 5) & 1) == 1) ? true : false;
+              driver_overvolt_vdc_u1          = (((driver_errorstatus_u16 >> 6) & 1) == 1) ? true : false;
+              driver_underspeed_u1            = (((driver_errorstatus_u16 >> 7) & 1) == 1) ? true : false;
+              driver_overspeed_u1             = (((driver_errorstatus_u16 >> 8) & 1) == 1) ? true : false;
+              driver_overtemp_u1              = (((driver_errorstatus_u16 >> 9) & 1) == 1) ? true : false;
+              driver_zpcf_u1                  = (((driver_errorstatus_u16 >> 10) & 1) == 1) ? true : false;
+              driver_pwm_enabled_u1           = (((driver_errorstatus_u16 >> 11) & 1) == 1) ? true : false;
+              driver_freewheeling_u1          = (((driver_errorstatus_u16 >> 12) & 1) == 1) ? true : false;
+              driver_torque_mode_u1           = (((driver_errorstatus_u16 >> 13) & 1) == 1) ? true : false;
+
+              driver_overcur_ia_u1_2            = ((driver_errorstatus_u16 & 1) == 1) ? true : false;
+              driver_overcur_ib_u1_2            = (((driver_errorstatus_u16 >> 1) & 1) == 1) ? true : false;
+              driver_overcur_ic_u1_2            = (((driver_errorstatus_u16 >> 2) & 1) == 1) ? true : false;
+              driver_overcur_idc_u1_2           = (((driver_errorstatus_u16 >> 3) & 1) == 1) ? true : false;
+              driver_undercur_idc_u1_2          = (((driver_errorstatus_u16 >> 4) & 1) == 1) ? true : false;
+              driver_undervolt_vdc_u1_2         = (((driver_errorstatus_u16 >> 5) & 1) == 1) ? true : false;
+              driver_overvolt_vdc_u1_2          = (((driver_errorstatus_u16 >> 6) & 1) == 1) ? true : false;
+              driver_underspeed_u1_2            = (((driver_errorstatus_u16 >> 7) & 1) == 1) ? true : false;
+              driver_overspeed_u1_2             = (((driver_errorstatus_u16 >> 8) & 1) == 1) ? true : false;
+              driver_overtemp_u1_2              = (((driver_errorstatus_u16 >> 9) & 1) == 1) ? true : false;
+              driver_zpcf_u1_2                  = (((driver_errorstatus_u16 >> 10) & 1) == 1) ? true : false;
+              driver_pwm_enabled_u1_2           = (((driver_errorstatus_u16 >> 11) & 1) == 1) ? true : false;
+              driver_freewheeling_u1_2          = (((driver_errorstatus_u16 >> 12) & 1) == 1) ? true : false;
+              driver_torque_mode_u1_2           = (((driver_errorstatus_u16 >> 13) & 1) == 1) ? true : false;
+            }
+            break;
+
+            case MP_UI_PACK : {
+
+              bms_bat_volt_f32 = message.getUint16(_startIndex,myEndian)/100;
+              _startIndex+=2;
+
+              bms_bat_current_f32 = message.getInt16(_startIndex,myEndian)/100;
+              _startIndex+=2;
+
+              bms_bat_cons_f32 = message.getUint16(_startIndex,myEndian)/10;
+              _startIndex+=2;
+
+              bms_soc_f32 = message.getUint16(_startIndex,myEndian)/100;
+              _startIndex+=2;
+
+              bms_worst_cell_voltage_f32 = message.getUint16(_startIndex,myEndian) / 10;
+              _startIndex+=2;
+
+              bms_bms_error_u8 = message.getUint8(_startIndex);
+              _startIndex++;
+
+              bms_dc_bus_state_u8 = message.getUint8(_startIndex);
+              _startIndex++;
+
+              bms_worst_cell_address_u8 = message.getUint8(_startIndex);
+              _startIndex++;
+
+              bms_temp_u8 = message.getUint8(_startIndex);
+              _startIndex++;
+
+              bms_power_f32 = bms_bat_current_f32 * bms_bat_volt_f32;
+
+              vcu_can_error_u8 = message.getUint8(_startIndex);
+              _startIndex++;
+
+              sd_result_u8 = message.getUint8(_startIndex);
+              _startIndex++;
+
+              sd_result_write_u8 = message.getUint8(_startIndex);
+              _startIndex++;
+
+              bms_state_precharge_u1    = ((bms_dc_bus_state_u8 & 1) == 1) ? true : false;
+              bms_state_discharge_u1    = (((bms_dc_bus_state_u8 >> 1) & 1) == 1) ? true : false;
+              bms_state_dcbus_ready_u1  = (((bms_dc_bus_state_u8 >> 2) & 1) == 1) ? true : false;
+              bms_state_charge_u1       = (((bms_dc_bus_state_u8 >> 3) & 1) == 1) ? true : false;
+
+              bms_error_high_voltage_u1   = ((bms_bms_error_u8 & 1) == 1) ? true : false;
+              bms_error_low_voltage_u1    = (((bms_bms_error_u8 >> 1) & 1) == 1) ? true : false;
+              bms_error_high_temp_u1      = (((bms_bms_error_u8 >> 2) & 1) == 1) ? true : false;
+              bms_error_communication_u1  = (((bms_bms_error_u8 >> 3) & 1) == 1) ? true : false;
+              bms_error_over_current_u1   = (((bms_bms_error_u8 >> 4) & 1) == 1) ? true : false;
+              bms_error_fatal_u1          = (((bms_bms_error_u8 >> 5) & 1) == 1) ? true : false;
+              bms_error_isolation_u1      = (((bms_bms_error_u8 >> 6) & 1) == 1) ? true : false;
+            }
+            break;
+
+            case LP_UI_PACK : {
+
+              tcu_minute_u8 = message.getUint8(_startIndex);
+              _startIndex++;
+
+              gpsTracker_gps_latitude_f64 = message.getUint32(_startIndex,myEndian)/1000000;
+              _startIndex+=4;
+
+              gpsTracker_gps_longtitude_f64 = message.getUint32(_startIndex,myEndian)/1000000;
+              _startIndex+=4;
+
+              gpsTracker_gps_velocity_u8 = message.getUint8(_startIndex);
+              _startIndex++;
+
+              gpsTracker_gps_sattelite_number_u8 = message.getUint8(_startIndex);
+              _startIndex++;
+
+              gpsTracker_gps_efficiency_u8 = message.getUint8(_startIndex);
+              _startIndex++;
+
+              cellCount = 28;
+
+              for(int i = 0; i < cellCount; i++) {
+                battery_cells[i] = message.getUint8(_startIndex) + bms_worst_cell_voltage_f32.toInt();
+                bms_min_finder = battery_cells[i] < battery_cells[bms_min_finder] ? i : bms_min_finder;
+                _startIndex++;
+              }
+
+            }
+            break;
+
+            case QUERY_ANSWER: {
+              kp = message.getFloat32(_startIndex, myEndian);
+              ki = message.getFloat32(_startIndex, myEndian);
+              kd = message.getFloat32(_startIndex, myEndian);
+              kr = message.getUint16(_startIndex, myEndian) / 100;
+
+              showDialog(
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: myText("Değerler ayarlandı!", 20, Colors.green, FontWeight.bold),
+                      content: myText(
+                          "Kp: " + kp.toString() + "\n" +
+                              "Ki: " + ki.toString() + "\n" +
+                              "Kd: " + kd.toString() + "\n" +
+                              "Kr: " + kr.toString() + "\n"
+                          , 20, Colors.green, FontWeight.bold),
+                    );
+                  }
+              );
+            }
+            break;
+
+            default: {
+              //statements;
+            }
+            break;
+          }
         }
         break;
 
@@ -227,6 +472,8 @@ class AeskData extends ChangeNotifier{
               vcu_set_torque_s16 = message.getInt16(_startIndex, myEndian);       _startIndex += 2;
               vcu_set_torque_2_s16 = message.getInt16(_startIndex, myEndian);     _startIndex += 2;
               vcu_torque_limit_u8 = message.getUint8(_startIndex);      _startIndex++;
+              vcu_steering_s8 = message.getUint8(_startIndex);      _startIndex++;
+              vcu_steering_s8 -= 54;
 
               driver_act_id_u16 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;

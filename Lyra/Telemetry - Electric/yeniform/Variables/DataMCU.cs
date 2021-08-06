@@ -8,8 +8,6 @@ namespace Telemetri.Variables
 {
     public static class DataMCU
     {
-        public static bool IS_DOUBLE_MCU = true;
-
         public static float act_id_current_s16; //int16 / 100 /
         public static float act_iq_current_s16; //int16 / 100 /
         public static float vd_s16;             //int16 / 100 /

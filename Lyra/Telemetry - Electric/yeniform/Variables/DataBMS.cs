@@ -12,7 +12,8 @@ namespace Telemetri.Variables
         public static float cur_s16;                // int16 / 100
         public static float cons_u16;               // uint16 / 10
         public static float soc_u16;                // uint16 / 100
-        public static float worst_cell_volt_u16;    // uint16 / 100
+        public static float worst_cell_volt_u16;    // uint16 / 1000
+        public static float worst_cell_volt_u16_raw;// uint16
         public static byte error_u8;                // uint8
         public static byte dc_bus_state_u8;         // uint8
         public static byte worst_cell_address_u8;   // uint8
@@ -45,8 +46,12 @@ namespace Telemetri.Variables
             public byte voltage_u8 = 0;
             public byte soc_u8 = 0;
             public byte temperature_u8 = 0;
+
+            public float actVoltage = 0;
+            public float actSoC = 0;
+            public float actTemp = 0;
         }
-        public static List<Cell> cells = new List<Cell>();
+        public static List<Cell> cells = new List<Cell>(28);
         public static void CellInit()
         {
             for (int i = 0; i < 28; i++)

@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Telemetry2021));
             this.panelSideMenu = new System.Windows.Forms.Panel();
-            this.doubleMotorCheck = new System.Windows.Forms.CheckBox();
             this.testButton = new FontAwesome.Sharp.IconButton();
             this.pidTuningBtn = new FontAwesome.Sharp.IconButton();
             this.motordrButton2 = new FontAwesome.Sharp.IconButton();
@@ -88,7 +87,6 @@
             // 
             this.panelSideMenu.AutoScroll = true;
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.panelSideMenu.Controls.Add(this.doubleMotorCheck);
             this.panelSideMenu.Controls.Add(this.testButton);
             this.panelSideMenu.Controls.Add(this.pidTuningBtn);
             this.panelSideMenu.Controls.Add(this.motordrButton2);
@@ -105,20 +103,6 @@
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(250, 761);
             this.panelSideMenu.TabIndex = 1;
-            // 
-            // doubleMotorCheck
-            // 
-            this.doubleMotorCheck.AutoSize = true;
-            this.doubleMotorCheck.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.doubleMotorCheck.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubleMotorCheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
-            this.doubleMotorCheck.Location = new System.Drawing.Point(0, 476);
-            this.doubleMotorCheck.Name = "doubleMotorCheck";
-            this.doubleMotorCheck.Size = new System.Drawing.Size(250, 23);
-            this.doubleMotorCheck.TabIndex = 23;
-            this.doubleMotorCheck.Text = "Double Motor";
-            this.doubleMotorCheck.UseVisualStyleBackColor = true;
-            this.doubleMotorCheck.CheckedChanged += new System.EventHandler(this.doubleMotorCheck_CheckedChanged);
             // 
             // testButton
             // 
@@ -769,7 +753,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Telemetry2021_FormClosing);
             this.Load += new System.EventHandler(this.Telemetry2021_Load);
             this.panelSideMenu.ResumeLayout(false);
-            this.panelSideMenu.PerformLayout();
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelChildForm.ResumeLayout(false);
@@ -829,6 +812,5 @@
         private FontAwesome.Sharp.IconButton pidTuningBtn;
         private FontAwesome.Sharp.IconButton motordrButton2;
         private FontAwesome.Sharp.IconButton testButton;
-        private System.Windows.Forms.CheckBox doubleMotorCheck;
     }
 }

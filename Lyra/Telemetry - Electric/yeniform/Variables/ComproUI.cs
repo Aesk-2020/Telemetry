@@ -61,7 +61,11 @@ namespace Telemetri.Variables
             RESET_TELEMETRY = 23,
             UI_PACK = 24,
             COMM_QUERY = 25,
-            MSG_ID_COUNT = 26,
+            QUERY_FROM_MOBILE = 26,
+            HP_UI_PACK = 27,
+            MP_UI_PACK = 28,
+            LP_UI_PACK = 29,
+            MSG_ID_COUNT = 30,
         }
 
         private enum step
@@ -287,6 +291,115 @@ namespace Telemetri.Variables
             
             switch ((MSG_ID)source_msg_id)
             {
+                case MSG_ID.HP_UI_PACK:
+                    {
+                        int startIndex = 7;
+                        DataVCU.tcuHpMessageCounter++;
+
+                        //VCU
+                        DataVCU.drive_commands_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataVCU.speed_set_rpm_s16 = (short)Math.Round(BitConverter.ToInt16(receiveBuffer, startIndex) * 0.105183); startIndex += 2;
+                        DataVCU.torque_set_s16 = BitConverter.ToInt16(receiveBuffer, startIndex); startIndex += 2;
+                        DataVCU.torque_set_2_s16 = BitConverter.ToInt16(receiveBuffer, startIndex); startIndex += 2;
+                        DataVCU.torque_limit_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataVCU.steering_angle_s8 = (sbyte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataVCU.steering_angle_s8 -= 54;
+
+                        //MCU
+                        DataMCU.act_id_current_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.act_iq_current_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.vd_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.vq_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.set_id_current_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.set_iq_current_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.set_torque_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.i_dc_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.v_dc_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.act_speed_s16 = (short)Math.Round(0.105183 * (BitConverter.ToInt16(receiveBuffer, startIndex) / 10)); startIndex += 2;
+                        DataMCU.temperature_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataMCU.error_status_u16 = BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
+                        DataMCU.act_torque_s8 = (sbyte)receiveBuffer[startIndex++]; DataMCU.act_torque_s8 -= 100;
+
+                        //MCU2
+                        DataMCU.act_id_current_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.act_iq_current_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.vd_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.vq_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.set_id_current_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.set_iq_current_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.set_torque_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.i_dc_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.v_dc_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.act_speed_s16_mcu2 = (short)Math.Round(0.105183 * (BitConverter.ToInt16(receiveBuffer, startIndex) / 10)); startIndex += 2;
+                        DataMCU.temperature_u8_mcu2 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataMCU.error_status_u16_mcu2 = BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
+                        DataMCU.act_torque_s8_mcu2 = (sbyte)receiveBuffer[startIndex++]; DataMCU.act_torque_s8 -= 100;
+
+                        break;
+                    }
+                case MSG_ID.MP_UI_PACK:
+                    {
+                        int startIndex = 7;
+                        DataVCU.tcuMpMessageCounter++;
+
+                        //BMS
+                        DataBMS.volt_u16 = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataBMS.cur_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataBMS.cons_u16 = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 10; startIndex += 2;
+                        DataBMS.soc_u16 = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataBMS.worst_cell_volt_u16_raw = (float)BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
+                        DataBMS.worst_cell_volt_u16 = DataBMS.worst_cell_volt_u16_raw / 1000;
+                        DataBMS.error_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataBMS.dc_bus_state_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataBMS.worst_cell_address_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataBMS.temperature_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+
+                        //CAN Error
+                        DataVCU.can_error_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+
+                        //SD result
+                        DataVCU.SD_result_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataVCU.SD_result_write_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        break;
+                    }
+                case MSG_ID.LP_UI_PACK:
+                    {
+                        DataBMS.CellInit();
+                        int startIndex = 7;
+                        DataVCU.tcuLpMessageCounter++;
+
+                        //TCU minute
+                        DataVCU.TCU_minute_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+
+                        //GPS
+                        DataGPS.latitude_f32 = (double)BitConverter.ToUInt32(receiveBuffer, startIndex) / MACROS.GPS_DIVIDER; startIndex += 4;
+                        DataGPS.longtitude_f32 = (double)BitConverter.ToUInt32(receiveBuffer, startIndex) / MACROS.GPS_DIVIDER; startIndex += 4;
+                        DataGPS.speed_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataGPS.sattelite_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataGPS.efficiency_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+
+                        //Cells
+                        for (int i = 0; i < DataBMS.cells.Count; i++)
+                        {
+                            DataBMS.cells[i].voltage_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                            DataBMS.cells[i].actVoltage = (float)(DataBMS.cells[i].voltage_u8 + DataBMS.worst_cell_volt_u16_raw) / 1000;
+                        }
+                        List<byte> temps = new List<byte>();
+                        int count = 0;
+                        for (int i = 0; i < 7; i++) // Total temperature sensor count. 
+                        {
+                            temps.Add(EncodePackMethods.DataConverterU8(receiveBuffer, ref startIndex));
+                        }
+                        for (int i = 0; i < 28; i++)
+                        {
+                            DataBMS.cells[i].temperature_u8 = (byte)temps[count++];
+                            if (count == 4)
+                            {
+                                count = 0;
+                            }
+                        }
+                        break;
+                    }
                 case MSG_ID.UI_PACK:
                     {
                         //VCU
@@ -294,7 +407,7 @@ namespace Telemetri.Variables
                         DataVCU.drive_commands_u8       = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
                         DataVCU.speed_set_rpm_s16       = (short)Math.Round(BitConverter.ToInt16(receiveBuffer, startIndex) * 0.105183); startIndex += 2;
                         DataVCU.torque_set_s16          = BitConverter.ToInt16(receiveBuffer, startIndex); startIndex += 2;
-                        DataVCU.speed_limit_u16         = BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
+                        DataVCU.torque_set_2_s16        = BitConverter.ToInt16(receiveBuffer, startIndex); startIndex += 2;
                         DataVCU.torque_limit_u8         = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
 
                         //MCU
@@ -312,22 +425,19 @@ namespace Telemetri.Variables
                         DataMCU.error_status_u16        = BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
                         DataMCU.act_torque_s8           = (sbyte)receiveBuffer[startIndex++]; DataMCU.act_torque_s8 -= 100;
 
-                        if(DataMCU.IS_DOUBLE_MCU == true)
-                        {
-                            DataMCU.act_id_current_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
-                            DataMCU.act_iq_current_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
-                            DataMCU.vd_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
-                            DataMCU.vq_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
-                            DataMCU.set_id_current_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
-                            DataMCU.set_iq_current_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
-                            DataMCU.set_torque_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
-                            DataMCU.i_dc_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
-                            DataMCU.v_dc_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
-                            DataMCU.act_speed_s16_mcu2 = (short)Math.Round(0.105183 * (BitConverter.ToInt16(receiveBuffer, startIndex) / 10)); startIndex += 2;
-                            DataMCU.temperature_u8_mcu2 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
-                            DataMCU.error_status_u16_mcu2 = BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
-                            DataMCU.act_torque_s8_mcu2 = (sbyte)receiveBuffer[startIndex++]; DataMCU.act_torque_s8 -= 100;
-                        }
+                        DataMCU.act_id_current_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.act_iq_current_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.vd_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.vq_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.set_id_current_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.set_iq_current_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.set_torque_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.i_dc_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.v_dc_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
+                        DataMCU.act_speed_s16_mcu2 = (short)Math.Round(0.105183 * (BitConverter.ToInt16(receiveBuffer, startIndex) / 10)); startIndex += 2;
+                        DataMCU.temperature_u8_mcu2 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataMCU.error_status_u16_mcu2 = BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
+                        DataMCU.act_torque_s8_mcu2 = (sbyte)receiveBuffer[startIndex++]; DataMCU.act_torque_s8 -= 100;
 
                         //BMS
                         DataBMS.volt_u16                = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 100; startIndex += 2;

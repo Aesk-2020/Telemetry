@@ -11,7 +11,7 @@ namespace Telemetri.Variables
         public static byte  drive_commands_u8;
         public static short speed_set_rpm_s16;
         public static short torque_set_s16;
-        public static ushort torque_set_2_s16;
+        public static short torque_set_2_s16;
         public static byte torque_limit_u8;
         public static byte can_error_u8;
         public static float kp = 11;

@@ -48,96 +48,124 @@ class _HomeState extends State<Home> {
             myBody: Consumer<MqttAesk>(
               builder: (context, _, child) {
                 final scale = MediaQuery.of(context);
-                return Padding(
-                  padding: EdgeInsets.all(5),
-                  child: Card(
-                    margin: EdgeInsets.all(10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: <Widget>[
-                        myText(
-                            "\nANA SAYFA",
-                            scale.size.width / 16.45714284,
-                            Theme.of(context).textTheme.headline3.color,
-                            FontWeight.bold),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                DataBox(
-                                  ad: "Act Torque",
-                                  veri: AeskData.driver_acttorque_s8.toString(),
-                                ),
-                                DataBox(
-                                  ad: "Bat Volt",
-                                  veri:
-                                  AeskData.bms_bat_volt_f32.toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                  ad: "Bat Cur",
-                                  veri: AeskData.bms_bat_current_f32
-                                      .toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                  ad: "Bat Cons",
-                                  veri:
-                                  AeskData.bms_bat_cons_f32.toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                  ad: "SoC",
-                                  veri: AeskData.bms_soc_f32.toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                  ad: "IDC",
-                                  veri: AeskData.driver_idc_s16.toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                    ad: "Act Speed",
-                                    veri: AeskData.driver_actspeed_s16.toStringAsFixed(1)
-                                ),
-                              ],
-                            ),
-                            Column(
-                              children: <Widget>[
-                                DataBox(
-                                  ad: "Motor Temp",
-                                  veri: AeskData.driver_motortemp_u8.toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                  ad: "Set ID",
-                                  veri: AeskData.driver_set_id_s16
-                                      .toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                  ad: "Set IQ",
-                                  veri: AeskData.driver_set_iq_s16.toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                  ad: "Act ID",
-                                  veri: AeskData.driver_act_id_u16
-                                      .toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                  ad: "Act IQ",
-                                  veri: AeskData.driver_act_iq_u16
-                                      .toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                  ad: "Set Torque",
-                                  veri: AeskData.driver_set_torque_s16.toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                  ad: "Set Speed",
-                                  veri: AeskData.vcu_speed_set_rpm_s16.toString()
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
+                return SingleChildScrollView(
+                  child: Padding(
+                    padding: EdgeInsets.all(5),
+                    child: Card(
+                      margin: EdgeInsets.all(10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          myText(
+                              "\nANA SAYFA",
+                              scale.size.width / 16.45714284,
+                              Theme.of(context).textTheme.headline3.color,
+                              FontWeight.bold),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  DataBox(
+                                    ad: "TCU Min",
+                                    veri: AeskData.tcu_minute_u8.toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "SD result",
+                                    veri: AeskData.sd_result_u8.toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "Set Velocity",
+                                    veri: AeskData.vcu_speed_set_rpm_s16.toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "Act Speed L",
+                                    veri: AeskData.driver_actspeed_s16.toStringAsFixed(1),
+                                  ),
+                                  DataBox(
+                                    ad: "Set Torque L",
+                                    veri: AeskData.vcu_set_torque_s16.toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "Bat Volt",
+                                    veri:
+                                    AeskData.bms_bat_volt_f32.toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "Bat Cur",
+                                    veri: AeskData.bms_bat_current_f32
+                                        .toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "Bat Cons",
+                                    veri:
+                                    AeskData.bms_bat_cons_f32.toStringAsFixed(1),
+                                  ),
+                                  DataBox(
+                                    ad: "SoC",
+                                    veri: AeskData.bms_soc_f32.toStringAsFixed(1),
+                                  ),
+                                  DataBox(
+                                    ad: "Kp",
+                                    veri: AeskData.kp.toString(),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                children: <Widget>[
+                                  DataBox(
+                                    ad: "Motor Temp",
+                                    veri: AeskData.driver_motortemp_u8.toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "SD result write",
+                                    veri: AeskData.sd_result_write_u8.toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "IDC",
+                                    veri: AeskData.driver_idc_s16.toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "Act Speed R",
+                                    veri: AeskData.driver_actspeed_s16_2.
+                                    toStringAsFixed(1),
+                                  ),
+                                  DataBox(
+                                    ad: "Set Torque R",
+                                    veri: AeskData.vcu_set_torque_2_s16.
+                                    toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "Set ID",
+                                    veri: AeskData.driver_set_id_s16
+                                        .toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "Set IQ",
+                                    veri: AeskData.driver_set_iq_s16.toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "Act ID",
+                                    veri: AeskData.driver_act_id_u16
+                                        .toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "Act IQ",
+                                    veri: AeskData.driver_act_iq_u16
+                                        .toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "Ki",
+                                    veri: AeskData.ki.toString(),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 );
@@ -190,88 +218,124 @@ class _HomeState extends State<Home> {
             myBody: Consumer<MqttAesk>(
               builder: (context, _, child) {
                 final scale = MediaQuery.of(context);
-                return Padding(
-                  padding: EdgeInsets.all(5),
-                  child: Card(
-                    margin: EdgeInsets.all(10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: <Widget>[
-                        myText(
-                            "\nANA SAYFA",
-                            scale.size.width / 16.45714284,
-                            Theme.of(context).textTheme.headline3.color,
-                            FontWeight.bold),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                DataBox(
-                                  ad: "Act Torque",
-                                  veri: AeskData.driver_acttorque_s8.toString(),
-                                ),
-                                DataBox(
-                                  ad: "BAT VOLT",
-                                  veri:
-                                  AeskData.bms_bat_volt_f32.toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                  ad: "BAT CUR",
-                                  veri: AeskData.bms_bat_current_f32
-                                      .toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                  ad: "BAT CONS",
-                                  veri:
-                                  AeskData.bms_bat_cons_f32.toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                  ad: "SOC",
-                                  veri: AeskData.bms_soc_f32.toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                  ad: "IDC",
-                                  veri: AeskData.driver_idc_s16.toStringAsFixed(2),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              children: <Widget>[
-                                DataBox(
-                                  ad: "MOTOR TEMP",
-                                  veri: AeskData.driver_motortemp_u8.toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                  ad: "Set ID",
-                                  veri: AeskData.driver_set_id_s16
-                                      .toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                  ad: "Set IQ",
-                                  veri: AeskData.driver_set_iq_s16.toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                  ad: "Act ID",
-                                  veri: AeskData.driver_act_id_u16
-                                      .toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                  ad: "Act IQ",
-                                  veri: AeskData.driver_act_iq_u16
-                                      .toStringAsFixed(2),
-                                ),
-                                DataBox(
-                                  ad: "Set Torque",
-                                  veri: AeskData.driver_set_torque_s16.toStringAsFixed(2),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
+                return SingleChildScrollView(
+                  child: Padding(
+                    padding: EdgeInsets.all(5),
+                    child: Card(
+                      margin: EdgeInsets.all(10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          myText(
+                              "\nANA SAYFA",
+                              scale.size.width / 16.45714284,
+                              Theme.of(context).textTheme.headline3.color,
+                              FontWeight.bold),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  DataBox(
+                                    ad: "TCU Min",
+                                    veri: AeskData.tcu_minute_u8.toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "SD result",
+                                    veri: AeskData.sd_result_u8.toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "Set Velocity",
+                                    veri: AeskData.vcu_speed_set_rpm_s16.toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "Act Speed L",
+                                    veri: AeskData.driver_actspeed_s16.toStringAsFixed(1),
+                                  ),
+                                  DataBox(
+                                    ad: "Set Torque L",
+                                    veri: AeskData.vcu_set_torque_s16.toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "Bat Volt",
+                                    veri:
+                                    AeskData.bms_bat_volt_f32.toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "Bat Cur",
+                                    veri: AeskData.bms_bat_current_f32
+                                        .toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "Bat Cons",
+                                    veri:
+                                    AeskData.bms_bat_cons_f32.toStringAsFixed(1),
+                                  ),
+                                  DataBox(
+                                    ad: "SoC",
+                                    veri: AeskData.bms_soc_f32.toStringAsFixed(1),
+                                  ),
+                                  DataBox(
+                                    ad: "Kp",
+                                    veri: AeskData.kp.toString(),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                children: <Widget>[
+                                  DataBox(
+                                    ad: "Motor Temp",
+                                    veri: AeskData.driver_motortemp_u8.toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "SD result write",
+                                    veri: AeskData.sd_result_write_u8.toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "IDC",
+                                    veri: AeskData.driver_idc_s16.toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "Act Speed R",
+                                    veri: AeskData.driver_actspeed_s16_2.
+                                    toStringAsFixed(1),
+                                  ),
+                                  DataBox(
+                                    ad: "Set Torque R",
+                                    veri: AeskData.vcu_set_torque_2_s16.
+                                    toString(),
+                                  ),
+                                  DataBox(
+                                    ad: "Set ID",
+                                    veri: AeskData.driver_set_id_s16
+                                        .toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "Set IQ",
+                                    veri: AeskData.driver_set_iq_s16.toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "Act ID",
+                                    veri: AeskData.driver_act_id_u16
+                                        .toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "Act IQ",
+                                    veri: AeskData.driver_act_iq_u16
+                                        .toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "Ki",
+                                    veri: AeskData.ki.toString(),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 );

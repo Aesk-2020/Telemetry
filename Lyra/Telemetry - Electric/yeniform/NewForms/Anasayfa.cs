@@ -30,7 +30,6 @@ namespace Telemetri.NewForms
         public Anasayfa()
         {
             InitializeComponent();
-            DataBMS.CellInit();
             TextBox[] textBoxs = {startTimeLabel, socLabel, batCurLabel, batConsLabel,
              setVelocityLabel, actVelocityLabel, errorsLabel, driveStatusLabel};
             UITools.Anasayfa.actVelocityLabel = actVelocityLabel;

@@ -114,8 +114,9 @@ namespace Telemetri.NewForms
         {
             lapCntLabel.Text = (Convert.ToDecimal(lapCntLabel.Text) + 1).ToString();
             DataBMS.startFinishCon = DataBMS.cons_u16 - DataBMS.startFinishConBuffer;
-            UITools.Anasayfa.lastLapConsBox.Text = DataBMS.startFinishCon.ToString();
+            UITools.Anasayfa.lastLapConsBox.Text = DataBMS.startFinishCon.ToString("0.0" + "Wh");
             TimeOperations.LapFinish();
+            DataBMS.startFinishConBuffer = DataBMS.cons_u16;
         }
 
         private void lapMinusBtn_Click(object sender, EventArgs e)
@@ -294,9 +295,5 @@ namespace Telemetri.NewForms
             }
         }
 
-        private void doubleMotorCheck_CheckedChanged(object sender, EventArgs e)
-        {
-            DataMCU.IS_DOUBLE_MCU = doubleMotorCheck.Checked;
-        }
     }
 }
