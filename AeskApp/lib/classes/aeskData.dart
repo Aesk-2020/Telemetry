@@ -67,7 +67,9 @@ class AeskData extends ChangeNotifier{
   static var vcu_can_error_u8 = 0;
   static var sd_result_u8 = 0;
   static var sd_result_write_u8 = 0;
+  static var tcu_hour_u8 = 0;
   static var tcu_minute_u8 = 0;
+  static var tcu_second_u8 = 0;
 
   //new
   static var driver_act_iq_u16              = 0.0;
@@ -402,7 +404,13 @@ class AeskData extends ChangeNotifier{
 
             case LP_UI_PACK : {
 
+              tcu_hour_u8 = message.getUint8(_startIndex);
+              _startIndex++;
+
               tcu_minute_u8 = message.getUint8(_startIndex);
+              _startIndex++;
+
+              tcu_second_u8 = message.getUint8(_startIndex);
               _startIndex++;
 
               gpsTracker_gps_latitude_f64 = message.getUint32(_startIndex,myEndian)/1000000;
@@ -518,23 +526,37 @@ class AeskData extends ChangeNotifier{
               driver_act_id_u16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
 
+              driver_act_id_u16_2 = driver_act_id_u16_2 * (-1);
+
               driver_act_iq_u16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
+
+              driver_act_iq_u16_2 = driver_act_iq_u16_2 * (-1);
 
               driver_act_vd_s16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
 
+              driver_act_vd_s16_2 = driver_act_vd_s16_2 * (-1);
+
               driver_act_vq_s16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
+
+              driver_act_vq_s16_2 = driver_act_vq_s16_2 * (-1);
 
               driver_set_id_s16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
 
+              driver_set_id_s16_2 = driver_set_id_s16_2 * (-1);
+
               driver_set_iq_s16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
 
+              driver_set_iq_s16_2 = driver_set_iq_s16_2 * (-1);
+
               driver_set_torque_s16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
+
+              driver_set_torque_s16_2 = driver_set_torque_s16_2 * (-1);
 
               driver_idc_s16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
@@ -544,7 +566,7 @@ class AeskData extends ChangeNotifier{
 
               driver_actspeed_s16_2 = message.getInt16(_startIndex,myEndian) / 10;
               _startIndex += 2;
-              driver_actspeed_s16_2 = (driver_actspeed_s16_2 * 0.105183).roundToDouble();
+              driver_actspeed_s16_2 = (driver_actspeed_s16_2 * -0.105183).roundToDouble();
 
               driver_motortemp_u8_2 = message.getUint8(_startIndex);
               _startIndex++;
@@ -700,7 +722,13 @@ class AeskData extends ChangeNotifier{
 
             case LP_UI_PACK : {
 
+              tcu_hour_u8 = message.getUint8(_startIndex);
+              _startIndex++;
+
               tcu_minute_u8 = message.getUint8(_startIndex);
+              _startIndex++;
+
+              tcu_second_u8 = message.getUint8(_startIndex);
               _startIndex++;
 
               gpsTracker_gps_latitude_f64 = message.getUint32(_startIndex,myEndian)/1000000;

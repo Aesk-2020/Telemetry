@@ -69,8 +69,10 @@ class _HomeState extends State<Home> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   DataBox(
-                                    ad: "TCU Min",
-                                    veri: AeskData.tcu_minute_u8.toString(),
+                                    ad: "TCU RTC",
+                                    veri: AeskData.tcu_hour_u8.toString()   + ":"
+                                        + AeskData.tcu_minute_u8.toString() + ":"
+                                        + AeskData.tcu_second_u8.toString(),
                                   ),
                                   DataBox(
                                     ad: "SD result",
@@ -89,9 +91,13 @@ class _HomeState extends State<Home> {
                                     veri: AeskData.vcu_set_torque_s16.toString(),
                                   ),
                                   DataBox(
-                                    ad: "Bat Volt",
-                                    veri:
-                                    AeskData.bms_bat_volt_f32.toStringAsFixed(2),
+                                    ad: "IDC L",
+                                    veri: AeskData.driver_idc_s16.toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "VDC L",
+                                    veri: AeskData.driver_vdc_s16
+                                        .toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "Bat Cur",
@@ -102,10 +108,6 @@ class _HomeState extends State<Home> {
                                     ad: "Bat Cons",
                                     veri:
                                     AeskData.bms_bat_cons_f32.toStringAsFixed(1),
-                                  ),
-                                  DataBox(
-                                    ad: "SoC",
-                                    veri: AeskData.bms_soc_f32.toStringAsFixed(1),
                                   ),
                                   DataBox(
                                     ad: "Kp",
@@ -124,8 +126,8 @@ class _HomeState extends State<Home> {
                                     veri: AeskData.sd_result_write_u8.toString(),
                                   ),
                                   DataBox(
-                                    ad: "IDC",
-                                    veri: AeskData.driver_idc_s16.toString(),
+                                    ad: "Steering Angle",
+                                    veri: AeskData.vcu_steering_s8.toString(),
                                   ),
                                   DataBox(
                                     ad: "Act Speed R",
@@ -138,23 +140,23 @@ class _HomeState extends State<Home> {
                                     toString(),
                                   ),
                                   DataBox(
-                                    ad: "Set ID",
-                                    veri: AeskData.driver_set_id_s16
+                                    ad: "IDC R",
+                                    veri: AeskData.driver_idc_s16_2
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "Set IQ",
-                                    veri: AeskData.driver_set_iq_s16.toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "Act ID",
-                                    veri: AeskData.driver_act_id_u16
+                                    ad: "VDC R",
+                                    veri: AeskData.driver_vdc_s16_2
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "Act IQ",
-                                    veri: AeskData.driver_act_iq_u16
-                                        .toStringAsFixed(2),
+                                    ad: "Bat Volt",
+                                    veri:
+                                    AeskData.bms_bat_volt_f32.toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "SoC",
+                                    veri: AeskData.bms_soc_f32.toStringAsFixed(1),
                                   ),
                                   DataBox(
                                     ad: "Ki",
@@ -188,28 +190,28 @@ class _HomeState extends State<Home> {
       return WillPopScope(
         onWillPop: () {
           return showDialog(
-            context: context,
-            builder: (BuildContext context)
-            {
-              return CupertinoAlertDialog(
-                //backgroundColor: Theme.of(context).backgroundColor,
-                content: Text(
-                  "Çıkmak istediğinize emin misiniz?",
-                  style: TextStyle(fontSize: 20, color: Colors.black),
-                ),
-                actions: <Widget>[
-                  CupertinoDialogAction(
-                    child: myText("HAYIR", 18, Colors.black, FontWeight.bold),
-                    onPressed: () => Navigator.pop(context, false),
+              context: context,
+              builder: (BuildContext context)
+              {
+                return CupertinoAlertDialog(
+                  //backgroundColor: Theme.of(context).backgroundColor,
+                  content: Text(
+                    "Çıkmak istediğinize emin misiniz?",
+                    style: TextStyle(fontSize: 20, color: Colors.black),
                   ),
-                  CupertinoDialogAction(
-                    child: myText("EVET", 18, Colors.black, FontWeight.bold),
-                    onPressed: () =>
-                        SystemChannels.platform.invokeMethod('SystemNavigator.pop'),
-                  ),
-                ],
-              );
-            }
+                  actions: <Widget>[
+                    CupertinoDialogAction(
+                      child: myText("HAYIR", 18, Colors.black, FontWeight.bold),
+                      onPressed: () => Navigator.pop(context, false),
+                    ),
+                    CupertinoDialogAction(
+                      child: myText("EVET", 18, Colors.black, FontWeight.bold),
+                      onPressed: () =>
+                          SystemChannels.platform.invokeMethod('SystemNavigator.pop'),
+                    ),
+                  ],
+                );
+              }
           );
         },
         child: SafeArea(
@@ -239,8 +241,10 @@ class _HomeState extends State<Home> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   DataBox(
-                                    ad: "TCU Min",
-                                    veri: AeskData.tcu_minute_u8.toString(),
+                                    ad: "TCU RTC",
+                                    veri: AeskData.tcu_hour_u8.toString()   + ":"
+                                        + AeskData.tcu_minute_u8.toString() + ":"
+                                        + AeskData.tcu_second_u8.toString(),
                                   ),
                                   DataBox(
                                     ad: "SD result",
@@ -259,9 +263,13 @@ class _HomeState extends State<Home> {
                                     veri: AeskData.vcu_set_torque_s16.toString(),
                                   ),
                                   DataBox(
-                                    ad: "Bat Volt",
-                                    veri:
-                                    AeskData.bms_bat_volt_f32.toStringAsFixed(2),
+                                    ad: "IDC L",
+                                    veri: AeskData.driver_idc_s16.toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "VDC L",
+                                    veri: AeskData.driver_vdc_s16
+                                        .toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "Bat Cur",
@@ -272,10 +280,6 @@ class _HomeState extends State<Home> {
                                     ad: "Bat Cons",
                                     veri:
                                     AeskData.bms_bat_cons_f32.toStringAsFixed(1),
-                                  ),
-                                  DataBox(
-                                    ad: "SoC",
-                                    veri: AeskData.bms_soc_f32.toStringAsFixed(1),
                                   ),
                                   DataBox(
                                     ad: "Kp",
@@ -294,8 +298,8 @@ class _HomeState extends State<Home> {
                                     veri: AeskData.sd_result_write_u8.toString(),
                                   ),
                                   DataBox(
-                                    ad: "IDC",
-                                    veri: AeskData.driver_idc_s16.toString(),
+                                    ad: "Steering Angle",
+                                    veri: AeskData.vcu_steering_s8.toString(),
                                   ),
                                   DataBox(
                                     ad: "Act Speed R",
@@ -308,23 +312,23 @@ class _HomeState extends State<Home> {
                                     toString(),
                                   ),
                                   DataBox(
-                                    ad: "Set ID",
-                                    veri: AeskData.driver_set_id_s16
+                                    ad: "IDC R",
+                                    veri: AeskData.driver_idc_s16_2
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "Set IQ",
-                                    veri: AeskData.driver_set_iq_s16.toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "Act ID",
-                                    veri: AeskData.driver_act_id_u16
+                                    ad: "VDC R",
+                                    veri: AeskData.driver_vdc_s16_2
                                         .toStringAsFixed(2),
                                   ),
                                   DataBox(
-                                    ad: "Act IQ",
-                                    veri: AeskData.driver_act_iq_u16
-                                        .toStringAsFixed(2),
+                                    ad: "Bat Volt",
+                                    veri:
+                                    AeskData.bms_bat_volt_f32.toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "SoC",
+                                    veri: AeskData.bms_soc_f32.toStringAsFixed(1),
                                   ),
                                   DataBox(
                                     ad: "Ki",
@@ -371,7 +375,7 @@ class DataBox extends StatelessWidget {
       child: FittedBox(
         child: Center(
           child: Text(
-            this.ad + " : " + this.veri,
+            this.ad + ":  " + this.veri,
             style: TextStyle(
                 color: Theme.of(context).textTheme.headline1.color,
                 fontWeight: FontWeight.bold,

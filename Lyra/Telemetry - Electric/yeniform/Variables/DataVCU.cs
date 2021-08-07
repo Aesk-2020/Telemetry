@@ -20,7 +20,9 @@ namespace Telemetri.Variables
         public static float kd = 1;
         public static float kr = 1;
         public static byte SD_result_u8;
+        public static byte TCU_hour_u8;
         public static byte TCU_minute_u8;
+        public static byte TCU_second_u8;
         public static byte SD_result_write_u8;
         public static long tcuLpMessageCounter = 0;
         public static long tcuMpMessageCounter = 0;
