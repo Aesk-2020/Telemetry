@@ -196,13 +196,62 @@ namespace Telemetri.Variables
             
             if(isFirst)
             {
-                _savefile.FileName = DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + ".txt";
+                _savefile.FileName = DateTime.Now.ToString("HH-mm-ss-dd-MM-yyyy") + ".txt";
                 if (_savefile.ShowDialog() == DialogResult.OK)
                 {
                     
                     writePath = Path.GetDirectoryName(_savefile.FileName);
                     _sw = new StreamWriter(@_savefile.FileName, append: false);
-                    _sw.WriteLine("Time" + "\t" + "Drive Commands" + "\t" + "Speed Set kmh" + "\t" + "Torque Set" + "\t" + "Speed Limit" + "\t" + "Torque Limit" + "\t" + "Kp" + "\t" + "Ki" + "\t" + "Kd" + "\t" + "ID" + "\t" + "IQ" + "\t" + "VD" + "\t" + "VQ" + "\t" + "Set ID" + "\t" + "Set IQ" + "\t" + "Set Torque" + "\t" + "IDC" + "\t" + "VDC" + "\t" + "Act Speed" + "\t" + "Motor Temp" + "\t" + "Errors" + "\t" + "Act Torque" + "\t" + "Battery Voltage" + "\t" + "Battery Current" + "\t" + "Battery Consumption" + "\t" + "SoC" + "\t" + "BMS Error" + "\t" + "DC Bus State" + "\t" + "Worst Cell Voltage" + "\t" + "Worst Cell Address" + "\t" + "Battery temp" + "\t" + "Lattitude" + "\t" + "Longtitude" + "\t" + "GPS Velocity" + "\t" + "Sattelites" + "\t" + "Efficiency");
+                    _sw.WriteLine(
+                        "Time" + "\t" +
+                        "Drive Commands" + "\t" +
+                        "Speed Set kmh" + "\t" +
+                        "Torque Set_L" + "\t" +
+                        "Torque Set_R" + "\t" +
+                        "Speed Limit" + "\t" +
+                        "Torque Limit" + "\t" +
+                        "Lap Count" + "\t" +
+                        "Kp" + "\t" +
+                        "Ki" + "\t" + 
+                        "Kd" + "\t" +
+                        "ID_L" + "\t" +
+                        "IQ_L" + "\t" +
+                        "VD_L" + "\t" +
+                        "VQ_L" + "\t" +
+                        "Set ID_L" + "\t" +
+                        "Set IQ_L" + "\t" +
+                        "Set Torque_L" + "\t" +
+                        "IDC_L" + "\t" + 
+                        "VDC_L" + "\t" +
+                        "Act Speed_L" + "\t" +
+                        "Motor Temp_L" + "\t" +
+                        "Errors_L" + "\t" +
+                        "ID_R" + "\t" +
+                        "IQ_R" + "\t" +
+                        "VD_R" + "\t" +
+                        "VQ_R" + "\t" +
+                        "Set ID_R" + "\t" +
+                        "Set IQ_R" + "\t" +
+                        "Set Torque_R" + "\t" +
+                        "IDC_R" + "\t" +
+                        "VDC_R" + "\t" +
+                        "Act Speed_R" + "\t" +
+                        "Motor Temp_R" + "\t" +
+                        "Errors_R" + "\t" +
+                        "Battery Voltage" + "\t" +
+                        "Battery Current" + "\t" +
+                        "Battery Consumption" + "\t" +
+                        "SoC" + "\t" +
+                        "BMS Error" + "\t" +
+                        "DC Bus State" + "\t" +
+                        "Worst Cell Voltage" + "\t" +
+                        "Worst Cell Address" + "\t" +
+                        "Battery temp" + "\t" +
+                        "Lattitude" + "\t" +
+                        "Longtitude" + "\t" +
+                        "GPS Velocity" + "\t" + 
+                        "Sattelites" + "\t" + 
+                        "Efficiency");
                     
                     logTimer.Start();
                     isFirst = false;

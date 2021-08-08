@@ -112,6 +112,7 @@ namespace Telemetri.NewForms
 
         private void lapPlusBtn_Click(object sender, EventArgs e)
         {
+            DataVCU.lapCounter++;
             lapCntLabel.Text = (Convert.ToDecimal(lapCntLabel.Text) + 1).ToString();
             DataBMS.startFinishCon = DataBMS.cons_u16 - DataBMS.startFinishConBuffer;
             UITools.Anasayfa.lastLapConsBox.Text = DataBMS.startFinishCon.ToString("0.0" + "Wh");

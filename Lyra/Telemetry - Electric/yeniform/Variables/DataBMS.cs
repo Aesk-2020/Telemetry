@@ -21,13 +21,13 @@ namespace Telemetri.Variables
 
         public static float startFinishCon;         //start-finish consumption
         public static float startFinishConBuffer;
-        public static string log_data    => volt_u16.ToString() + "\t" + 
-                                            cur_s16.ToString() + "\t" + 
-                                            cons_u16.ToString() + "\t" + 
-                                            soc_u16.ToString() + "\t" + 
+        public static string log_data    => volt_u16.ToString("0.00") + "\t" + 
+                                            cur_s16.ToString("0.00") + "\t" + 
+                                            cons_u16.ToString("0.0") + "\t" + 
+                                            soc_u16.ToString("0.00") + "\t" + 
                                             error_u8.ToString() + "\t" + 
                                             dc_bus_state_u8.ToString() + "\t" +
-                                            worst_cell_volt_u16.ToString() + "\t" + 
+                                            worst_cell_volt_u16.ToString("0.000") + "\t" + 
                                             worst_cell_address_u8.ToString() + "\t" +
                                             temperature_u8.ToString() + "\t";
 

@@ -8,29 +8,29 @@ namespace Telemetri.Variables
 {
     public static class DataMCU
     {
-        public static float act_id_current_s16; //int16 / 100 /
-        public static float act_iq_current_s16; //int16 / 100 /
-        public static float vd_s16;             //int16 / 100 /
-        public static float vq_s16;             //int16 / 100 /
-        public static float set_id_current_s16; //int16 / 100 /
-        public static float set_iq_current_s16; //int16 / 100 /
-        public static float set_torque_s16;     //int16 / 100 /
-        public static float i_dc_s16;           //int16 / 100 /
-        public static float v_dc_s16;           //int16 / 100 /
+        public static float act_id_current_s16; //int16 / 100
+        public static float act_iq_current_s16; //int16 / 100
+        public static float vd_s16;             //int16 / 100
+        public static float vq_s16;             //int16 / 100
+        public static float set_id_current_s16; //int16 / 100
+        public static float set_iq_current_s16; //int16 / 100
+        public static float set_torque_s16;     //int16 / 100
+        public static float i_dc_s16;           //int16 / 100
+        public static float v_dc_s16;           //int16 / 100
         public static short act_speed_s16;      //int16 / 100
         public static byte temperature_u8;     //byte
         public static ushort error_status_u16;
         public static sbyte act_torque_s8;      //int8 - 100 /
 
-        public static float act_id_current_s16_mcu2; //int16 / 100 /
-        public static float act_iq_current_s16_mcu2; //int16 / 100 /
-        public static float vd_s16_mcu2;             //int16 / 100 /
-        public static float vq_s16_mcu2;             //int16 / 100 /
-        public static float set_id_current_s16_mcu2; //int16 / 100 /
-        public static float set_iq_current_s16_mcu2; //int16 / 100 /
-        public static float set_torque_s16_mcu2;     //int16 / 100 /
-        public static float i_dc_s16_mcu2;           //int16 / 100 /
-        public static float v_dc_s16_mcu2;           //int16 / 100 /
+        public static float act_id_current_s16_mcu2; //int16 / 100
+        public static float act_iq_current_s16_mcu2; //int16 / 100
+        public static float vd_s16_mcu2;             //int16 / 100
+        public static float vq_s16_mcu2;             //int16 / 100
+        public static float set_id_current_s16_mcu2; //int16 / 100
+        public static float set_iq_current_s16_mcu2; //int16 / 100
+        public static float set_torque_s16_mcu2;     //int16 / 100
+        public static float i_dc_s16_mcu2;           //int16 / 100
+        public static float v_dc_s16_mcu2;           //int16 / 100
         public static short act_speed_s16_mcu2;      //int16 / 100
         public static byte temperature_u8_mcu2;     //byte
         public static ushort error_status_u16_mcu2;
@@ -67,19 +67,30 @@ namespace Telemetri.Variables
         public static bool torque_mode_mcu2 => Convert.ToBoolean((error_status_u16 >> 13 & 0b00000001));
 
 
-        public static string log_data => act_id_current_s16.ToString() + "\t" +
-                                            act_iq_current_s16.ToString() + "\t" +
-                                            vd_s16.ToString() + "\t" +
-                                            vq_s16.ToString() + "\t" +
-                                            set_id_current_s16.ToString() + "\t" +
-                                            set_iq_current_s16.ToString() + "\t" +
+        public static string log_data => act_id_current_s16.ToString("0.00") + "\t" +
+                                            act_iq_current_s16.ToString("0.00") + "\t" +
+                                            vd_s16.ToString("0.00") + "\t" +
+                                            vq_s16.ToString("0.00") + "\t" +
+                                            set_id_current_s16.ToString("0.00") + "\t" +
+                                            set_iq_current_s16.ToString("0.00") + "\t" +
                                             set_torque_s16.ToString() + "\t" +
-                                            i_dc_s16.ToString() + "\t" +
-                                            v_dc_s16.ToString() + "\t" +
+                                            i_dc_s16.ToString("0.00") + "\t" +
+                                            v_dc_s16.ToString("0.00") + "\t" +
                                             act_speed_s16.ToString() + "\t" +
                                             temperature_u8.ToString() + "\t" +
                                             error_status_u16.ToString() + "\t" +
-                                            act_torque_s8.ToString() + "\t";
+                                            act_id_current_s16_mcu2.ToString("0.00") + "\t" +
+                                            act_iq_current_s16_mcu2.ToString("0.00") + "\t" +
+                                            vd_s16_mcu2.ToString("0.00") + "\t" +
+                                            vq_s16_mcu2.ToString("0.00") + "\t" +
+                                            set_id_current_s16_mcu2.ToString("0.00") + "\t" +
+                                            set_iq_current_s16_mcu2.ToString("0.00") + "\t" +
+                                            set_torque_s16_mcu2.ToString() + "\t" +
+                                            i_dc_s16_mcu2.ToString("0.00") + "\t" +
+                                            v_dc_s16_mcu2.ToString("0.00") + "\t" +
+                                            act_speed_s16_mcu2.ToString() + "\t" +
+                                            temperature_u8_mcu2.ToString() + "\t" +
+                                            error_status_u16_mcu2.ToString() + "\t";
 
     }
 }

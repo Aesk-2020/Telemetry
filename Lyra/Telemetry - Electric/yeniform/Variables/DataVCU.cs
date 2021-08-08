@@ -27,6 +27,7 @@ namespace Telemetri.Variables
         public static long tcuLpMessageCounter = 0;
         public static long tcuMpMessageCounter = 0;
         public static long tcuHpMessageCounter = 0;
+        public static long lapCounter = 0;
 
         public static bool BMS_Wake_u1 => Convert.ToBoolean((drive_commands_u8 >> 0 & 0b00000001));
         public static bool MCU_Wake_u1 => Convert.ToBoolean((drive_commands_u8 >> 1 & 0b00000001));
@@ -48,7 +49,9 @@ namespace Telemetri.Variables
                                             speed_set_rpm_s16.ToString() + "\t" +
                                             torque_set_s16.ToString() + "\t" +
                                             torque_set_2_s16.ToString() + "\t" +
+                                            steering_angle_s8.ToString() + "\t" +
                                             torque_limit_u8 + "\t" +
+                                            lapCounter + "\t" +
                                             kp + "\t" + ki + "\t" + kd + "\t";
     }
 }
