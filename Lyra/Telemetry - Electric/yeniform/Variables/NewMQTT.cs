@@ -139,6 +139,7 @@ namespace Telemetri.Variables
                         YedekUnpack(e.Message);
                         UITools.TestForms.lyraco++;
                         UITools.TestForms.cozuldulyraBox.Text = UITools.TestForms.lyraco.ToString();
+                        AFront.ChangeUI();
                     }
                 }
             }
@@ -149,7 +150,7 @@ namespace Telemetri.Variables
                 UITools.TestForms.cozulduvtiBox.Text = UITools.TestForms.vtico.ToString();
                 pack.ComproUnpack(e.Message);
             }
-            AFront.ChangeUI();
+            
         }
 
         public void YedekUnpack(byte[] receiveBuffer)
