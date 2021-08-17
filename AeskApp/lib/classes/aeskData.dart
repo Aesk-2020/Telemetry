@@ -270,49 +270,33 @@ class AeskData extends ChangeNotifier{
               driver_act_id_u16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
 
-              driver_act_id_u16_2 = driver_act_id_u16_2 * (-1);
-
               driver_act_iq_u16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
-
-              driver_act_iq_u16_2 = driver_act_iq_u16_2 * (-1);
 
               driver_act_vd_s16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
 
-              driver_act_vd_s16_2 = driver_act_vd_s16_2 * (-1);
-
               driver_act_vq_s16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
-
-              driver_act_vq_s16_2 = driver_act_vq_s16_2 * (-1);
 
               driver_set_id_s16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
 
-              driver_set_id_s16_2 = driver_set_id_s16_2 * (-1);
-
               driver_set_iq_s16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
-
-              driver_set_iq_s16_2 = driver_set_iq_s16_2 * (-1);
 
               driver_set_torque_s16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
 
-              driver_set_torque_s16_2 = driver_set_torque_s16_2 * (-1);
-
               driver_idc_s16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
-
-              driver_idc_s16_2 = driver_idc_s16_2 * (-1);
 
               driver_vdc_s16_2 = message.getInt16(_startIndex, myEndian) / 100;
               _startIndex += 2;
 
               driver_actspeed_s16_2 = message.getInt16(_startIndex,myEndian) / 10;
               _startIndex += 2;
-              driver_actspeed_s16_2 = (driver_actspeed_s16_2 * -0.105183).roundToDouble();
+              driver_actspeed_s16_2 = (driver_actspeed_s16_2 * 0.105183).roundToDouble();
 
               driver_motortemp_u8_2 = message.getUint8(_startIndex);
               _startIndex++;
@@ -542,49 +526,33 @@ class AeskData extends ChangeNotifier{
               driver_act_id_u16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
 
-              driver_act_id_u16_2 = driver_act_id_u16_2 * (-1);
-
               driver_act_iq_u16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
-
-              driver_act_iq_u16_2 = driver_act_iq_u16_2 * (-1);
 
               driver_act_vd_s16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
 
-              driver_act_vd_s16_2 = driver_act_vd_s16_2 * (-1);
-
               driver_act_vq_s16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
-
-              driver_act_vq_s16_2 = driver_act_vq_s16_2 * (-1);
 
               driver_set_id_s16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
 
-              driver_set_id_s16_2 = driver_set_id_s16_2 * (-1);
-
               driver_set_iq_s16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
-
-              driver_set_iq_s16_2 = driver_set_iq_s16_2 * (-1);
 
               driver_set_torque_s16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
 
-              driver_set_torque_s16_2 = driver_set_torque_s16_2 * (-1);
-
               driver_idc_s16_2 = message.getInt16(_startIndex,myEndian)/100;
               _startIndex += 2;
-
-              driver_idc_s16_2 = driver_idc_s16_2 * (-1);
 
               driver_vdc_s16_2 = message.getInt16(_startIndex, myEndian) / 100;
               _startIndex += 2;
 
               driver_actspeed_s16_2 = message.getInt16(_startIndex,myEndian) / 10;
               _startIndex += 2;
-              driver_actspeed_s16_2 = (driver_actspeed_s16_2 * -0.105183).roundToDouble();
+              driver_actspeed_s16_2 = (driver_actspeed_s16_2 * 0.105183).roundToDouble();
 
               driver_motortemp_u8_2 = message.getUint8(_startIndex);
               _startIndex++;
