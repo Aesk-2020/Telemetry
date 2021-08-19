@@ -13,6 +13,7 @@ namespace Telemetri.Variables
         public static short torque_set_s16;
         public static short torque_set_2_s16;
         public static byte torque_limit_u8;
+        public static byte steering_angle_s8;
         public static byte can_error_u8;
         public static float kp = 11;
         public static float ki = 11;

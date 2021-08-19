@@ -285,6 +285,8 @@
             this.label95 = new System.Windows.Forms.Label();
             this.label96 = new System.Windows.Forms.Label();
             this.label97 = new System.Windows.Forms.Label();
+            this.steeringAngleBox = new System.Windows.Forms.Label();
+            this.label99 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
@@ -1579,7 +1581,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(1861, 278);
+            this.label11.Location = new System.Drawing.Point(1798, 278);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(32, 13);
             this.label11.TabIndex = 109;
@@ -1590,7 +1592,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(1733, 270);
+            this.label12.Location = new System.Drawing.Point(1679, 270);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 21);
             this.label12.TabIndex = 107;
@@ -1601,18 +1603,18 @@
             this.targetSpeedBox.AutoSize = true;
             this.targetSpeedBox.Font = new System.Drawing.Font("Lucida Sans", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.targetSpeedBox.ForeColor = System.Drawing.Color.White;
-            this.targetSpeedBox.Location = new System.Drawing.Point(1821, 264);
+            this.targetSpeedBox.Location = new System.Drawing.Point(1758, 264);
             this.targetSpeedBox.Name = "targetSpeedBox";
             this.targetSpeedBox.Size = new System.Drawing.Size(49, 32);
             this.targetSpeedBox.TabIndex = 108;
-            this.targetSpeedBox.Text = "30";
+            this.targetSpeedBox.Text = "00";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(1657, 278);
+            this.label9.Location = new System.Drawing.Point(1632, 278);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(32, 13);
             this.label9.TabIndex = 106;
@@ -1634,7 +1636,7 @@
             this.gpsSpeedBox.AutoSize = true;
             this.gpsSpeedBox.Font = new System.Drawing.Font("Lucida Sans", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpsSpeedBox.ForeColor = System.Drawing.Color.White;
-            this.gpsSpeedBox.Location = new System.Drawing.Point(1617, 264);
+            this.gpsSpeedBox.Location = new System.Drawing.Point(1592, 264);
             this.gpsSpeedBox.Name = "gpsSpeedBox";
             this.gpsSpeedBox.Size = new System.Drawing.Size(49, 32);
             this.gpsSpeedBox.TabIndex = 105;
@@ -2580,7 +2582,7 @@
             this.timeLeftBox.ReadOnly = true;
             this.timeLeftBox.Size = new System.Drawing.Size(122, 31);
             this.timeLeftBox.TabIndex = 106;
-            this.timeLeftBox.Text = "00:00:00";
+            this.timeLeftBox.Text = "01:05:00";
             this.timeLeftBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // avgLapTimeBox
@@ -3333,7 +3335,7 @@
             this.lapCountBox.ReadOnly = true;
             this.lapCountBox.Size = new System.Drawing.Size(179, 25);
             this.lapCountBox.TabIndex = 107;
-            this.lapCountBox.Text = "0 / 8";
+            this.lapCountBox.Text = "0 / 7";
             this.lapCountBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
@@ -3904,12 +3906,36 @@
             this.label97.Text = "Low Prio";
             this.label97.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // steeringAngleBox
+            // 
+            this.steeringAngleBox.AutoSize = true;
+            this.steeringAngleBox.Font = new System.Drawing.Font("Lucida Sans", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.steeringAngleBox.ForeColor = System.Drawing.Color.White;
+            this.steeringAngleBox.Location = new System.Drawing.Point(1807, 196);
+            this.steeringAngleBox.Name = "steeringAngleBox";
+            this.steeringAngleBox.Size = new System.Drawing.Size(49, 32);
+            this.steeringAngleBox.TabIndex = 125;
+            this.steeringAngleBox.Text = "00";
+            // 
+            // label99
+            // 
+            this.label99.AutoSize = true;
+            this.label99.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label99.ForeColor = System.Drawing.Color.White;
+            this.label99.Location = new System.Drawing.Point(1767, 170);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(125, 21);
+            this.label99.TabIndex = 126;
+            this.label99.Text = "Steering Angle";
+            // 
             // telemetry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.label99);
+            this.Controls.Add(this.steeringAngleBox);
             this.Controls.Add(this.tableLayoutPanel23);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.tableLayoutPanel9);
@@ -4282,6 +4308,8 @@
         private System.Windows.Forms.Label label95;
         private System.Windows.Forms.Label label96;
         private System.Windows.Forms.Label label97;
+        private System.Windows.Forms.Label steeringAngleBox;
+        private System.Windows.Forms.Label label99;
     }
 }
 

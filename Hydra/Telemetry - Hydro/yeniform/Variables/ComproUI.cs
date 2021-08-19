@@ -254,7 +254,7 @@ namespace Telemetri.Variables
                             }
                             else
                             {
-                                UInt16 ad = 12;
+
                             }
                             steppo = step.CatchHeader1;
 
@@ -308,6 +308,7 @@ namespace Telemetri.Variables
                         DataVCU.torque_set_s16 = BitConverter.ToInt16(receiveBuffer, startIndex); startIndex += 2;
                         DataVCU.torque_set_2_s16 = BitConverter.ToInt16(receiveBuffer, startIndex); startIndex += 2;
                         DataVCU.torque_limit_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataVCU.steering_angle_s8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
 
                         //MCU
                         DataMCU.act_id_current_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
@@ -440,7 +441,7 @@ namespace Telemetri.Variables
                         DataVCU.drive_commands_u8       = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
                         DataVCU.speed_set_rpm_s16       = (short)Math.Round(BitConverter.ToInt16(receiveBuffer, startIndex) * 0.105183); startIndex += 2;
                         DataVCU.torque_set_s16          = BitConverter.ToInt16(receiveBuffer, startIndex); startIndex += 2;
-                        DataVCU.torque_set_2_s16         = BitConverter.ToInt16(receiveBuffer, startIndex); startIndex += 2;
+                        DataVCU.torque_set_2_s16        = BitConverter.ToInt16(receiveBuffer, startIndex); startIndex += 2;
                         DataVCU.torque_limit_u8         = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
 
                         //MCU

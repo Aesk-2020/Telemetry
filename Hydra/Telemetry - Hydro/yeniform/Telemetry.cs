@@ -166,7 +166,8 @@ namespace telemetry_hydro
             #endregion
             ThreadMethods.TextDegis(distTravelledBox, (DataGPS.odometer / 1000).ToString("0.000") + "km");
             ThreadMethods.LabelDegis(gpsSpeedBox, DataGPS.speed_u8.ToString());
-            ThreadMethods.TextDegis(setSpeedBox, DataVCU.speed_set_rpm_s16.ToString());            
+            ThreadMethods.TextDegis(setSpeedBox, DataVCU.speed_set_rpm_s16.ToString());
+            ThreadMethods.LabelDegis(steeringAngleBox, DataVCU.steering_angle_s8.ToString());
             ThreadMethods.TextDegis(mqtt_solved_paket, mqtt.mqtt_total_counter.ToString());
             ThreadMethods.TextDegis(mqtt_toplam_paket, mqtt.MQTT_counter_int32.ToString());
             ThreadMethods.TextDegis(mqtt_verim, ((int)(mqtt.MQTT_Efficiency * MACROS.FLOAT_CONVERTER_2)).ToString());
