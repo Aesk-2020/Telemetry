@@ -441,8 +441,14 @@ class AeskData extends ChangeNotifier{
 
             case QUERY_ANSWER: {
               kp = message.getFloat32(_startIndex, myEndian);
+              _startIndex+=4;
+
               ki = message.getFloat32(_startIndex, myEndian);
+              _startIndex+=4;
+
               kd = message.getFloat32(_startIndex, myEndian);
+              _startIndex+=4;
+
               kr = message.getUint16(_startIndex, myEndian) / 100;
 
               showDialog(
@@ -745,8 +751,14 @@ class AeskData extends ChangeNotifier{
 
             case QUERY_ANSWER: {
               kp = message.getFloat32(_startIndex, myEndian);
+              _startIndex+=4;
+
               ki = message.getFloat32(_startIndex, myEndian);
+              _startIndex+=4;
+
               kd = message.getFloat32(_startIndex, myEndian);
+              _startIndex+=4;
+
               kr = message.getUint16(_startIndex, myEndian) / 100;
 
               showDialog(

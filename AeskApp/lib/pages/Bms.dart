@@ -45,7 +45,7 @@ Widget Bms(){
                                 myText(AeskData.bms_soc_f32.toStringAsFixed(2) + " %", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                                 myText("SoC", 15, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                                 SizedBox(height: 5,),
-                                myText(AeskData.bms_bat_cons_f32.toStringAsFixed(2) + " Wh", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                                myText(AeskData.bms_bat_cons_f32.toStringAsFixed(1) + " Wh", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                                 myText("Tüketim", 15, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                               ],
                             )

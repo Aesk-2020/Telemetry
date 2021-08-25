@@ -393,7 +393,9 @@ namespace Telemetri.Variables
                         DataVCU.tcuLpMessageCounter++;
 
                         //TCU minute
+                        DataVCU.TCU_hour_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
                         DataVCU.TCU_minute_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
+                        DataVCU.TCU_seconds_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
 
                         //GPS
                         DataGPS.latitude_f32 = (double)BitConverter.ToUInt32(receiveBuffer, startIndex) / MACROS.GPS_DIVIDER; startIndex += 4;

@@ -22,6 +22,8 @@ namespace Telemetri.Variables
         public static byte SD_result_u8;
         public static byte SD_result_write_u8;
         public static byte TCU_minute_u8;
+        public static byte TCU_hour_u8;
+        public static byte TCU_seconds_u8;
         public static long tcuLpMessageCounter = 0;
         public static long tcuMpMessageCounter = 0;
         public static long tcuHpMessageCounter = 0;
