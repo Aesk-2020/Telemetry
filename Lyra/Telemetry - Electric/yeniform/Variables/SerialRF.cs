@@ -186,37 +186,11 @@ namespace Telemetri.Variables
                         _recieveData[_dataCounter++] = buffer[i];
                         if(_dataCounter == _packLength + 1)
                         {
-                            _state = ReceiveDataStates.CrcLCheck;
-                        }
-                        break;
-                    case ReceiveDataStates.CrcLCheck:
-                        {
-                            crcCalculated = MACROS.AeskCRCCalculate(_recieveData, _dataCounter);
-                            _recieveData[_dataCounter++] = buffer[i];
-                            _state = ReceiveDataStates.CrcHCheck;
-                        }
-                        break;
-                    case ReceiveDataStates.CrcHCheck:
-                        {
-                            _recieveData[_dataCounter++] = buffer[i];
-                            crcIncoming = BitConverter.ToUInt16(_recieveData, (int)_dataCounter - 2);
-                            if(crcIncoming == crcCalculated)
-                            {
-                                BALONSAYACSIL++;
-                                NRFUnpack(_recieveData);
-                                AFront.ChangeUI();
-                                //UITools.Anasayfa.actVelocityLabel.Text = BALONSAYACSIL.ToString();
-                                //pack solved
-                                //convert the data
-                            }
-                            else
-                            {
-                                BALONSAYACSIL2++;
-                                //UITools.Anasayfa.setVelocityLabel.Text = BALONSAYACSIL2.ToString();
-                            }
                             _dataCounter = 0;
+                            NRFUnpack(_recieveData);
+                            AFront.ChangeUI();
                             _state = ReceiveDataStates.CatchHeader;
-                        }    
+                        }
                         break;
                     default:
                         break;
