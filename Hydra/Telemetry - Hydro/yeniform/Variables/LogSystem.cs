@@ -19,8 +19,9 @@ namespace telemetry_hydro.Variables
         public static List<string> lineList = new List<string>();
         public static bool isFirst { get; set; }
         public static bool isLogSolved = false;
+        public static char seperator = '.';
 
-        public static Timer logPlayTimer = new Timer();
+        public static System.Timers.Timer logPlayTimer = new System.Timers.Timer();
 
         public static bool StartLog(System.Timers.Timer logTimer)
         {
@@ -107,9 +108,7 @@ namespace telemetry_hydro.Variables
 
         }
 
-        //Kullanıcının seçtiği dosyayı okuyup her bir satırı string olarak list tipindeki değişkene atar.
-        //Okuma işlemi tamamlanınca bu listeyi döndürür.
-        public static List<string> ReadStringLog()
+        public static bool ReadStringLog()
         {
             List<string> readData = new List<string>();
             OpenFileDialog file = new OpenFileDialog();
@@ -128,7 +127,7 @@ namespace telemetry_hydro.Variables
                     if (okunanlar == null)
                     {
                         lineList = readData;
-                        return readData;
+                        return true;
                     }
                 }
             }
@@ -136,7 +135,7 @@ namespace telemetry_hydro.Variables
             else
             {
                 MessageBox.Show("Dosya seçilemedi");
-                return readData;
+                return false;
             }
         }
 
@@ -146,71 +145,73 @@ namespace telemetry_hydro.Variables
             _sw.Flush();
         }
 
-        public static void ParseStringLog()
+        public static void ParseStringLog(int indeks)
         {
-            string[] rawData = lineList[2].Split('\t');
+            string[] rawData = lineList[indeks].Split('\t');
 
             int dataIndex = 0;
-            TimeOperations.logTime              = TimeSpan.Parse(rawData[dataIndex++]);
+            TimeOperations.logTime              = TimeSpan.Parse(rawData[dataIndex++].Replace(seperator, ','));
             
-            DataVCU.drive_commands_u8           = byte.Parse(rawData[dataIndex++]);
-            DataVCU.speed_set_rpm_s16           = short.Parse(rawData[dataIndex++]); DataVCU.speed_set_rpm_s16 = (short)(DataVCU.speed_set_rpm_s16 * 0.105183);
-            DataVCU.torque_set_s16              = short.Parse(rawData[dataIndex++]);
-            DataVCU.torque_set_2_s16            = short.Parse(rawData[dataIndex++]);
-            DataVCU.torque_limit_u8             = byte.Parse(rawData[dataIndex++]);
+            DataVCU.drive_commands_u8           = byte.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataVCU.speed_set_rpm_s16           = short.Parse(rawData[dataIndex++].Replace(seperator, ',')); DataVCU.speed_set_rpm_s16 = (short)(DataVCU.speed_set_rpm_s16 * 0.105183);
+            DataVCU.torque_set_s16              = short.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataVCU.torque_set_2_s16            = short.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataVCU.torque_limit_u8             = byte.Parse(rawData[dataIndex++].Replace(seperator, ','));
             
-            DataMCU.set_id_current_s16          = float.Parse(rawData[dataIndex++]);
-            DataMCU.act_id_current_s16          = float.Parse(rawData[dataIndex++]);
-            DataMCU.set_iq_current_s16          = float.Parse(rawData[dataIndex++]);
-            DataMCU.act_iq_current_s16          = float.Parse(rawData[dataIndex++]);
-            DataMCU.vd_s16                      = float.Parse(rawData[dataIndex++]);
-            DataMCU.vq_s16                      = float.Parse(rawData[dataIndex++]);
-            DataMCU.v_dc_s16                    = float.Parse(rawData[dataIndex++]);
-            DataMCU.i_dc_s16                    = float.Parse(rawData[dataIndex++]);
-            DataMCU.act_speed_s16               = DataMCU.act_speed_s16 = (short)(0.0105183 * float.Parse(rawData[dataIndex++]));
-            DataMCU.set_torque_s16              = float.Parse(rawData[dataIndex++]);
-            DataMCU.act_torque_s8               = sbyte.Parse(rawData[dataIndex++]);
-            DataMCU.temperature_u8              = byte.Parse(rawData[dataIndex++]);
+            DataMCU.set_id_current_s16          = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataMCU.act_id_current_s16          = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataMCU.set_iq_current_s16          = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataMCU.act_iq_current_s16          = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataMCU.vd_s16                      = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataMCU.vq_s16                      = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataMCU.v_dc_s16                    = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataMCU.i_dc_s16                    = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataMCU.act_speed_s16               = DataMCU.act_speed_s16 = (short)(0.105183 * float.Parse(rawData[dataIndex++].Replace(seperator, ',')));
+            DataMCU.set_torque_s16              = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataMCU.act_torque_s8               = sbyte.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataMCU.temperature_u8              = byte.Parse(rawData[dataIndex++].Replace(seperator, ','));
             
-            DataMCU.set_id_current_s16_mcu2     = float.Parse(rawData[dataIndex++]);
-            DataMCU.act_id_current_s16_mcu2     = float.Parse(rawData[dataIndex++]);
-            DataMCU.set_iq_current_s16_mcu2     = float.Parse(rawData[dataIndex++]);
-            DataMCU.act_iq_current_s16_mcu2     = float.Parse(rawData[dataIndex++]);
-            DataMCU.vd_s16_mcu2                 = float.Parse(rawData[dataIndex++]);
-            DataMCU.vq_s16_mcu2                 = float.Parse(rawData[dataIndex++]);
-            DataMCU.v_dc_s16_mcu2               = float.Parse(rawData[dataIndex++]);
-            DataMCU.i_dc_s16_mcu2               = float.Parse(rawData[dataIndex++]);
-            DataMCU.act_speed_s16_mcu2          = DataMCU.act_speed_s16_mcu2 = (short)(0.0105183 * float.Parse(rawData[dataIndex++]));
-            DataMCU.set_torque_s16_mcu2         = float.Parse(rawData[dataIndex++]);
-            DataMCU.act_torque_s8_mcu2          = sbyte.Parse(rawData[dataIndex++]);
-            DataMCU.temperature_u8_mcu2         = byte.Parse(rawData[dataIndex++]);
+            DataMCU.set_id_current_s16_mcu2     = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataMCU.act_id_current_s16_mcu2     = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataMCU.set_iq_current_s16_mcu2     = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataMCU.act_iq_current_s16_mcu2     = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataMCU.vd_s16_mcu2                 = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataMCU.vq_s16_mcu2                 = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataMCU.v_dc_s16_mcu2               = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataMCU.i_dc_s16_mcu2               = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataMCU.act_speed_s16_mcu2          = DataMCU.act_speed_s16_mcu2 = (short)(0.105183 * float.Parse(rawData[dataIndex++].Replace(seperator, ',')));
+            DataMCU.set_torque_s16_mcu2         = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataMCU.act_torque_s8_mcu2          = sbyte.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataMCU.temperature_u8_mcu2         = byte.Parse(rawData[dataIndex++].Replace(seperator, ','));
             
-            DataBMS.volt_u16                    = float.Parse(rawData[dataIndex++]);
-            DataBMS.cur_s16                     = float.Parse(rawData[dataIndex++]);
-            DataBMS.cons_u16                    = float.Parse(rawData[dataIndex++]);
-            DataBMS.soc_u16                     = float.Parse(rawData[dataIndex++]);
-            DataBMS.error_u8                    = byte.Parse(rawData[dataIndex++]);
-            DataBMS.dc_bus_state_u8             = byte.Parse(rawData[dataIndex++]);
-            DataBMS.worst_cell_volt_u16         = float.Parse(rawData[dataIndex++]);
-            DataBMS.worst_cell_address_u8       = byte.Parse(rawData[dataIndex++]);
-            DataBMS.temperature_u8              = byte.Parse(rawData[dataIndex++]);
+            DataBMS.volt_u16                    = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataBMS.cur_s16                     = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataBMS.cons_u16                    = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataBMS.soc_u16                     = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataBMS.error_u8                    = byte.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataBMS.dc_bus_state_u8             = byte.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataBMS.worst_cell_volt_u16         = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataBMS.worst_cell_address_u8       = byte.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataBMS.temperature_u8              = byte.Parse(rawData[dataIndex++].Replace(seperator, ','));
 
-            EMS.bat_volt_f32                    = float.Parse(rawData[dataIndex++]);
-            EMS.bat_cur_f32                     = float.Parse(rawData[dataIndex++]);
-            EMS.bat_cons_f32                    = float.Parse(rawData[dataIndex++]);
-            EMS.out_cons_f32                    = float.Parse(rawData[dataIndex++]);
-            EMS.out_cur_f32                     = float.Parse(rawData[dataIndex++]);
-            EMS.fc_volt_f32                     = float.Parse(rawData[dataIndex++]);
-            EMS.fc_cur_f32                      = float.Parse(rawData[dataIndex++]);
-            EMS.fc_cons_f32                     = float.Parse(rawData[dataIndex++]);
-            EMS.fc_lt_cons_f32                  = float.Parse(rawData[dataIndex++]);
-            EMS.penalty_s8                      = sbyte.Parse(rawData[dataIndex++]);
-            EMS.temperature_u8                  = byte.Parse(rawData[dataIndex++]);
-            EMS.error_u8                        = byte.Parse(rawData[dataIndex++]);
+            EMS.bat_volt_f32                    = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            EMS.bat_cur_f32                     = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            EMS.bat_cons_f32                    = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            EMS.out_cons_f32                    = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            EMS.out_cur_f32                     = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            EMS.fc_volt_f32                     = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            EMS.fc_cur_f32                      = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            EMS.fc_cons_f32                     = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            EMS.fc_lt_cons_f32                  = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            EMS.penalty_s8                      = sbyte.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            EMS.temperature_u8                  = byte.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            EMS.error_u8                        = byte.Parse(rawData[dataIndex++].Replace(seperator, ','));
 
-            DataGPS.latitude_f32                = float.Parse(rawData[dataIndex++]);
-            DataGPS.longtitude_f32              = float.Parse(rawData[dataIndex++]);
-            DataGPS.speed_u8                    = byte.Parse(rawData[dataIndex++]);
+            DataGPS.latitude_f32                = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataGPS.longtitude_f32              = float.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataGPS.speed_u8                    = byte.Parse(rawData[dataIndex++].Replace(seperator, ','));
+
+            MACROS.newDataCome = true;
         }
 
         public static void StopLog(System.Timers.Timer timer)

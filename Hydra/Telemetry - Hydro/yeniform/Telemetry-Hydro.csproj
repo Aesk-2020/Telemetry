@@ -82,6 +82,9 @@
     <Reference Include="M2Mqtt.Net, Version=4.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\M2Mqtt.4.3.0.0\lib\net45\M2Mqtt.Net.dll</HintPath>
     </Reference>
+    <Reference Include="MACTrackBarLib, Version=1.0.5896.38740, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MACTrackBarLib.dll.1.0.2\lib\net40\MACTrackBarLib.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -110,6 +113,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LogBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogBar.Designer.cs">
+      <DependentUpon>LogBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Variables\BmsUI.cs" />
     <Compile Include="Variables\ComproUI.cs" />
     <Compile Include="Variables\DataBMS.cs" />
@@ -142,6 +151,9 @@
     <Compile Include="Variables\TimeOperations.cs" />
     <EmbeddedResource Include="BMS_form.resx">
       <DependentUpon>BMS_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogBar.resx">
+      <DependentUpon>LogBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telemetry.resx">
       <DependentUpon>Telemetry.cs</DependentUpon>

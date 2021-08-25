@@ -73,6 +73,7 @@ namespace telemetry_hydro
 
         void displayAllData()
         {
+            timeElapsedBox.Text = TimeOperations.logTime.ToString("T");
             ThreadMethods.PBoxBackColorDegis(bmsWakeBox, DataVCU.BMS_Wake_u1 ? Color.LimeGreen : MACROS.AeskDark);
             ThreadMethods.PBoxBackColorDegis(mcuWakeBox, DataVCU.MCU_Wake_u1 ? Color.LimeGreen : MACROS.AeskDark);
             ThreadMethods.PBoxBackColorDegis(emsWakeBox, DataVCU.EMS_Wake_u1 ? Color.LimeGreen : MACROS.AeskDark);
@@ -174,6 +175,7 @@ namespace telemetry_hydro
             ThreadMethods.TextDegis(distTravelledBox, (DataGPS.odometer / 1000).ToString("0.000") + "km");
             ThreadMethods.LabelDegis(gpsSpeedBox, DataGPS.speed_u8.ToString());
             ThreadMethods.TextDegis(setSpeedBox, DataVCU.speed_set_rpm_s16.ToString());
+            ThreadMethods.TextDegis(setSpeed2Box, DataVCU.speed_set_rpm_s16.ToString());
             ThreadMethods.LabelDegis(steeringAngleBox, DataVCU.steering_angle_s8.ToString());
             ThreadMethods.TextDegis(mqtt_solved_paket, mqtt.mqtt_total_counter.ToString());
             ThreadMethods.TextDegis(mqtt_toplam_paket, mqtt.MQTT_counter_int32.ToString());
@@ -361,8 +363,31 @@ namespace telemetry_hydro
 
         private void kayıtAçToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LogSystem.ReadStringLog();
-            LogSystem.ParseStringLog();
+            if(LogSystem.ReadStringLog() == true)
+            {
+                //LogSystem.ParseStringLog();
+                if(!myDisplayThread.IsAlive)
+                {
+                    myDisplayThread.Start();
+                }
+                LogBar logBar = new LogBar();
+                logBar.TopMost = true;
+                logBar.Show();
+            }
+        }
+
+        private void virgülToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            virgülToolStripMenuItem.Checked = true;
+            noktaToolStripMenuItem.Checked = false;
+            LogSystem.seperator = ',';
+        }
+
+        private void noktaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            virgülToolStripMenuItem.Checked = false;
+            noktaToolStripMenuItem.Checked = true;
+            LogSystem.seperator = '.';
         }
     }
 }
