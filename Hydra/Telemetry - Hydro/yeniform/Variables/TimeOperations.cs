@@ -16,6 +16,7 @@ namespace telemetry_hydro.Variables
         public static TimeSpan lastLapTime = new TimeSpan();
         public static TimeSpan fastestLapTime = new TimeSpan(0, 0, 59, 59, 59);
         public static TimeSpan avgLapTime = new TimeSpan();
+        public static TimeSpan logTime = new TimeSpan();
         public static List<TimeSpan> laps = new List<TimeSpan>();
         
         // MUTLAKA IMPLEMENTATION YAPIN !!

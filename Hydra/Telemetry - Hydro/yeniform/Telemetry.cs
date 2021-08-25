@@ -9,12 +9,15 @@ using System.Threading;
 using Telemetri.Variables;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.WindowsForms;
+using System.Collections.Generic;
 
 namespace telemetry_hydro
 {
     public partial class telemetry : Form
     {
-
+        const bool AUTO = true;
+        const bool MANUAL = false;
+        bool isFirst = true;
         MQTT mqtt = new MQTT( MACROS.MQTT_username, MACROS.MQTT_password, MACROS.MQTT_topic);
         myDataGrid myDataGrid = new myDataGrid("HYDRA");
         Thread myDisplayThread;
@@ -22,22 +25,26 @@ namespace telemetry_hydro
         public bool raceFlag = false;
         bool lapControlCalibrationMode = false;
         int calibrationClickCount = 0;
+        System.Timers.Timer logTimer = new System.Timers.Timer();
+        bool lapCountMode = MANUAL;
 
         public telemetry()
         {
             InitializeComponent();
-            mqtt.MQTTInit(MACROS.client);
             myDataGrid.InitDataGrid(dataGridView1);
             myDisplayThread = new Thread(displayMyAllData) { IsBackground = true, Priority = ThreadPriority.Normal };
             mqtt.LogEvent += logDatas;
             DataBMS.CellInit();
             CheckForIllegalCrossThreadCalls = false;
+            logTimer.Interval = 50; //50 ms
+            logTimer.Elapsed += LogTimer_Elapsed;
 
             TimeOperations.avgLapBox = avgLapTimeBox;
             TimeOperations.currentLapBox = currentLapBox;
             TimeOperations.fastestLapBox = fastestLapBox;
             TimeOperations.lastLapBox = lastLapBox;
         }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -189,6 +196,12 @@ namespace telemetry_hydro
 
         private void bağlanToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
+            if(isFirst)
+            {
+                mqtt.MQTTInit(MACROS.client);
+                isFirst = false;
+            }
+
             byte code = mqtt.ConnectRequestMQTT();
             if (code == 0x00)
             {
@@ -215,6 +228,7 @@ namespace telemetry_hydro
 
         private void manuelToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            lapCountMode = MANUAL;
             manuelToolStripMenuItem.Checked = true;
             otoToolStripMenuItem.Checked = false;
             turAtToolStripMenuItem1.Enabled = true;
@@ -222,6 +236,7 @@ namespace telemetry_hydro
 
         private void otoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            lapCountMode = AUTO;
             manuelToolStripMenuItem.Checked = false;
             otoToolStripMenuItem.Checked = true;
             turAtToolStripMenuItem1.Enabled = false;
@@ -323,5 +338,32 @@ namespace telemetry_hydro
         {
             bmsForm.Hide();
         }
+
+        private void turAtToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void başlatToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            LogSystem.StartLog(logTimer);
+        }
+
+        private void LogTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            LogSystem.WriteStringLog();
+        }
+
+        private void bitirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            LogSystem.StopLog(logTimer);
+        }
+
+        private void kayıtAçToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LogSystem.ReadStringLog();
+            LogSystem.ParseStringLog();
+        }
     }
 }
+//to do iteratif açma

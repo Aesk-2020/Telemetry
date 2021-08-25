@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telemetry));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.error_ready = new System.Windows.Forms.ImageList(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
@@ -287,6 +287,10 @@
             this.label97 = new System.Windows.Forms.Label();
             this.steeringAngleBox = new System.Windows.Forms.Label();
             this.label99 = new System.Windows.Forms.Label();
+            this.kayıtTutucuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.başlatToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.bitirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.kayıtAçToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
@@ -1644,43 +1648,43 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle28;
             this.dataGridView1.Location = new System.Drawing.Point(6, 763);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle29;
             this.dataGridView1.RowHeadersWidth = 55;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle30;
             this.dataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -1741,16 +1745,14 @@
             // başlatToolStripMenuItem
             // 
             this.başlatToolStripMenuItem.Name = "başlatToolStripMenuItem";
-            this.başlatToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.başlatToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.başlatToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.başlatToolStripMenuItem.Text = "Başlat";
             this.başlatToolStripMenuItem.Click += new System.EventHandler(this.başlatToolStripMenuItem_Click);
             // 
             // bitirToolStripMenuItem
             // 
             this.bitirToolStripMenuItem.Name = "bitirToolStripMenuItem";
-            this.bitirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.bitirToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.bitirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bitirToolStripMenuItem.Text = "Bitir";
             this.bitirToolStripMenuItem.Click += new System.EventHandler(this.bitirToolStripMenuItem_Click);
             // 
@@ -1784,7 +1786,8 @@
             // 
             this.eklentilerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bMSToolStripMenuItem,
-            this.grafiklerToolStripMenuItem});
+            this.grafiklerToolStripMenuItem,
+            this.kayıtTutucuToolStripMenuItem});
             this.eklentilerToolStripMenuItem.Name = "eklentilerToolStripMenuItem";
             this.eklentilerToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.eklentilerToolStripMenuItem.Text = "Eklentiler";
@@ -1795,14 +1798,15 @@
             this.açToolStripMenuItem,
             this.kapatToolStripMenuItem});
             this.bMSToolStripMenuItem.Name = "bMSToolStripMenuItem";
-            this.bMSToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.bMSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bMSToolStripMenuItem.Text = "BMS";
             this.bMSToolStripMenuItem.Click += new System.EventHandler(this.bMSToolStripMenuItem_Click);
             // 
             // açToolStripMenuItem
             // 
             this.açToolStripMenuItem.Name = "açToolStripMenuItem";
-            this.açToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.açToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
+            this.açToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.açToolStripMenuItem.Text = "Aç";
             this.açToolStripMenuItem.Click += new System.EventHandler(this.açToolStripMenuItem_Click);
             // 
@@ -1816,7 +1820,7 @@
             // grafiklerToolStripMenuItem
             // 
             this.grafiklerToolStripMenuItem.Name = "grafiklerToolStripMenuItem";
-            this.grafiklerToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.grafiklerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.grafiklerToolStripMenuItem.Text = "Grafikler";
             // 
             // turAtToolStripMenuItem
@@ -1834,7 +1838,7 @@
             this.manuelToolStripMenuItem,
             this.otoToolStripMenuItem});
             this.turSayımıToolStripMenuItem.Name = "turSayımıToolStripMenuItem";
-            this.turSayımıToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.turSayımıToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.turSayımıToolStripMenuItem.Text = "Tur Sayımı";
             // 
             // manuelToolStripMenuItem
@@ -1854,8 +1858,10 @@
             // turAtToolStripMenuItem1
             // 
             this.turAtToolStripMenuItem1.Name = "turAtToolStripMenuItem1";
-            this.turAtToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
+            this.turAtToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.turAtToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.turAtToolStripMenuItem1.Text = "Tur At";
+            this.turAtToolStripMenuItem1.Click += new System.EventHandler(this.turAtToolStripMenuItem1_Click);
             // 
             // yardımToolStripMenuItem
             // 
@@ -3928,6 +3934,39 @@
             this.label99.TabIndex = 126;
             this.label99.Text = "Steering Angle";
             // 
+            // kayıtTutucuToolStripMenuItem
+            // 
+            this.kayıtTutucuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.başlatToolStripMenuItem1,
+            this.bitirToolStripMenuItem1,
+            this.kayıtAçToolStripMenuItem});
+            this.kayıtTutucuToolStripMenuItem.Name = "kayıtTutucuToolStripMenuItem";
+            this.kayıtTutucuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kayıtTutucuToolStripMenuItem.Text = "Kayıt Sistemi";
+            // 
+            // başlatToolStripMenuItem1
+            // 
+            this.başlatToolStripMenuItem1.Name = "başlatToolStripMenuItem1";
+            this.başlatToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.başlatToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.başlatToolStripMenuItem1.Text = "Başlat";
+            this.başlatToolStripMenuItem1.Click += new System.EventHandler(this.başlatToolStripMenuItem1_Click);
+            // 
+            // bitirToolStripMenuItem1
+            // 
+            this.bitirToolStripMenuItem1.Name = "bitirToolStripMenuItem1";
+            this.bitirToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
+            this.bitirToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.bitirToolStripMenuItem1.Text = "Bitir";
+            this.bitirToolStripMenuItem1.Click += new System.EventHandler(this.bitirToolStripMenuItem1_Click);
+            // 
+            // kayıtAçToolStripMenuItem
+            // 
+            this.kayıtAçToolStripMenuItem.Name = "kayıtAçToolStripMenuItem";
+            this.kayıtAçToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kayıtAçToolStripMenuItem.Text = "Kayıt Aç";
+            this.kayıtAçToolStripMenuItem.Click += new System.EventHandler(this.kayıtAçToolStripMenuItem_Click);
+            // 
             // telemetry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4310,6 +4349,10 @@
         private System.Windows.Forms.Label label97;
         private System.Windows.Forms.Label steeringAngleBox;
         private System.Windows.Forms.Label label99;
+        private System.Windows.Forms.ToolStripMenuItem kayıtTutucuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem başlatToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem bitirToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem kayıtAçToolStripMenuItem;
     }
 }
 
