@@ -343,7 +343,7 @@ namespace telemetry_hydro
 
         private void turAtToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            DataGPS.lapCounter++;
         }
 
         private void başlatToolStripMenuItem1_Click(object sender, EventArgs e)

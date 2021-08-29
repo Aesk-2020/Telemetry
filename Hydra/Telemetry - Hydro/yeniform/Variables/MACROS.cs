@@ -72,7 +72,7 @@ namespace telemetry_hydro.Variables
             for (byte mlen = 0; mlen < framesize; mlen++)
             {
                 data = Convert.ToByte(((byte)frame[mlen] ^ Convert.ToByte(((crc16_data) & (0xFF)))));
-                Console.WriteLine(data);
+                //Console.WriteLine(data);
                 data = (byte)((byte)data ^ (byte)(data << 4));
                 crc16_data = (ushort)((((ushort)data << 8) | ((crc16_data & 0xFF00) >> 8)) ^ (byte)(data >> 4) ^ ((ushort)data << 3));
             }

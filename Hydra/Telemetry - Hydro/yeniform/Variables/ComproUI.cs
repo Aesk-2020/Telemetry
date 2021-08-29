@@ -121,6 +121,7 @@ namespace Telemetri.Variables
         {
             List<byte> worked_data = new List<byte>();
             ushort incom_index = 0;
+            ushort message_counter = 0;
 
             for (int i = 0; i < received_data.Length; i++)
             {
@@ -191,7 +192,7 @@ namespace Telemetri.Variables
                             worked_data.Add(received_data[i]);
                             this.msg_size = received_data[i];
                             steppo = step.CatchMsg;
-                            this.message = new byte[this.msg_size];
+                            this.message = new byte[this.msg_size + 35];
                         }
                         break;
                     case step.CatchMsg:
@@ -199,16 +200,16 @@ namespace Telemetri.Variables
                             worked_data.Add(received_data[i]);
                             try
                             {
-                                this.message[msg_index++] = received_data[i];
-                                if (msg_index >= this.msg_size)
+                                this.message[message_counter++] = received_data[i];
+                                if (message_counter >= this.msg_size)
                                 {
                                     steppo = step.CatchMsgIndexL;
-                                    msg_index = 0;
+                                    message_counter = 0;
                                 }
                             }
-                            catch (Exception)
+                            catch (Exception exc)
                             {
-                                
+                                Console.WriteLine("haaaaaaata"+exc);
                             }
                         }
                         break;
@@ -240,7 +241,7 @@ namespace Telemetri.Variables
                             if (crc_calculated == this.crc)
                             {
                                 dataConvertCompro(worked_data.ToArray(), this.source_msg_id);
-                                
+                                worked_data.Clear();
                                 //AFront.ChangeUI();
                                 //BURAYA İNDEX EKLENECEK
                                 /*if(IndexControl(incom_index) == true)
@@ -343,7 +344,7 @@ namespace Telemetri.Variables
                         //BMS
                         DataBMS.volt_u16 = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
                         DataBMS.cur_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
-                        DataBMS.cons_u16 = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 10; startIndex += 2;
+                        DataBMS.cons_u16 = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
                         break;
                     }
                 case MSG_ID.MP_UI_PACK:
