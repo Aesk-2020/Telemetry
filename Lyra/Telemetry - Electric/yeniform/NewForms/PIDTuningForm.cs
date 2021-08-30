@@ -73,11 +73,15 @@ namespace Telemetri.NewForms
 
         private void sendButton_Click(object sender, EventArgs e)
         {
+
             
             DataVCU.kp = float.Parse(kpBox.Text);
             DataVCU.ki = float.Parse(kiBox.Text);
             DataVCU.kd = float.Parse(kdBox.Text);
             DataVCU.kr = float.Parse(krBox.Text);
+            //UInt32 kpp = (UInt32)DataVCU.kp * 10000;
+           // UInt32 ki = (UInt32)DataVCU.ki * 10000;
+
             ushort krBuffer = (ushort)(DataVCU.kr * 100);
             List<byte> newlist = new List<byte>();
             newlist.AddRange(BitConverter.GetBytes(DataVCU.kp));

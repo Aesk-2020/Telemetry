@@ -120,6 +120,7 @@ namespace Telemetri.Variables
         {
             List<byte> worked_data = new List<byte>();
             ushort incom_index = 0;
+            ushort message_index = 0;
 
             for (int i = 0; i < received_data.Length; i++)
             {
@@ -198,11 +199,11 @@ namespace Telemetri.Variables
                             worked_data.Add(received_data[i]);
                             try
                             {
-                                this.message[msg_index++] = received_data[i];
-                                if (msg_index >= this.msg_size)
+                                this.message[message_index++] = received_data[i];
+                                if (message_index >= this.msg_size)
                                 {
                                     steppo = step.CatchMsgIndexL;
-                                    msg_index = 0;
+                                    message_index = 0;
                                 }
                             }
                             catch (Exception)
