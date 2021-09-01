@@ -43,6 +43,9 @@ namespace telemetry_hydro
             TimeOperations.currentLapBox = currentLapBox;
             TimeOperations.fastestLapBox = fastestLapBox;
             TimeOperations.lastLapBox = lastLapBox;
+            TimeOperations.timeLeftBox = timeLeftBox;
+            TimeOperations.elapsedTimeBox = timeElapsedBox;
+            TimeOperations.avgSpeedBox = avgSpeedBox;
         }
 
 
@@ -138,6 +141,8 @@ namespace telemetry_hydro
             ThreadMethods.TextDegis(emsPenaltyBox, EMS.penalty_s8.ToString());
             ThreadMethods.TextDegis(emsTempBox, EMS.temperature_u8.ToString());
             ThreadMethods.TextDegis(emsOutConsBox, EMS.out_cons_f32.ToString());
+            ThreadMethods.TextDegis(motorTempLBox, DataVCU.ignition_u1 ? "29 °C" : DataMCU.temperature_u8.ToString() + " °C");
+            ThreadMethods.TextDegis(motorTempRBox, DataVCU.ignition_u1 ? "28 °C" : DataMCU.temperature_u8_mcu2.ToString() + " °C");
             #endregion
             #region EMS_ERROR
             ThreadMethods.PBoxBackColorDegis(ems_bat_current_error, !EMS.bat_current_error_u1 ? MACROS.AeskDark : MACROS.errorColor);
@@ -183,8 +188,7 @@ namespace telemetry_hydro
             //ThreadMethods.LabelDegis(gsm_yenileme, ((int)(mqtt.mqtt_refresh_time)).ToString());
 
             //AddMarker(new PointLatLng())
-            //GMAPController.GMapAddPointAndOdometer(DataGPS.latitude_f32, DataGPS.longtitude_f32);
-            lapCountBox.Text = DataGPS.lapCounter.ToString() + " / 8";
+            GMAPController.GMapAddPointAndOdometer(DataGPS.latitude_f32, DataGPS.longtitude_f32);
             MACROS.newDataCome = false;
         }
 
@@ -343,7 +347,9 @@ namespace telemetry_hydro
 
         private void turAtToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            DataGPS.lapCounter++;
+            TimeOperations.LapFinish();
+            lapCountBox.Text = DataGPS.lapCounter.ToString() + " / 30";
+
         }
 
         private void başlatToolStripMenuItem1_Click(object sender, EventArgs e)

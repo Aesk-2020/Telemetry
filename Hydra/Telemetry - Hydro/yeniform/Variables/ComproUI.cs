@@ -483,7 +483,7 @@ namespace Telemetri.Variables
                         DataBMS.cons_u16                = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 10; startIndex += 2;
                         DataBMS.soc_u16                 = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
                         DataBMS.worst_cell_volt_u16_raw     = (float)BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
-                        DataBMS.worst_cell_volt_u16     = DataBMS.worst_cell_volt_u16_raw / 1000;
+                        DataBMS.worst_cell_volt_u16     = DataBMS.worst_cell_volt_u16_raw / 10000;
                         DataBMS.error_u8                = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
                         DataBMS.dc_bus_state_u8         = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
                         DataBMS.worst_cell_address_u8   = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;

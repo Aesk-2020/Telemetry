@@ -116,9 +116,6 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.targetSpeedBox = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.gpsSpeedBox = new System.Windows.Forms.Label();
@@ -140,6 +137,9 @@
             this.başlatToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.bitirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.kayıtAçToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ondalıkAyraçSeçimiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.noktaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.virgülToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.turAtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.turSayımıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manuelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -291,9 +291,17 @@
             this.label97 = new System.Windows.Forms.Label();
             this.steeringAngleBox = new System.Windows.Forms.Label();
             this.label99 = new System.Windows.Forms.Label();
-            this.ondalıkAyraçSeçimiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.noktaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.virgülToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.targetSpeedBox = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label98 = new System.Windows.Forms.Label();
+            this.label100 = new System.Windows.Forms.Label();
+            this.label101 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.motorTempLBox = new System.Windows.Forms.TextBox();
+            this.motorTempRBox = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
@@ -361,6 +369,7 @@
             this.tableLayoutPanel21.SuspendLayout();
             this.tableLayoutPanel22.SuspendLayout();
             this.tableLayoutPanel23.SuspendLayout();
+            this.tableLayoutPanel24.SuspendLayout();
             this.SuspendLayout();
             // 
             // error_ready
@@ -1583,45 +1592,12 @@
             this.label37.TabIndex = 113;
             this.label37.Text = "MQTT KONTROL";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(1798, 278);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(32, 13);
-            this.label11.TabIndex = 109;
-            this.label11.Text = "km/h";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(1679, 270);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(82, 21);
-            this.label12.TabIndex = 107;
-            this.label12.Text = "Hedef Hız";
-            // 
-            // targetSpeedBox
-            // 
-            this.targetSpeedBox.AutoSize = true;
-            this.targetSpeedBox.Font = new System.Drawing.Font("Lucida Sans", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.targetSpeedBox.ForeColor = System.Drawing.Color.White;
-            this.targetSpeedBox.Location = new System.Drawing.Point(1758, 264);
-            this.targetSpeedBox.Name = "targetSpeedBox";
-            this.targetSpeedBox.Size = new System.Drawing.Size(49, 32);
-            this.targetSpeedBox.TabIndex = 108;
-            this.targetSpeedBox.Text = "00";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(1632, 278);
+            this.label9.Location = new System.Drawing.Point(1870, 205);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(32, 13);
             this.label9.TabIndex = 106;
@@ -1632,7 +1608,7 @@
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(1529, 270);
+            this.label28.Location = new System.Drawing.Point(1767, 197);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(66, 21);
             this.label28.TabIndex = 104;
@@ -1643,7 +1619,7 @@
             this.gpsSpeedBox.AutoSize = true;
             this.gpsSpeedBox.Font = new System.Drawing.Font("Lucida Sans", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpsSpeedBox.ForeColor = System.Drawing.Color.White;
-            this.gpsSpeedBox.Location = new System.Drawing.Point(1592, 264);
+            this.gpsSpeedBox.Location = new System.Drawing.Point(1830, 191);
             this.gpsSpeedBox.Name = "gpsSpeedBox";
             this.gpsSpeedBox.Size = new System.Drawing.Size(49, 32);
             this.gpsSpeedBox.TabIndex = 105;
@@ -1860,6 +1836,33 @@
             this.kayıtAçToolStripMenuItem.Text = "Kayıt Aç";
             this.kayıtAçToolStripMenuItem.Click += new System.EventHandler(this.kayıtAçToolStripMenuItem_Click);
             // 
+            // ondalıkAyraçSeçimiToolStripMenuItem
+            // 
+            this.ondalıkAyraçSeçimiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.noktaToolStripMenuItem,
+            this.virgülToolStripMenuItem});
+            this.ondalıkAyraçSeçimiToolStripMenuItem.Name = "ondalıkAyraçSeçimiToolStripMenuItem";
+            this.ondalıkAyraçSeçimiToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.ondalıkAyraçSeçimiToolStripMenuItem.Text = "Ondalık Ayraç Seçimi";
+            // 
+            // noktaToolStripMenuItem
+            // 
+            this.noktaToolStripMenuItem.Checked = true;
+            this.noktaToolStripMenuItem.CheckOnClick = true;
+            this.noktaToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.noktaToolStripMenuItem.Name = "noktaToolStripMenuItem";
+            this.noktaToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.noktaToolStripMenuItem.Text = "\'.\' (nokta)";
+            this.noktaToolStripMenuItem.Click += new System.EventHandler(this.noktaToolStripMenuItem_Click);
+            // 
+            // virgülToolStripMenuItem
+            // 
+            this.virgülToolStripMenuItem.CheckOnClick = true;
+            this.virgülToolStripMenuItem.Name = "virgülToolStripMenuItem";
+            this.virgülToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.virgülToolStripMenuItem.Text = "\',\' (virgül)";
+            this.virgülToolStripMenuItem.Click += new System.EventHandler(this.virgülToolStripMenuItem_Click);
+            // 
             // turAtToolStripMenuItem
             // 
             this.turAtToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1875,7 +1878,7 @@
             this.manuelToolStripMenuItem,
             this.otoToolStripMenuItem});
             this.turSayımıToolStripMenuItem.Name = "turSayımıToolStripMenuItem";
-            this.turSayımıToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.turSayımıToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.turSayımıToolStripMenuItem.Text = "Tur Sayımı";
             // 
             // manuelToolStripMenuItem
@@ -1896,7 +1899,7 @@
             // 
             this.turAtToolStripMenuItem1.Name = "turAtToolStripMenuItem1";
             this.turAtToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.turAtToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.turAtToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.turAtToolStripMenuItem1.Text = "Tur At";
             this.turAtToolStripMenuItem1.Click += new System.EventHandler(this.turAtToolStripMenuItem1_Click);
             // 
@@ -2535,7 +2538,7 @@
             this.avgSpeedBox.ReadOnly = true;
             this.avgSpeedBox.Size = new System.Drawing.Size(119, 31);
             this.avgSpeedBox.TabIndex = 108;
-            this.avgSpeedBox.Text = "0 km/h";
+            this.avgSpeedBox.Text = "00.0 km/h";
             this.avgSpeedBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label76
@@ -3378,7 +3381,7 @@
             this.lapCountBox.ReadOnly = true;
             this.lapCountBox.Size = new System.Drawing.Size(179, 25);
             this.lapCountBox.TabIndex = 107;
-            this.lapCountBox.Text = "0 / 7";
+            this.lapCountBox.Text = "0 / 30";
             this.lapCountBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
@@ -3854,11 +3857,12 @@
             this.tableLayoutPanel23.Controls.Add(this.label96, 1, 0);
             this.tableLayoutPanel23.Controls.Add(this.label97, 2, 0);
             this.tableLayoutPanel23.ForeColor = System.Drawing.Color.White;
-            this.tableLayoutPanel23.Location = new System.Drawing.Point(1533, 161);
+            this.tableLayoutPanel23.Location = new System.Drawing.Point(1533, 137);
             this.tableLayoutPanel23.Name = "tableLayoutPanel23";
             this.tableLayoutPanel23.RowCount = 2;
             this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel23.Size = new System.Drawing.Size(220, 81);
             this.tableLayoutPanel23.TabIndex = 124;
             // 
@@ -3954,7 +3958,7 @@
             this.steeringAngleBox.AutoSize = true;
             this.steeringAngleBox.Font = new System.Drawing.Font("Lucida Sans", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.steeringAngleBox.ForeColor = System.Drawing.Color.White;
-            this.steeringAngleBox.Location = new System.Drawing.Point(1807, 196);
+            this.steeringAngleBox.Location = new System.Drawing.Point(1844, 149);
             this.steeringAngleBox.Name = "steeringAngleBox";
             this.steeringAngleBox.Size = new System.Drawing.Size(49, 32);
             this.steeringAngleBox.TabIndex = 125;
@@ -3965,38 +3969,183 @@
             this.label99.AutoSize = true;
             this.label99.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label99.ForeColor = System.Drawing.Color.White;
-            this.label99.Location = new System.Drawing.Point(1767, 170);
+            this.label99.Location = new System.Drawing.Point(1767, 154);
             this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(125, 21);
+            this.label99.Size = new System.Drawing.Size(74, 21);
             this.label99.TabIndex = 126;
-            this.label99.Text = "Steering Angle";
+            this.label99.Text = "Steering";
             // 
-            // ondalıkAyraçSeçimiToolStripMenuItem
+            // tableLayoutPanel24
             // 
-            this.ondalıkAyraçSeçimiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.noktaToolStripMenuItem,
-            this.virgülToolStripMenuItem});
-            this.ondalıkAyraçSeçimiToolStripMenuItem.Name = "ondalıkAyraçSeçimiToolStripMenuItem";
-            this.ondalıkAyraçSeçimiToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.ondalıkAyraçSeçimiToolStripMenuItem.Text = "Ondalık Ayraç Seçimi";
+            this.tableLayoutPanel24.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
+            this.tableLayoutPanel24.ColumnCount = 5;
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0012F));
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.9992F));
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0012F));
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.9992F));
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.9992F));
+            this.tableLayoutPanel24.Controls.Add(this.motorTempRBox, 4, 1);
+            this.tableLayoutPanel24.Controls.Add(this.motorTempLBox, 3, 1);
+            this.tableLayoutPanel24.Controls.Add(this.label12, 4, 0);
+            this.tableLayoutPanel24.Controls.Add(this.label11, 3, 0);
+            this.tableLayoutPanel24.Controls.Add(this.textBox1, 0, 1);
+            this.tableLayoutPanel24.Controls.Add(this.targetSpeedBox, 0, 1);
+            this.tableLayoutPanel24.Controls.Add(this.textBox3, 0, 1);
+            this.tableLayoutPanel24.Controls.Add(this.label98, 0, 0);
+            this.tableLayoutPanel24.Controls.Add(this.label100, 1, 0);
+            this.tableLayoutPanel24.Controls.Add(this.label101, 2, 0);
+            this.tableLayoutPanel24.ForeColor = System.Drawing.Color.White;
+            this.tableLayoutPanel24.Location = new System.Drawing.Point(1533, 224);
+            this.tableLayoutPanel24.Name = "tableLayoutPanel24";
+            this.tableLayoutPanel24.RowCount = 2;
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel24.Size = new System.Drawing.Size(366, 67);
+            this.tableLayoutPanel24.TabIndex = 127;
             // 
-            // noktaToolStripMenuItem
+            // textBox1
             // 
-            this.noktaToolStripMenuItem.Checked = true;
-            this.noktaToolStripMenuItem.CheckOnClick = true;
-            this.noktaToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.noktaToolStripMenuItem.Name = "noktaToolStripMenuItem";
-            this.noktaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.noktaToolStripMenuItem.Text = "\'.\' (nokta)";
-            this.noktaToolStripMenuItem.Click += new System.EventHandler(this.noktaToolStripMenuItem_Click);
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(78, 38);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(63, 23);
+            this.textBox1.TabIndex = 21;
+            this.textBox1.Text = "NaN";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // virgülToolStripMenuItem
+            // targetSpeedBox
             // 
-            this.virgülToolStripMenuItem.CheckOnClick = true;
-            this.virgülToolStripMenuItem.Name = "virgülToolStripMenuItem";
-            this.virgülToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.virgülToolStripMenuItem.Text = "\',\' (virgül)";
-            this.virgülToolStripMenuItem.Click += new System.EventHandler(this.virgülToolStripMenuItem_Click);
+            this.targetSpeedBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.targetSpeedBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.targetSpeedBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.targetSpeedBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.targetSpeedBox.ForeColor = System.Drawing.Color.White;
+            this.targetSpeedBox.Location = new System.Drawing.Point(150, 38);
+            this.targetSpeedBox.Multiline = true;
+            this.targetSpeedBox.Name = "targetSpeedBox";
+            this.targetSpeedBox.ReadOnly = true;
+            this.targetSpeedBox.Size = new System.Drawing.Size(63, 23);
+            this.targetSpeedBox.TabIndex = 20;
+            this.targetSpeedBox.Text = "NaN";
+            this.targetSpeedBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox3.ForeColor = System.Drawing.Color.White;
+            this.textBox3.Location = new System.Drawing.Point(6, 38);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(63, 23);
+            this.textBox3.TabIndex = 19;
+            this.textBox3.Text = "NaN";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label98
+            // 
+            this.label98.AutoSize = true;
+            this.label98.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label98.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label98.ForeColor = System.Drawing.Color.White;
+            this.label98.Location = new System.Drawing.Point(6, 3);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(63, 29);
+            this.label98.TabIndex = 5;
+            this.label98.Text = "Delta";
+            this.label98.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label100
+            // 
+            this.label100.AutoSize = true;
+            this.label100.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label100.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label100.ForeColor = System.Drawing.Color.White;
+            this.label100.Location = new System.Drawing.Point(78, 3);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(63, 29);
+            this.label100.TabIndex = 6;
+            this.label100.Text = "Target";
+            this.label100.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label101
+            // 
+            this.label101.AutoSize = true;
+            this.label101.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label101.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label101.ForeColor = System.Drawing.Color.White;
+            this.label101.Location = new System.Drawing.Point(150, 3);
+            this.label101.Name = "label101";
+            this.label101.Size = new System.Drawing.Size(63, 29);
+            this.label101.TabIndex = 7;
+            this.label101.Text = "Low Prio";
+            this.label101.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(222, 3);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(63, 29);
+            this.label11.TabIndex = 128;
+            this.label11.Text = "Motor L";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(294, 3);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(66, 29);
+            this.label12.TabIndex = 129;
+            this.label12.Text = "Motor R";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // motorTempLBox
+            // 
+            this.motorTempLBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.motorTempLBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.motorTempLBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.motorTempLBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.motorTempLBox.ForeColor = System.Drawing.Color.White;
+            this.motorTempLBox.Location = new System.Drawing.Point(222, 38);
+            this.motorTempLBox.Multiline = true;
+            this.motorTempLBox.Name = "motorTempLBox";
+            this.motorTempLBox.ReadOnly = true;
+            this.motorTempLBox.Size = new System.Drawing.Size(63, 23);
+            this.motorTempLBox.TabIndex = 128;
+            this.motorTempLBox.Text = "NaN";
+            this.motorTempLBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // motorTempRBox
+            // 
+            this.motorTempRBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.motorTempRBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.motorTempRBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.motorTempRBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.motorTempRBox.ForeColor = System.Drawing.Color.White;
+            this.motorTempRBox.Location = new System.Drawing.Point(294, 38);
+            this.motorTempRBox.Multiline = true;
+            this.motorTempRBox.Name = "motorTempRBox";
+            this.motorTempRBox.ReadOnly = true;
+            this.motorTempRBox.Size = new System.Drawing.Size(66, 23);
+            this.motorTempRBox.TabIndex = 128;
+            this.motorTempRBox.Text = "NaN";
+            this.motorTempRBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // telemetry
             // 
@@ -4004,6 +4153,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.tableLayoutPanel24);
             this.Controls.Add(this.label99);
             this.Controls.Add(this.steeringAngleBox);
             this.Controls.Add(this.tableLayoutPanel23);
@@ -4018,9 +4168,6 @@
             this.Controls.Add(this.tableLayoutPanel11);
             this.Controls.Add(this.tableLayoutPanel10);
             this.Controls.Add(this.label37);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.targetSpeedBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.gpsSpeedBox);
@@ -4122,6 +4269,8 @@
             this.tableLayoutPanel22.PerformLayout();
             this.tableLayoutPanel23.ResumeLayout(false);
             this.tableLayoutPanel23.PerformLayout();
+            this.tableLayoutPanel24.ResumeLayout(false);
+            this.tableLayoutPanel24.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4199,9 +4348,6 @@
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label targetSpeedBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label28;
         public System.Windows.Forms.Label gpsSpeedBox;
@@ -4387,6 +4533,17 @@
         private System.Windows.Forms.ToolStripMenuItem ondalıkAyraçSeçimiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem noktaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem virgülToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox targetSpeedBox;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label98;
+        private System.Windows.Forms.Label label100;
+        private System.Windows.Forms.Label label101;
+        private System.Windows.Forms.TextBox motorTempRBox;
+        private System.Windows.Forms.TextBox motorTempLBox;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
     }
 }
 
