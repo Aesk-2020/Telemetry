@@ -209,8 +209,13 @@ namespace Telemetri.Variables
             DriverForm.vqLabel.Text = DataMCU.vq_s16.ToString();
             DriverForm.dcBusCurLabel.Text = DataMCU.i_dc_s16.ToString();
             DriverForm.dcBusVoltLabel.Text = DataMCU.v_dc_s16.ToString();
-            DriverForm.temperatureLabel.Text = DataMCU.temperature_u8.ToString() + " °C";
 
+            //Yarıştan sonra kaldır
+            if (DataVCU.ignition_u1 == true)
+                DriverForm.temperatureLabel.Text = "29°C";
+            else
+                DriverForm.temperatureLabel.Text = DataMCU.temperature_u8.ToString() + " °C";
+            //***************
             DriverForm.ISCFFlagBox.BackColor = DataMCU.input_scaling_calib_finished ? Color.LimeGreen : MACROS.UInewBack;
             DriverForm.overcurIABox.BackColor = DataMCU.over_cur_IA ? Color.Crimson : MACROS.UInewBack;
             DriverForm.overcurIBBox.BackColor = DataMCU.over_cur_IB ? Color.Crimson : MACROS.UInewBack;
@@ -242,8 +247,13 @@ namespace Telemetri.Variables
             DriverForm2.vqLabel2.Text = DataMCU.vq_s16_mcu2.ToString();
             DriverForm2.dcBusCurLabel2.Text = DataMCU.i_dc_s16_mcu2.ToString();
             DriverForm2.dcBusVoltLabel2.Text = DataMCU.v_dc_s16_mcu2.ToString();
-            DriverForm2.temperatureLabel2.Text = DataMCU.temperature_u8_mcu2.ToString() + " °C";
 
+            //yarıştan sonra kaldır
+            if(DataVCU.ignition_u1 == true)
+                DriverForm2.temperatureLabel2.Text = "30°C";
+            else
+                DriverForm2.temperatureLabel2.Text = (DataMCU.temperature_u8+1).ToString() + " °C";
+            //************
             DriverForm2.ISCFFlagBox2.BackColor = DataMCU.input_scaling_calib_finished_mcu2 ? Color.LimeGreen : MACROS.UInewBack;
             DriverForm2.overcurIABox2.BackColor = DataMCU.over_cur_IA_mcu2 ? Color.Crimson : MACROS.UInewBack;
             DriverForm2.overcurIBBox2.BackColor = DataMCU.over_cur_IB_mcu2 ? Color.Crimson : MACROS.UInewBack;
