@@ -25,6 +25,7 @@ namespace telemetry_hydro.Variables
         public static int countdownHours =   01;
         public static int countdownMinutes = 05;
         public static int countdownSeconds = 00;
+        public static int maxSpeed = 0;
         
         // MUTLAKA IMPLEMENTATION YAPIN !!
         public static TextBox currentLapBox;
