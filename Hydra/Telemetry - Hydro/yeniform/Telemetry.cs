@@ -189,8 +189,17 @@ namespace telemetry_hydro
             ThreadMethods.TextDegis(mqtt_verim, ((int)(mqtt.MQTT_Efficiency * MACROS.FLOAT_CONVERTER_2)).ToString());
             //ThreadMethods.LabelDegis(gsm_yenileme, ((int)(mqtt.mqtt_refresh_time)).ToString());
 
+            TimeOperations.maxSpeed = TimeOperations.maxSpeed < DataVCU.speed_set_rpm_s16 ? DataVCU.speed_set_rpm_s16 : TimeOperations.maxSpeed;
+
             //AddMarker(new PointLatLng())
-            GMAPController.GMapAddPointAndOdometer(DataGPS.latitude_f32, DataGPS.longtitude_f32);
+            if(lapCountMode == MANUAL)
+            {
+                GMAPController.GMapAddPointAndOdometer(DataGPS.latitude_f32, DataGPS.longtitude_f32);
+            }
+            else
+            {
+                GMAPController.GMapAddPointAndOdometer(DataGPS.latitude_f32, DataGPS.longtitude_f32);
+            }
             MACROS.newDataCome = false;
         }
 
@@ -349,8 +358,17 @@ namespace telemetry_hydro
 
         private void turAtToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Add(
+                DataGPS.lapCounter + 1,
+                TimeOperations.currentLapTime.Elapsed.ToString("mm\\:ss\\.ff"),
+                TimeOperations.avgSpeedBuffer.Average().ToString("00.0") +" km/h",
+                TimeOperations.maxSpeed.ToString() + " km/h",
+                EMS.out_cons_f32.ToString() + " Wh",
+                ((MACROS.KORFEZ_UZUNLUK_METRE / TimeOperations.currentLapTime.Elapsed.TotalSeconds) * 3.6).ToString("00.0") + " km/h"
+                );
             TimeOperations.LapFinish();
             lapCountBox.Text = DataGPS.lapCounter.ToString() + " / 30";
+//            myDataGrid.addGrid(new object[] { TimeOperations.elapsedTime.Elapsed.Minutes, TimeOperations.currentLapTime.Elapsed });
 
         }
 
