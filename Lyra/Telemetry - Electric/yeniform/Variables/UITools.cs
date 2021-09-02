@@ -59,6 +59,7 @@ namespace Telemetri.Variables
             public static Stopwatch mqttStopwatch = new Stopwatch();
             public static Chart actsetSpeedChart;
             public static PictureBox sdCardStaBox;
+            public static ListView lapView;
             public static FontAwesome.Sharp.IconButton mqttConnectBtn;
             public static FontAwesome.Sharp.IconButton mqttDisconnectBtn;
             public static FontAwesome.Sharp.IconButton startLogBtn;

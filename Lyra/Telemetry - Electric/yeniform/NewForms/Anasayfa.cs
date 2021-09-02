@@ -49,6 +49,7 @@ namespace Telemetri.NewForms
             UITools.Anasayfa.resetBoardBtn = resetBoardButton;
             UITools.Anasayfa.portConnectBtn = portConnectBtn;
             UITools.Anasayfa.lastLapConsBox = lastLapConsBox;
+            UITools.Anasayfa.lapView = lapView;
             TimeOperations.avgLapBox = avgLapTimeBox;
             TimeOperations.currentLapBox = currentLapBox;
             TimeOperations.fastestLapBox = fastestLapBox;
@@ -160,6 +161,7 @@ namespace Telemetri.NewForms
             SetDoubleBuffered(setTorqueBox);
             SetDoubleBuffered(currentLapBox);
             SetDoubleBuffered(sdCardStatBox);
+            SetDoubleBuffered(lapView);
             #endregion
 
         }
@@ -209,7 +211,18 @@ namespace Telemetri.NewForms
 
         private void startBtn_Click(object sender, EventArgs e)
         {
-            startTimeLabel.Text = DateTime.Now.ToString("HH:mm:ss");
+            UITools.Telemetry2021.lapCount.Text = (DataVCU.lapCounter+1).ToString();
+            UITools.Anasayfa.lapView.Items.Add(new ListViewItem());
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].ForeColor = Color.White;
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].Font = new Font("Century Gothic", 14);
+
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].Text = (DataVCU.lapCounter+1).ToString();
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems[1].Text = DateTime.Now.ToString("HH:mm:ss");
             startBtn.Enabled = false;
             finishBtn.Enabled = true;
             DataBMS.startFinishConBuffer = DataBMS.cons_u16;

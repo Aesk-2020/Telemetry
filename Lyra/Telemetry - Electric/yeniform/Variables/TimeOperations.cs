@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Timers;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Telemetri.Variables
 {
@@ -27,7 +28,6 @@ namespace Telemetri.Variables
 
         public static void StartRace()
         {
-            currentLapBox.Text = DateTime.Now.ToString("T");
             raceTimer.Elapsed += RaceTimer_Elapsed;
             raceTimer.Start();
             currentLapTime.Start();
@@ -35,16 +35,27 @@ namespace Telemetri.Variables
 
         private static void RaceTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            currentLapBox.Text = currentLapTime.Elapsed.ToString("mm\\:ss\\.ff");
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems[2].Text = currentLapTime.Elapsed.ToString("mm\\:ss\\.ff");
         }
         public static void LapFinish()
         {
             currentLapTime.Stop();
+            UITools.Anasayfa.lapView.Items.Add(new ListViewItem());
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].ForeColor = Color.White;
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].Font = new Font("Century Gothic", 14);
+
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].Text = (DataVCU.lapCounter + 1).ToString();
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems[1].Text = DateTime.Now.ToString("HH:mm:ss");
             fastestLapTime = currentLapTime.Elapsed < fastestLapTime ? currentLapTime.Elapsed : fastestLapTime;
             lastLapTime = currentLapTime.Elapsed;
             laps.Add(lastLapTime);
             lastLapBox.Text = lastLapTime.ToString("mm\\:ss\\.ff");
-            fastestLapBox.Text = fastestLapTime.ToString("mm\\:ss\\.ff");
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems[3].Text = fastestLapTime.ToString("mm\\:ss\\.ff");
             avgLapTime = new TimeSpan(Convert.ToInt64(laps.Average(t => t.Ticks)));
             avgLapBox.Text = avgLapTime.ToString("mm\\:ss\\.ff");
 
