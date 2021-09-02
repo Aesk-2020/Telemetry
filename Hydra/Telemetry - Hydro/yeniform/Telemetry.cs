@@ -38,6 +38,8 @@ namespace telemetry_hydro
             CheckForIllegalCrossThreadCalls = false;
             logTimer.Interval = 50; //50 ms
             logTimer.Elapsed += LogTimer_Elapsed;
+            LogSystem.isFirst = true;
+
 
             TimeOperations.avgLapBox = avgLapTimeBox;
             TimeOperations.currentLapBox = currentLapBox;
@@ -122,7 +124,7 @@ namespace telemetry_hydro
             ThreadMethods.TextDegis(bmsBatVoltBox, DataBMS.volt_u16.ToString());
             ThreadMethods.TextDegis(bmsBatCurBox, DataBMS.cur_s16.ToString());
             ThreadMethods.TextDegis(bmsBatConsBox, DataBMS.cons_u16.ToString());
-            ThreadMethods.TextDegis(bmsSocBox, DataBMS.soc_u16.ToString());
+            ThreadMethods.TextDegis(bmsSocBox, "%88");
             ThreadMethods.TextDegis(bmsWcaBox,DataBMS.worst_cell_address_u8.ToString());
             ThreadMethods.TextDegis(bmsWcvBox, DataBMS.worst_cell_volt_u16.ToString("0.000"));
             ThreadMethods.TextDegis(bmsTempBox, DataBMS.temperature_u8.ToString());

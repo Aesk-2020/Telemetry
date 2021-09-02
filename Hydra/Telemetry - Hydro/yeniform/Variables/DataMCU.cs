@@ -82,7 +82,20 @@ namespace Telemetri.Variables
                                             act_speed_s16.ToString() + "\t" +
                                             temperature_u8.ToString() + "\t" +
                                             error_status_u16.ToString() + "\t" +
-                                            act_torque_s8.ToString() + "\t";
+                                            act_torque_s8.ToString() + "\t" +
+                                            act_id_current_s16_mcu2.ToString() + "\t" +
+                                            act_iq_current_s16_mcu2.ToString() + "\t" +
+                                            vd_s16_mcu2.ToString() + "\t" +
+                                            vq_s16_mcu2.ToString() + "\t" +
+                                            set_id_current_s16_mcu2.ToString() + "\t" +
+                                            set_iq_current_s16_mcu2.ToString() + "\t" +
+                                            set_torque_s16_mcu2.ToString() + "\t" +
+                                            i_dc_s16_mcu2.ToString() + "\t" +
+                                            v_dc_s16_mcu2.ToString() + "\t" +
+                                            act_speed_s16_mcu2.ToString() + "\t" +
+                                            temperature_u8_mcu2.ToString() + "\t" +
+                                            error_status_u16_mcu2.ToString() + "\t" +
+                                            act_torque_s8_mcu2.ToString() + "\t";
 
     }
 }
