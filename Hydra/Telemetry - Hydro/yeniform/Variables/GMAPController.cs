@@ -25,12 +25,12 @@ namespace telemetry_hydro.Variables
         {
             _gmap = gmap_;
             gmap_.ShowCenter = false;
-            gmap_.Position = new GMap.NET.PointLatLng(MACROS.centerLat, MACROS.centerLong);
+            gmap_.Position = new GMap.NET.PointLatLng(40.74510099145528, 29.78364797668798);
             gmap_.DragButton = MouseButtons.Middle;
             gmap_.MapProvider = GMapProviders.BingSatelliteMap;
             gmap_.MaxZoom = 150;
             gmap_.MinZoom = 5;
-            gmap_.Zoom = 15.8;
+            gmap_.Zoom = 16.8;
             
         }
 
