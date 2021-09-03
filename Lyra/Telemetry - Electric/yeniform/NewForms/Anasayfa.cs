@@ -244,11 +244,11 @@ namespace Telemetri.NewForms
         {
             if (mqttobj.ConnectSubscribe())
             {
+                AFront.AccessFront += UITools.ChangeUI;
                 mqttDisconnectBtn.Enabled = true;
                 mqttConnectBtn.Enabled = false;
                 startLogBtn.Enabled = true;
                 resetBoardButton.Enabled = true;
-                AFront.AccessFront += UITools.ChangeUI;
             }
         }
 
