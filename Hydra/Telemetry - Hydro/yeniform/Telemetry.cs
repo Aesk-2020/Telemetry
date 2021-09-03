@@ -50,10 +50,51 @@ namespace telemetry_hydro
             TimeOperations.avgSpeedBox = avgSpeedBox;
         }
 
+        #region .. Double Buffered function ..
+        public static void SetDoubleBuffered(System.Windows.Forms.Control c)
+        {
+            if (System.Windows.Forms.SystemInformation.TerminalServerSession)
+                return;
+            System.Reflection.PropertyInfo aProp = typeof(System.Windows.Forms.Control).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            aProp.SetValue(c, true, null);
+        }
+        #endregion
 
+        #region .. code for Flucuring ..
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+
+        #endregion
         private void Form1_Load(object sender, EventArgs e)
         {
             GMAPController.GMAPController_Init(gmap);
+
+            SetDoubleBuffered(setIdBox);
+            SetDoubleBuffered(setId2Box);
+            SetDoubleBuffered(actIdBox);
+            SetDoubleBuffered(actId2Box);
+            SetDoubleBuffered(setIqBox);
+            SetDoubleBuffered(setIq2Box);
+            SetDoubleBuffered(actIqBox);
+            SetDoubleBuffered(actIq2Box);
+
+            SetDoubleBuffered(setSpeedBox);
+            SetDoubleBuffered(setSpeed2Box);
+            SetDoubleBuffered(setTorqueBox);
+            SetDoubleBuffered(setTorque2Box);
+
+            SetDoubleBuffered(fastestLapBox);
+            SetDoubleBuffered(currentLapBox);
+            SetDoubleBuffered(TimeOperations.currentLapBox);
+            SetDoubleBuffered(lapCountBox);
+            SetDoubleBuffered(avgLapTimeBox);
         }
 
         private void logDatas()
