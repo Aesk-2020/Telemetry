@@ -226,6 +226,7 @@ namespace Telemetri.NewForms
             startBtn.Enabled = false;
             finishBtn.Enabled = true;
             DataBMS.startFinishConBuffer = DataBMS.cons_u16;
+            UITools.Telemetry2021.lapPlusButton.Enabled = true;
             TimeOperations.StartRace();
         }
 

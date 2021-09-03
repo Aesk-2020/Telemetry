@@ -8,7 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using GMap.NET.WindowsForms;
 using LiveCharts.Defaults;
+using Telemetri.NewForms;
+
 namespace Telemetri.Variables
 {
     public static class UITools
@@ -42,6 +45,8 @@ namespace Telemetri.Variables
             public static TextBox mqttPingLabel;
             public static TextBox activeChannelLabel;
             public static Timer graphTimer;
+            public static GMapControl MAAAP;
+            public static Button lapPlusButton;
         }
         public static class Anasayfa
         {
@@ -213,7 +218,7 @@ namespace Telemetri.Variables
 
             //Yarıştan sonra kaldır
             if (DataVCU.ignition_u1 == true)
-                DriverForm.temperatureLabel.Text = "29°C";
+                DriverForm.temperatureLabel.Text = "23°C";
             else
                 DriverForm.temperatureLabel.Text = DataMCU.temperature_u8.ToString() + " °C";
             //***************
@@ -268,7 +273,7 @@ namespace Telemetri.Variables
             DriverForm2.underspeedBox2.BackColor = DataMCU.under_speed_mcu2 ? Color.Crimson : MACROS.UInewBack;
             DriverForm2.pwmEnabledBox2.BackColor = DataMCU.PWM_enabled_mcu2 ? Color.LimeGreen : MACROS.UInewBack;
 
-
+            GMAPController.AddMarker(new GMap.NET.PointLatLng(DataGPS.latitude_f32, DataGPS.longtitude_f32), GMap.NET.WindowsForms.Markers.GMarkerGoogleType.red_small, Telemetry2021.MAAAP);
             /*switch ((DataBMS.DC_BUS_STATE)DataBMS.dc_bus_state_u8)
             {
                 case DataBMS.DC_BUS_STATE.PRECHARGE:

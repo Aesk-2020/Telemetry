@@ -531,6 +531,7 @@
             this.lapPlusBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lapPlusBtn.BackgroundImage")));
             this.lapPlusBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.lapPlusBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lapPlusBtn.Enabled = false;
             this.lapPlusBtn.FlatAppearance.BorderSize = 0;
             this.lapPlusBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lapPlusBtn.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));

@@ -17,13 +17,14 @@ namespace Telemetri.NewForms
     public partial class Map : Form
     {
 
-        GMAPController myGmap = new GMAPController(MACROS.centerLat, MACROS.centerLong, MACROS.startLineLat, MACROS.startLineLong);
+        public static GMAPController myGmap = new GMAPController(MACROS.centerLat, MACROS.centerLong, MACROS.startLineLat, MACROS.startLineLong);
         bool lapControlCalibrationMode = false;
         int calibrationClickCount = 0;
 
         public Map()
         {
             InitializeComponent();
+            UITools.Telemetry2021.MAAAP = gMapTool;
         }
         #region .. Double Buffered function ..
         public static void SetDoubleBuffered(System.Windows.Forms.Control c)
