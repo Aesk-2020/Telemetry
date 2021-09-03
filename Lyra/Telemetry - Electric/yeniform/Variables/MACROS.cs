@@ -13,6 +13,7 @@ namespace Telemetri.Variables
         public const byte SOURCE_ID = 0X4;
         public const byte SOURCE_MSG_ID = 0X4;
 
+        public static int KORFEZ_UZUNLUK_METRE = 1950;
         public const int ofsetMQTT = 3;
         public const double C_RADIUS_EARTH_KM = 6371100;
         public const string aesk_IP = "broker.mqttdashboard.com";
@@ -22,8 +23,8 @@ namespace Telemetri.Variables
         public const string newSubTopic = "vehicle_to_interface";
         public const string newPubTopic = "interface_to_vehicle";
         //40.95767341297037, 29.410455013620723
-        public const double centerLat = 40.957673;
-        public const double centerLong = 29.410455;
+        public const double centerLat = 40.744371;
+        public const double centerLong = 29.783958;
         //40.95187517899788, 29.40317203853778
         public const double startLineLat = 40.951875;
         public const double startLineLong = 29.403172;

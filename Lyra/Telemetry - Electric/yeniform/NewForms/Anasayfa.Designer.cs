@@ -426,7 +426,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 95F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 96F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(278, 97);
             this.tableLayoutPanel4.TabIndex = 134;
             // 
@@ -510,7 +510,7 @@
             this.tableLayoutPanel7.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel7.ColumnCount = 2;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82F));
             this.tableLayoutPanel7.Controls.Add(this.startTimeLabel, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.label10, 1, 0);
@@ -535,7 +535,7 @@
             this.startTimeLabel.Multiline = true;
             this.startTimeLabel.Name = "startTimeLabel";
             this.startTimeLabel.ReadOnly = true;
-            this.startTimeLabel.Size = new System.Drawing.Size(186, 50);
+            this.startTimeLabel.Size = new System.Drawing.Size(185, 50);
             this.startTimeLabel.TabIndex = 138;
             this.startTimeLabel.Text = "NULL";
             this.startTimeLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -548,7 +548,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(4, 1);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(186, 36);
+            this.label5.Size = new System.Drawing.Size(185, 36);
             this.label5.TabIndex = 135;
             this.label5.Text = "Start Time";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -559,9 +559,9 @@
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(197, 1);
+            this.label10.Location = new System.Drawing.Point(196, 1);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 36);
+            this.label10.Size = new System.Drawing.Size(76, 36);
             this.label10.TabIndex = 137;
             this.label10.Text = "SD";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -569,9 +569,9 @@
             // sdCardStatBox
             // 
             this.sdCardStatBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sdCardStatBox.Location = new System.Drawing.Point(197, 41);
+            this.sdCardStatBox.Location = new System.Drawing.Point(196, 41);
             this.sdCardStatBox.Name = "sdCardStatBox";
-            this.sdCardStatBox.Size = new System.Drawing.Size(75, 50);
+            this.sdCardStatBox.Size = new System.Drawing.Size(76, 50);
             this.sdCardStatBox.TabIndex = 139;
             this.sdCardStatBox.TabStop = false;
             // 
@@ -619,7 +619,7 @@
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
             this.tableLayoutPanel17.RowCount = 1;
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 98F));
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 96F));
             this.tableLayoutPanel17.Size = new System.Drawing.Size(278, 97);
             this.tableLayoutPanel17.TabIndex = 146;
             // 
@@ -1018,7 +1018,7 @@
             this.tableLayoutPanel13.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel13.ColumnCount = 2;
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
             this.tableLayoutPanel13.Controls.Add(this.label11, 1, 0);
             this.tableLayoutPanel13.Controls.Add(this.tcuMinLabel, 0, 1);
             this.tableLayoutPanel13.Controls.Add(this.label1, 0, 0);
@@ -1039,9 +1039,9 @@
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(102, 1);
+            this.label11.Location = new System.Drawing.Point(101, 1);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(94, 44);
+            this.label11.Size = new System.Drawing.Size(95, 44);
             this.label11.TabIndex = 146;
             this.label11.Text = "TCU Min";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1053,10 +1053,10 @@
             this.tcuMinLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcuMinLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tcuMinLabel.ForeColor = System.Drawing.Color.White;
-            this.tcuMinLabel.Location = new System.Drawing.Point(102, 49);
+            this.tcuMinLabel.Location = new System.Drawing.Point(101, 49);
             this.tcuMinLabel.Multiline = true;
             this.tcuMinLabel.Name = "tcuMinLabel";
-            this.tcuMinLabel.Size = new System.Drawing.Size(94, 36);
+            this.tcuMinLabel.Size = new System.Drawing.Size(95, 36);
             this.tcuMinLabel.TabIndex = 136;
             this.tcuMinLabel.Text = "0";
             this.tcuMinLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1069,7 +1069,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(4, 1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 44);
+            this.label1.Size = new System.Drawing.Size(90, 44);
             this.label1.TabIndex = 131;
             this.label1.Text = "Graph";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1084,7 +1084,7 @@
             this.errorsLabel.Location = new System.Drawing.Point(4, 49);
             this.errorsLabel.Multiline = true;
             this.errorsLabel.Name = "errorsLabel";
-            this.errorsLabel.Size = new System.Drawing.Size(91, 36);
+            this.errorsLabel.Size = new System.Drawing.Size(90, 36);
             this.errorsLabel.TabIndex = 135;
             this.errorsLabel.Text = "50";
             this.errorsLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1282,13 +1282,13 @@
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Fastest Lap Time";
+            this.columnHeader4.Text = "Average Speed";
             this.columnHeader4.Width = 213;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Lap Consumption";
-            this.columnHeader5.Width = 102;
+            this.columnHeader5.Width = 180;
             // 
             // Anasayfa
             // 

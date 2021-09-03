@@ -34,7 +34,7 @@ namespace Telemetri.Variables
             gmap_.MapProvider = GMapProviders.BingSatelliteMap;
             gmap_.MaxZoom = 150;
             gmap_.MinZoom = 5;
-            gmap_.Zoom = 15.8;
+            gmap_.Zoom = 16.9;
             
         }
 
