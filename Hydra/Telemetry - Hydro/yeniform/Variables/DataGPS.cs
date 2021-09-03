@@ -22,7 +22,7 @@ namespace Telemetri.Variables
         //UPDATED
         public static string log_gps_data => latitude_f32.ToString("0.0000000") + '\t' + longtitude_f32.ToString("0.0000000") + '\t' +
                                               speed_u8.ToString() + '\t' + sattelite_u8.ToString() + '\t' +
-                                              efficiency_u8.ToString();
+                                              efficiency_u8.ToString() + "\t" + lapCounter.ToString();
         //NEW
         public static PointLatLng lapPoint1 = new PointLatLng(40.9520173224503, 29.4054678082466); //İSTANBUL PARK VARSAYILAN 1.NOKTA
         public static PointLatLng lapPoint2 = new PointLatLng(40.9520861983152, 29.4059774279594); //İSTANBUL PARK VARSAYILAN 2.NOKTA

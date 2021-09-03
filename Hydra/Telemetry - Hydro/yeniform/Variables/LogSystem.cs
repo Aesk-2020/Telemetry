@@ -43,7 +43,6 @@ namespace telemetry_hydro.Variables
                         "Torque Set_R" + "\t" +
                         "Speed Limit" + "\t" +
                         "Torque Limit" + "\t" +
-                        "Lap Count" + "\t" +
                         "Kp" + "\t" +
                         "Ki" + "\t" +
                         "Kd" + "\t" +
@@ -79,11 +78,13 @@ namespace telemetry_hydro.Variables
                         "DC Bus State" + "\t" +
                         "Worst Cell Voltage" + "\t" +
                         "Worst Cell Address" + "\t" +
-                        "Battery temp" + "\t" +
+                        "Battery Temp" + "\t" +
                         "Lattitude" + "\t" +
                         "Longtitude" + "\t" +
                         "GPS Velocity" + "\t" +
-                        "Sattelites");
+                        "Sattelites" + "\t" +
+                        "Lap Count" + "\t"
+                        );
 
                     logTimer.Start();
                     isFirst = false;
