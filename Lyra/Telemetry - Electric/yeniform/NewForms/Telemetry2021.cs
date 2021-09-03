@@ -113,9 +113,19 @@ namespace Telemetri.NewForms
         private void lapPlusBtn_Click(object sender, EventArgs e)
         {
             DataVCU.lapCounter++;
-            lapCntLabel.Text = (Convert.ToDecimal(lapCntLabel.Text) + 1).ToString();
+            lapCntLabel.Text = (DataVCU.lapCounter + 1).ToString();
             DataBMS.startFinishCon = DataBMS.cons_u16 - DataBMS.startFinishConBuffer;
-            UITools.Anasayfa.lastLapConsBox.Text = DataBMS.startFinishCon.ToString("0.0" + "Wh");
+            UITools.Anasayfa.lapView.Items.Add(new ListViewItem());
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].ForeColor = Color.White;
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].Font = new Font("Century Gothic", 14);
+
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].Text = (DataVCU.lapCounter + 1).ToString();
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems[4].Text = DataBMS.startFinishCon.ToString("0.0" + "Wh");
             TimeOperations.LapFinish();
             DataBMS.startFinishConBuffer = DataBMS.cons_u16;
         }
