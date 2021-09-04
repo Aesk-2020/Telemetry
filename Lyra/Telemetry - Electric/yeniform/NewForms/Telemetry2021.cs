@@ -135,7 +135,10 @@ namespace Telemetri.NewForms
             UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
             UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
             UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
-            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter-1].SubItems[4].Text = DataBMS.startFinishCon.ToString("0.0" + "Wh");
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter - 1].SubItems[4].Text = DataBMS.startFinishCon.ToString("0.0" + "Wh");
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter - 1].SubItems[5].Text = (((30 - DataVCU.lapCounter) * 1950) * 3.6 / (3840-TimeOperations.totalTime.TotalSeconds)).ToString("0.0");
+            UITools.Anasayfa.lapView.Items[UITools.Anasayfa.lapView.Items.Count/2].EnsureVisible();
             TimeOperations.LapFinish();
             
         }

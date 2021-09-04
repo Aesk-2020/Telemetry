@@ -17,6 +17,7 @@ namespace Telemetri.Variables
         public static TimeSpan lastLapTime = new TimeSpan();
         public static TimeSpan fastestLapTime = new TimeSpan(0, 0, 59, 59, 59);
         public static TimeSpan avgLapTime = new TimeSpan();
+        public static TimeSpan totalTime = new TimeSpan();
         public static List<TimeSpan> laps = new List<TimeSpan>();
         
         // MUTLAKA IMPLEMENTATION YAPIN !!
@@ -50,6 +51,7 @@ namespace Telemetri.Variables
             UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
             UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
             UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
             UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems[1].Text = DateTime.Now.ToString("HH:mm:ss");
             fastestLapTime = currentLapTime.Elapsed < fastestLapTime ? currentLapTime.Elapsed : fastestLapTime;
             lastLapTime = currentLapTime.Elapsed;
@@ -57,7 +59,8 @@ namespace Telemetri.Variables
             lastLapBox.Text = lastLapTime.ToString("mm\\:ss\\.ff");
             fastestLapBox.Text = fastestLapTime.ToString("mm\\:ss\\.ff");
             avgLapTime = new TimeSpan(Convert.ToInt64(laps.Average(t => t.Ticks)));
-            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter-1].SubItems[3].Text = (MACROS.KORFEZ_UZUNLUK_METRE / TimeOperations.currentLapTime.Elapsed.TotalSeconds * 3.6).ToString("00.0") + " km/h";
+            totalTime = new TimeSpan(Convert.ToInt64(laps.Sum(t => t.Ticks)));
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter-1].SubItems[3].Text = (1950 / TimeOperations.currentLapTime.Elapsed.TotalSeconds * 3.6).ToString("00.0") + " km/h";
             avgLapBox.Text = avgLapTime.ToString("mm\\:ss\\.ff");
 
             currentLapTime.Restart();

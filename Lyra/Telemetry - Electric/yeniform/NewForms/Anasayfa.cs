@@ -211,12 +211,14 @@ namespace Telemetri.NewForms
 
         private void startBtn_Click(object sender, EventArgs e)
         {
+            UITools.Anasayfa.startTimeLabel.Text = DateTime.Now.ToString("HH:mm:ss");
             UITools.Telemetry2021.lapCount.Text = (DataVCU.lapCounter+1).ToString();
             UITools.Anasayfa.lapView.Items.Add(new ListViewItem());
             UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].ForeColor = Color.White;
             UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].Font = new Font("Century Gothic", 14);
 
             UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].Text = (DataVCU.lapCounter+1).ToString();
+            UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
             UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
             UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
             UITools.Anasayfa.lapView.Items[(int)DataVCU.lapCounter].SubItems.Add(new ListViewItem.ListViewSubItem());
@@ -232,7 +234,6 @@ namespace Telemetri.NewForms
 
         private void finishBtn_Click(object sender, EventArgs e)
         {
-            startTimeLabel.Text = "NULL";
             startBtn.Enabled = true;
             finishBtn.Enabled = false;
             //DataBMS.startFinishCon = DataBMS.cons_u16 - DataBMS.startFinishConBuffer;
