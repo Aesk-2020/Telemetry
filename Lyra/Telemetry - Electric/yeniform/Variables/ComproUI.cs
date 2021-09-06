@@ -399,7 +399,7 @@ namespace Telemetri.Variables
                         for (int i = 0; i < DataBMS.cells.Count; i++)
                         {
                             DataBMS.cells[i].voltage_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
-                            DataBMS.cells[i].actVoltage = (float)(DataBMS.cells[i].voltage_u8 + DataBMS.worst_cell_volt_u16_raw) / 1000;
+                            DataBMS.cells[i].actVoltage = (float)(DataBMS.cells[i].voltage_u8 + DataBMS.worst_cell_volt_u16_raw) / 10000;
                         }
                         List<byte> temps = new List<byte>();
                         int count = 0;
