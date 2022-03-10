@@ -20,7 +20,7 @@ ThemeData LightTheme() {
     textSelectionColor: Colors.blue,
     textTheme: TextTheme(
       headline1: TextStyle(color: Colors.black,),
-      headline2: TextStyle(color: Colors.amber,),
+      headline2: TextStyle(color: Colors.white,),
       headline3: TextStyle(color: aeskBlue,),
       headline4: TextStyle(color: Colors.white70),
       subtitle1: TextStyle(color: aeskBlue),
@@ -46,7 +46,7 @@ ThemeData DarkTheme() {
     textSelectionColor: Colors.blue,
     textTheme: TextTheme(
       headline1: TextStyle(color: Colors.white,),
-      headline2: TextStyle(color: Colors.amber,),
+      headline2: TextStyle(color: Colors.black,),
       headline3: TextStyle(color: aeskBlue,),
       headline4: TextStyle(color: aeskBlack),
       subtitle1: TextStyle(color: Colors.grey),

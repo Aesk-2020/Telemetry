@@ -9,12 +9,46 @@ String ip;
 String password;
 bool checkbox = null; // true ise LYRA, false ise hydra
 
+List<DropdownMenuItem<ListItem>> dropdownMenuItems;
+ListItem selectedItem;
+
 class Logging extends StatefulWidget {
   @override
   _LoggingState createState() => _LoggingState();
 }
 
+class ListItem {
+  int value;
+  String name;
+
+  ListItem(this.value, this.name);
+}
+
 class _LoggingState extends State<Logging> {
+  List<ListItem> dropdownItems = [
+    ListItem(1, "broker.mqttdashboard.com"),
+    ListItem(2, "mqtt.omerfurkandemircioglu.com.tr"),
+    ListItem(3, "mqtt.omerustun.com.tr")
+  ];
+
+  List<DropdownMenuItem<ListItem>> buildDropDownMenuItems(List listItems) {
+    List<DropdownMenuItem<ListItem>> items = List();
+    for (ListItem listItem in listItems) {
+      items.add(
+        DropdownMenuItem(
+          child: Text(listItem.name),
+          value: listItem,
+        ),
+      );
+    }
+    return items;
+  }
+
+  void initState() {
+    super.initState();
+    dropdownMenuItems = buildDropDownMenuItems(dropdownItems);
+    selectedItem = dropdownMenuItems[0].value;
+  }
   @override
   Widget build(BuildContext context) {
 
@@ -30,40 +64,20 @@ class _LoggingState extends State<Logging> {
             SizedBox(height: 20,),
             //IP textfield
             Container(
-              width: 350,
-              child: TextField(
-
-                style: TextStyle(
-                  color: Theme.of(context).appBarTheme.color,
-                ),
-                enableInteractiveSelection: false,
-                decoration: InputDecoration(
-                  hintText: "IP Adresi",
-                  icon: Icon(Icons.assignment_ind,color: Theme.of(context).appBarTheme.color)
-                ),
-                onChanged: (String value) {
-                  ip = value;
-                },
-              ),
-            ),
-            SizedBox(height: 5,),
-            //Şifre textfield
-            Container(
-              width: 350,
-              child: TextField(
-                style: TextStyle(
-                  color: Theme.of(context).appBarTheme.color,
-                ),
-                obscureText: true,
-                enableInteractiveSelection: false,
-                decoration: InputDecoration(
-                  hintText: "Şifre",
-                  hoverColor: Colors.white,
-                  icon: Icon(Icons.lock,color: Theme.of(context).appBarTheme.color),
-                ),
-                onChanged: (String value) {
-                  password = value;
-                },
+              padding: const EdgeInsets.only(left: 10.0,right: 10.0),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  color: Theme.of(context).backgroundColor,
+                  border: Border.all()),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton(
+                    value: selectedItem,
+                    items: dropdownMenuItems,
+                    onChanged: (value) {
+                      setState(() {
+                        selectedItem = value;
+                      });
+                    }),
               ),
             ),
 
@@ -106,51 +120,55 @@ class _LoggingState extends State<Logging> {
             RaisedButton(
               padding: EdgeInsets.symmetric(horizontal: 40),
               onPressed: () async {
-                if (ip == "1" && password == MqttAesk.password && checkbox != null) {
+                if (checkbox != null) {
                   showDialog(
                     context: context,
-                    child: SpinKitCircle(color: Theme.of(context).appBarTheme.color,),
                     barrierDismissible: false,
+                    builder: (BuildContext context) {
+                        return SpinKitCircle(color: Theme.of(context).appBarTheme.color,);
+                      },
                   );
                   dynamic state;
                   try{
-                     state = await mqttAesk.connect().timeout(Duration(seconds: 5));
+                    state = await mqttAesk.connect().timeout(Duration(seconds: 5));
                   }catch(e){
                     state = false;
                   }
                   print(state);
                   if (state == true) {
                     MqttAesk.isLyra = checkbox;
-                    checkbox ? mqttAesk.subscribeToTopic("LYRADATA") : mqttAesk.subscribeToTopic("HYDRADATA");
+                    if(MqttAesk.isLyra) {
+                      mqttAesk.subscribeToTopic("LYRADATA");
+                      mqttAesk.subscribeToTopic("vehicle_to_interface");
+                    }
+                    else {
+                      mqttAesk.subscribeToTopic("HYDRADATA");
+                      mqttAesk.subscribeToTopic("vehicle_to_interface_2");
+                    }
                     Navigator.pushNamed(context, checkbox ? "/Home" : "/HomeHydro");
                   } else {
                     Navigator.pushReplacementNamed(context, "/Login");
                     showDialog(
                       context: context,
-                      child: AlertDialog(
-                        title: myText("HATA", 30, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                        content: myText("Bağlantı başarısız! Lütfen internet bağlantınızı kontrol edin", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                        backgroundColor: Theme.of(context).backgroundColor,
-                      ),
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: myText("HATA", 30, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                          content: myText("Bağlantı başarısız! Lütfen internet bağlantınızı kontrol edin", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                          backgroundColor: Theme.of(context).backgroundColor,
+                        );
+                      }
                     );
                   }
-                } else if(checkbox != null) {
-                  showDialog(
-                    context: context,
-                    child: AlertDialog(
-                      title: myText("HATA", 30, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                      content: myText("Girdiğiniz kullanıcı adı ile parola eşleşmedi!", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                      backgroundColor: Theme.of(context).backgroundColor,
-                    ),
-                  );
                 }else{
                   showDialog(
                     context: context,
-                    child: AlertDialog(
-                      title: myText("HATA", 30, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                      content: myText("Lütfen bir araç tipi seçiniz.", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                      backgroundColor: Theme.of(context).backgroundColor,
-                    ),
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: myText("HATA", 30, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                        content: myText("Lütfen bir araç tipi seçiniz.", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                        backgroundColor: Theme.of(context).backgroundColor,
+                      );
+                    },
                   );
                 }
               },

@@ -26,12 +26,12 @@ class AeskGauge extends StatelessWidget {
                   minimum: 0,
                   maximum: 60,
                   ranges: <GaugeRange>[
-                    GaugeRange(startValue: 0, endValue: 50, gradient: SweepGradient(colors: <Color>[Colors.blue, Colors.green], stops: <double>[0.25, 0.75])),
-                    GaugeRange(startValue: 50, endValue: 60, gradient: SweepGradient(colors: <Color>[Colors.green, Colors.red])),
+                    GaugeRange(startValue: 0, endValue: 50, color: aeskBlue), //, gradient: SweepGradient(colors: <Color>[Colors.blue, Colors.green], stops: <double>[0.25, 0.75])
+                    GaugeRange(startValue: 50, endValue: 60, color: aeskBlue), //, gradient: SweepGradient(colors: <Color>[Colors.green, Colors.red])
                   ],
                   pointers: <GaugePointer>[
                     NeedlePointer(
-                        value: AeskData.driver_actual_velocity_u8.toDouble(),
+                        value: AeskData.driver_actspeed_s16.toDouble(),
                         enableDragging: true,
                         needleLength: 0.7,
                         needleEndWidth: 5,

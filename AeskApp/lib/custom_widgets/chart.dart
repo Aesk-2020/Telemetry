@@ -26,15 +26,15 @@ class _AeskChartState extends State<AeskChart> {
   double currentTime = 0;
   dynamic data;
   static List<String> currentgraph = List.filled(1, null,growable: true);
-  static List<String> graphList = ["driverPhaseA","driverPhaseB","dcBusCur","driverIdG","driverIdQ","driverVdG","driverVqG","bmsBatCons","bmsBatCur","bmsBatVolt"];
+  static List<String> graphList = ["DC Bus Current", "Set-Act ID", "Set-Act IQ", "Set-Act Torque", "Set-Act Velocity", "BMS Bat Cons", "BMS Bat Cur"];
 
   Widget graphAdder(String content, int index){
     final scale = MediaQuery.of(context);
     switch(content){
-      case "driverPhaseA":
+      case "DC Bus Current":
         return Stack(
           children: <Widget>[
-            driverPhaseA(),
+            dcBusCurrent(),
             Positioned(
               bottom: 5,
               left: scale.size.width/2.22,
@@ -43,7 +43,7 @@ class _AeskChartState extends State<AeskChart> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.add("driverPhaseA");
+                    graphList.add("DC Bus Current");
                   });
                 },
               ),
@@ -51,10 +51,10 @@ class _AeskChartState extends State<AeskChart> {
           ],
         );
         break;
-      case "driverPhaseB":
+      case "Set-Act ID":
         return Stack(
           children: <Widget>[
-            driverPhaseB(),
+            setActId(),
             Positioned(
               bottom: 5,
               left: scale.size.width/2.22,
@@ -63,7 +63,7 @@ class _AeskChartState extends State<AeskChart> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.add("driverPhaseB");
+                    graphList.add("Set-Act ID");
                   });
                 },
               ),
@@ -71,10 +71,10 @@ class _AeskChartState extends State<AeskChart> {
           ],
         );
         break;
-      case "dcBusCur":
+      case "Set-Act IQ":
         return Stack(
           children: <Widget>[
-            dcBusCur(),
+            setActIq(),
             Positioned(
               bottom: 5,
               left: scale.size.width/2.22,
@@ -83,7 +83,7 @@ class _AeskChartState extends State<AeskChart> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.add("dcBusCur");
+                    graphList.add("Set-Act IQ");
                   });
                 },
               ),
@@ -91,10 +91,10 @@ class _AeskChartState extends State<AeskChart> {
           ],
         );
         break;
-      case "driverIdG":
+      case "Set-Act Torque":
         return Stack(
           children: <Widget>[
-            driverIdG(),
+            setActTorque(),
             Positioned(
               bottom: 5,
               left: scale.size.width/2.22,
@@ -103,7 +103,7 @@ class _AeskChartState extends State<AeskChart> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.add("driverIdG");
+                    graphList.add("Set-Act Torque");
                   });
                 },
               ),
@@ -111,10 +111,10 @@ class _AeskChartState extends State<AeskChart> {
           ],
         );
         break;
-      case "driverIdQ":
+      case "Set-Act Velocity":
         return Stack(
           children: <Widget>[
-            driverIdQ(),
+            setActVelocity(),
             Positioned(
               bottom: 5,
               left: scale.size.width/2.22,
@@ -123,7 +123,7 @@ class _AeskChartState extends State<AeskChart> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.add("driverIdQ");
+                    graphList.add("Set-Act Velocity");
                   });
                 },
               ),
@@ -131,47 +131,7 @@ class _AeskChartState extends State<AeskChart> {
           ],
         );
         break;
-      case "driverVdG":
-        return Stack(
-          children: <Widget>[
-            driverVdG(),
-            Positioned(
-              bottom: 5,
-              left: scale.size.width/2.22,
-              child: IconButton(
-                icon: Icon(Icons.delete),
-                onPressed: () {
-                  setState(() {
-                    currentgraph.removeAt(index);
-                    graphList.add("driverVdG");
-                  });
-                },
-              ),
-            )
-          ],
-        );
-        break;
-      case "driverVqG":
-        return Stack(
-          children: <Widget>[
-            driverVqG(),
-            Positioned(
-              bottom: 5,
-              left: scale.size.width/2.22,
-              child: IconButton(
-                icon: Icon(Icons.delete),
-                onPressed: () {
-                  setState(() {
-                    currentgraph.removeAt(index);
-                    graphList.add("driverVqG");
-                  });
-                },
-              ),
-            )
-          ],
-        );
-        break;
-      case "bmsBatCons":
+      case "BMS Bat Cons":
         return Stack(
           children: <Widget>[
             bmsBatCons(),
@@ -183,7 +143,7 @@ class _AeskChartState extends State<AeskChart> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.add("bmsBatCons");
+                    graphList.add("BMS Bat Cons");
                   });
                 },
               ),
@@ -191,7 +151,7 @@ class _AeskChartState extends State<AeskChart> {
           ],
         );
         break;
-      case "bmsBatCur":
+      case "BMS Bat Cur":
         return Stack(
           children: <Widget>[
             bmsBatCur(),
@@ -203,27 +163,7 @@ class _AeskChartState extends State<AeskChart> {
                 onPressed: () {
                   setState(() {
                     currentgraph.removeAt(index);
-                    graphList.add("bmsBatCur");
-                  });
-                },
-              ),
-            )
-          ],
-        );
-        break;
-      case "bmsBatVolt":
-        return Stack(
-          children: <Widget>[
-            bmsBatVolt(),
-            Positioned(
-              bottom: 5,
-              left: scale.size.width/2.22,
-              child: IconButton(
-                icon: Icon(Icons.delete),
-                onPressed: () {
-                  setState(() {
-                    currentgraph.removeAt(index);
-                    graphList.add("bmsBatVolt");
+                    graphList.add("BMS Bat Cur");
                   });
                 },
               ),
@@ -303,7 +243,7 @@ FlatButton(
     );
   }
 }
-Widget driverPhaseA(){
+Widget dcBusCurrent(){
   return Consumer<MqttAesk>(
     builder: (context, _, child){
       return Container(
@@ -313,7 +253,7 @@ Widget driverPhaseA(){
             padding: const EdgeInsets.only(bottom: 25),
             child: SfCartesianChart(
               title: ChartTitle(
-                  text: "driverPhaseA",
+                  text: "DC Bus Current (A)",
                   textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
               primaryXAxis: CategoryAxis(),
               tooltipBehavior: TooltipBehavior(enable: true),
@@ -322,7 +262,7 @@ Widget driverPhaseA(){
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
                   yValueMapper: (graph_data data, _) =>
-                  data.driver_phase_a_current_g,
+                  data.driver_idc_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -335,7 +275,7 @@ Widget driverPhaseA(){
     },
   );
 }
-Widget driverPhaseB(){
+Widget setActId(){
   return Consumer<MqttAesk>(
     builder: (context, _, child){
       return Container(
@@ -345,7 +285,7 @@ Widget driverPhaseB(){
             padding: const EdgeInsets.only(bottom: 25),
             child: SfCartesianChart(
               title: ChartTitle(
-                  text: "driverPhaseB",
+                  text: "Set-Act ID",
                   textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
               primaryXAxis: CategoryAxis(),
               tooltipBehavior: TooltipBehavior(enable: true),
@@ -354,7 +294,16 @@ Widget driverPhaseB(){
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
                   yValueMapper: (graph_data data, _) =>
-                  data.driver_phase_b_current_g,
+                  data.driver_set_id_s16_g,
+                  xValueMapper: (graph_data data, _) => data.time / 1000,
+                  //name: widget._chartName,
+                  splineType: SplineType.monotonic,
+                ),
+                SplineSeries<graph_data, double>(
+                  enableTooltip: true,
+                  dataSource: AeskData.graphData_array,
+                  yValueMapper: (graph_data data, _) =>
+                  data.driver_act_id_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -367,7 +316,7 @@ Widget driverPhaseB(){
     },
   );
 }
-Widget dcBusCur(){
+Widget setActIq(){
   return  Consumer<MqttAesk>(
     builder: (context, _, child){
       return Container(
@@ -377,7 +326,7 @@ Widget dcBusCur(){
             padding: const EdgeInsets.only(bottom: 25),
             child: SfCartesianChart(
               title: ChartTitle(
-                  text: "DC BUS CUR",
+                  text: "Set-Act IQ",
                   textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
               primaryXAxis: CategoryAxis(),
               tooltipBehavior: TooltipBehavior(enable: true),
@@ -386,7 +335,16 @@ Widget dcBusCur(){
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
                   yValueMapper: (graph_data data, _) =>
-                  data.driver_dc_bus_current_g,
+                  data.driver_set_iq_s16_g,
+                  xValueMapper: (graph_data data, _) => data.time / 1000,
+                  //name: widget._chartName,
+                  splineType: SplineType.monotonic,
+                ),
+                SplineSeries<graph_data, double>(
+                  enableTooltip: true,
+                  dataSource: AeskData.graphData_array,
+                  yValueMapper: (graph_data data, _) =>
+                  data.driver_act_iq_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -399,7 +357,7 @@ Widget dcBusCur(){
     },
   );
 }
-Widget driverIdG(){
+Widget setActTorque(){
   return Consumer<MqttAesk>(
     builder: (context, _, child){
       return Container(
@@ -409,7 +367,7 @@ Widget driverIdG(){
             padding: const EdgeInsets.only(bottom: 25),
             child: SfCartesianChart(
               title: ChartTitle(
-                  text: "Driver ID G",
+                  text: "Set-Act Torque",
                   textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
               primaryXAxis: CategoryAxis(),
               tooltipBehavior: TooltipBehavior(enable: true),
@@ -417,7 +375,15 @@ Widget driverIdG(){
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.driver_id_g,
+                  yValueMapper: (graph_data data, _) => data.driver_set_torque_s16_g,
+                  xValueMapper: (graph_data data, _) => data.time / 1000,
+                  //name: widget._chartName,
+                  splineType: SplineType.monotonic,
+                ),
+                SplineSeries<graph_data, double>(
+                  enableTooltip: true,
+                  dataSource: AeskData.graphData_array,
+                  yValueMapper: (graph_data data, _) => data.driver_acttorque_s8_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -430,7 +396,7 @@ Widget driverIdG(){
     },
   );
 }
-Widget driverIdQ(){
+Widget setActVelocity(){
   return Consumer<MqttAesk>(
     builder: (context, _, child){
       return Container(
@@ -440,7 +406,7 @@ Widget driverIdQ(){
             padding: const EdgeInsets.only(bottom: 25),
             child: SfCartesianChart(
               title: ChartTitle(
-                  text: "Driver ID Q",
+                  text: "Set-Act Velocity",
                   textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
               primaryXAxis: CategoryAxis(),
               tooltipBehavior: TooltipBehavior(enable: true),
@@ -448,69 +414,15 @@ Widget driverIdQ(){
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.driver_iq_g,
+                  yValueMapper: (graph_data data, _) => data.vcu_speed_set_rpm_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
-                )
-              ],
-            ),
-          ),
-        ),
-      );
-    },
-  );
-}
-Widget driverVdG(){
-  return Consumer<MqttAesk>(
-    builder: (context, _, child){
-      return Container(
-        padding: EdgeInsets.only(top: 10, bottom: 10),
-        child: Card(
-          child: Padding(
-            padding: const EdgeInsets.only(bottom: 25),
-            child: SfCartesianChart(
-              title: ChartTitle(
-                  text: "Driver VD G",
-                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-              primaryXAxis: CategoryAxis(),
-              tooltipBehavior: TooltipBehavior(enable: true),
-              series: <ChartSeries>[
+                ),
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.driver_vd_g,
-                  xValueMapper: (graph_data data, _) => data.time / 1000,
-                  //name: widget._chartName,
-                  splineType: SplineType.monotonic,
-                )
-              ],
-            ),
-          ),
-        ),
-      );
-    },
-  );
-}
-Widget driverVqG(){
-  return  Consumer<MqttAesk>(
-    builder: (context, _, child){
-      return Container(
-        padding: EdgeInsets.only(top: 10, bottom: 10),
-        child: Card(
-          child: Padding(
-            padding: const EdgeInsets.only(bottom: 25),
-            child: SfCartesianChart(
-              title: ChartTitle(
-                  text: "Driver VQ G",
-                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-              primaryXAxis: CategoryAxis(),
-              tooltipBehavior: TooltipBehavior(enable: true),
-              series: <ChartSeries>[
-                SplineSeries<graph_data, double>(
-                  enableTooltip: true,
-                  dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.driver_vq_g,
+                  yValueMapper: (graph_data data, _) => data.driver_actspeed_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -574,37 +486,6 @@ Widget bmsBatCur(){
                   dataSource: AeskData.graphData_array,
                   yValueMapper: (graph_data data, _) =>
                   data.bms_bat_current_g,
-                  xValueMapper: (graph_data data, _) => data.time / 1000,
-                  //name: widget._chartName,
-                  splineType: SplineType.monotonic,
-                )
-              ],
-            ),
-          ),
-        ),
-      );
-    },
-  );
-}
-Widget bmsBatVolt() {
-  return Consumer<MqttAesk>(
-    builder: (context, _, child){
-      return Container(
-        padding: EdgeInsets.only(top: 10, bottom: 10),
-        child: Card(
-          child: Padding(
-            padding: const EdgeInsets.only(bottom: 25),
-            child: SfCartesianChart(
-              title: ChartTitle(
-                  text: "BMS Bat Volt",
-                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-              primaryXAxis: CategoryAxis(),
-              tooltipBehavior: TooltipBehavior(enable: true),
-              series: <ChartSeries>[
-                SplineSeries<graph_data, double>(
-                  enableTooltip: true,
-                  dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.bms_bat_volt_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,

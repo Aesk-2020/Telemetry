@@ -18,7 +18,7 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
   double currentTime = 0;
   dynamic data;
   static List<String> currentgraph = List.filled(1, null,growable: true);
-  static List<String> graphList = ["driverPhaseA","driverPhaseB","dcBusCur","driverIdG","driverIdQ","driverVdG","driverVqG","bmsBatCons","bmsBatCur","bmsBatVolt","eysBatCons","eysBatCur","eysBatSoc","eysBatVolt","eysFcCons","eysFcCur","eysFcLtCons","eysFcVolt","eysOutCons","eysOutCur","eysOutVolt","eysPenalty","eysSharingRatio","eysTemp"];
+  static List<String> graphList = ["driverPhaseA","driverPhaseB","dcBusCur","driverIdG","driverIdQ","driverVdG","driverVqG","bmsBatCons","bmsBatCur","bmsBatVolt","eysBatCons","eysBatCur","eysBatVolt","eysFcCons","eysFcCur","eysFcLtCons","eysFcVolt","eysOutCons","eysOutCur","eysOutVolt","eysPenalty","eysSharingRatio","eysTemp"];
 
   Widget graphAdder(String content, int index){
     final scale = MediaQuery.of(context);
@@ -258,26 +258,6 @@ class _AeskChartHydroState extends State<AeskChartHydro> {
                   setState(() {
                     currentgraph.removeAt(index);
                     graphList.add("eysBatCur");
-                  });
-                },
-              ),
-            )
-          ],
-        );
-        break;
-      case "eysBatSoc":
-        return Stack(
-          children: <Widget>[
-            eysBatSoc(),
-            Positioned(
-              bottom: 5,
-              left: scale.size.width/2.22,
-              child: IconButton(
-                icon: Icon(Icons.delete),
-                onPressed: () {
-                  setState(() {
-                    currentgraph.removeAt(index);
-                    graphList.add("eysBatSoc");
                   });
                 },
               ),
@@ -586,7 +566,7 @@ Widget driverPhaseA(){
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
                   yValueMapper: (graph_data data, _) =>
-                  data.driver_phase_a_current_g,
+                  data.driver_actspeed_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -618,7 +598,7 @@ Widget driverPhaseB(){
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
                   yValueMapper: (graph_data data, _) =>
-                  data.driver_phase_b_current_g,
+                  data.driver_actspeed_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -650,7 +630,7 @@ Widget dcBusCur(){
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
                   yValueMapper: (graph_data data, _) =>
-                  data.driver_dc_bus_current_g,
+                  data.driver_actspeed_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -681,7 +661,7 @@ Widget driverIdG(){
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.driver_id_g,
+                  yValueMapper: (graph_data data, _) => data.driver_actspeed_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -712,7 +692,7 @@ Widget driverIdQ(){
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.driver_iq_g,
+                  yValueMapper: (graph_data data, _) => data.driver_actspeed_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -743,7 +723,7 @@ Widget driverVdG(){
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.driver_vd_g,
+                  yValueMapper: (graph_data data, _) => data.driver_actspeed_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -774,7 +754,7 @@ Widget driverVqG(){
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.driver_vq_g,
+                  yValueMapper: (graph_data data, _) => data.driver_actspeed_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -900,7 +880,7 @@ Widget eysBatCons(){
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.eys_bat_cons_g,
+                  yValueMapper: (graph_data data, _) => data.driver_actspeed_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -931,7 +911,7 @@ Widget eysBatCur(){
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.eys_bat_current_g,
+                  yValueMapper: (graph_data data, _) => data.driver_actspeed_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -944,37 +924,7 @@ Widget eysBatCur(){
     },
   );
 }
-Widget eysBatSoc(){
-  return Consumer<MqttAesk>(
-    builder: (context, _, child){
-      return Container(
-        padding: EdgeInsets.only(top: 10, bottom: 10),
-        child: Card(
-          child: Padding(
-            padding: const EdgeInsets.only(bottom: 25),
-            child: SfCartesianChart(
-              title: ChartTitle(
-                  text: "EYS Bat Soc",
-                  textStyle: ChartTextStyle(color: aeskBlue, fontSize: 15)),
-              primaryXAxis: CategoryAxis(),
-              tooltipBehavior: TooltipBehavior(enable: true),
-              series: <ChartSeries>[
-                SplineSeries<graph_data, double>(
-                  enableTooltip: true,
-                  dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.eys_bat_soc_g,
-                  xValueMapper: (graph_data data, _) => data.time / 1000,
-                  //name: widget._chartName,
-                  splineType: SplineType.monotonic,
-                )
-              ],
-            ),
-          ),
-        ),
-      );
-    },
-  );
-}Widget eysBatVolt(){
+Widget eysBatVolt(){
   return Consumer<MqttAesk>(
     builder: (context, _, child){
       return Container(
@@ -992,7 +942,7 @@ Widget eysBatSoc(){
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.eys_bat_volt_g,
+                  yValueMapper: (graph_data data, _) => data.driver_actspeed_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -1022,7 +972,7 @@ Widget eysBatSoc(){
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.eys_fc_cons_g,
+                  yValueMapper: (graph_data data, _) => data.driver_actspeed_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -1052,7 +1002,7 @@ Widget eysBatSoc(){
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.eys_fc_current_g,
+                  yValueMapper: (graph_data data, _) => data.driver_actspeed_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -1082,7 +1032,7 @@ Widget eysBatSoc(){
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.eys_fc_lt_cons_g,
+                  yValueMapper: (graph_data data, _) => data.driver_actspeed_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -1112,7 +1062,7 @@ Widget eysBatSoc(){
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.eys_fc_volt_g,
+                  yValueMapper: (graph_data data, _) => data.driver_actspeed_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -1143,7 +1093,7 @@ Widget eysOutCons(){
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.eys_out_cons_g,
+                  yValueMapper: (graph_data data, _) => data.driver_actspeed_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -1174,7 +1124,7 @@ Widget eysOutCur(){
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.eys_out_current_g,
+                  yValueMapper: (graph_data data, _) => data.driver_actspeed_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -1205,7 +1155,7 @@ Widget eysOutVolt(){
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.eys_out_volt_g,
+                  yValueMapper: (graph_data data, _) => data.driver_actspeed_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -1236,7 +1186,7 @@ Widget eysPenalty(){
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.eys_penalty_g,
+                  yValueMapper: (graph_data data, _) => data.driver_actspeed_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -1267,7 +1217,7 @@ Widget eysSharingRatio(){
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.eys_sharing_ratio,
+                  yValueMapper: (graph_data data, _) => data.driver_actspeed_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,
@@ -1298,7 +1248,7 @@ Widget eysTemp(){
                 SplineSeries<graph_data, double>(
                   enableTooltip: true,
                   dataSource: AeskData.graphData_array,
-                  yValueMapper: (graph_data data, _) => data.eys_temp_g,
+                  yValueMapper: (graph_data data, _) => data.driver_actspeed_s16_g,
                   xValueMapper: (graph_data data, _) => data.time / 1000,
                   //name: widget._chartName,
                   splineType: SplineType.monotonic,

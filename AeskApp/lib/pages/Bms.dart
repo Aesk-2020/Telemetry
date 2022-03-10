@@ -45,7 +45,7 @@ Widget Bms(){
                                 myText(AeskData.bms_soc_f32.toStringAsFixed(2) + " %", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                                 myText("SoC", 15, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                                 SizedBox(height: 5,),
-                                myText(AeskData.bms_bat_cons_f32.toStringAsFixed(2) + " Wh", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                                myText(AeskData.bms_bat_cons_f32.toStringAsFixed(1) + " Wh", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                                 myText("Tüketim", 15, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                               ],
                             )
@@ -58,8 +58,8 @@ Widget Bms(){
                             AeskErrorCheck("HIGH VOLTAGE", AeskData.bms_error_high_voltage_u1, context),
                             AeskErrorCheck("LOW VOLTAGE", AeskData.bms_error_low_voltage_u1, context),
                             AeskErrorCheck("HIGH TEMPRATURE", AeskData.bms_error_high_temp_u1, context),
+                            AeskErrorCheck("COMMUNICATION", AeskData.bms_error_communication_u1, context),
                             AeskErrorCheck("OVER CURRENT", AeskData.bms_error_over_current_u1, context),
-                            AeskErrorCheck("ISOLATION", AeskData.bms_error_isolation_u1, context),
                             AeskErrorCheck("FATAL", AeskData.bms_error_fatal_u1, context),
                           ],
                         ),

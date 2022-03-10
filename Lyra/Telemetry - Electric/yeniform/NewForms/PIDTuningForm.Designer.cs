@@ -1,0 +1,424 @@
+﻿namespace Telemetri.NewForms
+{
+    partial class PIDTuningForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.label4 = new System.Windows.Forms.Label();
+            this.kpBox = new System.Windows.Forms.TextBox();
+            this.kiBox = new System.Windows.Forms.TextBox();
+            this.kdBox = new System.Windows.Forms.TextBox();
+            this.macTrackBar1 = new XComponent.SliderBar.MACTrackBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.macTrackBar2 = new XComponent.SliderBar.MACTrackBar();
+            this.macTrackBar3 = new XComponent.SliderBar.MACTrackBar();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.macTrackBar4 = new XComponent.SliderBar.MACTrackBar();
+            this.krBox = new System.Windows.Forms.TextBox();
+            this.logBox = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.sendButton = new FontAwesome.Sharp.IconButton();
+            this.queryButton = new FontAwesome.Sharp.IconButton();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(4, 1);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(129, 50);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Kp";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // kpBox
+            // 
+            this.kpBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.kpBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.kpBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kpBox.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.kpBox.ForeColor = System.Drawing.Color.White;
+            this.kpBox.Location = new System.Drawing.Point(140, 4);
+            this.kpBox.Multiline = true;
+            this.kpBox.Name = "kpBox";
+            this.kpBox.Size = new System.Drawing.Size(130, 44);
+            this.kpBox.TabIndex = 6;
+            this.kpBox.Text = "1,27";
+            this.kpBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // kiBox
+            // 
+            this.kiBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.kiBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.kiBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kiBox.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.kiBox.ForeColor = System.Drawing.Color.White;
+            this.kiBox.Location = new System.Drawing.Point(140, 55);
+            this.kiBox.Multiline = true;
+            this.kiBox.Name = "kiBox";
+            this.kiBox.Size = new System.Drawing.Size(130, 44);
+            this.kiBox.TabIndex = 14;
+            this.kiBox.Text = "1,27";
+            this.kiBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // kdBox
+            // 
+            this.kdBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.kdBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.kdBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kdBox.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.kdBox.ForeColor = System.Drawing.Color.White;
+            this.kdBox.Location = new System.Drawing.Point(140, 106);
+            this.kdBox.Multiline = true;
+            this.kdBox.Name = "kdBox";
+            this.kdBox.Size = new System.Drawing.Size(130, 44);
+            this.kdBox.TabIndex = 15;
+            this.kdBox.Text = "1,27";
+            this.kdBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // macTrackBar1
+            // 
+            this.macTrackBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.macTrackBar1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.macTrackBar1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.macTrackBar1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.macTrackBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(125)))), ((int)(((byte)(123)))));
+            this.macTrackBar1.IndentHeight = 6;
+            this.macTrackBar1.Location = new System.Drawing.Point(277, 4);
+            this.macTrackBar1.Maximum = 500;
+            this.macTrackBar1.Minimum = 0;
+            this.macTrackBar1.Name = "macTrackBar1";
+            this.macTrackBar1.Size = new System.Drawing.Size(494, 48);
+            this.macTrackBar1.TabIndex = 16;
+            this.macTrackBar1.TickColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(146)))), ((int)(((byte)(148)))));
+            this.macTrackBar1.TickFrequency = 50;
+            this.macTrackBar1.TickHeight = 5;
+            this.macTrackBar1.TrackerColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(130)))), ((int)(((byte)(198)))));
+            this.macTrackBar1.TrackerSize = new System.Drawing.Size(16, 16);
+            this.macTrackBar1.TrackLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.macTrackBar1.TrackLineHeight = 3;
+            this.macTrackBar1.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.macTrackBar1.Value = 0;
+            this.macTrackBar1.ValueChanged += new XComponent.SliderBar.ValueChangedHandler(this.macTrackBar1_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(4, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(129, 50);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Ki";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(4, 103);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(129, 50);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Kd";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // macTrackBar2
+            // 
+            this.macTrackBar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.macTrackBar2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.macTrackBar2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.macTrackBar2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.macTrackBar2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(125)))), ((int)(((byte)(123)))));
+            this.macTrackBar2.IndentHeight = 6;
+            this.macTrackBar2.Location = new System.Drawing.Point(277, 55);
+            this.macTrackBar2.Maximum = 500;
+            this.macTrackBar2.Minimum = 0;
+            this.macTrackBar2.Name = "macTrackBar2";
+            this.macTrackBar2.Size = new System.Drawing.Size(494, 48);
+            this.macTrackBar2.TabIndex = 19;
+            this.macTrackBar2.TickColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(146)))), ((int)(((byte)(148)))));
+            this.macTrackBar2.TickFrequency = 50;
+            this.macTrackBar2.TickHeight = 5;
+            this.macTrackBar2.TrackerColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(130)))), ((int)(((byte)(198)))));
+            this.macTrackBar2.TrackerSize = new System.Drawing.Size(16, 16);
+            this.macTrackBar2.TrackLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.macTrackBar2.TrackLineHeight = 3;
+            this.macTrackBar2.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.macTrackBar2.Value = 0;
+            this.macTrackBar2.ValueChanged += new XComponent.SliderBar.ValueChangedHandler(this.macTrackBar2_ValueChanged);
+            // 
+            // macTrackBar3
+            // 
+            this.macTrackBar3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.macTrackBar3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.macTrackBar3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.macTrackBar3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.macTrackBar3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(125)))), ((int)(((byte)(123)))));
+            this.macTrackBar3.IndentHeight = 6;
+            this.macTrackBar3.Location = new System.Drawing.Point(277, 106);
+            this.macTrackBar3.Maximum = 500;
+            this.macTrackBar3.Minimum = 0;
+            this.macTrackBar3.Name = "macTrackBar3";
+            this.macTrackBar3.Size = new System.Drawing.Size(494, 48);
+            this.macTrackBar3.TabIndex = 20;
+            this.macTrackBar3.TickColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(146)))), ((int)(((byte)(148)))));
+            this.macTrackBar3.TickFrequency = 50;
+            this.macTrackBar3.TickHeight = 5;
+            this.macTrackBar3.TrackerColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(130)))), ((int)(((byte)(198)))));
+            this.macTrackBar3.TrackerSize = new System.Drawing.Size(16, 16);
+            this.macTrackBar3.TrackLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.macTrackBar3.TrackLineHeight = 3;
+            this.macTrackBar3.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.macTrackBar3.Value = 0;
+            this.macTrackBar3.ValueChanged += new XComponent.SliderBar.ValueChangedHandler(this.macTrackBar3_ValueChanged);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.56374F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.70538F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.73088F));
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.macTrackBar4, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.krBox, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.macTrackBar3, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.kpBox, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.macTrackBar2, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.macTrackBar1, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.kiBox, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.kdBox, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.00062F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.00062F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.00062F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.99813F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(775, 208);
+            this.tableLayoutPanel1.TabIndex = 21;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(4, 154);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(129, 53);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Kr";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // macTrackBar4
+            // 
+            this.macTrackBar4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.macTrackBar4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.macTrackBar4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.macTrackBar4.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.macTrackBar4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(125)))), ((int)(((byte)(123)))));
+            this.macTrackBar4.IndentHeight = 6;
+            this.macTrackBar4.Location = new System.Drawing.Point(277, 157);
+            this.macTrackBar4.Maximum = 500;
+            this.macTrackBar4.Minimum = 0;
+            this.macTrackBar4.Name = "macTrackBar4";
+            this.macTrackBar4.Size = new System.Drawing.Size(494, 48);
+            this.macTrackBar4.TabIndex = 22;
+            this.macTrackBar4.TickColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(146)))), ((int)(((byte)(148)))));
+            this.macTrackBar4.TickFrequency = 50;
+            this.macTrackBar4.TickHeight = 5;
+            this.macTrackBar4.TrackerColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(130)))), ((int)(((byte)(198)))));
+            this.macTrackBar4.TrackerSize = new System.Drawing.Size(16, 16);
+            this.macTrackBar4.TrackLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.macTrackBar4.TrackLineHeight = 3;
+            this.macTrackBar4.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.macTrackBar4.Value = 0;
+            this.macTrackBar4.ValueChanged += new XComponent.SliderBar.ValueChangedHandler(this.macTrackBar4_ValueChanged);
+            // 
+            // krBox
+            // 
+            this.krBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.krBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.krBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.krBox.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.krBox.ForeColor = System.Drawing.Color.White;
+            this.krBox.Location = new System.Drawing.Point(140, 157);
+            this.krBox.Multiline = true;
+            this.krBox.Name = "krBox";
+            this.krBox.Size = new System.Drawing.Size(130, 47);
+            this.krBox.TabIndex = 21;
+            this.krBox.Text = "1,27";
+            this.krBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // logBox
+            // 
+            this.logBox.AcceptsReturn = true;
+            this.logBox.AcceptsTab = true;
+            this.logBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.logBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.logBox.ForeColor = System.Drawing.Color.White;
+            this.logBox.Location = new System.Drawing.Point(3, 300);
+            this.logBox.Multiline = true;
+            this.logBox.Name = "logBox";
+            this.logBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.logBox.Size = new System.Drawing.Size(775, 188);
+            this.logBox.TabIndex = 24;
+            this.logBox.Text = "App started\r\n";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.logBox, 0, 2);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(85, 66);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.58452F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.90428F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.30754F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(781, 491);
+            this.tableLayoutPanel2.TabIndex = 25;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.sendButton, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.queryButton, 1, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 217);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(775, 77);
+            this.tableLayoutPanel3.TabIndex = 26;
+            // 
+            // sendButton
+            // 
+            this.sendButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sendButton.Enabled = false;
+            this.sendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sendButton.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.sendButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.sendButton.IconChar = FontAwesome.Sharp.IconChar.Wrench;
+            this.sendButton.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.sendButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.sendButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.sendButton.Location = new System.Drawing.Point(3, 3);
+            this.sendButton.Name = "sendButton";
+            this.sendButton.Size = new System.Drawing.Size(381, 71);
+            this.sendButton.TabIndex = 22;
+            this.sendButton.Text = "SEND";
+            this.sendButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sendButton.UseVisualStyleBackColor = true;
+            this.sendButton.Click += new System.EventHandler(this.sendButton_Click);
+            // 
+            // queryButton
+            // 
+            this.queryButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.queryButton.Enabled = false;
+            this.queryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.queryButton.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.queryButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.queryButton.IconChar = FontAwesome.Sharp.IconChar.Quora;
+            this.queryButton.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
+            this.queryButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.queryButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.queryButton.Location = new System.Drawing.Point(390, 3);
+            this.queryButton.Name = "queryButton";
+            this.queryButton.Size = new System.Drawing.Size(382, 71);
+            this.queryButton.TabIndex = 23;
+            this.queryButton.Text = "QUERY";
+            this.queryButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.queryButton.UseVisualStyleBackColor = true;
+            this.queryButton.Click += new System.EventHandler(this.queryButton_Click);
+            // 
+            // PIDTuningForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.ClientSize = new System.Drawing.Size(924, 616);
+            this.Controls.Add(this.tableLayoutPanel2);
+            this.Name = "PIDTuningForm";
+            this.Text = "PIDTuningForm";
+            this.Load += new System.EventHandler(this.PIDTuningForm_Load);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox kpBox;
+        private System.Windows.Forms.TextBox kiBox;
+        private System.Windows.Forms.TextBox kdBox;
+        private XComponent.SliderBar.MACTrackBar macTrackBar1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private XComponent.SliderBar.MACTrackBar macTrackBar2;
+        private XComponent.SliderBar.MACTrackBar macTrackBar3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private FontAwesome.Sharp.IconButton sendButton;
+        private FontAwesome.Sharp.IconButton queryButton;
+        private System.Windows.Forms.TextBox logBox;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Label label3;
+        private XComponent.SliderBar.MACTrackBar macTrackBar4;
+        private System.Windows.Forms.TextBox krBox;
+    }
+}
