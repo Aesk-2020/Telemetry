@@ -167,7 +167,6 @@ namespace Telemetri.NewForms
             gMap.Overlays.Add(gMapOverlay);
             gMap.Zoom += 0.00000001;
             gMap.Zoom -= 0.00000001;
-
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telemetri.NewForms;
+using Telemetri.Variables;
 
 namespace Telemetri.Variables
 {
@@ -99,6 +100,7 @@ namespace Telemetri.Variables
 
         public void CreateBuffer()
         {
+            
             listbuffer.Add(HEADER1);
             listbuffer.Add(HEADER2);
             listbuffer.Add(vehicle_id);
@@ -240,7 +242,6 @@ namespace Telemetri.Variables
                             if (crc_calculated == this.crc)
                             {
                                 dataConvertCompro(worked_data.ToArray(), this.source_msg_id);
-                                AFront.ChangeUI();
                                 //BURAYA İNDEX EKLENECEK
                                 /*if(IndexControl(incom_index) == true)
                                 {

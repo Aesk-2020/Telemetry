@@ -54,9 +54,9 @@ namespace Telemetri.Variables
         {
             if (connected_flag == false)
             {
-                this.client = new MqttClient(this.broker);
                 try
                 {
+                    this.client = new MqttClient(this.broker);
                     byte code = this.client.Connect(Guid.NewGuid().ToString(), _username, _password);
                     if (code == 0x00)
                     {
@@ -99,7 +99,8 @@ namespace Telemetri.Variables
             if (connected_flag == true)
             {
                 this.client.Disconnect();
-                
+                AFront.ThreadStop();
+                // Thread abort eklenicek
             }
             else
             {
@@ -139,7 +140,6 @@ namespace Telemetri.Variables
                         YedekUnpack(e.Message);
                         UITools.TestForms.lyraco++;
                         UITools.TestForms.cozuldulyraBox.Text = UITools.TestForms.lyraco.ToString();
-                        AFront.ChangeUI();
                     }
                 }
             }

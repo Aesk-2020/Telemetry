@@ -166,10 +166,10 @@
             this.portsListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.portsListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.portsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.portsListBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.portsListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.portsListBox.ForeColor = System.Drawing.Color.White;
             this.portsListBox.FormattingEnabled = true;
-            this.portsListBox.ItemHeight = 21;
+            this.portsListBox.ItemHeight = 20;
             this.portsListBox.Location = new System.Drawing.Point(0, 0);
             this.portsListBox.Name = "portsListBox";
             this.portsListBox.Size = new System.Drawing.Size(116, 84);
@@ -213,7 +213,7 @@
             this.finishBtn.Enabled = false;
             this.finishBtn.FlatAppearance.BorderSize = 0;
             this.finishBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.finishBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.finishBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.finishBtn.ForeColor = System.Drawing.SystemColors.Window;
             this.finishBtn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.finishBtn.IconColor = System.Drawing.Color.Black;
@@ -232,7 +232,7 @@
             this.startBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.startBtn.FlatAppearance.BorderSize = 0;
             this.startBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.startBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.startBtn.ForeColor = System.Drawing.SystemColors.Window;
             this.startBtn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.startBtn.IconColor = System.Drawing.Color.Black;
@@ -251,7 +251,7 @@
             this.portConnectBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.portConnectBtn.FlatAppearance.BorderSize = 0;
             this.portConnectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.portConnectBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.portConnectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.portConnectBtn.ForeColor = System.Drawing.SystemColors.Window;
             this.portConnectBtn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.portConnectBtn.IconColor = System.Drawing.Color.Black;
@@ -271,7 +271,7 @@
             this.portDisconnectBtn.Enabled = false;
             this.portDisconnectBtn.FlatAppearance.BorderSize = 0;
             this.portDisconnectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.portDisconnectBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.portDisconnectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.portDisconnectBtn.ForeColor = System.Drawing.SystemColors.Window;
             this.portDisconnectBtn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.portDisconnectBtn.IconColor = System.Drawing.Color.Black;
@@ -291,7 +291,7 @@
             this.mqttDisconnectBtn.Enabled = false;
             this.mqttDisconnectBtn.FlatAppearance.BorderSize = 0;
             this.mqttDisconnectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.mqttDisconnectBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.mqttDisconnectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mqttDisconnectBtn.ForeColor = System.Drawing.SystemColors.Window;
             this.mqttDisconnectBtn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.mqttDisconnectBtn.IconColor = System.Drawing.Color.Black;
@@ -310,7 +310,7 @@
             this.mqttConnectBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mqttConnectBtn.FlatAppearance.BorderSize = 0;
             this.mqttConnectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.mqttConnectBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.mqttConnectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mqttConnectBtn.ForeColor = System.Drawing.SystemColors.Window;
             this.mqttConnectBtn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.mqttConnectBtn.IconColor = System.Drawing.Color.Black;
@@ -330,7 +330,7 @@
             this.resetBoardButton.Enabled = false;
             this.resetBoardButton.FlatAppearance.BorderSize = 0;
             this.resetBoardButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetBoardButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.resetBoardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.resetBoardButton.ForeColor = System.Drawing.SystemColors.Window;
             this.resetBoardButton.IconChar = FontAwesome.Sharp.IconChar.None;
             this.resetBoardButton.IconColor = System.Drawing.Color.Black;
@@ -349,7 +349,7 @@
             this.openSDLogBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.openSDLogBtn.FlatAppearance.BorderSize = 0;
             this.openSDLogBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.openSDLogBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.openSDLogBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.openSDLogBtn.ForeColor = System.Drawing.SystemColors.Window;
             this.openSDLogBtn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.openSDLogBtn.IconColor = System.Drawing.Color.Black;
@@ -369,7 +369,7 @@
             this.stopLogBtn.Enabled = false;
             this.stopLogBtn.FlatAppearance.BorderSize = 0;
             this.stopLogBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stopLogBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.stopLogBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.stopLogBtn.ForeColor = System.Drawing.SystemColors.Window;
             this.stopLogBtn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.stopLogBtn.IconColor = System.Drawing.Color.Black;
@@ -388,7 +388,7 @@
             this.startLogBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.startLogBtn.FlatAppearance.BorderSize = 0;
             this.startLogBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startLogBtn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.startLogBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.startLogBtn.ForeColor = System.Drawing.SystemColors.Window;
             this.startLogBtn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.startLogBtn.IconColor = System.Drawing.Color.Black;
@@ -405,11 +405,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 47);
+            this.label3.Size = new System.Drawing.Size(125, 46);
             this.label3.TabIndex = 131;
             this.label3.Text = "Set Velocity";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -423,12 +423,12 @@
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 106);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 105);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(278, 97);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 95F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(278, 96);
             this.tableLayoutPanel4.TabIndex = 134;
             // 
             // tableLayoutPanel6
@@ -443,18 +443,18 @@
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(132, 89);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(132, 88);
             this.tableLayoutPanel6.TabIndex = 136;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 47);
+            this.label4.Size = new System.Drawing.Size(126, 46);
             this.label4.TabIndex = 131;
             this.label4.Text = "Act Velocity";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -466,7 +466,7 @@
             this.actVelocityLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.actVelocityLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.actVelocityLabel.ForeColor = System.Drawing.Color.White;
-            this.actVelocityLabel.Location = new System.Drawing.Point(3, 50);
+            this.actVelocityLabel.Location = new System.Drawing.Point(3, 49);
             this.actVelocityLabel.Multiline = true;
             this.actVelocityLabel.Name = "actVelocityLabel";
             this.actVelocityLabel.ReadOnly = true;
@@ -487,7 +487,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(131, 89);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(131, 88);
             this.tableLayoutPanel5.TabIndex = 135;
             // 
             // setVelocityLabel
@@ -497,7 +497,7 @@
             this.setVelocityLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.setVelocityLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.setVelocityLabel.ForeColor = System.Drawing.Color.White;
-            this.setVelocityLabel.Location = new System.Drawing.Point(3, 50);
+            this.setVelocityLabel.Location = new System.Drawing.Point(3, 49);
             this.setVelocityLabel.Multiline = true;
             this.setVelocityLabel.Name = "setVelocityLabel";
             this.setVelocityLabel.ReadOnly = true;
@@ -511,7 +511,7 @@
             this.tableLayoutPanel7.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel7.ColumnCount = 2;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
             this.tableLayoutPanel7.Controls.Add(this.startTimeLabel, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.label10, 1, 0);
@@ -522,7 +522,7 @@
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(276, 95);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(276, 94);
             this.tableLayoutPanel7.TabIndex = 139;
             // 
             // startTimeLabel
@@ -532,11 +532,11 @@
             this.startTimeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.startTimeLabel.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.startTimeLabel.ForeColor = System.Drawing.Color.White;
-            this.startTimeLabel.Location = new System.Drawing.Point(4, 41);
+            this.startTimeLabel.Location = new System.Drawing.Point(4, 40);
             this.startTimeLabel.Multiline = true;
             this.startTimeLabel.Name = "startTimeLabel";
             this.startTimeLabel.ReadOnly = true;
-            this.startTimeLabel.Size = new System.Drawing.Size(183, 50);
+            this.startTimeLabel.Size = new System.Drawing.Size(180, 50);
             this.startTimeLabel.TabIndex = 138;
             this.startTimeLabel.Text = "NULL";
             this.startTimeLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -545,11 +545,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(4, 1);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(183, 36);
+            this.label5.Size = new System.Drawing.Size(180, 35);
             this.label5.TabIndex = 135;
             this.label5.Text = "Start Time";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -558,11 +558,11 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(194, 1);
+            this.label10.Location = new System.Drawing.Point(191, 1);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(78, 36);
+            this.label10.Size = new System.Drawing.Size(81, 35);
             this.label10.TabIndex = 137;
             this.label10.Text = "SD";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -570,9 +570,9 @@
             // sdCardStatBox
             // 
             this.sdCardStatBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sdCardStatBox.Location = new System.Drawing.Point(194, 41);
+            this.sdCardStatBox.Location = new System.Drawing.Point(191, 40);
             this.sdCardStatBox.Name = "sdCardStatBox";
-            this.sdCardStatBox.Size = new System.Drawing.Size(78, 50);
+            this.sdCardStatBox.Size = new System.Drawing.Size(81, 50);
             this.sdCardStatBox.TabIndex = 139;
             this.sdCardStatBox.TabStop = false;
             // 
@@ -583,7 +583,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(278, 97);
+            this.panel2.Size = new System.Drawing.Size(278, 96);
             this.panel2.TabIndex = 143;
             // 
             // tableLayoutPanel3
@@ -616,12 +616,12 @@
             this.tableLayoutPanel17.Controls.Add(this.tableLayoutPanel18, 1, 0);
             this.tableLayoutPanel17.Controls.Add(this.tableLayoutPanel19, 0, 0);
             this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel17.Location = new System.Drawing.Point(3, 209);
+            this.tableLayoutPanel17.Location = new System.Drawing.Point(3, 207);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
             this.tableLayoutPanel17.RowCount = 1;
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.tableLayoutPanel17.Size = new System.Drawing.Size(278, 97);
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 98F));
+            this.tableLayoutPanel17.Size = new System.Drawing.Size(278, 99);
             this.tableLayoutPanel17.TabIndex = 146;
             // 
             // tableLayoutPanel18
@@ -636,18 +636,18 @@
             this.tableLayoutPanel18.RowCount = 2;
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel18.Size = new System.Drawing.Size(132, 89);
+            this.tableLayoutPanel18.Size = new System.Drawing.Size(132, 91);
             this.tableLayoutPanel18.TabIndex = 136;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(3, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(126, 47);
+            this.label13.Size = new System.Drawing.Size(126, 49);
             this.label13.TabIndex = 131;
             this.label13.Text = "Last Lap Avg Speed";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -659,7 +659,7 @@
             this.lastLapAvgSpeedBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lastLapAvgSpeedBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lastLapAvgSpeedBox.ForeColor = System.Drawing.Color.White;
-            this.lastLapAvgSpeedBox.Location = new System.Drawing.Point(3, 50);
+            this.lastLapAvgSpeedBox.Location = new System.Drawing.Point(3, 52);
             this.lastLapAvgSpeedBox.Multiline = true;
             this.lastLapAvgSpeedBox.Name = "lastLapAvgSpeedBox";
             this.lastLapAvgSpeedBox.ReadOnly = true;
@@ -680,18 +680,18 @@
             this.tableLayoutPanel19.RowCount = 2;
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel19.Size = new System.Drawing.Size(131, 89);
+            this.tableLayoutPanel19.Size = new System.Drawing.Size(131, 91);
             this.tableLayoutPanel19.TabIndex = 135;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(3, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(125, 47);
+            this.label14.Size = new System.Drawing.Size(125, 49);
             this.label14.TabIndex = 131;
             this.label14.Text = "Last Lap Consumption";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -703,7 +703,7 @@
             this.lastLapConsBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lastLapConsBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lastLapConsBox.ForeColor = System.Drawing.Color.White;
-            this.lastLapConsBox.Location = new System.Drawing.Point(3, 50);
+            this.lastLapConsBox.Location = new System.Drawing.Point(3, 52);
             this.lastLapConsBox.Multiline = true;
             this.lastLapConsBox.Name = "lastLapConsBox";
             this.lastLapConsBox.ReadOnly = true;
@@ -725,11 +725,11 @@
             this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel22, 0, 0);
             this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel23, 0, 0);
             this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel20.Location = new System.Drawing.Point(287, 209);
+            this.tableLayoutPanel20.Location = new System.Drawing.Point(287, 207);
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
             this.tableLayoutPanel20.RowCount = 1;
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(624, 97);
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(624, 99);
             this.tableLayoutPanel20.TabIndex = 145;
             // 
             // tableLayoutPanel16
@@ -744,18 +744,18 @@
             this.tableLayoutPanel16.RowCount = 2;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(148, 89);
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(148, 91);
             this.tableLayoutPanel16.TabIndex = 140;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(3, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(142, 47);
+            this.label12.Size = new System.Drawing.Size(142, 49);
             this.label12.TabIndex = 131;
             this.label12.Text = "Fastest Lap";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -767,7 +767,7 @@
             this.fastestLapBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fastestLapBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.fastestLapBox.ForeColor = System.Drawing.Color.White;
-            this.fastestLapBox.Location = new System.Drawing.Point(3, 50);
+            this.fastestLapBox.Location = new System.Drawing.Point(3, 52);
             this.fastestLapBox.Multiline = true;
             this.fastestLapBox.Name = "fastestLapBox";
             this.fastestLapBox.ReadOnly = true;
@@ -788,18 +788,18 @@
             this.tableLayoutPanel21.RowCount = 2;
             this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel21.Size = new System.Drawing.Size(151, 89);
+            this.tableLayoutPanel21.Size = new System.Drawing.Size(151, 91);
             this.tableLayoutPanel21.TabIndex = 139;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(3, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(145, 47);
+            this.label15.Size = new System.Drawing.Size(145, 49);
             this.label15.TabIndex = 131;
             this.label15.Text = "Avg Lap Time";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -811,7 +811,7 @@
             this.avgLapTimeBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.avgLapTimeBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.avgLapTimeBox.ForeColor = System.Drawing.Color.White;
-            this.avgLapTimeBox.Location = new System.Drawing.Point(3, 50);
+            this.avgLapTimeBox.Location = new System.Drawing.Point(3, 52);
             this.avgLapTimeBox.Multiline = true;
             this.avgLapTimeBox.Name = "avgLapTimeBox";
             this.avgLapTimeBox.ReadOnly = true;
@@ -832,18 +832,18 @@
             this.tableLayoutPanel22.RowCount = 2;
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel22.Size = new System.Drawing.Size(148, 89);
+            this.tableLayoutPanel22.Size = new System.Drawing.Size(148, 91);
             this.tableLayoutPanel22.TabIndex = 138;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(3, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(142, 47);
+            this.label16.Size = new System.Drawing.Size(142, 49);
             this.label16.TabIndex = 131;
             this.label16.Text = "Current Lap";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -855,7 +855,7 @@
             this.currentLapBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentLapBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.currentLapBox.ForeColor = System.Drawing.Color.White;
-            this.currentLapBox.Location = new System.Drawing.Point(3, 50);
+            this.currentLapBox.Location = new System.Drawing.Point(3, 52);
             this.currentLapBox.Multiline = true;
             this.currentLapBox.Name = "currentLapBox";
             this.currentLapBox.ReadOnly = true;
@@ -876,18 +876,18 @@
             this.tableLayoutPanel23.RowCount = 2;
             this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel23.Size = new System.Drawing.Size(148, 89);
+            this.tableLayoutPanel23.Size = new System.Drawing.Size(148, 91);
             this.tableLayoutPanel23.TabIndex = 137;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label17.ForeColor = System.Drawing.Color.White;
             this.label17.Location = new System.Drawing.Point(3, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(142, 47);
+            this.label17.Size = new System.Drawing.Size(142, 49);
             this.label17.TabIndex = 131;
             this.label17.Text = "Last Lap";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -899,7 +899,7 @@
             this.lastLapBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lastLapBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lastLapBox.ForeColor = System.Drawing.Color.White;
-            this.lastLapBox.Location = new System.Drawing.Point(3, 50);
+            this.lastLapBox.Location = new System.Drawing.Point(3, 52);
             this.lastLapBox.Multiline = true;
             this.lastLapBox.Name = "lastLapBox";
             this.lastLapBox.ReadOnly = true;
@@ -919,11 +919,11 @@
             this.tableLayoutPanel12.Controls.Add(this.tableLayoutPanel14, 0, 0);
             this.tableLayoutPanel12.Controls.Add(this.tableLayoutPanel13, 0, 0);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(287, 106);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(287, 105);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 1;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(624, 97);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(624, 96);
             this.tableLayoutPanel12.TabIndex = 141;
             // 
             // tableLayoutPanel15
@@ -938,18 +938,18 @@
             this.tableLayoutPanel15.RowCount = 2;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(202, 89);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(202, 88);
             this.tableLayoutPanel15.TabIndex = 139;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(3, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(196, 47);
+            this.label9.Size = new System.Drawing.Size(196, 46);
             this.label9.TabIndex = 131;
             this.label9.Text = "Set Torque";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -961,7 +961,7 @@
             this.setTorqueBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.setTorqueBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.setTorqueBox.ForeColor = System.Drawing.Color.White;
-            this.setTorqueBox.Location = new System.Drawing.Point(3, 50);
+            this.setTorqueBox.Location = new System.Drawing.Point(3, 49);
             this.setTorqueBox.Multiline = true;
             this.setTorqueBox.Name = "setTorqueBox";
             this.setTorqueBox.ReadOnly = true;
@@ -982,18 +982,18 @@
             this.tableLayoutPanel14.RowCount = 2;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(200, 89);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(200, 88);
             this.tableLayoutPanel14.TabIndex = 138;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(194, 47);
+            this.label2.Size = new System.Drawing.Size(194, 46);
             this.label2.TabIndex = 131;
             this.label2.Text = "Set Mode";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1005,7 +1005,7 @@
             this.driveStatusLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.driveStatusLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.driveStatusLabel.ForeColor = System.Drawing.Color.White;
-            this.driveStatusLabel.Location = new System.Drawing.Point(3, 50);
+            this.driveStatusLabel.Location = new System.Drawing.Point(3, 49);
             this.driveStatusLabel.Multiline = true;
             this.driveStatusLabel.Name = "driveStatusLabel";
             this.driveStatusLabel.ReadOnly = true;
@@ -1019,7 +1019,7 @@
             this.tableLayoutPanel13.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel13.ColumnCount = 2;
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
             this.tableLayoutPanel13.Controls.Add(this.label11, 1, 0);
             this.tableLayoutPanel13.Controls.Add(this.tcuMinLabel, 0, 1);
             this.tableLayoutPanel13.Controls.Add(this.label1, 0, 0);
@@ -1031,18 +1031,18 @@
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(200, 89);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(200, 88);
             this.tableLayoutPanel13.TabIndex = 137;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(99, 1);
+            this.label11.Location = new System.Drawing.Point(96, 1);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(97, 44);
+            this.label11.Size = new System.Drawing.Size(100, 43);
             this.label11.TabIndex = 146;
             this.label11.Text = "TCU Min";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1054,10 +1054,10 @@
             this.tcuMinLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcuMinLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tcuMinLabel.ForeColor = System.Drawing.Color.White;
-            this.tcuMinLabel.Location = new System.Drawing.Point(99, 49);
+            this.tcuMinLabel.Location = new System.Drawing.Point(96, 48);
             this.tcuMinLabel.Multiline = true;
             this.tcuMinLabel.Name = "tcuMinLabel";
-            this.tcuMinLabel.Size = new System.Drawing.Size(97, 36);
+            this.tcuMinLabel.Size = new System.Drawing.Size(100, 36);
             this.tcuMinLabel.TabIndex = 136;
             this.tcuMinLabel.Text = "0";
             this.tcuMinLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1066,11 +1066,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(4, 1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 44);
+            this.label1.Size = new System.Drawing.Size(85, 43);
             this.label1.TabIndex = 131;
             this.label1.Text = "Graph";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1082,10 +1082,10 @@
             this.errorsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.errorsLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.errorsLabel.ForeColor = System.Drawing.Color.White;
-            this.errorsLabel.Location = new System.Drawing.Point(4, 49);
+            this.errorsLabel.Location = new System.Drawing.Point(4, 48);
             this.errorsLabel.Multiline = true;
             this.errorsLabel.Name = "errorsLabel";
-            this.errorsLabel.Size = new System.Drawing.Size(88, 36);
+            this.errorsLabel.Size = new System.Drawing.Size(85, 36);
             this.errorsLabel.TabIndex = 135;
             this.errorsLabel.Text = "50";
             this.errorsLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1105,7 +1105,7 @@
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(624, 97);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(624, 96);
             this.tableLayoutPanel8.TabIndex = 140;
             // 
             // tableLayoutPanel11
@@ -1120,18 +1120,18 @@
             this.tableLayoutPanel11.RowCount = 2;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(202, 89);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(202, 88);
             this.tableLayoutPanel11.TabIndex = 139;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(3, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(196, 47);
+            this.label8.Size = new System.Drawing.Size(196, 46);
             this.label8.TabIndex = 131;
             this.label8.Text = "Total Consumption";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1143,7 +1143,7 @@
             this.batConsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.batConsLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.batConsLabel.ForeColor = System.Drawing.Color.White;
-            this.batConsLabel.Location = new System.Drawing.Point(3, 50);
+            this.batConsLabel.Location = new System.Drawing.Point(3, 49);
             this.batConsLabel.Multiline = true;
             this.batConsLabel.Name = "batConsLabel";
             this.batConsLabel.ReadOnly = true;
@@ -1164,18 +1164,18 @@
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(200, 89);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(200, 88);
             this.tableLayoutPanel10.TabIndex = 138;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(3, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(194, 47);
+            this.label7.Size = new System.Drawing.Size(194, 46);
             this.label7.TabIndex = 131;
             this.label7.Text = "Battery Current";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1187,7 +1187,7 @@
             this.batCurLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.batCurLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.batCurLabel.ForeColor = System.Drawing.Color.White;
-            this.batCurLabel.Location = new System.Drawing.Point(3, 50);
+            this.batCurLabel.Location = new System.Drawing.Point(3, 49);
             this.batCurLabel.Multiline = true;
             this.batCurLabel.Name = "batCurLabel";
             this.batCurLabel.ReadOnly = true;
@@ -1208,18 +1208,18 @@
             this.tableLayoutPanel9.RowCount = 2;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(200, 89);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(200, 88);
             this.tableLayoutPanel9.TabIndex = 137;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(3, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(194, 47);
+            this.label6.Size = new System.Drawing.Size(194, 46);
             this.label6.TabIndex = 131;
             this.label6.Text = "State of Charge";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1231,7 +1231,7 @@
             this.socLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.socLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.socLabel.ForeColor = System.Drawing.Color.White;
-            this.socLabel.Location = new System.Drawing.Point(3, 50);
+            this.socLabel.Location = new System.Drawing.Point(3, 49);
             this.socLabel.Multiline = true;
             this.socLabel.Name = "socLabel";
             this.socLabel.ReadOnly = true;
@@ -1258,7 +1258,7 @@
             this.columnHeader5,
             this.columnHeader6});
             this.lapView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lapView.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lapView.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lapView.HideSelection = false;
             this.lapView.Location = new System.Drawing.Point(0, 401);
             this.lapView.Name = "lapView";

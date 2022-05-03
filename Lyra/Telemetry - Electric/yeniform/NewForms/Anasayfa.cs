@@ -91,6 +91,7 @@ namespace Telemetri.NewForms
             portsListBox.Items.AddRange(ports);
             LogSystem.isFirst = true;
             startLogBtn.Enabled = false;
+
             #region portWatcher
             var watcher = new ManagementEventWatcher();
             var watcher2 = new ManagementEventWatcher();
@@ -174,12 +175,20 @@ namespace Telemetri.NewForms
 
         private void mqttConnectBtn_Click(object sender, EventArgs e)
         {
-            mqttWorker.RunWorkerAsync();
+            try
+            {
+                mqttWorker.RunWorkerAsync();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         private void mqttDisconnectBtn_Click(object sender, EventArgs e)
         {
             mqttobj.Disconnect();
+            AFront.ThreadStop();
         }
 
         private void startLogBtn_Click(object sender, EventArgs e)
@@ -250,6 +259,7 @@ namespace Telemetri.NewForms
                 mqttConnectBtn.Enabled = false;
                 startLogBtn.Enabled = true;
                 resetBoardButton.Enabled = true;
+                AFront.ThreadStart();
             }
         }
 

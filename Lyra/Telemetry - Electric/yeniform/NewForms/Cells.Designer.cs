@@ -222,7 +222,7 @@
             // 
             this.panel2.Controls.Add(this.tableLayoutPanel2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.panel2.Location = new System.Drawing.Point(98, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(816, 621);
@@ -267,7 +267,7 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
@@ -288,7 +288,7 @@
             this.tableLayoutPanel29.Controls.Add(this.cell28tempBox, 0, 3);
             this.tableLayoutPanel29.Controls.Add(this.label28, 0, 0);
             this.tableLayoutPanel29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel29.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel29.Location = new System.Drawing.Point(699, 468);
             this.tableLayoutPanel29.Name = "tableLayoutPanel29";
             this.tableLayoutPanel29.RowCount = 4;
@@ -304,7 +304,7 @@
             this.cell28socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell28socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell28socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell28socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell28socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell28socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell28socBox.Location = new System.Drawing.Point(4, 78);
             this.cell28socBox.Multiline = true;
@@ -319,7 +319,7 @@
             this.cell28Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell28Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell28Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell28Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell28Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell28Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell28Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell28Vbox.Multiline = true;
@@ -334,7 +334,7 @@
             this.cell28tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell28tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell28tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell28tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell28tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell28tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell28tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell28tempBox.Multiline = true;
@@ -348,7 +348,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label28.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label28.ForeColor = System.Drawing.Color.White;
             this.label28.Location = new System.Drawing.Point(4, 1);
             this.label28.Name = "label28";
@@ -367,7 +367,7 @@
             this.tableLayoutPanel28.Controls.Add(this.cell27tempBox, 0, 3);
             this.tableLayoutPanel28.Controls.Add(this.label27, 0, 0);
             this.tableLayoutPanel28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel28.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel28.Location = new System.Drawing.Point(583, 468);
             this.tableLayoutPanel28.Name = "tableLayoutPanel28";
             this.tableLayoutPanel28.RowCount = 4;
@@ -383,7 +383,7 @@
             this.cell27socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell27socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell27socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell27socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell27socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell27socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell27socBox.Location = new System.Drawing.Point(4, 78);
             this.cell27socBox.Multiline = true;
@@ -398,7 +398,7 @@
             this.cell27Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell27Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell27Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell27Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell27Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell27Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell27Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell27Vbox.Multiline = true;
@@ -413,7 +413,7 @@
             this.cell27tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell27tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell27tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell27tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell27tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell27tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell27tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell27tempBox.Multiline = true;
@@ -427,7 +427,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label27.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label27.ForeColor = System.Drawing.Color.White;
             this.label27.Location = new System.Drawing.Point(4, 1);
             this.label27.Name = "label27";
@@ -446,7 +446,7 @@
             this.tableLayoutPanel27.Controls.Add(this.cell26tempBox, 0, 3);
             this.tableLayoutPanel27.Controls.Add(this.label26, 0, 0);
             this.tableLayoutPanel27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel27.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel27.Location = new System.Drawing.Point(467, 468);
             this.tableLayoutPanel27.Name = "tableLayoutPanel27";
             this.tableLayoutPanel27.RowCount = 4;
@@ -462,7 +462,7 @@
             this.cell26socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell26socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell26socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell26socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell26socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell26socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell26socBox.Location = new System.Drawing.Point(4, 78);
             this.cell26socBox.Multiline = true;
@@ -477,7 +477,7 @@
             this.cell26Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell26Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell26Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell26Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell26Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell26Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell26Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell26Vbox.Multiline = true;
@@ -492,7 +492,7 @@
             this.cell26tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell26tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell26tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell26tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell26tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell26tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell26tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell26tempBox.Multiline = true;
@@ -506,7 +506,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label26.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label26.ForeColor = System.Drawing.Color.White;
             this.label26.Location = new System.Drawing.Point(4, 1);
             this.label26.Name = "label26";
@@ -525,7 +525,7 @@
             this.tableLayoutPanel26.Controls.Add(this.cell25tempBox, 0, 3);
             this.tableLayoutPanel26.Controls.Add(this.label25, 0, 0);
             this.tableLayoutPanel26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel26.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel26.Location = new System.Drawing.Point(351, 468);
             this.tableLayoutPanel26.Name = "tableLayoutPanel26";
             this.tableLayoutPanel26.RowCount = 4;
@@ -541,7 +541,7 @@
             this.cell25socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell25socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell25socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell25socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell25socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell25socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell25socBox.Location = new System.Drawing.Point(4, 78);
             this.cell25socBox.Multiline = true;
@@ -556,7 +556,7 @@
             this.cell25Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell25Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell25Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell25Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell25Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell25Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell25Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell25Vbox.Multiline = true;
@@ -571,7 +571,7 @@
             this.cell25tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell25tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell25tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell25tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell25tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell25tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell25tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell25tempBox.Multiline = true;
@@ -585,7 +585,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label25.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label25.ForeColor = System.Drawing.Color.White;
             this.label25.Location = new System.Drawing.Point(4, 1);
             this.label25.Name = "label25";
@@ -604,7 +604,7 @@
             this.tableLayoutPanel25.Controls.Add(this.cell24tempBox, 0, 3);
             this.tableLayoutPanel25.Controls.Add(this.label24, 0, 0);
             this.tableLayoutPanel25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel25.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel25.Location = new System.Drawing.Point(235, 468);
             this.tableLayoutPanel25.Name = "tableLayoutPanel25";
             this.tableLayoutPanel25.RowCount = 4;
@@ -620,7 +620,7 @@
             this.cell24socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell24socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell24socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell24socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell24socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell24socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell24socBox.Location = new System.Drawing.Point(4, 78);
             this.cell24socBox.Multiline = true;
@@ -635,7 +635,7 @@
             this.cell24Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell24Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell24Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell24Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell24Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell24Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell24Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell24Vbox.Multiline = true;
@@ -650,7 +650,7 @@
             this.cell24tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell24tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell24tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell24tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell24tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell24tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell24tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell24tempBox.Multiline = true;
@@ -664,7 +664,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label24.ForeColor = System.Drawing.Color.White;
             this.label24.Location = new System.Drawing.Point(4, 1);
             this.label24.Name = "label24";
@@ -683,7 +683,7 @@
             this.tableLayoutPanel24.Controls.Add(this.cell23tempBox, 0, 3);
             this.tableLayoutPanel24.Controls.Add(this.label23, 0, 0);
             this.tableLayoutPanel24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel24.Location = new System.Drawing.Point(119, 468);
             this.tableLayoutPanel24.Name = "tableLayoutPanel24";
             this.tableLayoutPanel24.RowCount = 4;
@@ -699,7 +699,7 @@
             this.cell23socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell23socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell23socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell23socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell23socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell23socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell23socBox.Location = new System.Drawing.Point(4, 78);
             this.cell23socBox.Multiline = true;
@@ -714,7 +714,7 @@
             this.cell23Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell23Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell23Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell23Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell23Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell23Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell23Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell23Vbox.Multiline = true;
@@ -729,7 +729,7 @@
             this.cell23tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell23tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell23tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell23tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell23tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell23tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell23tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell23tempBox.Multiline = true;
@@ -743,7 +743,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label23.ForeColor = System.Drawing.Color.White;
             this.label23.Location = new System.Drawing.Point(4, 1);
             this.label23.Name = "label23";
@@ -762,7 +762,7 @@
             this.tableLayoutPanel23.Controls.Add(this.cell22tempBox, 0, 3);
             this.tableLayoutPanel23.Controls.Add(this.label22, 0, 0);
             this.tableLayoutPanel23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel23.Location = new System.Drawing.Point(3, 468);
             this.tableLayoutPanel23.Name = "tableLayoutPanel23";
             this.tableLayoutPanel23.RowCount = 4;
@@ -778,7 +778,7 @@
             this.cell22socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell22socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell22socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell22socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell22socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell22socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell22socBox.Location = new System.Drawing.Point(4, 78);
             this.cell22socBox.Multiline = true;
@@ -793,7 +793,7 @@
             this.cell22Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell22Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell22Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell22Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell22Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell22Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell22Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell22Vbox.Multiline = true;
@@ -808,7 +808,7 @@
             this.cell22tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell22tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell22tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell22tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell22tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell22tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell22tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell22tempBox.Multiline = true;
@@ -822,7 +822,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label22.ForeColor = System.Drawing.Color.White;
             this.label22.Location = new System.Drawing.Point(4, 1);
             this.label22.Name = "label22";
@@ -841,7 +841,7 @@
             this.tableLayoutPanel22.Controls.Add(this.cell21tempBox, 0, 3);
             this.tableLayoutPanel22.Controls.Add(this.label21, 0, 0);
             this.tableLayoutPanel22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel22.Location = new System.Drawing.Point(699, 313);
             this.tableLayoutPanel22.Name = "tableLayoutPanel22";
             this.tableLayoutPanel22.RowCount = 4;
@@ -857,7 +857,7 @@
             this.cell21socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell21socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell21socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell21socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell21socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell21socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell21socBox.Location = new System.Drawing.Point(4, 78);
             this.cell21socBox.Multiline = true;
@@ -872,7 +872,7 @@
             this.cell21Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell21Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell21Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell21Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell21Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell21Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell21Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell21Vbox.Multiline = true;
@@ -887,7 +887,7 @@
             this.cell21tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell21tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell21tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell21tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell21tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell21tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell21tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell21tempBox.Multiline = true;
@@ -901,7 +901,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label21.ForeColor = System.Drawing.Color.White;
             this.label21.Location = new System.Drawing.Point(4, 1);
             this.label21.Name = "label21";
@@ -920,7 +920,7 @@
             this.tableLayoutPanel21.Controls.Add(this.cell20tempBox, 0, 3);
             this.tableLayoutPanel21.Controls.Add(this.label20, 0, 0);
             this.tableLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel21.Location = new System.Drawing.Point(583, 313);
             this.tableLayoutPanel21.Name = "tableLayoutPanel21";
             this.tableLayoutPanel21.RowCount = 4;
@@ -936,7 +936,7 @@
             this.cell20Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell20Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell20Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell20Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell20Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell20Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell20Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell20Vbox.Multiline = true;
@@ -951,7 +951,7 @@
             this.cell20socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell20socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell20socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell20socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell20socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell20socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell20socBox.Location = new System.Drawing.Point(4, 78);
             this.cell20socBox.Multiline = true;
@@ -966,7 +966,7 @@
             this.cell20tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell20tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell20tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell20tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell20tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell20tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell20tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell20tempBox.Multiline = true;
@@ -980,7 +980,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label20.ForeColor = System.Drawing.Color.White;
             this.label20.Location = new System.Drawing.Point(4, 1);
             this.label20.Name = "label20";
@@ -999,7 +999,7 @@
             this.tableLayoutPanel20.Controls.Add(this.cell19tempBox, 0, 3);
             this.tableLayoutPanel20.Controls.Add(this.label19, 0, 0);
             this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel20.Location = new System.Drawing.Point(467, 313);
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
             this.tableLayoutPanel20.RowCount = 4;
@@ -1015,7 +1015,7 @@
             this.cell19socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell19socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell19socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell19socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell19socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell19socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell19socBox.Location = new System.Drawing.Point(4, 78);
             this.cell19socBox.Multiline = true;
@@ -1030,7 +1030,7 @@
             this.cell19Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell19Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell19Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell19Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell19Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell19Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell19Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell19Vbox.Multiline = true;
@@ -1045,7 +1045,7 @@
             this.cell19tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell19tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell19tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell19tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell19tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell19tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell19tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell19tempBox.Multiline = true;
@@ -1059,7 +1059,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label19.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label19.ForeColor = System.Drawing.Color.White;
             this.label19.Location = new System.Drawing.Point(4, 1);
             this.label19.Name = "label19";
@@ -1078,7 +1078,7 @@
             this.tableLayoutPanel19.Controls.Add(this.cell18tempBox, 0, 3);
             this.tableLayoutPanel19.Controls.Add(this.label18, 0, 0);
             this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel19.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel19.Location = new System.Drawing.Point(351, 313);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
             this.tableLayoutPanel19.RowCount = 4;
@@ -1094,7 +1094,7 @@
             this.cell18socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell18socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell18socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell18socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell18socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell18socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell18socBox.Location = new System.Drawing.Point(4, 78);
             this.cell18socBox.Multiline = true;
@@ -1109,7 +1109,7 @@
             this.cell18Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell18Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell18Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell18Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell18Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell18Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell18Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell18Vbox.Multiline = true;
@@ -1124,7 +1124,7 @@
             this.cell18tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell18tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell18tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell18tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell18tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell18tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell18tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell18tempBox.Multiline = true;
@@ -1138,7 +1138,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label18.ForeColor = System.Drawing.Color.White;
             this.label18.Location = new System.Drawing.Point(4, 1);
             this.label18.Name = "label18";
@@ -1157,7 +1157,7 @@
             this.tableLayoutPanel18.Controls.Add(this.cell17tempBox, 0, 3);
             this.tableLayoutPanel18.Controls.Add(this.label17, 0, 0);
             this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel18.Location = new System.Drawing.Point(235, 313);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
             this.tableLayoutPanel18.RowCount = 4;
@@ -1173,7 +1173,7 @@
             this.cell17socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell17socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell17socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell17socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell17socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell17socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell17socBox.Location = new System.Drawing.Point(4, 78);
             this.cell17socBox.Multiline = true;
@@ -1188,7 +1188,7 @@
             this.cell17Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell17Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell17Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell17Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell17Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell17Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell17Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell17Vbox.Multiline = true;
@@ -1203,7 +1203,7 @@
             this.cell17tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell17tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell17tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell17tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell17tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell17tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell17tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell17tempBox.Multiline = true;
@@ -1217,7 +1217,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label17.ForeColor = System.Drawing.Color.White;
             this.label17.Location = new System.Drawing.Point(4, 1);
             this.label17.Name = "label17";
@@ -1236,7 +1236,7 @@
             this.tableLayoutPanel17.Controls.Add(this.cell16tempBox, 0, 3);
             this.tableLayoutPanel17.Controls.Add(this.label16, 0, 0);
             this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel17.Location = new System.Drawing.Point(119, 313);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
             this.tableLayoutPanel17.RowCount = 4;
@@ -1252,7 +1252,7 @@
             this.cell16socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell16socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell16socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell16socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell16socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell16socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell16socBox.Location = new System.Drawing.Point(4, 78);
             this.cell16socBox.Multiline = true;
@@ -1267,7 +1267,7 @@
             this.cell16Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell16Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell16Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell16Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell16Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell16Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell16Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell16Vbox.Multiline = true;
@@ -1282,7 +1282,7 @@
             this.cell16tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell16tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell16tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell16tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell16tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell16tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell16tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell16tempBox.Multiline = true;
@@ -1296,7 +1296,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(4, 1);
             this.label16.Name = "label16";
@@ -1315,7 +1315,7 @@
             this.tableLayoutPanel16.Controls.Add(this.cell15socBox, 0, 2);
             this.tableLayoutPanel16.Controls.Add(this.label15, 0, 0);
             this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel16.Location = new System.Drawing.Point(3, 313);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 4;
@@ -1331,7 +1331,7 @@
             this.cell15tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell15tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell15tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell15tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell15tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell15tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell15tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell15tempBox.Multiline = true;
@@ -1346,7 +1346,7 @@
             this.cell15Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell15Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell15Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell15Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell15Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell15Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell15Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell15Vbox.Multiline = true;
@@ -1361,7 +1361,7 @@
             this.cell15socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell15socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell15socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell15socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell15socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell15socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell15socBox.Location = new System.Drawing.Point(4, 78);
             this.cell15socBox.Multiline = true;
@@ -1375,7 +1375,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(4, 1);
             this.label15.Name = "label15";
@@ -1394,7 +1394,7 @@
             this.tableLayoutPanel15.Controls.Add(this.cell14tempBox, 0, 3);
             this.tableLayoutPanel15.Controls.Add(this.label14, 0, 0);
             this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel15.Location = new System.Drawing.Point(699, 158);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 4;
@@ -1410,7 +1410,7 @@
             this.cell14socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell14socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell14socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell14socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell14socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell14socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell14socBox.Location = new System.Drawing.Point(4, 78);
             this.cell14socBox.Multiline = true;
@@ -1425,7 +1425,7 @@
             this.cell14Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell14Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell14Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell14Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell14Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell14Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell14Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell14Vbox.Multiline = true;
@@ -1440,7 +1440,7 @@
             this.cell14tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell14tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell14tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell14tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell14tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell14tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell14tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell14tempBox.Multiline = true;
@@ -1454,7 +1454,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(4, 1);
             this.label14.Name = "label14";
@@ -1473,7 +1473,7 @@
             this.tableLayoutPanel14.Controls.Add(this.cell13tempBox, 0, 3);
             this.tableLayoutPanel14.Controls.Add(this.label13, 0, 0);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel14.Location = new System.Drawing.Point(583, 158);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 4;
@@ -1489,7 +1489,7 @@
             this.cell13socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell13socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell13socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell13socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell13socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell13socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell13socBox.Location = new System.Drawing.Point(4, 78);
             this.cell13socBox.Multiline = true;
@@ -1504,7 +1504,7 @@
             this.cell13Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell13Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell13Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell13Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell13Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell13Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell13Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell13Vbox.Multiline = true;
@@ -1519,7 +1519,7 @@
             this.cell13tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell13tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell13tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell13tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell13tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell13tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell13tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell13tempBox.Multiline = true;
@@ -1533,7 +1533,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(4, 1);
             this.label13.Name = "label13";
@@ -1552,7 +1552,7 @@
             this.tableLayoutPanel13.Controls.Add(this.cell12tempBox, 0, 3);
             this.tableLayoutPanel13.Controls.Add(this.label12, 0, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel13.Location = new System.Drawing.Point(467, 158);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 4;
@@ -1568,7 +1568,7 @@
             this.cell12socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell12socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell12socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell12socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell12socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell12socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell12socBox.Location = new System.Drawing.Point(4, 78);
             this.cell12socBox.Multiline = true;
@@ -1583,7 +1583,7 @@
             this.cell12Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell12Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell12Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell12Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell12Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell12Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell12Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell12Vbox.Multiline = true;
@@ -1598,7 +1598,7 @@
             this.cell12tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell12tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell12tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell12tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell12tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell12tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell12tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell12tempBox.Multiline = true;
@@ -1612,7 +1612,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(4, 1);
             this.label12.Name = "label12";
@@ -1631,7 +1631,7 @@
             this.tableLayoutPanel12.Controls.Add(this.cell11tempBox, 0, 3);
             this.tableLayoutPanel12.Controls.Add(this.label11, 0, 0);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel12.Location = new System.Drawing.Point(351, 158);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 4;
@@ -1647,7 +1647,7 @@
             this.cell11socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell11socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell11socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell11socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell11socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell11socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell11socBox.Location = new System.Drawing.Point(4, 78);
             this.cell11socBox.Multiline = true;
@@ -1662,7 +1662,7 @@
             this.cell11Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell11Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell11Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell11Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell11Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell11Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell11Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell11Vbox.Multiline = true;
@@ -1677,7 +1677,7 @@
             this.cell11tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell11tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell11tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell11tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell11tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell11tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell11tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell11tempBox.Multiline = true;
@@ -1691,7 +1691,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(4, 1);
             this.label11.Name = "label11";
@@ -1710,7 +1710,7 @@
             this.tableLayoutPanel11.Controls.Add(this.cell10tempBox, 0, 3);
             this.tableLayoutPanel11.Controls.Add(this.label10, 0, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel11.Location = new System.Drawing.Point(235, 158);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 4;
@@ -1726,7 +1726,7 @@
             this.cell10socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell10socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell10socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell10socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell10socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell10socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell10socBox.Location = new System.Drawing.Point(4, 78);
             this.cell10socBox.Multiline = true;
@@ -1741,7 +1741,7 @@
             this.cell10Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell10Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell10Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell10Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell10Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell10Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell10Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell10Vbox.Multiline = true;
@@ -1756,7 +1756,7 @@
             this.cell10tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell10tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell10tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell10tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell10tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell10tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell10tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell10tempBox.Multiline = true;
@@ -1770,7 +1770,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(4, 1);
             this.label10.Name = "label10";
@@ -1789,7 +1789,7 @@
             this.tableLayoutPanel10.Controls.Add(this.cell9Vbox, 0, 1);
             this.tableLayoutPanel10.Controls.Add(this.label9, 0, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel10.Location = new System.Drawing.Point(119, 158);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 4;
@@ -1805,7 +1805,7 @@
             this.cell9tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell9tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell9tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell9tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell9tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell9tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell9tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell9tempBox.Multiline = true;
@@ -1820,7 +1820,7 @@
             this.cell9socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell9socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell9socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell9socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell9socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell9socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell9socBox.Location = new System.Drawing.Point(4, 78);
             this.cell9socBox.Multiline = true;
@@ -1835,7 +1835,7 @@
             this.cell9Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell9Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell9Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell9Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell9Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell9Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell9Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell9Vbox.Multiline = true;
@@ -1849,7 +1849,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(4, 1);
             this.label9.Name = "label9";
@@ -1868,7 +1868,7 @@
             this.tableLayoutPanel9.Controls.Add(this.cell8tempBox, 0, 3);
             this.tableLayoutPanel9.Controls.Add(this.label8, 0, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 158);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 4;
@@ -1884,7 +1884,7 @@
             this.cell8socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell8socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell8socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell8socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell8socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell8socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell8socBox.Location = new System.Drawing.Point(4, 78);
             this.cell8socBox.Multiline = true;
@@ -1899,7 +1899,7 @@
             this.cell8Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell8Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell8Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell8Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell8Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell8Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell8Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell8Vbox.Multiline = true;
@@ -1914,7 +1914,7 @@
             this.cell8tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell8tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell8tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell8tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell8tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell8tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell8tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell8tempBox.Multiline = true;
@@ -1928,7 +1928,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(4, 1);
             this.label8.Name = "label8";
@@ -1947,7 +1947,7 @@
             this.tableLayoutPanel8.Controls.Add(this.cell7tempBox, 0, 3);
             this.tableLayoutPanel8.Controls.Add(this.label7, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel8.Location = new System.Drawing.Point(699, 3);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 4;
@@ -1963,7 +1963,7 @@
             this.cell7socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell7socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell7socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell7socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell7socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell7socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell7socBox.Location = new System.Drawing.Point(4, 78);
             this.cell7socBox.Multiline = true;
@@ -1978,7 +1978,7 @@
             this.cell7Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell7Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell7Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell7Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell7Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell7Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell7Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell7Vbox.Multiline = true;
@@ -1993,7 +1993,7 @@
             this.cell7tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell7tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell7tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell7tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell7tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell7tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell7tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell7tempBox.Multiline = true;
@@ -2007,7 +2007,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(4, 1);
             this.label7.Name = "label7";
@@ -2026,7 +2026,7 @@
             this.tableLayoutPanel7.Controls.Add(this.cell6tempBox, 0, 3);
             this.tableLayoutPanel7.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel7.Location = new System.Drawing.Point(583, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 4;
@@ -2042,7 +2042,7 @@
             this.cell6socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell6socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell6socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell6socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell6socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell6socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell6socBox.Location = new System.Drawing.Point(4, 78);
             this.cell6socBox.Multiline = true;
@@ -2057,7 +2057,7 @@
             this.cell6Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell6Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell6Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell6Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell6Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell6Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell6Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell6Vbox.Multiline = true;
@@ -2072,7 +2072,7 @@
             this.cell6tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell6tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell6tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell6tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell6tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell6tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell6tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell6tempBox.Multiline = true;
@@ -2086,7 +2086,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(4, 1);
             this.label6.Name = "label6";
@@ -2105,7 +2105,7 @@
             this.tableLayoutPanel6.Controls.Add(this.cell5tempBox, 0, 3);
             this.tableLayoutPanel6.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel6.Location = new System.Drawing.Point(467, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 4;
@@ -2121,7 +2121,7 @@
             this.cell5socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell5socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell5socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell5socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell5socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell5socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell5socBox.Location = new System.Drawing.Point(4, 78);
             this.cell5socBox.Multiline = true;
@@ -2136,7 +2136,7 @@
             this.cell5Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell5Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell5Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell5Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell5Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell5Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell5Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell5Vbox.Multiline = true;
@@ -2151,7 +2151,7 @@
             this.cell5tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell5tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell5tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell5tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell5tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell5tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell5tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell5tempBox.Multiline = true;
@@ -2165,7 +2165,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(4, 1);
             this.label5.Name = "label5";
@@ -2184,7 +2184,7 @@
             this.tableLayoutPanel5.Controls.Add(this.cell4tempBox, 0, 3);
             this.tableLayoutPanel5.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel5.Location = new System.Drawing.Point(351, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 4;
@@ -2201,7 +2201,7 @@
             this.cell4Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell4Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell4Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell4Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell4Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell4Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell4Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell4Vbox.Multiline = true;
@@ -2216,7 +2216,7 @@
             this.cell4socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell4socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell4socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell4socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell4socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell4socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell4socBox.Location = new System.Drawing.Point(4, 78);
             this.cell4socBox.Multiline = true;
@@ -2231,7 +2231,7 @@
             this.cell4tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell4tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell4tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell4tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell4tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell4tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell4tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell4tempBox.Multiline = true;
@@ -2245,7 +2245,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(4, 1);
             this.label4.Name = "label4";
@@ -2264,7 +2264,7 @@
             this.tableLayoutPanel4.Controls.Add(this.cell3tempBox, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel4.Location = new System.Drawing.Point(235, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 4;
@@ -2280,7 +2280,7 @@
             this.cell3Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell3Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell3Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell3Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell3Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell3Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell3Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell3Vbox.Multiline = true;
@@ -2295,7 +2295,7 @@
             this.cell3socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell3socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell3socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell3socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell3socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell3socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell3socBox.Location = new System.Drawing.Point(4, 78);
             this.cell3socBox.Multiline = true;
@@ -2310,7 +2310,7 @@
             this.cell3tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell3tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell3tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell3tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell3tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell3tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell3tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell3tempBox.Multiline = true;
@@ -2324,7 +2324,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(4, 1);
             this.label3.Name = "label3";
@@ -2343,7 +2343,7 @@
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.cell2Vbox, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel3.Location = new System.Drawing.Point(119, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 4;
@@ -2359,7 +2359,7 @@
             this.cell2tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell2tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell2tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell2tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell2tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell2tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell2tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell2tempBox.Multiline = true;
@@ -2374,7 +2374,7 @@
             this.cell2socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell2socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell2socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell2socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell2socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell2socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell2socBox.Location = new System.Drawing.Point(4, 78);
             this.cell2socBox.Multiline = true;
@@ -2388,7 +2388,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(4, 1);
             this.label2.Name = "label2";
@@ -2402,7 +2402,7 @@
             this.cell2Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell2Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell2Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell2Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell2Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell2Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell2Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell2Vbox.Multiline = true;
@@ -2422,7 +2422,7 @@
             this.tableLayoutPanel1.Controls.Add(this.cell1tempBox, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -2439,7 +2439,7 @@
             this.cell1Vbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell1Vbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell1Vbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell1Vbox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell1Vbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell1Vbox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell1Vbox.Location = new System.Drawing.Point(4, 41);
             this.cell1Vbox.Multiline = true;
@@ -2454,7 +2454,7 @@
             this.cell1socBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell1socBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell1socBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell1socBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell1socBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell1socBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell1socBox.Location = new System.Drawing.Point(4, 78);
             this.cell1socBox.Multiline = true;
@@ -2469,7 +2469,7 @@
             this.cell1tempBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.cell1tempBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cell1tempBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cell1tempBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cell1tempBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cell1tempBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cell1tempBox.Location = new System.Drawing.Point(4, 115);
             this.cell1tempBox.Multiline = true;
@@ -2483,7 +2483,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(4, 1);
             this.label1.Name = "label1";
@@ -2496,7 +2496,7 @@
             // 
             this.panel1.Controls.Add(this.tableLayoutPanel30);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(98, 621);
@@ -2519,7 +2519,7 @@
             this.tableLayoutPanel30.Controls.Add(this.label39, 0, 14);
             this.tableLayoutPanel30.Controls.Add(this.label40, 0, 15);
             this.tableLayoutPanel30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel30.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tableLayoutPanel30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tableLayoutPanel30.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel30.Name = "tableLayoutPanel30";
             this.tableLayoutPanel30.RowCount = 16;
@@ -2546,7 +2546,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label29.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label29.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label29.Location = new System.Drawing.Point(3, 38);
             this.label29.Name = "label29";
@@ -2559,7 +2559,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label30.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label30.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label30.Location = new System.Drawing.Point(3, 76);
             this.label30.Name = "label30";
@@ -2572,7 +2572,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label31.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label31.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label31.Location = new System.Drawing.Point(3, 114);
             this.label31.Name = "label31";
@@ -2585,7 +2585,7 @@
             // 
             this.label32.AutoSize = true;
             this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label32.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label32.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label32.Location = new System.Drawing.Point(3, 190);
             this.label32.Name = "label32";
@@ -2598,7 +2598,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label33.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label33.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label33.Location = new System.Drawing.Point(3, 228);
             this.label33.Name = "label33";
@@ -2611,7 +2611,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label34.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label34.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label34.Location = new System.Drawing.Point(3, 266);
             this.label34.Name = "label34";
@@ -2624,7 +2624,7 @@
             // 
             this.label35.AutoSize = true;
             this.label35.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label35.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label35.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label35.Location = new System.Drawing.Point(3, 342);
             this.label35.Name = "label35";
@@ -2637,7 +2637,7 @@
             // 
             this.label36.AutoSize = true;
             this.label36.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label36.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label36.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label36.Location = new System.Drawing.Point(3, 380);
             this.label36.Name = "label36";
@@ -2650,7 +2650,7 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label37.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label37.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label37.Location = new System.Drawing.Point(3, 418);
             this.label37.Name = "label37";
@@ -2663,7 +2663,7 @@
             // 
             this.label38.AutoSize = true;
             this.label38.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label38.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label38.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label38.Location = new System.Drawing.Point(3, 494);
             this.label38.Name = "label38";
@@ -2676,7 +2676,7 @@
             // 
             this.label39.AutoSize = true;
             this.label39.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label39.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label39.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label39.Location = new System.Drawing.Point(3, 532);
             this.label39.Name = "label39";
@@ -2689,7 +2689,7 @@
             // 
             this.label40.AutoSize = true;
             this.label40.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label40.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label40.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label40.Location = new System.Drawing.Point(3, 570);
             this.label40.Name = "label40";
