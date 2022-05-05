@@ -17,6 +17,7 @@ namespace Telemetri.NewForms
     public partial class Telemetry2021 : Form
     {
         TimeSpan timeSpan;
+        public string lastopened = "home";
         DateTime dateTime = DateTime.Now;
         public Telemetry2021()
         {
@@ -75,7 +76,7 @@ namespace Telemetri.NewForms
             SetDoubleBuffered(tableLayoutPanel3);
             SetDoubleBuffered(tableLayoutPanel4);
             SetDoubleBuffered(tableLayoutPanel5);
-
+            AFront.AccessFront += UITools.ChangeUIHome;
             #endregion
         }
 
@@ -89,16 +90,79 @@ namespace Telemetri.NewForms
         private void btnHome_Click(object sender, EventArgs e)
         {
             FormManagement.openChildForm(UITools.Telemetry2021.forms["Anasayfa"], panelChildForm);
+            homeButton.Enabled = false;
+            AFront.AccessFront += UITools.ChangeUIHome;
+            changebtn();
+            lastopened = "home";
         }
 
         private void btnMap_Click(object sender, EventArgs e)
         {
             FormManagement.openChildForm(UITools.Telemetry2021.forms["Map"], panelChildForm);
+            mapButton.Enabled = false;
+            changebtn();
+            lastopened = "map";
+        }
+
+        public void changebtn()
+        {
+            switch (lastopened)
+            {
+                case "home":
+                    {
+                        homeButton.Enabled = true;
+                        AFront.AccessFront -= UITools.ChangeUIHome;
+                        break;
+                    }
+                case "map":
+                    {
+                        mapButton.Enabled = true;
+                        break;
+                    }
+                case "battery":
+                    {
+                        batteryButton.Enabled = true;
+                        AFront.AccessFront -= UITools.ChangeUIBattery;
+                        break;
+                    }
+                case "cells":
+                    {
+                        cellsBtn.Enabled = true;
+                        AFront.AccessFront -= UITools.ChangeUICells;
+                        break;
+                    }
+                case "mcu1":
+                    {
+                        motordrButton.Enabled = true;
+                        AFront.AccessFront -= UITools.ChangeUIMCULeft;
+                        break;
+                    }
+                case "mcu2":
+                    {
+                        motordrButton2.Enabled = true;
+                        AFront.AccessFront -= UITools.ChangeUIMCURight;
+                        break;
+                    }
+                case "pid":
+                    {
+                        pidTuningBtn.Enabled = true;
+                        break;
+                    }
+                case "test":
+                    {
+                        testButton.Enabled = true;
+                        break;
+                    }
+            }
         }
 
         private void btnBattery_Click(object sender, EventArgs e)
         {
             FormManagement.openChildForm(UITools.Telemetry2021.forms["BMS_Form"], panelChildForm);
+            batteryButton.Enabled = false;
+            AFront.AccessFront += UITools.ChangeUIBattery;
+            changebtn();
+            lastopened = "battery";
         }
 
         private void panelChildForm_Paint(object sender, PaintEventArgs e)
@@ -233,20 +297,19 @@ namespace Telemetri.NewForms
         private void cellsBtn_Click(object sender, EventArgs e)
         {
             FormManagement.openChildForm(UITools.Telemetry2021.forms["Cells"], panelChildForm);
+            cellsBtn.Enabled = false;
+            AFront.AccessFront += UITools.ChangeUICells;
+            changebtn();
+            lastopened = "cells";
         }
 
         private void motordrButton_Click(object sender, EventArgs e)
         {
-            MouseEventArgs me = (MouseEventArgs)e;
-            if(me.Button == MouseButtons.Left)
-            {
-                FormManagement.openChildForm(UITools.Telemetry2021.forms["Driver_Form"], panelChildForm);
-            }
-            else if(me.Button == MouseButtons.Right)
-            {
-                UITools.Telemetry2021.forms["Driver_Form"].Show();
-            }
-
+            FormManagement.openChildForm(UITools.Telemetry2021.forms["Driver_Form"], panelChildForm);
+            motordrButton.Enabled = false;
+            AFront.AccessFront += UITools.ChangeUIMCULeft;
+            changebtn();
+            lastopened = "mcu1";
         }
 
         private void graphTimer_Tick(object sender, EventArgs e)
@@ -295,29 +358,26 @@ namespace Telemetri.NewForms
         private void testButton_Click(object sender, EventArgs e)
         {
             FormManagement.openChildForm(UITools.Telemetry2021.forms["TestForm"], panelChildForm);
+            testButton.Enabled = false;
+            changebtn();
+            lastopened = "test";
         }
 
         private void pidTuningBtn_Click(object sender, EventArgs e)
         {
             FormManagement.openChildForm(UITools.Telemetry2021.forms["PIDTuningForm"], panelChildForm);
+            pidTuningBtn.Enabled = false;
+            changebtn();
+            lastopened = "pid";
         }
 
         private void motordrButton2_Click(object sender, EventArgs e)
         {
-
+            FormManagement.openChildForm(UITools.Telemetry2021.forms["DriverForm2"], panelChildForm);
+            motordrButton2.Enabled = false;
+            AFront.AccessFront += UITools.ChangeUIMCURight;
+            changebtn();
+            lastopened = "mcu2";
         }
-
-        private void motordrButton2_MouseUp(object sender, MouseEventArgs e)
-        {
-            if(e.Button == MouseButtons.Left)
-            {
-                FormManagement.openChildForm(UITools.Telemetry2021.forms["DriverForm2"], panelChildForm);
-            }
-            if (e.Button == MouseButtons.Middle)
-            {
-
-            }
-        }
-
     }
 }

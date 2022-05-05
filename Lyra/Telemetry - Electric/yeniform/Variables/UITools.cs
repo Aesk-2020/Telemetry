@@ -165,7 +165,7 @@ namespace Telemetri.Variables
             public static TextBox logBox;
             public static ConsoleTextBoxWriter logWriter;
         }
-        public static void ChangeUI()
+        public static void ChangeUIHome()
         {
             Anasayfa.actVelocityLabel.Text = DataMCU.act_speed_s16.ToString() + " kmh"; 
             Anasayfa.batConsLabel.Text = DataBMS.cons_u16.ToString() + " Wh";
@@ -180,7 +180,9 @@ namespace Telemetri.Variables
             Anasayfa.driveStatusLabel.Text = DataVCU.ignition_u1 ? (!DataVCU.vcu_torque_output_u1 ? "TORQUE MODE" : "SPEED MODE") : "IGNITION OFF";
             Anasayfa.sdCardStaBox.BackColor = DataVCU.SD_result_u8 == 0 ? Color.LimeGreen : Color.Crimson;
             Anasayfa.tcuMinLabel.Text = DataVCU.TCU_minute_u8.ToString();
-
+        }
+        public static void ChangeUIBattery()
+        {
             BMSForm.consTextBox.Text = DataBMS.cons_u16.ToString() + " Wh";
             BMSForm.curTextBox.Text = DataBMS.cur_s16.ToString() + " A";
             BMSForm.socTextBox.Text = "%" + DataBMS.soc_u16.ToString();
@@ -196,7 +198,19 @@ namespace Telemetri.Variables
             BMSForm.commsBox.BackColor = DataBMS.communication_error_u1 ? Color.Crimson : MACROS.UInewBack;
             BMSForm.overcurBox.BackColor = DataBMS.over_current_error_u1 ? Color.Crimson : MACROS.UInewBack;
             BMSForm.temperrBox.BackColor = DataBMS.temp_error_u1 ? Color.Crimson : MACROS.UInewBack;
-
+        }
+        public static void ChangeUICells()
+        {
+            for (int i = 0; i < DataBMS.cells.Count; i++)
+            {
+                CellsForm.cellsVoltBoxList[i].Text = DataBMS.cells[i].actVoltage.ToString("0.000");
+                CellsForm.cellsSocBoxList[i].Text = DataBMS.cells[i].soc_u8.ToString();
+                CellsForm.cellsTempBoxList[i].Text = DataBMS.cells[i].temperature_u8.ToString();
+            }
+            DataBMS.cells.Clear();
+        }
+        public static void ChangeUIMCULeft()
+        {
             if (DataMCU.free_wheeling_status == true)
             {
                 DriverForm.actualStatusLabel.Text = "NO SWITCHING";
@@ -235,6 +249,9 @@ namespace Telemetri.Variables
             DriverForm.underspeedBox.BackColor = DataMCU.under_speed ? Color.Crimson : MACROS.UInewBack;
             DriverForm.pwmEnabledBox.BackColor = DataMCU.PWM_enabled ? Color.LimeGreen : MACROS.UInewBack;
 
+        }
+        public static void ChangeUIMCURight()
+        {
             if (DataMCU.free_wheeling_status == true)
             {
                 DriverForm2.actualStatusLabel2.Text = "NO SWITCHING";
@@ -255,10 +272,10 @@ namespace Telemetri.Variables
             DriverForm2.dcBusVoltLabel2.Text = DataMCU.v_dc_s16_mcu2.ToString();
 
             //yarıştan sonra kaldır
-            if(DataVCU.ignition_u1 == true)
+            if (DataVCU.ignition_u1 == true)
                 DriverForm2.temperatureLabel2.Text = "30°C";
             else
-                DriverForm2.temperatureLabel2.Text = (DataMCU.temperature_u8+1).ToString() + " °C";
+                DriverForm2.temperatureLabel2.Text = (DataMCU.temperature_u8 + 1).ToString() + " °C";
             //************
             DriverForm2.ISCFFlagBox2.BackColor = DataMCU.input_scaling_calib_finished_mcu2 ? Color.LimeGreen : MACROS.UInewBack;
             DriverForm2.overcurIABox2.BackColor = DataMCU.over_cur_IA_mcu2 ? Color.Crimson : MACROS.UInewBack;
@@ -272,7 +289,9 @@ namespace Telemetri.Variables
             DriverForm2.undervoltVDCBox2.BackColor = DataMCU.under_volt_VDC_mcu2 ? Color.Crimson : MACROS.UInewBack;
             DriverForm2.underspeedBox2.BackColor = DataMCU.under_speed_mcu2 ? Color.Crimson : MACROS.UInewBack;
             DriverForm2.pwmEnabledBox2.BackColor = DataMCU.PWM_enabled_mcu2 ? Color.LimeGreen : MACROS.UInewBack;
-
+        }
+        public static void ChangeUI()
+        {
             GMAPController.AddMarker(new GMap.NET.PointLatLng(DataGPS.latitude_f32, DataGPS.longtitude_f32), GMap.NET.WindowsForms.Markers.GMarkerGoogleType.red_small, Telemetry2021.MAAAP);
             /*switch ((DataBMS.DC_BUS_STATE)DataBMS.dc_bus_state_u8)
             {
@@ -313,13 +332,7 @@ namespace Telemetri.Variables
                     }
             }*/
 
-            for (int i = 0; i < DataBMS.cells.Count; i++)
-            {
-                CellsForm.cellsVoltBoxList[i].Text = DataBMS.cells[i].actVoltage.ToString("0.000");
-                CellsForm.cellsSocBoxList[i].Text = DataBMS.cells[i].soc_u8.ToString();
-                CellsForm.cellsTempBoxList[i].Text = DataBMS.cells[i].temperature_u8.ToString();
-            }
-            DataBMS.cells.Clear();
+            
 
             foreach (var item in NewForms.NewGraphics.graphicsList)
             {

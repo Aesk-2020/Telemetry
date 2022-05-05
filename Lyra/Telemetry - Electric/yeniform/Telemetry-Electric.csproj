@@ -208,6 +208,7 @@
       <DependentUpon>Driver_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Variables\BmsUI.cs" />
+    <Compile Include="Variables\ChangeUIWithThread.cs" />
     <Compile Include="Variables\ComproUI.cs" />
     <Compile Include="Variables\ConsoleTextBoxWriter.cs" />
     <Compile Include="Variables\DataBMS.cs" />

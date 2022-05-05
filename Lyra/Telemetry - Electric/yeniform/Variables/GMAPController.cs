@@ -88,12 +88,19 @@ namespace Telemetri.Variables
         }
         public static void AddMarker(PointLatLng point, GMarkerGoogleType gMarker, GMapControl gMap)
         {
-            GMapOverlay gMapOverlay = new GMapOverlay("markers");
-            GMapMarker mapMarker = new GMarkerGoogle(point, gMarker);
-            gMapOverlay.Markers.Add(mapMarker);
-            gMap.Overlays.Add(gMapOverlay);
-            gMap.Zoom += 0.00000001;
-            gMap.Zoom -= 0.00000001;
+            try
+            {
+                GMapOverlay gMapOverlay = new GMapOverlay("markers");
+                GMapMarker mapMarker = new GMarkerGoogle(point, gMarker);
+                gMapOverlay.Markers.Add(mapMarker);
+                gMap.Overlays.Add(gMapOverlay);
+                gMap.Zoom += 0.00000001;
+                gMap.Zoom -= 0.00000001;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("belirsiz bir sorun var:");
+            }
         }
     }
 }

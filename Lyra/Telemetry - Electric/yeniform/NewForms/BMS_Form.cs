@@ -77,6 +77,5 @@ namespace Telemetri.NewForms
             SetDoubleBuffered(tableLayoutPanel4);
             #endregion
         }
-
     }
 }

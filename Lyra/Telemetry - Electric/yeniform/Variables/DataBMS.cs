@@ -54,7 +54,7 @@ namespace Telemetri.Variables
         public static List<Cell> cells = new List<Cell>(28);
         public static void CellInit()
         {
-            for (int i = 0; i < 28; i++)
+            for (int i = 0; cells.Count < 28; i++)
             {
                 DataBMS.Cell cell = new DataBMS.Cell();
                 DataBMS.cells.Add(cell);

@@ -188,7 +188,6 @@ namespace Telemetri.Variables
                         {
                             _dataCounter = 0;
                             NRFUnpack(_recieveData);
-                            AFront.ChangeUI();
                             _state = ReceiveDataStates.CatchHeader;
                         }
                         break;
