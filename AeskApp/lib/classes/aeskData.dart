@@ -482,7 +482,6 @@ class AeskData extends ChangeNotifier{
             case HP_UI_PACK: {
               vcu_drive_command_u8 = message.getUint8(_startIndex);     _startIndex++;
               vcu_speed_set_rpm_s16 = message.getInt16(_startIndex, myEndian).toDouble();    _startIndex += 2;
-              vcu_speed_set_rpm_s16 = (vcu_speed_set_rpm_s16 * 0.105183).roundToDouble();
               vcu_set_torque_s16 = message.getInt16(_startIndex, myEndian);       _startIndex += 2;
               vcu_set_torque_2_s16 = message.getInt16(_startIndex, myEndian);     _startIndex += 2;
               vcu_torque_limit_u8 = message.getUint8(_startIndex);      _startIndex++;
@@ -518,7 +517,6 @@ class AeskData extends ChangeNotifier{
 
               driver_actspeed_s16 = message.getInt16(_startIndex,myEndian) / 10;
               _startIndex += 2;
-              driver_actspeed_s16 = (driver_actspeed_s16 * 0.105183).roundToDouble();
 
               driver_motortemp_u8 = message.getUint8(_startIndex);
               _startIndex++;
@@ -558,7 +556,6 @@ class AeskData extends ChangeNotifier{
 
               driver_actspeed_s16_2 = message.getInt16(_startIndex,myEndian) / 10;
               _startIndex += 2;
-              driver_actspeed_s16_2 = (driver_actspeed_s16_2 * 0.105183).roundToDouble();
 
               driver_motortemp_u8_2 = message.getUint8(_startIndex);
               _startIndex++;
@@ -592,12 +589,12 @@ class AeskData extends ChangeNotifier{
               driver_overcur_idc_u1           = (((driver_errorstatus_u16 >> 3) & 1) == 1) ? true : false;
               driver_undercur_idc_u1          = (((driver_errorstatus_u16 >> 4) & 1) == 1) ? true : false;
               driver_undervolt_vdc_u1         = (((driver_errorstatus_u16 >> 5) & 1) == 1) ? true : false;
-              driver_overvolt_vdc_u1          = (((driver_errorstatus_u16 >> 6) & 1) == 1) ? true : false;
+              driver_overvolt_vdc_u1          = (((driver_errorstatus_u16 >> 6) & 1) == 1) ? false : true;
               driver_underspeed_u1            = (((driver_errorstatus_u16 >> 7) & 1) == 1) ? true : false;
               driver_overspeed_u1             = (((driver_errorstatus_u16 >> 8) & 1) == 1) ? true : false;
               driver_overtemp_u1              = (((driver_errorstatus_u16 >> 9) & 1) == 1) ? true : false;
-              driver_zpcf_u1                  = (((driver_errorstatus_u16 >> 10) & 1) == 1) ? true : false;
-              driver_pwm_enabled_u1           = (((driver_errorstatus_u16 >> 11) & 1) == 1) ? true : false;
+              driver_zpcf_u1                  = (((driver_errorstatus_u16 >> 10) & 1) == 1) ? false : true;
+              driver_pwm_enabled_u1           = (((driver_errorstatus_u16 >> 11) & 1) == 1) ? false : true;
               driver_freewheeling_u1          = (((driver_errorstatus_u16 >> 12) & 1) == 1) ? true : false;
               driver_torque_mode_u1           = (((driver_errorstatus_u16 >> 13) & 1) == 1) ? true : false;
 
@@ -607,12 +604,12 @@ class AeskData extends ChangeNotifier{
               driver_overcur_idc_u1_2           = (((driver_errorstatus_u16 >> 3) & 1) == 1) ? true : false;
               driver_undercur_idc_u1_2          = (((driver_errorstatus_u16 >> 4) & 1) == 1) ? true : false;
               driver_undervolt_vdc_u1_2         = (((driver_errorstatus_u16 >> 5) & 1) == 1) ? true : false;
-              driver_overvolt_vdc_u1_2          = (((driver_errorstatus_u16 >> 6) & 1) == 1) ? true : false;
+              driver_overvolt_vdc_u1_2          = (((driver_errorstatus_u16 >> 6) & 1) == 1) ? false : true;
               driver_underspeed_u1_2            = (((driver_errorstatus_u16 >> 7) & 1) == 1) ? true : false;
               driver_overspeed_u1_2             = (((driver_errorstatus_u16 >> 8) & 1) == 1) ? true : false;
               driver_overtemp_u1_2              = (((driver_errorstatus_u16 >> 9) & 1) == 1) ? true : false;
-              driver_zpcf_u1_2                  = (((driver_errorstatus_u16 >> 10) & 1) == 1) ? true : false;
-              driver_pwm_enabled_u1_2           = (((driver_errorstatus_u16 >> 11) & 1) == 1) ? true : false;
+              driver_zpcf_u1_2                  = (((driver_errorstatus_u16 >> 10) & 1) == 1) ? false : true;
+              driver_pwm_enabled_u1_2           = (((driver_errorstatus_u16 >> 11) & 1) == 1) ? false : true;
               driver_freewheeling_u1_2          = (((driver_errorstatus_u16 >> 12) & 1) == 1) ? true : false;
               driver_torque_mode_u1_2           = (((driver_errorstatus_u16 >> 13) & 1) == 1) ? true : false;
             }

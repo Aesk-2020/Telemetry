@@ -317,7 +317,7 @@ namespace Telemetri.Variables
                         DataMCU.set_torque_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
                         DataMCU.i_dc_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
                         DataMCU.v_dc_s16 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
-                        DataMCU.act_speed_s16 = (short)Math.Round(0.105183 * (BitConverter.ToInt16(receiveBuffer, startIndex) / 10)); startIndex += 2;
+                        DataMCU.act_speed_s16 = (short)(BitConverter.ToInt16(receiveBuffer, startIndex) / 10); startIndex += 2;
                         DataMCU.temperature_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
                         DataMCU.error_status_u16 = BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
                         DataMCU.act_torque_s8 = (sbyte)receiveBuffer[startIndex++]; DataMCU.act_torque_s8 -= 100;
@@ -364,7 +364,7 @@ namespace Telemetri.Variables
                         DataBMS.cons_u16 = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 10; startIndex += 2;
                         DataBMS.soc_u16 = (float)BitConverter.ToUInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
                         DataBMS.worst_cell_volt_u16_raw = (float)BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
-                        DataBMS.worst_cell_volt_u16 = DataBMS.worst_cell_volt_u16_raw / 1000;
+                        DataBMS.worst_cell_volt_u16 = DataBMS.worst_cell_volt_u16_raw / 10000;
                         DataBMS.error_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
                         DataBMS.dc_bus_state_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
                         DataBMS.worst_cell_address_u8 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
@@ -438,7 +438,7 @@ namespace Telemetri.Variables
                         DataMCU.set_torque_s16          = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
                         DataMCU.i_dc_s16                = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
                         DataMCU.v_dc_s16                = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
-                        DataMCU.act_speed_s16           = (short)Math.Round(0.105183 * (BitConverter.ToInt16(receiveBuffer, startIndex) / 10)); startIndex += 2;
+                        DataMCU.act_speed_s16           = (short)(BitConverter.ToInt16(receiveBuffer, startIndex) / 10); startIndex += 2;
                         DataMCU.temperature_u8          = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
                         DataMCU.error_status_u16        = BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
                         DataMCU.act_torque_s8           = (sbyte)receiveBuffer[startIndex++]; DataMCU.act_torque_s8 -= 100;
@@ -452,7 +452,7 @@ namespace Telemetri.Variables
                         DataMCU.set_torque_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
                         DataMCU.i_dc_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
                         DataMCU.v_dc_s16_mcu2 = (float)BitConverter.ToInt16(receiveBuffer, startIndex) / 100; startIndex += 2;
-                        DataMCU.act_speed_s16_mcu2 = (short)Math.Round(0.105183 * (BitConverter.ToInt16(receiveBuffer, startIndex) / 10)); startIndex += 2;
+                        DataMCU.act_speed_s16_mcu2 = (short)(BitConverter.ToInt16(receiveBuffer, startIndex) / 10); startIndex += 2;
                         DataMCU.temperature_u8_mcu2 = (byte)BitConverter.ToChar(receiveBuffer, startIndex); startIndex++;
                         DataMCU.error_status_u16_mcu2 = BitConverter.ToUInt16(receiveBuffer, startIndex); startIndex += 2;
                         DataMCU.act_torque_s8_mcu2 = (sbyte)receiveBuffer[startIndex++]; DataMCU.act_torque_s8 -= 100;
