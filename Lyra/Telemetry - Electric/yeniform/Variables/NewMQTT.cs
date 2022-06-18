@@ -119,7 +119,6 @@ namespace Telemetri.Variables
             UITools.Anasayfa.mqttDisconnectBtn.Enabled = false;
             UITools.Anasayfa.startLogBtn.Enabled = false;
             UITools.Anasayfa.resetBoardBtn.Enabled = false;
-            UITools.Anasayfa.portConnectBtn.Enabled = true;
             UITools.Telemetry2021.activeChannelLabel.Text = "None";
             UITools.Telemetry2021.graphTimer.Stop();
         }

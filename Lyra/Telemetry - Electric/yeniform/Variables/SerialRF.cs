@@ -72,23 +72,54 @@ namespace Telemetri.Variables
         }
         private void _serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            Thread.Sleep(10);
-            int bytes = _serialPort.BytesToRead;
-            byte[] buffer = new byte[bytes];
-            _serialPort.Read(buffer, 0, bytes);
-            
-            //lastResponse = Response;
-            //Response = DateTime.Now;
-            if (bytes > 0)
+            int bytes=0;
+            byte[] buffer = new byte[200];
+            int all=0,atleast=0;
+            while (all<=6)
+            {
+                if (_serialPort.IsOpen)
+                bytes = _serialPort.BytesToRead;
+                if (bytes > 0)
+                _serialPort.Read(buffer, all, bytes);
+                all += bytes;
+            }
+            if (buffer[5]==27)
+            {
+                atleast = 44;
+            }
+            else if (buffer[5]==28)
+            {
+                atleast = 28;
+            }
+            else if (buffer[5]==29)
+            {
+                atleast = 60;
+            }
+            while (all<atleast)
+            {
+                bytes = _serialPort.BytesToRead;
+                if (bytes > 0)
+                _serialPort.Read(buffer, all, bytes);
+                all += bytes;
+            }
+            byte[] buf2 = new byte[atleast];
+            for (int i = 0; i < atleast; i++)
+            {
+                buf2[i] = buffer[i];
+            }
+            if (all > 0)
                 {
-                if (Anasayfa.mqttobj.al==1)
+                    if (Anasayfa.mqttobj.client!=null)
                     {
-                    Anasayfa.mqttobj.client.Publish("vehicle_to_interface", buffer);
+                        Anasayfa.mqttobj.client.Publish("vehicle_to_interface", buf2);
                     }
-                ComproUI pack = new ComproUI();
-                UITools.TestForms.vtico++;
-                UITools.TestForms.cozulduvtiBox.Text = UITools.TestForms.vtico.ToString();
-                pack.ComproUnpack(buffer);
+                    else
+                    {
+                        ComproUI pack = new ComproUI();
+                        UITools.TestForms.vtico++;
+                        UITools.TestForms.cozulduvtiBox.Text = UITools.TestForms.vtico.ToString();
+                        pack.ComproUnpack(buf2);
+                    }
                 }
         }
     }

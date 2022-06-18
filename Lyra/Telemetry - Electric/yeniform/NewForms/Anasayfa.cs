@@ -179,6 +179,8 @@ namespace Telemetri.NewForms
             {
                 mqttobj.al = 1;
                 mqttWorker.RunWorkerAsync();
+                mqttConnectBtn.Enabled = false;
+                mqttDisconnectBtn.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -189,6 +191,8 @@ namespace Telemetri.NewForms
         private void mqttDisconnectBtn_Click(object sender, EventArgs e)
         {
             mqttobj.Disconnect();
+            mqttConnectBtn.Enabled = true;
+            mqttDisconnectBtn.Enabled = false;
         }
 
         private void startLogBtn_Click(object sender, EventArgs e)
