@@ -22,6 +22,7 @@ namespace Telemetri.Variables
         public bool connected_flag = false;
         public DateTime lastResponse;
         public DateTime Response;
+        public int al = 0;
         private enum step
         {
             CatchHeader1 = 0,
@@ -100,6 +101,7 @@ namespace Telemetri.Variables
             {
                 this.client.Disconnect();
                 AFront.ThreadStop();
+                al = 0;
                 // Thread abort eklenicek
             }
             else

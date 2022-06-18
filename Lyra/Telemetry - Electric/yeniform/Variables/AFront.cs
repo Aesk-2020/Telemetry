@@ -11,14 +11,23 @@ namespace Telemetri.NewForms
     {
         public static Anasayfa.TriggerFront AccessFront;
         public static ChangeUIWithThread n;
+        static int a = 0;
         public static void ThreadStart()
         {
-        n = new ChangeUIWithThread();
-        n.UIThread.Start();
+            if(a==0)
+            { 
+                n = new ChangeUIWithThread();
+                n.UIThread.Start();
+                a = 1;
+            }
         }
         public static void ThreadStop()
         {
-            n.UIThread.Abort();
+            if (a==1)
+            {
+                n.UIThread.Abort();
+                a = 0;
+            }
         }
     }
 }
