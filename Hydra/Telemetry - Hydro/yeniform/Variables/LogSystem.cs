@@ -218,6 +218,7 @@ namespace telemetry_hydro.Variables
         public static void StopLog(System.Timers.Timer timer)
         {
             timer.Stop();
+            if (_sw!=null)
             _sw.Close();
         }
 

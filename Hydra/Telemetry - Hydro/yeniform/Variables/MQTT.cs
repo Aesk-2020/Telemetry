@@ -93,8 +93,13 @@ namespace telemetry_hydro.Variables
 
         public void disConnectMQTT()
         {
-            _client.Disconnect();
-            _client.MqttMsgPublishReceived -= Client_MqttMsgPublishReceived;
+            if (_client!=null)
+            {   if (_client.IsConnected)
+                {
+                    _client.Disconnect();
+                    _client.MqttMsgPublishReceived -= Client_MqttMsgPublishReceived;
+                }
+            }
         }
 
         int find_error(int old_d, int new_d)

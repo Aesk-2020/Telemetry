@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telemetry));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.error_ready = new System.Windows.Forms.ImageList(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
@@ -292,16 +292,16 @@
             this.steeringAngleBox = new System.Windows.Forms.Label();
             this.label99 = new System.Windows.Forms.Label();
             this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
+            this.motorTempRBox = new System.Windows.Forms.TextBox();
+            this.motorTempLBox = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.targetSpeedBox = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label98 = new System.Windows.Forms.Label();
             this.label100 = new System.Windows.Forms.Label();
             this.label101 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.motorTempLBox = new System.Windows.Forms.TextBox();
-            this.motorTempRBox = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
@@ -1621,49 +1621,49 @@
             this.gpsSpeedBox.ForeColor = System.Drawing.Color.White;
             this.gpsSpeedBox.Location = new System.Drawing.Point(1830, 191);
             this.gpsSpeedBox.Name = "gpsSpeedBox";
-            this.gpsSpeedBox.Size = new System.Drawing.Size(49, 32);
+            this.gpsSpeedBox.Size = new System.Drawing.Size(48, 32);
             this.gpsSpeedBox.TabIndex = 105;
             this.gpsSpeedBox.Text = "30";
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Location = new System.Drawing.Point(6, 763);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowHeadersWidth = 55;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
             this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -1785,14 +1785,14 @@
             // 
             this.açToolStripMenuItem.Name = "açToolStripMenuItem";
             this.açToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.açToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.açToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.açToolStripMenuItem.Text = "Aç";
             this.açToolStripMenuItem.Click += new System.EventHandler(this.açToolStripMenuItem_Click);
             // 
             // kapatToolStripMenuItem
             // 
             this.kapatToolStripMenuItem.Name = "kapatToolStripMenuItem";
-            this.kapatToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.kapatToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.kapatToolStripMenuItem.Text = "Kapat";
             this.kapatToolStripMenuItem.Click += new System.EventHandler(this.kapatToolStripMenuItem_Click);
             // 
@@ -1878,7 +1878,7 @@
             this.manuelToolStripMenuItem,
             this.otoToolStripMenuItem});
             this.turSayımıToolStripMenuItem.Name = "turSayımıToolStripMenuItem";
-            this.turSayımıToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.turSayımıToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.turSayımıToolStripMenuItem.Text = "Tur Sayımı";
             // 
             // manuelToolStripMenuItem
@@ -1899,7 +1899,7 @@
             // 
             this.turAtToolStripMenuItem1.Name = "turAtToolStripMenuItem1";
             this.turAtToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.turAtToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.turAtToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.turAtToolStripMenuItem1.Text = "Tur At";
             this.turAtToolStripMenuItem1.Click += new System.EventHandler(this.turAtToolStripMenuItem1_Click);
             // 
@@ -3960,7 +3960,7 @@
             this.steeringAngleBox.ForeColor = System.Drawing.Color.White;
             this.steeringAngleBox.Location = new System.Drawing.Point(1844, 149);
             this.steeringAngleBox.Name = "steeringAngleBox";
-            this.steeringAngleBox.Size = new System.Drawing.Size(49, 32);
+            this.steeringAngleBox.Size = new System.Drawing.Size(48, 32);
             this.steeringAngleBox.TabIndex = 125;
             this.steeringAngleBox.Text = "00";
             // 
@@ -4002,6 +4002,64 @@
             this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel24.Size = new System.Drawing.Size(366, 67);
             this.tableLayoutPanel24.TabIndex = 127;
+            // 
+            // motorTempRBox
+            // 
+            this.motorTempRBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.motorTempRBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.motorTempRBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.motorTempRBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.motorTempRBox.ForeColor = System.Drawing.Color.White;
+            this.motorTempRBox.Location = new System.Drawing.Point(294, 38);
+            this.motorTempRBox.Multiline = true;
+            this.motorTempRBox.Name = "motorTempRBox";
+            this.motorTempRBox.ReadOnly = true;
+            this.motorTempRBox.Size = new System.Drawing.Size(66, 23);
+            this.motorTempRBox.TabIndex = 128;
+            this.motorTempRBox.Text = "NaN";
+            this.motorTempRBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // motorTempLBox
+            // 
+            this.motorTempLBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
+            this.motorTempLBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.motorTempLBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.motorTempLBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.motorTempLBox.ForeColor = System.Drawing.Color.White;
+            this.motorTempLBox.Location = new System.Drawing.Point(222, 38);
+            this.motorTempLBox.Multiline = true;
+            this.motorTempLBox.Name = "motorTempLBox";
+            this.motorTempLBox.ReadOnly = true;
+            this.motorTempLBox.Size = new System.Drawing.Size(63, 23);
+            this.motorTempLBox.TabIndex = 128;
+            this.motorTempLBox.Text = "NaN";
+            this.motorTempLBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(294, 3);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(66, 29);
+            this.label12.TabIndex = 129;
+            this.label12.Text = "Motor R";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(222, 3);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(63, 29);
+            this.label11.TabIndex = 128;
+            this.label11.Text = "Motor L";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox1
             // 
@@ -4088,64 +4146,6 @@
             this.label101.TabIndex = 7;
             this.label101.Text = "Low Prio";
             this.label101.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(222, 3);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(63, 29);
-            this.label11.TabIndex = 128;
-            this.label11.Text = "Motor L";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(294, 3);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(66, 29);
-            this.label12.TabIndex = 129;
-            this.label12.Text = "Motor R";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // motorTempLBox
-            // 
-            this.motorTempLBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.motorTempLBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.motorTempLBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.motorTempLBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.motorTempLBox.ForeColor = System.Drawing.Color.White;
-            this.motorTempLBox.Location = new System.Drawing.Point(222, 38);
-            this.motorTempLBox.Multiline = true;
-            this.motorTempLBox.Name = "motorTempLBox";
-            this.motorTempLBox.ReadOnly = true;
-            this.motorTempLBox.Size = new System.Drawing.Size(63, 23);
-            this.motorTempLBox.TabIndex = 128;
-            this.motorTempLBox.Text = "NaN";
-            this.motorTempLBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // motorTempRBox
-            // 
-            this.motorTempRBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(58)))));
-            this.motorTempRBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.motorTempRBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.motorTempRBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.motorTempRBox.ForeColor = System.Drawing.Color.White;
-            this.motorTempRBox.Location = new System.Drawing.Point(294, 38);
-            this.motorTempRBox.Multiline = true;
-            this.motorTempRBox.Name = "motorTempRBox";
-            this.motorTempRBox.ReadOnly = true;
-            this.motorTempRBox.Size = new System.Drawing.Size(66, 23);
-            this.motorTempRBox.TabIndex = 128;
-            this.motorTempRBox.Text = "NaN";
-            this.motorTempRBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // telemetry
             // 

@@ -399,7 +399,9 @@ namespace telemetry_hydro
 
         private void turAtToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Add(
+            try
+            {
+                dataGridView1.Rows.Add(
                 DataGPS.lapCounter + 1,
                 TimeOperations.currentLapTime.Elapsed.ToString("mm\\:ss\\.ff"),
                 TimeOperations.avgSpeedBuffer.Average().ToString("00.0") +" km/h",
@@ -407,10 +409,14 @@ namespace telemetry_hydro
                 EMS.out_cons_f32.ToString() + " Wh",
                 ((MACROS.KORFEZ_UZUNLUK_METRE / TimeOperations.currentLapTime.Elapsed.TotalSeconds) * 3.6).ToString("00.0") + " km/h"
                 );
-            TimeOperations.LapFinish();
-            lapCountBox.Text = DataGPS.lapCounter.ToString() + " / 30";
-//            myDataGrid.addGrid(new object[] { TimeOperations.elapsedTime.Elapsed.Minutes, TimeOperations.currentLapTime.Elapsed });
+                TimeOperations.LapFinish();
+                lapCountBox.Text = DataGPS.lapCounter.ToString() + " / 30";
+//              myDataGrid.addGrid(new object[] { TimeOperations.elapsedTime.Elapsed.Minutes, TimeOperations.currentLapTime.Elapsed });
 
+            }
+            catch (Exception ex)
+            {
+            }
         }
 
         private void başlatToolStripMenuItem1_Click(object sender, EventArgs e)

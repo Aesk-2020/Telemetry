@@ -116,11 +116,6 @@ namespace telemetry_hydro
             #endregion
         }
 
-        private void BMS_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void UpdateForm_Elapsed(object sender, ElapsedEventArgs e)
         {
             DisplayAll();
@@ -163,6 +158,11 @@ namespace telemetry_hydro
             max_cell_temp.Text = BMS.temp_u8.ToString();
             SoC.Text = BMS.soc_f32.ToString();
             */
+        }
+
+        private void eXITToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            telemetry.bmsForm.Hide();
         }
     }
 }
