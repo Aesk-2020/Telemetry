@@ -165,7 +165,7 @@ namespace telemetry_hydro
             ThreadMethods.TextDegis(bmsBatVoltBox, DataBMS.volt_u16.ToString());
             ThreadMethods.TextDegis(bmsBatCurBox, DataBMS.cur_s16.ToString());
             ThreadMethods.TextDegis(bmsBatConsBox, DataBMS.cons_u16.ToString());
-            ThreadMethods.TextDegis(bmsSocBox, "%88");
+            ThreadMethods.TextDegis(bmsSocBox, "%95");
             ThreadMethods.TextDegis(bmsWcaBox,DataBMS.worst_cell_address_u8.ToString());
             ThreadMethods.TextDegis(bmsWcvBox, DataBMS.worst_cell_volt_u16.ToString("0.000"));
             ThreadMethods.TextDegis(bmsTempBox, DataBMS.temperature_u8.ToString());
@@ -250,6 +250,7 @@ namespace telemetry_hydro
             {
                 mqtt.disConnectMQTT();
             }
+            TimeOperations.FinishRace();
         }
 
         private void bağlanToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -404,10 +405,11 @@ namespace telemetry_hydro
                 dataGridView1.Rows.Add(
                 DataGPS.lapCounter + 1,
                 TimeOperations.currentLapTime.Elapsed.ToString("mm\\:ss\\.ff"),
-                TimeOperations.avgSpeedBuffer.Average().ToString("00.0") +" km/h",
+                TimeOperations.avgSpeedBuffer.Average().ToString("00.0") + " km/h",
                 TimeOperations.maxSpeed.ToString() + " km/h",
                 EMS.out_cons_f32.ToString() + " Wh",
-                ((MACROS.KORFEZ_UZUNLUK_METRE / TimeOperations.currentLapTime.Elapsed.TotalSeconds) * 3.6).ToString("00.0") + " km/h"
+                ((MACROS.KORFEZ_UZUNLUK_METRE / TimeOperations.currentLapTime.Elapsed.TotalSeconds) * 3.6).ToString("00.0") + " km/h",
+                (MACROS.KORFEZ_UZUNLUK_METRE * (MACROS.total_Tur - DataGPS.lapCounter) / (TimeOperations.countdownHours * 3600 + TimeOperations.countdownMinutes * 60 + TimeOperations.countdownSeconds) * 3.6).ToString("00.0")+" km/h"
                 );
                 TimeOperations.LapFinish();
                 lapCountBox.Text = DataGPS.lapCounter.ToString() + " / 30";

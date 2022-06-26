@@ -102,6 +102,7 @@ namespace telemetry_hydro.Variables
         {
             currentLapTime.Reset();
             currentLapBox.Text = "00:00:00";
+            countdownTimer.Elapsed -= CountdownTimer_Elapsed;
             raceTimer.Stop();
         }
     }

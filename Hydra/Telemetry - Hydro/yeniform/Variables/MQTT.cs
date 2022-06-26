@@ -43,14 +43,16 @@ namespace telemetry_hydro.Variables
 
         public byte ConnectRequestMQTT()
         {
-            byte code = _client.Connect(Guid.NewGuid().ToString(), _username, _password);
-            _client.MqttMsgPublishReceived += Client_MqttMsgPublishReceived;
-
-            //SERVERDEN YANIT BAGLANDI BAGLANILAMADI
-   
-            //SERVER BIZI KABUL ETTI MI
+            byte code = 0;
             try
             {
+                code = _client.Connect(Guid.NewGuid().ToString(), _username, _password);
+                _client.MqttMsgPublishReceived += Client_MqttMsgPublishReceived;
+
+                //SERVERDEN YANIT BAGLANDI BAGLANILAMADI
+   
+                //SERVER BIZI KABUL ETTI MI
+            
                 _client.Subscribe(new string[] { _topic, "vehicle_to_interface_2" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
             }
 

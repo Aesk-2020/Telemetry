@@ -23,13 +23,14 @@ namespace telemetry_hydro.Variables
             d1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             if (_carName == "HYDRA")
             {
-                d1.ColumnCount = 6;
+                d1.ColumnCount = 7;
                 d1.Columns[0].Name = "Tur"; //tur numarası (kaçıncı tur bu)
                 d1.Columns[1].Name = "Sure";
                 d1.Columns[2].Name = "OrtalamaHiz";
                 d1.Columns[3].Name = "MaksHiz";
                 d1.Columns[4].Name = "OutCons";
                 d1.Columns[5].Name = "OrtHizHesap";
+                d1.Columns[6].Name = "GerekenOrtHız";
 
                 d1.Columns["Tur"].HeaderText            = "TUR";
                 d1.Columns["Sure"].HeaderText           = "SÜRE";
@@ -37,13 +38,16 @@ namespace telemetry_hydro.Variables
                 d1.Columns["MaksHiz"].HeaderText        = "MAKS HIZ";
                 d1.Columns["OutCons"].HeaderText        = "OUT CONS";
                 d1.Columns["OrtHizHesap"].HeaderText    = "ORT HIZ(SÜRE/PİST)";
+                d1.Columns["GerekenOrtHız"].HeaderText  = "Gereken Ortalama Hız";
 
-                d1.Columns[0].Width = 120;
+
+                d1.Columns[0].Width = 60;
                 d1.Columns[1].Width = 120;
                 d1.Columns[2].Width = 120;
                 d1.Columns[3].Width = 120;
                 d1.Columns[4].Width = 120;
-                d1.Columns[5].Width = 200;
+                d1.Columns[5].Width = 180;
+                d1.Columns[6].Width = 200;
             }
         }
 
