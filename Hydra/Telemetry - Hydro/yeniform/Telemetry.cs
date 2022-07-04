@@ -176,10 +176,10 @@ namespace telemetry_hydro
             ThreadMethods.TextDegis(emsBatVoltBox, EMS.bat_volt_f32.ToString());
             ThreadMethods.TextDegis(emsSharingBox, EMS.bat_soc_f32.ToString());
             ThreadMethods.TextDegis(emsFcConsBox, EMS.fc_cons_f32.ToString());
-            ThreadMethods.TextDegis(emsFcCurBox, EMS.fc_cur_f32.ToString());
+            ThreadMethods.TextDegis(emsOutCurBox, EMS.fc_cur_f32.ToString());
             ThreadMethods.TextDegis(emsFcVoltBox, EMS.fc_volt_f32.ToString());
-            ThreadMethods.TextDegis(emsOutCurBox, EMS.out_cur_f32.ToString());
-            ThreadMethods.TextDegis(emsOutVoltageBox, EMS.out_volt_f32.ToString());
+            ThreadMethods.TextDegis(emsFcCurBox, EMS.out_cur_f32.ToString());
+            //ThreadMethods.TextDegis(emsOutVoltageBox, EMS.out_volt_f32.ToString());
             ThreadMethods.TextDegis(emsFcLtConsBox, EMS.fc_lt_cons_f32.ToString());
             ThreadMethods.TextDegis(emsPenaltyBox, EMS.penalty_s8.ToString());
             ThreadMethods.TextDegis(emsTempBox, EMS.temperature_u8.ToString());
@@ -190,10 +190,10 @@ namespace telemetry_hydro
             #region EMS_ERROR
             ThreadMethods.PBoxBackColorDegis(ems_bat_current_error, !EMS.bat_current_error_u1 ? MACROS.AeskDark : MACROS.errorColor);
             ThreadMethods.PBoxBackColorDegis(ems_bat_volt_error, !EMS.bat_voltage_error_u1 ? MACROS.AeskDark : MACROS.errorColor);
-            ThreadMethods.PBoxBackColorDegis(ems_fc_current_error, !EMS.fc_current_error_u1 ? MACROS.AeskDark : MACROS.errorColor);
+            ThreadMethods.PBoxBackColorDegis(out_current_error, !EMS.fc_current_error_u1 ? MACROS.AeskDark : MACROS.errorColor);
             ThreadMethods.PBoxBackColorDegis(ems_fc_voltage_error, !EMS.fc_voltage_error_u1 ? MACROS.AeskDark : MACROS.errorColor);
             ThreadMethods.PBoxBackColorDegis(out_current_error, !EMS.out_current_error_u1 ? MACROS.AeskDark : MACROS.errorColor);
-            ThreadMethods.PBoxBackColorDegis(ems_out_voltage_error, !EMS.out_voltage_error_u1 ? MACROS.AeskDark : MACROS.errorColor);
+            //ThreadMethods.PBoxBackColorDegis(ems_out_voltage_error, !EMS.out_voltage_error_u1 ? MACROS.AeskDark : MACROS.errorColor);
             #endregion
             #region MCU_TEXT
             ThreadMethods.TextDegis(actSpeedBox, DataMCU.act_speed_s16.ToString());

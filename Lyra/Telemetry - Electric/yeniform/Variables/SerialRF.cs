@@ -72,44 +72,46 @@ namespace Telemetri.Variables
         }
         private void _serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            int bytes=0;
-            byte[] buffer = new byte[200];
-            int all=0,atleast=0;
-            while (all<=6)
+            try
             {
-                if (_serialPort.IsOpen)
-                bytes = _serialPort.BytesToRead;
-                if (bytes > 0)
-                _serialPort.Read(buffer, all, bytes);
-                all += bytes;
-            }
-            if (buffer[5]==27)
-            {
-                atleast = 44;
-            }
-            else if (buffer[5]==28)
-            {
-                atleast = 28;
-            }
-            else if (buffer[5]==29)
-            {
-                atleast = 60;
-            }
-            while (all<atleast)
-            {
-                bytes = _serialPort.BytesToRead;
-                if (bytes > 0)
-                _serialPort.Read(buffer, all, bytes);
-                all += bytes;
-            }
-            byte[] buf2 = new byte[atleast];
-            for (int i = 0; i < atleast; i++)
-            {
-                buf2[i] = buffer[i];
-            }
-            if (all > 0)
+                int bytes = 0;
+                byte[] buffer = new byte[200];
+                int all = 0, atleast = 0;
+                while (all <= 6)
                 {
-                    if (Anasayfa.mqttobj.client!=null)
+                    if (_serialPort.IsOpen)
+                        bytes = _serialPort.BytesToRead;
+                    if (bytes > 0)
+                        _serialPort.Read(buffer, all, bytes);
+                    all += bytes;
+                }
+                if (buffer[5] == 27)
+                {
+                    atleast = 44;
+                }
+                else if (buffer[5] == 28)
+                {
+                    atleast = 28;
+                }
+                else if (buffer[5] == 29)
+                {
+                    atleast = 60;
+                }
+                while (all < atleast)
+                {
+                    bytes = _serialPort.BytesToRead;
+                    if (bytes > 0)
+                        _serialPort.Read(buffer, all, bytes);
+                    all += bytes;
+                }
+                byte[] buf2 = new byte[atleast];
+                for (int i = 0; i < atleast; i++)
+                {
+                    buf2[i] = buffer[i];
+                }
+                if (all > 0)
+                {
+                    if (Anasayfa.mqttobj.client != null)
                     {
                         Anasayfa.mqttobj.client.Publish("vehicle_to_interface", buf2);
                     }
@@ -121,6 +123,10 @@ namespace Telemetri.Variables
                         pack.ComproUnpack(buf2);
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+            }
         }
     }
 }

@@ -192,7 +192,7 @@ namespace Telemetri.Variables
             BMSForm.lattBox.Text = GpsTracker.gps_latitude_f64.ToString();
             BMSForm.powerBox.Text = (DataBMS.volt_u16 * DataBMS.cur_s16).ToString();
 
-            BMSForm.fatalBox.BackColor = DataBMS.fatal_error_u1 ? Color.Crimson : MACROS.UInewBack;
+            BMSForm.fatalBox.BackColor = DataBMS.fatal_error_u1 ? Color.Crimson : MACROS.UInewBack;    //sorun varOOOOOOOOO
             BMSForm.highvoltageBox.BackColor = DataBMS.high_voltage_error_u1 ? Color.Crimson : MACROS.UInewBack;
             BMSForm.lowvoltageBox.BackColor = DataBMS.low_voltage_error_u1 ? Color.Crimson : MACROS.UInewBack;
             BMSForm.commsBox.BackColor = DataBMS.communication_error_u1 ? Color.Crimson : MACROS.UInewBack;

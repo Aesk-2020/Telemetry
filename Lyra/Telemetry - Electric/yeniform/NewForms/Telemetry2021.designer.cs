@@ -117,7 +117,7 @@
             this.testButton.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
             this.testButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.testButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.testButton.Location = new System.Drawing.Point(0, 428);
+            this.testButton.Location = new System.Drawing.Point(0, 380);
             this.testButton.Name = "testButton";
             this.testButton.Size = new System.Drawing.Size(250, 48);
             this.testButton.TabIndex = 22;
@@ -139,7 +139,7 @@
             this.pidTuningBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(136)))), ((int)(((byte)(202)))));
             this.pidTuningBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.pidTuningBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.pidTuningBtn.Location = new System.Drawing.Point(0, 380);
+            this.pidTuningBtn.Location = new System.Drawing.Point(0, 332);
             this.pidTuningBtn.Name = "pidTuningBtn";
             this.pidTuningBtn.Size = new System.Drawing.Size(250, 48);
             this.pidTuningBtn.TabIndex = 20;
@@ -163,7 +163,7 @@
             this.motordrButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.motordrButton2.Location = new System.Drawing.Point(0, 332);
             this.motordrButton2.Name = "motordrButton2";
-            this.motordrButton2.Size = new System.Drawing.Size(250, 48);
+            this.motordrButton2.Size = new System.Drawing.Size(250, 0);
             this.motordrButton2.TabIndex = 18;
             this.motordrButton2.Text = "MCU Right";
             this.motordrButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
