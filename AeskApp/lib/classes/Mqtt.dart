@@ -5,6 +5,7 @@ import 'package:mqtt_client/mqtt_server_client.dart';
 import 'package:flutter/foundation.dart';
 import 'dart:async';
 import 'package:aeskapp/pages/Login.dart' as login;
+
 ///bit işlemleri kütüğhaneleri byte array vs.
 var old_iteration_date;
 
@@ -14,15 +15,14 @@ class MqttAesk extends ChangeNotifier {
   static int port = 1883;
   static String username = 'digital';
   static String password = 'aesk';
-  static String clientIdentifier =
-  DateTime.now().microsecond.toString(); //cihaz isimlerine göre atama ya
+  static String clientIdentifier = DateTime.now().microsecond.toString(); //cihaz isimlerine göre atama ya
   static bool isLyra;
   static String myTopic;
   static String pubTopic = 'DENEME';
   static mqtt.MqttPublishPayload myPayload;
 
   //mqtt.MqttClient client;
-  mqtt.MqttConnectionState connectionState;
+  static mqtt.MqttConnectionState connectionState;
   static MqttServerClient client;
 
 //kilit eleman
@@ -31,7 +31,7 @@ class MqttAesk extends ChangeNotifier {
   Future<bool> connect() async {
     client = MqttServerClient(broker, clientIdentifier);
     client.port = port;
-    client.logging(on: true);
+    client.logging(on: false);
     client.keepAlivePeriod = 30;
     client.onDisconnected = _onDisconnected;
 
@@ -45,12 +45,9 @@ class MqttAesk extends ChangeNotifier {
         .withWillQos(mqtt.MqttQos.atMostOnce);
     client.connectionMessage = connMess;
 
-
     /*final builder = mqtt.MqttClientPayloadBuilder();
     builder.addString('Hello AESKKKKKK');
     client.publishMessage(pubTopic, mqtt.MqttQos.atMostOnce, builder.payload);*/
-
-
 
     //baglanilan yer burasi
     try {
@@ -86,6 +83,7 @@ class MqttAesk extends ChangeNotifier {
   }
 
   void _onDisconnected() {
+    print("mqtt disconnected");
     connectionState = client.connectionState;
     client = null;
     subscription.cancel();
@@ -98,14 +96,12 @@ class MqttAesk extends ChangeNotifier {
     old_iteration_date ??= DateTime.now();
     var new_iteration_date = DateTime.now();
 
-    AeskData.ping =
-        new_iteration_date.difference(old_iteration_date).inMilliseconds;
+    AeskData.ping = new_iteration_date.difference(old_iteration_date).inMilliseconds;
     AeskData.x_time += AeskData.ping;
 
     old_iteration_date = new_iteration_date;
 
-    final mqtt.MqttPublishMessage recMess =
-    event[0].payload as mqtt.MqttPublishMessage;
+    final mqtt.MqttPublishMessage recMess = event[0].payload as mqtt.MqttPublishMessage;
     myTopic = event[0].topic;
     myPayload = recMess.payload;
     var message = recMess.payload.message.buffer.asByteData(0);

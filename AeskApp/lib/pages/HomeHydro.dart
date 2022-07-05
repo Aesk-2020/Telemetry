@@ -1,26 +1,27 @@
-  import 'package:aeskapp/classes/aeskData.dart';
-  import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
-  import 'package:flutter/cupertino.dart';
-  import 'package:flutter/material.dart';
-  import 'package:flutter/services.dart';
-  import 'package:provider/provider.dart';
-  import 'package:aeskapp/classes/Mqtt.dart';
+import 'package:aeskapp/classes/aeskData.dart';
+import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'package:aeskapp/classes/Mqtt.dart';
+import 'dart:async';
 
-  class HomeHydro extends StatefulWidget {
+class HomeHydro extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
-  }
+}
 
-  class _HomeState extends State<HomeHydro> {
+class _HomeState extends State<HomeHydro> {
   @override
   Widget build(BuildContext context) {
+    MqttAesk mqttAesk = Provider.of<MqttAesk>(context);
     if (AeskData.bms_bat_current_f32 != null) {
       return WillPopScope(
         onWillPop: () {
           return showDialog(
               context: context,
-              builder: (BuildContext context)
-              {
+              builder: (BuildContext context) {
                 return CupertinoAlertDialog(
                   //backgroundColor: Theme.of(context).backgroundColor,
                   content: Text(
@@ -34,13 +35,11 @@
                     ),
                     CupertinoDialogAction(
                       child: myText("EVET", 18, Colors.black, FontWeight.bold),
-                      onPressed: () =>
-                          SystemChannels.platform.invokeMethod('SystemNavigator.pop'),
+                      onPressed: () => SystemChannels.platform.invokeMethod('SystemNavigator.pop'),
                     ),
                   ],
                 );
-              }
-          );
+              });
         },
         child: SafeArea(
           child: aeskScaffold(
@@ -51,18 +50,49 @@
                 return SingleChildScrollView(
                   child: Padding(
                     padding: EdgeInsets.all(5),
-                    child: Card(
-                      margin: EdgeInsets.all(10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          myText(
-                              "\nANA SAYFA",
-                              scale.size.width / 16.45714284,
-                              Theme.of(context).textTheme.headline3.color,
-                              FontWeight.bold),
-                          Row(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            myText("  ANA SAYFA", scale.size.width / 16.45714284,
+                                Theme.of(context).textTheme.headline3.color, FontWeight.bold),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+                              child: ElevatedButton.icon(
+                                  icon: Icon(AeskData.isMQTTRunning ? CupertinoIcons.play : CupertinoIcons.stop,
+                                      color: Theme.of(context).textTheme.headline2.color),
+                                  label: myText(
+                                      "MQTT", 12, AeskData.isMQTTRunning ? Colors.green : Colors.red, FontWeight.bold),
+                                  onPressed: () {
+                                    setState(() async {
+                                      if (!AeskData.isMQTTRunning) {
+                                        mqttAesk.disconnect();
+                                        dynamic state;
+                                        try {
+                                          state = await mqttAesk.connect().timeout(Duration(seconds: 5));
+                                        } catch (e) {
+                                          state = false;
+                                        }
+                                        print(state);
+                                        if (state == true) {
+                                          if (MqttAesk.isLyra) {
+                                            mqttAesk.subscribeToTopic("vehicle_to_interface");
+                                          } else {
+                                            mqttAesk.subscribeToTopic("vehicle_to_interface_2");
+                                          }
+                                        }
+                                      }
+                                    });
+                                  }),
+                            ),
+                          ],
+                        ),
+                        Card(
+                          margin: EdgeInsets.all(10),
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Column(
@@ -70,13 +100,11 @@
                                 children: <Widget>[
                                   DataBox(
                                     ad: "TCU RTC",
-                                    veri: AeskData.tcu_hour_u8.toString()   + ":"
-                                        + AeskData.tcu_minute_u8.toString() + ":"
-                                        + AeskData.tcu_second_u8.toString(),
-                                  ),
-                                  DataBox(
-                                    ad: "Motor Temp L",
-                                    veri: AeskData.driver_motortemp_u8.toString(),
+                                    veri: AeskData.tcu_hour_u8.toString() +
+                                        ":" +
+                                        AeskData.tcu_minute_u8.toString() +
+                                        ":" +
+                                        AeskData.tcu_second_u8.toString(),
                                   ),
                                   DataBox(
                                     ad: "SD result",
@@ -91,121 +119,71 @@
                                     veri: AeskData.driver_actspeed_s16.toStringAsFixed(1),
                                   ),
                                   DataBox(
-                                    ad: "Set Torque L",
-                                    veri: AeskData.vcu_set_torque_s16.toString(),
-                                  ),
-                                  DataBox(
                                     ad: "IDC L",
                                     veri: AeskData.driver_idc_s16.toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "VDC L",
-                                    veri: AeskData.driver_vdc_s16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "Bat Cur",
-                                    veri: AeskData.bms_bat_current_f32
-                                        .toStringAsFixed(2),
+                                    veri: AeskData.driver_vdc_s16.toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "Out Cur",
-                                    veri: AeskData.eys_out_current_int16
-                                        .toStringAsFixed(2),
+                                    veri: AeskData.eys_out_current_int16.toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "Out Volt",
-                                    veri: AeskData.eys_out_volt_int16
-                                        .toStringAsFixed(2),
+                                    veri: AeskData.eys_out_volt_int16.toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "Out Cons",
-                                    veri: AeskData.eys_out_cons_uint16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "Bat Cons",
-                                    veri:
-                                    AeskData.bms_bat_cons_f32.toStringAsFixed(1),
-                                  ),
-                                  DataBox(
-                                    ad: "Kp",
-                                    veri: AeskData.kp.toString(),
+                                    veri: AeskData.eys_out_cons_uint16.toStringAsFixed(2),
                                   ),
                                 ],
                               ),
                               Column(
                                 children: <Widget>[
                                   DataBox(
+                                    ad: "Motor Temp L",
+                                    veri: AeskData.driver_motortemp_u8.toString(),
+                                  ),
+                                  DataBox(
                                     ad: "Sharing",
                                     veri: AeskData.eys_sharing_ratio_uint16.toString(),
                                   ),
                                   DataBox(
-                                    ad: "Motor Temp R",
-                                    veri: AeskData.driver_motortemp_u8_2.toString(),
-                                  ),
-                                  DataBox(
-                                    ad: "SD result write",
-                                    veri: AeskData.sd_result_write_u8.toString(),
-                                  ),
-                                  DataBox(
-                                    ad: "Steering Angle",
-                                    veri: AeskData.vcu_steering_s8.toString(),
-                                  ),
-                                  DataBox(
-                                    ad: "Act Speed R",
-                                    veri: AeskData.driver_actspeed_s16_2.
-                                    toStringAsFixed(1),
-                                  ),
-                                  DataBox(
-                                    ad: "Set Torque R",
-                                    veri: AeskData.vcu_set_torque_2_s16.
-                                    toString(),
-                                  ),
-                                  DataBox(
-                                    ad: "IDC R",
-                                    veri: AeskData.driver_idc_s16_2
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "VDC R",
-                                    veri: AeskData.driver_vdc_s16_2
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
                                     ad: "Bat Volt",
-                                    veri:
-                                    AeskData.bms_bat_volt_f32.toStringAsFixed(2),
+                                    veri: AeskData.bms_bat_volt_f32.toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "Bat Cur",
+                                    veri: AeskData.bms_bat_current_f32.toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "Bat Cons",
+                                    veri: AeskData.bms_bat_cons_f32.toStringAsFixed(1),
                                   ),
                                   DataBox(
                                     ad: "FC Cur",
-                                    veri:
-                                    AeskData.eys_fc_current_int16.toStringAsFixed(2),
+                                    veri: AeskData.eys_fc_current_int16.toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "FC Volt",
-                                    veri:
-                                    AeskData.eys_fc_volt_int16.toStringAsFixed(2),
+                                    veri: AeskData.eys_fc_volt_int16.toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "FC LT Cons",
-                                    veri:
-                                    AeskData.eys_fc_lt_cons_uint16.toStringAsFixed(2),
+                                    veri: AeskData.eys_fc_lt_cons_uint16.toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "SoC",
                                     veri: AeskData.bms_soc_f32.toStringAsFixed(1),
                                   ),
-                                  DataBox(
-                                    ad: "Ki",
-                                    veri: AeskData.ki.toString(),
-                                  ),
                                 ],
                               ),
                             ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 );
@@ -214,23 +192,23 @@
           ),
         ),
       );
-    }
-    else if(AeskData.bms_bat_current_f32==null){
-      AeskData.bms_bat_current_f32 = AeskData.bms_bat_volt_f32 =
-          AeskData.bms_dc_bus_state_u8 = AeskData.bms_soc_f32 = AeskData
-          .driver_set_torque_s16 = AeskData.driver_act_iq_u16 = 0;
-      AeskData.driver_set_id_s16 = AeskData.driver_set_iq_s16 =
-          AeskData.driver_act_id_u16 = 0; AeskData.driver_motortemp_u8 = 0; AeskData
-          .driver_idc_s16 = 0; AeskData.driver_vdc_s16 = 0;
-      AeskData.driver_acttorque_s8 = 0; AeskData.driver_errorstatus_u16 = 0;
-      AeskData.vcu_set_torque_s16 = 0; AeskData.bms_bat_cons_f32 = 0;
+    } else if (AeskData.bms_bat_current_f32 == null) {
+      AeskData.bms_bat_current_f32 = AeskData.bms_bat_volt_f32 = AeskData.bms_dc_bus_state_u8 =
+          AeskData.bms_soc_f32 = AeskData.driver_set_torque_s16 = AeskData.driver_act_iq_u16 = 0;
+      AeskData.driver_set_id_s16 = AeskData.driver_set_iq_s16 = AeskData.driver_act_id_u16 = 0;
+      AeskData.driver_motortemp_u8 = 0;
+      AeskData.driver_idc_s16 = 0;
+      AeskData.driver_vdc_s16 = 0;
+      AeskData.driver_acttorque_s8 = 0;
+      AeskData.driver_errorstatus_u16 = 0;
+      AeskData.vcu_set_torque_s16 = 0;
+      AeskData.bms_bat_cons_f32 = 0;
       AeskData.bms_temp_u8 = AeskData.bms_power_f32 = 0;
       return WillPopScope(
         onWillPop: () {
           return showDialog(
               context: context,
-              builder: (BuildContext context)
-              {
+              builder: (BuildContext context) {
                 return CupertinoAlertDialog(
                   //backgroundColor: Theme.of(context).backgroundColor,
                   content: Text(
@@ -244,13 +222,11 @@
                     ),
                     CupertinoDialogAction(
                       child: myText("EVET", 18, Colors.black, FontWeight.bold),
-                      onPressed: () =>
-                          SystemChannels.platform.invokeMethod('SystemNavigator.pop'),
+                      onPressed: () => SystemChannels.platform.invokeMethod('SystemNavigator.pop'),
                     ),
                   ],
                 );
-              }
-          );
+              });
         },
         child: SafeArea(
           child: aeskScaffold(
@@ -261,18 +237,49 @@
                 return SingleChildScrollView(
                   child: Padding(
                     padding: EdgeInsets.all(5),
-                    child: Card(
-                      margin: EdgeInsets.all(10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          myText(
-                              "\nANA SAYFA",
-                              scale.size.width / 16.45714284,
-                              Theme.of(context).textTheme.headline3.color,
-                              FontWeight.bold),
-                          Row(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            myText("  ANA SAYFA", scale.size.width / 16.45714284,
+                                Theme.of(context).textTheme.headline3.color, FontWeight.bold),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+                              child: ElevatedButton.icon(
+                                  icon: Icon(AeskData.isMQTTRunning ? CupertinoIcons.play : CupertinoIcons.stop,
+                                      color: Theme.of(context).textTheme.headline2.color),
+                                  label: myText(
+                                      "MQTT", 12, AeskData.isMQTTRunning ? Colors.green : Colors.red, FontWeight.bold),
+                                  onPressed: () {
+                                    setState(() async {
+                                      if (!AeskData.isMQTTRunning) {
+                                        mqttAesk.disconnect();
+                                        dynamic state;
+                                        try {
+                                          state = await mqttAesk.connect().timeout(Duration(seconds: 5));
+                                        } catch (e) {
+                                          state = false;
+                                        }
+                                        print(state);
+                                        if (state == true) {
+                                          if (MqttAesk.isLyra) {
+                                            mqttAesk.subscribeToTopic("vehicle_to_interface");
+                                          } else {
+                                            mqttAesk.subscribeToTopic("vehicle_to_interface_2");
+                                          }
+                                        }
+                                      }
+                                    });
+                                  }),
+                            ),
+                          ],
+                        ),
+                        Card(
+                          margin: EdgeInsets.all(10),
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Column(
@@ -280,9 +287,11 @@
                                 children: <Widget>[
                                   DataBox(
                                     ad: "TCU RTC",
-                                    veri: AeskData.tcu_hour_u8.toString()   + ":"
-                                        + AeskData.tcu_minute_u8.toString() + ":"
-                                        + AeskData.tcu_second_u8.toString(),
+                                    veri: AeskData.tcu_hour_u8.toString() +
+                                        ":" +
+                                        AeskData.tcu_minute_u8.toString() +
+                                        ":" +
+                                        AeskData.tcu_second_u8.toString(),
                                   ),
                                   DataBox(
                                     ad: "Motor Temp L",
@@ -301,46 +310,20 @@
                                     veri: AeskData.driver_actspeed_s16.toStringAsFixed(1),
                                   ),
                                   DataBox(
-                                    ad: "Set Torque L",
-                                    veri: AeskData.vcu_set_torque_s16.toString(),
-                                  ),
-                                  DataBox(
                                     ad: "IDC L",
                                     veri: AeskData.driver_idc_s16.toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "VDC L",
-                                    veri: AeskData.driver_vdc_s16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "Bat Cur",
-                                    veri: AeskData.bms_bat_current_f32
-                                        .toStringAsFixed(2),
+                                    veri: AeskData.driver_vdc_s16.toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "Out Cur",
-                                    veri: AeskData.eys_out_current_int16
-                                        .toStringAsFixed(2),
+                                    veri: AeskData.eys_out_current_int16.toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "Out Volt",
-                                    veri: AeskData.eys_out_volt_int16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "Out Cons",
-                                    veri: AeskData.eys_out_cons_uint16
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "Bat Cons",
-                                    veri:
-                                    AeskData.bms_bat_cons_f32.toStringAsFixed(1),
-                                  ),
-                                  DataBox(
-                                    ad: "Kp",
-                                    veri: AeskData.kp.toString(),
+                                    veri: AeskData.eys_out_volt_int16.toStringAsFixed(2),
                                   ),
                                 ],
                               ),
@@ -351,71 +334,43 @@
                                     veri: AeskData.eys_sharing_ratio_uint16.toString(),
                                   ),
                                   DataBox(
-                                    ad: "Motor Temp R",
-                                    veri: AeskData.driver_motortemp_u8_2.toString(),
-                                  ),
-                                  DataBox(
-                                    ad: "SD result write",
-                                    veri: AeskData.sd_result_write_u8.toString(),
-                                  ),
-                                  DataBox(
-                                    ad: "Steering Angle",
-                                    veri: AeskData.vcu_steering_s8.toString(),
-                                  ),
-                                  DataBox(
-                                    ad: "Act Speed R",
-                                    veri: AeskData.driver_actspeed_s16_2.
-                                    toStringAsFixed(1),
-                                  ),
-                                  DataBox(
-                                    ad: "Set Torque R",
-                                    veri: AeskData.vcu_set_torque_2_s16.
-                                    toString(),
-                                  ),
-                                  DataBox(
-                                    ad: "IDC R",
-                                    veri: AeskData.driver_idc_s16_2
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
-                                    ad: "VDC R",
-                                    veri: AeskData.driver_vdc_s16_2
-                                        .toStringAsFixed(2),
-                                  ),
-                                  DataBox(
                                     ad: "Bat Volt",
-                                    veri:
-                                    AeskData.bms_bat_volt_f32.toStringAsFixed(2),
+                                    veri: AeskData.bms_bat_volt_f32.toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "Out Cons",
+                                    veri: AeskData.eys_out_cons_uint16.toStringAsFixed(2),
+                                  ),
+                                  DataBox(
+                                    ad: "Bat Cons",
+                                    veri: AeskData.bms_bat_cons_f32.toStringAsFixed(1),
+                                  ),
+                                  DataBox(
+                                    ad: "Bat Cur",
+                                    veri: AeskData.bms_bat_current_f32.toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "FC Cur",
-                                    veri:
-                                    AeskData.eys_fc_current_int16.toStringAsFixed(2),
+                                    veri: AeskData.eys_fc_current_int16.toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "FC Volt",
-                                    veri:
-                                    AeskData.eys_fc_volt_int16.toStringAsFixed(2),
+                                    veri: AeskData.eys_fc_volt_int16.toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "FC LT Cons",
-                                    veri:
-                                    AeskData.eys_fc_lt_cons_uint16.toStringAsFixed(2),
+                                    veri: AeskData.eys_fc_lt_cons_uint16.toStringAsFixed(2),
                                   ),
                                   DataBox(
                                     ad: "SoC",
                                     veri: AeskData.bms_soc_f32.toStringAsFixed(1),
                                   ),
-                                  DataBox(
-                                    ad: "Ki",
-                                    veri: AeskData.ki.toString(),
-                                  ),
                                 ],
                               ),
                             ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 );
@@ -426,9 +381,9 @@
       );
     }
   }
-  }
+}
 
-  class DataBox extends StatelessWidget {
+class DataBox extends StatelessWidget {
   DataBox({Key key, this.ad, this.veri}) : super(key: key);
   final String ad;
   final String veri;
@@ -461,4 +416,4 @@
       ),
     );
   }
-  }
+}

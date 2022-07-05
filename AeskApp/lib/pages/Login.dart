@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:aeskapp/custom_widgets/aesk_widgets.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
+import 'package:mqtt_client/mqtt_client.dart' as mqtt;
 import 'dart:async';
 
 String ip;
@@ -49,10 +50,10 @@ class _LoggingState extends State<Logging> {
     dropdownMenuItems = buildDropDownMenuItems(dropdownItems);
     selectedItem = dropdownMenuItems[0].value;
   }
+
   @override
   Widget build(BuildContext context) {
-
-    MqttAesk mqttAesk = Provider.of<MqttAesk>(context);     // Mqtt connect methodunu dinlemek için provider ekliyoruz
+    MqttAesk mqttAesk = Provider.of<MqttAesk>(context); // Mqtt connect methodunu dinlemek için provider ekliyoruz
 
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
@@ -61,10 +62,12 @@ class _LoggingState extends State<Logging> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             myText("AESKAPP", 35, Theme.of(context).appBarTheme.color, FontWeight.bold),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             //IP textfield
             Container(
-              padding: const EdgeInsets.only(left: 10.0,right: 10.0),
+              padding: const EdgeInsets.only(left: 10.0, right: 10.0),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0),
                   color: Theme.of(context).backgroundColor,
@@ -82,19 +85,21 @@ class _LoggingState extends State<Logging> {
             ),
 
             //Araç tipi seçin bölgesi
-            SizedBox(height: 15,),
+            SizedBox(
+              height: 15,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Container(
                   width: 170,
                   child: CheckboxListTile(
-                    title: myText("LYRA", 20, Theme.of(context).appBarTheme.color, FontWeight.bold),
+                    title: myText("NOVA", 20, Theme.of(context).appBarTheme.color, FontWeight.bold),
                     value: checkbox == null ? false : checkbox,
                     controlAffinity: ListTileControlAffinity.leading,
                     onChanged: (value) {
                       setState(() {
-                        if(checkbox == null || checkbox == false) checkbox = true;
+                        if (checkbox == null || checkbox == false) checkbox = true;
                       });
                     },
                   ),
@@ -102,21 +107,22 @@ class _LoggingState extends State<Logging> {
                 Container(
                   width: 170,
                   child: CheckboxListTile(
-                    title: myText("HYDRA", 20, Theme.of(context).appBarTheme.color, FontWeight.bold),
+                    title: myText("CASTOR", 20, Theme.of(context).appBarTheme.color, FontWeight.bold),
                     value: checkbox == null ? false : !checkbox,
                     controlAffinity: ListTileControlAffinity.leading,
                     onChanged: (value) {
                       setState(() {
-                        if(checkbox == null || checkbox == true) checkbox = false;
+                        if (checkbox == null || checkbox == true) checkbox = false;
                       });
                     },
                   ),
                 ),
               ],
-
             ),
             //Giriş butonu
-            SizedBox(height: 15,),
+            SizedBox(
+              height: 15,
+            ),
             RaisedButton(
               padding: EdgeInsets.symmetric(horizontal: 40),
               onPressed: () async {
@@ -125,47 +131,47 @@ class _LoggingState extends State<Logging> {
                     context: context,
                     barrierDismissible: false,
                     builder: (BuildContext context) {
-                        return SpinKitCircle(color: Theme.of(context).appBarTheme.color,);
-                      },
+                      return SpinKitCircle(
+                        color: Theme.of(context).appBarTheme.color,
+                      );
+                    },
                   );
                   dynamic state;
-                  try{
+                  try {
                     state = await mqttAesk.connect().timeout(Duration(seconds: 5));
-                  }catch(e){
+                  } catch (e) {
                     state = false;
                   }
                   print(state);
                   if (state == true) {
                     MqttAesk.isLyra = checkbox;
-                    if(MqttAesk.isLyra) {
-                      mqttAesk.subscribeToTopic("LYRADATA");
+                    if (MqttAesk.isLyra) {
                       mqttAesk.subscribeToTopic("vehicle_to_interface");
-                    }
-                    else {
-                      mqttAesk.subscribeToTopic("HYDRADATA");
+                    } else {
                       mqttAesk.subscribeToTopic("vehicle_to_interface_2");
                     }
                     Navigator.pushNamed(context, checkbox ? "/Home" : "/HomeHydro");
                   } else {
                     Navigator.pushReplacementNamed(context, "/Login");
                     showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          title: myText("HATA", 30, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                          content: myText("Bağlantı başarısız! Lütfen internet bağlantınızı kontrol edin", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                          backgroundColor: Theme.of(context).backgroundColor,
-                        );
-                      }
-                    );
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: myText("HATA", 30, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                            content: myText("Bağlantı başarısız! Lütfen internet bağlantınızı kontrol edin", 25,
+                                Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                            backgroundColor: Theme.of(context).backgroundColor,
+                          );
+                        });
                   }
-                }else{
+                } else {
                   showDialog(
                     context: context,
                     builder: (BuildContext context) {
                       return AlertDialog(
                         title: myText("HATA", 30, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
-                        content: myText("Lütfen bir araç tipi seçiniz.", 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
+                        content: myText("Lütfen bir araç tipi seçiniz.", 25,
+                            Theme.of(context).textTheme.headline1.color, FontWeight.bold),
                         backgroundColor: Theme.of(context).backgroundColor,
                       );
                     },

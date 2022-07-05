@@ -5,6 +5,7 @@ import 'package:aeskapp/pages/CellsHydro.dart';
 import 'package:aeskapp/pages/Ems.dart';
 import 'package:aeskapp/pages/GraphsHydro.dart';
 import 'package:aeskapp/pages/HomeHydro.dart';
+import 'package:aeskapp/pages/Test.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'classes/SharedPreferences.dart';
@@ -19,17 +20,21 @@ import 'package:aeskapp/pages/Settings.dart';
 import 'package:aeskapp/pages/Location.dart';
 import 'package:aeskapp/pages/Vcu.dart';
 import 'package:aeskapp/pages/Cells.dart';
-
+import 'package:aeskapp/classes/aeskData.dart';
+import 'dart:async';
 import 'package:syncfusion_flutter_core/core.dart';
 
-void main() async{
-  SyncfusionLicense.registerLicense (
+Timer mqttConnectionTimer;
+void main() async {
+  SyncfusionLicense.registerLicense(
       "NT8mJyc2IWhia31hfWN9Z2doYmF8YGJ8ampqanNiYmlmamlmanMDHmgqJiAmNTg2PjI/IzI/MjA6EyoyMj06fTA8Pg==");
-  WidgetsFlutterBinding.ensureInitialized(); // main içindeyken zaman alan yükleme veya başlatma işlemlerinden önce bu fonksiyonun çağırılması gerek
+  WidgetsFlutterBinding
+      .ensureInitialized(); // main içindeyken zaman alan yükleme veya başlatma işlemlerinden önce bu fonksiyonun çağırılması gerek
   await loadPrefs();
   return runApp(MyApp());
 }
-Future<Void> loadPrefs() async{
+
+Future<Void> loadPrefs() async {
   await SharedPrefs.getThemePref().then((value) => MyThemeData.myTheme = value);
 }
 
@@ -46,13 +51,16 @@ class MyApp extends StatelessWidget {
           create: (context) => MqttAesk(),
         ),
       ],
-      child: Consumer<MyThemeData>(     //Burda tedarikçiden gelen bilgiyi kullanacak widget bulunmakta
-        builder: (context, _, child) {   /// builderda [MyThemeData] tipinde [context] içinde(sanırım) myTheme objesi oluşturuluyor
+      child: Consumer<MyThemeData>(
+        //Burda tedarikçiden gelen bilgiyi kullanacak widget bulunmakta
+        builder: (context, _, child) {
+          mqttConnectionTimer = Timer.periodic(Duration(seconds: 3), checkConnection);
+
+          /// builderda [MyThemeData] tipinde [context] içinde(sanırım) myTheme objesi oluşturuluyor
           return MaterialApp(
             theme: LightTheme(),
             darkTheme: DarkTheme(),
             themeMode: (MyThemeData.myTheme) ? ThemeMode.dark : ThemeMode.light,
-
             initialRoute: "/Login",
             routes: {
               "/Login": (context) => Logging(),
@@ -68,10 +76,20 @@ class MyApp extends StatelessWidget {
               "/Cells": (context) => CellsPage(),
               "/CellsHydro": (context) => CellsPageHydro(),
               "/Ems": (context) => EmsPage(),
+              "/Test": (context) => TestPage(),
             },
           );
         },
       ),
     );
+  }
+
+  void checkConnection(Timer timer) {
+    if (tempRTCSecond == AeskData.tcu_second_u8) {
+      AeskData.isMQTTRunning = false;
+      tempRTCSecond = AeskData.tcu_second_u8;
+    } else {
+      AeskData.isMQTTRunning = true;
+    }
   }
 }

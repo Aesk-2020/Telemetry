@@ -16,9 +16,9 @@ class Custom extends StatefulWidget {
 }
 
 class _CustomState extends State<Custom> {
-  static List<String> currentContent = List.filled(1, null,growable: true);
-  static List<String> nameOfTilesLyra = ["MCU/VCU","BMS"];
-  static List<String> nameOfTilesHydra = ["MCU/VCU","BMS","EMS"];
+  static List<String> currentContent = List.filled(1, null, growable: true);
+  static List<String> nameOfTilesLyra = ["MCU/VCU", "BMS"];
+  static List<String> nameOfTilesHydra = ["MCU/VCU", "BMS", "EMS"];
   static List<String> nameOfTiles = MqttAesk.isLyra ? nameOfTilesLyra : nameOfTilesHydra;
 
   Widget contentAdder(String content, int index) {
@@ -30,7 +30,7 @@ class _CustomState extends State<Custom> {
             Bms(),
             Positioned(
               bottom: 25,
-              left: scale.size.width/2.22,
+              left: scale.size.width / 2.22,
               child: IconButton(
                 icon: Icon(Icons.delete),
                 onPressed: () {
@@ -50,7 +50,7 @@ class _CustomState extends State<Custom> {
             Vcu(),
             Positioned(
               bottom: 25,
-              right: scale.size.width/2.22,
+              right: scale.size.width / 2.22,
               child: IconButton(
                 icon: Icon(Icons.delete),
                 onPressed: () {
@@ -65,13 +65,13 @@ class _CustomState extends State<Custom> {
         );
         break;
       case "EMS":
-        if(!MqttAesk.isLyra)
+        if (!MqttAesk.isLyra)
           return Stack(
             children: <Widget>[
               Ems(),
               Positioned(
                 bottom: 25,
-                right: scale.size.width/2.22,
+                right: scale.size.width / 2.22,
                 child: IconButton(
                   icon: Icon(Icons.delete),
                   onPressed: () {
@@ -86,10 +86,16 @@ class _CustomState extends State<Custom> {
           );
         break;
       case "list":
-        return (nameOfTiles.length == 0 ? SizedBox(height: 0,) : modifiedExpansionTile(currentContent.length));
+        return (nameOfTiles.length == 0
+            ? SizedBox(
+                height: 0,
+              )
+            : modifiedExpansionTile(currentContent.length));
         break;
       default:
-        return SizedBox(height: 0,);
+        return SizedBox(
+          height: 0,
+        );
         break;
     }
   }
@@ -107,12 +113,14 @@ class _CustomState extends State<Custom> {
             child: Row(
               children: <Widget>[
                 Icon(Icons.add),
-                SizedBox(width: 15,),
+                SizedBox(
+                  width: 15,
+                ),
                 myText(tileName, 25, Theme.of(context).textTheme.headline1.color, FontWeight.bold),
               ],
             ),
           ),
-          onTap: (){
+          onTap: () {
             setState(() {
               currentContent.insert(index, tileName);
               nameOfTiles.remove(tileName);
@@ -122,23 +130,24 @@ class _CustomState extends State<Custom> {
       }).toList(),
     );
   }
-@override
+
+  @override
   void initState() {
     currentContent[0] = "list";
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     print(nameOfTiles);
     return aeskScaffold(
       context: context,
       myBody: CustomScrollView(
-
         slivers: <Widget>[
           SliverSafeArea(
             sliver: SliverList(
               delegate: SliverChildBuilderDelegate(
-                    (context, int index){
+                (context, int index) {
                   return contentAdder(currentContent[index], index);
                 },
                 childCount: currentContent.length,

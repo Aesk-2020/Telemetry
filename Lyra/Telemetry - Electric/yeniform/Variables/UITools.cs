@@ -188,8 +188,8 @@ namespace Telemetri.Variables
             BMSForm.socTextBox.Text = "%" + DataBMS.soc_u16.ToString();
             BMSForm.tempTextBox.Text = DataBMS.temperature_u8.ToString() + " °C";
             BMSForm.voltageTextBox.Text = DataBMS.volt_u16.ToString();
-            BMSForm.longtBox.Text = GpsTracker.gps_longtitude_f64.ToString();
-            BMSForm.lattBox.Text = GpsTracker.gps_latitude_f64.ToString();
+            BMSForm.longtBox.Text = DataGPS.longtitude_f32.ToString();
+            BMSForm.lattBox.Text = DataGPS.latitude_f32.ToString();
             BMSForm.powerBox.Text = (DataBMS.volt_u16 * DataBMS.cur_s16).ToString();
 
             BMSForm.fatalBox.BackColor = DataBMS.fatal_error_u1 ? Color.Crimson : MACROS.UInewBack;

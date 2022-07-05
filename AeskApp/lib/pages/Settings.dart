@@ -134,7 +134,7 @@ class _SettingsState extends State<Settings> {
               Container(
                 width: 170,
                 child: CheckboxListTile(
-                  title: myText("LYRA", 20, Theme.of(context).appBarTheme.color,
+                  title: myText("NOVA", 20, Theme.of(context).appBarTheme.color,
                       FontWeight.bold),
                   value: checkbox == null ? false : checkbox,
                   controlAffinity: ListTileControlAffinity.leading,
@@ -154,7 +154,7 @@ class _SettingsState extends State<Settings> {
               Container(
                 width: 170,
                 child: CheckboxListTile(
-                  title: myText("HYDRA", 20,
+                  title: myText("CASTOR", 20,
                       Theme.of(context).appBarTheme.color, FontWeight.bold),
                   value: checkbox == null ? false : !checkbox,
                   controlAffinity: ListTileControlAffinity.leading,
