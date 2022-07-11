@@ -82,7 +82,13 @@ namespace telemetry_hydro.Variables
 
         private static void RaceTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            currentLapBox.Text = currentLapTime.Elapsed.ToString("mm\\:ss\\.ff");
+            try
+            {
+                currentLapBox.Text = currentLapTime.Elapsed.ToString("mm\\:ss\\.ff");
+            }
+            catch (Exception ex)
+            {
+            }
         }
         public static void LapFinish()
         {

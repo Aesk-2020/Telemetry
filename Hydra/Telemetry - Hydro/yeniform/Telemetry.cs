@@ -251,6 +251,26 @@ namespace telemetry_hydro
                 mqtt.disConnectMQTT();
             }
             TimeOperations.FinishRace();
+            if (logTimer != null)
+            {
+                logTimer.Stop();
+            }
+            if (TimeOperations.countdownTimer!=null)
+            {
+                TimeOperations.countdownTimer.Stop();
+            }
+            if (TimeOperations.raceTimer != null)
+            {
+                TimeOperations.raceTimer.Stop();
+            }
+            if (TimeOperations.elapsedTime != null)
+            {
+                TimeOperations.elapsedTime.Stop();
+            }
+            if (TimeOperations.currentLapTime != null)
+            {
+                TimeOperations.currentLapTime.Stop();
+            }
         }
 
         private void bağlanToolStripMenuItem_Click_1(object sender, EventArgs e)

@@ -67,30 +67,11 @@ namespace Telemetri.Variables
         public static bool torque_mode_mcu2 => Convert.ToBoolean((error_status_u16 >> 13 & 0b00000001));
 
 
-        public static string log_data => act_id_current_s16.ToString("0.00") + "\t" +
-                                            act_iq_current_s16.ToString("0.00") + "\t" +
-                                            vd_s16.ToString("0.00") + "\t" +
-                                            vq_s16.ToString("0.00") + "\t" +
-                                            set_id_current_s16.ToString("0.00") + "\t" +
-                                            set_iq_current_s16.ToString("0.00") + "\t" +
-                                            set_torque_s16.ToString() + "\t" +
-                                            i_dc_s16.ToString("0.00") + "\t" +
+        public static string log_data =>    i_dc_s16.ToString("0.00") + "\t" +
                                             v_dc_s16.ToString("0.00") + "\t" +
                                             act_speed_s16.ToString() + "\t" +
                                             temperature_u8.ToString() + "\t" +
-                                            error_status_u16.ToString() + "\t" +
-                                            act_id_current_s16_mcu2.ToString("0.00") + "\t" +
-                                            act_iq_current_s16_mcu2.ToString("0.00") + "\t" +
-                                            vd_s16_mcu2.ToString("0.00") + "\t" +
-                                            vq_s16_mcu2.ToString("0.00") + "\t" +
-                                            set_id_current_s16_mcu2.ToString("0.00") + "\t" +
-                                            set_iq_current_s16_mcu2.ToString("0.00") + "\t" +
-                                            set_torque_s16_mcu2.ToString() + "\t" +
-                                            i_dc_s16_mcu2.ToString("0.00") + "\t" +
-                                            v_dc_s16_mcu2.ToString("0.00") + "\t" +
-                                            act_speed_s16_mcu2.ToString() + "\t" +
-                                            temperature_u8_mcu2.ToString() + "\t" +
-                                            error_status_u16_mcu2.ToString() + "\t";
+                                            error_status_u16.ToString() + "\t";
 
     }
 }

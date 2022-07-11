@@ -51,10 +51,6 @@ namespace Telemetri.Variables
          * 1: Backward
          */
         public static string log_data => drive_commands_u8.ToString() + "\t" +
-                                            speed_set_rpm_s16.ToString() + "\t" +
-                                            torque_set_s16.ToString() + "\t" +
-                                            torque_set_2_s16.ToString() + "\t" +
-                                            torque_limit_u8 + "\t" +
-                                            kp + "\t" + ki + "\t" + kd + "\t";
+                                            speed_set_rpm_s16.ToString() + "\t";
     }
 }

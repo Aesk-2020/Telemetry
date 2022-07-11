@@ -39,37 +39,11 @@ namespace telemetry_hydro.Variables
                         "Time" + "\t" +
                         "Drive Commands" + "\t" +
                         "Speed Set kmh" + "\t" +
-                        "Torque Set_L" + "\t" +
-                        "Torque Set_R" + "\t" +
-                        "Speed Limit" + "\t" +
-                        "Torque Limit" + "\t" +
-                        "Kp" + "\t" +
-                        "Ki" + "\t" +
-                        "Kd" + "\t" +
-                        "ID_L" + "\t" +
-                        "IQ_L" + "\t" +
-                        "VD_L" + "\t" +
-                        "VQ_L" + "\t" +
-                        "Set ID_L" + "\t" +
-                        "Set IQ_L" + "\t" +
-                        "Set Torque_L" + "\t" +
                         "IDC_L" + "\t" +
                         "VDC_L" + "\t" +
                         "Act Speed_L" + "\t" +
                         "Motor Temp_L" + "\t" +
                         "Errors_L" + "\t" +
-                        "ID_R" + "\t" +
-                        "IQ_R" + "\t" +
-                        "VD_R" + "\t" +
-                        "VQ_R" + "\t" +
-                        "Set ID_R" + "\t" +
-                        "Set IQ_R" + "\t" +
-                        "Set Torque_R" + "\t" +
-                        "IDC_R" + "\t" +
-                        "VDC_R" + "\t" +
-                        "Act Speed_R" + "\t" +
-                        "Motor Temp_R" + "\t" +
-                        "Errors_R" + "\t" +
                         "Battery Voltage" + "\t" +
                         "Battery Current" + "\t" +
                         "Battery Consumption" + "\t" +
@@ -154,7 +128,8 @@ namespace telemetry_hydro.Variables
             TimeOperations.logTime              = TimeSpan.Parse(rawData[dataIndex++].Replace(seperator, ','));
             
             DataVCU.drive_commands_u8           = byte.Parse(rawData[dataIndex++].Replace(seperator, ','));
-            DataVCU.speed_set_rpm_s16           = short.Parse(rawData[dataIndex++].Replace(seperator, ',')); DataVCU.speed_set_rpm_s16 = (short)(DataVCU.speed_set_rpm_s16 * 0.105183);
+            DataVCU.speed_set_rpm_s16           = short.Parse(rawData[dataIndex++].Replace(seperator, ','));
+            DataVCU.speed_set_rpm_s16           = (short)(DataVCU.speed_set_rpm_s16 * 0.105183);
             DataVCU.torque_set_s16              = short.Parse(rawData[dataIndex++].Replace(seperator, ','));
             DataVCU.torque_set_2_s16            = short.Parse(rawData[dataIndex++].Replace(seperator, ','));
             DataVCU.torque_limit_u8             = byte.Parse(rawData[dataIndex++].Replace(seperator, ','));
