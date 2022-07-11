@@ -838,6 +838,29 @@ class AeskData extends ChangeNotifier {
           }
           break;
       }
+      for (i = 0; i < graphData_array.length - 1; i++) {
+        graphData_array[i] = graphData_array[i + 1];
+      }
+
+      graphData_array[graphData_array.length - 1] = graph_data(
+          vcu_drive_command_u8,
+          vcu_speed_set_rpm_s16,
+          vcu_set_torque_s16,
+          vcu_set_torque_2_s16,
+          driver_set_id_s16,
+          driver_act_id_u16,
+          driver_set_iq_s16,
+          driver_act_iq_u16,
+          driver_set_torque_s16,
+          driver_idc_s16,
+          driver_vdc_s16,
+          driver_actspeed_s16,
+          driver_motortemp_u8,
+          driver_acttorque_s8,
+          bms_bat_volt_f32, //10
+          bms_bat_current_f32,
+          bms_bat_cons_f32, //10
+          x_time);
       /*
       if(MqttAesk.myTopic == "vehicle_to_interface" || MqttAesk.myTopic == "vehicle_to_interface_2") {
         srcMsgId =  message.getUint8(_startIndex);
@@ -881,7 +904,6 @@ class AeskData extends ChangeNotifier {
       }
 */
 
-      notifyListeners();
     }
   }
 }
